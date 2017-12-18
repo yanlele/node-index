@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webSocet</title>
+</head>
+<body>
+
+<h1>Echo Test</h1>
+
+<input type="text" id="sendTxt">
+<button id="sendBtn">发送</button>
+
+<div id="recv"></div>
+
+<script>
+    //建立连接
+    let webSocket = new WebSocket('ws://localhost:8001/');
+
+    //开启连接
+    webSocket.onopen = function () {
+        console.log('webSocket open');
+        document.getElementById('recv').innerHTML = 'Connected';
+    };
+
+    //关闭连接
+    webSocket.onclose = function () {
+        console.log('webSocket close');
+    };
+
+    //拿到返回
+    webSocket.onmessage = function (e) {
+        console.log(e.data);
+        document.getElementById('recv').innerHTML = e.data;
+    };
+
+    //发送信息
+    document.getElementById('sendBtn').onclick = function () {
+        var text = document.getElementById('sendTxt').value;
+        webSocket.send(text);
+    };
+
+</script>
+
+</body>
+</html>

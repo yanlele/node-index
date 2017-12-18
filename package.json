@@ -1,0 +1,18 @@
+{
+  "name": "yanlele",
+  "version": "0.0.1",
+  "description": "node整个实验基地的所有包文件管理",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-formidable": "^1.0.0",
+    "nodejs-websocket": "^1.7.1",
+    "request": "^2.83.0",
+    "socket.io": "^1.7.4"
+  }
+}
