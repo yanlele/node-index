@@ -1,3 +1,4 @@
+/*
 //读取目录
 const fs=require('fs');
 const path=require('path');
@@ -11,4 +12,21 @@ fs.readdir('../async&&await',function(err,files){
     files.forEach(function(file){
         console.info(file);
     });
+});*/
+
+
+//自己的练习
+const fs =require('fs');
+const path=require('path');
+
+const dir =path.resolve(__filename,'../');
+console.log(dir);
+fs.readdir(dir,(err,data)=>{
+    if(err){
+        return console.log(err)
+    }else{
+        data.forEach((item,idnex)=>{
+            console.log(item);
+        })
+    }
 });

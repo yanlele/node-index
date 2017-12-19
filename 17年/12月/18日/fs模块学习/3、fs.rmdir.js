@@ -1,3 +1,4 @@
+/*
 //删除目录
 var fs = require('fs');
 //注：当前删除目录操作，只能删除空目录
@@ -9,3 +10,20 @@ fs.rmdir('../mkdir', function(err) {
     }
     console.log('删除目录成功');
 });
+
+*/
+
+
+const fs=require('fs');
+const path=require('path');
+
+const dir=path.resolve(__dirname,'../mkdir2');
+console.log(dir);
+fs.rmdir(dir,(err)=>{
+    if(err){
+        console.log('删除文件失败，可能原因：1、目录不存在，2、目录不为空')
+        return console.log(err)
+    }else{
+        console.log('删除目录成功');
+    }
+})
