@@ -22,7 +22,7 @@ var Post = mongoose.model('post', postSchema);
 var commentSchema = new Schema({
     content: String,
     author: {type: Schema.Types.ObjectId, ref: 'user'}
-})
+});
 var Comment = mongoose.model('comment', commentSchema);
 
 exports.User = User;
