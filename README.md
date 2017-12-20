@@ -1,4 +1,4 @@
-# 这里集合了自己学习的一些demo
+# 这里集合了自己github的一个索引和专题demo
 
 ### 对别人项目的研究（详细阅读源码之后写下的一些笔记和项目注释）
 
@@ -19,11 +19,11 @@
 ### 正在进行的独立项目(进行中)
 
 - [koa2的学习笔记项目demo](https://github.com/yanlele/koa-study)
-- [基于webpack3的前端工程自动化构建（实现可配置的jQuery、vue、react和全栈项目配置）](https://github.com/yanlele/le-cli)
+- [基于webpack3的前端工程自动化构建（实现可配置的jQuery、vue、react和全栈项目脚手架）](https://github.com/yanlele/le-cli)
 - [基于react 高仿csdn博客前端](https://github.com/yanlele/react-blog-front)
 - [基于react 高仿csdn博客后端](https://github.com/yanlele/react-blog-server)
 
-### 其他独立测试和学习作品目录
+### 其他专题demo目录
 
 - 17年
     - 12月
