@@ -176,7 +176,7 @@ Post.findOne({'title': 'test'}).populate([{path: 'author', select: 'name age -_i
 }
 ```
 
-- 一个示例：
+- 第一个示例：
 ```javascript
 var mongoose=require('mongoose');
 var MicroblogSchema=new mongoose.Schema({
@@ -212,3 +212,5 @@ var Microblog=mongoose.model('Microblog',MicroblogSchema);
 
 module.exports=Microblog;
 ```
+
+- 第二个示例 : 请见本项目demo代码！
