@@ -23,7 +23,10 @@ router.get('/',(req,res)=>{
 });
 
 router.get('/list',(req,res)=>{
-    Content.find({}).populate('userid').exec((err,data)=>{
+    Content.find({}).populate({path:'userid',select:'name'}).exec((err,data)=>{
+        if(err){
+            res.json(err)
+        }
         res.json(result(0,'返回成功',data))
     })
 })

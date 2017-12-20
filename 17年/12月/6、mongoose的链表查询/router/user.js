@@ -25,6 +25,7 @@ router.post('/save', (req, res) => {
            res.json(result(1,'用户名username重复'))
        }else{
            const {username,name,createDate}=doc;
+           res.cookie('userid',doc._id);
            res.status(200).json(result(0,'返回成功',{
                username,name,createDate
            }))

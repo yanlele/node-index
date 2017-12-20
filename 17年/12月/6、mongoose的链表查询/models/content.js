@@ -2,7 +2,7 @@ const mongoose =require('mongoose')
 let contentSchema=new mongoose.Schema({
     content:String,
     createDate:String,
-    userid: {type: mongoose.Schema.Types.ObjectId, ref: 'Users'}
+    userid: {type: mongoose.Schema.Types.ObjectId, ref: 'user'}
 });
 
 //保存方法：save
