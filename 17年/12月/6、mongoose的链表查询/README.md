@@ -5,13 +5,13 @@
     参数 Option：
     path
     类型：String或Object。
-    String类型的时， 指定要填充的关联字段，要填充多个关联字段可以以空格分隔。
-    Object类型的时，就是把 populate 的参数封装到一个对象里。当然也可以是个数组。下面的例子中将会实现。
+    String类型的时， 指定要填充的关联字段，要填充多个关联字段可以以空格分隔。
+    Object类型的时，就是把 populate 的参数封装到一个对象里。当然也可以是个数组。下面的例子中将会实现。
     
     select
     类型：Object或String，可选，指定填充 document 中的哪些字段。
-    Object类型的时，格式如: {name: 1, _id: 0}，为0表示不填充，为1时表示填充。
-    String类型的时，格式如: “name -_id”，用空格分隔字段，在字段名前加上-表示不填充。详细语法介绍 query-select
+    Object类型的时，格式如: {name: 1, _id: 0}，为0表示不填充，为1时表示填充。
+    String类型的时，格式如: “name -_id”，用空格分隔字段，在字段名前加上-表示不填充。详细语法介绍 query-select
     尝试中发现 select 默认会填充 _id。
     model
     类型：Model，可选，指定关联字段的 model，如果没有指定就会使用Schema的ref。
@@ -137,10 +137,10 @@ Comment.findOne({'content': 'walala'}).populate({path:'author', select: 'name'})
 
 //结果：
 { 
-_id: 584a030733604a156a4f6601,
-    author: { _id: 584a030733604a156a4f65ff, name: 'Tom' },
+    _id: '584a030733604a156a4f6601',
+    author: { _id: '584a030733604a156a4f65ff', name: 'Tom' },
     content: 'walala',
-        __v: 0 
+    __v: '0' 
 }
 ```
 
@@ -167,7 +167,7 @@ Post.findOne({'title': 'test'}).populate([{path: 'author', select: 'name age -_i
 
 //结果如下：
 { 
-    _id: 584a030733604a156a4f6600,
+    _id: '584a030733604a156a4f6600',
     author: { name: 'Tom', age: 19 },
     title: 'test',
         content: 'wakaka',
