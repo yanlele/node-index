@@ -11,6 +11,7 @@
   "dependencies": {
     "express": "^4.16.2",
     "express-formidable": "^1.0.0",
+    "mockjs": "^1.0.1-beta3",
     "nodejs-websocket": "^1.7.1",
     "request": "^2.83.0",
     "socket.io": "^1.7.4"
