@@ -3,10 +3,16 @@ const path=require('path');
 const dir=path.resolve('../mkdir/index.html');
 console.log(dir);
 
-fs.readFile(dir,'utf-8',(err,data)=>{
-    if(err){
-        return console.log(err)
-    }else{
-        console.log(data.toString());
-    }
-});
+function read(dir){
+    return new Promise((resolve,reject)=>{
+        fs.readFile(dir,'utf-8',(err,data)=>{
+            if(err){
+                reject(console.log(err))
+            }else{
+                resolve(console.log(data))
+            }
+        })
+    })
+}
+
+read(dir);
