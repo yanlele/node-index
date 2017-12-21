@@ -139,7 +139,7 @@ var upload = multer({ storage: storage })
     可以使用下面这些:      
      
 | Key | Description	Default | 
-| - | -: | 
+| - | : - | 
 | fieldNameSize | field 名字最大长度	100 bytes| 
 | fieldSize | field 值的最大长度	1MB | 
 | fields | 非文件 field 的最大数量	无限 | 
