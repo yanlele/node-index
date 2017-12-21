@@ -100,24 +100,9 @@ app.post('/profile', upload.array(), function (req, res, next) {
 ```
 
 - multer(opts)      
-Multer 接受一个 options 对象，其中最基本的是 dest 属性，这将告诉 Multer 将上传文件保存在哪。如果你省略 options 对象，这些文件将保存在内存中，永远不会写入磁盘。     
-为了避免命名冲突，Multer 会修改上传的文件名。这个重命名功能可以根据您的需要定制。        
-以下是可以传递给 Multer 的选项。 
-
-| Name | Academy | score | 
-| - | -: | -: | 
-| Harry Potter | Gryffindor| 90 | 
-| Hermione Granger | Gryffindor | 100 | 
-| Draco Malfoy | Slytherin | 90 |
-       
-Key	Description
-dest or storage	在哪里存储文件
-fileFilter	文件过滤器，控制哪些文件可以被接受
-limits	限制上传的数据
-preservePath	保存包含文件名的完整文件路径
-通常，只需要设置 dest 属性 像这样：
-var upload = multer({ dest: 'uploads/' })
-如果你想在上传时进行更多的控制，你可以使用 storage 选项替代 dest。Multer 具有 DiskStorage 和 MemoryStorage 两个存储引擎；另外还可以从第三方获得更多可用的引擎。
+    Multer 接受一个 options 对象，其中最基本的是 dest 属性，这将告诉 Multer 将上传文件保存在哪。如果你省略 options 对象，这些文件将保存在内存中，永远不会写入磁盘。     
+    为了避免命名冲突，Multer 会修改上传的文件名。这个重命名功能可以根据您的需要定制。        
+    以下是可以传递给 Multer 的选项。 
 
 - 20.1、storage
 
@@ -135,32 +120,33 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 ```
 
-有两个选项可用，destination 和 filename。他们都是用来确定文件存储位置的函数。       
-destination 是用来确定上传的文件应该存储在哪个文件夹中。也可以提供一个 string (例如 '/tmp/uploads')。如果没有设置 destination，则使用操作默认的临时文件夹       
-注意: 如果你提供的 destination 是一个函数，你需要负责创建文件夹。当提供一个字符串，multer 将确保这个文件夹是你创建的。      
-filename 用于确定文件夹中的文件名的确定。 如果没有设置 filename，每个文件将设置为一个随机文件名，并且是没有扩展名的     
-注意: Multer 不会为你添加任何扩展名，你的程序应该返回一个完整的文件名。        
-每个函数都传递了两个请求 (req) 和一些关于这个文件的信息 (file) 有助于你的决定。     
-注意 req.body 可能还没有完全填充，这取决于向客户端发送字段和文件到服务器的顺序。       
+    有两个选项可用，destination 和 filename。他们都是用来确定文件存储位置的函数。       
+    destination 是用来确定上传的文件应该存储在哪个文件夹中。也可以提供一个 string (例如 '/tmp/uploads')。如果没有设置 destination，则使用操作默认的临时文件夹       
+    注意: 如果你提供的 destination 是一个函数，你需要负责创建文件夹。当提供一个字符串，multer 将确保这个文件夹是你创建的。      
+    filename 用于确定文件夹中的文件名的确定。 如果没有设置 filename，每个文件将设置为一个随机文件名，并且是没有扩展名的     
+    注意: Multer 不会为你添加任何扩展名，你的程序应该返回一个完整的文件名。        
+    每个函数都传递了两个请求 (req) 和一些关于这个文件的信息 (file) 有助于你的决定。     
+    注意 req.body 可能还没有完全填充，这取决于向客户端发送字段和文件到服务器的顺序。       
 
 - 20.1.2、MemoryStorage
-内存存储引擎将文件存储在内存中的 Buffer 对象，它没有任何选项      
-var storage = multer.memoryStorage()var upload = multer({ storage: storage })       
-当使用内存存储引擎，文件信息将包含一个 buffer 字段，里面包含了整个文件数据。      
-警告: 当你使用内存存储，上传非常大的文件，或者非常多的小文件，会导致你的应用程序内存溢出       
+    内存存储引擎将文件存储在内存中的 Buffer 对象，它没有任何选项      
+    var storage = multer.memoryStorage()var upload = multer({ storage: storage })       
+    当使用内存存储引擎，文件信息将包含一个 buffer 字段，里面包含了整个文件数据。      
+    警告: 当你使用内存存储，上传非常大的文件，或者非常多的小文件，会导致你的应用程序内存溢出       
 
 - 20.2、limits
-一个对象，指定一些数据大小的限制。Multer 通过这个对象使用 busboy，详细的特性可以在 busboy's page 找到。      
-可以使用下面这些:       
-
-Key	Description	Default
-fieldNameSize	field 名字最大长度	100 bytes
-fieldSize	field 值的最大长度	1MB
-fields	非文件 field 的最大数量	无限
-fileSize	在 multipart 表单中，文件最大长度 (字节单位)	无限
-files	在 multipart 表单中，文件最大数量	无限
-parts	在 multipart 表单中，part 传输的最大数量(fields + files)	无限
-headerPairs	在 multipart 表单中，键值对最大组数	2000
+    一个对象，指定一些数据大小的限制。Multer 通过这个对象使用 busboy，详细的特性可以在 busboy's page 找到。      
+    可以使用下面这些:      
+     
+| Key | Description	Default | 
+| - | -: | 
+| fieldNameSize | field 名字最大长度	100 bytes| 
+| fieldSize | field 值的最大长度	1MB | 
+| fields | 非文件 field 的最大数量	无限 | 
+| fileSize | 在 multipart 表单中，文件最大长度 (字节单位)	无限 |
+| files | 在 multipart 表单中，文件最大数量	无限 |
+| parts | 在 multipart 表单中，part 传输的最大数量(fields + files)	无限 |
+| headerPairs | 在 multipart 表单中，part 传输的最大数量(fields + files)	无限      在 multipart 表单中，键值对最大组数	2000|
 
 设置 limits 可以帮助保护你的站点免受拒绝服务 (DoS) 攻击。
 
