@@ -55,6 +55,8 @@
 
 > 基础语法
 
+- [可以参看官方文档](https://github.com/expressjs/multer/blob/master/doc/README-zh-cn.md)
+
 - Multer 会添加一个 body 对象 以及 file 或 files 对象 到 express 的 request 对象中。 body 对象包含表单的文本域信息，file 或 files 对象包含对象表单上传的文件信息。
 
 - 基本使用方法:
