@@ -213,4 +213,4 @@ var Microblog=mongoose.model('Microblog',MicroblogSchema);
 module.exports=Microblog;
 ```
 
-- 第二个示例 : 请见本项目demo代码！
+- 终极解决实例代码 : 请见本项目demo！
