@@ -18,7 +18,7 @@
 
 ### 正在进行的独立项目(进行中)
 
-- [react简书笔记](./book/react专题)
+- [react简书笔记](book/react专题/1、基础知识.md)
 - [koa2的学习笔记项目demo](https://github.com/yanlele/koa-study)
 - [基于webpack3的前端工程自动化构建（实现可配置的jQuery、vue、react和全栈项目脚手架）](https://github.com/yanlele/le-cli)
 - [基于react 高仿csdn博客前端](https://github.com/yanlele/react-blog-front)
