@@ -41,3 +41,4 @@
         - [10、axios 的一些高级用法](./17年/12月/10、axios%20的一些高级用法)
         - [11、react-redux示例](./17年/12月/11、react-redux示例)
         - [12、react-router4与合并reducers示例](./17年/12月/12、react-router4与合并reducers示例)
+        - [13、常用的正则验证例子](./17年/12月/13、正则验证)
