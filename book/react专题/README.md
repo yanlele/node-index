@@ -5,6 +5,6 @@
 - [redux基础知识点](./2、redux基础知识点.md)
 
 #### react-router4
-
+- [react-router4和reducers合并](./3、react-router4.md)
 
 #### 实战先关知识点
