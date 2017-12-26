@@ -66,3 +66,63 @@ export default combineReducers({counter,auth})
 它的作用是合并reducer,然后抛出给index.js中，让react-redux处理之后给注入给react项目用
 
 - [react-router4与合并reducers示例](../../17年/12月/12、react-router4与合并reducers示例)
+
+> 3.    关于this.props.match.params的使用        
+
+这个是获取router/:id 的参数的
+例如如下：
+```jsx harmony
+import React, {Component} from 'react'
+import {
+    BrowserRouter,
+    Route,
+    Switch,
+    Redirect
+} from 'react-router-dom'
+
+/*配置路由*/
+import Material from '../container/material/material'
+import CannotFind from '../container/404/404'
+import Page from '../container/pages/page'
+
+class Router extends Component {
+    render() {
+        return (
+            <BrowserRouter>
+                <div>
+                    <Switch>
+                       <Route path='/' exact component={Material}/>
+                        <Route path='/material' exact component={Material}/>
+                        <Route path='/page/:userid' exact component={Page}/>
+                        <Route component={CannotFind}/>
+                    </Switch>
+                </div>
+            </BrowserRouter>
+        )
+    }
+}
+
+export default Router
+```
+
+在page.js中获取url参数
+```jsx harmony
+import React from 'react'
+
+class Page extends React.Component{
+
+    componentDidMount(){
+        console.log(this.props.match.params);//得到的结果为 {userid:'XXXXXX'}
+    }
+
+    render(){
+        return(
+            <div>
+                <h1>我是render函数</h1>
+            </div>
+        )
+    }
+}
+
+export default Page
+```
