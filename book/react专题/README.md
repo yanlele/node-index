@@ -7,4 +7,5 @@
 #### react-router4
 - [react-router4和reducers合并](./3、react-router4.md)
 
-#### 实战先关知识点
+#### 实战相关知识点
+
