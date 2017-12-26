@@ -29,6 +29,7 @@
     - [1、常用功能函数:url带参数跳转，获取url参数，请求序列化param等功能](./通用功能js模块/js/1、site/site.js)
     - [2、日期格式化组件](./通用功能js模块/js/2、日期格式化组件/dateFormat.js)
 - vue组件
+    - [1、swiper](./通用功能js模块/vue/1、swiper/swiper.vue)
 - react组件
 - jQuery组件
     - [1、改造bootstrap的模态框功能modal](./通用功能js模块/jquery/1、modal)
