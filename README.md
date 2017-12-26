@@ -24,6 +24,20 @@
 - [基于react 高仿csdn博客前端](https://github.com/yanlele/react-blog-front)
 - [基于react 高仿csdn博客后端](https://github.com/yanlele/react-blog-server)
 
+### 通用功能js模块
+- 原生组件功能部分
+    - [1、常用功能函数:url带参数跳转，获取url参数，请求序列化param等功能](./通用功能js模块/js/1、site/site.js)
+    - [2、日期格式化组件](./通用功能js模块/js/2、日期格式化组件/dateFormat.js)
+- vue组件
+- react组件
+- jQuery组件
+    - [1、改造bootstrap的模态框功能modal](./通用功能js模块/jquery/1、modal)
+    - [2、移动端商城购物车触控拉动](./通用功能js模块/jquery/2、touch/touch.js)
+    - [3、日历js组件独立(可以自己定制化样式)](./通用功能js模块/jquery/3、calendar/AutoDate.js)
+    - [4、空中撒金币特效](./通用功能js模块/jquery/4、点击撒金币特效/canvas撒金币.html)
+    
+- [其他开源常用模块组件收录目录](./通用功能js模块/other)
+
 ### 其他专题demo目录
 
 - 17年
