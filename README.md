@@ -1,6 +1,6 @@
 # 这里集合了自己github的一个索引和专题demo
 
-### 对别人项目的研究（详细阅读源码之后写下的一些笔记和项目注释）
+### 对别人项目的研究（详细阅读源码之后写下的一些笔记和项目注释-已完成）
 
 - [express基本使用,包括注册,登陆,上传,下载,登录权限控制,session持久化,邮件发送,网络爬虫等](https://github.com/yanlele/express)
 - [基于webpack3多页面打包](https://github.com/yanlele/webpack-dev)
@@ -18,6 +18,7 @@
 
 ### 正在进行的独立项目(进行中)
 
+- [ES6/7简书笔记](./book/ES6&7)
 - [react简书笔记](book/react专题)
 - [koa2的学习笔记项目demo](https://github.com/yanlele/koa-study)
 - [基于webpack3的前端工程自动化构建（实现可配置的jQuery、vue、react和全栈项目脚手架）](https://github.com/yanlele/le-cli)
