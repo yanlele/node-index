@@ -85,13 +85,51 @@
     ```
         
     4.3、const            
-        4.3.1、const是一个常量，一旦申明，就不能改变。而且在申明的时候必须初始化，不能留到后面赋值。             
-        4.3.2、作用域和let是一样的       
-        const常量储存的是一个地址，这个地址是指向一个对象的，因为对象本身是可变的，所以依然可以为其添加新的属性和方法：           
+    4.3.1、const是一个常量，一旦申明，就不能改变。而且在申明的时候必须初始化，不能留到后面赋值。             
+    4.3.2、作用域和let是一样的       
+    const常量储存的是一个地址，这个地址是指向一个对象的，因为对象本身是可变的，所以依然可以为其添加新的属性和方法：           
     ```javascript
-        const arr=[];
-        arr.push('hello');
-        console.log(arr);		//可执行
-        console.log(arr.length);	//可执行
-        arr=['word!'];			//报错
-    ```  
+    const arr=[];
+    arr.push('hello');
+    console.log(arr);		//可执行
+    console.log(arr.length);	//可执行
+    arr=['word!'];			//报错
+    ```         
+    如果想冻结这个对象的话，要使用Object.freeze()方法：       
+    ```javascript
+    'use strict'
+    const foo=Object.freeze({});
+    foo.prop=123;			//报错
+    ```
+    
+    彻底冻结一个对象的方式：上面只冻结了对象，要彻底冻结一个函数，就要冻结对象和属性        
+    ```javascript
+    var constantize=(obj)=>{
+        Object.freeze(obj);
+        Object.keys(obj).forEach((key,value)=>{
+            if(typeof obj[key]==='object'){
+                constantize(obj[key])
+            }
+        })
+    };
+    const obj=constantize([]);
+    obj.push(123);			//报错
+    ```
+    
+    4.4、全局对象属性      
+    在ES5里面，为申明的全局变量会自动生为window的属性:没法在编译过程爆出变量为申明的错误，语法上顶层对象有一个实体含义的对象这样肯定不合适。
+    ```javascript
+    a=1;
+    window.a;//结果为1
+    ```
+    
+    ES6的改进：     
+    用var定义的依然会升级为顶层对象(全局对象)window的属性；但是let,const申明则不会           
+    ```javascript
+    var a=1;
+    window.a;//结果为1
+    
+    let b=2;
+    window.b;//结果为undefined
+    ```
+    
