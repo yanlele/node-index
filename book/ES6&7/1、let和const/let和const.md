@@ -88,11 +88,10 @@
         4.3.1、const是一个常量，一旦申明，就不能改变。而且在申明的时候必须初始化，不能留到后面赋值。             
         4.3.2、作用域和let是一样的       
         const常量储存的是一个地址，这个地址是指向一个对象的，因为对象本身是可变的，所以依然可以为其添加新的属性和方法：           
-        ```javascript
-            const arr=[];
-            arr.push('hello');
-            console.log(arr);		//可执行
-            console.log(arr.len
-            gth);	//可执行
-            arr=['word!'];			//报错
-        ```  
+    ```javascript
+        const arr=[];
+        arr.push('hello');
+        console.log(arr);		//可执行
+        console.log(arr.length);	//可执行
+        arr=['word!'];			//报错
+    ```  
