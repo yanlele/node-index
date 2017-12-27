@@ -57,4 +57,42 @@
         }
     }
     f(); // undefined
+    ```         
+    原因在于变量提升，导致内层的tmp变量覆盖了外层的tmp变量。     
+    
+    2）、用来计数的循环变量会泄露为全局变量
+    ```javascript
+    var s = 'hello';
+    
+    for (var i = 0; i < s.length; i++) {
+        console.log(s[i]);
+    }
+    console.log(i); // 5
+    ```     
+    原因是上面用来控制循环的变量i ,在循环之后并没有消失，而是泄露成为了全局变量
+            
+    4.2、ES6的作用域     
+    SE6的块级作用域的解决方案 ： let        
+    ```javascript
+    function f1(){
+        let n=5;
+        if(true){
+            let n=10;
+            console.log(`if 内部块的变量n：${n}`)//结果为10
+        }
+        console.log(`外部快的变量 n :${n}`)//结果为5
+    }
     ```
+        
+    4.3、const            
+        4.3.1、const是一个常量，一旦申明，就不能改变。而且在申明的时候必须初始化，不能留到后面赋值。             
+        4.3.2、作用域和let是一样的       
+        const常量储存的是一个地址，这个地址是指向一个对象的，因为对象本身是可变的，所以依然可以为其添加新的属性和方法：           
+        ```javascript
+            const arr=[];
+            arr.push('hello');
+            console.log(arr);		//可执行
+            console.log(arr.len
+            gth);	//可执行
+            arr=['word!'];			//报错
+        ```  
