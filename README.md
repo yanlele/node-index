@@ -58,3 +58,4 @@
         - [11、react-redux示例](./17年/12月/11、react-redux示例)
         - [12、react-router4与合并reducers示例](./17年/12月/12、react-router4与合并reducers示例)
         - [13、常用的正则验证例子](./17年/12月/13、正则验证)
+        - [14、获取设备信息(推荐使用模块mobile-detect)](./17年/12月/14、获取设备信息专题/index.js)
