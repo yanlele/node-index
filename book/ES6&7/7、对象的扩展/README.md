@@ -184,7 +184,7 @@ Object.assign方法的第一个参数是目标对象，后面的参数都是源�
     }
 ```
 
-### 5.4、属性的可枚举性             
+#### 5.4、属性的可枚举性             
 Object.getOwnPropertyDescriptor方法可以获取该属性的描述对象                     
 示例1：            
 ```javascript
@@ -198,7 +198,7 @@ Object.getOwnPropertyDescriptor方法可以获取该属性的描述对象
     // }
 ```
 
-### 5.5、属性的遍历           
+#### 5.5、属性的遍历           
 （ 1 ） for...in      
 for...in循环遍历对象自身的和继承的可枚举属性（不含 Symbol 属性）。       
 （ 2 ） Object.keys(obj)      
