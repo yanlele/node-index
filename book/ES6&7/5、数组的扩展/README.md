@@ -1,6 +1,6 @@
 # 数组的扩展
 
-- 1、Array.from()            
+#### 1、Array.from()            
 Array.from方法用于将两类对象转为真正的数组：类似数组的对象（ array-like object ）和可遍历（ iterable ）的对象（包括 ES6 新增的数据结构 Set 和Map ）。
 
 实例1：            
@@ -39,7 +39,7 @@ Array.from还可以接受第二个参数，作用类似于数组的map方法，�
     // [1, 4, 9]
 ```
 
-- 2、Array.of()          
+#### 2、Array.of()          
 Array.of方法用于将一组值，转换为数组。             
 ```javascript
     Array.of(3, 11, 8) // [3,11,8]
@@ -47,7 +47,7 @@ Array.of方法用于将一组值，转换为数组。
     Array.of(3).length // 1
 ```  
 
-- 3、数组实例的 copyWithin()          
+#### 3、数组实例的 copyWithin()          
 数组实例的copyWithin方法，在当前数组内部，将指定位置的成员复制到其他位置（会覆盖原有成员），然后返回当前数组。也就是说，使用这个方法，会修改当前数组。                
 ```javascript
 语法：Array.prototype.copyWithin(target, start = 0, end = this.length)             
@@ -80,7 +80,7 @@ end （可选）：到该位置前停止读取数据，默认等于数组长度�
     // Int32Array [4, 2, 3, 4, 5]
 ```
 
-- 4、数组实例的 find() 和 findIndex()   -  非常重要            
+#### 4、数组实例的 find() 和 findIndex()   -  非常重要            
 数组实例的find方法，用于找出第一个符合条件的数组成员。它的参数是一个回调函数，所有数组成员依次执行该回调函数，直到找出第一个返回值为true的成员，然后返回该成员。如果没有符合条件的成员，则返回undefined。               
 实例1：                
 ```javascript
@@ -96,7 +96,7 @@ end （可选）：到该位置前停止读取数据，默认等于数组长度�
     }) // 2
 ```
 
-- 5、数组实例的 fill()            
+#### 5、数组实例的 fill()            
 fill方法使用给定值，填充一个数组。             
 fill方法还可以接受第二个和第三个参数，用于指定填充的起始位置和结束位置。              
 实例:         
@@ -105,7 +105,7 @@ fill方法还可以接受第二个和第三个参数，用于指定填充的起�
 // ['a', 7, 'c']
 ```
 
-- 6、 数组实例的 entries() ， keys() 和 values()
+#### 6、 数组实例的 entries() ， keys() 和 values()
 ES6 提供三个新的方法 —— entries()，keys()和values() —— 用于遍历数组。它们都返回一个遍历器对象（详见《 Iterator 》一章），可以用for...of循环进行遍历，唯一的区别是keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历。             
 实例：             
 ```javascript
@@ -126,7 +126,7 @@ ES6 提供三个新的方法 —— entries()，keys()和values() —— 用于�
     // 1 "b"
 ```
 
-- 7、数组实例的 includes()                
+#### 7、数组实例的 includes()                
 Array.prototype.includes方法返回一个布尔值，表示某个数组是否包含给定的值，与字符串的includes方法类似。该方法属于 ES7 ，但 Babel 转码器已经支持。          
 实例：         
 ```javascript
