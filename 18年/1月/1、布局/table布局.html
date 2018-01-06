@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html *{
+            padding:0;
+            margin:0;
+        }
+
+        .layout article div{
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <section class="layout float">
+        <style media="screen">
+            .layout.float .left{
+                float: left;
+                width:300px;
+                background-color: red;
+            }
+        </style>
+        <article class="left-right-center">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="center">
+                <h1>浮动解决方案：</h1>
+                1.中间部分
+                2.中间部分
+            </div>
+        </article>
+    </section>
+</body>
+</html>
