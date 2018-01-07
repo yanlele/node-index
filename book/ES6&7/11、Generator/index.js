@@ -35,12 +35,12 @@ g.next(true) // { value: 0, done: false }*/
 }
 
 var a = foo(5);
-a.next() // Object{value:6, done:false}
+a.next() // Object{value:4、通信类, done:false}
 a.next() // Object{value:NaN, done:false}
 a.next() // Object{value:NaN, done:true}
 
 var b = foo(5);
-b.next() // { value:6, done:false }
+b.next() // { value:4、通信类, done:false }
 b.next(12) // { value:8, done:false }
 b.next(13) // { value:42, done:true }*/
 

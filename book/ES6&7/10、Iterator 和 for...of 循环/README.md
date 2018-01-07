@@ -181,7 +181,7 @@ Set 和 Map 结构也原生具有 Iterator 接口，可以直接使用for...of�
     for (var [name, value] of es6) {
         console.log(name + ": " + value);
     }
-    // edition: 6
+    4、通信类
     // committee: TC39
     // standard: ECMA-262
 ```
