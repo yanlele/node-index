@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>通信类</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 创建ajax【参考网址】https://segmentfault.com/a/1190000006669043
+      // 参考jsonp.js
+    </script>
+
+    <script src="http://www.abc.com/?data=name&callback=jsonp" charset="utf-8"></script>
+
+    <script type="text/javascript">
+      // jsonp({
+      //     data: {
+      //
+      //     },
+      // });
+    </script>
+    <script type="text/javascript">
+      /**
+       * 跨域通信的几种方法
+       */
+
+      // jsonp工作原理，参考jsonp.js
+
+
+      // 利用hash，场景是当前页面 A 通过iframe或frame嵌入了跨域的页面 B
+      // 在A中伪代码如下：
+      var B = document.getElementsByTagName('iframe');
+      B.src = B.src + '#' + 'data';
+      // 在B中的伪代码如下
+      window.onhashchange = function () {
+          var data = window.location.hash;
+      };
+
+      // postMessage
+      // 窗口A(http:A.com)向跨域的窗口B(http:B.com)发送信息
+      Bwindow.postMessage('data', 'http://B.com');
+      // 在窗口B中监听
+      Awindow.addEventListener('message', function (event) {
+          console.log(event.origin);
+          console.log(event.source);
+          console.log(event.data);
+      }, false);
+
+      // Websocket【参考资料】http://www.ruanyifeng.com/blog/2017/05/websocket.html
+
+      var ws = new WebSocket('wss://echo.websocket.org');
+
+      ws.onopen = function (evt) {
+          console.log('Connection open ...');
+          ws.send('Hello WebSockets!');
+      };
+
+      ws.onmessage = function (evt) {
+          console.log('Received Message: ', evt.data);
+          ws.close();
+      };
+
+      ws.onclose = function (evt) {
+          console.log('Connection closed.');
+      };
+
+      // CORS【参考资料】http://www.ruanyifeng.com/blog/2016/04/cors.html
+      // url（必选），options（可选）
+      fetch('/some/url/', {
+          method: 'get',
+      }).then(function (response) {
+
+      }).catch(function (err) {
+        // 出错了，等价于 then 的第二个参数，但这样更好用更直观
+      });
+    </script>
+  </body>
+</html>
