@@ -10,4 +10,4 @@
 - [9、Set和Map数据结构](./9、Set和Map数据结构/README.md)
 - [10、Iterator 和 for...of 循环](./10、Iterator%20和%20for...of%20循环/README.md)
 - [11、Generator](./11、Generator/README.md)
-- []
+- [12、Promise](./12、Promise对象/README.md)
