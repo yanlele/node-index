@@ -16,10 +16,10 @@
 - [webpack3的学习与代码示例](https://github.com/yanlele/webpack3Study)
 - [基于vue的移动端在线音乐播放器](https://github.com/yanlele/yanle-music)
 - [koa2的学习笔记项目demo](https://github.com/yanlele/koa-study)
+- [ES6/7简书笔记](./book/ES6&7)
 
 ### 正在进行的独立项目(进行中)
 
-- [ES6/7简书笔记](./book/ES6&7)
 - [react简书笔记](book/react专题)
 - [基于webpack3的前端工程自动化构建（实现可配置的jQuery、vue、react和全栈项目脚手架）](https://github.com/yanlele/le-cli)
 - [基于react 高仿csdn博客前端](https://github.com/yanlele/react-blog-front)

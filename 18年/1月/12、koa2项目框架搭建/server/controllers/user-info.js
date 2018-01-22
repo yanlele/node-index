@@ -85,7 +85,7 @@ module.exports = {
       name: formData.userName,
       create_time: new Date().getTime(),
       level: 1,
-    })
+    });
 
     console.log( userResult )
 
