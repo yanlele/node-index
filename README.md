@@ -78,6 +78,7 @@
     - [1、mongoose的链表查询](./17年/12月/7、mongoose的链表查询)
     - [2、mongodb 缓存session](./17年/12月/8、mongodb缓存session)
     - [3、mongoose的扩展用法](./18年/1月/7、mongoose的扩展用法)
+    - [4、mongoose创建数据结构和实现基本的增删改查](./18年/1月/13、mongoose创建数据结构和实现基本的增删改查)
 
 
 - node其他知识点
