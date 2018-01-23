@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="javascripts/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>hello world</h1>
+<p>注册信息</p>
+<form action="" class="form1">
+    <p>userName</p>
+    <input type="text" name="userName"><br>
+    <p>email</p>
+    <input type="email" name="email"><br>
+    <p>passWord</p>
+    <input type="password" name="password">
+    <p>confirmPassword</p>
+    <input type="password" name="confirmPassword"><br>
+    <input value="注册" type="submit" class="singup"/>
+</form>
+
+<hr>
+<p>登录</p>
+<form action="" class="form2">
+    <p>用户名</p>
+    <input type="text" name="userName"><br>
+    <p>passWord</p>
+    <input type="password" name="password"><br>
+    <input value="登录" type="submit" class="singin"/>
+</form>
+<a href="javascript:" class="button">我是一个a标签</a>
+
+<script>
+
+    $(document).on('click',function(){
+        console.log($('.form1').find('input[name="userName"]').val());
+    })
+
+    $('.singup').on('click',function(){
+
+
+        $.ajax({
+            url:'http://localhost:3000/user/signUp.json',
+            data:{
+                userName:$('.form1').find('input[name="userName"]').val(),
+                email:$('.form1').find('input[name="email"]').val(),
+                confirmPassword:$('.form1').find('input[name="confirmPassword"]').val(),
+                password:$('.form1').find('input[name="password"]').val(),
+
+            },
+            dataType:'json',
+            type:'post'
+        }).done(function(res){
+            console.log(res)
+        })
+    })
+
+
+    $('.singin').on('click',function(){
+        $.ajax({
+            url:'http://localhost:3000/user/signIn.json',
+            data:{
+                source:'form',
+                userName:$('.form2').find('input[name="userName"]').val(),
+                password:$('.form2').find('input[name="password"]').val(),
+            },
+            dataType:'json',
+            type:'post'
+        }).done(function(res){
+            console.log(res)
+        })
+    })
+
+</script>
+</body>
+</html>
