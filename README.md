@@ -54,6 +54,7 @@
 - react
     - [1、react-redux示例](./17年/12月/11、react-redux示例)
     - [2、react-router4与合并reducers示例](./17年/12月/12、react-router4与合并reducers示例)
+    - [3、react 高阶函数示例](./18年/1月/14、react%20高阶函数)
 
 
 - 前端框架周边生态圈技术栈
