@@ -93,6 +93,7 @@
     - [8、node基础api_path](./18年/2月/3、node基础api_path)
     - [9、node基础api_Buffer](./18年/2月/4、node基础api_Buffer)
     - [10、node基础api_event](./18年/2月/5、node基础api_event)
+    - [11、node基础api_fs](./18年/2月/6、node基础api_fs)
     
 
 
