@@ -4,7 +4,8 @@
   "description": "node整个实验基地的所有包文件管理",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha 18年/2月/7、单元测试/test/02、mocha.js",
+    "cover":"istanbul cover _mocha 18年/2月/7、单元测试/test/02、mocha.js"
   },
   "author": "",
   "license": "ISC",
@@ -24,5 +25,10 @@
     "nodejs-websocket": "^1.7.1",
     "request": "^2.83.0",
     "socket.io": "^1.7.4"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.0.1"
   }
 }
