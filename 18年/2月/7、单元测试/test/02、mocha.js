@@ -26,3 +26,19 @@ describe('#math',()=>{
         });
     })
 });
+
+describe('#test',()=>{
+    describe('add',()=>{
+        it( 'should return 5 when 2+3', function () {
+            expect(add(2,3),5);
+        });
+    });
+
+    describe('mul',()=>{
+        it('should return 6 when 2*3', function () {
+            expect(mul(2,3),6);
+        });
+    });
+
+
+});
