@@ -2,6 +2,11 @@ const {should,expect,assert}=require('chai');
 const {add,mul}=require('../01、math');
 
 describe('#math',()=>{
+    before((done)=>{
+       //这个地方是可以写一些测试前执行的函数
+        done();
+    });
+
     describe('add',()=>{
         it('should return 5 when 2+3', function () {
             expect(add(2,3),5)
