@@ -228,9 +228,58 @@ this.$route.query;
     }
 ```
 ## 9、router 配置
+```javascript
+import Vue from 'vue'
+import Router from 'vue-router'
+
+import home from '@/components/home'
+
+Vue.use(Router);
+const router = new Router({
+    routes:[
+         {
+          path: '/myOrder',
+                component: myOrder,
+                children: [
+                  {
+                    path: 'allOrder',
+                    component: allOrder
+                  },
+                  {
+                    path: 'lose',
+                    component: lose
+                  },
+                  {
+                    path: 'refundError',
+                    component: refundError
+                  },
+                  {
+                    path: 'refunding',
+                    component: refunding
+                  },
+                  {
+                    path: 'refundSuccess',
+                    component: refundSuccess
+                  },
+                  {
+                    path: 'waitingPay',
+                    component: waitingPay
+                  }
+                ]
+         }
+    ]
+});
+
+router.afterEach((to, from, next) => {
+  window.scrollTo(0, 0);
+});
 
 
+export default router;
+```
 
+## 10、关于vuex的用法
+- [好好意会一下这个官方示例](../../1月/shopping-cart)
 
 
 
