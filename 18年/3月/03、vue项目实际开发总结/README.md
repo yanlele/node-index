@@ -117,3 +117,120 @@ new Vue({
 });
 ```
 
+## 4、在app.vue里面可以配置axios的全局拦截
+```javascript
+    /*配置全局的请求拦截器和响应拦截器*/
+    this.axios.interceptors.response.use((res) => {
+      //在这里对返回的数据进行处理
+      if (res.status === 302) {//302重定向的话，全部都自动刷新页面
+        window.location.href=res.headers.Location
+      }
+      this.$dialog.loading.close();
+      return res;
+    }, (err) => {
+      //Do something with response error
+      this.$router.push({
+        path: '/error'
+      });
+      this.$dialog.loading.close();
+      return Promise.reject(err);
+    });
+```
+
+## 5、切换banner的时候，需要转换的一些出发情况：router-link-active
+```html
+    <template>
+        <footer class="fn-clear">
+          <router-link to="/home">
+            <b class="home-ico"></b><span>主页</span>
+          </router-link>
+          <router-link to="/raffle">
+            <b class="prizedraw-ico"></b><span>抽奖</span>
+          </router-link>
+          <router-link to="/integralMall" >
+            <b class="integral-ico"></b><span>商城</span>
+          </router-link>
+          <router-link to="/newCenter">
+            <b class="my-ico"></b><span>我的</span>
+          </router-link>
+        </footer>
+    </template>
+    
+    <script type="text/ecmascript-6">
+    
+    </script>
+    
+    
+    <style scoped>
+     .router-link-active{ color:#ed801a;}
+     .router-link-active b.home-ico{ background:url(../../images/home-ico2.png) no-repeat center center; background-size:auto 2.1rem;}
+     .router-link-active b.prizedraw-ico{ background:url(../../images/prizedraw-ico2.png) no-repeat center center; background-size:auto 2.3rem;}
+     .router-link-active b.integral-ico{ background:url(../../images/integral-ico2.png) no-repeat center center; background-size:auto 2.4rem;}
+     .router-link-active b.my-ico{ background:url(../../images/my-ico2.png) no-repeat center center; background-size:auto 2.4rem;}
+    </style>
+```
+
+## 6、如果页面没有一个整页面的内容，然后需要背景图沾满整个页面的情况解决办法
+```html
+    <template>
+      <div v-title data-title="全民抢车" class="htmlbg" ref="body">
+      </div>
+    </template>  
+    
+    <script>
+        export default {
+            mounted(){
+              let body = this.$refs.body;
+              if (body.clientHeight < window.innerHeight) {
+                this.$refs.body.style.height = `${window.innerHeight}px`
+              }
+            },
+        }
+    </script>
+```
+
+## 7、路由相关的重要操作
+- 1、路由跳转传参和获取参数         
+编程式跳转：
+```javascript
+    this.$router.replace({
+      path: '/addBankCard',
+      query:{
+        bankCode:this.name
+      }
+    })
+    
+    this.$router.push({
+      path: '/addBankCard',
+      query:{
+        bankCode:this.name
+      }
+    })
+```
+html式跳转：
+```html
+<router-link tag="i" :to="{path:'/level',query:{level:this.info.level}}" :class="levelImg"></router-link>
+```
+
+参数的获取：
+```javascript
+this.$route.query;
+```
+
+## 8、路由守卫的基本使用
+在一个vue组件中，直接使用就可以了
+```javascript
+    beforeRouteLeave(to, from, next){
+      this.setTicketData({
+        transferBox: false
+      });
+      next();
+    }
+```
+## 9、router 配置
+
+
+
+
+
+
