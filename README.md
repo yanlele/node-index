@@ -11,7 +11,7 @@
 - [01、基于vue和express的一个小型电商全栈项目](https://github.com/yanlele/nodeMall)
 - [02、react新闻站项目pc+移动双端](https://github.com/yanlele/React-News)
 - [03、基于socket.IO 的一个较为复杂的项目案例，参考自《node.js实战》](https://github.com/yanlele/chatApplication)
-- [04、react实战，基于socket.io和express的一个全栈项目](https://github.com/yanlele/ReactAppChatWork)
+- [04、react实战项目实战一：基于socket.io和express的一个全栈项目](https://github.com/yanlele/ReactAppChatWork)
 - [05、基于vue的一些列vue全家桶的技术实现实例](https://github.com/yanlele/vueModel)
 - [06、webpack3的学习与代码示例](https://github.com/yanlele/webpack3Study)
 - [07、基于vue的移动端在线音乐播放器](https://github.com/yanlele/yanle-music)
@@ -24,6 +24,7 @@
 - [02、基于webpack3的前端工程自动化构建（实现可配置的jQuery、vue、react和全栈项目脚手架）](https://github.com/yanlele/le-cli)
 - [03、基于react 高仿csdn博客前端](https://github.com/yanlele/react-blog-front)
 - [04、基于react 高仿csdn博客后端](https://github.com/yanlele/react-blog-server)
+- [*****05、react项目实战二：Webpack + React全栈工程架构项目实战精讲](https://github.com/yanlele/react-cnode)
 
 ### 通用功能js模块
 - 原生组件功能部分
@@ -31,13 +32,15 @@
     - [02、日期格式化组件](./通用功能js模块/js/2、日期格式化组件/dateFormat.js)
     
 - vue组件
-    - [1、swiper](./通用功能js模块/vue/1、swiper/swiper.vue)
+    - [01、swiper](./通用功能js模块/vue/1、swiper/swiper.vue)
+    
+    
     
 - react组件
 
 
 - jQuery组件
-    - [01、改造bootstrap的模态框功能modal](./通用功能js模块/jquery/1、modal)
+    - [01、改造bootstrap的模态框功能modal](./通用功能js模块/jquery/1、modal)    
     - [02、移动端商城购物车触控拉动](./通用功能js模块/jquery/2、touch/touch.js)
     - [03、日历js组件独立(可以自己定制化样式)](./通用功能js模块/jquery/3、calendar/AutoDate.js)
     - [04、空中撒金币特效](./通用功能js模块/jquery/4、点击撒金币特效/canvas撒金币.html)
@@ -51,6 +54,7 @@
     - [02、数组去重算法汇总](./18年/1月/数组去重.js)
     - [03、常见排序算法](./18年/3月/01、常见排序算法)
     - [04、移动端rem转换的办法和策略](./18年/3月/04、移动端rem转换的办法和策略)
+    - []
 
 
 - vue
