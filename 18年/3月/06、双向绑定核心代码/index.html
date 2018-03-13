@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>MVVM 双项绑定</title>
+    <style>
+        #app {
+            text-align: center;
+            margin-top: 100px;
+            color: #888;
+        }
+        h1 {
+            color: #aaa;
+        }
+        input {
+            padding: 0 10px;
+            width: 600px;
+            line-height: 2.5;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+        }
+        .bind{
+            color: #766;
+        }
+        strong {
+            color: #05BC00;
+        }
+        button {
+            padding: 2px 8px;
+            border: none;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            background: #ddf;
+            color: white;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1>Hi，MVVM</h1>
+    <input v-model="name" placeholder="请输入内容" type="text" >
+    <h1 class="bind">{{name}} 's age is <strong>{{age}}</strong></h1>
+    <button v-on:click="sayHi">点击欢迎您</button>
+</div>
+<script>
+    function observe(data) {
+        if (!data || typeof data !== 'object') return
+        for (var key in data) {
+            let val = data[key]
+            let subject = new Subject()
+            Object.defineProperty(data, key, {
+                enumerable: true,
+                configurable: true,
+                get: function () {
+                    // console.log(`get ${key}: ${val}`)
+                    if (currentObserver) {
+                        // console.log('has currentObserver')
+                        currentObserver.subscribeTo(subject)
+                    }
+                    return val
+                },
+                set: function (newVal) {
+                    val = newVal
+                    // console.log('start notify...')
+                    subject.notify()
+                }
+            })
+            if (typeof val === 'object') {
+                observe(val)
+            }
+        }
+    }
+    let id =0
+    let currentObserver = null
+
+    class Subject {
+        constructor () {
+            this.id = id++
+            this.observers = []
+        }
+        addObserver (observer) {
+            this.observers.push(observer)
+        }
+        removeObserver (observer) {
+            var index = this.observers.indexOf(observer)
+            if (index > -1) {
+                this.observers.splice(index, 1)
+            }
+        }
+        notify () {
+            this.observers.forEach(observer=> {
+                observer.update()
+            })
+        }
+    }
+
+
+    class Observer {
+        constructor (vm, key, cb) {
+            this.subjects = {}
+            this.vm = vm
+            this.key = key
+            this.cb = cb
+            this.value = this.getValue()
+        }
+        update () {
+            let oldVal = this.value
+            let value = this.getValue()
+            if(value !== oldVal) {
+                this.value = value
+                this.cb.bind(this.vm)(value,oldVal)
+            }
+        }
+        subscribeTo (subject) {
+            if (!this.subjects[subject.id]) {
+                // console.log('subscribeTo..', subject)
+                subject.addObserver(this)
+                this.subjects[subject.id] = subject
+            }
+        }
+        getValue () {
+            currentObserver = this
+            let value = this.vm.$data[this.key]
+            currentObserver = null
+            return value
+        }
+    }
+
+    class Compile {
+        constructor (vm) {
+            this.vm = vm
+            this.node = vm.$el
+            this.compile()
+        }
+
+        compile () {
+            this.traverse(this.node)
+        }
+        traverse (node) {
+            if (node.nodeType === 1) {
+                this.compileNode(node)
+                node.childNodes.forEach(childNode=> {
+                    this.traverse(childNode)
+                })
+            } else if (node.nodeType === 3) {
+                this.compileText (node)
+            }
+        }
+
+        compileText (node) {
+            let reg = /{{(.+?)}}/g
+            let match
+            while (match = reg.exec(node.nodeValue)) {
+                let raw = match[0]
+                let key = match[1].trim()
+                node.nodeValue = node.nodeValue.replace(raw, this.vm.$data[key])
+                new Observer(this.vm, key, function (val, oldVal) {
+                    node.nodeValue = node.nodeValue.replace(oldVal, val)
+                })
+            }
+        }
+        compileNode (node) {
+            let attrs = [...node.attributes]
+            attrs.forEach(attr=>{
+                if (this.isModelDirective(attr.name)) {
+                    this.bindModel(node, attr)
+                } else if (this.isEventDirective(attr.name)) {
+                    this.bindEventHander(node, attr)
+                }
+
+            })
+        }
+        bindModel (node, attr) {
+            let key = attr.value
+            node.value = this.vm.$data[key]
+            new Observer(this.vm, key, function (newVal) {
+                node.value = newVal
+            } )
+            node.oninput = (e)=> {
+                this.vm.$data[key] = e.target.value
+            }
+        }
+        bindEventHander (node, attr) {
+            let eventType = attr.name.substr(5)
+            let methodName = attr.value
+            node.addEventListener(eventType, this.vm.$methods[methodName])
+        }
+
+        isModelDirective (attrName) {
+            return attrName === 'v-model'
+        }
+
+        isEventDirective (attrName) {
+            return attrName.indexOf('v-on') === 0
+        }
+    }
+
+    class mvvm {
+        constructor (opts) {
+            this.init(opts)
+            observe(this.$data)
+            new Compile(this)
+        }
+        init (opts) {
+            if (opts.el.nodeType === 1) {
+                this.$el = opts.el
+            } else {
+                this.$el = document.querySelector(opts.el)
+            }
+
+            this.$data = opts.data || {}
+            this.$methods = opts.methods || {}
+            this.observers = []
+            //把$data 中的数据直接代理到当前 vm 对象
+            for (let key in this.$data) {
+                Object.defineProperty(this, key, {
+                    enumerable: true,
+                    configurable: true,
+                    get: ()=>{
+                        return this.$data[key]
+                    },
+                    set: newVal=> {
+                        this.$data[key] = newVal
+                    }
+                })
+            }
+            //让 this.$methods 里面的函数中的 this，都指向当前的 this，也就是 vm
+            for (let key in this.$methods) {
+                this.$methods[key] = this.$methods[key].bind(this);
+            }
+        }
+    }
+
+    let vm = new mvvm({
+        el: '#app',
+        data: {
+            name: '小马',
+            age: 3
+        },
+        methods: {
+            sayHi:function () {
+                alert(`hi ${this.name}`)
+            }
+        }
+    });
+
+    let clock = setInterval(function () {
+        vm.age++  //等同于 vm.$data.age
+
+        if(vm.age === 10) clearInterval(clock)
+    }, 1000)
+</script>
+</body>
+</html>
