@@ -27,3 +27,4 @@
 - create-keyframe-animation：用原生JS，写CSS3动画的组件，性能强大
 - js-base64：把64位字节码字符转码为我们认识的中文字符
 - lyric-parser：这个是自动歌词显示的组件（比较冷门）
+- [最新FullCalendar中文文档](https://www.helloweba.net/javascript/445.html)
