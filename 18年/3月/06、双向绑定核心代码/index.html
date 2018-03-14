@@ -9,9 +9,11 @@
             margin-top: 100px;
             color: #888;
         }
+
         h1 {
             color: #aaa;
         }
+
         input {
             padding: 0 10px;
             width: 600px;
@@ -19,12 +21,15 @@
             border: 1px solid #ccc;
             border-radius: 2px;
         }
-        .bind{
+
+        .bind {
             color: #766;
         }
+
         strong {
             color: #05BC00;
         }
+
         button {
             padding: 2px 8px;
             border: none;
@@ -40,7 +45,7 @@
 <body>
 <div id="app">
     <h1>Hi，MVVM</h1>
-    <input v-model="name" placeholder="请输入内容" type="text" >
+    <input v-model="name" placeholder="请输入内容" type="text">
     <h1 class="bind">{{name}} 's age is <strong>{{age}}</strong></h1>
     <button v-on:click="sayHi">点击欢迎您</button>
 </div>
@@ -72,25 +77,29 @@
             }
         }
     }
-    let id =0
+
+    let id = 0
     let currentObserver = null
 
     class Subject {
-        constructor () {
+        constructor() {
             this.id = id++
             this.observers = []
         }
-        addObserver (observer) {
+
+        addObserver(observer) {
             this.observers.push(observer)
         }
-        removeObserver (observer) {
+
+        removeObserver(observer) {
             var index = this.observers.indexOf(observer)
             if (index > -1) {
                 this.observers.splice(index, 1)
             }
         }
-        notify () {
-            this.observers.forEach(observer=> {
+
+        notify() {
+            this.observers.forEach(observer => {
                 observer.update()
             })
         }
@@ -98,29 +107,32 @@
 
 
     class Observer {
-        constructor (vm, key, cb) {
+        constructor(vm, key, cb) {
             this.subjects = {}
             this.vm = vm
             this.key = key
             this.cb = cb
             this.value = this.getValue()
         }
-        update () {
+
+        update() {
             let oldVal = this.value
             let value = this.getValue()
-            if(value !== oldVal) {
+            if (value !== oldVal) {
                 this.value = value
-                this.cb.bind(this.vm)(value,oldVal)
+                this.cb.bind(this.vm)(value, oldVal)
             }
         }
-        subscribeTo (subject) {
+
+        subscribeTo(subject) {
             if (!this.subjects[subject.id]) {
                 // console.log('subscribeTo..', subject)
                 subject.addObserver(this)
                 this.subjects[subject.id] = subject
             }
         }
-        getValue () {
+
+        getValue() {
             currentObserver = this
             let value = this.vm.$data[this.key]
             currentObserver = null
@@ -129,27 +141,28 @@
     }
 
     class Compile {
-        constructor (vm) {
+        constructor(vm) {
             this.vm = vm
             this.node = vm.$el
             this.compile()
         }
 
-        compile () {
+        compile() {
             this.traverse(this.node)
         }
-        traverse (node) {
+
+        traverse(node) {
             if (node.nodeType === 1) {
                 this.compileNode(node)
-                node.childNodes.forEach(childNode=> {
+                node.childNodes.forEach(childNode => {
                     this.traverse(childNode)
                 })
             } else if (node.nodeType === 3) {
-                this.compileText (node)
+                this.compileText(node)
             }
         }
 
-        compileText (node) {
+        compileText(node) {
             let reg = /{{(.+?)}}/g
             let match
             while (match = reg.exec(node.nodeValue)) {
@@ -161,49 +174,59 @@
                 })
             }
         }
-        compileNode (node) {
-            let attrs = [...node.attributes]
-            attrs.forEach(attr=>{
+
+        compileNode(node) {
+            let attrs = [...node.attributes];//获取标签属性
+            attrs.forEach(attr => {
                 if (this.isModelDirective(attr.name)) {
                     this.bindModel(node, attr)
                 } else if (this.isEventDirective(attr.name)) {
                     this.bindEventHander(node, attr)
                 }
-
             })
         }
-        bindModel (node, attr) {
-            let key = attr.value
+
+        /**
+         *
+         * @param node  标签节点
+         * @param attr  标签节点的属性名
+         */
+        bindModel(node, attr) {
+            let key = attr.value;//
             node.value = this.vm.$data[key]
             new Observer(this.vm, key, function (newVal) {
                 node.value = newVal
-            } )
-            node.oninput = (e)=> {
+            })
+            node.oninput = (e) => {
                 this.vm.$data[key] = e.target.value
             }
         }
-        bindEventHander (node, attr) {
+
+        bindEventHander(node, attr) {
             let eventType = attr.name.substr(5)
             let methodName = attr.value
             node.addEventListener(eventType, this.vm.$methods[methodName])
         }
 
-        isModelDirective (attrName) {
+        //赛选出传入的node属性是v-model的情况
+        isModelDirective(attrName) {
             return attrName === 'v-model'
         }
 
-        isEventDirective (attrName) {
+        //赛选出传入的node属性是 v-on的情况
+        isEventDirective(attrName) {
             return attrName.indexOf('v-on') === 0
         }
     }
 
     class mvvm {
-        constructor (opts) {
+        constructor(opts) {
             this.init(opts)
             observe(this.$data)
             new Compile(this)
         }
-        init (opts) {
+
+        init(opts) {
             if (opts.el.nodeType === 1) {
                 this.$el = opts.el
             } else {
@@ -218,10 +241,10 @@
                 Object.defineProperty(this, key, {
                     enumerable: true,
                     configurable: true,
-                    get: ()=>{
+                    get: () => {
                         return this.$data[key]
                     },
-                    set: newVal=> {
+                    set: newVal => {
                         this.$data[key] = newVal
                     }
                 })
@@ -240,7 +263,7 @@
             age: 3
         },
         methods: {
-            sayHi:function () {
+            sayHi: function () {
                 alert(`hi ${this.name}`)
             }
         }
@@ -249,7 +272,7 @@
     let clock = setInterval(function () {
         vm.age++  //等同于 vm.$data.age
 
-        if(vm.age === 10) clearInterval(clock)
+        if (vm.age === 10) clearInterval(clock)
     }, 1000)
 </script>
 </body>
