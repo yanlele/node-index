@@ -142,13 +142,13 @@
 
     class Compile {
         constructor(vm) {
-            this.vm = vm
-            this.node = vm.$el
-            this.compile()
+            this.vm = vm; //vm对象
+            this.node = vm.$el; //获取挂载的元素dom
+            this.compile();//执行核心功能
         }
 
         compile() {
-            this.traverse(this.node)
+            this.traverse(this.node);//传入的参数是挂载元素dom
         }
 
         traverse(node) {
@@ -178,34 +178,39 @@
         compileNode(node) {
             let attrs = [...node.attributes];//获取标签属性
             attrs.forEach(attr => {
-                if (this.isModelDirective(attr.name)) {
-                    this.bindModel(node, attr)
-                } else if (this.isEventDirective(attr.name)) {
-                    this.bindEventHander(node, attr)
+                if (this.isModelDirective(attr.name)) { //截取是绑定数据的情况
+                    this.bindModel(node, attr); //绑定数据
+                } else if (this.isEventDirective(attr.name)) { //截取是绑定事件的情况
+                    this.bindEventHander(node, attr); //触发事件
                 }
             })
         }
 
         /**
-         *
+         * 双向绑定数据
          * @param node  标签节点
          * @param attr  标签节点的属性名
          */
         bindModel(node, attr) {
-            let key = attr.value;//
-            node.value = this.vm.$data[key]
+            let key = attr.value;// 获取到传递过来的属性的key的值
+            node.value = this.vm.$data[key]; //给节点绑定值，对应的值就是vm实例里面data对应key的值
             new Observer(this.vm, key, function (newVal) {
                 node.value = newVal
-            })
-            node.oninput = (e) => {
-                this.vm.$data[key] = e.target.value
+            });
+            node.oninput = (e) => { //监听节点的input事件
+                this.vm.$data[key] = e.target.value //过去输入框中输入的value值，把这个值放入到vm的data实例中去
             }
         }
 
+        /**
+         *
+         * @param node
+         * @param attr
+         */
         bindEventHander(node, attr) {
-            let eventType = attr.name.substr(5)
-            let methodName = attr.value
-            node.addEventListener(eventType, this.vm.$methods[methodName])
+            let eventType = attr.name.substr(5); //获取节点属性,从第五个下标开始截取后面的字符串作为：key(事件类型)
+            let methodName = attr.value; //获取节点的属性的value
+            node.addEventListener(eventType, this.vm.$methods[methodName]);//通过事件类型，来触发事件，事件就是vm实例中方法
         }
 
         //赛选出传入的node属性是v-model的情况
@@ -259,7 +264,7 @@
     let vm = new mvvm({
         el: '#app',
         data: {
-            name: '小马',
+            name: 'yanle',
             age: 3
         },
         methods: {
