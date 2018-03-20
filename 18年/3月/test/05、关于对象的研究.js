@@ -1,8 +1,6 @@
 let obj={
     
 };
-
-
 obj.name='yanle';
 obj.age=25;
 obj.address={};
