@@ -26,7 +26,7 @@
 - [04、基于react 高仿csdn博客后端](https://github.com/yanlele/react-blog-server)
 - [*****05、react项目实战二：Webpack + React全栈工程架构项目实战精讲](https://github.com/yanlele/react-cnode)
 
-### 通用功能js模块
+### 通用功能js模块组件
 - 原生组件功能部分
     - [01、常用功能函数:url带参数跳转，获取url参数，请求序列化param等功能](./通用功能js模块/js/1、site/site.js)
     - [02、日期格式化组件](./通用功能js模块/js/2、日期格式化组件/dateFormat.js)
@@ -57,6 +57,7 @@
     - [03、常见排序算法](./18年/3月/01、常见排序算法)
     - [04、移动端rem转换的办法和策略](./18年/3月/04、移动端rem转换的办法和策略)
     - [05、常用移动端项目head设置内容解析](./18年/3月/05、常用移动端项目head设置内容解析)
+    - [06、doT模板引擎基础语法知识点](./18年/3月/08、doT模板引擎基本语法)
 
 
 - vue
