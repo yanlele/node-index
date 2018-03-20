@@ -10,4 +10,4 @@ obj.address.home='冉家坝';
 obj.address.school='邮电大学';
 
 delete obj.address;
-console.log(obj);
+console.log(JSON.stringify(obj));
