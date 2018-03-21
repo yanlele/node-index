@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .demo--label {
+            margin: 20px 20px 0 0;
+            display: inline-block
+        }
+
+        .demo--radio {
+            display: none
+        }
+
+        .demo--radioInput {
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 100%;
+            display: inline-block;
+            height: 16px;
+            margin-right: 10px;
+            margin-top: -1px;
+            vertical-align: middle;
+            width: 16px;
+            line-height: 1
+        }
+
+        .demo--radio:checked + .demo--radioInput:after {
+            background-color: #57ad68;
+            border-radius: 100%;
+            content: "";
+            display: inline-block;
+            height: 12px;
+            margin: 2px;
+            width: 12px
+        }
+
+        .demo--checkbox.demo--radioInput, .demo--radio:checked + .demo--checkbox.demo--radioInput:after {
+            border-radius: 0
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p style="font-size:18px;margin-top:30px;color:rgba(0,0,0,0.44)">约吗?</p>
+    <label class="demo--label">
+        <input class="demo--radio" type="radio" name="demo-radio">
+        <span class="demo--radioInput"></span>约
+    </label>
+    <label class="demo--label">
+        <input class="demo--radio" type="radio" name="demo-radio">
+        <span class="demo--radioInput"></span>不约，叔叔我们不约
+    </label>
+</div>
+<div>
+    <p style="font-size:18px;margin-top:30px;color:rgba(0,0,0,0.44)">你喜欢的电影明星是？</p>
+    <label class="demo--label"><input class="demo--radio" type="checkbox" name="demo-checkbox1">
+        <span class="demo--checkbox demo--radioInput"></span>苍井空
+    </label>
+    <label class="demo--label">
+        <input class="demo--radio" type="checkbox" name="demo-checkbox2">
+        <span class="demo--checkbox demo--radioInput"></span>波多野结衣
+    </label>
+    <label class="demo--label">
+        <input class="demo--radio" type="checkbox" name="demo-checkbox3">
+        <span class="demo--checkbox demo--radioInput"></span>罗玉凤
+    </label>
+</div>
+
+</body>
+</html>
