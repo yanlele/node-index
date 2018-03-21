@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery.min.js"></script>
+</head>
+<body>
+<select name="test" id="">
+    <option value="1">测试一下</option>
+    <option value="2">我是2</option>
+</select>
+
+<script>
+    $('select').on('change', function() {
+        console.log($(this).children('option:selected').text());
+        console.log($(this).children('option:selected').val());
+    });
+</script>
+</body>
+</html>
