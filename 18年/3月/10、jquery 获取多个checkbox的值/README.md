@@ -25,3 +25,5 @@ $("input:button").click(function () {
 });
 ```
 
+### [示例请看这里](./index.html)
+
