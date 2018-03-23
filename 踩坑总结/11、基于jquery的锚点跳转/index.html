@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+    $(document).ready(function(){
+
+        var target_top = $("#qa5").offset().top;
+        //$("html,body").animate({scrollTop: target_top}, 1000);  //带滑动效果的跳转
+        $("html,body").scrollTop(target_top);
+
+    });
+</script>
+</body>
+</html>
