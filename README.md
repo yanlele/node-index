@@ -44,6 +44,7 @@
     - [02、移动端商城购物车触控拉动](./通用功能js模块/jquery/2、touch/touch.js)
     - [03、日历js组件独立(可以自己定制化样式)](./通用功能js模块/jquery/3、calendar/AutoDate.js)
     - [04、空中撒金币特效](./通用功能js模块/jquery/4、点击撒金币特效/canvas撒金币.html)
+    - [05、jquery 实现轮播图](./18年/3月/12、jquery%20实现轮播图/index.html)
     
 - [其他开源常用模块组件收录目录](./通用功能js模块/other)
 
