@@ -4,3 +4,4 @@ console.log(/\d/.test(str));
 
 let email ='asdfwef23123@qq.com'
 console.log('email', /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/.test(email));
+console.log('yanle@qq.com'.match(/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/));
