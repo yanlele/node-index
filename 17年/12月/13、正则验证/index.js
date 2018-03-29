@@ -5,3 +5,7 @@ console.log(/\d/.test(str));
 let email ='asdfwef23123@qq.com'
 console.log('email', /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/.test(email));
 console.log('yanle@qq.com'.match(/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/));
+
+let cardId = '121513546yasd颜乐dlf123vsd4f65465';
+console.log(/^[0-9a-zA-Z]+$/.test(cardId));
+console.log();

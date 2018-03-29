@@ -56,3 +56,8 @@ console.log(str);
 let email ='asdfwef23123@qq.com'
 console.log('email', /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/.test(email));
 ```
+
+9、只能输入数字和英文的校验
+```javascript
+/^[a-zA-Z0-9]+$/
+```
