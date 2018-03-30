@@ -33,8 +33,7 @@
     
 - vue组件
     - [01、swiper](./通用功能js模块/vue/1、swiper/swiper.vue)
-    
-    
+    - [02、vue使用的转场特效插件 - vueg](https://github.com/jaweii/vueg)
     
 - react组件
 
