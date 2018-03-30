@@ -12,6 +12,7 @@ html 模板如下:
 ```
 如果希望通过点击来关闭弹窗，就要在元素标签上面设置如下属性：data-dismiss="modal"
 data-backdrop="static"是禁止外部点击退出弹窗的
+data-keyboard="false" 是静止按下"Esc"退出这个弹窗
 
 
 js 用法如下：
