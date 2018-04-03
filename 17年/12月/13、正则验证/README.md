@@ -21,7 +21,7 @@ console.log(/(^[\u4e00-\u9fa5]+)([·]{1})([\u4e00-\u9fa5]+$)|^[\u4e00-\u9fa5]+$/
 ```javascript
 function checkPhone(){ 
     var phone = document.getElementById('phone').value;
-    if(!(/^1[34578]\d{9}$/.test(phone))){ 
+    if(!(/^1[345789]\d{9}$/.test(phone))){ 
         alert("手机号码有误，请重填");  
         return false; 
     } 
