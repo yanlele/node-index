@@ -19,3 +19,22 @@ ID选择器        +100
 元素、伪元素     +1   
 其他选择器       +0      
 
+## <div id='class02'>2、非布局样式</div>
+2.1、字体      
+自定义字体：      
+```html
+<style>
+@font-face {
+    font-family: "yanle";
+    src: url("XXXXXXXX.ttf");
+}
+
+.my-font{
+    font-family: yanle;
+}
+</style>
+
+<body>
+    <div class="my-font">我是自定义字体</div>
+</body>
+```
