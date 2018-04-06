@@ -53,6 +53,17 @@
 
 ### 基础框架知识归类
 - [踩坑记录和一些项目的总结](./踩坑总结)
+    - [01、对隐藏右边滚动条的研究](./01、踩坑总结/01、对隐藏右边滚动条的研究/index.html)
+    - [02、给table的tr加不上bottom样式的解决方案](01、踩坑总结/02、给table的tr加不上bottom样式的解决方案/README.md)
+    - [03、jquery老项目模块cmd改装方案](01、踩坑总结/03、jquery老项目模块cmd改装方案/index.js)
+    - [04、关于定制化select的一些解决方案](01、踩坑总结/04、关于定制化select的一些解决方案/index.html)
+    - [05、端口被占用情况解决方案](01、踩坑总结/05、端口被占用情况解决方案/README.md)
+    - [06、git使用SSH密匙配置](01、踩坑总结/06、git使用SSH密匙配置/README.md) 
+    - [07、渐变背景色](01、踩坑总结/07、渐变背景色/index.html)
+    - [08、关于select获取值和value](01、踩坑总结/08、关于select获取值和value/index.html)
+    - [09、更改checkBox的默认样式](01、踩坑总结/09、更改checkBox的默认样式/index.html) 
+    - [10、input属性为number，maxlength不起作用如何解决](01、踩坑总结/10、input属性为number，maxlength不起作用如何解决/index.html)
+    - [11、基于jquery的锚点跳转](01、踩坑总结/11、基于jquery的锚点跳转/index.html)
 
 
 - 前端基础
