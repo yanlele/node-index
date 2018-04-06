@@ -7,7 +7,6 @@
 - [03、基于node的博客（极其经典，技术UP）](https://github.com/yanlele/N-blog)
 
 ### 独立项目列表（已完成）
-
 - [01、基于vue和express的一个小型电商全栈项目](https://github.com/yanlele/nodeMall)
 - [02、react新闻站项目pc+移动双端](https://github.com/yanlele/React-News)
 - [03、基于socket.IO 的一个较为复杂的项目案例，参考自《node.js实战》](https://github.com/yanlele/chatApplication)
@@ -16,15 +15,19 @@
 - [06、webpack3的学习与代码示例](https://github.com/yanlele/webpack3Study)
 - [07、基于vue的移动端在线音乐播放器](https://github.com/yanlele/yanle-music)
 - [08、koa2的学习笔记项目demo](https://github.com/yanlele/koa-study)
-- [09、ES6/7简书笔记](./book/ES6&7)
+
 
 ### 正在进行的独立项目(进行中)
+- [01、基于webpack3的前端工程自动化构建（实现可配置的jQuery、vue、react和全栈项目脚手架）](https://github.com/yanlele/le-cli)
+- [02、基于react 高仿csdn博客前端](https://github.com/yanlele/react-blog-front)
+- [03、基于react 高仿csdn博客后端](https://github.com/yanlele/react-blog-server)
+- [*****04、react项目实战二：Webpack + React全栈工程架构项目实战精讲](https://github.com/yanlele/react-cnode)
 
-- [01、react简书笔记](book/react专题)
-- [02、基于webpack3的前端工程自动化构建（实现可配置的jQuery、vue、react和全栈项目脚手架）](https://github.com/yanlele/le-cli)
-- [03、基于react 高仿csdn博客前端](https://github.com/yanlele/react-blog-front)
-- [04、基于react 高仿csdn博客后端](https://github.com/yanlele/react-blog-server)
-- [*****05、react项目实战二：Webpack + React全栈工程架构项目实战精讲](https://github.com/yanlele/react-cnode)
+### 专题笔记归类(大型专题总结)
+- [01、ES6/7简书笔记](./book/ES6&7)
+- [02、react简书笔记](./book/react专题)
+- [03、css3专题](./book/css3专题)
+
 
 ### 通用功能js模块组件
 - 原生组件功能部分

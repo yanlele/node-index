@@ -91,7 +91,7 @@ axios.defaults.headers.common = {
 };
 
 
-/*过滤器*/
+/*自定义模板过滤器*/
 Vue.filter('price', function (value) {
   let res = parseFloat(value) / 10000;
   return res.toFixed(2)
