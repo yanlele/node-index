@@ -24,9 +24,9 @@
 - [*****04、react项目实战二：Webpack + React全栈工程架构项目实战精讲](https://github.com/yanlele/react-cnode)
 
 ### 专题笔记归类(大型专题总结)
-- [01、ES6/7简书笔记](./book/ES6&7)
-- [02、react简书笔记](./book/react专题)
-- [03、css3专题](./book/css3专题)
+- [01、react简书笔记](./book/01、react专题)
+- [02、ES6/7简书笔记](./book/02、ES6&7)
+- [03、css3专题](./book/03、css3专题)
 
 
 ### 通用功能js模块组件
