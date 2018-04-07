@@ -27,6 +27,7 @@
 - [01、react简书笔记](./book/01、react专题)
 - [02、ES6/7简书笔记](./book/02、ES6&7)
 - [03、css3专题](./book/03、css3专题)
+- [04、javascript设计模式](./book/04、js设计模式)
 
 
 ### 通用功能js模块组件
