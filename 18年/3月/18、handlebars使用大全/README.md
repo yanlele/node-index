@@ -7,6 +7,47 @@
     - [3.2、自定义helper](#class3.2)
 
 ### <div id='class1'>1、使用方式：</div>
+```html
+<script src="../../../jquery.min.js"></script>
+<script src="handlebars-v4.0.5.js"></script>
+
+<!--HTML：-->
+<div class="yanle">12312313</div>
+
+<!--Template:-->
+<script id="entry-template" type="text/x-handlebars-template">
+    <div class="entry">
+        <h1>{{cname}}</h1>
+        <div class="body">
+            {{questionInfo.title}}
+        </div>
+    </div>
+</script>
+```
+
+JavaScript：
+```javascript
+    var source = $("#entry-template").html();
+    var template = Handlebars.compile(source);
+
+    var context = {
+        "cid": "id",
+        "cname": "cname",
+        "pid": "pid",
+        "pname": "pname",
+        "questionInfo": {"clicks": 0, "content": "内容", "qid": "111", "score": 0, "stickFlag": false, "title": "标题"}
+    };
+    var html = template(context);
+
+    $('.yanle').html(html);
+```
+
+公司的用法：
+```javascript
+var Handlebars = require('handlebars');
+var template3 = Handlebars.compile(require('html!./templates/authentication_company_date3.html'));
+$('#user-info3').html(template3(res.data));
+```
 
 
 ### <div id='class2'>2、初级</div>
@@ -148,7 +189,7 @@ json数据局格式如下
 传变量时可以用this指针来指代它访问属性，通过逻辑判断后可以返回一段html代码，不过太建议这样做。考虑以后的维护性，这种html代码和js代码混合起来的维护性是比较差的，如果要抽象层组件还是使用分页比较好。       
 模板：     
 ```html
-{ {agree_button person} }
+{{agree_button person}}
 ```
 注册helper：       
 ```javascript

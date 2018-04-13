@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>handlebars示例</title>
+    <script src="../../../jquery.min.js"></script>
+    <script src="../../../lib/handlebars-v4.0.5.js"></script>
+</head>
+<body>
+<div class="main"></div>
+
+
+
+
+
+<script id="entry-template" type="text/x-handlebars-template">
+    <div class="entry">
+        <h1>{{cname}}</h1>
+        <div class="body">
+            {{questionInfo.title}}
+        </div>
+        {{pname}}
+        {{#each object}}
+        {{@key}}: {{this}}
+        {{/each}}
+    </div>
+</script>
+
+<script>
+    var source = $("#entry-template").html();
+    var template = Handlebars.compile(source);
+
+    var context = {
+        "cid": "id",
+        "cname": "cname",
+        "pid": "pid",
+        "pname": "pname",
+        "questionInfo": {"clicks": 0, "content": "内容", "qid": "111", "score": 0, "stickFlag": false, "title": "标题"},
+        "object": ["name1", "name2", "name3"]
+    };
+    var html = template(context);
+
+    $('.main').html(html);
+</script>
+
+</body>
+</html>
