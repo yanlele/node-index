@@ -7,40 +7,37 @@
     <script src="../../../lib/handlebars-v4.0.5.js"></script>
 </head>
 <body>
-<div class="main"></div>
+
+<!--自定义helper-->
+<div class="template"></div>
 
 
-
-
-
-<script id="entry-template" type="text/x-handlebars-template">
-    <div class="entry">
-        <h1>{{cname}}</h1>
-        <div class="body">
-            {{questionInfo.title}}
-        </div>
-        {{pname}}
-        {{#each object}}
-        {{@key}}: {{this}}
-        {{/each}}
-    </div>
+<!--模板-->
+<script id="helper" type="text/x-handlebars-template">
+    {{agree_button person}}
 </script>
 
+<!--template-->
 <script>
-    var source = $("#entry-template").html();
-    var template = Handlebars.compile(source);
+    /*自定义helper*/
+    Handlebars.registerHelper('agree_button', function(p) {
+        console.log(p===this);//==> true
+        let blog = Handlebars.escapeExpression(this.person.blog),
+            name = Handlebars.escapeExpression(this.person.name);
 
-    var context = {
-        "cid": "id",
-        "cname": "cname",
-        "pid": "pid",
-        "pname": "pname",
-        "questionInfo": {"clicks": 0, "content": "内容", "qid": "111", "score": 0, "stickFlag": false, "title": "标题"},
-        "object": ["name1", "name2", "name3"]
+        return new Handlebars.SafeString(
+            "<a href='"+blog+"'>"+ name + "</button>"
+        );
+    });
+
+    let source = $("#helper").html();
+    let template = Handlebars.compile(source);
+
+    let context = {
+        person:{name: "亚里士朱德", blog: "https://yalishizhude.github.io"}
     };
-    var html = template(context);
-
-    $('.main').html(html);
+    let html = template(context);
+    $('.template').html(html);
 </script>
 
 </body>
