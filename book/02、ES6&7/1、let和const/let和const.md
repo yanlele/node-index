@@ -25,7 +25,7 @@
     ```javascript
     // 报错
         let a = 10;
-        var a = 1;
+        let a = 1;
     
     // 报错
         let a = 10;
