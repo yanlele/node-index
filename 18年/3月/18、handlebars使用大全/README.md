@@ -5,6 +5,10 @@
 - [3、中级用法:helper](#class3)
     - [3.1、默认helper](#class3.1)
     - [3.2、自定义helper](#class3.2)
+- [4、高级玩家：partial](#class4)
+    - [4.1、基础引用](#class4.1)
+    - [4.1、动态分页](#class4.2)
+    - [4.1、内联分页](#class4.3)
 
 ### <div id='class1'>1、使用方式：</div>
 ```html
@@ -260,12 +264,69 @@ html页面：
 hbs.registerPartials(__dirname + '/views/partials');            
 
 
+#### <div id='class4.1'>4.1、基础引用</div>      
+用“>”来引用模板，这种情况一般用来处理页头页尾这种简单的分页。后面可以传入参数。           
+`{ {> myPartial param} }`         
+当使用块级表达式时，我们通常添加“#”，而分页是“>”，所以块级分页使用“#>”，这里表示如果layout分页不存在则显示块内的内容My Content。       
+```html
+{ {#> layout } }
+  My Content
+{ {/layout} }
+```
 
+#### <div id='class4.2'>4.2、动态分页</div>      
+当然也可以用表达式来代替分页名称        
+{ {> (whichPartial) } }         
+当分页中一部分代码是固定的，另一部分是变化的时候，可以在分页中添加“@partial-block”，这时当引用这个分页时，在内部编写代码将会填充到这个位置。          
+partial.hbs：        
+```html
+{ {> [@partial-block](/user/partial-block) } }
+```
 
+模板：     
+```html
+{ {#>partial} }
+https:yalishizhude.github.io
+{ {/partial} }
+```
 
+html页面：
+```html
+https:yalishizhude.github.io
+```
 
+#### <div id='class4.3'>4.3、内联分页</div>          
+当有多段代码需要填充到分页时,可以用如下方法。分页中内嵌分页变量，模板中通过内联分页的方式传入。        
+模板：     
+```html
+{ {#> partial} }
+  { {#*inline "nav"} }
+  { {/inline} }
+  { {#*inline "content"} }
+    https://yalishizhude.github.io
+  { {/inline} }
+{ {/partial} }
+```
 
+partial.hbs：            
+```html
+<div class="nav">
+  { {> nav} }
+</div>
+<div class="content">
+  { {> content} }
+</div>
+```
 
+html页面：     
+```html
+<div class="nav">
+    test
+</div>
+<div class="content">
+    https://yanle.github.com
+</div>
+```
 
 
 参考资料：[handlebars玩家指南](http://cnodejs.org/topic/56a2e8b1cd415452622eed2d)
