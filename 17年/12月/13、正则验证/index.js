@@ -8,4 +8,4 @@ console.log('yanle@qq.com'.match(/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/));
 
 let cardId = '121513546yasd颜乐dlf123vsd4f65465';
 console.log(/^[0-9a-zA-Z]+$/.test(cardId));
-console.log(/^1[345789]\d{9}$|^1[345789]\d{1}[*]{4}\d{4}/.test('15213时代41'));
+console.log(!/^1\d{10}$|^1[345789]\d{1}[*]{4}\d{4}&/.test('11111111111'));
