@@ -218,7 +218,46 @@ var context = {
 [示例代码1：自定义行级helper](./01、自定义行级helper.html)
 
 **块级helper**
+块级helper获取参数的方式跟之前差不多，只是最后多了一个参数，这个参数有两个函数fn和revers可以和else搭配使用。后面将会讲解。          
+模板：     
+```html
+{ {#list nav} }
+  <a href="{ {url} }">{ {title} }</a>
+{ {/list} }
+```     
 
+注册helper：           
+```javascript
+Handlebars.registerHelper('list', function(context, options) {
+  var ret = "<ul>";
+  for(var i=0, j=context.length; i<j; i++) {
+    ret = ret + "<li>" + options.fn(context[i]) + "</li>";
+  }
+  return ret + "</ul>";
+});
+```         
+
+数据：         
+```
+{
+  nav: [
+    { url: "https://yalishihzude.github.io", title: "blog" },
+    { url: "https://www.github.com/yalishizhude", title: "github" },
+  ]
+}
+```
+
+html页面：     
+```html
+<ul>
+    <li>  <a href="https://yalishizhude.github.io">blog</a> </li>
+    <li>  <a href="https://www.github.com/yalishizhude">github</a> </li>
+</ul>
+```         
+
+### <div id='class4'>4、高级用法：partial</div>
+比较推崇使用分页来实现组件化。分页跟helper一样需要先注册。在hbs模块中可以批量注册，比较简单。         
+hbs.registerPartials(__dirname + '/views/partials');            
 
 
 
