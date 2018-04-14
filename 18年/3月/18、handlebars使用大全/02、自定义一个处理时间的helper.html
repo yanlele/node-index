@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>handlebars示例2</title>
+    <script src="../../../jquery.min.js"></script>
+    <script src="../../../lib/handlebars-v4.0.5.js"></script>
+</head>
+<body>
+
+<!--自定义helper-->
+<div class="template"></div>
+
+
+<!--模板-->
+<script id="helper" type="text/x-handlebars-template">
+    {{agree_button '2017-'}}
+</script>
+
+<!--template-->
+<script>
+    /*自定义helper*/
+    Handlebars.registerHelper('agree_button', function(p) {
+        console.log(p===this);//==> true
+        let blog = Handlebars.escapeExpression(this.person.blog),
+            name = Handlebars.escapeExpression(this.person.name);
+
+        return new Handlebars.SafeString(
+            "<a href='"+blog+"'>"+ name + "</button>"
+        );
+    });
+
+    let source = $("#helper").html();
+    let template = Handlebars.compile(source);
+
+    let context = {
+        person:{name: "亚里士朱德", blog: "https://yalishizhude.github.io"}
+    };
+    let html = template(context);
+    $('.template').html(html);
+</script>
+
+</body>
+</html>
