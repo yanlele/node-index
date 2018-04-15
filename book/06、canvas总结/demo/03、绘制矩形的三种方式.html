@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Canvas tutorial</title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<canvas id="tutorial" width="300" height="300"></canvas>
+</body>
+<script type="text/javascript">
+    function draw() {
+        var canvas = document.getElementById('tutorial');
+        if (!canvas.getContext) return;
+        var ctx = canvas.getContext("2d");
+        //开始代码
+        // ctx.fillRect(10, 10, 100, 50);  //绘制矩形,填充的默认颜色为黑色
+        // ctx.strokeRect(10, 70, 100, 50);  //绘制矩形边框
+        // ctx.clearRect(15, 15, 50, 25);
+
+        ctx.fillRect(10, 10, 100, 50);
+        ctx.strokeRect(10, 70, 100, 50);
+        ctx.clearRect(15, 15, 50, 25);
+    }
+
+    draw();
+</script>
+</html>

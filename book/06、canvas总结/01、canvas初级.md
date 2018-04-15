@@ -103,9 +103,34 @@ if (canvas.getContext){
 </script>
 </html>
 ```
+[详情请见示例02](./demo/02、一个简单的例子.html)
 
 
 ## <div id='class02'>2、绘制形状</div>
+<canvas> 只支持一种原生的 图形绘制：矩形。所有其他图形都至少需要生成一种路径(path)。不过，我们拥有众多路径生成的方法让复杂图形的绘制成为了可能。            
+canvast 提供了三种方法绘制矩形：            
+`fillRect(x, y, width, height)` 绘制一个填充的矩形       
+`strockRect(x, y, width, height)` 绘制一个矩形的边框         
+`clearRect(x, y, widh, height)` 清除指定的矩形区域，然后这块区域会变的完全透明。        
+
+说明:     
+这3个方法具有相同的参数。       
+​x, y：指的是矩形的左上角的坐标。(相对于canvas的坐标原点)         
+​width, height：指的是绘制的矩形的宽和高。        
+
+示例：
+```javascript
+function draw(){
+    var canvas = document.getElementById('tutorial');
+    if(!canvas.getContext) return;
+    var ctx = canvas.getContext("2d");
+    ctx.fillRect(10, 10, 100, 50);  //绘制矩形,填充的默认颜色为黑色
+    ctx.strokeRect(10, 70, 100, 50);  //绘制矩形边框
+    ctx.clearRect(15, 15, 50, 25);
+}
+draw();
+```
+[详情请见示例3](./demo/03、绘制矩形的三种方式.html)
 
 
 
