@@ -1,6 +1,8 @@
-# 1、基本使用
+# canvas 初级
 
-## 1.1 <canvas>元素
+
+## 1、基础使用
+### 1.1 <canvas>元素
 ```html
 <canvas id="tutorial" width="300" height="300"></canvas>
 ```     
@@ -26,14 +28,14 @@
 ```
 结束标签</canvas>不可省
 
-## 1.2、渲染上下文(Thre Rending Context)
+### 1.2、渲染上下文(Thre Rending Context)
 ```html
 var canvas = document.getElementById('tutorial');
 //获得 2d 上下文对象
 var ctx = canvas.getContext('2d');
 ```
 
-## 1.3、检测支持性
+### 1.3、检测支持性
 ```html
 var canvas = document.getElementById('tutorial');
 
@@ -45,7 +47,7 @@ if (canvas.getContext){
 }
 ```
 
-## 1.4、代码模板
+### 1.4、代码模板
 ```html
     <html>
     <head>
@@ -71,7 +73,7 @@ if (canvas.getContext){
     </html>
 ```
 
-## 1.5、一个简单的例子
+### 1.5、一个简单的例子
 绘制两个长方形:    
 ```html
 <html>
@@ -102,6 +104,8 @@ if (canvas.getContext){
 </html>
 ```
 
+
+## 2、绘制形状
 
 
 
