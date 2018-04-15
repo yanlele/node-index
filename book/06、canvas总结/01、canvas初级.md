@@ -1,7 +1,7 @@
 # canvas 初级
 
 
-## 1、基础使用
+## <div id='class01'>1、基础使用</div>
 ### 1.1 <canvas>元素
 ```html
 <canvas id="tutorial" width="300" height="300"></canvas>
@@ -105,7 +105,7 @@ if (canvas.getContext){
 ```
 
 
-## 2、绘制形状
+## <div id='class02'>2、绘制形状</div>
 
 
 
