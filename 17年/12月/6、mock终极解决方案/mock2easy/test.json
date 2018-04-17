@@ -1,0 +1,47 @@
+{
+     "interfaceType": "POST",
+     "requiredParameters": [],
+     "responseParameters": [
+          {
+               "id": "01",
+               "kind": "string",
+               "name": "message",
+               "rule": "成功",
+               "array": [],
+               "nameVerify": "name_1523959268000",
+               "ruleVerify": "rule_1523959268000"
+          },
+          {
+               "id": "02",
+               "kind": "mock",
+               "name": "success",
+               "rule": "true",
+               "array": [],
+               "nameVerify": "name_1523959276000",
+               "ruleVerify": "rule_1523959276000"
+          },
+          {
+               "id": "03",
+               "kind": "object",
+               "name": "data",
+               "rule": "--",
+               "array": [],
+               "nameVerify": "name_1523959285000",
+               "ruleVerify": "rule_1523959285000"
+          },
+          {
+               "id": "0301",
+               "kind": "string",
+               "name": "name",
+               "rule": "yanle",
+               "array": [],
+               "nameVerify": "name_1523959293000",
+               "ruleVerify": "rule_1523959293000"
+          }
+     ],
+     "reqError": [],
+     "docError": [],
+     "interfaceUrl": "/test.json",
+     "interfaceName": "/api/test.json",
+     "lazyLoad": "no"
+}
