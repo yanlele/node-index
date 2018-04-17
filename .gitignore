@@ -5,8 +5,8 @@
 
 # testing
 /coverage
-/doc
-/mock2easy
+/doc/
+/mock2easy/
 
 # production
 /build
