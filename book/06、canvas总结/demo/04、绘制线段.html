@@ -12,11 +12,15 @@
 </body>
 <script type="text/javascript">
     function draw(){
-        var canvas = document.getElementById('tutorial');
+        let canvas = document.getElementById('tutorial');
         if(!canvas.getContext) return;
-        var ctx = canvas.getContext("2d");
+        let ctx = canvas.getContext("2d");
         //开始代码
-
+        ctx.beginPath(); //新建一条path
+        ctx.moveTo(50, 50);
+        ctx.lineTo(200, 50);
+        ctx.closePath();
+        ctx.stroke();
     }
     draw();
 </script>
