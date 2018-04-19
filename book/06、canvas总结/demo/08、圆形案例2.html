@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Canvas tutorial</title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas id="tutorial" width="300" height="300"></canvas>
+</body>
+<script type="text/javascript">
+    function draw() {
+        let canvas = document.getElementById('tutorial');
+        if (!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+        ctx.beginPath();
+        ctx.arc(50, 50, 40, 0, Math.PI / 2, false);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(150, 50, 40, 0, -Math.PI / 2, true);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(50, 150, 40, -Math.PI / 2, Math.PI / 2, false);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(150, 150, 40, 0, Math.PI, false);
+        ctx.fill();
+
+
+    }
+
+    draw();
+</script>
+</html>
+
+
