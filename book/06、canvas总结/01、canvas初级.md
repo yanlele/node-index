@@ -1,5 +1,11 @@
 # canvas 初级
 
+目录：     
+- [1、基础使用](#class01)
+- [2、绘制形状](#class02)
+- [3、绘制路径](#class03)
+- [4、添加样式和颜色](#class04)
+
 
 ## <div id='class01'>1、基础使用</div>
 ### 1.1 <canvas>元素
@@ -359,7 +365,7 @@ arcTo方法的说明：
 ```
 [示例11](./demo/11、绘制三次贝塞尔曲线.html)
 
-## 4、添加样式和颜色
+## <div id='class04'>4、添加样式和颜色</div>
 在前面的绘制矩形章节中，只用到了默认的线条和颜色。           
 ​如果想要给图形上色，有两个重要的属性可以做到。            
 > 基本使用方式
@@ -392,7 +398,7 @@ fillStyle示例:
 [示例12](./demo/12、填充颜色fillStyle.html)
 
 
-strokeStyle示例
+strokeStyle示例：
 ```javascript
     function randomInt(from, to){
         return parseInt(Math.random() * (to - from + 1) + from);
@@ -410,7 +416,16 @@ strokeStyle示例
     }
     draw();
 ```
-[示例3](./demo/13、设置轮廓颜色.html)
+[示例13](./demo/13、设置轮廓颜色.html)
+
+
+> Transparency(透明度)
+
+`globalAlpha = transparencyValue`       
+这个属性影响到 canvas 里所有图形的透明度，有效的值范围是 0.0 （完全透明）到 1.0（完全不透明），默认是 1.0。        
+globalAlpha 属性在需要绘制大量拥有相同透明度的图形时候相当高效。不过，我认为使用rgba()设置透明度更加好一些。     
+
+
 
 
 
