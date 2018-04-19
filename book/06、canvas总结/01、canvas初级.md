@@ -190,6 +190,20 @@ draw();
 ```
 [请见示例5](./demo/05、绘制一个三角形.html)
 
+### 4.3、填充一个三角形
+```javascript
+    function draw() {
+        let canvas = document.getElementById('tutorial');
+        if (!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+        ctx.moveTo(50, 50);
+        ctx.lineTo(200, 50);
+        ctx.lineTo(200, 200);
+        ctx.fill();
+    }
+    draw();
+```
 
 
 
