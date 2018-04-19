@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Canvas tutorial</title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas id="tutorial" width="300" height="300"></canvas>
+</body>
+<script type="text/javascript">
+    function draw(){
+        let canvas = document.getElementById('tutorial');
+        if(!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+        for (let i = 0; i < 6; i++){
+            for (let j = 0; j < 6; j++){
+                ctx.strokeStyle = `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+                ctx.strokeRect(j * 50, i * 50, 40, 40);
+            }
+        }
+    }
+    draw();
+
+    function randomInt(from, to){
+        return parseInt(Math.random() * (to - from + 1) + from);
+    }
+</script>
+</html>
