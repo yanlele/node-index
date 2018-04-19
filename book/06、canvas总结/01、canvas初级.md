@@ -204,6 +204,36 @@ draw();
     }
     draw();
 ```
+[示例6](./demo/06、填充一个三角形.html)
+
+### 4.4、绘制圆弧
+> arc(x, y, r, startAngle, endAngle, anticlockwise):
+
+以(x, y)为圆心，以r为半径，从 startAngle弧度开始到endAngle弧度结束。anticlosewise是布尔值，true表示逆时针，false表示顺时针。(默认是顺时针)          
+注意：     
+这里的度数都是弧度。      
+0弧度是指的x轴正方形     
+`radians=(Math.PI/180)*degrees` //角度转换成弧度           
+
+> arcTo(x1, y1, x2, y2, radius):        
+
+根据给定的控制点和半径画一段圆弧，最后再以直线连接两个控制点。         
+圆弧案例1：
+```javascript
+    function draw() {
+        let canvas = document.getElementById('tutorial');
+        if (!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+        ctx.beginPath();
+        ctx.arc(110, 110, 40, 0, Math.PI / 2, false);
+        ctx.stroke()
+    }
+
+    draw();
+```
+[示例7](./demo/07、圆弧案例1.html)
+
 
 
 
