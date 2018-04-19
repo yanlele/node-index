@@ -170,8 +170,27 @@ draw();
     }
     draw();
 ```
+[请见示例4](./demo/04、绘制线段.html)
 
 ### 4.2、绘制一个三角形
+```javascript
+    function draw(){
+        let canvas = document.getElementById('tutorial');
+        if(!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+        ctx.beginPath();
+        ctx.moveTo(50, 50);
+        ctx.lineTo(200, 50);
+        ctx.lineTo(200, 200);
+        ctx.closePath();
+        ctx.stroke();
+    }
+    draw();
+```
+[请见示例5](./demo/05、绘制一个三角形.html)
+
+
 
 
 [参看博文](https://blog.csdn.net/u012468376/article/details/73350998)
