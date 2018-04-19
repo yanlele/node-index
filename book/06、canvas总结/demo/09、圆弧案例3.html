@@ -11,32 +11,25 @@
 <canvas id="tutorial" width="300" height="300"></canvas>
 </body>
 <script type="text/javascript">
-    function draw() {
+    function draw(){
         let canvas = document.getElementById('tutorial');
-        if (!canvas.getContext) return;
+        if(!canvas.getContext) return;
         let ctx = canvas.getContext("2d");
         //开始代码
+
         ctx.beginPath();
-        ctx.arc(50, 50, 40, 0, Math.PI / 2, false);
+        ctx.moveTo(50, 50);
+        //参数1、2：控制点1坐标   参数3、4：控制点2坐标  参数5：圆弧半径
+        ctx.arcTo(200, 50, 200, 200, 120);
+        ctx.lineTo(200, 200);
         ctx.stroke();
 
         ctx.beginPath();
-        ctx.arc(150, 50, 40, 0, -Math.PI / 2, true);
-        ctx.closePath();
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.arc(50, 150, 40, -Math.PI / 2, Math.PI / 2, false);
+        ctx.rect(50, 50, 10, 10);
+        ctx.rect(200, 50, 10, 10);
+        ctx.rect(200, 200, 10, 10);
         ctx.fill();
-
-        ctx.beginPath();
-        ctx.arc(150, 150, 40, 0, Math.PI, false);
-        ctx.fill();
-
-
     }
     draw();
 </script>
 </html>
-
-

@@ -218,7 +218,8 @@ draw();
 > arcTo(x1, y1, x2, y2, radius):        
 
 根据给定的控制点和半径画一段圆弧，最后再以直线连接两个控制点。         
-圆弧案例1：
+
+圆弧案例1：      
 ```javascript
     function draw() {
         let canvas = document.getElementById('tutorial');
@@ -232,8 +233,59 @@ draw();
 
     draw();
 ```
-[示例7](./demo/07、圆弧案例1.html)
+[示例7](./demo/07、圆弧案例1.html)         
 
+圆弧案例2：      
+```javascript
+    function draw() {
+        let canvas = document.getElementById('tutorial');
+        if (!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+        ctx.beginPath();
+        ctx.arc(50, 50, 40, 0, Math.PI / 2, false);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(150, 50, 40, 0, -Math.PI / 2, true);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(50, 150, 40, -Math.PI / 2, Math.PI / 2, false);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(150, 150, 40, 0, Math.PI, false);
+        ctx.fill();
+
+
+    }
+    draw();
+```
+[示例8](./demo/08、圆形案例2.html)
+
+圆弧示例3：      
+```javascript
+    function draw(){
+        let canvas = document.getElementById('tutorial');
+        if (!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        ctx.beginPath();
+        ctx.moveTo(50, 50);
+        //参数1、2：控制点1坐标   参数3、4：控制点2坐标  参数5：圆弧半径
+        ctx.arcTo(200, 50, 200, 200, 100);
+        ctx.lineTo(200, 200);
+        ctx.stroke();
+    
+        ctx.beginPath();
+        ctx.rect(50, 50, 10, 10);
+        ctx.rect(200, 50, 10, 10);
+        ctx.rect(200, 200, 10, 10);
+        ctx.fill()
+    }
+    draw();
+```
 
 
 
