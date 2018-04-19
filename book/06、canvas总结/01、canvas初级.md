@@ -156,7 +156,22 @@ draw();
 通过填充路径的内容区域生成实心的图形      
 
 ### 4.1、绘制线段
+```javascript
+    function draw(){
+        let canvas = document.getElementById('tutorial');
+        if(!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+        ctx.beginPath(); //新建一条path
+        ctx.moveTo(50, 50);
+        ctx.lineTo(200, 50);
+        ctx.closePath();
+        ctx.stroke();
+    }
+    draw();
+```
 
+### 4.2、绘制一个三角形
 
 
 [参看博文](https://blog.csdn.net/u012468376/article/details/73350998)
