@@ -324,6 +324,42 @@ arcTo方法的说明：
 [示例10](./demo/10、绘制二次贝塞尔曲线.html)
 
 
+> 绘制三次贝塞尔曲线
+
+`bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)：`      
+说明：     
+​参数1和2：控制点1的坐标            
+​参数3和4：控制点2的坐标      
+参数5和6：结束点的坐标        
+
+```javascript
+    function draw(){
+        let canvas = document.getElementById('tutorial');
+        if(!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+
+        ctx.beginPath();
+        ctx.moveTo(40, 200); //起始点
+        let cp1x = 20, cp1y = 100;  //控制点1
+        let cp2x = 100, cp2y = 120;  //控制点2
+        let x = 200, y = 200; // 结束点
+        //绘制二次贝塞尔曲线
+        ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.rect(40, 200, 10, 10);
+        ctx.rect(cp1x, cp1y, 10, 10);
+        ctx.rect(cp2x, cp2y, 10, 10);
+        ctx.rect(x, y, 10, 10);
+        ctx.fill();
+    }
+    draw();
+```
+[示例11](./demo/11、绘制三次贝塞尔曲线.html)
+
+
 
 
 
