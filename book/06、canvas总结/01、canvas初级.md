@@ -285,7 +285,46 @@ draw();
         ctx.fill()
     }
     draw();
+```     
+arcTo方法的说明：     
+​这个方法可以这样理解。绘制的弧形是由两条切线所决定。     
+​第 1 条切线：起始点和控制点1决定的直线。     
+​第 2 条切线：控制点1 和控制点2决定的直线。       
+其实绘制的圆弧就是与这两条直线相切的圆弧。       
+[示例9](./demo/09、圆弧案例3.html)
+
+### 4.5、绘制贝塞尔曲线         
+> 绘制二次贝塞尔曲线
+
+`quadraticCurveTo(cp1x, cp1y, x, y):`       
+说明：
+​参数1和2：控制点坐标        
+​参数3和4：结束点坐标        
+```javascript
+    function draw() {
+        let canvas = document.getElementById('tutorial');
+        if (!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+        ctx.beginPath();
+        ctx.moveTo(10, 200);
+        let cp1x = 40, cp1y = 100;
+        let x = 200, y = 200;
+        ctx.quadraticCurveTo(cp1x, cp1y, x, y);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.rect(10, 200, 10, 10);
+        ctx.rect(cp1x, cp1y, 10, 10);
+        ctx.rect(x, y, 10, 10);
+        ctx.fill();
+    }
+    draw();
 ```
+[示例10](./demo/10、绘制二次贝塞尔曲线.html)
+
+
+
 
 
 
