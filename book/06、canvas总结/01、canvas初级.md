@@ -155,7 +155,7 @@ draw();
 5、fill()            
 通过填充路径的内容区域生成实心的图形      
 
-### 4.1、绘制线段
+### 3.1、绘制线段
 ```javascript
     function draw(){
         let canvas = document.getElementById('tutorial');
@@ -172,7 +172,7 @@ draw();
 ```
 [请见示例4](./demo/04、绘制线段.html)
 
-### 4.2、绘制一个三角形
+### 3.2、绘制一个三角形
 ```javascript
     function draw(){
         let canvas = document.getElementById('tutorial');
@@ -190,7 +190,7 @@ draw();
 ```
 [请见示例5](./demo/05、绘制一个三角形.html)
 
-### 4.3、填充一个三角形
+### 3.3、填充一个三角形
 ```javascript
     function draw() {
         let canvas = document.getElementById('tutorial');
@@ -206,7 +206,7 @@ draw();
 ```
 [示例6](./demo/06、填充一个三角形.html)
 
-### 4.4、绘制圆弧
+### 3.4、绘制圆弧
 > arc(x, y, r, startAngle, endAngle, anticlockwise):
 
 以(x, y)为圆心，以r为半径，从 startAngle弧度开始到endAngle弧度结束。anticlosewise是布尔值，true表示逆时针，false表示顺时针。(默认是顺时针)          
@@ -293,7 +293,7 @@ arcTo方法的说明：
 其实绘制的圆弧就是与这两条直线相切的圆弧。       
 [示例9](./demo/09、圆弧案例3.html)
 
-### 4.5、绘制贝塞尔曲线         
+### 3.5、绘制贝塞尔曲线         
 > 绘制二次贝塞尔曲线
 
 `quadraticCurveTo(cp1x, cp1y, x, y):`       
@@ -359,7 +359,18 @@ arcTo方法的说明：
 ```
 [示例11](./demo/11、绘制三次贝塞尔曲线.html)
 
+## 4、添加样式和颜色
+在前面的绘制矩形章节中，只用到了默认的线条和颜色。           
+​如果想要给图形上色，有两个重要的属性可以做到。            
+> 基本使用方式
 
+1、`fillStyle = color` 设置图形的填充颜色         
+2、 `strokeStyle = color` 设置图形轮廓的颜色        
+  
+备注：     
+1. `color` 可以是表示 `css` 颜色值的字符串、渐变对象或者图案对象。      
+2. 默认情况下，线条和填充颜色都是黑色。       
+3. 一旦您设置了 `strokeStyle` 或者 `fillStyle` 的值，那么这个新值就会成为新绘制的图形的默认值。如果你要给每个图形上不同的颜色，你需要重新设置 `fillStyle` 或 `strokeStyle` 的值。          
 
 
 
