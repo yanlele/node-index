@@ -372,6 +372,25 @@ arcTo方法的说明：
 2. 默认情况下，线条和填充颜色都是黑色。       
 3. 一旦您设置了 `strokeStyle` 或者 `fillStyle` 的值，那么这个新值就会成为新绘制的图形的默认值。如果你要给每个图形上不同的颜色，你需要重新设置 `fillStyle` 或 `strokeStyle` 的值。          
 
+fillStyle:  
+```javascript
+    function draw(){
+        let canvas = document.getElementById('tutorial');
+        if(!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+        for (let i = 0; i < 6; i++){
+            for (let j = 0; j < 6; j++){
+                ctx.fillStyle = 'rgb(' + Math.floor(255 - 42.5 * i) + ',' +
+                    Math.floor(255 - 42.5 * j) + ',0)';
+                ctx.fillRect(j * 50, i * 50, 50, 50);
+            }
+        }
+    }
+    draw();
+```
+[示例12](./demo/12、填充颜色fillStyle.html)
+
 
 
 
