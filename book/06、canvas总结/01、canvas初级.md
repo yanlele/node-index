@@ -425,7 +425,33 @@ strokeStyle示例：
 这个属性影响到 canvas 里所有图形的透明度，有效的值范围是 0.0 （完全透明）到 1.0（完全不透明），默认是 1.0。        
 globalAlpha 属性在需要绘制大量拥有相同透明度的图形时候相当高效。不过，我认为使用rgba()设置透明度更加好一些。     
 
+> line style        
 
+1、lineWidth = value
+线宽。只能是正值。默认是1.0。        
+起始点和终点的连线为中心，上下各占线宽的一半          
+
+```javascript
+    function draw(){
+        let canvas = document.getElementById('tutorial');
+        if(!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+        ctx.beginPath();
+        ctx.moveTo(10, 10);
+        ctx.lineTo(100, 10);
+        ctx.lineWidth = 10;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(110, 10);
+        ctx.lineTo(160, 10);
+        ctx.lineWidth = 20;
+        ctx.stroke();
+    }
+    draw();
+```
+[示例14](./demo/14、线宽.html)
 
 
 
