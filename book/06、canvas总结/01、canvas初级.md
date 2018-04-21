@@ -427,7 +427,7 @@ globalAlpha 属性在需要绘制大量拥有相同透明度的图形时候相�
 
 > line style        
 
-1、lineWidth = value
+**1、lineWidth = value**     
 线宽。只能是正值。默认是1.0。        
 起始点和终点的连线为中心，上下各占线宽的一半          
 
@@ -452,6 +452,44 @@ globalAlpha 属性在需要绘制大量拥有相同透明度的图形时候相�
     draw();
 ```
 [示例14](./demo/14、线宽.html)
+
+**2、lineCap = type**            
+线条末端样式。     
+共有3个值：      
+butt：线段末端以方形结束      
+round：线段末端以圆形结束     
+square：线段末端以方形结束，但是增加了一个宽度和线段相同，高度是线段厚度一半的矩形区域。     
+
+```javascript
+    function draw(){
+        let canvas = document.getElementById('tutorial');
+        if(!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+        let lineCaps = ['butt', 'round', 'square'];
+        for(let i = 0; i< 3; i++) {
+            ctx.beginPath();
+            ctx.moveTo(20 + 30*i, 30);
+            ctx.lineTo(20 + 30*i, 100);
+            ctx.lineWidth = 20;
+            ctx.lineCap = lineCaps[i];
+            ctx.stroke();
+        }
+        ctx.beginPath();
+        ctx.moveTo(0, 30);
+        ctx.lineTo(300, 30);
+
+        ctx.moveTo(0, 100);
+        ctx.lineTo(300, 100);
+        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+    }
+    draw();
+```
+[实例15](./demo/15、线条末端样式.html)
+
+
 
 
 

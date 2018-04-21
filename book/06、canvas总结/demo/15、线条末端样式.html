@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Canvas tutorial</title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas id="tutorial" width="300" height="300"></canvas>
+</body>
+<script type="text/javascript">
+    function draw(){
+        let canvas = document.getElementById('tutorial');
+        if(!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+        let lineCaps = ['butt', 'round', 'square'];
+        for(let i = 0; i< 3; i++) {
+            ctx.beginPath();
+            ctx.moveTo(20 + 30*i, 30);
+            ctx.lineTo(20 + 30*i, 100);
+            ctx.lineWidth = 20;
+            ctx.lineCap = lineCaps[i];
+            ctx.stroke();
+        }
+        ctx.beginPath();
+        ctx.moveTo(0, 30);
+        ctx.lineTo(300, 30);
+
+        ctx.moveTo(0, 100);
+        ctx.lineTo(300, 100);
+        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+    }
+    draw();
+</script>
+</html>
