@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Canvas tutorial</title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas id="tutorial" width="300" height="300"></canvas>
+</body>
+<script type="text/javascript">
+    function draw(){
+        let canvas = document.getElementById('tutorial');
+        if(!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+        let lineJoin = ['round', 'bevel', 'miter'];
+        ctx.lineWidth = 20;
+
+        for (let i = 0; i < lineJoin.length; i++){
+            ctx.lineJoin = lineJoin[i];
+            ctx.beginPath();
+            ctx.moveTo(50, 50 + i * 50);
+            ctx.lineTo(100, 100 + i * 50);
+            ctx.lineTo(150, 50 + i * 50);
+            ctx.lineTo(200, 100 + i * 50);
+            ctx.lineTo(250, 50 + i * 50);
+            ctx.stroke();
+        }
+
+    }
+    draw();
+</script>
+</html>
