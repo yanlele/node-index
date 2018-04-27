@@ -520,7 +520,24 @@ miter(默认)：通过延伸相连部分的外边缘，使其相交于一点，�
 ```
 [示例16、线条连接处样式](./demo/16、线条链接处的样式.html)
 
+> 虚线            
 
+用 `setLineDash` 方法和 `lineDashOffset` 属性来制定虚线样式. `setLineDash` 方法接受一个数组，来指定线段与间隙的交替；`lineDashOffset`属性设置起始偏移量.       
+
+```javascript
+    function draw(){
+        let canvas = document.getElementById('tutorial');
+        if(!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+        ctx.setLineDash([20, 5]);  // [实线长度, 间隙长度]
+        ctx.lineDashOffset = 25;
+        ctx.strokeRect(50, 50, 210, 210);
+    }
+    
+    draw();
+```
+[17、虚线](./demo/17、虚线.html)
 
 
 

@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Canvas tutorial</title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas id="tutorial" width="300" height="300"></canvas>
+</body>
+<script type="text/javascript">
+    function draw(){
+        let canvas = document.getElementById('tutorial');
+        if(!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+        ctx.setLineDash([20, 5]);  // [实线长度, 间隙长度]
+        ctx.lineDashOffset = 25;
+        ctx.strokeRect(50, 50, 210, 210);
+    }
+    draw();
+</script>
+</html>
