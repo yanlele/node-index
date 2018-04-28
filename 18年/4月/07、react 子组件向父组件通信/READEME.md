@@ -1,7 +1,5 @@
 ```jsx harmony
 /***实现在输入框输入邮箱时，在div中即时显示输入内容***/
-
-
 <body>
     <div id="test"></div>
 </body>

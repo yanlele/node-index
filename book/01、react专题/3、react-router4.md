@@ -5,7 +5,7 @@
     npm install react-router-dom --save     
     或者： yarn add react-router-dom
 
-> 1.    基本使用      
+> 1. 基本使用 
 
 ```jsx harmony
 import React from 'react'
@@ -52,7 +52,7 @@ ReactDom.render(
 );
 ```
 
-> 2.    整合reducers
+> 2. 整合reducers
     
 建立reducer.js文件，代码如下：
 ```jsx harmony
@@ -67,7 +67,7 @@ export default combineReducers({counter,auth})
 
 - [react-router4与合并reducers示例](../../17年/12月/12、react-router4与合并reducers示例)
 
-> 3.    关于this.props.match.params的使用        
+> 3. 关于this.props.match.params的使用        
 
 这个是获取router/:id 的参数的
 例如如下：

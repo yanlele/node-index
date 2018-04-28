@@ -5,6 +5,7 @@
 - [2、绘制形状](#class02)
 - [3、绘制路径](#class03)
 - [4、添加样式和颜色](#class04)
+- [5、绘制文本](#class05)
 
 
 ## <div id='class01'>1、基础使用</div>
@@ -523,7 +524,7 @@ miter(默认)：通过延伸相连部分的外边缘，使其相交于一点，�
 > 虚线            
 
 用 `setLineDash` 方法和 `lineDashOffset` 属性来制定虚线样式. `setLineDash` 方法接受一个数组，来指定线段与间隙的交替；`lineDashOffset`属性设置起始偏移量.       
-
+`getLineDash()` :返回一个包含当前虚线样式，长度为非负偶数的数组。
 ```javascript
     function draw(){
         let canvas = document.getElementById('tutorial');
@@ -537,7 +538,19 @@ miter(默认)：通过延伸相连部分的外边缘，使其相交于一点，�
     
     draw();
 ```
+
 [17、虚线](./demo/17、虚线.html)
+
+
+## <div id='class05'>5、绘制文本</div>
+canvas 提供了两种方法来渲染文本:            
+1、fillText(text, x, y [, maxWidth])     
+在指定的(x,y)位置填充指定的文本，绘制的最大宽度是可选的.
+
+
+2、strokeText(text, x, y [, maxWidth])       
+在指定的(x,y)位置绘制文本边框，绘制的最大宽度是可选的.      
+
 
 
 

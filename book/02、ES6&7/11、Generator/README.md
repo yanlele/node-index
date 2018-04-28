@@ -75,12 +75,12 @@ yield句本身没有返回值，或者说总是返回undefined。next方法可�
     }
     
     var a = foo(5);
-    a.next() 4、通信类
+    a.next() //4、通信类
     a.next() // Object{value:NaN, done:false}
     a.next() // Object{value:NaN, done:true}
     
     var b = foo(5);
-    b.next() 4、通信类
+    b.next() //4、通信类
     b.next(12) // { value:8, done:false }
     b.next(13) // { value:42, done:true }
 ```
@@ -128,17 +128,17 @@ for...of循环可以自动遍历 Generator 函数时生成的Iterator对象，�
 实例3：除了for...of循环以外，扩展运算符（...）、解构赋值和Array.from方法内部调用的，都是遍历器接口。           
 ```javascript
     function* numbers() {
-        yield 1
-        yield 2
-        return 3
-        yield 4
+        yield 1;
+        yield 2;
+        return 3;
+        yield 4;
     }
     
     //  扩展运算符
-    [...numbers()] // [1, 2]
+    [...numbers()]; // [1, 2]
     
     // Array.form  方法
-    Array.from(numbers()) // [1, 2]
+    Array.from(numbers()); // [1, 2]
     
     //  解构赋值
     let [x, y] = numbers();
@@ -223,7 +223,7 @@ Generator 函数返回的遍历器对象，还有一个return方法，可以返�
 ```javascript
     let obj = {
         * myGeneratorMethod() {
-            ···
+            //···
         }
     };
 ```
@@ -281,9 +281,9 @@ Generator 函数的暂停执行的效果，意味着可以把异步操作写在 
     
     var loader = loadUI();
     //  加载 UI
-    loader.next()
+    loader.next();
     //  卸载 UI
-    loader.next()
+    loader.next();
 ```
 
 实例2：Ajax 是典型的异步操作，通过 Generator 函数部署 Ajax 操作，可以用同步的方式表达。
@@ -364,7 +364,7 @@ Generator 函数的暂停执行的效果，意味着可以把异步操作写在 
         var taskObj = task.next(task.value);
         //如果 Generator 函数未结束，就继续调用
         if (!taskObj.done) {
-            task.value = taskObj.value
+            task.value = taskObj.value;
             scheduler(task);
         }
     }
