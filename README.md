@@ -119,6 +119,7 @@
     - [05、微信分享JS-SDK](./18年/4月/04、微信分享JS-SDK/index.js)
     - [06、brew常用命令行](./02、生态圈技术栈/01、brew常用命令行/README.md)
     - [07、Mac机上安装nvm遇到的坑--nvm command not found](https://www.cnblogs.com/giggle/p/7075548.html)
+    - [08、mac常用命令行](./02、生态圈技术栈/03、mac常用命令行/README.md)
 
 
 - koa2
