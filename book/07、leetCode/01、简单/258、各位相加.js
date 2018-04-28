@@ -9,7 +9,7 @@
 你可以不用任何的循环或者递归算法，在 O(1) 的时间内解决这个问题么？
 * */
 
-
+/*用了循环和递归*/
 let addDigits = function(num) {
     let arr = [];
     for(let index of num.toString()) {
@@ -18,7 +18,10 @@ let addDigits = function(num) {
     if(arr.length === 1) {
         return parseInt(arr[0]);
     }
-    let number = parseInt(arr[0]) + parseInt(arr[1]);
+    let number = 0;
+    for(let arrLen =0;arrLen<arr.length;arrLen++) {
+        number += parseInt(arr[arrLen]);
+    }
     if(number > 9) {
         return addDigits(number)
     } else {
@@ -26,5 +29,5 @@ let addDigits = function(num) {
     }
 };
 
-let res = addDigits(38);
+let res = addDigits(3118);
 console.log(res);
