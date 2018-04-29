@@ -54,7 +54,39 @@ module.exports = {
 
 ### <div class='class02'>2、编译ES6</div> 
 **babel**           
-首先要安装babel-loader和babel-core        
-
+首先要安装babel-loader、babel-core、babel-preset-env  
+`npm install babel-loader babel-core babel-preset-env --save-dev`        
+  
+然后在webpack.config.js中写入配置文件如下：
+```javascript
+module.exports = {
+    entry: {
+        app: './app.js'
+    },
+    output: {
+        filename: '[name].[hash:8].js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            ['env', {
+                                targets: {
+                                    browsers: ['> 1%', 'last 2 versions']
+                                }
+                            }]
+                        ]
+                    }
+                },
+                exclude: '/mode_modules/'
+            }
+        ]
+    }
+};
+```
 
 
