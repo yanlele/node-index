@@ -41,3 +41,8 @@ animation-delay	                设置动画在启动前的延迟间隔。
 [代码示例3](./demo/03-keyframe.html)
 
 
+
+## <div class='class03'>3、逐帧动画</div>
+适用于无法补间动画计算的动画；资源比较大；使用steps;           
+
+[代码示例4](./demo/04-animal.html)
