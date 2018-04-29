@@ -104,7 +104,26 @@ import 'babel-polyfill'
 npm install babel-plugin-transform-runtime --save-dev       
 npm install babel-runtime --save        
 
-使用的话要创建文件.babelrc
+使用的话要创建文件.babelrc       
+```json
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "> 1%",
+            "last 2 versions"
+          ]
+        }
+      }
+    ]
+  ],
+  "plugins": ["transform-runtime"]
+}
+```
+
 
 [请见实例](./01、深入浅出webpack/02、编译es6/)
 
@@ -119,5 +138,51 @@ npm install babel-runtime --save
 常用选项：
     compilerOptions、include、exclude
     
-   
+安装配置文件：
+```json
+{
+"ts-loader": "^3.2.0",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0",
+    "awesome-typescript-loader": "3.4.1"
+}
+```
 
+webpack.config.js打包文件：
+```javascript
+module.exports = {
+    entry: {
+        'app': './src/app.ts'
+    },
+
+    output: {
+        filename: "[name].bundle.js"
+    },
+
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                use: {
+                    loader: 'awesome-typescript-loader'
+                }
+            }
+        ]
+    }
+};
+```
+
+配置tsconfig.json文件
+```json
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "allowJs": true
+  },
+  "include": ["./src/*"],
+  "exclude": ["/node_modules"]
+}
+```
+
+然后可以在src/app.ts里面写自己的一些代码实现
