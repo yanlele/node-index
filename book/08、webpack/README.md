@@ -226,3 +226,132 @@ options.async
 单页应用 + 第三方依赖
 多页应用 + 第三方依赖 + webpack 生成代码
 
+一般来说因为单页应用会有懒加载效果，所以我们一般都是看不出来提取公共commonjs的效果的，所以我们要处理为多页打包来看效果情况；          
+```javascript
+let webapck = require('webpack');
+let path = require('path');
+
+module.exports = {
+    entry: {
+        'pageA': './src/pageA',
+        'pageB': './src/pageB',
+        'vendor': ['lodash']
+    },
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: "[name].bundle.js",
+        chunkFilename: "[name].chunk.js"
+    },
+
+    plugins: [
+        new webapck.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: Infinity
+        })
+    ]
+};
+```
+这样打包的缺点也很明显：没有区分业务代码和第三方模块的代码
+
+
+如果我们希望区分业务代码和第三方模块代码，就要使用以下的办法才行：
+我们需要多加入一个entry, 然后分离公共代码部分的打包就直接指向我们多加入的entry文件，那么打包出来的文件就是我们的第三方代码了；           
+如果我们需要分离webpack生成的代码，和我们自己第三方库的代码，就可以做如下的配置改变       
+```javascript
+let webapck = require('webpack');
+let path = require('path');
+
+module.exports = {
+    entry: {
+        'pageA': './src/pageA',
+        'pageB': './src/pageB',
+        'vendor': ['lodash']
+    },
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: "[name].bundle.js",
+        chunkFilename: "[name].chunk.js"
+    },
+
+    plugins: [
+        new webapck.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: Infinity
+        }),
+
+        new webapck.optimize.CommonsChunkPlugin({
+            name: 'mainfest',
+            minChunks: Infinity
+        })
+    ]
+};
+```
+
+接下来还有一个问题：如果我们希望吧pageA和pageB中的公共部分的代码提取出来，就要做如下的配置！
+```javascript
+let webapck = require('webpack');
+let path = require('path');
+
+module.exports = {
+    entry: {
+        'pageA': './src/pageA',
+        'pageB': './src/pageB',
+        'vendor': ['lodash']
+    },
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: "[name].bundle.js",
+        chunkFilename: "[name].chunk.js"
+    },
+
+    plugins: [
+        new webapck.optimize.CommonsChunkPlugin({
+            name: 'common',
+            minChunks: 2,
+            chunks: ['pageA', 'pageB']  //指定需要提取公共文件文件对象
+        }),
+
+        new webapck.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: Infinity
+        }),
+
+        new webapck.optimize.CommonsChunkPlugin({
+            name: 'mainfest',
+            minChunks: Infinity
+        })
+    ]
+};
+```
+
+对上面的代码，还可以进行一下的优化
+```javascript
+let webapck = require('webpack');
+let path = require('path');
+
+module.exports = {
+    entry: {
+        'pageA': './src/pageA',
+        'pageB': './src/pageB',
+        'vendor': ['lodash']
+    },
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: "[name].bundle.js",
+        chunkFilename: "[name].chunk.js"
+    },
+
+    plugins: [
+        new webapck.optimize.CommonsChunkPlugin({
+            name: 'common',
+            minChunks: 2,
+            chunks: ['pageA', 'pageB']  //指定需要提取公共文件文件对象
+        }),
+
+        new webapck.optimize.CommonsChunkPlugin({
+            names: ['vendor', 'mainfest'],
+            minChunks: Infinity
+        }),
+    ]
+};
+```
