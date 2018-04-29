@@ -38,6 +38,19 @@ module.exports = function(num1, num2) {
 > 配置文件打包
 
 建立一个webpack的配置文件，其命名一定为webpack.config.js        
+```javascript
+module.exports = {
+    entry: {
+        app: './app.js'
+    },
+    output: {
+        filename: '[name].[hash:5].js'
+    }
+};
+```
+然后就可以直接执行命令行webpack就可以进行打包了；
+
+
 
 
 
