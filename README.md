@@ -30,6 +30,8 @@
 - [04、javascript设计模式](./book/04、js设计模式)
 - [05、基础知识点专题](./book/05、基础知识点专题)
 - [06、canvas总结](./book/06、canvas总结)
+- [07、leetCode-cn](./book/07、leetCode)
+- [08、webpack专题](./book/08、webpack)
 
 
 ### 通用功能js模块组件
