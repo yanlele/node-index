@@ -1,8 +1,10 @@
 # webpack 专题
 
 ## 一、深入浅出webpack 
+- [1、打包](#class01)
 
-### 1、打包      
+
+### <div class='class01'>1、打包</div>      
 > 命令行打包
   
 webpack 是支持es6模块化规范和commonJs模块化规范的，而且还可以混用，建立两个es6模块规范的文件，如果用命令行打包的话，打包指令如下:      
@@ -50,7 +52,9 @@ module.exports = {
 ```
 然后就可以直接执行命令行webpack就可以进行打包了；
 
-
+### <div class='class02'>2、编译ES6</div> 
+**babel**           
+首先要安装babel-loader和babel-core        
 
 
 
