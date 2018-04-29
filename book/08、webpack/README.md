@@ -51,6 +51,8 @@ module.exports = {
 };
 ```
 然后就可以直接执行命令行webpack就可以进行打包了；
+[请见实例](./01、深入浅出webpack/01、打包/)
+
 
 ### <div class='class02'>2、编译ES6</div> 
 **babel**           
@@ -103,3 +105,5 @@ npm install babel-plugin-transform-runtime --save-dev
 npm install babel-runtime --save        
 
 使用的话要创建文件.babelrc
+
+[请见实例](./01、深入浅出webpack/02、编译es6/)
