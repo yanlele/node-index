@@ -197,3 +197,32 @@ module.exports = {
 其实关于typescript程序还有一个typings的全局模块，可以自动把我们的模块文件编译为支持ts类型检测的文件，不过坑非常的大，以后再来研究！
 
 [请见实例](./01、深入浅出webpack/03、编译typescript)
+
+
+### <div class='class04'>4、提取公用代码/div> 
+作用：减少代码冗余、提高页面加载速度；
+
+我们需要用到的是CommonsChunkPlugin这个插件，这个插件是集成到webpack内部的一个插件 `webapck.optimize.CommonsChunkPlugin`         
+
+配置：
+```javascript
+{
+    plugins: [
+        new webapck.optimize.CommonsChunkPlugin(options)
+    ]
+}
+```
+其中options配置如下：      
+options.name / options.names        
+options.filename        
+options.minChunks
+options.chunks      
+options.children            
+options.deepChildren            
+options.async           
+
+场景： 
+单页应用        
+单页应用 + 第三方依赖
+多页应用 + 第三方依赖 + webpack 生成代码
+

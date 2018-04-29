@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha 18年/2月/7、单元测试/test/02、mocha.js",
-    "cover": "istanbul cover node_modules/mocha/bin/_mocha 18年/2月/7、单元测试/test/02、mocha.js"
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha 18年/2月/7、单元测试/test/02、mocha.js",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
