@@ -107,3 +107,17 @@ npm install babel-runtime --save
 使用的话要创建文件.babelrc
 
 [请见实例](./01、深入浅出webpack/02、编译es6/)
+
+### <div class='class03'>3、编译typescrip</div> 
+安装：     
+`npm install typescript ts-loader --save-dev`           
+`npm install typescript awesome-typescript-loader --save-dev`       
+
+配置：tsconfig.json        
+[配置信息文档](https://www.tslang.cn/docs/handbook/tsconfig-json.html)            
+
+常用选项：
+    compilerOptions、include、exclude
+    
+   
+
