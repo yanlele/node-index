@@ -2,6 +2,10 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
+    "typeRoots": [
+      "/node_modules/@type",
+      "/typings/modules"
+    ],
     "allowJs": true
   },
   "include": ["./src/*"],

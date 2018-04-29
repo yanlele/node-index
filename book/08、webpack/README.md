@@ -185,4 +185,15 @@ module.exports = {
 }
 ```
 
-然后可以在src/app.ts里面写自己的一些代码实现
+然后可以在src/app.ts里面写自己的一些代码实现         
+最后执行打包命令： webpack  就可以实现打包typescript了！
+
+如果我们需要在ts文件中引入第三方库，这个时候有一个申明文件的问题，比如我们需要引用lodash模块，会报错，说这个模块需要一个tsconfig.jsos的申明文件；但是对于这个问题，官方有解决办法     
+我们直接安装 `npm install @types/lodash` 或者 `npm install @types/vue` 之类的文件就可以解决这类问题了！     
+
+但是这样的话，我们还是会有一些麻烦，这个时候还有一个好用的模块就是 `typings`， 这个模块最好需要全局安装       
+然后需要某一个模块的时候，就只可以 `typings install lodash`这种方式安装模块纠就OK了
+
+其实关于typescript程序还有一个typings的全局模块，可以自动把我们的模块文件编译为支持ts类型检测的文件，不过坑非常的大，以后再来研究！
+
+[请见实例](./01、深入浅出webpack/03、编译typescript)
