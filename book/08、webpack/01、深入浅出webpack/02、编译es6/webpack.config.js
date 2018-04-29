@@ -10,16 +10,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            ['env', {
-                                targets: {
-                                    browsers: ['> 1%', 'last 2 versions']
-                                }
-                            }]
-                        ]
-                    }
+                    loader: 'babel-loader'
                 },
                 exclude: '/mode_modules/'
             }

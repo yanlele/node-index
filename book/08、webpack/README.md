@@ -89,4 +89,17 @@ module.exports = {
 };
 ```
 
+介绍两个处理函数和方法的babel插件： Babel Polyfill 、Babel Runtime Transform        
 
+`Babel Polyfill`              
+全局垫片、为应用准备：         
+npm install babel-polyfill --save       
+npm install babel-runtime --save             
+import 'babel-polyfill'     
+
+`Babel Runtime Transform`       
+局部垫片、为开发框架准备：   
+npm install babel-plugin-transform-runtime --save-dev       
+npm install babel-runtime --save        
+
+使用的话要创建文件.babelrc
