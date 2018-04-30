@@ -220,16 +220,19 @@ module.exports = {
     ]
 }
 ```
-其中options配置如下：      
-options.name / options.names        
-options.filename        
-options.minChunks
-options.chunks      
-options.children            
-options.deepChildren            
-options.async           
+其中options配置如下： 
 
-场景： 
+    options.name / options.names        
+    options.filename        
+    options.minChunks
+    options.chunks      
+    options.children            
+    options.deepChildren            
+    options.async           
+    
+    
+
+**场景：**         
 单页应用        
 单页应用 + 第三方依赖
 多页应用 + 第三方依赖 + webpack 生成代码
@@ -376,6 +379,7 @@ module.exports = {
 **webpack methods webpack内置方法**
 
 require.ensure      
+
     []: dependencies        
     callback        
     errorCallback
@@ -685,7 +689,8 @@ setInterval(function() {
 ```
 
 **style-loader 的一起配置项**
-options:        
+options:      
+  
     insertAt:插入位置       
     insertInto:插入到dom       
     singleton:是否只使用一个style标签
@@ -731,12 +736,14 @@ module.exports =function(css) {
 
 主要的参数如下;    
 options:        
+
     alias: 解析别名         
     importLoader: @import           
     minimize: 是否压缩      
     modules: 是否启用模块化        
     
 css-modules:        
+
     :local      
     :global     
     compose     
