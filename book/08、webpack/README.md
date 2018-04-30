@@ -386,6 +386,8 @@ System.import() ->  import()
 分离业务代码 和 业务公共代码 和 第三方依赖         
 分离首次加载 和 访问后加载的代码           
 
+> 具体使用方式            
+
 **用require.ensure方式分割代码的示例**        
 webpack.config.js配置文件如下：        
 ```javascript
@@ -564,6 +566,11 @@ module.exports = {
 [实例5:代码分割和懒加载](./01、深入浅出webpack/05、代码分割和懒加载/)
 
 
+### <div class='class06'>6、处理css文件/div> 
+
+> style-loader 和 css-loader         
+
+引用css的情况我们需要 `style-loader` 和 `css-loader`
 
 
 
