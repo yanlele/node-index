@@ -2,17 +2,17 @@
 
 目录
 - 一、深入浅出webpack
-    - [01、打包](./#class01)
-    - [02、编译es6](./#class02)
-    - [03、编译typescript](./#class03)
-    - [04、提起公用代码](./#class04)
-    - [05、代码分割和懒加载](./#class05)
-    - [06、处理css](./#class06)
+    - [01、打包](#class01)
+    - [02、编译es6](#class02)
+    - [03、编译typescript](#class03)
+    - [04、提起公用代码](#class04)
+    - [05、代码分割和懒加载](#class05)
+    - [06、处理css](#class06)
     
     
 
 ## 一、深入浅出webpack 
-### <div class='class01'>1、打包</div>      
+### <div id='class01'>1、打包</div>      
 > 命令行打包
   
 webpack 是支持es6模块化规范和commonJs模块化规范的，而且还可以混用，建立两个es6模块规范的文件，如果用命令行打包的话，打包指令如下:      
@@ -62,7 +62,7 @@ module.exports = {
 [请见实例1：打包](./01、深入浅出webpack/01、打包/)
 
 
-### <div class='class02'>2、编译ES6</div> 
+### <div id='class02'>2、编译ES6</div> 
 **babel**           
 首先要安装babel-loader、babel-core、babel-preset-env  
 `npm install babel-loader babel-core babel-preset-env --save-dev`        
@@ -135,7 +135,7 @@ npm install babel-runtime --save
 
 [请见实例2:编译es6](./01、深入浅出webpack/02、编译es6/)
 
-### <div class='class03'>3、编译typescrip</div> 
+### <div id='class03'>3、编译typescrip</div> 
 安装：     
 `npm install typescript ts-loader --save-dev`           
 `npm install typescript awesome-typescript-loader --save-dev`       
@@ -207,7 +207,7 @@ module.exports = {
 [请见实例3:编译typescript](./01、深入浅出webpack/03、编译typescript)
 
 
-### <div class='class04'>4、提取公用代码/div> 
+### <div id='class04'>4、提取公用代码/div> 
 作用：减少代码冗余、提高页面加载速度；
 
 我们需要用到的是CommonsChunkPlugin这个插件，这个插件是集成到webpack内部的一个插件 `webapck.optimize.CommonsChunkPlugin`         
@@ -367,7 +367,7 @@ module.exports = {
 
 
 
-### <div class='class05'>5、代码分割和懒加载/div> 
+### <div id='class05'>5、代码分割和懒加载/div> 
 
 > 实现代码分割的办法：
 
@@ -574,7 +574,7 @@ module.exports = {
 [实例5:代码分割和懒加载](./01、深入浅出webpack/05、代码分割和懒加载/)
 
 
-### <div class='class06'>6、处理css文件/div> 
+### <div id='class06'>6、处理css文件/div> 
 
 > style-loader 和 css-loader         
 
