@@ -727,7 +727,60 @@ module.exports =function(css) {
 };
 ```
 
+> css-loader
 
+主要的参数如下;    
+options:        
+    alias: 解析别名         
+    importLoader: @import           
+    minimize: 是否压缩      
+    modules: 是否启用模块化        
+    
+css-modules:        
+    :local      
+    :global     
+    compose     
+    compose...from path     
+
+如果使用css模块化，那么我们可以在一个css样式中import别的文件的样式，但是要注意的是，如果需要import别的文件的样式，那么compose一定要写在最前面；
+```css
+.box {
+    composes: bigBox from './common.css';
+    height: 200px;
+    width: 200px;
+    border-radius: 4px;
+    background: #333333;
+}
+```
+在这样的方式下面，编译出来的className是一长串的无规则的字符串的，我们如果需要修改这个名称，需要用到这个options， `localIdentName: '[path][name]_[local]_[hash:base64:5]' `          
+webpack配置示范         
+```javascript
+module.exports = {
+    module: {
+            rules: [
+                {
+                    test: /\.css$/,
+                    use: [
+                        {
+                            loader: 'style-loader',
+                            options: {
+                                singleton: true,
+                                transform: './css.transform.js'
+                            }
+                        },
+                        {
+                            loader: "css-loader",
+                            options: {
+                                modules: true,
+                                localIdentName: '[path][name]_[local]_[hash:base64:5]'
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+}
+```
 
 
 
