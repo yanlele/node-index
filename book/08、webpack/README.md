@@ -51,7 +51,7 @@ module.exports = {
 };
 ```
 然后就可以直接执行命令行webpack就可以进行打包了；
-[请见实例](./01、深入浅出webpack/01、打包/)
+[请见实例1：打包](./01、深入浅出webpack/01、打包/)
 
 
 ### <div class='class02'>2、编译ES6</div> 
@@ -125,7 +125,7 @@ npm install babel-runtime --save
 ```
 
 
-[请见实例](./01、深入浅出webpack/02、编译es6/)
+[请见实例2:编译es6](./01、深入浅出webpack/02、编译es6/)
 
 ### <div class='class03'>3、编译typescrip</div> 
 安装：     
@@ -196,7 +196,7 @@ module.exports = {
 
 其实关于typescript程序还有一个typings的全局模块，可以自动把我们的模块文件编译为支持ts类型检测的文件，不过坑非常的大，以后再来研究！
 
-[请见实例](./01、深入浅出webpack/03、编译typescript)
+[请见实例3:编译typescript](./01、深入浅出webpack/03、编译typescript)
 
 
 ### <div class='class04'>4、提取公用代码/div> 
@@ -355,3 +355,4 @@ module.exports = {
     ]
 };
 ```
+[请见实例4： 提取用工代码](./01、深入浅出webpack/04、提取公用代码/)
