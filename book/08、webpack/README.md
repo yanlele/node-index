@@ -356,3 +356,72 @@ module.exports = {
 };
 ```
 [请见实例4： 提取用工代码](./01、深入浅出webpack/04、提取公用代码/)
+
+
+
+### <div class='class05'>5、代码分割和懒加载/div> 
+
+> 实现代码分割的办法：
+
+`webapck methods` 和 `ES2015 Loader spec`
+
+**webpack methods webpack内置方法**
+
+require.ensure      
+    []: dependencies        
+    callback        
+    errorCallback
+    chunkName       
+
+require.include
+    
+**ES2015 Loader spec**            
+
+System.import() ->  import()
+
+
+> 代码分割的场景
+
+分离业务代码 和 第三方依赖            
+分离业务代码 和 业务公共代码 和 第三方依赖         
+分离首次加载 和 访问后加载的代码           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
