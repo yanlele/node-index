@@ -1,12 +1,19 @@
 require.include('./moduleA');
+
+let page = 'subPageA';
+
 if(page === 'subPageA') {
-    require.ensure(['./subPageA'], function() {
-        let subPageA = require('./subPageA');
-    }, 'subPageA');
+    import(
+        /* webpackChunkName:'subPageA' */
+        './subPageA').then(function(subPageA) {
+        console.log(subPageA);
+    })
 } else if(page === 'subPageB') {
-    require.ensure(['./subPageB'], function() {
-        let subPageB = require('./subPageB');
-    }, 'subPageB');
+    import(
+        /* webpackChunkName:'subPageA' */
+        './subPageB').then(function(subPageB) {
+        console.log(subPageB);
+    })
 }
 
 require.ensure(['lodash'], function () {

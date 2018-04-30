@@ -443,6 +443,7 @@ export default 'pageA'
 但是这样还会有一个问题，就是subPageA和subPageB都同时用了moduleA，我们可以吧moduleA提出来公用           
 ```javascript
 require.include('./moduleA');
+let page = 'subPageA';
 if(page === 'subPageA') {
     require.ensure(['./subPageA'], function() {
         let subPageA = require('./subPageA');
@@ -461,6 +462,78 @@ require.ensure(['lodash'], function () {
 export default 'pageA'
 ```
 这种做法实际上是吧moduleA的代码，直接提取到了pageA中去了，我们在subPageA和subPageB打包后的文件中，再也找不到moduleA的代码了！
+
+
+关于测试：           
+我们在根目录下面创建一个html文件，引入我们的打包后的文件，来测试一下打包是否成功，如果出现了资源找不到的情况，那我们需要改一下webpack的output中的publicPath:        
+```javascript
+let webapck = require('webpack');
+let path = require('path');
+
+module.exports = {
+    entry: {
+        'pageA': './src/pageA'
+    },
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: "[name].bundle.js",
+        publicPath: "./dist/",
+        chunkFilename: "[name].chunk.js"
+    }
+};
+```
+
+html:       
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script src="./dist/pageA.bundle.js"></script>
+</body>
+</html>
+```
+
+
+**通过实现动态import来实现分割代码的功能**          
+```javascript
+    require.include('./moduleA');
+    
+    let page = 'subPageA';
+    
+    if(page === 'subPageA') {
+        import(
+            /* webpackChunkName:'subPageA' */
+            './subPageA').then(function(subPageA) {
+            console.log(subPageA);
+        })
+    } else if(page === 'subPageB') {
+        import(
+            /* webpackChunkName:'subPageA' */
+            './subPageB').then(function(subPageB) {
+            console.log(subPageB);
+        })
+    }
+    
+    require.ensure(['lodash'], function () {
+        let _ = require('lodash');
+        _.join([1, 2], 3);
+    }, 'vendor');
+    
+    export default 'pageA'
+```
+上面的注解是魔法注解。用来让webpack识别打包模块用的           
+
+**异步分割代码**              
+
+
+
+
 
 
 
