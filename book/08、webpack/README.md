@@ -529,7 +529,40 @@ html:
 ```
 上面的注解是魔法注解。用来让webpack识别打包模块用的           
 
-**异步分割代码**              
+**异步分割代码: async**              
+```javascript
+let webapck = require('webpack');
+let path = require('path');
+
+module.exports = {
+    entry: {
+        'pageA': './src/pageA',
+        'pageB': './src/pageB',
+        'vendor': ['lodash']
+    },
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: "[name].bundle.js",
+        publicPath: "./dist/",
+        chunkFilename: "[name].chunk.js"
+    },
+
+    plugins: [
+        new webapck.optimize.CommonsChunkPlugin({
+            async: 'async-common',
+            children: true,
+            minChunks: 2
+        }),
+        new webapck.optimize.CommonsChunkPlugin({
+            names: ['vendor', 'mainfest'],
+            minChunks: Infinity
+        })
+    ]
+};
+```
+
+[实例5:代码分割和懒加载](./01、深入浅出webpack/05、代码分割和懒加载/)
+
 
 
 
