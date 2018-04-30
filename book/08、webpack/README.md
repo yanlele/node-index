@@ -419,7 +419,48 @@ export default 'pageA'
 
 这个时候再打包，就可以实现分别打包第三方模块代码vendor.js和我们自己的业务代码pageA.js了            
 
+**如果我们希望在pageA中提取公共的模块subPageA和subPageB**           
+那么我们可以对pageA.js做如下的改造           
+```javascript
+if(page === 'subPageA') {
+    require.ensure(['./subPageA'], function() {
+        let subPageA = require('./subPageA');
+    }, 'subPageA');
+} else if(page === 'subPageB') {
+    require.ensure(['./subPageB'], function() {
+        let subPageB = require('./subPageB');
+    }, 'subPageB');
+}
 
+require.ensure(['lodash'], function () {
+    let _ = require('lodash');
+    _.join([1, 2], 3);
+}, 'vendor');
+
+export default 'pageA'
+```
+
+但是这样还会有一个问题，就是subPageA和subPageB都同时用了moduleA，我们可以吧moduleA提出来公用           
+```javascript
+require.include('./moduleA');
+if(page === 'subPageA') {
+    require.ensure(['./subPageA'], function() {
+        let subPageA = require('./subPageA');
+    }, 'subPageA');
+} else if(page === 'subPageB') {
+    require.ensure(['./subPageB'], function() {
+        let subPageB = require('./subPageB');
+    }, 'subPageB');
+}
+
+require.ensure(['lodash'], function () {
+    let _ = require('lodash');
+    _.join([1, 2], 3);
+}, 'vendor');
+
+export default 'pageA'
+```
+这种做法实际上是吧moduleA的代码，直接提取到了pageA中去了，我们在subPageA和subPageB打包后的文件中，再也找不到moduleA的代码了！
 
 
 
