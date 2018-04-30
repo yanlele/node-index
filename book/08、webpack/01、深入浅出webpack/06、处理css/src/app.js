@@ -1,3 +1,2 @@
-
-import './css/base.css';
-
+import base from './css/base.css';
+import common from './css/common.css'

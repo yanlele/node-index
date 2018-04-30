@@ -634,10 +634,90 @@ module.exports = {
 ```
 备注：其实这种方式并不常用，缺点很大，因为每一次require一个css，然后就会多生成一个文件和url出来，然后会在页面加载的时候，多发送一次http请求，其实这是非常消耗资源的，不推荐使用！
 
-**关于style-loader/useable**
+**关于style-loader/useable**      
+这个方式，可以让我们在js，css对象上面得到一个use() 和 unuse() 的方法， 这两个方法就能控制样式的现实与不显示；           
+webpack 中做如下的配置：
+```javascript
+module.exports = {
+    //........
+    module: {
+            rules: [
+                {
+                    test: /\.css$/,
+                    use: [
+                        {
+                            loader: 'style-loader/useable'
+                        },
+                        {
+                            loader: "css-loader"
+                        }
+                    ]
+                }
+            ]
+        }
+}
+```
 
+实际使用方式如下：       
+```javascript
+import base from './css/base.css';
+import common from './css/common.css'
 
+let flag = true;
 
+setInterval(function() {
+    if(flag) {
+        base.use();
+        flag = false
+    } else {
+        base.unuse();
+        flag = true;
+    }
+}, 1500);
+```
+
+**style-loader 的一起配置项**
+options:        
+    insertAt:插入位置       
+    insertInto:插入到dom       
+    singleton:是否只使用一个style标签
+    transform:转化，浏览器环境下，插入页面前
+
+webpack 配置如下：
+```javascript
+module.export = {
+    //......
+    module: {
+            rules: [
+                {
+                    test: /\.css$/,
+                    use: [
+                        {
+                            loader: 'style-loader',
+                            options: {
+                                insertInto: '#app',
+                                singleton: true,
+                                transform: './css.transform.js'
+                            }
+                        },
+                        {
+                            loader: "css-loader"
+                        }
+                    ]
+                }
+            ]
+        }
+}
+```
+
+然后我们需要在其同级目录下面创建css.transform.js文件，这个文件就可以拿到我们所有的css样式，在这个地方我们可以修改和编辑等等的操作了！
+```javascript
+module.exports =function(css) {
+    console.log(css);
+    console.log(window.innerHeight);
+    return css;
+};
+```
 
 
 
