@@ -386,6 +386,39 @@ System.import() ->  import()
 分离业务代码 和 业务公共代码 和 第三方依赖         
 分离首次加载 和 访问后加载的代码           
 
+**用require.ensure方式分割代码的示例**        
+webpack.config.js配置文件如下：        
+```javascript
+let webapck = require('webpack');
+let path = require('path');
+
+module.exports = {
+    entry: {
+        'pageA': './src/pageA'
+    },
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: "[name].bundle.js",
+        chunkFilename: "[name].chunk.js"
+    }
+};
+```
+
+在paegA.js中做如下的模块引用：     
+```javascript
+import './subPageA'
+import './subPageB'
+
+require.ensure(['lodash'], function () {
+    let _ = require('lodash');
+    _.join([1, 2], 3);
+}, 'vendor');
+
+export default 'pageA'
+```
+
+这个时候再打包，就可以实现分别打包第三方模块代码vendor.js和我们自己的业务代码pageA.js了            
+
 
 
 

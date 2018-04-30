@@ -1,6 +1,9 @@
 import './subPageA'
 import './subPageB'
 
-import * as _ from 'lodash';
+require.ensure(['lodash'], function () {
+    let _ = require('lodash');
+    _.join([1, 2], 3);
+}, 'vendor');
 
 export default 'pageA'
