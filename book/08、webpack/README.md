@@ -466,7 +466,7 @@ export default 'pageA'
 这种做法实际上是吧moduleA的代码，直接提取到了pageA中去了，我们在subPageA和subPageB打包后的文件中，再也找不到moduleA的代码了！
 
 
-关于测试：           
+**关于测试：**           
 我们在根目录下面创建一个html文件，引入我们的打包后的文件，来测试一下打包是否成功，如果出现了资源找不到的情况，那我们需要改一下webpack的output中的publicPath:        
 ```javascript
 let webapck = require('webpack');
@@ -571,7 +571,70 @@ module.exports = {
 > style-loader 和 css-loader         
 
 引用css的情况我们需要 `style-loader` 和 `css-loader`
+```javascript
+let path = require('path');
+module.exports = {
+    entry: {
+        app: './src/app.js'
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: "./dist/",
+        filename: "[name].bundle.js"
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: "css-loader"
+                    }
+                ]
+            }
+        ]
+    }
+};
+```
+这样配置之后，我们就可以直接js中require我们需要的css文件了，当我们引用打包之后的js文件的时候，程序会执行给我们在header里面创建一个style标签，然后包裹住我们的css样式；
 
+**如果我们不想要创建header内联的方式来加入css，希望通过url的方式来引入一个文件达到加载css的目的，那么可以用如下的方式**           
+我们需要安装 `file-loader`，之后对webpack配置文件做如下的配置       
+```javascript
+let path = require('path');
+
+module.exports = {
+    entry: {
+        app: './src/app.js'
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: "./dist/",
+        filename: "[name].bundle.js"
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: 'style-loader/url'
+                    },
+                    {
+                        loader: "file-loader"
+                    }
+                ]
+            }
+        ]
+    }
+};
+```
+备注：其实这种方式并不常用，缺点很大，因为每一次require一个css，然后就会多生成一个文件和url出来，然后会在页面加载的时候，多发送一次http请求，其实这是非常消耗资源的，不推荐使用！
+
+**关于style-loader/useable**
 
 
 
