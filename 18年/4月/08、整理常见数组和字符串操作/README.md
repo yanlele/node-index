@@ -15,6 +15,9 @@
 
 
 ## 常见数组的操作
+
+[可以查看W3C，数组操作](http://www.runoob.com/jsref/jsref-obj-array.html)
+
 | 方法 | 描述 |             
 | :- | :- |     
 |concat()|连接两个或更多的数组，并返回结果。|        
