@@ -40,6 +40,8 @@
 |array.some(function(currentValue,index,arr),thisValue)|方法用于检测数组中的元素是否满足指定条件（函数提供）。|
 |[array.splice(index,howmany,item1,.....,itemX)](http://www.runoob.com/jsref/jsref-splice.html)|方法用于插入、删除或替换数组的元素。|
 
+[数组的一个实例](./index.js)
+
 
 
 
