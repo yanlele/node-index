@@ -543,13 +543,41 @@ miter(默认)：通过延伸相连部分的外边缘，使其相交于一点，�
 
 
 ## <div id='class05'>5、绘制文本</div>
-canvas 提供了两种方法来渲染文本:            
+>  canvas 提供了两种方法来渲染文本:            
+
 1、fillText(text, x, y [, maxWidth])     
-在指定的(x,y)位置填充指定的文本，绘制的最大宽度是可选的.
+在指定的(x,y)位置填充指定的文本，绘制的最大宽度是可选的.         
+
+2、strokeText(text, x, y [, maxWidth])           
+在指定的(x,y)位置绘制文本边框，绘制的最大宽度是可选的.           
+```javascript
+function draw(){
+    let canvas = document.getElementById('tutorial');
+    if(!canvas.getContext) return;
+    let ctx = canvas.getContext("2d");
+    //开始代码
+    ctx.font = '100px sans-serif';
+    ctx.fillText('颜乐乐', 10, 100);
+    ctx.strokeText('颜乐乐',10, 200);
+}
+draw();
+``` 
+
+> 给文本添加样式
+
+**font = value**        
+当前我们用来绘制文本的样式。这个字符串使用和 CSS font属性相同的语法. 默认的字体是 10px sans-serif。
+
+**textAlign = value**       
+文本对齐选项. 可选的值包括：start, end, left, right or center. 默认值是 start。
+
+**textBaseline = value**        
+基线对齐选项，可选的值包括：top, hanging, middle, alphabetic, ideographic, bottom。默认值是 alphabetic。
+
+**direction = value**       
+文本方向。可能的值包括：ltr, rtl, inherit。默认值是 inherit。
 
 
-2、strokeText(text, x, y [, maxWidth])       
-在指定的(x,y)位置绘制文本边框，绘制的最大宽度是可选的.      
 
 
 

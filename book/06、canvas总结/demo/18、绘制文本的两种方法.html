@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Canvas tutorial</title>
+    <meta charset="UTF-8"/>
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas id="tutorial" width="300" height="300"></canvas>
+</body>
+<script type="text/javascript">
+    function draw(){
+        let canvas = document.getElementById('tutorial');
+        if(!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+        ctx.font = '100px sans-serif';
+        ctx.fillText('颜乐乐', 10, 100);
+        ctx.strokeText('颜乐乐',10, 200);
+    }
+    draw();
+</script>
+</html>
