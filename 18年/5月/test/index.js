@@ -1,1 +1,2 @@
-console.log(123);
+let time = new Date();
+console.log(typeof time.getTime());
