@@ -10,4 +10,4 @@ let cardId = '121513546yasd颜乐dlf123vsd4f65465';
 console.log(/^[0-9a-zA-Z]+$/.test(cardId));
 console.log(!/^1\d{10}$|^1[345789]\d{1}[*]{4}\d{4}&/.test('11111111111'));*/
 
-console.log(/^[0-9]+$/.test('1sdfsdf2sdf3'));
+console.log(/^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}$/.test('2018-05-09 00:00'));

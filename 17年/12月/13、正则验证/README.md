@@ -64,3 +64,8 @@ console.log('email', /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/.test(email));
 ```javascript
 /^[a-zA-Z0-9]+$/
 ```
+
+10、日期正则验证           
+```javascript
+/^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}$/
+```
