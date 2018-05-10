@@ -4,11 +4,11 @@
     git init        
     git status      
     git add .       
-    git commit -m '描述'      
-    git remote add origin Git地址
-    git pull
-    git push -u origin master
-    git push -u -f origin master
+    git commit -m '描述'          
+    git remote add origin Git地址             
+    git pull            
+    git push -u origin master           
+    git push -u -f origin master                
     
 - 查看分支      
     git branch      
