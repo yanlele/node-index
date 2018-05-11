@@ -577,7 +577,7 @@ draw();
 **direction = value**       
 文本方向。可能的值包括：ltr, rtl, inherit。默认值是 inherit。
 
-
+## <div id='class06'>6、绘制图片</div>
 
 
 
