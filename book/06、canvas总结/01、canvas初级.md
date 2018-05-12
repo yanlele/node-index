@@ -662,6 +662,55 @@ strokeStyle, fillStyle, globalAlpha, lineWidth, lineCap, lineJoin, miterLimit, s
 translate方法接受两个参数。x 是左右偏移量，y 是上下偏移量，如右图所示。          
 在做变形之前先保存状态是一个良好的习惯。大多数情况下，调用 restore 方法比手动恢复原先的状态要简单得多。又如果你是在一个循环中做位移但没有保存和恢复canvas 的状态，很可能到最后会发现怎么有些东西不见了，那是因为它很可能已经超出 canvas 范围以外了。          
 注意：translate移动的是canvas的坐标原点。(坐标变换)          
+```html
+<canvas id="tutorial" width="600" height="600"></canvas>
+</body>
+<script type="text/javascript">
+    let ctx;
+    function draw(){
+        let canvas = document.getElementById('tutorial');
+        if (!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        ctx.save(); //保存坐原点平移之前的状态
+        ctx.translate(100, 100);
+        ctx.strokeRect(0, 0, 100, 100);
+        ctx.restore(); //恢复到最初状态
+        ctx.translate(220, 220);
+        ctx.fillRect(0, 0, 100, 100)
+    }
+    draw();
+</script>
+```
+
+- rotate            
+`rotate(angle)`         
+旋转坐标轴。          
+这个方法只接受一个参数：旋转的角度(angle)，它是顺时针方向的，以弧度为单位的值。         
+旋转的中心是坐标原点。         
+```javascript
+function draw(){
+    let canvas = document.getElementById('tutorial');
+    if(!canvas.getContext) return;
+    let ctx = canvas.getContext("2d");
+    //开始代码
+    ctx.fillStyle = "red";
+    ctx.save();
+
+    ctx.translate(100, 100);
+    ctx.rotate(Math.PI / 180 * 45);
+    ctx.fillStyle = "blue";
+    ctx.fillRect(0, 0, 100, 100);
+    ctx.restore();
+
+    ctx.save();
+    ctx.translate(0, 0);
+    ctx.fillRect(0, 0, 50, 50);
+    ctx.restore();
+}
+draw();
+```
+
+
 
 
 

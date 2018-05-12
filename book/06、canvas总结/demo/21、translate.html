@@ -8,12 +8,12 @@
     </style>
 </head>
 <body>
-<canvas id="tutorial" width="300" height="300"></canvas>
+<canvas id="tutorial" width="600" height="600"></canvas>
 </body>
 <script type="text/javascript">
     let ctx;
     function draw(){
-        let canvas = document.getElementById('tutorial1');
+        let canvas = document.getElementById('tutorial');
         if (!canvas.getContext) return;
         let ctx = canvas.getContext("2d");
         ctx.save(); //保存坐原点平移之前的状态
