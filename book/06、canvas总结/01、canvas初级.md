@@ -636,6 +636,25 @@ drawImage(image, x, y, width, height)
 前4个是定义图像源的切片位置和大小，          
 后4个则是定义切片的目标显示位置和大小。                
 
+## <div id='class07'>7、状态的保存和恢复</div>            
+Saving and restoring state是绘制复杂图形时必不可少的操作。      
+**save()和restore()**                    
+save 和 restore 方法是用来保存和恢复 canvas 状态的，都没有参数。         
+Canvas 的状态就是当前画面应用的所有样式和变形的一个快照。            
+
+- 1、关于 save()           
+Canvas状态存储在栈中，每当save()方法被调用后，当前的状态就被推送到栈中保存。一个绘画状态包括：           
+当前应用的变形（即移动，旋转和缩放）      
+strokeStyle, fillStyle, globalAlpha, lineWidth, lineCap, lineJoin, miterLimit, shadowOffsetX, shadowOffsetY, shadowBlur, shadowColor, globalCompositeOperation 的值           
+当前的裁切路径（clipping path）          
+可以调用任意多次 save方法。(类似数组的push())           
+
+- 2、关于restore()         
+每一次调用 restore 方法，上一个保存的状态就从栈中弹出，所有设定都恢复。(类似数组的pop())                
+
+
+
+
 
 
 
