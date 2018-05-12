@@ -578,6 +578,66 @@ draw();
 文本方向。可能的值包括：ltr, rtl, inherit。默认值是 inherit。
 
 ## <div id='class06'>6、绘制图片</div>
+- 由零开始创建图片          
+**创建<img>元素**           
+```javascript
+var img = new Image();   // 创建一个<img>元素
+img.src = 'myImage.png'; // 设置图片源地址
+```
+脚本执行后图片开始装载         
+
+**绘制img**           
+```javascript
+//参数1：要绘制的img  参数2、3：绘制的img在canvas中的坐标
+ctx.drawImage(img,0,0); 
+```
+
+注意：     
+考虑到图片是从网络加载，如果 drawImage 的时候图片还没有完全加载完成，则什么都不做，个别浏览器会抛异常。所以我们应该保证在 img 绘制完成之后再 drawImage。           
+```javascript
+var img = new Image();   // 创建img元素
+img.onload = function(){
+  ctx.drawImage(img, 0, 0)
+}
+img.src = 'myImage.png'; // 设置图片源地址
+```
+
+- 绘制 img 标签元素中的图片           
+img 可以 new 也可以来源于我们页面的 <img>标签          
+```html
+<img src="./img.jpg" alt="" width="300"><br>
+<canvas id="tutorial" width="600" height="400"></canvas>
+
+</body>
+<script type="text/javascript">
+    function draw(){
+        var canvas = document.getElementById('tutorial');
+        if (!canvas.getContext) return;
+        var ctx = canvas.getContext("2d");
+        var img = document.querySelector("img");
+        ctx.drawImage(img, 0, 0);
+    }
+    document.querySelector("img").onclick = function (){
+        draw();
+    }
+</script>
+```
+
+- 缩放图片      
+**drawImage()** 也可以再添加两个参数：         
+drawImage(image, x, y, width, height)           
+这个方法多了2个参数：width 和 height，这两个参数用来控制 当像canvas画入时应该缩放的大小。         
+`ctx.drawImage(img, 0, 0, 400, 200)`        
+
+- 7.4 切片(slice)         
+`drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)`            
+第一个参数和其它的是相同的，都是一个图像或者另一个 canvas 的引用。           
+其他8个参数：              
+前4个是定义图像源的切片位置和大小，          
+后4个则是定义切片的目标显示位置和大小。                
+
+
+
 
 
 
