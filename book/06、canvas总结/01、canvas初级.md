@@ -6,6 +6,9 @@
 - [3、绘制路径](#class03)
 - [4、添加样式和颜色](#class04)
 - [5、绘制文本](#class05)
+- [6、绘制图片](#class06)
+- [7、状态的保存和恢复](#class07)
+- [8、变形](#class08)
 
 
 ## <div id='class01'>1、基础使用</div>
@@ -629,7 +632,7 @@ drawImage(image, x, y, width, height)
 这个方法多了2个参数：width 和 height，这两个参数用来控制 当像canvas画入时应该缩放的大小。         
 `ctx.drawImage(img, 0, 0, 400, 200)`        
 
-- 7.4 切片(slice)         
+- 切片(slice)         
 `drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)`            
 第一个参数和其它的是相同的，都是一个图像或者另一个 canvas 的引用。           
 其他8个参数：              
@@ -651,6 +654,16 @@ strokeStyle, fillStyle, globalAlpha, lineWidth, lineCap, lineJoin, miterLimit, s
 
 - 2、关于restore()         
 每一次调用 restore 方法，上一个保存的状态就从栈中弹出，所有设定都恢复。(类似数组的pop())                
+
+
+## <div id='class08'>8、变形</div>           
+**translate(x, y)**             
+用来移动 canvas 的原点到指定的位置           
+translate方法接受两个参数。x 是左右偏移量，y 是上下偏移量，如右图所示。          
+在做变形之前先保存状态是一个良好的习惯。大多数情况下，调用 restore 方法比手动恢复原先的状态要简单得多。又如果你是在一个循环中做位移但没有保存和恢复canvas 的状态，很可能到最后会发现怎么有些东西不见了，那是因为它很可能已经超出 canvas 范围以外了。          
+注意：translate移动的是canvas的坐标原点。(坐标变换)          
+
+
 
 
 
