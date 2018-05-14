@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Canvas tutorial</title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas id="tutorial" width="600" height="600"></canvas>
+</body>
+<script type="text/javascript">
+    let ctx;
+    function draw(){
+        let canvas = document.getElementById('tutorial');
+        if (!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        ctx.save(); //保存坐原点平移之前的状态
+        ctx.translate(100, 100);
+        ctx.strokeRect(0, 0, 100, 100);
+        ctx.restore(); //恢复到最初状态
+        ctx.translate(220, 220);
+        ctx.fillRect(0, 0, 100, 100)
+    }
+    draw();
+</script>
+</html>

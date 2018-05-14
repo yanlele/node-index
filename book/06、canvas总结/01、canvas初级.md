@@ -6,6 +6,9 @@
 - [3、绘制路径](#class03)
 - [4、添加样式和颜色](#class04)
 - [5、绘制文本](#class05)
+- [6、绘制图片](#class06)
+- [7、状态的保存和恢复](#class07)
+- [8、变形](#class08)
 
 
 ## <div id='class01'>1、基础使用</div>
@@ -578,6 +581,144 @@ draw();
 文本方向。可能的值包括：ltr, rtl, inherit。默认值是 inherit。
 
 ## <div id='class06'>6、绘制图片</div>
+- 由零开始创建图片          
+**创建<img>元素**           
+```javascript
+var img = new Image();   // 创建一个<img>元素
+img.src = 'myImage.png'; // 设置图片源地址
+```
+脚本执行后图片开始装载         
+
+**绘制img**           
+```javascript
+//参数1：要绘制的img  参数2、3：绘制的img在canvas中的坐标
+ctx.drawImage(img,0,0); 
+```
+
+注意：     
+考虑到图片是从网络加载，如果 drawImage 的时候图片还没有完全加载完成，则什么都不做，个别浏览器会抛异常。所以我们应该保证在 img 绘制完成之后再 drawImage。           
+```javascript
+var img = new Image();   // 创建img元素
+img.onload = function(){
+  ctx.drawImage(img, 0, 0)
+}
+img.src = 'myImage.png'; // 设置图片源地址
+```
+
+- 绘制 img 标签元素中的图片           
+img 可以 new 也可以来源于我们页面的 <img>标签          
+```html
+<img src="./img.jpg" alt="" width="300"><br>
+<canvas id="tutorial" width="600" height="400"></canvas>
+
+</body>
+<script type="text/javascript">
+    function draw(){
+        var canvas = document.getElementById('tutorial');
+        if (!canvas.getContext) return;
+        var ctx = canvas.getContext("2d");
+        var img = document.querySelector("img");
+        ctx.drawImage(img, 0, 0);
+    }
+    document.querySelector("img").onclick = function (){
+        draw();
+    }
+</script>
+```
+
+- 缩放图片      
+**drawImage()** 也可以再添加两个参数：         
+drawImage(image, x, y, width, height)           
+这个方法多了2个参数：width 和 height，这两个参数用来控制 当像canvas画入时应该缩放的大小。         
+`ctx.drawImage(img, 0, 0, 400, 200)`        
+
+- 切片(slice)         
+`drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)`            
+第一个参数和其它的是相同的，都是一个图像或者另一个 canvas 的引用。           
+其他8个参数：              
+前4个是定义图像源的切片位置和大小，          
+后4个则是定义切片的目标显示位置和大小。                
+
+## <div id='class07'>7、状态的保存和恢复</div>            
+Saving and restoring state是绘制复杂图形时必不可少的操作。      
+**save()和restore()**                    
+save 和 restore 方法是用来保存和恢复 canvas 状态的，都没有参数。         
+Canvas 的状态就是当前画面应用的所有样式和变形的一个快照。            
+
+- 1、关于 save()           
+Canvas状态存储在栈中，每当save()方法被调用后，当前的状态就被推送到栈中保存。一个绘画状态包括：           
+当前应用的变形（即移动，旋转和缩放）      
+strokeStyle, fillStyle, globalAlpha, lineWidth, lineCap, lineJoin, miterLimit, shadowOffsetX, shadowOffsetY, shadowBlur, shadowColor, globalCompositeOperation 的值           
+当前的裁切路径（clipping path）          
+可以调用任意多次 save方法。(类似数组的push())           
+
+- 2、关于restore()         
+每一次调用 restore 方法，上一个保存的状态就从栈中弹出，所有设定都恢复。(类似数组的pop())                
+
+
+## <div id='class08'>8、变形</div>           
+**translate(x, y)**             
+用来移动 canvas 的原点到指定的位置           
+translate方法接受两个参数。x 是左右偏移量，y 是上下偏移量，如右图所示。          
+在做变形之前先保存状态是一个良好的习惯。大多数情况下，调用 restore 方法比手动恢复原先的状态要简单得多。又如果你是在一个循环中做位移但没有保存和恢复canvas 的状态，很可能到最后会发现怎么有些东西不见了，那是因为它很可能已经超出 canvas 范围以外了。          
+注意：translate移动的是canvas的坐标原点。(坐标变换)          
+```html
+<canvas id="tutorial" width="600" height="600"></canvas>
+</body>
+<script type="text/javascript">
+    let ctx;
+    function draw(){
+        let canvas = document.getElementById('tutorial');
+        if (!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        ctx.save(); //保存坐原点平移之前的状态
+        ctx.translate(100, 100);
+        ctx.strokeRect(0, 0, 100, 100);
+        ctx.restore(); //恢复到最初状态
+        ctx.translate(220, 220);
+        ctx.fillRect(0, 0, 100, 100)
+    }
+    draw();
+</script>
+```
+
+- rotate            
+`rotate(angle)`         
+旋转坐标轴。          
+这个方法只接受一个参数：旋转的角度(angle)，它是顺时针方向的，以弧度为单位的值。         
+旋转的中心是坐标原点。         
+```javascript
+function draw(){
+    let canvas = document.getElementById('tutorial');
+    if(!canvas.getContext) return;
+    let ctx = canvas.getContext("2d");
+    //开始代码
+    ctx.fillStyle = "red";
+    ctx.save();
+
+    ctx.translate(100, 100);
+    ctx.rotate(Math.PI / 180 * 45);
+    ctx.fillStyle = "blue";
+    ctx.fillRect(0, 0, 100, 100);
+    ctx.restore();
+
+    ctx.save();
+    ctx.translate(0, 0);
+    ctx.fillRect(0, 0, 50, 50);
+    ctx.restore();
+}
+draw();
+```
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Canvas tutorial</title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+
+<img src="./img.jpg" alt="" width="300"><br>
+<canvas id="tutorial" width="600" height="400"></canvas>
+
+</body>
+<script type="text/javascript">
+    function draw(){
+        var canvas = document.getElementById('tutorial');
+        if (!canvas.getContext) return;
+        var ctx = canvas.getContext("2d");
+        var img = document.querySelector("img");
+        ctx.drawImage(img, 0, 0, 400, 200);
+    }
+    document.querySelector("img").onclick = function (){
+        draw();
+    }
+</script>
+</html>
