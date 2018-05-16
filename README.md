@@ -124,6 +124,7 @@
     - [06、brew常用命令行](./02、生态圈技术栈/01、brew常用命令行/README.md)
     - [07、Mac机上安装nvm遇到的坑--nvm command not found](https://www.cnblogs.com/giggle/p/7075548.html)
     - [08、mac常用命令行](./02、生态圈技术栈/03、mac常用命令行/README.md)
+    - [09、README文件语法解读，即Github Flavored Markdown语法介绍](https://github.com/guodongxiaren/README)
 
 
 - koa2
