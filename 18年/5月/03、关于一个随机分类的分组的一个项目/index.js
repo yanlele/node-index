@@ -1,4 +1,6 @@
 let factory = require('./factory');
+const readline = require('readline');
+const instruction = require('./instruction');
 
 let enterDataArray = [];
 let outputDataArray = [];
@@ -18,6 +20,49 @@ let timer =  setInterval(function () {
     }
 }, 1000);
 
+
+
+instruction.init();
+let question;
+
+//创建readline接口实例
+let rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+// question方法
+function getQuestion() {
+    rl.question("请给出您的指令:  ", function (answer) {
+        question = answer;
+        switch (question) {
+            case 'help':
+                instruction.init();
+                getQuestion();
+                break;
+            case 'list':
+                console.log(enterDataArray);
+                getQuestion();
+                break;
+
+            case 'close':
+                rl.close();
+                break;
+            default:
+                console.error('输入的指令错误，请重新输入');
+                getQuestion();
+                break;
+        }
+    });
+}
+
+getQuestion();
+
+// close事件监听
+rl.on("close", function () {
+    // 结束程序
+    process.exit(0);
+});
 
 
 

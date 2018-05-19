@@ -50,8 +50,7 @@ let index = {
             34: "澳门",
             35: "国外"
         };
-
-        return addressArray[Math.random(tools.randomFrom(1, 35))]
+        return addressArray[tools.randomFrom(1, 35)]
     },
 
     getRandomCode: function randomNum(minNum, maxNum) {
