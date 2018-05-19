@@ -12,7 +12,7 @@ let index = {
     },
 
     //创建产品产品生产地
-    getAddress: function() {
+    getAddress: function () {
         let addressArray = {
             1: "北京",
             2: "天津",
@@ -51,32 +51,32 @@ let index = {
             35: "国外"
         };
 
-        return addressArray[Math.random(tools.randomFrom(1,35))]
+        return addressArray[Math.random(tools.randomFrom(1, 35))]
     },
-    
-    getRandomCode: function randomNum(minNum,maxNum){
-        let today = new Date();
-        let day   = today.getDate(); //获取当前日(1-31)      
-        let month = today.getMonth() + 1; //显示月份比实际月份小1,所以要加1  
-        let year  = today.getYear();  //获取完整的年份(4位,1970-????)  getFullYear()
-        let years=today.getFullYear();
-        years= years<99?"20"+years:years;
-        month    = month<10?"0"+month:month;  //数字<10，实际显示为，如5，要改成05  
-        day   = day<10?"0"+day:day;
-        let hh=today.getHours();
-        hh   = hh<10?"0"+hh:hh;
-        let ii=today.getMinutes();
-        ii   = ii<10?"0"+ii:ii;
-        let ss= today.getSeconds();
-        ss   = ss<10?"0"+ss:ss;
-        let dada = years+month+day+hh+ii+ss;//时间不能直接相加，要这样相加！！！14位
 
-        switch(arguments.length){
+    getRandomCode: function randomNum(minNum, maxNum) {
+        let today = new Date();
+        let day = today.getDate(); //获取当前日(1-31)
+        let month = today.getMonth() + 1; //显示月份比实际月份小1,所以要加1  
+        let year = today.getYear();  //获取完整的年份(4位,1970-????)  getFullYear()
+        let years = today.getFullYear();
+        years = years < 99 ? "20" + years : years;
+        month = month < 10 ? "0" + month : month;  //数字<10，实际显示为，如5，要改成05
+        day = day < 10 ? "0" + day : day;
+        let hh = today.getHours();
+        hh = hh < 10 ? "0" + hh : hh;
+        let ii = today.getMinutes();
+        ii = ii < 10 ? "0" + ii : ii;
+        let ss = today.getSeconds();
+        ss = ss < 10 ? "0" + ss : ss;
+        let dada = years + month + day + hh + ii + ss;//时间不能直接相加，要这样相加！！！14位
+
+        switch (arguments.length) {
             case 1:
-                return dada+parseInt(Math.random()*minNum+1,10);
+                return dada + parseInt(Math.random() * minNum + 1, 10);
                 break;
             case 2:
-                return dada+parseInt(Math.random()*(maxNum-minNum+1)+minNum,10);
+                return dada + parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
                 break;
             default:
                 return 0;
@@ -84,9 +84,13 @@ let index = {
         }
     },
 
-    getRandomPrice: function() {
-        let randomDigit = Math.floor(Math.random() * 5+1);
-
+    getRandomPrice: function () {
+        let randomDigit = Math.floor(Math.random() * 5 + 1);
+        let result = '';
+        for (let i = 0; i < randomDigit; i++) {
+            result += Math.floor(Math.random() * 10).toString()
+        }
+        return result;
     }
 };
 
