@@ -43,7 +43,9 @@ function getQuestion() {
                 console.log(enterDataArray);
                 getQuestion();
                 break;
+            case 'type':
 
+                break;
             case 'close':
                 rl.close();
                 break;

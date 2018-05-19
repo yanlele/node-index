@@ -34,7 +34,13 @@ for (let i = 0; i < 100; i++) {
     enterDataArray.push(randomData);
 }
 
+filterType = function (type) {
+    return enterDataArray.filter(function (item, index, list) {
+        return item.type === type;
+    });
+};
 
+/*
 let typeList = [];
 let middleList = [];
 
@@ -56,4 +62,4 @@ function parseArr(arr){
     return result
 }
 
-console.log(JSON.stringify(enterDataArray));
+console.log(JSON.stringify(enterDataArray));*/
