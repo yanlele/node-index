@@ -83,7 +83,6 @@ function merge(left, right){
 }
 
 // 5:快排
-
 function quick(arr) {
     if (arr.length <= 1) { return arr; }
     var pivotIndex = Math.floor(arr.length / 2);

@@ -4,6 +4,8 @@ const instruction = require('./instruction');
 
 let enterDataArray = [];
 let outputDataArray = [];
+instruction.init();
+let question;
 
 //每隔六十秒执行一次
 let timer =  setInterval(function () {
@@ -18,12 +20,9 @@ let timer =  setInterval(function () {
         randomData.orderId = factory.getRandomCode(100);                //获得随机订单号
         enterDataArray.push(randomData);
     }
-}, 1000);
+    //获取当前所有的入参数据
+}, 1000 *60);
 
-
-
-instruction.init();
-let question;
 
 //创建readline接口实例
 let rl = readline.createInterface({
@@ -63,6 +62,9 @@ rl.on("close", function () {
     // 结束程序
     process.exit(0);
 });
+
+
+
 
 
 
