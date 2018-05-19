@@ -1,14 +1,12 @@
-let arr = [];
-for (let i = 0; i < 100; i++) {
-    arr.push(Math.floor(Math.random() * 10))
-}
+let arr = [1, 1, 2, 2, 3, 4, 5, 5, 4, 4, 4, 4];
 
-let newArr = [1,1,2,2,3,4,5,5,4,4,4,4];
-
-newArr.map(function (item, index, list) {
-    list.map(function(listItem, listIndex) {
-        if(listIndex > index && item === listItem) {
-            console.log(item)
-        }
-    })
+//去重算法
+let newArr = [];
+arr.map(function (item, index, list) {
+    if (newArr.indexOf(item) === -1) {
+        //表明没有这个数据
+        newArr.push(item)
+    }
 });
+console.log(newArr);
+
