@@ -23,7 +23,7 @@ function getRandomPrice() {
 // console.log(factory.getAddress());
 
 let enterDataArray = [];
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 20; i++) {
     let randomData = {};
     randomData.name = factory.getRandomChar();                      //产品名称
     randomData.type = Math.floor(Math.random() * 10);               //产品类型
@@ -39,6 +39,13 @@ filterType = function (type) {
         return item.type === type;
     });
 };
+
+let type = {};
+for (let i = 1; i <= 10; i++) {
+    type[i] = filterType(i)
+}
+
+console.log(type[1]);
 
 /*
 let typeList = [];

@@ -44,7 +44,8 @@ function getQuestion() {
                 getQuestion();
                 break;
             case 'type':
-
+                console.log('type');
+                getQuestion();
                 break;
             case 'close':
                 rl.close();
