@@ -84,8 +84,8 @@ let index = {
         }
     },
 
-    getRandomPrice: function () {
-        let randomDigit = Math.floor(Math.random() * 5 + 1);
+    getRandomPrice: function (digit) {
+        let randomDigit = Math.floor(Math.random() * digit + 1);
         let result = '';
         for (let i = 0; i < randomDigit; i++) {
             result += Math.floor(Math.random() * 10).toString()
