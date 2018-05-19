@@ -38,13 +38,22 @@ for (let i = 0; i < 100; i++) {
 let typeList = [];
 let middleList = [];
 
-enterDataArray.map(function (item, index, list) {
-    for (let i = 0; i < list.length; i++) {
-        if(index !==i){
-            if(item.type === list[i].type) {
-                console.log(item);
-            }
-
+function parseArr(arr){
+    var nameArr=[];
+    var result=[]
+    arr.forEach(function(item){
+        var i
+        if((i=nameArr.indexOf(item.type))>-1){
+            console.log(result,i)
+        }else{
+            nameArr.push(item.type);
+            result.push({
+                name:item.type,
+                number:item.number
+            })
         }
-    }
-});
+    });
+    return result
+}
+
+console.log(JSON.stringify(enterDataArray));
