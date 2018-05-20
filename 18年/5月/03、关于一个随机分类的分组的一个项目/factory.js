@@ -90,6 +90,12 @@ let index = {
             result += Math.floor(Math.random() * 10).toString()
         }
         return result;
+    },
+
+    classType: function (enterDataArray, type) {
+        return enterDataArray.filter(function (item, index, list) {
+            return item.type === type;
+        });
     }
 };
 

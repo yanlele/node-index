@@ -1,16 +1,18 @@
+let colors = require('colors');
 let factory = require('./factory');
 const readline = require('readline');
 const instruction = require('./instruction');
 
 let enterDataArray = [];
 let outputDataArray = [];
+let classType = {};
 instruction.init();
 let question;
 
 //每隔六十秒执行一次
-let timer =  setInterval(function () {
+let timer = setInterval(function () {
     //创建六个随机数据
-    for(let i = 0; i<6; i++) {
+    for (let i = 0; i < 6; i++) {
         let randomData = {};
         randomData.name = factory.getRandomChar();                      //产品名称
         randomData.type = Math.floor(Math.random() * 10);               //产品类型
@@ -21,8 +23,7 @@ let timer =  setInterval(function () {
         enterDataArray.push(randomData);
     }
     //获取当前所有的入参数据
-}, 1000 *60);
-
+}, 1000);
 
 //创建readline接口实例
 let rl = readline.createInterface({
@@ -44,7 +45,11 @@ function getQuestion() {
                 getQuestion();
                 break;
             case 'type':
-                console.log('type');
+                //处理函数
+                for (let i = 1; i <= 10; i++) {
+                    classType[i] = factory.classType(enterDataArray, i)
+                }
+                console.log(classType);
                 getQuestion();
                 break;
             case 'close':

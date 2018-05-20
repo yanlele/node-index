@@ -52,10 +52,10 @@ let typeList = [];
 let middleList = [];
 
 function parseArr(arr){
-    var nameArr=[];
-    var result=[]
+    let nameArr=[];
+    let result=[]
     arr.forEach(function(item){
-        var i
+        let i
         if((i=nameArr.indexOf(item.type))>-1){
             console.log(result,i)
         }else{

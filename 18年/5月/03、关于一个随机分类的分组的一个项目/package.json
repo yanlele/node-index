@@ -1,0 +1,16 @@
+{
+  "name": "yanle",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "yanle",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "colors": "^1.2.5"
+  }
+}
