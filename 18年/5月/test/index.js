@@ -1,2 +1,2 @@
-let time = new Date();
-console.log(typeof time.getTime());
+let arr = [1, 2, 3, 4];
+console.log(typeof arr === 'object');
