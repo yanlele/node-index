@@ -108,6 +108,7 @@
     - [02、react-router4与合并reducers示例](./17年/12月/12、react-router4与合并reducers示例)
     - [03、react 高阶函数示例](./18年/1月/14、react%20高阶函数)
     - [04、react子组件向父组件通信](./18年/4月/07、react%20子组件向父组件通信/READEME.md)
+    - [05、深入理解 React 高阶组件](https://zhuanlan.zhihu.com/p/24776678?group_id=802649040843051008)
     
     
 - jquery 
