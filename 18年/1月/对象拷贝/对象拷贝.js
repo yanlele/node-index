@@ -26,7 +26,7 @@ console.log(c);
 //ES5
 /*
 function extendDeep(p,c){
-    let c=c||{};
+    var c = c||{};
     for(let prop in p){
         if(typeof p[prop] ==='object'){
             c[prop]=(p[prop].constructor===Array)?[]:{};
@@ -35,4 +35,5 @@ function extendDeep(p,c){
             c[prop]=p[prop];
         }
     }
-}*/
+}
+*/
