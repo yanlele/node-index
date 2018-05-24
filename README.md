@@ -126,7 +126,6 @@
     - [07、Mac机上安装nvm遇到的坑--nvm command not found](https://www.cnblogs.com/giggle/p/7075548.html)
     - [08、mac常用命令行](./02、生态圈技术栈/03、mac常用命令行/README.md)
     - [09、README文件语法解读，即Github Flavored Markdown语法介绍](https://github.com/guodongxiaren/README)
-    - [10、把文档文本文件(*.docx)转换文html](https://github.com/mwilliamson/mammoth.js)
 
 
 - koa2
@@ -165,6 +164,8 @@
     - [15、关于取重算法的研究](./18年/5月/04、关于取重算法的研究/)
     - [16、nodejs生成表格和解析表格](./18年/5月/05、nodejs生成表格和解析表格/)
     - [17、nodejs实现控制台输入输出](./18年/5月/06、nodejs实现控制台输入输出/)
+    - [18、把文档文本文件(*.docx)转换文html](https://github.com/mwilliamson/mammoth.js)
+    - [19、Create PDF files using React](https://github.com/diegomura/react-pdf)
     
 
 
