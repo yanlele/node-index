@@ -5,6 +5,7 @@
 - [01、express基本使用,包括注册,登陆,上传,下载,登录权限控制,session持久化,邮件发送,网络爬虫等](https://github.com/yanlele/express)
 - [02、基于webpack3多页面打包](https://github.com/yanlele/webpack-dev)
 - [03、基于node的博客（极其经典，技术UP）](https://github.com/yanlele/N-blog)
+- [04、一个完整的react+redux项目示例和人总结](https://github.com/bailicangdu/react-pxq)
 
 ### 独立项目列表（已完成）
 - [01、基于vue和express的一个小型电商全栈项目](https://github.com/yanlele/nodeMall)
