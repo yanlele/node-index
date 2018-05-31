@@ -23,6 +23,7 @@
     "express-session": "^1.15.6",
     "mobile-detect": "^1.4.1",
     "mockjs": "^1.0.1-beta3",
+    "moment": "^2.22.1",
     "mongoose": "^4.13.7",
     "multer": "^1.3.0",
     "nodejs-websocket": "^1.7.1",
