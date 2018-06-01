@@ -9,5 +9,9 @@ console.log(day2);
 console.log(day3);*/
 
 
+/*
 let time = moment("2010 12", "YYYY MM");
+console.log(time);*/
+
+let time = moment([2010, 11, 5, 10, 10, 10, 222]).year(1111);
 console.log(time);

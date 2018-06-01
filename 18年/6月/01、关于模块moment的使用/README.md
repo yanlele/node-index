@@ -1,5 +1,7 @@
 #  关于时间模块moment的使用
 
+[也可以直接看官方文档](https://github.com/moment/momentjs.com/tree/master/docs/moment)
+
 ## Now 获取当前时间
 具体语法：           
 ```javascript
@@ -108,10 +110,7 @@ moment('2012.05.25',       'YYYY-MM-DD', true).isValid(); // false
 
 
 ## String + Formats  接受多种格式解析
-语法：     
-```javascript
-moment(String, String[], String, Boolean);
-```
+语法： `moment(String, String[], String, Boolean);`            
 
 示例：         
 ```javascript
@@ -124,10 +123,7 @@ moment("05-06-1995", ["MM-DD-YYYY", "DD-MM-YYYY"], 'fr', true); // uses 'fr' loc
 ```
 
 ## Object 对象解析
-语法：         
-```javascript
-moment({unit: value, ...});
-```
+语法： `moment({unit: value, ...});`
 
 示例：         
 ```javascript
@@ -141,12 +137,73 @@ moment({ years:'2010', months:'3', date:'5', hours:'15', minutes:'10', seconds:'
 
 
 ## Unix Timestamp (milliseconds)接受13位毫秒值
-语法：         
-```javascript
-moment(Number);
-```
+语法： `moment(Number);`               
 
 示例：     
 ```javascript
 var day = moment(1318781876406);
 ```
+
+## Unix Timestamp (seconds) 接受10位分钟值
+语法: `moment.unix(Number)`      
+
+使用示例：           
+```javascript
+var day = moment.unix(1318781876);
+var day = moment.unix(1318781876.721);
+var day = moment.unix(1318781876).utc();
+```
+
+## Date 时间对象                
+语法： `moment(Date);`             
+
+使用示例:           
+```javascript
+var day = new Date(2011, 9, 16);
+var dayWrapper = moment(day);
+```
+
+## Array 接受数组对象           
+语法： `moment(Number[]);`                 
+其中数组对应顺序为： `[year, month, day, hour, minute, second, millisecond]`              
+备注: 这里有一个很坑爹的地方， month这个东西，是从0开始的，0 表示1月份           
+
+使用示例：           
+```javascript
+moment([2010, 1, 14, 15, 25, 50, 125]); // February 14th, 3:25:50.125 PM            
+moment([2010]);        // January 1st
+moment([2010, 6]);     // July 1st
+moment([2010, 6, 10]); // July 10th
+```
+
+## 设置 年月日时分秒毫秒的设置和获取
+语法：
+```javascript
+moment().millisecond(Number);
+moment().millisecond(); // Number
+moment().milliseconds(Number);
+moment().milliseconds(); // Number
+
+moment().second(Number);
+moment().second(); // Number
+moment().seconds(Number);
+moment().seconds(); // Number
+
+moment().minute(Number);
+moment().minute(); // Number
+moment().minutes(Number);
+moment().minutes(); // Number
+
+moment().hour(Number);
+moment().hour(); // Number
+moment().hours(Number);
+moment().hours(); // Number
+
+moment().date(Number);
+moment().date(); // Number
+moment().dates(Number);
+moment().dates(); // Number
+
+moment().year(year).month(month).date(day)
+```
+如果超过的情况，就用复数形式              
