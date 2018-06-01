@@ -9,5 +9,5 @@ console.log(day2);
 console.log(day3);*/
 
 
-let time = moment(new Date().getTime());
+let time = moment("2010 12", "YYYY MM");
 console.log(time);

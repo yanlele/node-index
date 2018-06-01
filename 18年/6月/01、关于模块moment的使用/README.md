@@ -16,7 +16,7 @@ let time = moment(new Date().getTime());
 console.log(time);
 ```
 
-可以接受的常见时间字符串为：          
+> 可以接受的常见时间字符串为：          
 ```
 2013-02-08               # A calendar date part
 20130208                 # Basic (short) full date
@@ -36,21 +36,23 @@ console.log(time);
 
 `moment("not a real date").isValid(); // false` 这个函数还可以帮助我们校验是否是一个正确的可以解析的时间字符串         
 
-## String + Format  接受时间字符串，转为固定的日期格式
+## String + Format  接受时间字符串，设定接受的日期格式
 ```
-moment(String, String);
-moment(String, String, String);
-moment(String, String, Boolean);
+moment(String, String);                     //普通的格式校验
+moment(String, String, String);             //moment.utc() - 大多数用不到
+moment(String, String, Boolean);            //是否为严格模式，默认false
 moment(String, String, String, Boolean);
 ```
 
-使用：         
+> 使用：         
 ```
 moment("12-25-1995", "MM-DD-YYYY");
+moment("12-25-1995", "MM-DD-YYYY");
+moment("12/25/1995", "MM-DD-YYYY");
 ```
 
-对应字符串字母含义           
-Year, month, and day tokens         
+**对应字符串字母含义 **                      
+> Year, month, and day tokens         
 
 |Input|	Example	| Description|          
 |:-|:-|:-|          
@@ -67,7 +69,7 @@ Year, month, and day tokens
 |x|	1410715640579|	Unix ms timestamp|
 
 
-Week year, week, and weekday tokens         
+> Week year, week, and weekday tokens         
 
 |Input|	Example	| Description|          
 |:-|:-|:-|          
@@ -81,5 +83,70 @@ Week year, week, and weekday tokens
 |W WW|	1..53|	ISO week of year|
 |E|	1..7|	ISO day of week|
 
+> Hour, minute, second, millisecond, and offset tokens            
+
+|Input|	Example	| Description|          
+|:-|:-|:-|    
+|H HH|	0..23|	Hours (24 hour time)|
+|h hh|	1..12|	Hours (12 hour time used with a A.)|
+|k kk|	1..24|	Hours (24 hour time from 1 to 24)|
+|a A|	am pm|	Post or ante meridiem (Note the one character a p are also considered valid)|
+|m mm|	0..59|	Minutes|
+|s ss|	0..59|	Seconds|
+|S SS SSS|	0..999|	Fractional seconds|
+|Z ZZ|	+12:00|	Offset from UTC as +-HH:mm, +-HHmm, or Z|
 
 
+> 严格模式          
+
+```javascript
+moment('It is 2012-05-25', 'YYYY-MM-DD').isValid();       // true
+moment('It is 2012-05-25', 'YYYY-MM-DD', true).isValid(); // false
+moment('2012-05-25',       'YYYY-MM-DD', true).isValid(); // true
+moment('2012.05.25',       'YYYY-MM-DD', true).isValid(); // false
+```
+
+
+## String + Formats  接受多种格式解析
+语法：     
+```javascript
+moment(String, String[], String, Boolean);
+```
+
+示例：         
+```javascript
+moment("12-25-1995", ["MM-DD-YYYY", "YYYY-MM-DD"]);
+moment("29-06-1995", ["MM-DD-YYYY", "DD-MM", "DD-MM-YYYY"]);    // uses the last format
+moment("05-06-1995", ["MM-DD-YYYY", "DD-MM-YYYY"]);             // uses the first format
+moment("29-06-1995", ["MM-DD-YYYY", "DD-MM-YYYY"], 'fr');       // uses 'fr' locale
+moment("29-06-1995", ["MM-DD-YYYY", "DD-MM-YYYY"], true);       // uses strict parsing
+moment("05-06-1995", ["MM-DD-YYYY", "DD-MM-YYYY"], 'fr', true); // uses 'fr' locale and strict parsing
+```
+
+## Object 对象解析
+语法：         
+```javascript
+moment({unit: value, ...});
+```
+
+示例：         
+```javascript
+moment({ hour:15, minute:10 });
+moment({ y    :2010, M     :3, d   :5, h    :15, m      :10, s      :3, ms          :123});
+moment({ year :2010, month :3, day :5, hour :15, minute :10, second :3, millisecond :123});
+moment({ years:2010, months:3, days:5, hours:15, minutes:10, seconds:3, milliseconds:123});
+moment({ years:2010, months:3, date:5, hours:15, minutes:10, seconds:3, milliseconds:123});
+moment({ years:'2010', months:'3', date:'5', hours:'15', minutes:'10', seconds:'3', milliseconds:'123'});  // from 2.11.0
+```
+
+
+## Unix Timestamp (milliseconds)接受13位毫秒值
+语法：         
+```javascript
+moment(Number);
+```
+
+示例：     
+```javascript
+var day = moment(1318781876406);
+```
