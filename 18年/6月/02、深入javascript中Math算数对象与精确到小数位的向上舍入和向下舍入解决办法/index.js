@@ -1,0 +1,20 @@
+console.log('Math.E  的结果为：'+Math.E);
+console.log('Math.LN2  的结果为：'+Math.LN2);
+console.log('Math.LN10  的结果为：'+Math.LN10);
+console.log('Math.LOG2E  的结果为：'+Math.LOG2E);
+console.log('Math.LOG10E  的结果为：'+Math.LOG10E);
+console.log('Math.PI  的结果为：'+Math.PI);
+console.log('Math.SQRT1_2  的结果为：'+Math.SQRT1_2);
+console.log('Math.SQRT2  的结果为：'+Math.SQRT2);
+
+console.log('----------');
+var num = 1234.567;
+console.log('Math.ceil(num) 的结果: ' + Math.ceil(num));
+console.log('Math.floor(num) 的结果: ' + Math.floor(num));
+console.log('Math.random() 的结果: ' + Math.random());
+console.log('Math.round(num) 的结果: ' + Math.round(num));
+console.log('Math.sqrt(num) 的结果: ' + Math.sqrt(num));
+console.log('-----------');
+var num = 1234.56189;
+num=num*100;
+console.log(Math.ceil(num)/100);
