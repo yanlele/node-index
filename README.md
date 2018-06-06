@@ -166,8 +166,8 @@
     - [09、node基础api_Buffer](./18年/2月/4、node基础api_Buffer)
     - [10、node基础api_event](./18年/2月/5、node基础api_event)
     - [11、node基础api_fs](./18年/2月/6、node基础api_fs)
-    - [12、单元测试](./18年/2月/7、单元测试)
-    - [13、大型服务端项目测试和UT覆盖示例](./18年/3月/02、大型服务端项目测试和UT覆盖示例)
+    - [12、单元测试(mocha)](./18年/2月/7、单元测试)
+    - [13、大型服务端项目测试(mocha)和UT覆盖示例](./18年/3月/02、大型服务端项目测试和UT覆盖示例)
     - [14、关于一个随机分类的分组的一个项目](./18年/5月/03、关于一个随机分类的分组的一个项目/)
     - [15、关于取重算法的研究](./18年/5月/04、关于取重算法的研究/)
     - [16、nodejs生成表格和解析表格](./18年/5月/05、nodejs生成表格和解析表格/)
@@ -175,6 +175,7 @@
     - [18、把文档文本文件(*.docx)转换文html](https://github.com/mwilliamson/mammoth.js)
     - [19、Create PDF files using React](https://github.com/diegomura/react-pdf)
     - [20、Create, read and edit .zip files with Javascript](https://github.com/Stuk/jszip)
+    - [21、mocha测试post和get请求](./18年/6月/05、mocha测试post和get请求)
     
     
 
