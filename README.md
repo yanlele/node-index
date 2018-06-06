@@ -131,6 +131,7 @@
     - [08、mac常用命令行](./02、生态圈技术栈/03、mac常用命令行/README.md)
     - [09、README文件语法解读，即Github Flavored Markdown语法介绍](https://github.com/guodongxiaren/README)
     - [10、egret-core(html5游戏引擎)](https://github.com/egret-labs/egret-core)
+    - [11、项目规范（包含git管理项目的使用）](https://github.com/elsewhencode/project-guidelines/blob/master/README-zh.md)
 
 
 - koa2
