@@ -75,3 +75,35 @@ let foo = {
 }
 let bar = JSON.parse(JSON.stringify(foo));
 ```
+
+
+
+## 关于一个对象引用和重新拷贝问题的区别问题探究
+如果直接赋值对象的方式，改变某一条属性值，那么原对象也会跟着发生改变：例如这样 
+```javascript
+let Mock  = require('mockjs');
+
+let data = Mock.mock({
+    'list|1-10': [{
+        'id|+1': Mock.mock('@integer(1,10)'),
+        name: Mock.mock('@cname'),
+        title: Mock.mock('@ctitle')
+    }],
+    message: '123'
+});
+
+let reData = data;
+
+reData.message = 456;
+
+console.log(data); //结果中，message 为 456
+```
+
+但是我们可以用Object.assign的方式来拷贝对象本身，然后赋予新的值，就可以形成一个对象拷贝的模式：
+```javascript
+let reData = Object.assign({}, data);
+reData.message = 456;
+
+console.log('data', data.prototype.name);
+console.log('reData', reData);
+```
