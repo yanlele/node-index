@@ -69,3 +69,23 @@ console.log('email', /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/.test(email));
 ```javascript
 /^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}$/
 ```
+
+11、其他常见正则验证：
+```javascript
+//日期规则
+exports.dateTimeRule = /^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}$/;
+//日期规则
+exports.dataTimeRuleM = /^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}$/;
+//日期规则
+exports.dateRule = /^\d{4}-\d{2}-\d{2}$/;
+//电话规则
+exports.telRule = /^((1[3-9]\d{9})|(\d{3,4}-\d{7,10}))$/;
+//邮箱规则
+exports.emailRule = /\w@\w*\.\w/;
+//邮政编码规则
+exports.postCodeRule =  /^[1-9][0-9]{5}$/; 
+//传真规则
+exports.faxRule = /^(\d+-)?\d+(-\d+)?$/;
+//手机规则
+exports.moblieRule = /^1[3-9]\d{9}$/;
+```

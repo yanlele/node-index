@@ -1,6 +1,6 @@
 #  关于时间模块moment的使用
 
-[也可以直接看官方文档](https://github.com/moment/momentjs.com/tree/master/docs/moment)
+[也可以直接看官方源码](https://github.com/moment/momentjs.com/tree/master/docs/moment)
 
 ## Now 获取当前时间
 具体语法：           
