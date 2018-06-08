@@ -33,6 +33,7 @@
 - [06、canvas总结](./book/06、canvas总结)
 - [07、leetCode-cn](./book/07、leetCode)
 - [08、webpack专题](./book/08、webpack)
+- [09、学习javascript数据结构与算法](./book/09、学习javascript数据结构与算法)
 
 
 ### 通用功能js模块组件
