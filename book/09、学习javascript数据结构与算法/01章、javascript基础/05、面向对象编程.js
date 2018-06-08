@@ -12,6 +12,8 @@
 //     address: 'Middle Earth'
 // };
 
+
+
 //方式3
 function Book(title,pages, isbn) {
     this.title = title;
