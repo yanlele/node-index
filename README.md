@@ -6,6 +6,7 @@
 - [02、基于webpack3多页面打包](https://github.com/yanlele/webpack-dev)
 - [03、基于node的博客（极其经典，技术UP）](https://github.com/yanlele/N-blog)
 - [04、一个完整的react+redux项目示例和人总结](https://github.com/bailicangdu/react-pxq)
+- [05、某博客知识点儿，写的很好，找个时间可以多学习一下](https://github.com/muwoo/blogs)
 
 ### 独立项目列表（已完成）
 - [01、基于vue和express的一个小型电商全栈项目](https://github.com/yanlele/nodeMall)
