@@ -104,6 +104,7 @@
     - [20、关于对象的遍历]()
     - [21、reduce()处理对象](./18年/6月/03、reduce()处理对象/index.js)
     - [22、Object.assign() 与 深拷贝](./18年/6月/04、Object.assign()%20与%20深拷贝)
+    - [23、深入理解 JavaScript 异步](https://github.com/wangfupeng1988/js-async-tutorial)
 
 
 - vue
