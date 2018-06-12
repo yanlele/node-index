@@ -25,7 +25,7 @@
 - [03、基于react 高仿csdn博客后端](https://github.com/yanlele/react-blog-server)
 - [*****04、react项目实战二：Webpack + React全栈工程架构项目实战精讲](https://github.com/yanlele/react-cnode)
 
-### 专题笔记归类(大型专题总结)
+### 专题笔记归类(简书总结)
 - [01、react简书笔记](./book/01、react专题)
 - [02、ES6/7简书笔记](./book/02、ES6&7)
 - [03、css3专题](./book/03、css3专题)
@@ -105,7 +105,7 @@
     - [21、reduce()处理对象](./18年/6月/03、reduce()处理对象/index.js)
     - [22、Object.assign() 与 深拷贝](./18年/6月/04、Object.assign()%20与%20深拷贝)
     - [23、深入理解 JavaScript 异步](https://github.com/wangfupeng1988/js-async-tutorial)
-
+    - [24、搜罗一切webpack的好文章](https://github.com/webpack-china/awesome-webpack-cn)
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
@@ -139,6 +139,7 @@
     - [09、README文件语法解读，即Github Flavored Markdown语法介绍](https://github.com/guodongxiaren/README)
     - [10、egret-core(html5游戏引擎)](https://github.com/egret-labs/egret-core)
     - [11、项目规范（包含git管理项目的使用）](https://github.com/elsewhencode/project-guidelines/blob/master/README-zh.md)
+    - [12、MarkDown添加图片的三种方式 - 找时间自己总结一边](https://blog.csdn.net/slaughterdevil/article/details/79255933)
 
 
 - koa2
