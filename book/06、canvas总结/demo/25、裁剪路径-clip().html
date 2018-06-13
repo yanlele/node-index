@@ -14,15 +14,14 @@
     function draw(){
         let canvas = document.getElementById('tutorial');
         if(!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
         //开始代码
-        let ctx;
-        function draw(){
-            let canvas = document.getElementById('tutorial');
-            if (!canvas.getContext) return;
-            let ctx = canvas.getContext("2d");
-            ctx.transform(1, 1, 0, 1, 0, 0);
-            ctx.fillRect(0, 0, 100, 100);
-        }
+        ctx.beginPath();
+        ctx.arc(20,20, 100, 0, Math.PI * 2);
+        ctx.clip();
+
+        ctx.fillStyle = "pink";
+        ctx.fillRect(20, 20, 100,100);
     }
     draw();
 </script>

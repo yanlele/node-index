@@ -747,12 +747,91 @@ function draw(){
 
 ## <div id='class09'>9、合成</div>
 在前面的所有例子中、，我们总是将一个图形画在另一个之上，对于其他更多的情况，仅仅这样是远远不够的。比如，对合成的图形来说，绘制顺序会有限制。不过，我们可以利用 `globalCompositeOperation` 属性来改变这种状况。                  
+`globalCompositeOperation = type`
+```javascript
+function draw(){
+        let canvas = document.getElementById('tutorial');
+        if(!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+        ctx.fillStyle = "blue";                       //老图像
+        ctx.fillRect(0, 0, 200, 200);
 
-`globalCompositeOperation = type`               
+        ctx.globalCompositeOperation = "source-over"; //全局合成操作
+        ctx.fillStyle = "red";                        //新图像
+        ctx.fillRect(100, 100, 200, 200);
+    }
+    draw();
+```               
+`type`是下面 13 种字符串值之一：               
+1. source-over(default)         
+这是默认设置，新图像会覆盖在原有图像。             
+
+2. source-in                
+仅仅会出现新图像与原来图像重叠的部分，其他区域都变成透明的。(包括其他的老图像区域也会透明)                  
+
+3. source-out               
+仅仅显示新图像与老图像没有重叠的部分，其余部分全部透明。(老图像也不显示)               
+
+4. source-atop              
+新图像仅仅显示与老图像重叠区域。老图像仍然可以显示。(新图像也不显示)                  
+
+5. destination-over                 
+新图像会在老图像的下面。                    
+
+6. destination-in               
+仅仅新老图像重叠部分的老图像被显示，其他区域全部透明。                 
+
+7. destination-out              
+仅仅老图像与新图像没有重叠的部分。 注意显示的是老图像的部分区域。               
+
+8. destination-atop         
+老图像仅仅仅仅显示重叠部分，新图像会显示在老图像的下面。                
+
+9. lighter              
+新老图像都显示，但是重叠区域的颜色做加处理               
+
+10. darken          
+保留重叠部分最黑的像素。(每个颜色位进行比较，得到最小的)           
+blue: #0000ff       
+red: #ff0000                
+所以重叠部分的颜色：#000000               
+
+11. lighten             
+保证重叠部分最量的像素。(每个颜色位进行比较，得到最大的)               
+blue: #0000ff           
+red: #ff0000                
+所以重叠部分的颜色：#ff00ff               
+
+12. xor         
+重叠部分会变成透明               
+
+13. copy            
+只有新图像会被保留，其余的全部被清除(边透明)             
 
 
+## <div id='class10'>10、剪裁路径</div>          
+`clip()`                
+把已经创建的路径转换成裁剪路径。                
+裁剪路径的作用是遮罩。只显示裁剪路径内的区域，裁剪路径外的区域会被隐藏。                
+注意：clip()只能遮罩在这个方法调用之后绘制的图像，如果是clip()方法调用之前绘制的图像，则无法实现遮罩。               
+```javascript
+function draw(){
+        let canvas = document.getElementById('tutorial');
+        if(!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        //开始代码
+        ctx.beginPath();
+        ctx.arc(20,20, 100, 0, Math.PI * 2);
+        ctx.clip();
 
+        ctx.fillStyle = "pink";
+        ctx.fillRect(20, 20, 100,100);
+    }
+    draw();
+```
 
+## 
 
 
 
