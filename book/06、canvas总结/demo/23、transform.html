@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Canvas tutorial</title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas id="tutorial" width="300" height="300"></canvas>
+</body>
+<script type="text/javascript">
+    function draw(){
+        let canvas = document.getElementById('tutorial');
+        if(!canvas.getContext) return;
+        //开始代码
+        let ctx;
+        function draw(){
+            let canvas = document.getElementById('tutorial');
+            if (!canvas.getContext) return;
+            let ctx = canvas.getContext("2d");
+            ctx.transform(1, 1, 0, 1, 0, 0);
+            ctx.fillRect(0, 0, 100, 100);
+        }
+        draw();
+    }
+    draw();
+</script>
+</html>

@@ -657,7 +657,7 @@ strokeStyle, fillStyle, globalAlpha, lineWidth, lineCap, lineJoin, miterLimit, s
 
 
 ## <div id='class08'>8、变形</div>           
-**translate(x, y)**             
+- **translate(x, y)**             
 用来移动 canvas 的原点到指定的位置           
 translate方法接受两个参数。x 是左右偏移量，y 是上下偏移量，如右图所示。          
 在做变形之前先保存状态是一个良好的习惯。大多数情况下，调用 restore 方法比手动恢复原先的状态要简单得多。又如果你是在一个循环中做位移但没有保存和恢复canvas 的状态，很可能到最后会发现怎么有些东西不见了，那是因为它很可能已经超出 canvas 范围以外了。          
@@ -710,8 +710,45 @@ function draw(){
 draw();
 ```
 
+- scale             
+`scale(x, y)`               
+我们用它来增减图形在 canvas 中的像素数目，对形状，位图进行缩小或者放大。                
+scale方法接受两个参数。x,y分别是横轴和纵轴的缩放因子，它们都必须是正值。值比 1.0 小表示缩 小，比 1.0 大则表示放大，值为 1.0 时什么效果都没有。             
+默认情况下，canvas 的 1 单位就是 1 个像素。举例说，如果我们设置缩放因子是 0.5，1 个单位就变成对应 0.5 个像素，这样绘制出来的形状就会是原先的一半。同理，设置为 2.0 时，1 个单位就对应变成了 2 像素，绘制的结果就是图形放大了 2 倍。                    
+
+- transform(变形矩阵)           
+`transform(a, b, c, d, e, f)`               
+a (m11):  Horizontal scaling. (水平伸缩)            
+b (m12):  Horizontal skewing.(水平歪斜)         
+c (m21):  Vertical skewing.(垂直歪斜)               
+d (m22):  Vertical scaling.(垂直伸缩)               
+e (dx):  Horizontal moving.(水平移动)               
+f (dy):  Vertical moving.(垂直移动)             
+
+示例：                 
+```javascript
+function draw(){
+        let canvas = document.getElementById('tutorial');
+        if(!canvas.getContext) return;
+        //开始代码
+        let ctx;
+        function draw(){
+            let canvas = document.getElementById('tutorial');
+            if (!canvas.getContext) return;
+            let ctx = canvas.getContext("2d");
+            ctx.transform(1, 1, 0, 1, 0, 0);
+            ctx.fillRect(0, 0, 100, 100);
+        }
+        draw();
+    }
+    draw();
+```
 
 
+## <div id='class09'>9、合成</div>
+在前面的所有例子中、，我们总是将一个图形画在另一个之上，对于其他更多的情况，仅仅这样是远远不够的。比如，对合成的图形来说，绘制顺序会有限制。不过，我们可以利用 `globalCompositeOperation` 属性来改变这种状况。                  
+
+`globalCompositeOperation = type`               
 
 
 
