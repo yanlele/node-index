@@ -1,5 +1,7 @@
 # 学习javascript数据结构与算法
 
+## 学习javascript数据结构与算法 [巴西] Loiane Groner 著 孙晓博等译
+
 目录结构
 - [01章、javascript基础](#class01)
     - [1.5、面向对象编程](#class01-05)
@@ -252,9 +254,34 @@ priorityQueue.print();
 [在下面这个示例中，我们要实现一个模拟的击鼓传花游戏](./04章、队列/03、循环队列-击鼓传花/index.js)                     
 
 
+## <div id='class05'>05章、链表</div>                         
+要存储多个元素，数组（或列表）可能是最常用的数据结构。正如本书之前提到过的，每种
+语言都实现了数组。这种数据结构非常方便，提供了一个便利的 [] 语法来访问它的元素。然而，
+这种数据结构有一个缺点：（在大多数语言中）数组的大小是固定的，从数组的起点或中间插入
+或移除项的成本很高，因为需要移动元素（尽管我们已经学过的JavaScript的 Array 类方法可以帮
+我们做这些事，但背后的情况同样是这样）。
 
-
-
+### <div id='class05-01'>5.1、创建一个链表</div>                   
+以下是我们的 LinkedList类的骨架：              
+```javascript
+function LinkedList() {
+var Node = function(element){ // {1}
+this.element = element;
+this.next = null;
+};
+var length = 0; // {2}
+var head = null; // {3}
+this.append = function(element){};
+this.insert = function(position, element){};
+this.removeAt = function(position){};
+this.remove = function(element){};
+this.indexOf = function(element){};
+this.isEmpty = function() {};
+this.size = function() {};
+this.toString = function(){};
+this.print = function(){};
+}
+```
 
 
 
