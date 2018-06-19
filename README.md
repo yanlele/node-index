@@ -50,6 +50,7 @@
     - [02、vue使用的转场特效插件 - vueg](https://github.com/jaweii/vueg)
     
 - react组件
+    - [01、react-swipeable: React swipe component - Swipe bindings for react](https://github.com/dogfessional/react-swipeable)
 
 
 - jQuery组件
