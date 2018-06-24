@@ -70,7 +70,14 @@ console.log('email', /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/.test(email));
 /^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}$/
 ```
 
-11、其他常见正则验证：
+11、给某一些位数做掩码规则：         
+```javascript
+let phone = '152132837sfasdf46238746497741';
+let phoneMask = phone.replace(/^(\w{3})(\w*)(\w{4})$/, "$1 **** $3");
+console.log(phoneMask);
+```
+
+12、其他常见正则验证：
 ```javascript
 //日期规则
 exports.dateTimeRule = /^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}$/;

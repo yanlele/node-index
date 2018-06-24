@@ -10,4 +10,16 @@ let cardId = '121513546yasd颜乐dlf123vsd4f65465';
 console.log(/^[0-9a-zA-Z]+$/.test(cardId));
 console.log(!/^1\d{10}$|^1[345789]\d{1}[*]{4}\d{4}&/.test('11111111111'));*/
 
-console.log(/^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}$/.test('2018-05-09 00:00'));
+// console.log(/^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}$/.test('2018-05-09 00:00'));
+
+var str = '6222023100014701887';
+var str=str.replace(/\s/g,'').replace(/(.{4})/g,"$1 ");
+console.log(str);
+
+
+// 给手机号码做掩码
+
+let phone = '152132837sfasdf46238746497741';
+let phoneMask = phone.replace(/^(\w{3})(\w*)(\w{4})$/, "$1 **** $3");
+console.log(phoneMask);
+
