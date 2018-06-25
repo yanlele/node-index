@@ -2,7 +2,6 @@
 
 一个错误的示例：                
 ```jsx harmony
-{/*关联客户主体模态框*/}
 <Modal
     visible={modalType === 'relevanceCustomer'}
     title="关联主体"
@@ -27,3 +26,27 @@ constructor(props) {
     this.handleCancel = this.handleCancel.bind(this);                           //绑定取消模态框的功能
 }
 ```
+
+----------------
+
+第二种正确的示例为：              
+```jsx harmony
+<Modal
+    visible={modalType === 'relevanceCustomer'}
+    title="关联主体"
+    footer={null}
+    width="75%"
+    onCancel={()=>this.handleCancel()}
+>
+    {modalType === 'relevanceCustomer' ?
+        <CaseDeclareDetailRelevanceCustomer
+            handleCancel={this.handleCancel}
+            handleShowAddCustomer={() =>{
+                this.setState({
+                    modalType: 'addCustomer'
+                });
+            }}
+            modal={modal}/> : null}
+</Modal>
+```
+使用 `()=>{}`这种箭头函数的写法，也可以把this成功传递给子组件
