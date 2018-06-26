@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Canvas tutorial</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas id="tutorial" width="500" height="500"></canvas>
+<br>
+<hr>
+
+x: <input type="text" id="text1"><br>
+y: <input type="text" id="text2"><br>
+<button id="button">点击我</button>
+</body>
+<script type="text/javascript">
+    function draw(){
+        let canvas = document.getElementById('tutorial');
+        if(!canvas.getContext) return;
+        let ctx = canvas.getContext("2d");
+        let xInput = document.getElementById('text1').value;
+        let yInput = document.getElementById('text2').value;
+
+        ctx.strokeRect(xInput, yInput, 200, 200)
+
+        //开始代码
+        ctx.fillRect(10, 10, 100, 50);
+        ctx.strokeRect(10, 70, 100, 50);
+        ctx.clearRect(15, 15, 50, 25);
+    }
+
+    let button = document.getElementById('button');
+    button.addEventListener('click', function() {
+        draw();
+    })
+</script>
+</html>
