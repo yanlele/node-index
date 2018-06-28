@@ -31,12 +31,11 @@
         }
 
         button {
-            padding: 2px 8px;
-            border: none;
-            border: 1px solid #aaa;
+            padding: 5px 10px;
+            border: 1px solid #777777;
             border-radius: 5px;
-            background: #ddf;
-            color: white;
+            background: #ffffff;
+            color: #777777;
             cursor: pointer;
 
         }
@@ -51,10 +50,10 @@
 </div>
 <script>
     function observe(data) {
-        if (!data || typeof data !== 'object') return
-        for (var key in data) {
-            let val = data[key]
-            let subject = new Subject()
+        if (!data || typeof data !== 'object') return;
+        for (let key in data) {
+            let val = data[key];
+            let subject = new Subject();
             Object.defineProperty(data, key, {
                 enumerable: true,
                 configurable: true,
@@ -67,19 +66,19 @@
                     return val
                 },
                 set: function (newVal) {
-                    val = newVal
+                    val = newVal;
                     // console.log('start notify...')
                     subject.notify()
                 }
-            })
+            });
             if (typeof val === 'object') {
                 observe(val)
             }
         }
     }
 
-    let id = 0
-    let currentObserver = null
+    let id = 0;
+    let currentObserver = null;
 
     class Subject {
         constructor() {
@@ -92,7 +91,7 @@
         }
 
         removeObserver(observer) {
-            var index = this.observers.indexOf(observer)
+            let index = this.observers.indexOf(observer)
             if (index > -1) {
                 this.observers.splice(index, 1)
             }
@@ -261,10 +260,15 @@
         }
     }
 
+
+    /**
+     * 实例化MVVM对象
+     * @type {mvvm}
+     */
     let vm = new mvvm({
         el: '#app',
         data: {
-            name: 'yanle',
+            name: 'YanLe',
             age: 3
         },
         methods: {
@@ -275,7 +279,7 @@
     });
 
     let clock = setInterval(function () {
-        vm.age++  //等同于 vm.$data.age
+        vm.age++;  //等同于 vm.$data.age
 
         if (vm.age === 10) clearInterval(clock)
     }, 1000)
