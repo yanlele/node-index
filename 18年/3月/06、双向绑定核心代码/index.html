@@ -224,9 +224,9 @@
     }
 
     class mvvm {
-        constructor(opts) {
-            this.init(opts)
-            observe(this.$data)
+        constructor(opts) {     //这里面的函数是实例化的时候执行的
+            this.init(opts);
+            observe(this.$data);
             new Compile(this)
         }
 
@@ -237,9 +237,9 @@
                 this.$el = document.querySelector(opts.el)
             }
 
-            this.$data = opts.data || {}
-            this.$methods = opts.methods || {}
-            this.observers = []
+            this.$data = opts.data || {};
+            this.$methods = opts.methods || {};
+            this.observers = [];
             //把$data 中的数据直接代理到当前 vm 对象
             for (let key in this.$data) {
                 Object.defineProperty(this, key, {
@@ -262,7 +262,7 @@
 
 
     /**
-     * 实例化MVVM对象
+     * 实例化MVVM对象， 主入口
      * @type {mvvm}
      */
     let vm = new mvvm({
