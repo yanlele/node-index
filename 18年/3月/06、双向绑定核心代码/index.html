@@ -80,6 +80,9 @@
     let id = 0;
     let currentObserver = null;
 
+    /**
+     * 订阅者对象
+     */
     class Subject {
         constructor() {
             this.id = id++;
@@ -104,7 +107,9 @@
         }
     }
 
-
+    /**
+     * 观察者对象
+     */
     class Observer {
         constructor(vm, key, cb) {
             this.subjects = {}
@@ -114,31 +119,35 @@
             this.value = this.getValue()
         }
 
+        //如果新旧数据不相同，就直接调用cb方法
         update() {
-            let oldVal = this.value
-            let value = this.getValue()
+            let oldVal = this.value;
+            let value = this.getValue();
             if (value !== oldVal) {
-                this.value = value
+                this.value = value;
                 this.cb.bind(this.vm)(value, oldVal)
             }
         }
 
+        //添加观察者
         subscribeTo(subject) {
-            if (!this.subjects[subject.id]) {
-                // console.log('subscribeTo..', subject)
-                subject.addObserver(this)
-                this.subjects[subject.id] = subject
+            if (!this.subjects[subject.id]) {       //如果当前换擦着中不存在这个当前id的一个对象，那么吧这个对象添加为观察者
+                subject.addObserver(this);
+                this.subjects[subject.id] = subject     //放在观察者对象中，根据自增id来区分
             }
         }
 
         getValue() {
-            currentObserver = this
-            let value = this.vm.$data[this.key]
-            currentObserver = null
+            currentObserver = this;
+            let value = this.vm.$data[this.key];    //获取vm实例兑现中的data数据
+            currentObserver = null;
             return value
         }
     }
 
+    /**
+     * 编译对象
+     */
     class Compile {
         constructor(vm) {
             this.vm = vm; //vm对象
@@ -227,7 +236,7 @@
         constructor(opts) {     //这里面的函数是实例化的时候执行的
             this.init(opts);
             observe(this.$data);
-            new Compile(this)
+            new Compile(this);      //变异当前对象
         }
 
         init(opts) {
