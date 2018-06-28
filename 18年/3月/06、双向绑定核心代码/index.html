@@ -112,10 +112,10 @@
      */
     class Observer {
         constructor(vm, key, cb) {
-            this.subjects = {}
-            this.vm = vm
-            this.key = key
-            this.cb = cb
+            this.subjects = {};
+            this.vm = vm;
+            this.key = key;
+            this.cb = cb;
             this.value = this.getValue()
         }
 
@@ -160,29 +160,31 @@
         }
 
         traverse(node) {
-            if (node.nodeType === 1) {
-                this.compileNode(node)
+            if (node.nodeType === 1) {      //节点类型1：element元素
+                this.compileNode(node);     //触发节点事件 双向绑定和事件触发
                 node.childNodes.forEach(childNode => {
-                    this.traverse(childNode)
+                    this.traverse(childNode);       // 递归调用，如果是有子节点，重新递归
                 })
-            } else if (node.nodeType === 3) {
-                this.compileText(node)
+            } else if (node.nodeType === 3) {       // 节点类型3： 文本元素
+                this.compileText(node);     // 处理文本元素的编译
             }
         }
 
+        // 文本编译入口
         compileText(node) {
-            let reg = /{{(.+?)}}/g
-            let match
-            while (match = reg.exec(node.nodeValue)) {
+            let reg = /{{(.+?)}}/g;
+            let match;
+            while (match = reg.exec(node.nodeValue)) {      //获取到文本内容
                 let raw = match[0]
                 let key = match[1].trim()
-                node.nodeValue = node.nodeValue.replace(raw, this.vm.$data[key])
-                new Observer(this.vm, key, function (val, oldVal) {
+                node.nodeValue = node.nodeValue.replace(raw, this.vm.$data[key]);
+                new Observer(this.vm, key, function (val, oldVal) {     // 订阅者核心方法
                     node.nodeValue = node.nodeValue.replace(oldVal, val)
                 })
             }
         }
 
+        // 节点编译入口
         compileNode(node) {
             let attrs = [...node.attributes];//获取标签属性
             attrs.forEach(attr => {
