@@ -50,7 +50,10 @@
 </div>
 <script>
     function observe(data) {
-        if (!data || typeof data !== 'object') return;
+        //如果不是一个对象，直接终止程序
+        if (!data || typeof data !== 'object') {
+            return false;
+        }
         for (let key in data) {
             let val = data[key];
             let subject = new Subject();
@@ -58,16 +61,13 @@
                 enumerable: true,
                 configurable: true,
                 get: function () {
-                    // console.log(`get ${key}: ${val}`)
                     if (currentObserver) {
-                        // console.log('has currentObserver')
                         currentObserver.subscribeTo(subject)
                     }
                     return val
                 },
                 set: function (newVal) {
                     val = newVal;
-                    // console.log('start notify...')
                     subject.notify()
                 }
             });
@@ -82,7 +82,7 @@
 
     class Subject {
         constructor() {
-            this.id = id++
+            this.id = id++;
             this.observers = []
         }
 
@@ -239,7 +239,6 @@
 
             this.$data = opts.data || {};
             this.$methods = opts.methods || {};
-            this.observers = [];
             //把$data 中的数据直接代理到当前 vm 对象
             for (let key in this.$data) {
                 Object.defineProperty(this, key, {
@@ -253,7 +252,7 @@
                     }
                 })
             }
-            //让 this.$methods 里面的函数中的 this，都指向当前的 this，也就是 vm
+            //让 this.$methods 里面的函数中的 this，都指向当前的 this，也就是 vm对象实例
             for (let key in this.$methods) {
                 this.$methods[key] = this.$methods[key].bind(this);
             }
