@@ -55,6 +55,13 @@
     {{length myObject}}
     <!-- results in: 2 -->
     ```
+
+- string
+    - {{toFixed}}
+    ```html
+    {{toFixed "1.1234" 2}}
+    //=> '1.12'
+    ```
     
     
 - comparison ****(非常重要api)      
