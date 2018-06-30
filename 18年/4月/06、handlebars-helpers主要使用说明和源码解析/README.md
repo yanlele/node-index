@@ -64,6 +64,40 @@
     ```
     
     
+- math              
+    - {{minus}}
+    ```html
+    Return the difference of a minus b.
+          Params
+          
+          a {Number}
+          b {Number}
+    ```    
+    
+    - {{add}}
+    ```html
+    Return the sum of a plus b.
+        Params
+        
+        a {Number}
+        b {Number}
+        returns {Number}
+    ```
+    
+    - {{sum}}
+    ```html
+    Returns the sum of all numbers in the given array.
+    Params
+    
+    array {Array}: Array of numbers to add up.
+    returns {Number}
+    
+    {{sum "[1, 2, 3, 4, 5]"}}
+    <!-- results in: '15' -->
+    ```
+    
+    
+    
 - comparison ****(非常重要api)      
     - and   
     Helper that renders the block if both of the given values are truthy.                  
