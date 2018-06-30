@@ -42,6 +42,21 @@
     <!-- results in: 'acbe' -->
     ```
     
+    - length
+    ```html
+    {{length '["a", "b", "c"]'}}
+    <!-- results in: 3 -->
+    
+    <!-- results in: myArray = ['a', 'b', 'c', 'd', 'e']; -->
+    {{length myArray}}
+    <!-- results in: 5 -->
+    
+    <!-- results in: myObject = {'a': 'a', 'b': 'b'}; -->
+    {{length myObject}}
+    <!-- results in: 2 -->
+    ```
+    
+    
 - comparison ****(非常重要api)      
     - and   
     Helper that renders the block if both of the given values are truthy.                  
@@ -60,6 +75,9 @@
     a {}            
     operator {}: The operator to use. Operators must be enclosed in quotes: ">", "=", "<=", and so on.          
     b {}            
+    
+    
+- 
     
 
   
