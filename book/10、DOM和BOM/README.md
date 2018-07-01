@@ -1,11 +1,11 @@
 # DOM 和 BOM
 
 目录              
-- DOM部分             
+- [DOM部分](#dom)             
     - [document对象](#dom-class01)                
 
 
-## DOM 部分
+## <p id='dom'>DOM 部分</p>
 
 ### <p id='dom-class01'>document对象</p>                  
 Document 对象常用的属性和方法            
