@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<p id="demo">单击按钮显示基础URL</p>
+<button onclick="myFunction()">点我</button>
+<script>
+    function myFunction(){
+        var x=document.getElementById("demo");
+        x.innerHTML=document.baseURI;
+    }
+</script>
+<p><strong>注意:</strong> Internet Explorer不支持基础URI属性。</p>
+
+</body>
+</html>
