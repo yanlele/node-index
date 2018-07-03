@@ -21,12 +21,12 @@ document.body|	返回文档的body元素
 [document.close()](./dom/01、document对象/03、open和close.html)|	关闭用 document.open() 方法打开的输出流，并显示选定的数据。
 document.cookie|	设置或返回与当前文档有关的所有 cookie。
 [document.createAttribute()](./dom/01、document对象/04、createAttribute.html)|	创建一个属性节点
-document.createComment()|	createComment() 方法可创建注释节点。
+[document.createComment()](./dom/01、document对象/05、createComment.html)|	createComment() 方法可创建注释节点。
 document.createDocumentFragment()|	创建空的 DocumentFragment 对象，并返回此对象。
-document.createElement()|	创建元素节点。
-document.createTextNode()|	创建文本节点。
+[document.createElement()](./dom/01、document对象/06、createElement.html)|	创建元素节点。
+[document.createTextNode()](./dom/01、document对象/07、createTextNode.html)|	创建文本节点。
 document.doctype|	返回与文档相关的文档类型声明 (DTD)。
-document.documentElement|	返回文档的根节点
+[document.documentElement](./dom/01、document对象/08、documentElement.html)|	返回文档的根节点，感觉并不重要
 document.documentMode|	返回用于通过浏览器渲染文档的模式
 document.documentURI|	设置或返回文档的位置
 document.domain|	返回当前文档的域名。

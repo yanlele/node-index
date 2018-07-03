@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<p id="demo">单击按钮改HTML文档添加一个注释</p>
+<button onclick="myFunction()">点我</button>
+<script>
+    function myFunction(){
+        let c=document.createComment("My personal comments");
+        document.body.appendChild(c);
+        let x=document.getElementById("demo");
+        x.innerHTML="这个文件现在包含一个注释,但如你所知,注释是看不见的。";
+    }
+</script>
+
+</body>
+</html>

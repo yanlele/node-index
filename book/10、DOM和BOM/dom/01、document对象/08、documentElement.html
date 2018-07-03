@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<p id="demo">单击按钮显示文档的节点名称</p>
+<button onclick="myFunction()">点我</button>
+<script>
+    function myFunction(){
+        let x=document.getElementById("demo");
+        x.innerHTML=document.documentElement.nodeName;
+        console.log(document.documentElement);
+    }
+</script>
+
+</body>
+</html>

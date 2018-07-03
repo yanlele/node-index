@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+<style>
+    .button-style {
+        background: #e7fff6;
+        color: #000;
+        border: none;
+        padding: 5px 15px;
+        font-size: 12px;
+        border-radius: 9px;
+    }
+</style>
+<body>
+
+<p id="demo">单击按钮创建button元素</p>
+<button onclick="myFunction()">点我</button>
+<script>
+    function myFunction(){
+        let btn=document.createElement("BUTTON");
+        btn.innerText = 'test';
+        let buttonStyle = document.createAttribute('class');
+        buttonStyle.value = 'button-style';
+        btn.setAttributeNode(buttonStyle);
+        document.body.appendChild(btn);
+    }
+</script>
+
+</body>
+</html>

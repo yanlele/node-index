@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+<style>
+    .h2style {
+        color: #817dff;
+        text-shadow: 10px 10px 15px red;
+    }
+
+    .h1style {
+        color: red;
+        text-shadow: 10px 12px 17px #817dff;
+    }
+</style>
+<body>
+
+<p id="demo">单击按钮创建一个标题</p>
+<button onclick="myFunction()">点我</button>
+<script>
+    function myFunction(){
+        let h=document.createElement("H1");
+        let t=document.createTextNode("Hello World");
+        h.appendChild(t);
+        let h1style = document.createAttribute('class');
+        h1style.value = 'h1style';
+        h.setAttributeNode(h1style);
+        document.body.appendChild(h);
+
+        let h2 = document.createElement('h2');
+        let h2style = document.createAttribute('class');
+        h2style.value = 'h2style';
+        h2.innerText = 'yanle';
+        h2.setAttributeNode(h2style);
+        document.body.appendChild(h2);
+    }
+</script>
+</body>
+</html>
