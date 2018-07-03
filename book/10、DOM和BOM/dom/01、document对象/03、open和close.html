@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script>
+        function createDoc(){
+            let w=window.open();
+            w.document.open();
+            w.document.write("<h1>Hello World!</h1>");
+            w.document.close();
+        }
+    </script>
+</head>
+<body>
+
+<input type="button" value="新窗口的新文档" onclick="createDoc()">
+
+</body>
+</html>

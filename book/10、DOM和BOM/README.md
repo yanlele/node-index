@@ -17,9 +17,10 @@ Document 对象常用的属性和方法
 |[document.anchors](./dom/01、document对象/01、anchors.html)|返回对文档中所有 Anchor 对象的引用。anchors集合返回了当前页面的所有超级链接数组 。不过需要注意的是，只有当a标签添加了name以后才能拿现实统计到|                               
 |[document.baseURI](./dom/01、document对象/02、baseURI.html)	|返回文档的绝对基础 URI|
 document.body|	返回文档的body元素
-document.close()|	关闭用 document.open() 方法打开的输出流，并显示选定的数据。
+[document.open()](./dom/01、document对象/03、open和close.html)|	打开一个流，以收集来自任何 document.write() 或 document.writeln() 方法的输出。
+[document.close()](./dom/01、document对象/03、open和close.html)|	关闭用 document.open() 方法打开的输出流，并显示选定的数据。
 document.cookie|	设置或返回与当前文档有关的所有 cookie。
-document.createAttribute()|	创建一个属性节点
+[document.createAttribute()](./dom/01、document对象/04、createAttribute.html)|	创建一个属性节点
 document.createComment()|	createComment() 方法可创建注释节点。
 document.createDocumentFragment()|	创建空的 DocumentFragment 对象，并返回此对象。
 document.createElement()|	创建元素节点。
@@ -43,7 +44,6 @@ document.lastModified|	返回文档被最后修改的日期和时间。
 document.links|	返回对文档中所有 Area 和 Link 对象引用。
 document.normalize()|	删除空文本节点，并连接相邻节点
 document.normalizeDocument()|	删除空文本节点，并连接相邻节点的
-document.open()|	打开一个流，以收集来自任何 document.write() 或 document.writeln() 方法的输出。
 document.querySelector()|	返回文档中匹配指定的CSS选择器的第一元素
 document.querySelectorAll()|	document.querySelectorAll() 是 HTML5中引入的新方法，返回文档中匹配的CSS选择器的所有元素节点列表
 document.readyState|	返回文档状态 (载入中……)
