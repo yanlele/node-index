@@ -32,10 +32,10 @@ document.documentMode|	返回用于通过浏览器渲染文档的模式, documen
 document.domain|	返回当前文档的域名。
 document.embeds|	返回文档中所有嵌入的内容（embed）集合
 document.forms|	返回对文档中所有 Form 对象引用。
-document.getElementsByClassName()|	返回文档中所有指定类名的元素集合，作为 NodeList 对象。
-document.getElementById()|	返回对拥有指定 id 的第一个对象的引用。
-document.getElementsByName()|	返回带有指定名称的对象集合。
-document.getElementsByTagName()|	返回带有指定标签名的对象集合。
+**document.getElementsByClassName()**|	返回文档中所有指定类名的元素集合，作为 NodeList 对象。
+**document.getElementById()**|	返回对拥有指定 id 的第一个对象的引用。
+**document.getElementsByName()**|	返回带有指定名称的对象集合。
+**document.getElementsByTagName()**|	返回带有指定标签名的对象集合。
 document.images|	返回对文档中所有 Image 对象引用。
 document.implementation|	返回处理该文档的 DOMImplementation 对象。
 document.importNode()|	把一个节点从另一个文档复制到该文档以便应用。
@@ -43,16 +43,16 @@ document.inputEncoding|	返回用于文档的编码方式（在解析时）。
 document.lastModified|	返回文档被最后修改的日期和时间。
 document.links|	返回对文档中所有 Area 和 Link 对象引用。
 document.normalize()|	删除空文本节点，并连接相邻节点
-document.normalizeDocument()|	删除空文本节点，并连接相邻节点的
-document.querySelector()|	返回文档中匹配指定的CSS选择器的第一元素
-document.querySelectorAll()|	document.querySelectorAll() 是 HTML5中引入的新方法，返回文档中匹配的CSS选择器的所有元素节点列表
-document.readyState|	返回文档状态 (载入中……)
+~~document.normalizeDocument()~~|	删除空文本节点，并连接相邻节点的, 主流浏览器不支持
+**document.querySelector()**|	返回文档中匹配指定的CSS选择器的第一元素
+**document.querySelectorAll()**|	document.querySelectorAll() 是 HTML5中引入的新方法，返回文档中匹配的CSS选择器的所有元素节点列表
+[document.readyState](http://www.runoob.com/jsref/prop-doc-readystate.html)|	返回文档状态 (载入中……)
 document.referrer|	返回载入当前文档的文档的 URL。
-document.removeEventListener()|	移除文档中的事件句柄(由 addEventListener() 方法添加)
-document.renameNode()|	重命名元素或者属性节点。
-document.scripts|	返回页面中所有脚本的集合。
+**document.removeEventListener()**|	移除文档中的事件句柄(由 addEventListener() 方法添加)
+~~document.renameNode()~~|	重命名元素或者属性节点。
+[document.scripts](http://www.runoob.com/jsref/coll-doc-scripts.html)|	返回页面中所有脚本的集合。
 document.strictErrorChecking|	设置或返回是否强制进行错误检查。
-document.title|	返回当前文档的标题。
-document.URL|	返回文档完整的URL
-document.write()|	向文档写 HTML 表达式 或 JavaScript 代码。
-document.writeln()|	等同于 write() 方法，不同的是在每个表达式之后写一个换行符。
+**document.title**|	返回当前文档的标题。
+[document.URL](http://www.runoob.com/jsref/prop-doc-url.html)|	返回文档完整的URL
+[document.write()](http://www.runoob.com/jsref/met-doc-write.html)|	向文档写 HTML 表达式 或 JavaScript 代码。
+[document.writeln()](http://www.runoob.com/jsref/met-doc-writeln.html)|	等同于 write() 方法，不同的是在每个表达式之后写一个换行符。
