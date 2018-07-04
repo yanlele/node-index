@@ -27,8 +27,8 @@ document.createDocumentFragment()|	创建空的 DocumentFragment 对象，并返
 [document.createTextNode()](./dom/01、document对象/07、createTextNode.html)|	创建文本节点。
 document.doctype|	返回与文档相关的文档类型声明 (DTD)。
 [document.documentElement](./dom/01、document对象/08、documentElement.html)|	返回文档的根节点，感觉并不重要
-document.documentMode|	返回用于通过浏览器渲染文档的模式
-document.documentURI|	设置或返回文档的位置
+document.documentMode|	返回用于通过浏览器渲染文档的模式, documentMode 是 IE 浏览器特定属性，在IE8及之后的IE版本都支持该属性。
+[document.documentURI](./dom/01、document对象/09、document.documentURI.html)|	设置或返回文档的位置
 document.domain|	返回当前文档的域名。
 document.embeds|	返回文档中所有嵌入的内容（embed）集合
 document.forms|	返回对文档中所有 Form 对象引用。
