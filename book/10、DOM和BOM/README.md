@@ -4,7 +4,7 @@
 - [DOM部分](#dom)             
     - [document对象](#dom-class01)                
     - [html dom对象](#dom-class02)
-    - 
+    - [DOM 属性 对象](#dom-class03)
 
 
 ## <p id='dom'>DOM 部分</p>
@@ -136,3 +136,18 @@ element.title|	设置或返回元素的title属性
 element.toString()|	一个元素转换成字符串
 nodelist.item()|	返回某个元素基于文档树的索引
 nodelist.length|	返回节点列表的节点数目。
+
+
+### <p id='dom-class03'>03、DOM 属性 对象</p>                
+|属性 / 方法|描述|                                    
+|:-|:-|   
+attr.isId|	如果属性是 ID 类型，则 isId 属性返回 true，否则返回 false。
+attr.name|	返回属性名称
+attr.value|	设置或者返回属性值
+attr.specified|	如果属性被指定返回 true ，否则返回 false
+[nodemap.getNamedItem()](./dom/03、dom属性对象/01、getNamedItem.html)|	从节点列表中返回的指定属性节点。
+[nodemap.item()](./dom/03、dom属性对象/02、item.html)|	返回节点列表中处于指定索引号的节点。
+nodemap.length|	返回节点列表的节点数目。
+**nodemap.removeNamedItem()**|	删除指定属性节点
+[nodemap.setNamedItem()](./dom/03、dom属性对象/03、setNamedItem.html)|	设置指定属性节点(通过名称)
+
