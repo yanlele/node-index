@@ -3,6 +3,8 @@
 目录              
 - [DOM部分](#dom)             
     - [document对象](#dom-class01)                
+    - [html dom对象](#dom-class02)
+    - 
 
 
 ## <p id='dom'>DOM 部分</p>
