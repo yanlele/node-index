@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<ul id="myList">
+    <li>Coffee</li>
+    <li>Tea</li>
+</ul>
+<p id="demo">单击按钮将项目添加到列表中</p>
+<button onclick="myFunction()">点我</button>
+<script>
+    function myFunction(){
+        let node=document.createElement("LI");
+        // let textnode=document.createTextNode("Water");
+        // node.appendChild(textnode);
+
+        // node.innerText = 'water';
+
+        let text = document.createTextNode('water');
+        node.appendChild(text);
+        document.getElementById("myList").appendChild(node);
+    }
+</script>
+<p><strong>注意:</strong><br>首先创建一个节点，<br> 然后创建一个文本节点，<br>然后将文本节点添加到LI节点上。<br>最后将节点添加到列表中。</p>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>element.addEventListener(event, function, useCapture)</h3>
+<p>第三个参数：可选。布尔值，指定事件是否在捕获或冒泡阶段执行。</p>
+<p>
+    可能值:
+</p>
+<p>true - 事件句柄在捕获阶段执行</p>
+<p>false- false- 默认。事件句柄在冒泡阶段执行</p>
+
+
+
+<p>该实例使用 addEventListener() 方法来向按钮添加点击事件。</p>
+<button id="myBtn">点我</button>
+<p id="demo"></p>
+
+<script>
+    document.getElementById('myBtn').addEventListener('click', function() {
+        document.getElementById('demo').innerText = 'hello world!'
+    })
+</script>
+</body>
+</html>
