@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<p id="demo">单击按钮获取按钮元素的第一个属性的名称</p>
+<button onclick="myFunction()">点我</button>
+<script>
+    function myFunction(){
+        let a=document.getElementsByTagName("BUTTON")[0];
+        let x=document.getElementById("demo");
+        x.innerHTML=a.attributes.item(0).nodeName;
+    }
+</script>
+<p><strong>注意:</strong> In Internet Explorer 8 及更早的版本,attributes属性将返回所有元素的属性集合，并且在这个例子中，显示不同属性的名称。</p>
+
+</body>
+</html>
