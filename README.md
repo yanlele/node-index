@@ -110,6 +110,7 @@
     - [23、深入理解 JavaScript 异步](https://github.com/wangfupeng1988/js-async-tutorial)
     - [24、搜罗一切webpack的好文章](https://github.com/webpack-china/awesome-webpack-cn)
     - [25、总结css3的常用示例 ***](./18年/6月/09、总结css3的常用示例)
+    - [26、关于class类的问题](./18年/07月/04、关于class类的问题)
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
