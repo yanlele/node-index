@@ -1,6 +1,6 @@
 # 关于class类的问题
 
-一个简答的示例：            
+**一个简答的示例：**                                
 ```javascript
 class Test {
     constructor(opts) { //这个是最先执行的; 这个钩子里面可以复制任何变量
@@ -33,10 +33,10 @@ let test =new Test(data);
 
 test.init();
 ```
-[01、class的一个示例](./01、class的一个示例.js)
+示例文件请看：[01、class的一个示例](./01、class的一个示例.js)
 
 
-一个简单的继承：                
+**一个简单的继承：**                                          
 ```javascript
 class Test {
     constructor(opts) { //这个是最先执行的; 这个钩子里面可以复制任何变量
@@ -87,6 +87,38 @@ try {
     console.log(`test 对象没有 code方法`);
 }
 ```
-[02、extends](./02、extends.js)
+示例文件请看：[02、extends](./02、extends.js)
+
+
+一个处理多入参的问题：                 
+```javascript
+    class Action {
+        constructor(name) {
+            this.name = name;
+        }
+
+        init(age) {
+            const args1 = Array.prototype.slice.call(arguments, 1);
+            const args = Array.prototype.slice.call(arguments);
+            console.log(args);
+            console.log(args1);
+            console.log(this.name);
+            console.log(age);
+        }
+    }
+
+    let data = {
+        name: 'yanle',
+        config: {
+            age: 15,
+            address: '重庆',
+            id: 123123,
+            school: 'bilibili'
+        }
+    };
+
+    let action = new Action(data.name);
+    action.init(data.config.age, data.config.address, data.config.id, data.config.school);
+```
 
 
