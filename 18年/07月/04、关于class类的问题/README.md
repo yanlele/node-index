@@ -90,7 +90,7 @@ try {
 示例文件请看：[02、extends](./02、extends.js)
 
 
-一个处理多入参的问题：                 
+**一个处理多入参的问题：**                                      
 ```javascript
     class Action {
         constructor(name) {
@@ -120,5 +120,6 @@ try {
     let action = new Action(data.name);
     action.init(data.config.age, data.config.address, data.config.id, data.config.school);
 ```
+请看示例： [04、处理多个入参问题](./04、处理多个入参问题.js)
 
 
