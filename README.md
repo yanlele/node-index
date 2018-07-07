@@ -188,6 +188,7 @@
     - [20、Create, read and edit .zip files with Javascript](https://github.com/Stuk/jszip)
     - [21、mocha测试post和get请求](./18年/6月/05、mocha测试post和get请求)
     - [22、前后端对称加解密解决方案](./18年/07月/01、前后端对称加解密解决方案/index.js)
+    - [23、封装日志模块 - 基于chalk](./18年/07月/02、封装日志输出模块/index.js)
     
     
 
