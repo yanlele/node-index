@@ -1,6 +1,6 @@
 # 关于class类的问题
 
-**一个简答的示例：**                                
+### 一个简答的示例：                                
 ```javascript
 class Test {
     constructor(opts) { //这个是最先执行的; 这个钩子里面可以复制任何变量
@@ -36,7 +36,7 @@ test.init();
 示例文件请看：[01、class的一个示例](./01、class的一个示例.js)
 
 
-**一个简单的继承：**                                          
+### 一个简单的继承：                                          
 ```javascript
 class Test {
     constructor(opts) { //这个是最先执行的; 这个钩子里面可以复制任何变量
@@ -90,7 +90,7 @@ try {
 示例文件请看：[02、extends](./02、extends.js)
 
 
-**一个处理多入参的问题：**                                      
+### 一个处理多入参的问题：                                      
 ```javascript
     class Action {
         constructor(name) {
@@ -121,5 +121,29 @@ try {
     action.init(data.config.age, data.config.address, data.config.id, data.config.school);
 ```
 请看示例： [04、处理多个入参问题](./04、处理多个入参问题.js)
+
+
+### 一个关于this指针的问题
+```javascript
+class Test {
+    constructor(name) {
+        this.name = name
+    }
+
+    init() {
+        this.age = 15;
+    }
+
+    getAge() {
+        console.log(this.age);
+    }
+}
+
+let test = new Test('yanle');
+test.init();            //如果没有执行init,就没有age这个东西，
+test.getAge();          //也就是说没有get,set这个东西，可以直接在任意函数里面改变对象属性
+```
+
+
 
 
