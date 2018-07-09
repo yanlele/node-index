@@ -1,4 +1,5 @@
 const path=require('path');
 
 
-console.log('./')
+console.log(path.resolve('./', __filename));
+console.log(path.resolve('./'));
