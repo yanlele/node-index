@@ -169,3 +169,19 @@ onmousemove|	鼠标被移动。|	2
 onmouseover|	鼠标移到某元素之上。|	2
 onmouseout|	鼠标从某元素移开。|	2
 onmouseup|	鼠标按键被松开。|	2
+
+
+#### 表单事件                   
+
+|属性 / 方法|描述|DOM类型|                                    
+|:-|:-|:-|   
+onblur|	元素失去焦点时触发|	2
+onchange|	该事件在表单元素的内容改变时触发( <input>, <keygen>, <select>, 和 <textarea>)|	2
+onfocus|	元素获取焦点时触发|	2
+onfocusin|	元素即将获取焦点时触发|	2
+onfocusout|	元素即将失去焦点时触发|	2
+oninput|	元素获取用户输入时触发|	3
+onreset|	表单重置时触发|	2
+onsearch|	用户向搜索域输入文本时触发 ( <input="search">)|	 
+onselect|	用户选取文本时触发 ( <input> 和 <textarea>)|	2
+onsubmit|	表单提交时触发|	2
