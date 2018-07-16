@@ -46,6 +46,7 @@
     - [04、基础公用方法库 - 前端层面](./18年/6月/06、基础公用方法库/01、前端层面/index.js)
     - [05、基础公用方法库 - node层面](./18年/6月/06、基础公用方法库/02、node层面/index.js)
     - [06、js插件汇总](https://github.com/WangZhenHao/plugin-collect)
+    - [07、swiper组件使用示例](./lib/swiper-4.1.6/demos/)
     
 - vue组件
     - [01、swiper](./通用功能js模块/vue/1、swiper/swiper.vue)
