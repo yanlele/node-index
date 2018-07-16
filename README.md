@@ -48,6 +48,7 @@
     - [06、js插件汇总](https://github.com/WangZhenHao/plugin-collect)
     - [07、swiper组件使用示例](./lib/swiper-4.1.6/demos/)
     - [08、typing.js一款非常好用的js打印机效果插件，能够直接复制文本原样打印输出](./lib/typing.js/)
+    - [09、https://github.com/Zhouzi/TheaterJS 一款十分优秀的打字机效果插件](https://github.com/Zhouzi/TheaterJS)
     
 - vue组件
     - [01、swiper](./通用功能js模块/vue/1、swiper/swiper.vue)
