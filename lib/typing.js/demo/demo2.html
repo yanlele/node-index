@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>typing.js demo</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-theme.min.css">
+  <link rel="stylesheet" href="../typing.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="../typing.js"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <div id="source">
+          这里的呈现效果是有鼠标跟随的！<br />
+          还不错吧？
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div id="output-wrap">
+          <span id="output"></span>
+          <span class="typing-cursor">|</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var typing = new Typing({
+      source: document.getElementById('source'),
+      output: document.getElementById('output'),
+      delay: 120,
+      done: function() {
+        console.log(this);
+        console.log('done')
+      }
+    });
+    typing.start();
+  </script>
+</body>
+</html>

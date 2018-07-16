@@ -1,0 +1,24 @@
+{
+  "name": "typing.js",
+  "version": "2.1.0",
+  "description": "typing element",
+  "main": "typing.js",
+  "scripts": {
+    "build": "uglifyjs -o typing.min.js typing.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coffeedeveloper/typing.js.git"
+  },
+  "keywords": [
+    "type",
+    "animation"
+  ],
+  "author": "CoffeeDeveloper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coffeedeveloper/typing.js/issues"
+  },
+  "homepage": "https://github.com/coffeedeveloper/typing.js#readme"
+}
