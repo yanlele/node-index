@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../../jquery.min.js"></script>
+</head>
+<body>
+
+
+<script>
+    let flag = false;
+    let wait = function () {
+        let dtd = $.Deferred();
+        if (flag) {
+            return dtd.resolve(flag);
+        } else {
+            setTimeout(function() {
+                return dtd.reject(flag);
+            })
+
+        }
+    };
+    let d = wait();
+    $.when(d)
+        .done(function (flag) {
+            console.log('success');
+        })
+        .fail(function (flag) {
+            console.log('fail');
+        }).always(function(flag) {
+            console.log('always   ', flag)
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../../jquery.min.js"></script>
+</head>
+<body>
+
+
+<script>
+    var dtd=$.Deferred();
+    var wait=function(dtd){
+        var tasks=function(){
+            alert("执行完毕！");
+            dtd.resolve();
+        };
+        setTimeout(tasks,5000);
+        return dtd;
+    };
+    let waitDtd = wait(dtd);
+    $.when(waitDtd)
+        .done(function(){alert("success");})
+        .fail(function(){alert("error")});
+</script>
+</body>
+</html>
