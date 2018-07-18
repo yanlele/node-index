@@ -95,6 +95,50 @@ export function formatDate(dateData, format) {
     return '-';
 }
 
+/**
+ * 拆分价格，传入实体数额，然后才分为价格和单位的形式
+ * @param price
+ * @returns {*[]}
+ */
+export function splitPrice(price) {
+    let unit = '元', rebuildPrice = price;
+    if(price < 10000) {
+        unit = '元';
+        rebuildPrice = price;
+    } else if(price >= 10000 && price < 100000000 ) {
+        unit = '万';
+        rebuildPrice = price / 10000;
+    } else if(price >= 100000000) {
+        unit = '亿';
+        rebuildPrice = price / 100000000;
+    }
+    return [parseInt(rebuildPrice), unit];
+}
+
+/**
+ * 重新合并价格
+ * @param price 传入的价格
+ * @param unit 单位
+ * @returns {*}
+ */
+export function recombinePrice(price, unit) {
+    let returnPrice = price;
+    switch (unit) {
+        case '元':
+            returnPrice = price;
+            break;
+        case '万':
+            returnPrice = price * 10000;
+            break;
+        case '亿':
+            returnPrice = price * 100000000;
+            break;
+        default:
+            returnPrice = price;
+    }
+    return returnPrice;
+}
+
 
 // 日期标准格式
 export const dateFormat = 'YYYY-MM-DD HH:mm:ss';
