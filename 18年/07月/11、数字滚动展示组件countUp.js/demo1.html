@@ -5,7 +5,7 @@
     <title>Document</title>
 </head>
 <body>
-<div id="box"></div>
+<h1 id="box"></h1>
 <script src="../../../lib/countUp/countUp.js"></script>
 <script type="text/javascript">
     let options = {
@@ -14,7 +14,7 @@
         separator: ',',
         decimal: '.',
     };
-    let demo = new CountUp('box', 10, 0, 0, 2.5, options);
+    let demo = new CountUp('box', 10, 100, 0, 5, options);
     if (!demo.error) {
         demo.start();
     } else {
