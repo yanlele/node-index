@@ -17,7 +17,7 @@ let splitPrice = function(price) {
         unit = '亿';
         rebuildPrice = price / 100000000;
     }
-    return [parseInt(rebuildPrice), unit];
+    return [parseFloat(rebuildPrice), unit];
 };
 module.exports.splitPirce = splitPrice;
 
@@ -46,5 +46,5 @@ let recombinePrice = function(price, unit) {
 };
 module.exports.recombinePrice = recombinePrice;
 
-console.log(splitPrice(120));
+console.log(splitPrice(10000));
 console.log(recombinePrice(120, "万"));
