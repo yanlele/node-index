@@ -15,4 +15,6 @@
 `webpack --config <webpack.config.js>` 最基本的命令行打包                
 
 
+### <p id='class1-item02'>02、打包js</p>          
+在目录下面建立两个文件 一个是 `app.js` 另外一个是 `sum.js` 
 
