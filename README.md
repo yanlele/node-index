@@ -140,6 +140,7 @@
 - jquery 
     - [01、jquery 获取多个checkbox的值](./18年/3月/10、jquery%20获取多个checkbox的值)
     - [02、jquery获取表单form数据](./18年/3月/17、jquery获取表单数据/README.md)
+    - [03、关于jquery的deferred对象](./18年/07月/10、关于jquery的deferred对象)
 
 
 - 前端框架周边生态圈技术栈
