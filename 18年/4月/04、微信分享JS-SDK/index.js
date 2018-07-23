@@ -48,7 +48,7 @@ if (!flag) {
         async: false,
         data: {url: domain + "weixin/share.html"},
         success: function (dataStr) {
-            var data = $.parseJSON(dataStr);
+            var data = $.parseJSON(dataStr);饭
             configwx(data.result);
         },
         error: function (xhr, status, error) {
