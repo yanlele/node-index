@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<audio class="audio" src="//as.test.zbjdev.com/static/nodejs-ipr-game-web/pages/business-empire/static/next episode（全）.eafe5a56.mp3" loop="loop">不支持</audio>
+<div class="m-toggle yinyu" onClick="audioplay()">点击我播放音乐</div>
+
+
+<script>
+    let audio = document.querySelector('.audio');
+
+    audio.oncanplay = function() {
+        alert('可以播放音乐');
+        audioplay();
+
+    };
+
+    function audioplay() {
+        audio.play();
+    }
+</script>
+</body>
+</html>

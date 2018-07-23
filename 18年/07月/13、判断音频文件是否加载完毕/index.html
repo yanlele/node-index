@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .m-toggle {
+            　background-image: url(img/sprite_icon.png);
+            　-webkit-background-size: 35px auto;
+            　-moz-background-size: 35px auto;
+            　-o-background-size: 35px auto;
+            　background-size: 35px auto;
+            　background-repeat: no-repeat;
+            　position: absolute;
+            　right: 10px;
+            　top: 50px;
+            　width: 28px;
+            　height: 28px;
+            　display: none;
+        }
+    </style>
+    <script src="../../../jquery.min.js"></script>
+
+</head>
+<body>
+
+
+<script>
+    var audio = document.createElement("audio");
+    audio.src = "bg.mp3";
+    audio.addEventListener("canplaythrough",
+        function () {
+            $(".yinyu").show();
+            audio.play();
+        },
+        false);
+    audio.load();
+
+    function audioplay() {
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    }
+</script>
+
+<div class="m-toggle yinyu" onClick="audioplay()"></div>
+
+</body>
+</html>
