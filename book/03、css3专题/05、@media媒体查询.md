@@ -79,6 +79,21 @@ Media Queries可以使用关键词"and"将多个媒体特性结合在一起。�
 ```
 
 
+4.设备屏幕的输出宽度Device Width                 
+在智能设备上，例如iPhone、iPad等，还可以根据屏幕设备的尺寸来设置相应的样式（或者调用相应的样式文件）。
+同样的，对于屏幕设备同样可以使用“min/max”对应参数，如“min-device-width”或者“max-device-width”。              
+`<link rel="stylesheet" media="screen and (max-device-width:480px)" href="iphone.css" />`                   
+上面的代码指的是“iphone.css”样式适用于最大设备宽度为480px，比如说iPhone上的显示，这里的“max-device-width”所指的是设备的实际分辨率，也就是指可视面积分辨率。
+
+
+5. not关键词               
+使用关键词“not”是用来排除某种制定的媒体类型，也就是用来排除符合表达式的设备。换句话说，not关键词表示对后面的表达式执行取反操作，如：                  
+`@media not print and (max-width: 1200px){样式代码}`                
+上面代码表示的是：样式代码将被使用在除打印设备和设备宽度小于1200px下所有设备中。                 
+
+
+6.only关键词                   
+
 
 
 
