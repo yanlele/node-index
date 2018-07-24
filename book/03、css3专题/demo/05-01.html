@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style>
+        body {
+            background-color:lightgreen;
+        }
+
+        @media screen and (max-width: 300px) {
+            body {
+                background-color:lightblue;
+            }
+        }
+    </style>
+</head>
+<body>
+<p>重置浏览器查看大小。当浏览器窗口的宽度小于 300 像素时，背景颜色会变成淡蓝，否则是淡绿色。<input type="button" onclick="resize_window()" value="查看效果"></p>
+<SCRIPT>
+    <!--
+    function resize_window() {
+        window.open ('http://www.w3cschool.cc/try/demo_source/trycss3_media_example1.htm','newwindow','height=299,width=299,top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no')
+    }
+    //写成一行
+    -->
+</SCRIPT>
+
+</body>
+</html>
