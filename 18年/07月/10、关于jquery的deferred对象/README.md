@@ -55,7 +55,19 @@ function trackMe() {
 现在有不少库已经实现了Deferred的操作，其中jQuery的Deferred就非常热门：                  
 
 ## jQuery的有关Deferred的API简介          
-
+先看一个简单的例子
+```javascript
+$.ajax('data/url')
+    .done(function(response, statusText, jqXHR){
+        console.log(statusText);
+    })
+    .fail(function(jqXHR, statusText, error){
+        console.log(statusText);
+    })
+    .always(function(){
+        console.log('I will always done.');
+    });
+```
 
 
 
