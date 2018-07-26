@@ -131,6 +131,49 @@ $.ajax({
 如果第一个失败输出failed，然后执行second f的ajax请求（注意和上面的不一样），接着针对该请求是成功还是失败，执行success2或者failed2。
 理解这些对失败处理很重要。
  
+将我们上面序列化异步操作的代码使用then方法改造后，代码立马变得扁平化了，可读性也增强了：
+```javascript
+var req1 = $.get('api1/data');
+var req2 = $.get('api2/data');
+var req3 = $.get('api3/data');
+
+req1.then(function(req1Data){
+    return req2.done(otherFunc);
+}).then(function(req2Data){
+    return req3.done(otherFunc2);
+}).then(function(req3Data){
+    doneSomethingWithReq3();
+});
+```
+
+4. 接着介绍$.when的方法使用，主要是对多个deferred对象进行并行化操作，当所有deferred对象都得到解决就执行后面添加的相应回调。              
+```javascript
+$.when(
+        $.ajax({
+            url: 't2.html'
+        }),
+        $.ajax({
+            url: 'jquery-1.9.1-study.js'
+        })
+    ).then(function(FirstAjaxSuccessCallbackArgs, SecondAjaxSuccessCallbackArgs){
+        console.log('success');
+    }, function(){
+        console.log('failed');
+    });
+```
+如果有一个失败了都会执行失败的回调。
+将我们上面并行化操作的代码改良后：
+```javascript
+$.when(
+    $.get('api1/data'),
+    $.get('api2/data'),
+    $.get('api3/data'),
+    { key: 'value' }
+ ).done();
+```
+
+## 如何使用deferred封装异步函数           
+
 
 
 
