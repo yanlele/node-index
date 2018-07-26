@@ -54,6 +54,8 @@ function trackMe() {
 
 现在有不少库已经实现了Deferred的操作，其中jQuery的Deferred就非常热门：                  
 
+
+
 ## jQuery的有关Deferred的API简介          
 先看一个简单的例子
 ```javascript
@@ -68,6 +70,67 @@ $.ajax('data/url')
         console.log('I will always done.');
     });
 ```
+
+1. done,fail,progress都是给回调列表添加回调，因为jQuery的Deferred内部使用了其$.Callbacks对象，并且增加了memory的标记（详情请查看我的这篇文章jQuery1.9.1源码分析--Callbacks对象），
+所以如果我们第一次触发了相应的回调列表的回调即调用了resolve，resolveWith，reject，rejectWith或者notify，notifyWith这些相应的方法，当我们再次给该回调列表添加回调时，就会立刻触发该回调了，
+即使用了done,fail,progress这些方法，而不需要我们手动触发。jQuery的ajax会在请求完成后就会触发相应的回调列表。所以我们后面的链式操作的注册回调有可能是已经触发了回调列表才添加的，所以它们就会立刻被执行。
+
+
+2. always方法则是不管成功还是失败都会执行该回调。
+
+接下来要介绍重量级的then方法（也是pipe方法）：
+
+
+3. then方法会返回一个新的Deferred对象               
+* 如果then方法的参数是deferred对象，                   
+* 上一链的旧deferred会调用[ done | fail | progress ]方法注册回调，该回调内容是：执行then方法对应的参数回调（fnDone, fnFail, fnProgress）。              
+
+
+* 1）如果参数回调执行后返回的结果是一个promise对象，我们就给该promise对象相应的回调列表添加回调，该回调是触发then方法返回的新promise对象的成功，失败，处理中（done，fail，progress）的回调列表中的所有回调。                
+* 当我们再给then方法进行链式地添加回调操作（done,fail,progress,always,then）时，就是给新deferred对象注册回调到相应的回调列表。           
+* 如果我们then参数fnDoneDefer, fnFailDefer, fnProgressDefer得到了解决，就会执行后面链式添加回调操作中的参数函数。            
+
+ 
+* 2）如果参数回调执行后返回的结果returned不是promise对象，就立刻触发新deferred对象相应回调列表的所有回调,且回调函数的参数是先前的执行返回结果returned。               
+* 当我们再给then方法进行链式地添加回调操作（done,fail,progress,always,then）时，就会立刻触发我们添加的相应的回调。             
+
+
+* 可以多个then连续使用，此功能相当于顺序调用异步回调。
+
+示例代码：           
+```javascript
+$.ajax({
+   url: 't2.html',
+   dataType: 'html',
+   data: {
+      d: 4
+   }
+}).then(function(){
+    console.log('success');
+},function(){
+    console.log('failed');
+}).then(function(){
+    console.log('second');
+    return $.ajax({
+        url: 'jquery-1.9.1.js',
+        dataType: 'script'
+    });
+}, function(){
+    console.log('second f');
+    return $.ajax({
+        url: 'jquery-1.9.1.js',
+        dataType: 'script'
+    });
+}).then(function(){
+    console.log('success2');
+},function(){
+    console.log('failed2');
+});
+```
+上面的代码，如果第一个对t2.html的请求成功输出success，就会执行second的ajax请求，接着针对该请求是成功还是失败，执行success2或者failed2。
+如果第一个失败输出failed，然后执行second f的ajax请求（注意和上面的不一样），接着针对该请求是成功还是失败，执行success2或者failed2。
+理解这些对失败处理很重要。
+ 
 
 
 
