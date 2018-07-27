@@ -203,6 +203,119 @@ function prepareInterface() {
 }
 ```
 
+## Deferred的一些使用技巧：             
+1.异步缓存
+
+以ajax请求为例，缓存机制需要确保我们的请求不管是否已经存在于缓存，只能被请求一次。 因此，为了缓存系统可以正确地处理请求,我们最终需要写出一些逻辑来跟踪绑定到给定url上的回调。
+```javascript
+var cachedScriptPromises = {};
+
+$.cachedGetScript =  function(url, callback){
+    if(!cachedScriptPromises[url]) {
+        cachedScriptPromises[url] = $.Deferred(function(defer){
+            $.getScript(url).then(defer.resolve, defer.reject);
+        }).promise();
+    }
+
+    return cachedScriptPromises[url].done(callback);
+};
+```
+
+我们为每一个url缓存一个promise对象。 如果给定的url没有promise，我们创建一个deferred，并发出请求。 
+如果它已经存在我们只需要为它绑定回调。 该解决方案的一大优势是，它会透明地处理新的和缓存过的请求。 
+另一个优点是一个基于deferred的缓存 会优雅地处理失败情况。 当promise以‘rejected’状态结束的话，我们可以提供一个错误回调来测试：
+`$.cachedGetScript( url ).then( successCallback, errorCallback );`          
+请记住：无论请求是否缓存过，上面的代码段都会正常运作！        
+
+**通用异步缓存**              
+为了使代码尽可能的通用，我们建立一个缓存工厂并抽象出实际需要执行的任务             
+```javascript
+$.createCache = function(requestFunc){
+        var cache = {};
+
+        return function(key, callback){
+            if(!cache[key]) {
+                cache[key] = $.Deferred(function(defer){
+                    requestFunc(defer, key);
+                }).promise();
+            }
+
+            return cache[key].done(callback);
+        };
+    };
+
+
+    // 现在具体的请求逻辑已经抽象出来，我们可以重新写cachedGetScript：
+    $.cachedGetScript = $.createCache(function(defer, url){
+        $.getScript(url).then(defer.resolve, defer.reject);
+    });
+```
+
+我们可以使用这个通用的异步缓存很轻易的实现一些场景：
+
+图片加载            
+```javascript
+// 确保我们不加载同一个图像两次
+    $.loadImage = $.createCache(function(defer, url){
+        var image = new Image();
+        function clearUp(){
+            image.onload = image.onerror = null;
+        }
+        defer.then(clearUp, clearUp);
+        image.onload = function(){
+            defer.resolve(url);
+        };
+        image.onerror = defer.reject;
+        image.src = url;
+    });
+
+    // 无论image.png是否已经被加载，或者正在加载过程中，缓存都会正常工作。
+    $.loadImage( "my-image.png" ).done( callback1 );  
+    $.loadImage( "my-image.png" ).done( callback1 );
+```
+
+缓存响应数据          
+```javascript
+$.searchTwitter = $.createCache(function(defer, query){
+        $.ajax({
+            url: 'http://search.twitter.com/search.json',
+            data: {q: query}, 
+            dataType: 'jsonp'
+        }).then(defer.resolve, defer.reject);
+    });
+
+// 在Twitter上进行搜索，同时缓存它们
+$.searchTwitter( "jQuery Deferred", callback1 );
+```
+
+定时:
+基于deferred的缓存并不限定于网络请求;它也可以被用于定时目的。
+```javascript
+// 新的afterDOMReady辅助方法用最少的计数器提供了domReady后的适当时机。 如果延迟已经过期，回调会被马上执行。
+$.afterDOMReady = (function(){
+    var readyTime;
+    
+    $(function(){
+        readyTime = (new Date()).getTime();
+    });
+
+    return $.createCache(function(defer, delay){
+        delay = delay || 0;
+
+        $(function(){
+            var delta = (new Date()).getTime() - readyTime;
+
+            if(delta >= delay) {
+                defer.resolve();
+            } else {
+                setTimeout(defer.resolve, delay - delta);
+            }
+        });
+    });
+})();
+```
+
+
 
 
 
