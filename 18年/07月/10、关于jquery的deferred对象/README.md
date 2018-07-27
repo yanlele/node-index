@@ -362,6 +362,62 @@ function( _, name ) {
 });
 ```
 
+3.一次性事件         
+例如，您可能希望有一个按钮，当它第一次被点击时打开一个面板，面板打开之后，执行特定的初始化逻辑。 在处理这种情况时，通常会这样写代码：             
+```javascript
+var buttonClicked = false;   
+$( "#myButton" ).click(function() {   
+    if ( !buttonClicked ) {   
+        buttonClicked = true;   
+        initializeData();   
+        showPanel();   
+    }   
+});
+```
+
+这是一个非常耦合的解决办法。 如果你想添加一些其他的操作，你必须编辑绑定代码或拷贝一份。 如果你不这样做，你唯一的选择是测试buttonClicked。
+由于buttonClicked可能是false，新的代码可能永远不会被执行，因此你 可能会失去这个新的动作。
+
+使用deferreds我们可以做的更好 （为简化起见，下面的代码将只适用于一个单一的元素和一个单一的事件类型，但它可以很容易地扩展为多个事件类型的集合）：
+
+```javascript
+$.fn.bindOnce = function(event, callback){
+    var element = this;
+    defer = element.data('bind_once_defer_' + event);
+
+    if(!defer) {
+        defer = $.Deferred();
+
+        function deferCallback(){
+            element.off(event, deferCallback);
+            defer.resolveWith(this, arguments);
+        }
+
+        element.on(event, deferCallback);
+        element.data('bind_once_defer_' + event, defer);
+    }
+
+    return defer.done(callback).promise();
+};
+
+$.fn.firstClick = function( callback ) {   
+       return this.bindOnce( "click", callback );  
+ };  
+
+var openPanel = $( "#myButton" ).firstClick();   
+openPanel.done( initializeData );   
+openPanel.done( showPanel );
+```
+
+该代码的工作原理如下：
+
+· 检查该元素是否已经绑定了一个给定事件的deferred对象
+
+· 如果没有，创建它，使它在触发该事件的第一时间解决
+
+· 然后在deferred上绑定给定的回调并返回promise
+
+
 
 
 
