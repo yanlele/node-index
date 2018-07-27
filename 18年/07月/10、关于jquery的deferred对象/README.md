@@ -418,6 +418,121 @@ openPanel.done( showPanel );
 · 然后在deferred上绑定给定的回调并返回promise
 
 
+4.多个组合使用                
+单独看以上每个例子，deferred的作用是有限的 。 然而，deferred真正的力量是把它们混合在一起。
+
+*在第一次点击时加载面板内容并打开面板         
+假如，我们有一个按钮，可以打开一个面板，请求其内容然后淡入内容。使用我们前面定义的方法，我们可以这样做：            
+```javascript
+var panel = $('#myPanel');
+panel.firstClick(function(){
+    $.when(
+        $.get('panel.html'),
+        panel.slideDown()
+    ).done(function(ajaxArgs){
+        panel.html(ajaxArgs[0]).fadeIn();
+    });
+});
+```
+
+*在第一次点击时载入图像并打开面板
+
+假如，我们已经的面板有内容，但我们只希望当第一次单击按钮时加载图像并且当所有图像加载成功后淡入图像。HTML代码如下：
+```html
+<div id="myPanel">   
+<img data-src="image1.png" />  
+<img data-src="image2.png" />  
+<img data-src="image3.png" />   
+<img data-src="image4.png" />   
+</div>
+
+/*
+我们使用data-src属性描述图片的真实路径。 那么使用deferred来解决该用例的代码如下：
+*/
+<script >
+$('#myBtn').firstClick(function(){
+    var panel = $('#myPanel');
+    var promises = [];
+
+    $('img', panel).each(function(){
+        var image = $(this);
+        var src = element.data('src');
+
+        if(src) {
+            promises.push(
+                $.loadImage(src).then(function(){
+                    image.attr('src', src);
+                }, function(){
+                    image.attr('src', 'error.png');
+                })
+            );
+        }
+    });
+
+    promises.push(panel.slideDown);
+
+    $.when.apply(null, promises).done(function(){
+        panel.fadeIn();
+    });
+});
+</script>
+```
+
+*在特定延时后加载页面上的图像
+
+假如，我们要在整个页面实现延迟图像显示。 要做到这一点，我们需要的HTML的格式如下：             
+```html
+<img data-src="image1.png" data-after="1000" src="placeholder.png" />   
+<img data-src="image2.png" data-after="1000" src="placeholder.png" />   
+<img data-src="image1.png" src="placeholder.png" />   
+<img data-src="image2.png" data-after="2000" src="placeholder.png" /> 
+
+/*
+意思非常简单：
+image1.png，第三个图像立即显示，一秒后第一个图像显示
+image2.png 一秒钟后显示第二个图像，两秒钟后显示第四个图像
+*/
+
+<script >
+$( "img" ).each(function() {  
+    var element = $( this ),  
+        src = element.data( "src" ),  
+        after = element.data( "after" );  
+    if ( src ) {  
+        $.when(  
+            $.loadImage( src ),  
+            $.afterDOMReady( after )  
+        ).then(function() {  
+            element.attr( "src", src );  
+        }, function() {  
+            element.attr( "src", "error.png" );  
+        } ).done(function() {  
+            element.fadeIn();  
+        });  
+    }  
+}); 
+
+// 如果我们想延迟加载的图像本身，代码会有所不同：
+$( "img" ).each(function() {  
+    var element = $( this ),  
+        src = element.data( "data-src" ),  
+        after = element.data( "data-after" );  
+    if ( src ) {  
+        $.afterDOMReady( after, function() {  
+            $.loadImage( src ).then(function() {  
+                element.attr( "src", src );  
+            }, function() {  
+                element.attr( "src", "error.png" );  
+            } ).done(function() {  
+                element.fadeIn();  
+            });  
+        } );  
+    }  
+});
+</script>
+```
+
+这里，我们首先在尝试加载图片之前等待延迟条件满足。当你想在页面加载时限制网络请求的数量会非常有意义。
 
 
 
