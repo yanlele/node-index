@@ -174,6 +174,35 @@ $.when(
 
 ## 如何使用deferred封装异步函数           
 
+- 第一种
+```javascript
+function getData(){
+  var deferred = $.Deferred();
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET","data",true);
+  xhr.addEventListener('load',function(){
+    if(xhr.status === 200){
+      deferred.resolve(xhr.response);
+    }else{
+      deferred.reject("HTTP error: " + xhr.status);
+    }
+  },false);
+  xhr.send();
+  return deferred.promise();
+}
+```
+
+- 第二种                   
+```javascript
+function prepareInterface() {   
+   return $.Deferred(function( dfd ) {   
+       var latest = $( '.news, .reactions' );  
+       latest.slideDown( 500, dfd.resolve );  
+       latest.addClass('active');  
+    }).promise();   
+}
+```
+
 
 
 
