@@ -149,17 +149,17 @@ req1.then(function(req1Data){
 4. 接着介绍$.when的方法使用，主要是对多个deferred对象进行并行化操作，当所有deferred对象都得到解决就执行后面添加的相应回调。              
 ```javascript
 $.when(
-        $.ajax({
-            url: 't2.html'
-        }),
-        $.ajax({
-            url: 'jquery-1.9.1-study.js'
-        })
-    ).then(function(FirstAjaxSuccessCallbackArgs, SecondAjaxSuccessCallbackArgs){
-        console.log('success');
-    }, function(){
-        console.log('failed');
-    });
+    $.ajax({
+        url: 't2.html'
+    }),
+    $.ajax({
+        url: 'jquery-1.9.1-study.js'
+    })
+).then(function(FirstAjaxSuccessCallbackArgs, SecondAjaxSuccessCallbackArgs){
+    console.log('success');
+}, function(){
+    console.log('failed');
+});
 ```
 如果有一个失败了都会执行失败的回调。
 将我们上面并行化操作的代码改良后：
@@ -231,24 +231,24 @@ $.cachedGetScript =  function(url, callback){
 为了使代码尽可能的通用，我们建立一个缓存工厂并抽象出实际需要执行的任务             
 ```javascript
 $.createCache = function(requestFunc){
-        var cache = {};
+    var cache = {};
 
-        return function(key, callback){
-            if(!cache[key]) {
-                cache[key] = $.Deferred(function(defer){
-                    requestFunc(defer, key);
-                }).promise();
-            }
+    return function(key, callback){
+        if(!cache[key]) {
+            cache[key] = $.Deferred(function(defer){
+                requestFunc(defer, key);
+            }).promise();
+        }
 
-            return cache[key].done(callback);
-        };
+        return cache[key].done(callback);
     };
+};
 
 
-    // 现在具体的请求逻辑已经抽象出来，我们可以重新写cachedGetScript：
-    $.cachedGetScript = $.createCache(function(defer, url){
-        $.getScript(url).then(defer.resolve, defer.reject);
-    });
+// 现在具体的请求逻辑已经抽象出来，我们可以重新写cachedGetScript：
+$.cachedGetScript = $.createCache(function(defer, url){
+    $.getScript(url).then(defer.resolve, defer.reject);
+});
 ```
 
 我们可以使用这个通用的异步缓存很轻易的实现一些场景：
@@ -256,22 +256,22 @@ $.createCache = function(requestFunc){
 图片加载            
 ```javascript
 // 确保我们不加载同一个图像两次
-    $.loadImage = $.createCache(function(defer, url){
-        var image = new Image();
-        function clearUp(){
-            image.onload = image.onerror = null;
-        }
-        defer.then(clearUp, clearUp);
-        image.onload = function(){
-            defer.resolve(url);
-        };
-        image.onerror = defer.reject;
-        image.src = url;
-    });
+$.loadImage = $.createCache(function(defer, url){
+    var image = new Image();
+    function clearUp(){
+        image.onload = image.onerror = null;
+    }
+    defer.then(clearUp, clearUp);
+    image.onload = function(){
+        defer.resolve(url);
+    };
+    image.onerror = defer.reject;
+    image.src = url;
+});
 
-    // 无论image.png是否已经被加载，或者正在加载过程中，缓存都会正常工作。
-    $.loadImage( "my-image.png" ).done( callback1 );  
-    $.loadImage( "my-image.png" ).done( callback1 );
+// 无论image.png是否已经被加载，或者正在加载过程中，缓存都会正常工作。
+$.loadImage( "my-image.png" ).done( callback1 );  
+$.loadImage( "my-image.png" ).done( callback1 );
 ```
 
 缓存响应数据          
@@ -313,6 +313,53 @@ $.afterDOMReady = (function(){
         });
     });
 })();
+```
+
+2.同步多个动画            
+```javascript
+var fadeLi1Out = $('ul > li').eq(0).animate({
+    opacity: 0
+}, 1000);
+var fadeLi2In = $('ul > li').eq(1).animate({
+    opacity: 1
+}, 2000);
+
+ // 使用$.when()同步化不同的动画
+$.when(fadeLi1Out, fadeLi2In).done(function(){
+    alert('done');
+});
+```
+
+虽然jQuery1.6以上的版本已经把deferred包装到动画里了，但如果我们想要手动实现，也是一件很轻松的事：                   
+```javascript
+$.fn.animatePromise = function( prop, speed, easing, callback ) {   
+    var elements = this;   
+
+    return $.Deferred(function( defer ) {   
+        elements.animate( prop, speed, easing, function() {   
+            defer.resolve();   
+            if ( callback ) {   
+                callback.apply( this, arguments );  
+            }   
+        });   
+    }).promise();  
+};
+
+// 我们也可以使用同样的技巧，建立了一些辅助方法：
+$.each([ "slideDown", "slideUp", "slideToggle", "fadeIn", "fadeOut", "fadeToggle" ],   
+function( _, name ) {   
+    $.fn[ name + "Promise" ] = function( speed, easing, callback ) {  
+        var elements = this;   
+        return $.Deferred(function( defer ) {   
+            elements[ name ]( speed, easing, function() {   
+                defer.resolve();   
+                if ( callback ) {   
+                callback.apply( this, arguments );   
+                }   
+            });  
+         }).promise();   
+    };   
+});
 ```
 
 
