@@ -103,3 +103,9 @@ let input = '1231shfi23.123yanle ';
 input = input.replace(/[^(\d|.)]/g, '');
 console.log(input);
 ```
+
+14、JS正则--非负整数或小数，小数最多精确到小数点后两位
+```javascript
+/^[0-9]+([.]{1}[0-9]{1,2})?$/
+```
+

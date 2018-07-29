@@ -25,7 +25,6 @@ console.log(phoneMask);*/
 
 
 //验证非数字和点
-let input = '1231shfi23.123yanle ';
-input = input.replace(/[^(\d|.)]/g, '');
-console.log(input);
+let value = 18371.911;
+console.log(value.replace(/^[0-9]+([.]{1}[0-9]{1,2})?$/));
 
