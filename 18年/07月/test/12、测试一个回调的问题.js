@@ -1,14 +1,13 @@
-
-
-
 function getName(name) {
     console.log(name);
 }
 
 function action(callback) {
+    let args = Array.prototype.slice.call(arguments, 1);
+
     if(callback) {
-        callback()
+        callback(args[0])
     }
 }
 
-action(getName.bind('123'));
+action(getName, 'yanle');
