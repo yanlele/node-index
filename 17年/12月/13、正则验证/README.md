@@ -96,3 +96,10 @@ exports.faxRule = /^(\d+-)?\d+(-\d+)?$/;
 //手机规则
 exports.moblieRule = /^1[3-9]\d{9}$/;
 ```
+
+13、只允许输入小数点和数字：
+```javascript
+let input = '1231shfi23.123yanle ';
+input = input.replace(/[^(\d|.)]/g, '');
+console.log(input);
+```
