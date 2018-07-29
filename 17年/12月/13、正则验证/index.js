@@ -25,6 +25,6 @@ console.log(phoneMask);*/
 
 
 //验证非数字和点
-let value = 18371.911;
-console.log(value.replace(/^[0-9]+([.]{1}[0-9]{1,2})?$/));
+let value = 18371.1111;
+console.log(/^[0-9]+([.]{1}[0-9]{1,2})?$/.test(value));
 
