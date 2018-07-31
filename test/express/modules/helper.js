@@ -6,7 +6,7 @@
 const path = require('path');
 const fs = require('fs');
 const Handlebars = require('handlebars');
-const handlebarsLayouts = require('handlebars-layouts');
+const handlebarsLayouts = require('./handlebars-layouts');
 const recursive = require('recursive-readdir');
 const log = require('./log');
 
@@ -23,7 +23,11 @@ module.exports = function(appDir, config) {
     const helperDir = path.join(__dirname, '../helpers/');
     log.info('开始初始化helper-layout');
     // handlebarsLayouts.register(Handlebars);
-    handlebarsLayouts.register(Handlebars);
+    handlebarsLayouts.register(Handlebars, {
+        suffix: 'html',
+        extendDir: [path.join(__dirname, '../views/partials/')],
+        componentDir: [path.join(viewDir, '../views/components/')],
+    });
     log.success('初始化helper-layout成功');
     // 自定义helper扩展
     if (fs.existsSync(helperDir)) {
