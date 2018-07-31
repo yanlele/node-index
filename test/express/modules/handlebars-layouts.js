@@ -1,7 +1,6 @@
 'use strict';
 
 var hasOwn = Object.prototype.hasOwnProperty,
-    componentPlaceHolder = '<div class="component-placeholder-{{index}}"></div>',
     fs,
     path;
 
@@ -107,14 +106,13 @@ function mixin(target) {
  */
 function layouts(handlebars, layoutOpt) {
     layoutOpt = layoutOpt || {};
-    handlebars.registerPartial('componentPlaceholder', layoutOpt.componentPlaceHolder || componentPlaceHolder);
     /**
      * 编译模板
      * @param  {String} name     模板名
      * @param  {String} template 模版字符串或函数
      * @return {Function}        编译执行函数
      */
-    function compileTmpl(name, template) {
+    function compileTempl(name, template) {
         // Partial template required
         if (!template) {
             throw new Error('Missing partial: \'' + name + '\'');
@@ -160,7 +158,7 @@ function layouts(handlebars, layoutOpt) {
                 }
             });
         }
-        return compileTmpl(partialName, template);
+        return compileTempl(partialName, template);
     }
     var helpers = {
         /**
@@ -266,86 +264,6 @@ function layouts(handlebars, layoutOpt) {
                 mode: mode.toLowerCase(),
                 fn: fn
             });
-        },
-
-        /**
-         * @method configSet
-         * @param {Object} options
-         * @param {Object} options.hash
-         * @param {String} options.hash.lazy
-         * @return {String} Always empty.
-         */
-        configSet: function (options) {
-            var context = this || {},
-                hash = options.hash || {},
-                lazy = hash.lazy;
-
-            if (!lazy) return '';
-            //设置数据到this内
-            mixin(this, {
-                $$layoutLazy: lazy
-            });
-
-            applyStack(context);
-
-            return '';
-        },
-
-        /**
-         * @method component
-         * @param {String} name
-         * @param {Object} options
-         * @param {Function(Object)} options.fn
-         * @return {String} Modified component content or placeholder.
-         */
-        component: function (name, options) {
-            options = options || {};
-            if (typeof name === 'object') options = name;
-
-            var fn = options.fn,
-                data = handlebars.createFrame(options.data),
-                context = this || {},
-                componentList = getComponent(context),
-                template,
-                compileResult,
-                start;
-
-            applyStack(context);
-
-            // 如果有执行函数,则直接输出当前所有的列表数据
-            // @param {Array} list
-            // @param {String} name
-            // @param {String} html
-            if (fn) {
-                // 插入列表到私有列表中
-                data.list = componentList;
-                // 如果没有输出时,直接返回空
-                if (componentList.length === 0) return '';
-                return fn(context, {
-                    data: data
-                });
-            }
-            // 关闭下级的懒加载
-            data.$$layoutCloseLazy = true;
-
-            template = getTemplate(layoutOpt.componentDir, name, 'component-' + name);
-
-            compileResult = template(context, { data: data });
-            //如果为空时,直接返回
-            if (!compileResult) return '';
-            // 检测是否需要懒加载,如果需要,则加入到队列中
-            if (context.$$layoutLazy && !options.data.$$layoutCloseLazy) {
-                start = componentList.length;
-                componentList.push({
-                    name: name,
-                    html: compileResult,
-                    index: start
-                });
-                return compileTmpl('componentPlaceholder', handlebars.partials.componentPlaceholder)({
-                    index: start
-                });
-            }
-            return compileResult;
         }
     };
 

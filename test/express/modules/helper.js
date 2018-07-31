@@ -25,8 +25,7 @@ module.exports = function(appDir, config) {
     // handlebarsLayouts.register(Handlebars);
     handlebarsLayouts.register(Handlebars, {
         suffix: 'html',
-        extendDir: [path.join(__dirname, '../views/partials/')],
-        componentDir: [path.join(viewDir, '../views/components/')],
+        extendDir: [path.join(__dirname, '../views/partials/'), path.join(viewDir, '../views/components/')]
     });
     log.success('初始化helper-layout成功');
     // 自定义helper扩展
