@@ -4,6 +4,7 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let lessMiddleware = require('less-middleware');
 let logger = require('morgan');
+let cons = require('consolidate');
 const initModules = require('./modules/'); //初始化模块
 
 let indexRouter = require('./routes/index');
@@ -13,7 +14,8 @@ initModules();  //初始化模块加载函数
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+app.engine('html', cons.handlebars);
+app.set('view engine', 'html');
 
 app.use(logger('dev'));
 app.use(express.json());
