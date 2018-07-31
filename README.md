@@ -209,7 +209,7 @@
     - [28、将glob表达式转换为JavaScript RegExp对象:minimatch](https://github.com/isaacs/minimatch)
     - [29、用于node.js的HTTP请求日志程序中间件:morgan](https://github.com/expressjs/morgan)
     - [30、handlebars-helpers注入服务端渲染方法](./18年/07月/15、handlebars-helpers注入服务端渲染方法)
-    
+    - [31、对官方handlebars-layouts进行扩展，支持指定particles](./18年/07月/16、对官方handlebars-layouts进行扩展，支持指定particles/handlebars-layout.js)
     
 
 
