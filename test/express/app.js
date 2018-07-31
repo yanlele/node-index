@@ -9,7 +9,7 @@ const initModules = require('./modules/'); //初始化模块
 let indexRouter = require('./routes/index');
 
 let app = express();
-initModules();
+initModules();  //初始化模块加载函数
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

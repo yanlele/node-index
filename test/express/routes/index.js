@@ -8,6 +8,8 @@ function router(app) {
             array: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
         })
     });
+
+
     app.use('/user', users);
 }
 
