@@ -205,6 +205,7 @@
     - [24、封装web-app启动模块](./18年/07月/03、封装web-app启动模块/boot.js)
     - [25、通过user_agent判断用户设备类型（移动还是PC）](./18年/07月/13、通过user_agent判断用户设备类型（移动还是PC）/index.js)
     - [26、获取客户端IP](./18年/07月/14、获取客户端IP/index.js)
+    - [27、读取递归目录的路径模块: recursive-readdir](https://github.com/jergason/recursive-readdir)
     
     
 
