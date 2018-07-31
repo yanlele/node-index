@@ -21,6 +21,7 @@
     "express": "^4.16.2",
     "express-formidable": "^1.0.0",
     "express-session": "^1.15.6",
+    "consolidate": "^0.14.5",
     "handlebars": "^4.0.11",
     "handlebars-layouts": "^3.1.4",
     "mobile-detect": "^1.4.1",

@@ -5,7 +5,8 @@
 
 const path = require('path');
 const fs = require('fs');
-const Handlebars = require('hbs');
+const Handlebars = require('handlebars');
+const handlebarsLayouts = require('handlebars-layouts');
 const recursive = require('recursive-readdir');
 const log = require('./log');
 
@@ -18,8 +19,12 @@ const log = require('./log');
  */
 module.exports = function(appDir, config) {
     log.info('开始初始化项目helper');
+    const viewDir = path.join(__dirname, '../views');
     const helperDir = path.join(__dirname, '../helpers/');
-    log.success('初始化内置helper成功');
+    log.info('开始初始化helper-layout');
+    // handlebarsLayouts.register(Handlebars);
+    handlebarsLayouts.register(Handlebars);
+    log.success('初始化helper-layout成功');
     // 自定义helper扩展
     if (fs.existsSync(helperDir)) {
         log.info('查询到handlebars自定义helper文件夹,开始解析');
