@@ -31,6 +31,7 @@
     "nodejs-websocket": "^1.7.1",
     "request": "^2.83.0",
     "socket.io": "^1.7.4",
+    "recursive-readdir": "^2.2.1",
     "ua-parser-js": "^0.7.18"
   },
   "devDependencies": {
