@@ -208,6 +208,7 @@
     - [27、读取递归目录的路径模块: recursive-readdir](https://github.com/jergason/recursive-readdir)
     - [28、将glob表达式转换为JavaScript RegExp对象:minimatch](https://github.com/isaacs/minimatch)
     - [29、用于node.js的HTTP请求日志程序中间件:morgan](https://github.com/expressjs/morgan)
+    - [30、handlebars-helpers注入服务端渲染方法](./18年/07月/15、handlebars-helpers注入服务端渲染方法)
     
     
 
