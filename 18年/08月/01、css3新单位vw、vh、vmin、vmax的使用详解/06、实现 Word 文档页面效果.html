@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>实现 Word 文档页面效果</title>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        html, body, div, span, button {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            background-color: #789BC9;
+        }
+
+        page {
+            display: block;
+            height: 98vh;
+            width: 69.3vh;
+            margin: 1vh auto;
+            padding: 12vh;
+            border: 1px solid #646464;
+            box-shadow: 0 0 15px rgba(0,0,0,.75);
+            box-sizing: border-box;
+            background-color: white;
+            position: relative;
+        }
+
+        page:after {
+            content: attr(data-page);
+            color: graytext;
+            font-size: 12px;
+            text-align: center;
+            bottom: 4vh;
+            position: absolute;
+            left: 10vh;
+            right: 10vh;
+        }
+
+        a {
+            color: #34538b;
+            font-size: 14px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var lenPage = $("page").length;
+            //自动添加每页底部的页码
+            $("page").each(function(i){
+                $(this).attr("data-page", "第 "+ (i+1) +" 页，共 "+ lenPage +" 页");
+            });
+        });
+    </script>
+</head>
+<body>
+<page><a href="javascript:;">hello world</a></page>
+<page>hello yanlele</page>
+<page>world</page>
+</body>
+</html>

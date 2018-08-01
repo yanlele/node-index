@@ -135,7 +135,7 @@ vmax：当前 vw 和 vh 中较大的一个值
 [示例文件2：02、实现完整覆盖的遮罩层](./02、实现完整覆盖的遮罩层.html)
 
 ### 3、实现居中显示的弹出框
-弹出框大小随内容自适应                     
+**弹出框大小随内容自适应**                                      
 遮罩层使用 vw、vh 实现全屏覆盖。弹出框添加到遮罩层中并居中。           
 ```html
 <!DOCTYPE html>
@@ -226,5 +226,235 @@ vmax：当前 vw 和 vh 中较大的一个值
   </body>
 </html>
 ```
+[示例文件3：弹出框岁内容自适应](./03、弹出框岁内容自适应.html)
 
 
+**弹出框大小随视窗大小改变**                
+遮罩层使用 vw、vh 实现全屏覆盖。而弹出框的尺寸位置同样使用 vw、vh 设置。              
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>hangge.com</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <style>
+      html, body, div, span, button {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+ 
+      button {
+        width: 120px;
+        height: 30px;
+        color: #FFFFFF;
+        font-family: "微软雅黑";
+        font-size: 14px;
+        background: #28B995;
+      }
+ 
+      .dialog-container {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,.35);
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
+ 
+      .dialog-box {
+        top:10vh;
+        left:10vw;
+        width: 80vw;
+        height: 80vh;
+        text-align: left;
+        position: absolute;
+        border: 1px solid #ccc;
+        display: flex;
+        flex-direction: column;
+      }
+ 
+      .dialog-title {
+        line-height: 28px;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-bottom: 1px solid #ccc;
+        background-color: #eee;
+        font-size: 12px;
+        text-align: left;
+      }
+ 
+      .dialog-close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 12px;
+      }
+ 
+      .dialog-body {
+        background-color: #fff;
+        flex:1;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+      <button onclick="$('#dialogContainer').show();">点击显示弹出框</button>
+      <div id="dialogContainer" class="dialog-container">
+          <div class="dialog-box">
+              <div class="dialog-title">居中弹出框</div>
+              <a onclick="$('#dialogContainer').hide();" class="dialog-close">关闭</a>
+              <div class="dialog-body">
+                    <h2>i13urdlksdnvoivor829347</h2>
+                    <h2>19823sdlkfjsaf</h2>
+                    <h2>sdkfjafa on vndnv nslkvdnsdv </h2>
+              </div>
+          </div>
+      </div>
+  </body>
+</html>
+```
+[示例文件4](./04、弹窗大小随试图大小改变.html)
+
+### 5、显示大图时限制其最大尺寸
+我们还可以通过视图单位来限制一些元素的最大宽度或高度，避尺寸过大而超出屏幕。          
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>hangge.com</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <style>
+      html, body, div, span, button {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+ 
+      button {
+        width: 120px;
+        height: 30px;
+        color: #FFFFFF;
+        font-family: "微软雅黑";
+        font-size: 14px;
+        background: #28B995;
+      }
+ 
+      .dialog-container {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,.35);
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
+ 
+      .dialog-container:after {
+        display: inline-block;
+        content: '';
+        width: 0;
+        height: 100%;
+        vertical-align: middle;
+      }
+ 
+      .dialog-box {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+        position: relative;
+      }
+ 
+      .demo-image {
+        max-width: 90vw;
+        max-height: 90vh;
+      }
+    </style>
+  </head>
+  <body>
+      <button onclick="$('#dialogContainer').show();">点击显示大图</button>
+      <div id="dialogContainer" class="dialog-container" onclick="$('#dialogContainer').hide();">
+          <div class="dialog-box">
+              <img src="image.jpg" class="demo-image" />
+          </div>
+      </div>
+  </body>
+</html>
+```
+
+[示例文件5：显示大图时限制其最大尺寸](./05、显示大图时限制其最大尺寸.html)
+
+### 6、实现 Word 文档页面效果
+（1）使用 vh 单位，我们可把 web 页面做得像 Office 文档那样，一屏正好一页。改变浏览器窗口尺寸，每页的大小也会随之变化。
+（2）拖动滚动条，我们可以一直往下看到最后一页。
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>hangge.com</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <style>
+      html, body, div, span, button {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+ 
+      body {
+        background-color: #789BC9;
+      }
+ 
+      page {
+        display: block;
+        height: 98vh;
+        width: 69.3vh;
+        margin: 1vh auto;
+        padding: 12vh;
+        border: 1px solid #646464;
+        box-shadow: 0 0 15px rgba(0,0,0,.75);
+        box-sizing: border-box;
+        background-color: white;
+        position: relative;
+      }
+ 
+      page:after {
+        content: attr(data-page);
+        color: graytext;
+        font-size: 12px;
+        text-align: center;
+        bottom: 4vh;
+        position: absolute;
+        left: 10vh;
+        right: 10vh;
+      }
+ 
+      a {
+        color: #34538b;
+        font-size: 14px;
+      }
+    </style>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var lenPage = $("page").length;
+        //自动添加每页底部的页码
+        $("page").each(function(i){
+          $(this).attr("data-page", "第 "+ (i+1) +" 页，共 "+ lenPage +" 页");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <page><a href="http://hangge.com">欢迎访问 hangge.com</a></page>
+    <page></page>
+    <page></page>
+  </body>
+</html>
+```

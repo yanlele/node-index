@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>hangge.com</title>
+    <script type="text/javascript" src="../../../lib/jquery.min.js"></script>
+    <style>
+        html, body, div, span, button {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        button {
+            width: 120px;
+            height: 30px;
+            color: #FFFFFF;
+            font-family: "微软雅黑";
+            font-size: 14px;
+            background: #28B995;
+        }
+
+        .dialog-container {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,.35);
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .dialog-container:after {
+            display: inline-block;
+            content: '';
+            width: 0;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        .dialog-box {
+            display: inline-block;
+            text-align: left;
+            vertical-align: middle;
+            position: relative;
+        }
+
+        .demo-image {
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+    </style>
+</head>
+<body>
+<button onclick="$('#dialogContainer').show();">点击显示大图</button>
+<div id="dialogContainer" class="dialog-container" onclick="$('#dialogContainer').hide();">
+    <div class="dialog-box">
+        <img src="./img.jpg" class="demo-image" />
+    </div>
+</div>
+</body>
+</html>
