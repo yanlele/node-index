@@ -125,6 +125,7 @@
     - [29、关于图片预加载的研究](./18年/07月/09、关于图片预加载的研究)
     - [30、移动端弹出层滚动时禁止body滚动，静止滚动](./18年/07月/12、移动端弹出层滚动时禁止body滚动，静止滚动)
     - [31、《SVG精髓》 阅读笔记](https://github.com/xswei/SVG_Essentials)
+    - [32、css3新单位vw、vh、vmin、vmax的使用详解](./18年/08月/01、css3新单位vw、vh、vmin、vmax的使用详解/)
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
