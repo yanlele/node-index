@@ -89,4 +89,142 @@ vmax：当前 vw 和 vh 中较大的一个值
 ```
 [示例文件: 01、一个简单的示例](./01、一个简单的示例.html)
 
+### 2、实现完整覆盖的遮罩层
+有时为了突出弹出框，或者避免页面元素被点击。我们需要一个覆盖整个可视区域的半透明遮罩，这个使用 vw、vh 就可以很轻易地实现。                
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>hangge.com</title>
+    <style>
+        html, body, div, span, button {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        button {
+            width: 120px;
+            height: 30px;
+            color: #FFFFFF;
+            font-family: "微软雅黑";
+            font-size: 14px;
+            background: #28B995;
+        }
+
+        #mask {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #000000;
+            opacity: 0.5;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<button onclick="document.getElementById('mask').style.display='inline'">点击显示遮罩</button>
+<div id="mask" onclick="document.getElementById('mask').style.display='none'"/></div>
+</body>
+</html>
+```
+
+[示例文件2：02、实现完整覆盖的遮罩层](./02、实现完整覆盖的遮罩层.html)
+
+### 3、实现居中显示的弹出框
+弹出框大小随内容自适应                     
+遮罩层使用 vw、vh 实现全屏覆盖。弹出框添加到遮罩层中并居中。           
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>hangge.com</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <style>
+      html, body, div, span, button {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+ 
+      button {
+        width: 120px;
+        height: 30px;
+        color: #FFFFFF;
+        font-family: "微软雅黑";
+        font-size: 14px;
+        background: #28B995;
+      }
+ 
+      .dialog-container {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,.35);
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
+ 
+      .dialog-container:after {
+        display: inline-block;
+        content: '';
+        width: 0;
+        height: 100%;
+        vertical-align: middle;
+      }
+ 
+      .dialog-box {
+        background-color: #fff;
+        display: inline-block;
+        border: 1px solid #ccc;
+        text-align: left;
+        vertical-align: middle;
+        position: relative;
+      }
+ 
+      .dialog-title {
+        line-height: 28px;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-bottom: 1px solid #ccc;
+        font-size: 12px;
+        text-align: left;
+      }
+ 
+      .dialog-close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 12px;
+      }
+ 
+      .dialog-body {
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+      <button onclick="$('#dialogContainer').show();">点击显示弹出框</button>
+      <div id="dialogContainer" class="dialog-container">
+          <div class="dialog-box">
+              <div class="dialog-title">居中弹出框</div>
+              <a onclick="$('#dialogContainer').hide();" class="dialog-close">关闭</a>
+              <div class="dialog-body">
+                    <h2>i13urdlksdnvoivor829347</h2>
+                    <h2>19823sdlkfjsaf</h2>
+                    <h2>sdkfjafa on vndnv nslkvdnsdv </h2>
+              </div>
+          </div>
+      </div>
+  </body>
+</html>
+```
+
 
