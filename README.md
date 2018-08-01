@@ -52,6 +52,7 @@
     - [10、audio标签兼容性自动播放解决方案](./18年/07月/07、audio标签兼容性自动播放解决方案)
     - [11、简易的实现一个打字机效果](./18年/07月/08、简易的实现一个打字机效果)
     - [12、数字滚动展示组件countUp.js](./18年/07月/11、数字滚动展示组件countUp.js)
+    - [13、A javascript library for multi-touch gestures](https://github.com/hammerjs/hammer.js)
     
 - vue组件
     - [01、swiper](./通用功能js模块/vue/1、swiper/swiper.vue)
