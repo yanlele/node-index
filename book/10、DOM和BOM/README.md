@@ -319,3 +319,13 @@ preventDefault()	|通知浏览器不要执行与事件关联的默认动作。|	
 stopPropagation()	|不再派发事件。|	2
 
 
+#### 目标事件对象         
+**方法**          
+|属性 / 方法|描述|DOM类型|                                    
+|:-|:-|:-|              
+addEventListener()	|允许在目标事件中注册监听事件(IE8 = attachEvent())	|2
+dispatchEvent()	|允许发送事件到监听器上 (IE8 = fireEvent())|	2
+removeEventListener()	|运行一次注册在事件目标上的监听事件(IE8 = detachEvent())	|2
+
+
+#### 
