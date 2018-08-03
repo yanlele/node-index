@@ -328,4 +328,41 @@ dispatchEvent()	|允许发送事件到监听器上 (IE8 = fireEvent())|	2
 removeEventListener()	|运行一次注册在事件目标上的监听事件(IE8 = detachEvent())	|2
 
 
-#### 
+#### 事件监听对象             
+**方法**          
+|属性 / 方法|描述|DOM类型|                                    
+|:-|:-|:-|                      
+handleEvent()	|把任意对象注册为事件处理程序	|2
+
+#### 文档事件对象             
+**方法**          
+|属性 / 方法|描述|DOM类型|                                    
+|:-|:-|:-|              
+createEvent()|	 	|2
+
+
+**鼠标/键盘事件对象**           
+方法              
+|属性 / 方法|描述|DOM类型|                                    
+|:-|:-|:-|    
+altKey	|返回当事件被触发时，"ALT" 是否被按下。|	2
+button	|返回当事件被触发时，哪个鼠标按钮被点击。	|2
+clientX|	返回当事件被触发时，鼠标指针的水平坐标。|	2
+clientY	|返回当事件被触发时，鼠标指针的垂直坐标。|	2
+ctrlKey	|返回当事件被触发时，"CTRL" 键是否被按下。	|2
+Location	|返回按键在设备上的位置|	3
+charCode	|返回onkeypress事件触发键值的字母代码。|	2
+key	|在按下按键时返回按键的标识符。	|3
+keyCode	|返回onkeypress事件触发的键的值的字符代码，或者 onkeydown 或 onkeyup 事件的键的代码。	|2
+which	|返回onkeypress事件触发的键的值的字符代码，或者 onkeydown 或 onkeyup 事件的键的代码。|	2
+metaKey	|返回当事件被触发时，"meta" 键是否被按下。	|2
+relatedTarget	|返回与事件的目标节点相关的节点。	|2
+screenX	|返回当某个事件被触发时，鼠标指针的水平坐标。|	2
+screenY	|返回当某个事件被触发时，鼠标指针的垂直坐标。|	2
+shiftKey	|返回当事件被触发时，"SHIFT" 键是否被按下。|	2
+
+方法          
+|属性 / 方法|描述|DOM类型|                                    
+|:-|:-|:-|              
+initMouseEvent()	|初始化鼠标事件对象的值	|2
+initKeyboardEvent()	|初始化键盘事件对象的值	|3
