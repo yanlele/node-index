@@ -268,3 +268,54 @@ onwaiting	|事件在视频由于要播放下一帧而需要缓冲时触发。	 |
 animationend	|该事件在 CSS 动画结束播放时触发	 |
 animationiteration	|该事件在 CSS 动画重复播放时触发	 |
 animationstart	|该事件在 CSS 动画开始播放时触发	 |
+
+
+#### 过渡事件           
+|属性 / 方法|描述|DOM类型|                                    
+|:-|:-|:-|                  
+transitionend|	该事件在 CSS 完成过渡后触发。|	 
+
+
+#### 其他事件           
+|属性 / 方法|描述|DOM类型|                                    
+|:-|:-|:-|              
+onmessage	|该事件通过或者从对象(WebSocket, Web Worker, Event Source 或者子 frame 或父窗口)接收到消息时触发	 |
+onmousewheel	|已废弃。 使用 onwheel 事件替代	 |
+ononline	|该事件在浏览器开始在线工作时触发。	 |
+onoffline	|该事件在浏览器开始离线工作时触发。	 |
+onpopstate	|该事件在窗口的浏览历史（history 对象）发生改变时触发。	 |
+onshow	|该事件当 <menu> 元素在上下文菜单显示时触发	 |
+onstorage	|该事件在 Web Storage(HTML 5 Web 存储)更新时触发	 |
+ontoggle	|该事件在用户打开或关闭 <details> 元素时触发	 |
+onwheel	|该事件在鼠标滚轮在元素上下滚动时触发	 |
+
+
+#### 事件对象
+**常量**              
+|属性 / 方法|描述|DOM类型|                                    
+|:-|:-|:-|              
+CAPTURING-PHASE	当前事件阶段为捕获阶段(1)	1
+AT-TARGET	当前事件是目标阶段,在评估目标事件(1)	2
+BUBBLING-PHASE	当前的事件为冒泡阶段 (3)	3
+
+
+**属性**          
+|属性 / 方法|描述|DOM类型|                                    
+|:-|:-|:-|              
+bubbles	|返回布尔值，指示事件是否是起泡事件类型。|	2
+cancelable	|返回布尔值，指示事件是否可拥可取消的默认动作。|	2
+currentTarget	|返回其事件监听器触发该事件的元素。|	2
+eventPhase	|返回事件传播的当前阶段。|	2
+target	|返回触发此事件的元素（事件的目标节点）。|	2
+timeStamp	|返回事件生成的日期和时间。|	2
+type	|返回当前 Event 对象表示的事件的名称。|	2
+
+
+**方法**              
+|属性 / 方法|描述|DOM类型|                                    
+|:-|:-|:-|              
+initEvent()	|初始化新创建的 Event 对象的属性。	|2
+preventDefault()	|通知浏览器不要执行与事件关联的默认动作。|	2
+stopPropagation()	|不再派发事件。|	2
+
+
