@@ -27,8 +27,19 @@
 但是会多生成出来一个 `0.bundle.js` 的文件, 这是因为amd是异步加载模块的方式； - **说明webpack支持amd模块规范**
 
 #### 2.2、通过配置文件打包js
-在文件根目录下面，我们需要定义一个webpack.config.js的配置文件
-
+在文件根目录下面，我们需要定义一个webpack.config.js的配置文件, 然后只需要直接执行 `webpack` 就可以了；              
+如果我们配置文件不叫webpack.config.js，那我们需要重新给我们指定自己的配置文件名称 `webpack --config <webpack.config.js>`            
+配置文件如下                  
+```javascript
+module.exports = {
+    entry: {
+        app: './app.js'
+    },
+    output: {
+        filename: '[name].[hash:5].js'
+    }
+};
+```
 
 
 
