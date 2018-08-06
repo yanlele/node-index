@@ -6,6 +6,7 @@
 - [一、由浅入深Webpack](#class1)
     - [01、最基本的使用webpack](#class1-item01)
     - [02、打包js](#class1-item02)
+    - [03、编译ES6/7](#class1-item03)
     
 
 ## <p id='class1'>一、由浅入深Webpack</p>              
@@ -48,7 +49,73 @@ module.exports = {
 
 ### <p id='class1-item03'>03、编译ES6/7</p>          
 首先我们要安装babel 编译文件 `npm install --save-dev babel-loader babel-core`          
+同时还需要安装 `npm install babel-preset-env --save-dev`           
+这个时候，给webpack.config.js一个基础配置：          
+```javascript
+module.exports = {
+    entry: {
+        app: './app.js'
+    },
+    output: {
+        filename: "[name].[hash:8].js"
+    },
 
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                use: 'babel-loader',
+                exclude: '/node_modules/'
+            }
+        ]
+    }
+};
+```
+
+我们因为要使用 babel-preset-env，所以要对webpack.config.js module规则进行改造
+```javascript
+rules: [
+            {
+                test: /\.js$/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                },
+                exclude: '/node_modules/'
+            }
+        ]
+```
+
+其中presets还有一些其他的参数              
+targets: 指定什么编译什么不编译                
+targets.browers: 指定什么浏览器编译，什么浏览器不编译, 写了之后就是要编译的                 
+    例如： targets.browers: "last 2 versions" 主流浏览器最后两个版本编译
+    例如： targets.browers: ">1%" 全球占有率超过百分之一的浏览器就编译
+天假targets参数的配置文件如下：
+```javascript
+rules: [
+            {
+                test: /\.js$/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            ['@babel/preset-env', {
+                                targets: {
+                                    browers: ['>1%', 'last 2 versions']
+                                }
+                            }]
+                        ]
+                    }
+                },
+                exclude: '/node_modules/'
+            }
+        ]
+```
+    
+           
 
 
 
