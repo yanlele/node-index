@@ -4,6 +4,9 @@
 
 目录：             
 - [一、由浅入深Webpack](#class1)
+    - [01、最基本的使用webpack](#class1-item01)
+    - [02、打包js](#class1-item02)
+    
 
 ## <p id='class1'>一、由浅入深Webpack</p>              
 
@@ -40,6 +43,12 @@ module.exports = {
     }
 };
 ```
+[代码示例](./01、由浅入深Webpack/02、打包js/)
+
+
+### <p id='class1-item03'>03、编译ES6/7</p>          
+首先我们要安装babel 编译文件 `npm install --save-dev babel-loader babel-core`          
+
 
 
 
