@@ -3,7 +3,7 @@ module.exports = {
         app: './app.js'
     },
     output: {
-        filename: "[name].[hash:8].js"
+        filename: "[name].bundle.js"
     },
 
     module: {
@@ -14,7 +14,7 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         presets: [
-                            ['@babel/preset-env', {
+                            ['babel-preset-env', {
                                 targets: {
                                     browers: ['>1%', 'last 2 versions']
                                 }
