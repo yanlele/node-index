@@ -115,7 +115,7 @@ rules: [
         ]
 ```
     
-           
+接下来介绍 `babel polyfill` 和 `babel tuntime Transform`         
 
 
 
