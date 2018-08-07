@@ -115,7 +115,9 @@ rules: [
         ]
 ```
     
-接下来介绍 `babel polyfill` 和 `babel tuntime Transform`         
-
+接下来介绍 `babel polyfill` 和 `babel tuntime Transform`              
+我们很多时候会有一些ES6的高级语法，但是浏览器还没有支持这些语法的时候，我们就要借助上面的插件帮助我们实现这些语法；         
+比如： Generator、Set、Map、Array.form、Array.prototype.includes 等，这些函数和方法都是需要借助上面插件来实现的；                    
+安装： 
 
 
