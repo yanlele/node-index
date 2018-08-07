@@ -118,6 +118,8 @@ rules: [
 接下来介绍 `babel polyfill` 和 `babel tuntime Transform`              
 我们很多时候会有一些ES6的高级语法，但是浏览器还没有支持这些语法的时候，我们就要借助上面的插件帮助我们实现这些语法；         
 比如： Generator、Set、Map、Array.form、Array.prototype.includes 等，这些函数和方法都是需要借助上面插件来实现的；                    
-安装： 
+安装： `npm install babel-polyfill --save` 在使用的时候，只要 `import 'babel-polyfile'` 就可以随意使用高级语法了；           
+`babel tuntime Transform`: 这个是局部垫片，为开发框架准备的 - 不会污染全局；               
+安装： `npm install babel transform-plugin-transform-runtime --save-dev` 和 `npm install babel-runtime --sve`           
 
-
+babel配置文件的写法： .babelrc              
