@@ -125,7 +125,7 @@ class LinkList {
         if(this.head === null) {
             this.head = node;
         } else {
-            current = head;
+            current = this.head;
 
             //如果有下一项就直接移动到下一项
             while (current.next) {
@@ -138,7 +138,25 @@ class LinkList {
     }
 
     insert(position, element) {
-
+        //检查越界
+        if(position >= 0 && position <= this.length) {
+            let node = new Node(element), current = this.head, previous, index = 0;
+            if(position === 0) {
+                node.next = current;
+                this.head = node;
+            } else {
+                while (index++ < position) {
+                    previous = current;
+                    current = current.next;
+                }
+                node.next = current;
+                previous.next = node;
+            }
+            this.length ++;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     removeAt(position) {
@@ -164,28 +182,46 @@ class LinkList {
         }
     }
 
-    remove(elemnt) {
-
+    remove(element) {
+        let index = this.indexOf(element);
+        return this.removeAt(index);
     }
 
     indexOf(element) {
-
+        let current = this.head, index = -1;
+        while (current) {
+            if(element === current.element) {
+                return index;
+            }
+            index ++;
+            current = current.next;
+        }
+        return -1;
     }
 
     isEmpty() {
-
+        return this.length === 0;
     }
 
     size() {
-
+        return this.length;
     }
 
     toString() {
-
+        let current = this.head, string = '';
+        while (current) {
+            string = current.element;
+            current = current.next;
+        }
+        return string;
     }
 
     print() {
+        console.log(toString());
+    }
 
+    getHead() {
+        return this.head;
     }
 }
 
@@ -195,3 +231,5 @@ class Node {
         this.next = null
     }
 }
+
+module.exports = LinkList;
