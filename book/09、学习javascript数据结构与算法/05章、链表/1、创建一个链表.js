@@ -9,6 +9,7 @@
    toString() ：由于列表项使用了 Node 类，就需要重写继承自JavaScript对象默认的toString 方法，让其只输出元素的值。
  * @constructor
  */
+/*
 function LinkedList() {
     let Node = function (element) { // {1}
         this.element = element;
@@ -110,4 +111,87 @@ function LinkedList() {
 
     this.print = function () {
     };
+}*/
+
+//es6 来实现链表
+class LinkList {
+    constructor() {
+        this.length = 0;
+        this.head = null;
+    }
+
+    append(element) {
+        let node = new Node(element), current;
+        if(this.head === null) {
+            this.head = node;
+        } else {
+            current = head;
+
+            //如果有下一项就直接移动到下一项
+            while (current.next) {
+                current = current.next;
+            }
+            //如果没有下一项，就直接填充当前项
+            current.next = node;
+        }
+        this.length ++;
+    }
+
+    insert(position, element) {
+
+    }
+
+    removeAt(position) {
+        //检查越界
+        if(position > -1 && position <this.length) {
+            let current = this.head, previous, index = 0;
+
+            //移除第一项
+            if(position === 0) {
+                this.head = current.next;           //直接移动到下一项
+                while (index ++ <position) {
+                    previous = current;
+                    current = current.next;
+                }
+
+                //将previous 与 current 的下一项连接起来： 跳过current, 从而实现移除它
+                previous.next = current.next;
+            }
+            this.length--;
+            return current.element;     //返回移除的项
+        } else {
+            return null;
+        }
+    }
+
+    remove(elemnt) {
+
+    }
+
+    indexOf(element) {
+
+    }
+
+    isEmpty() {
+
+    }
+
+    size() {
+
+    }
+
+    toString() {
+
+    }
+
+    print() {
+
+    }
+}
+
+class Node {
+    constructor(element) {
+        this.element = element;
+        this.next = null
+    }
 }
