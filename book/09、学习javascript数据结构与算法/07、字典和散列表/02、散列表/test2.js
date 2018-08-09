@@ -13,3 +13,17 @@ linkedList.put('Sue', 'sue@email.com');
 linkedList.put('Mindy', 'mindy@email.com');
 linkedList.put('Paul', 'paul@email.com');
 linkedList.put('Nathan', 'nathan@email.com');
+
+
+console.log(linkedList.get('Gandalf'));
+console.log(linkedList.get('John'));
+console.log(linkedList.get('Tyrion'));
+console.log(linkedList.get('Aaron'));
+console.log(linkedList.get('Donnie'));
+console.log(linkedList.get('Ana'));
+console.log(linkedList.get('Jonathan'));
+console.log(linkedList.get('Jamie'));
+console.log(linkedList.get('Sue'));
+console.log(linkedList.get('Mindy'));
+console.log(linkedList.get('Paul'));
+console.log(linkedList.get('Nathan'));
