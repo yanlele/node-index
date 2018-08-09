@@ -486,7 +486,64 @@ subset(otherSet) {
   keys() ：将字典所包含的所有键名以数组形式返回。              
   values() ：将字典所包含的所有数值以数组形式返回。                
 
+代码实现：   
+```javascript
+class Dictionary {
+    constructor() {
+        this.items = {};
+    }
 
+    has(key) {
+        return key in this.items;
+    }
+
+    set(key, value) {
+        this.items[key] = value;
+    }
+
+    remove(key) {
+        if (this.has(key)) {
+            delete this.items[key];
+            return true;
+        }
+        return false;
+    }
+
+    get(key) {
+        return this.has(key) ? this.items[key] : undefined;
+    }
+
+    values(key) {
+        let values = [];
+        for (let k in this.items) {
+            if (this.has(k)) {
+                values.push(this.items[k])
+            }
+        }
+        return values;
+    }
+
+    clear() {
+        this.items = {};
+    }
+
+    size() {
+        return Object.keys(this.items).length;
+    }
+
+    keys() {
+        return Object.keys(this.items);
+    }
+
+    getItems() {
+        return this.items;
+    }
+}
+
+module.exports = Dictionary;
+```
+
+完整示例请见：[01、字典](./07、字典和散列表/01、字典/)
 
 
 

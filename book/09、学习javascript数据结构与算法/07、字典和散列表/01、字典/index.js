@@ -12,8 +12,8 @@ class Dictionary {
     }
 
     remove(key) {
-        if(this.has(key)) {
-            delete items[key];
+        if (this.has(key)) {
+            delete this.items[key];
             return true;
         }
         return false;
@@ -24,9 +24,9 @@ class Dictionary {
     }
 
     values(key) {
-        let values = {};
+        let values = [];
         for (let k in this.items) {
-            if(this.has(k)) {
+            if (this.has(k)) {
                 values.push(this.items[k])
             }
         }
