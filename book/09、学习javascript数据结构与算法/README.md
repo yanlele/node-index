@@ -363,4 +363,100 @@ module.exports = Set;
 完整示例请见：[01、创建一个集合](./06章、集合/01、创建一个集合/)
 
 
+### <div id='class06-02'>6.2、集合操作</div>
+对集合可以进行如下操作。                
+  并集：对于给定的两个集合，返回一个包含两个集合中所有元素的新集合。            
+  交集：对于给定的两个集合，返回一个包含两个集合中共有元素的新集合。                
+  差集：对于给定的两个集合，返回一个包含所有存在于第一个集合且不存在于第二个集合的元素的新集合。                  
+  子集：验证一个给定集合是否是另一集合的子集。               
+
+**6.2.1、并集**                                   
+并集的数学概念，集合A和B的并集，表示为A∪B，定义如下：           
+`A∪B = { x | x ∈ A∨x ∈ B }`                            
+意思是x（元素）存在于A中，或x存在于B中。          
+
+现在来实现 Set 类的 union 方法：          
+```javascript
+union(otherSet) {
+    let unionSet = new Set();
+    let values = this.values();
+
+    for (let i = 0; i < values.length; i++) {
+        unionSet.add(values[i]);
+    }
+
+    values = otherSet.values();
+    for (let i = 0; i < values.length; i++) {
+        unionSet.add(values[i]);
+    }
+
+    return unionSet;
+}
+```
+
+**6.2.2、交集**            
+交集的数学概念，集合A和B的交集，表示为A∩B，定义如下：               
+A∩B = { x | x ∈ A∧x ∈ B }                   
+意思是x（元素）存在于A中，且x存在于B中。              
+
+具体实现：   
+```javascript
+// 交集
+intersection(otherSet) {
+    let intersectionSet = new Set();
+    let values = this.values();
+
+    for(let i = 0; i < values.length; i++) {
+        if(otherSet.has(values[i])) {
+            intersectionSet.add(values[i]);
+        }
+    }
+    return intersectionSet;
+}
+```
+
+
+**6.2.3、差集**                
+差集的数学概念，集合A和B的差集，表示为A - B，定义如下：             
+`A-B = { x | x ∈ A ∧ x   B }`              
+意思是x（元素）存在于A中，且x不存在于B中。                 
+
+现在来实现 Set 类的 difference 方法：             
+```javascript
+difference(otherSet) {
+    let difference = new Set();
+    let values = this.values();
+
+    for(let i = 0;i < values.length; i++) {
+        if(!otherSet.has(values[i])) {
+            difference.add(values[i]);
+        }
+    }
+    return difference;
+}
+```
+
+**6.2.4、子集**                
+我们要介绍的最后一个集合操作是子集。子集的数学概念，集合A是B的子集（或集合B包含了A），表示为A⊆B，定义如下：               
+`∀x { x ∈ A → x ∈ B }`                           
+意思是集合A中的每一个x（元素），也需要存在于B中。                        
+
+现在来实现 Set 类的 subset 方法：         
+```javascript
+// 检验是否为子集
+subset(otherSet) {
+    if (this.size() > otherSet.size()) {
+        return false;
+    } else {
+        let values = this.values();
+        for (let i = 0; i < values.length; i++) {
+            if(!otherSet.has(values[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+```
+完整示例请见：[02、集合操作](./06章、集合/02、集合操作/)
 
