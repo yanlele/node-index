@@ -594,6 +594,73 @@ class HashTable {
 完整示例和测试请见：[02、散列表](./07、字典和散列表/02、散列表/)
 
 
+**7.2.2 散列表和散列集合:**                               
+散列表和散列映射是一样的，我们已经在本章中介绍了这种数据结构。                 
+
+在一些编程语言中，还有一种叫作散列集合的实现。散列集合由一个集合构成，但是插入、
+移除或获取元素时，使用的是散列函数。我们可以重用本章中实现的所有代码来实现散列集合，
+不同之处在于，不再添加键值对，而是只插入值而没有键。例如，可以使用散列集合来存储所有
+的英语单词（不包括它们的定义）。和集合相似，散列集合只存储唯一的不重复的值。
+
+
+
+**7.2.3 处理散列表中的冲突:**                    
+有时候，一些键会有相同的散列值。不同的值在散列表中对应相同位置的时候，我们称其为冲突。             
+例如，我们看看下面的代码会得到怎样的输出结果：             
+```javascript
+var hash = new HashTable();
+hash.put('Gandalf', 'gandalf@email.com');
+hash.put('John', 'johnsnow@email.com');
+hash.put('Tyrion', 'tyrion@email.com');
+hash.put('Aaron', 'aaron@email.com');
+hash.put('Donnie', 'donnie@email.com');
+hash.put('Ana', 'ana@email.com');
+hash.put('Jonathan', 'jonathan@email.com');
+hash.put('Jamie', 'jamie@email.com');
+hash.put('Sue', 'sue@email.com');
+hash.put('Mindy', 'mindy@email.com');
+hash.put('Paul', 'paul@email.com');
+hash.put('Nathan', 'nathan@email.com');
+```
+输出结果如下：
+```
+19 - Gandalf
+29 - John
+16 - Tyrion
+16 - Aaron
+13 - Donnie
+13 - Ana
+5 - Jonathan
+5 - Jamie
+5 - Sue
+32 - Mindy
+32 - Paul
+10 – Nathan
+```
+Tyrion 和 Aaron 有相同的散列值（ 16 ）。 Donnie 和 Ana 有相同的散列值（ 13 ），Jonathan 、 Jamie 和 Sue 有相同的散列值（ 5 ）， Mindy 和 Paul 也有相同的散列值（ 32 ）。              
+
+处理冲突有几种方法：**分离链接、线性探查和双散列法**。在本书中，我们会介绍前两种方法。                   
+
+**7.2.3.1、分离链接**                    
+分离链接法包括为散列表的每一个位置创建一个链表并将元素存储在里面。它是解决冲突的最简单的方法，但是它在 HashTable 实例之外还需要额外的存储空间。                              
+![7-2-2](./07、字典和散列表/02、散列表/7-2-2.png)
+在位置5上，将会有包含三个元素的 LinkedList 实例；在位置13、16和32上，将会有包含两个元素的 LinkedList 实例；在位置10、19和29上，将会有包含单个元素的 LinkedList 实例。                             
+
+为了实现一个使用了分离链接的 HashTable 实例，我们需要一个新的辅助类来表示将要加入LinkedList 实例的元素。我们管它叫 ValuePair 类（在 HashTable 类内部定义）：                    
+```javascript
+class ValuePair {
+    constructor(key, value) {
+        this.key = key;
+        this.value = value;
+    }
+    toString() {
+        return `[ ${this.key} - ${this.value} ]`
+    }
+}
+```
+这个类只会将 key 和 value 存储在一个 Object 实例中。我们也重写了 toString 方法，以便之后在浏览器控制台中输出结果。                
+
+
 
 
 

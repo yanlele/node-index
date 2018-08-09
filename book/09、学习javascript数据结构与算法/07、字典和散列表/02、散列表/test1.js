@@ -1,4 +1,4 @@
-const HashTable = require('./index');
+const HashTable = require('./index1');
 
 // 让我们执行一些代码来测试 HashTable 类：
 var hash = new HashTable();
