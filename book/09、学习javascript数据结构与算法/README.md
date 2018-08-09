@@ -766,8 +766,15 @@ remove(key) {
 一个表现良好的散列函数是由几个方面构成的：插入和检索元素的时间（即性能），当然也包括较低的冲突可能性。
 我们可以在网上找到一些不同的实现方法，或者也可以实现自己的散列函数。                      
 
-
-
+```javascript
+djb2(key) {
+    let hash = 5381;
+    for (let i = 0; i < key.length; i++) {
+        hash = hash * 33 + key.charCodeAt(i);
+    }
+    return hash % 1013;
+}
+```
 
 
 
