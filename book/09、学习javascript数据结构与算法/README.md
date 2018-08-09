@@ -554,7 +554,44 @@ module.exports = Dictionary;
 举个例子，我们继续使用在前一节中使用的电子邮件地址簿。我们将要使用最常见的散列函数——“lose lose”散列函数，方法是简单地将每个键值中的每个字母的ASCII值相加。              
 ![散列表7-2-1](./07、字典和散列表/02、散列表/7-2-1.png)
 
+**7.2.1、创建一个散列表**                   
+搭建类的骨架开始：               
+  put(key,value) ：向散列表增加一个新的项（也能更新散列表）。
+  remove(key) ：根据键值从散列表中移除值。
+  get(key) ：返回根据键值检索到的特定的值。
 
+具体实现：           
+```javascript
+class HashTable {
+    constructor() {
+        this.table = [];
+    }
+
+    loseloseHashCode(key) {
+        let hash = 0;
+        for(let i = 0; i < key.length; i++) {
+            hash +=key.charCodeAt(i);
+        }
+        return hash % 37;
+    }
+
+    put(key, value) {
+        let position = this.loseloseHashCode(key);
+        console.log(position + ' - ' + key);
+        this.table[position] = value;
+    }
+    
+    get(key) {
+        return this.table[this.loseloseHashCode(key)]
+    }
+    
+    remove(key) {
+        this.table[this.loseloseHashCode(key)] = undefined;
+    }
+}
+```
+
+完整示例和测试请见：[02、散列表](./07、字典和散列表/02、散列表/)
 
 
 
