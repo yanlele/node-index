@@ -664,6 +664,104 @@ class ValuePair {
 完整测试代码请见：[test2](./07、字典和散列表/02、散列表/test2.js)               
 
 
+**7.2.3.2、线性探查**                
+另一种解决冲突的方法是线性探查。当想向表中某个位置加入一个新元素的时候，如果索引为index的位置已经被占据了，
+就尝试index+1的位置。如果index+1的位置也被占据了，就尝试index+2的位置，以此类推。             
+让我们继续实现需要重写的三个方法。               
+第一个是 put 方法：                           
+```javascript
+put(key, value) {
+    let position = this.loseloseHashCode(key);
+    if(this.table[position] === undefined) {
+        this.table[position] = new ValuePair(key ,value);
+    } else {
+        let index = ++position;
+        while (this.table[index] !==undefined) {
+            index ++;
+        }
+        this.table[index] = new ValuePair(key, value);
+    }
+}
+```
+
+如果再次执行 [test2](./07、字典和散列表/02、散列表/test2.js) 
+```
+linkedList.put('Gandalf', 'gandalf@email.com');
+linkedList.put('John', 'johnsnow@email.com');
+linkedList.put('Tyrion', 'tyrion@email.com');
+linkedList.put('Aaron', 'aaron@email.com');
+linkedList.put('Donnie', 'donnie@email.com');
+linkedList.put('Ana', 'ana@email.com');
+linkedList.put('Jonathan', 'jonathan@email.com');
+linkedList.put('Jamie', 'jamie@email.com');
+linkedList.put('Sue', 'sue@email.com');
+linkedList.put('Mindy', 'mindy@email.com');
+linkedList.put('Paul', 'paul@email.com');
+linkedList.put('Nathan', 'nathan@email.com');
+```
+节中插入数据的代码，下图展示使用了线性探查的散列表的最终结果：             
+![7-2-3](./07、字典和散列表/02、散列表/7-2-3.png)
+
+让我们来模拟一下散列表中的插入操作。                           
+(1) 试着插入Gandalf。它的散列值是19，由于散列表刚刚被创建，位置19还是空的——可以在这里插入数据。                            
+(2) 试着在位置29插入John。它也是空的，所以可以插入这个姓名。                 
+(3) 试着在位置16插入Tyrion。它是空的，所以可以插入这个姓名。                    
+(4) 试着插入Aaron，它的散列值也是16。位置16已经被Tyrion占据了，所以需要检查索引值为position+1的位置（16+1）。位置17是空的，所以可以在位置17插入Aaron。                        
+(5) 接着，试着在位置13插入Donnie。它是空的，所以可以插入这个姓名。                 
+(6) 想在位置13插入Ana，但是这个位置被占据了。因此在位置14进行尝试，它是空的，所以可以在这里插入姓名。                    
+(7) 然后，在位置5插入Jonathan，这个位置是空的，所以可以插入这个姓名。                       
+(8) 试着在位置5插入Jamie，但是这个位置被占了。所以跳至位置6，这个位置是空的，因此可以在这个位置插入姓名。                      
+(9) 试着在位置5插入Sue，但是位置被占据了。所以跳至位置6，但也被占了。接着跳至位置7，这里是空的，所以可以在这里插入姓名。                   
+
+
+第二个 get 方法：         
+```javascript
+get(key) {
+    let position = this.loseloseHashCode(key);
+    if(this.table[position] !== undefined) {
+        if(this.table[position].key === key) {
+            return table[position].value;
+        } else {
+            let index = ++position;
+            while (this.table[index] === undefined || this.table[index].key !== key) {
+                index++
+            }
+            if(this.table[index].key === key) {
+                return this.table[index].value;
+            }
+        }
+    }
+}
+```
+
+第三个方法 remove :          
+```javascript
+remove(key) {
+    let position = this.loseloseHashCode(key);
+    if(this.table[position] !== undefined) {
+        if(this.table[position].key === key) {
+            this.table[position] = undefined;
+            return true
+        } else {
+            let index = ++position;
+            while (this.table[index] === undefined || this.table[index].key !== key) {
+                index++
+            }
+            if(this.table[index].key === key) {
+                this.table[index] = undefined;
+                return true;
+            }
+        }
+    }
+    return false;
+}
+```
+
+具体代码实现请见：[index3.js](./07、字典和散列表/02、散列表/index3.js)              
+测试请见：[test3.js](./07、字典和散列表/02、散列表/test3.js)                    
+
+
+
 
 
 
