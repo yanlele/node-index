@@ -22,12 +22,12 @@ class LinkedList {
         this.head = null;
     }
 
-    loseloseHashCode(key) {
-        let hash = 0;
-        for(let i = 0; i < key.length; i++) {
-            hash +=key.charCodeAt(i);
+    djb2(key) {
+        let hash = 5381;
+        for (let i = 0; i < key.length; i++) {
+            hash = hash * 33 + key.charCodeAt(i);
         }
-        return hash % 37;
+        return hash % 1013;
     }
 
     append(element) {
@@ -52,7 +52,7 @@ class LinkedList {
     }
 
     put(key, value) {
-        let position = this.loseloseHashCode(key);
+        let position = this.djb2(key);
         if(this.table[position] === undefined) {
             this.table[position] = new ValuePair(key ,value);
         } else {
@@ -65,7 +65,7 @@ class LinkedList {
     }
 
     get(key) {
-        let position = this.loseloseHashCode(key);
+        let position = this.djb2(key);
         if(this.table[position] !== undefined) {
             if(this.table[position].key === key) {
                 return this.table[position].value;
@@ -82,7 +82,7 @@ class LinkedList {
     }
 
     remove(key) {
-        let position = this.loseloseHashCode(key);
+        let position = this.djb2(key);
         if(this.table[position] !== undefined) {
             if(this.table[position].key === key) {
                 this.table[position] = undefined;
