@@ -953,6 +953,31 @@ tree.inOrderTraverse(printNode);
 
 **8.3.2 先序遍历**                  
 先序遍历是以优先于后代节点的顺序访问每个节点的。先序遍历的一种应用是打印一个结构化的文档。                   
+具体实现：           
+```javascript
+class BinarySearchTree{
+    // ......
+    // 中序遍历
+    inOrderTraverse(callback) {
+        Tool.inOrderTraverseNode(this.root, callback);
+    }
+    //......
+}
+
+class Tool {
+    //......
+    static preOrderTraverseNode(node, callback) {
+        if(node !== null) {
+            callback(node.key);
+            this.preOrderTraverseNode(node.left, callback);
+            this.preOrderTraverseNode(node.right, callback);
+        }
+    }
+}
+```
+
+下面的图描绘了 postOrderTraverse 方法的访问路径：          
+![8-07](./08章、树/img/8-07.png)                   
 
 
 
