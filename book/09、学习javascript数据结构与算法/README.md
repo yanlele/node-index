@@ -980,8 +980,33 @@ class Tool {
 ![8-07](./08章、树/img/8-07.png)                   
 
 
+**8.3.3 后序遍历**                      
+后序遍历则是先访问节点的后代节点，再访问节点本身。后序遍历的一种应用是计算一个目录和它的子目录中所有文件所占空间的大小。                    
+具体实现：           
+```javascript
+class BinarySearchTree{
+    // ......
+    // 后序遍历
+    postOrderTraverse(callback) {
+        Tool.postOrderTraverseNode(this.root, callback);
+    }
+    //......
+}
 
+class Tool {
+    //......
+    static postOrderTraverseNode(node, callback) {
+        if(node !== null) {
+            this.postOrderTraverseNode(node.left, callback);
+            this.postOrderTraverseNode(node.right, callback);
+            callback(node.key);
+        }
+    }
+}
+```
 
+下面的图描绘了 postOrderTraverse 方法的访问路径：
+![8-08](./08章、树/img/8-08.png)               
 
 
 

@@ -30,6 +30,11 @@ class BinarySearchTree {
     preOrderTraverse(callback) {
         Tool.preOrderTraverseNode(this.root, callback);
     }
+
+    // 后序遍历
+    postOrderTraverse(callback) {
+        Tool.postOrderTraverseNode(this.root, callback);
+    }
 }
 
 class Tool {
@@ -62,6 +67,14 @@ class Tool {
             callback(node.key);
             this.preOrderTraverseNode(node.left, callback);
             this.preOrderTraverseNode(node.right, callback);
+        }
+    }
+
+    static postOrderTraverseNode(node, callback) {
+        if(node !== null) {
+            this.postOrderTraverseNode(node.left, callback);
+            this.postOrderTraverseNode(node.right, callback);
+            callback(node.key);
         }
     }
 }
