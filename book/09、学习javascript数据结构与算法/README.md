@@ -834,9 +834,84 @@ class BinarySearchTree {
 
 
 **8.2.2 向树中插入一个键**                  
+第一步是创建用来表示新节点的 Node 类实例（行 {1} ）。只需要向构造函数传递我们想用来插入树的节点值，它的左指针和右指针的值会由构造函数自动设置为 null 。                
+第二步要验证这个插入操作是否为一种特殊情况。这个特殊情况就是我们要插入的节点是树的第一个节点（行 {2} ）。如果是，就将根节点指向新节点。                  
+第三步是将节点加在非根节点的其他位置。这种情况下，需要一个私有的辅助函数（行 {3} ），函数定义如下：                
+```javascript
+class Tool {
+    static insertNode(node, newNode) {
+        if(newNode.key < node.key) {
+            if(node.left === null) {
+                node.left = newNode;
+            }else {
+                this.insertNode(node.left, newNode);
+            }
+        } else {
+            if(node.right === null) {
+                node.right = newNode;
+            } else {
+                this.insertNode(node.right, newNode);
+            }
+        }
+    }
+}
+```
+下面是这个函数实现的步骤。               
+  如果树非空，需要找到插入新节点的位置。因此，在调用 insertNode 方法时要通过参数
+传入树的根节点和要插入的节点。                 
+       
+  如果新节点的键小于当前节点的键（现在，当前节点就是根节点）（行 {4} ），那么需要检
+查当前节点的左侧子节点。如果它没有左侧子节点（行 {5} ），就在那里插入新的节点。
+如果有左侧子节点，需要通过递归调用 insertNode 方法（行 {7} ）继续找到树的下一层。
+在这里，下次将要比较的节点将会是当前节点的左侧子节点。                 
+
+  如果节点的键比当前节点的键大，同时当前节点没有右侧子节点（行 {8} ），就在那里插
+入新的节点（行 {9} ）。如果有右侧子节点，同样需要递归调用 insertNode 方法，但是要
+用来和新节点比较的节点将会是右侧子节点。                
+
+现在，来考虑下图所示树结构的情况：               
+![8-04](./08章、树/img/8-04.png)               
+
+```javascript
+let tree =new BinarySearchTree();
+tree.insert(7);
+tree.insert(15);
+tree.insert(5);
+tree.insert(3);
+tree.insert(9);
+tree.insert(8);
+tree.insert(10);
+tree.insert(13);
+tree.insert(12);
+tree.insert(14);
+tree.insert(20);
+tree.insert(18);
+tree.insert(25);
+
+// 同时我们想要插入一个值为 6 的键，执行下面的代码：
+tree.insert(6);
+```
+下面的步骤将会被执行。                 
+(1) 树不是空的，行 {3} 的代码将会执行。 insertNode 方法将会被调用（ root, key[6] ）。                    
+(2) 算法将会检测行 {4} （ key[6] < root[11] 为真），并继续检测行 {5} （ node.left[7]不是 null ），
+然后将到达行 {7} 并调用 insertNode （ node.left[7], key[6] ）。                  
+(3) 将再次进入 insertNode 方法内部，但是使用了不同的参数。它会再次检测行 {4} （ key[6]< node[7] 为真），
+然后再检测行 {5} （ node.left[5] 不是 null ），接着到达行 {7} ，调用insertNode （ node.left[5], key[6] ）。                           
+(4) 将再一次进入 insertNode 方法内部。它会再次检测行 {4} （ key[6] < node[5] 为假），
+然后到达行 {8} （ node.right 是 null ——节点5没有任何右侧的子节点），然后将会执行行 {9} ，在节点 5 的右侧子节点位置插入键 6 。                       
+(5) 然后，方法调用会依次出栈，代码执行过程结束。                             
+
+这是插入键6后的结果：         
+![8-05](./08章、树/img/8-05.png)               
 
 
+### <div id='class08-02'>8.3 树的遍历</div>                 
+遍历一棵树是指访问树的每个节点并对它们进行某种操作的过程。但是我们应该怎么去做呢？
+应该从树的顶端还是底端开始呢？从左开始还是从右开始呢？访问树的所有节点有三种方式：**中序、先序和后序**。
 
+
+**8.3.1 中序遍历**              
+以从最小到最大的顺序访问所有节点。中序遍历的一种应用就是对树进行排序操作。                   
 
 
 
