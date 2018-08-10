@@ -912,6 +912,44 @@ tree.insert(6);
 
 **8.3.1 中序遍历**              
 以从最小到最大的顺序访问所有节点。中序遍历的一种应用就是对树进行排序操作。                   
+具体实现：           
+```javascript
+class BinarySearchTree{
+    // ......
+    inOrderTraverse(callback) {
+        Tool.inOrderTraverseNode(this.root, callback);
+    }
+    //......
+}
+
+class Tool {
+    //......
+    static inOrderTraverseNode(node, callback) {
+        if(node !== null) {
+            this.inOrderTraverseNode(node.left, callback);
+            callback(node.key);
+            this.inOrderTraverseNode(node.right, callback);
+        }
+    }
+}
+```
+inOrderTraverse 方法接收一个回调函数作为参数。回调函数用来定义我们对遍历到的每个节点进行的操作由于我们在BST中最常实现的算法是递归，
+这里使用了一个私有的辅助函数，来接收一个节点和对应的回调函数作为参数。                                        
+
+要通过中序遍历的方法遍历一棵树，首先要检查以参数形式传入的节点是否为 null                         
+
+测试执行：               
+```javascript
+function printNode(value) {
+    console.log(value)
+}
+tree.inOrderTraverse(printNode);
+```
+
+下面的图描绘了 inOrderTraverse 方法的访问路径：
+![8-06](./08章、树/img/8-06.png)               
+
+
 
 
 

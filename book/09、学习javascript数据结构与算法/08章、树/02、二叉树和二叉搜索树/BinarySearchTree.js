@@ -16,12 +16,12 @@ class BinarySearchTree {
         if(this.root === null) {
             this.root = newNode;
         } else {
-            Tool.insertNode(root, newNode);
+            Tool.insertNode(this.root, newNode);
         }
     }
 
     inOrderTraverse(callback) {
-        Tool.inOrderTraverseNode(root, callback);
+        Tool.inOrderTraverseNode(this.root, callback);
     }
 }
 
@@ -50,3 +50,5 @@ class Tool {
         }
     }
 }
+
+module.exports = BinarySearchTree;

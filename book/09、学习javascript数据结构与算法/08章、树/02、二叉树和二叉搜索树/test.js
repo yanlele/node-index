@@ -1,6 +1,6 @@
 const BinarySearchTree = require('./BinarySearchTree');
 
-let tree =new BinarySearchTree();
+let tree = new BinarySearchTree();
 tree.insert(7);
 tree.insert(15);
 tree.insert(5);
@@ -17,3 +17,8 @@ tree.insert(25);
 
 // 同时我们想要插入一个值为 6 的键，执行下面的代码：
 tree.insert(6);
+
+function printNode(value) {
+    console.log(value)
+}
+tree.inOrderTraverse(printNode);
