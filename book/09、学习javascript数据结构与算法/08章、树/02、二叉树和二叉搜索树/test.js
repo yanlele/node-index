@@ -1,6 +1,7 @@
 const BinarySearchTree = require('./BinarySearchTree');
 
 let tree = new BinarySearchTree();
+tree.insert(11);
 tree.insert(7);
 tree.insert(15);
 tree.insert(5);
@@ -22,3 +23,5 @@ function printNode(value) {
     console.log(value)
 }
 tree.inOrderTraverse(printNode);
+console.log('------------------------------');
+tree.preOrderTraverse(printNode);

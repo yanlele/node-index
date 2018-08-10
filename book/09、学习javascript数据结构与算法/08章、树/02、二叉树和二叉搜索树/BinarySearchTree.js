@@ -21,9 +21,14 @@ class BinarySearchTree {
         }
     }
 
-    //中序排列法
+    // 中序遍历
     inOrderTraverse(callback) {
         Tool.inOrderTraverseNode(this.root, callback);
+    }
+
+    // 先序遍历
+    preOrderTraverse(callback) {
+        Tool.preOrderTraverseNode(this.root, callback);
     }
 }
 
@@ -49,6 +54,14 @@ class Tool {
             this.inOrderTraverseNode(node.left, callback);
             callback(node.key);
             this.inOrderTraverseNode(node.right, callback);
+        }
+    }
+
+    static preOrderTraverseNode(node, callback) {
+        if(node !== null) {
+            callback(node.key);
+            this.preOrderTraverseNode(node.left, callback);
+            this.preOrderTraverseNode(node.right, callback);
         }
     }
 }
