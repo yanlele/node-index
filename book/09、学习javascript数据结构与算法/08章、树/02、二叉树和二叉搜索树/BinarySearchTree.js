@@ -11,6 +11,7 @@ class BinarySearchTree {
         this.root = null;
     }
 
+    //插入数据
     insert(key) {
         let newNode = new Node(key);
         if(this.root === null) {
@@ -20,6 +21,7 @@ class BinarySearchTree {
         }
     }
 
+    //中序排列法
     inOrderTraverse(callback) {
         Tool.inOrderTraverseNode(this.root, callback);
     }
