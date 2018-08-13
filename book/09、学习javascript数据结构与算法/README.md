@@ -1090,6 +1090,14 @@ class Tool {
     }
 }
 ```
+对于结果的测试：            
+```javascript
+console.log(tree.search(1) ? 'Key 1 found.' : 'Key 1 not found.');
+console.log(tree.search(8) ? 'Key 8 found.' : 'Key 8 not found.');
+```
+输出结果如下：
+Value 1 not found.              
+Value 8 found.              
 
 
 

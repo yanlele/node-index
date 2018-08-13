@@ -1,6 +1,5 @@
 const BinarySearchTree = require('./BinarySearchTree');
 
-/*
 let tree = new BinarySearchTree();
 tree.insert(11);
 tree.insert(7);
@@ -27,7 +26,10 @@ tree.inOrderTraverse(printNode);
 console.log('------------------------------');
 tree.preOrderTraverse(printNode);
 console.log('------------------------------');
-tree.postOrderTraverse(printNode);*/
+tree.postOrderTraverse(printNode);
 
 
 // 测试搜索一个特定的值
+console.log('==========================================');
+console.log(tree.search(1) ? 'Key 1 found.' : 'Key 1 not found.');
+console.log(tree.search(8) ? 'Key 8 found.' : 'Key 8 not found.');
