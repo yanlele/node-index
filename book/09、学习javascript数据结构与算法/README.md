@@ -976,7 +976,7 @@ class Tool {
 }
 ```
 
-下面的图描绘了 postOrderTraverse 方法的访问路径：          
+下面的图描绘了 preOrderTraverseNode 方法的访问路径：          
 ![8-07](./08章、树/img/8-07.png)                   
 
 
@@ -1021,7 +1021,45 @@ class Tool {
 ![8-09](./08章、树/img/8-09.png)               
 看一眼树最后一层最左侧的节点，会发现它的值为3，这是这棵树中最小的键。如果你再看一眼树最右端的节点（同样是树的最后一层），
 会发现它的值为25，这是这棵树中最大的键。这条信息在我们实现搜索树节点的最小值和最大值的方法时能给予我们很大的帮助。                          
+具体实现：           
+```javascript
+class BinarySearchTree{
+    // ......
+    // 获取最小键
+    min() {
+        return Tool.minNode(this.root);
+    }
+    
+    // 获取最大键
+    max() {
+        return Tool.maxNode(this.root);
+    }
+    //......
+}
 
+class Tool {
+    //......
+    static minNode(node) {
+        if(node) {
+            while (node && node.left !== null) {
+                node = node.left
+            }
+            return node.key;
+        }
+        return null;
+    }
+    
+    static maxNode(node) {
+        if(node) {
+            while (node && node.right !== null) {
+                node = node.right;
+            }  
+            return node.key;
+        }
+        return null
+    }
+}
+```
 
 
 

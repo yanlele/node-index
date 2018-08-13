@@ -35,6 +35,16 @@ class BinarySearchTree {
     postOrderTraverse(callback) {
         Tool.postOrderTraverseNode(this.root, callback);
     }
+
+    // 获取最小键
+    min() {
+        return Tool.minNode(this.root);
+    }
+
+    // 获取最大键
+    max() {
+        return Tool.maxNode(this.root);
+    }
 }
 
 class Tool {
@@ -76,6 +86,26 @@ class Tool {
             this.postOrderTraverseNode(node.right, callback);
             callback(node.key);
         }
+    }
+
+    static minNode(node) {
+        if(node) {
+            while (node && node.left !== null) {
+                node = node.left
+            }
+            return node.key;
+        }
+        return null;
+    }
+
+    static maxNode(node) {
+        if(node) {
+            while (node && node.right !== null) {
+                node = node.right;
+            }
+            return node.key;
+        }
+        return null
     }
 }
 
