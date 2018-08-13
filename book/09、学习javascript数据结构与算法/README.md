@@ -1061,6 +1061,35 @@ class Tool {
 }
 ```
 
+**8.4.2 搜索一个特定的值**                  
+在之前的章节中，我们同样实现了 find 、 search 或 get 方法来查找数据结构中的一个特定的值（和之前章节中实现的 has 方法相似）。我们将同样在BST中实现搜索的方法，来看它的实现：                 
+具体实现：           
+```javascript
+class BinarySearchTree{
+    // ......
+    // 搜索一个特定的值
+    search(key) {
+        return Tool.searchNode(this.root, key);
+    }
+    //......
+}
+
+class Tool {
+    //......
+    static searchNode(node, key) {
+        if(node === null) {
+            return false;
+        }
+        if(key < node.key) {
+            return this.searchNode(node.left, key);
+        } else if(key > node.key) {
+            return this.searchNode(node.right, key);
+        } else {
+            return true;
+        }
+    }
+}
+```
 
 
 

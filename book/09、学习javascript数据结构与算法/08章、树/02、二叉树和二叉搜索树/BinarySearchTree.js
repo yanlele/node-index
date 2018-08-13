@@ -45,6 +45,11 @@ class BinarySearchTree {
     max() {
         return Tool.maxNode(this.root);
     }
+
+    // 搜索一个特定的值
+    search(key) {
+        return Tool.searchNode(this.root, key);
+    }
 }
 
 class Tool {
@@ -106,6 +111,19 @@ class Tool {
             return node.key;
         }
         return null
+    }
+
+    static searchNode(node, key) {
+        if(node === null) {
+            return false;
+        }
+        if(key < node.key) {
+            return this.searchNode(node.left, key);
+        } else if(key > node.key) {
+            return this.searchNode(node.right, key);
+        } else {
+            return true;
+        }
     }
 }
 

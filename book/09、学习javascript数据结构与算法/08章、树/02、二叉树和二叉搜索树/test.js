@@ -1,5 +1,6 @@
 const BinarySearchTree = require('./BinarySearchTree');
 
+/*
 let tree = new BinarySearchTree();
 tree.insert(11);
 tree.insert(7);
@@ -26,4 +27,7 @@ tree.inOrderTraverse(printNode);
 console.log('------------------------------');
 tree.preOrderTraverse(printNode);
 console.log('------------------------------');
-tree.postOrderTraverse(printNode);
+tree.postOrderTraverse(printNode);*/
+
+
+// 测试搜索一个特定的值
