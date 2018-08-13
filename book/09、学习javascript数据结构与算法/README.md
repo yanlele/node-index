@@ -1101,7 +1101,84 @@ Value 8 found.
 
 
 **8.4.3 移除一个节点**                    
+removeNode 方法的实现：                  
+```javascript
+class BinarySearchTree{
+     // ......
+    // 移除一个节点
+    remove(key) {
+        root = Tool.removeNode(this.root, key);
+    }
+     //......
+}
+ 
+class Tool {
+     //......
+    static removeNode(node, key) {
+        if(node === null) {
+            return null;
+        }
+        if(key < node.key) {
+            node.left = this.removeNode(node.left, key);
+            return node;
+        } else if(key > node.key) {
+            node.right = this.removeNode(node.right, key);
+            return node;
+        } else {
+            //键等于 node.key 的情况
+            //第一种情况： 一个叶节点
+            if(node.left === null && node.right === null) {
+                node = null;
+                return node
+            }
+    
+            //第二种情况： 一个只有一个子节点的节点
+            if(node.left === null) {
+                node = node.right;
+                return node;
+            } else if(node.right === null) {
+                node = node.left;
+                return node;
+            }
+    
+            // 第三种情况： 一个有两个子节点的节点
+            let aux = this.findMinNode(node.right);
+            node.key = aux.key;
+            node.right = this.removeNode(ndoe.right, aux.key);
+            return node;
+        }
+    }
+    
+    static findMinNode(node) {
+        if(node) {
+            while (node && node.left !== null) {
+                node = node.left
+            }
+            return node;
+        }
+        return null;
+    }
+}
+```
+说明：                 
+- 1. 移除一个叶节点                
+下图展现了移除一个叶节点的过程：                
+![8-10](./08章、树/img/8-10.png)                   
 
+- 2. 移除有一个左侧或右侧子节点的节点               
+下图展现了移除只有一个左侧子节点或右侧子节点的节点的过程：               
+![8-11](./08章、树/img/8-11.png)               
+
+
+- 3. 移除有两个子节点的节点                
+现在是第三种情况，也是最复杂的情况，那就是要移除的节点有两个子节点——左侧子节点和右侧子节点。要移除有两个子节点的节点，需要执行四个步骤。                   
+(1) 当找到了需要移除的节点后，需要找到它右边子树中最小的节点（它的继承者——行{18} ）。                
+(2) 然后，用它右侧子树中最小节点的键去更新这个节点的值（行 {19} ）。通过这一步，我们改变了这个节点的键，也就是说它被移除了。             
+(3) 但是，这样在树中就有两个拥有相同键的节点了，这是不行的。要继续把右侧子树中的最小节点移除，毕竟它已经被移至要移除的节点的位置了（行 {20} ）。                   
+(4) 最后，向它的父节点返回更新后节点的引用（行 {21} ）。                   
+
+下图展现了移除有两个子节点的节点的过程：                
+![8-12](./08章、树/img/8-12.png)                   
 
 
 
