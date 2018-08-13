@@ -1180,6 +1180,8 @@ class Tool {
 下图展现了移除有两个子节点的节点的过程：                
 ![8-12](./08章、树/img/8-12.png)                   
 
+[本节代码示例](./08章、树/02、二叉树和二叉搜索树/)
+
 
 ## <div id='class09'>09章、图</div>                
 非线性数据结构             
@@ -1230,6 +1232,72 @@ class Tool {
 我们还可以用关联矩阵来表示图。在关联矩阵中，矩阵的行表示顶点，列表示边。如下图所示，我们使用二维数组来表示两者之间的连通性，
 如果顶点v是边e的入射点，则array[v][e] === 1；否则，array[v][e] === 0。                   
 ![9-07](./09章、图/img/9-07.png)           
+
+### <div id='class09-03'>9.3 创建图类</div>             
+具体实现：           
+```javascript
+let Dictionary = require('../07、字典和散列表/01、字典/index');
+
+class Graph {
+    constructor() {
+        this.vertices = [];
+        this.adjList = new Dictionary();
+    }
+
+    // 一个用来向图中添加一个新的顶点（因为图实例化后是空的）
+    addVertex(v) {
+        this.vertices.push(v);
+        this.adjList.set(v, []);
+    }
+
+    // 用来添加顶点之间的边
+    addEdge(v, w) {
+        this.adjList.get(v).push(w);
+        this.adjList.get(w).push(v);
+    }
+
+    toString() {
+        let s = '';
+        for (let i = 0; i < this.vertices.length; i++) {
+            s += this.vertices[i] + ' -> ';
+            let neighbors = this.adjList.get(this.vertices[i]);
+            for (let j = 0; j < neighbors.length; j++) {
+                s += neighbors[j] + ' ';
+            }
+            s += '\n';
+        }
+        return s;
+    }
+}
+
+module.exports = Graph;
+```
+
+测试代码：           
+```javascript
+const Graph = require('./index');
+
+let graph = new Graph();
+let myVertices = ['A','B','C','D','E','F','G','H','I']; //{7}
+for (let i=0; i<myVertices.length; i++){ //{8}
+    graph.addVertex(myVertices[i]);
+}
+graph.addEdge('A', 'B'); //{9}
+graph.addEdge('A', 'C');
+graph.addEdge('A', 'D');
+graph.addEdge('C', 'D');
+graph.addEdge('C', 'G');
+graph.addEdge('D', 'G');
+graph.addEdge('D', 'H');
+graph.addEdge('B', 'E');
+graph.addEdge('B', 'F');
+graph.addEdge('E', 'I');
+
+console.log(graph.toString());
+```
+我们为邻接表表示法构建了一个字符串。首先，迭代 vertices 数组列表（行 {10} ），将顶点的名字加入字符串中。
+接着，取得该顶点的邻接表（行 {11} ），同样也迭代该邻接表（行 {12} ），将相邻顶点加入我们的字符串。
+邻接表迭代完成后，给我们的字符串添加一个换行符（行 {13} ），这样就可以在控制台看到一个漂亮的输出了。               
 
 
 
