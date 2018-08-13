@@ -50,6 +50,11 @@ class BinarySearchTree {
     search(key) {
         return Tool.searchNode(this.root, key);
     }
+
+    // 移除一个节点
+    remove(key) {
+        root = Tool.removeNode(this.root, key);
+    }
 }
 
 class Tool {
@@ -124,6 +129,51 @@ class Tool {
         } else {
             return true;
         }
+    }
+
+    static removeNode(node, key) {
+        if(node === null) {
+            return null;
+        }
+        if(key < node.key) {
+            node.left = this.removeNode(node.left, key);
+            return node;
+        } else if(key > node.key) {
+            node.right = this.removeNode(node.right, key);
+            return node;
+        } else {
+            //键等于 node.key 的情况
+            //第一种情况： 一个叶节点
+            if(node.left === null && node.right === null) {
+                node = null;
+                return node
+            }
+
+            //第二种情况： 一个只有一个子节点的节点
+            if(node.left === null) {
+                node = node.right;
+                return node;
+            } else if(node.right === null) {
+                node = node.left;
+                return node;
+            }
+
+            // 第三种情况： 一个有两个子节点的节点
+            let aux = this.findMinNode(node.right);
+            node.key = aux.key;
+            node.right = this.removeNode(ndoe.right, aux.key);
+            return node;
+        }
+    }
+
+    static findMinNode(node) {
+        if(node) {
+            while (node && node.left !== null) {
+                node = node.left
+            }
+            return node;
+        }
+        return null;
     }
 }
 
