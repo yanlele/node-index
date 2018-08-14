@@ -1479,7 +1479,54 @@ class Graph {
 module.exports = Graph;
 ```
 
+我们还需要声明数组 d （行 {1} ）来表示距离，以及 pred 数组来表示前溯点。下一步则是对图中的每一个顶点，用 0 来初始化数组 d （行 {4} ），用 null 来初始化数组 pred 。                    
+当我们发现顶点 u 的邻点 w 时，则设置 w 的前溯点值为 u （行 {7} ）。我们还通过给 d[u] 加1来设置 v 和 w 之间的距离（ u 是 w 的前溯点， d[u] 的值已经有了）。                  
+方法最后返回了一个包含 d 和 pred 的对象（行 {8} ）。
+现在，我们可以再次执行 BFS 方法，并将其返回值存在一个变量中：                   
+```javascript
+let shortestPathA = graph.BFS(myVertices[0]);
+console.log(shortestPathA);
+```
+对顶点 A 执行 BFS 方法，以下将会是输出：                
+```
+distances: [A: 0, B: 1, C: 1, D: 1, E: 2, F: 2, G: 2, H: 2 , I: 3],
+predecessors: [A: null, B: "A", C: "A", D: "A", E: "B", F: "B", G:"C", H: "D", I: "E"]
+```
+这意味着顶点 A 与顶点 B 、 C 和 D 的距离为 1 ；与顶点 E 、 F 、 G 和 H 的距离为 2 ；与顶点 I 的距离为 3 。                 
 
+通过前溯点数组，我们可以用下面这段代码来构建从顶点 A 到其他顶点的路径：                   
+```javascript
+let fromVertex = myVertices[0]; //{9}
+for (let i=1; i<myVertices.length; i++){ //{10}
+    let toVertex = myVertices[i], //{11}
+        path = new Stack(); //{12}
+    for (let v=toVertex; v!== fromVertex;
+         v=shortestPathA.predecessors[v]) { //{13}
+        path.push(v); //{14}
+    }
+    path.push(fromVertex); //{15}
+    let s = path.pop(); //{16}
+    while (!path.isEmpty()){ //{17}
+        s += ' - ' + path.pop(); //{18}
+    }
+    console.log(s); //{19}
+}
+```
+我们用顶点 A 作为源顶点（行 {9} ）。对于每个其他顶点（除了顶点 A ——行 {10} ），我们会计算顶点 A 到它的路径。我们从顶点数组得到 toVertex （行 {11} ），然后会创建一个栈来存储路径值（行 {12} ）。                  
+接着，我们追溯 toVertex 到 fromVertex 的路径{行 {13} }。变量 v 被赋值为其前溯点的值，这样我们能够反向追溯这条路径。将变量 v 添加到栈中（行 {14} ）。最后，源顶点也会被添加到栈中，以得到完整路径。                  
+这之后，我们创建了一个 s 字符串，并将源顶点赋值给它（它是最后一个加入栈中的，所以它是第一个被弹出的项 ——行 {16} ）。当栈是非空的，我们就从栈中移出一个项并将其拼接到字符串 s 的后面（行 {18} ）。最后（行 {19} ）在控制台上输出路径。                    
+执行该代码段，我们会得到如下输出：               
+```
+A - B
+A - C
+A - D
+A - B - E
+A - B - F
+A - C - G
+A - D - H
+A - B - E - I
+```
+这里，我们得到了从顶点 A 到图中其他顶点的最短路径（衡量标准是边的数量）。              
 
 
 

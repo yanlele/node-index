@@ -42,7 +42,7 @@ class Graph {
 
     // 使用BFS寻找最短路径
     BFS(v) {
-        let color = initializeColor(),
+        let color = this.initializeColor(),
             queue = new Queue(),
             d = [], //{1}
             pred = []; //{2}
@@ -53,7 +53,7 @@ class Graph {
         }
         while (!queue.isEmpty()) {
             let u = queue.dequeue(),
-                neighbors = adjList.get(u);
+                neighbors = this.adjList.get(u);
             color[u] = 'grey';
             for (let i = 0; i < neighbors.length; i++) {
                 let w = neighbors[i];
