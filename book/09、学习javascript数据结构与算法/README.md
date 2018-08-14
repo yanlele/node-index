@@ -1401,6 +1401,83 @@ module.exports = Graph;
 
 我们实现的这个 bfs 方法也接受一个回调（我们在第8章中遍历树时使用了一个相似的方法）。这个参数是可选的，如果我们传递了回调函数（行 {15} ），会用到它。                            
 
+让我们执行下面这段代码来测试一下这个算法：                   
+```javascript
+function printNode(value) {
+    console.log('Visited vertex: ' + value);
+}
+graph.bfs(myVertices[0], printNode);
+```
+输出结果如下：             
+```
+Visited vertex: A
+Visited vertex: B
+Visited vertex: C
+Visited vertex: D
+Visited vertex: E
+Visited vertex: F
+Visited vertex: G
+Visited vertex: H
+Visited vertex: I
+```
+
+**1. 使用BFS寻找最短路径**                      
+到目前为止，我们只展示了BFS算法的工作原理。我们可以用该算法做更多事情，而不只是输出被访问顶点的顺序。                    
+
+给定一个图G和源顶点v，找出对每个顶点u，u和v之间最短路径的距离（以边的数量计）。                  
+对于给定顶点v，广度优先算法会访问所有与其距离为1的顶点，接着是距离为2的顶点，以此类推。所以，可以用广度优先算法来解这个问题。                            
+我们可以修改 bfs 方法以返回给我们一些信息：                
+  从v到u的距离d[u]；             
+  前溯点pred[u]，用来推导出从v到其他每个顶点u的最短路径。                 
+让我们来看看改进过的广度优先方法的实现：                
+
+具体实现：           
+```javascript
+let Dictionary = require('../07、字典和散列表/01、字典/index');
+let Queue = require('../04章、队列/02、优先队列/index');
+
+class Graph {
+    constructor() {
+        this.vertices = [];
+        this.adjList = new Dictionary();
+    }
+    // ......
+    // 使用BFS寻找最短路径
+    BFS(v) {
+        let color = initializeColor(),
+            queue = new Queue(),
+            d = [], //{1}
+            pred = []; //{2}
+        queue.enqueue(v);
+        for (let i=0; i<this.vertices.length; i++){ //{3}
+            d[this.vertices[i]] = 0; //{4}
+            pred[this.vertices[i]] = null; //{5}
+        }
+        while (!queue.isEmpty()) {
+            let u = queue.dequeue(),
+                neighbors = adjList.get(u);
+            color[u] = 'grey';
+            for (let i = 0; i < neighbors.length; i++) {
+                let w = neighbors[i];
+                if (color[w] === 'white') {
+                    color[w] = 'grey';
+                    d[w] = d[u] + 1; //{6}
+                    pred[w] = u; //{7}
+                    queue.enqueue(w);
+                }
+            }
+            color[u] = 'black';
+        }
+        return { //{8}
+            distances: d,
+            predecessors: pred
+        };
+    }
+
+}
+
+module.exports = Graph;
+```
 
 
 

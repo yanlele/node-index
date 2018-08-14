@@ -34,11 +34,44 @@ class Graph {
                 }
             }
             color[u] = 'black';
-            if(callback) {
+            if (callback) {
                 callback(u);
             }
         }
     }
+
+    // 使用BFS寻找最短路径
+    BFS(v) {
+        let color = initializeColor(),
+            queue = new Queue(),
+            d = [], //{1}
+            pred = []; //{2}
+        queue.enqueue(v);
+        for (let i=0; i<this.vertices.length; i++){ //{3}
+            d[this.vertices[i]] = 0; //{4}
+            pred[this.vertices[i]] = null; //{5}
+        }
+        while (!queue.isEmpty()) {
+            let u = queue.dequeue(),
+                neighbors = adjList.get(u);
+            color[u] = 'grey';
+            for (let i = 0; i < neighbors.length; i++) {
+                let w = neighbors[i];
+                if (color[w] === 'white') {
+                    color[w] = 'grey';
+                    d[w] = d[u] + 1; //{6}
+                    pred[w] = u; //{7}
+                    queue.enqueue(w);
+                }
+            }
+            color[u] = 'black';
+        }
+        return { //{8}
+            distances: d,
+            predecessors: pred
+        };
+    }
+
 
     toString() {
         let s = '';
