@@ -371,6 +371,41 @@ print(person.getName());
 ```
 
 
+### 4、实现类和继承                    
+```javascript
+function Person(){    
+    var name = "default";       
+       
+    return {    
+       getName : function(){    
+           return name;    
+       },    
+       setName : function(newName){    
+           name = newName;    
+       }    
+    }    
+};   
+
+var p = new Person();
+p.setName("Tom");
+alert(p.getName());
+
+var Jack = function(){};
+//继承自Person
+Jack.prototype = new Person();
+//添加私有方法
+Jack.prototype.Say = function(){
+    alert("Hello,my name is Jack");
+};
+var j = new Jack();
+j.setName("Jack");
+j.Say();
+alert(j.getName());
+```
+我们定义了Person，它就像一个类，我们new一个Person对象，访问它的方法。
+下面我们定义了Jack，继承Person，并添加自己的方法。                      
+
+
 
 
 
