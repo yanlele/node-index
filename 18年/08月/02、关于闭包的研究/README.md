@@ -308,6 +308,41 @@ var data= {
 我们创建了一个匿名的函数，并立即执行它，由于外部无法引用它内部的变量，因此在函数执行完后会立刻释放资源，关键是不污染全局对象。                 
 
 
+### 2、结果缓存
+我们开发中会碰到很多情况，设想我们有一个处理过程很耗时的函数对象，每次调用都会花费很长时间，
+那么我们就需要将计算出来的值存储起来，当调用这个函数的时候，首先在缓存中查找，如果找不到，则进行计算，然后更新缓存并返回值，如果找到了，直接返回查找到的值即可。
+闭包正是可以做到这一点，因为它不会释放外部的引用，从而函数内部的值可以得以保留。                        
+```javascript
+var CachedSearchBox = (function(){    
+    var cache = {},    
+       count = [];    
+    return {    
+       attachSearchBox : function(dsid){    
+           if(dsid in cache){//如果结果在缓存中    
+              return cache[dsid];//直接返回缓存中的对象    
+           }    
+           var fsb = new uikit.webctrl.SearchBox(dsid);//新建    
+           cache[dsid] = fsb;//更新缓存    
+           if(count.length > 100){//保正缓存的大小<=100    
+              delete cache[count.shift()];    
+           }    
+           return fsb;          
+       },    
+     
+       clearSearchBox : function(dsid){    
+           if(dsid in cache){    
+              cache[dsid].clearSelection();      
+           }    
+       }    
+    };    
+})();    
+     
+CachedSearchBox.attachSearchBox("input");
+```
+这样我们在第二次调用的时候，就会从缓存中读取到该对象。                     
+
+
+
 
 
 
