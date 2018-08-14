@@ -174,3 +174,24 @@ console.log(test[0]());
 console.log(test[1]());
 console.log(test[2]());
 ```
+
+示例5：对示例4的优化                                 
+```javascript
+function f(){
+   function test(x){
+      return function(){
+         return x;
+      }
+   }
+   var a=[];
+   var i;
+   for(i=0;i<3;i++){
+      a[i]=test(i);
+   }
+   return a;
+}
+var res=f();
+alert(res[0]());
+alert(res[1]());
+alert(res[2]());
+```
