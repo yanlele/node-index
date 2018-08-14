@@ -1325,9 +1325,81 @@ console.log(graph.toString());
     (b) 将标注u为被发现的（灰色）；              
     (c) 将u所有未被访问过的邻点（白色）入队列；                
     (d) 将u标注为已被探索的（黑色）。             
-    
-    
 
+具体实现：           
+```javascript
+let Dictionary = require('../07、字典和散列表/01、字典/index');
+let Queue = require('../04章、队列/02、优先队列/index');
+
+class Graph {
+    constructor() {
+        this.vertices = [];
+        this.adjList = new Dictionary();
+    }
+    // ......
+
+    // 广度优先遍历算法
+    bfs(v, callback) {
+        let color = this.initializeColor(), queue = new Queue();
+        queue.enqueue(v);
+        while (!queue.isEmpty()) {
+            let u = queue.dequeue(), neighbors = this.adjList.get(u);
+            color[u] = 'grey';
+            for (let i = 0; i < neighbors.length; i++) {
+                let w = neighbors[i];
+                if (color[w] === 'white') {
+                    color[w] = 'grey';
+                    queue.enqueue(w);
+                }
+            }
+            color[u] = 'black';
+            if(callback) {
+                callback(u);
+            }
+        }
+    }
+
+    toString() {
+        let s = '';
+        for (let i = 0; i < this.vertices.length; i++) {
+            s += this.vertices[i] + ' -> ';
+            let neighbors = this.adjList.get(this.vertices[i]);
+            for (let j = 0; j < neighbors.length; j++) {
+                s += neighbors[j] + ' ';
+            }
+            s += '\n';
+        }
+        return s;
+    }
+
+    initializeColor() {
+        let color = [];
+        for (let i = 0; i < this.vertices.length; i++) {
+            color[this.vertices[i]] = 'white';
+        }
+        return color;
+    }
+}
+
+module.exports = Graph;
+```
+广度优先搜索和深度优先搜索都需要标注被访问过的顶点。为此，我们将使用一个辅助数组color 。
+由于当算法开始执行时，所有的顶点颜色都是白色（行 {1} ），所以我们可以创建一个辅助函数 initializeColor ，为这两个算法执行此初始化操作。                          
+
+让我们深入学习广度优先搜索方法的实现。我们要做的第一件事情是用 initializeColor函数来将 color 数组初始化为 white （行 {2} ）。
+我们还需要声明和创建一个 Queue 实例（行 {3} ），它将会存储待访问和待探索的顶点。                              
+
+照着本章开头解释过的步骤， bfs 方法接受一个顶点作为算法的起始点。起始顶点是必要的，我们将此顶点入队列（行 {4} ）。                          
+
+如果队列非空（行 {5} ），我们将通过出队列（行 {6} ）操作从队列中移除一个顶点，并取得一个包含其所有邻点的邻接表（行 {7} ）。
+该顶点将被标注为 grey （行 {8} ），表示我们发现了它（但还未完成对其的探索）。                        
+
+对于u（行 {9} ）的每个邻点，我们取得其值（该顶点的名字——行 {10} ），如果它还未被访问过（颜色为 white ——行 {11} ），
+则将其标注为我们已经发现了它（颜色设置为 grey ——行{12} ），并将这个顶点加入队列中（行 {13} ），这样当其从队列中出列的时候，我们可以完成对其的探索。                     
+
+当完成探索该顶点和其相邻顶点后，我们将该顶点标注为已探索过的（颜色设置为black ——行 {14} ）。                       
+
+我们实现的这个 bfs 方法也接受一个回调（我们在第8章中遍历树时使用了一个相似的方法）。这个参数是可选的，如果我们传递了回调函数（行 {15} ），会用到它。                            
 
 
 
