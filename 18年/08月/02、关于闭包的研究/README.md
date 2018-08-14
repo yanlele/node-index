@@ -195,3 +195,156 @@ alert(res[0]());
 alert(res[1]());
 alert(res[2]());
 ```
+
+
+### 1.3、关于prototype的一些理解                
+上面代码中出现了JS中常用的Prototype，那么Prototype有什么用呢？下面我们来看一下：                  
+```javascript
+var dom = function(){
+        
+};
+
+dom.Show = function(){
+    alert("Show Message");
+};
+
+dom.prototype.Display = function(){
+    alert("Property Message");
+};
+
+dom.Display(); //error
+dom.Show();  
+var d = new dom();
+d.Display();
+d.Show(); //error
+```
+我们首先声明一个变量，将一个函数赋给他，因为在Javascript中每个函数都有一个Portotype属性，而对象没有。添加两个方法，分别直接添加和添加打破Prototype上面，来看下调用情况。分析结果如下：                       
+**1、不使用prototype属性定义的对象方法，是静态方法，只能直接用类名进行调用！另外，此静态方法中无法使用this变量来调用对象其他的属性！**                    
+**2、使用prototype属性定义的对象方法，是非静态方法，只有在实例化后才能使用！其方法内部可以this来引用对象自身中的其他属性！**                     
+
+
+下面我们再来看一段代码：            
+```javascript
+var dom = function(){
+        var Name = "Default";
+        this.Sex = "Boy";
+        this.success = function(){
+            alert("Success");
+        };
+    };
+
+    alert(dom.Name);
+    alert(dom.Sex);
+```
+大家先看看，会显示什么呢？ 答案是两个都显示Undefined,为什么呢？这是由于在Javascript中每个function都会形成一个作用域，而这些变量声明在函数中，
+所以就处于这个函数的作用域中，外部是无法访问的。要想访问变量，就必须new一个实例出来。                        
+
+
+
+```javascript
+var html = {
+        Name:'Object',
+        Success:function(){
+            this.Say = function(){
+                    alert("Hello,world");
+            };
+            alert("Obj Success");
+        }
+    };
+```
+再来看看这种写法，其实这是Javascript的一个"语法糖"，这种写法相当于：                    
+```javascript
+var html = new Object();
+html.Name = 'Object';
+html.Success = function(){
+        this.Say = function(){
+                alert("Hello,world");
+        };
+alert("Obj Success");
+```
+变量html是一个对象，不是函数，所以没有Prototype属性，其方法也都是公有方法，html不能被实例化。                     
+但是他可以作为值赋给其它变量，如var o = html; 我们可以这样使用它：                          
+```javascript
+alert(html.Name);
+html.Success();
+```
+
+说到这里，完了吗？细心的人会问，怎么访问Success方法中的Say方法呢？是html.Success.Say()吗？                 
+当然不是，上面刚说过由于作用域的限制，是访问不到的。所以要用下面的方法访问：              
+```javascript
+var s = new html.Success();
+s.Say();
+
+//还可以写到外面
+html.Success.prototype.Show = function(){
+    alert("HaHa");
+};
+var s = new html.Success();
+s.Show();
+```
+
+## <div id="class02">二、Javascript闭包的用途</div>
+### 1、匿名自执行函数                   
+我们知道所有的变量，如果不加上var关键字，则默认的会添加到全局对象的属性上去，这样的临时变量加入全局对象有很多坏处，比如：别的函数可能误用这些变量；
+造成全局对象过于庞大，影响访问速度(因为变量的取值是需要从原型链上遍历的)。
+除了每次使用变量都是用var关键字外，我们在实际情况下经常遇到这样一种情况，即有的函数只需要执行一次，其内部变量无需维护，
+比如UI的初始化，那么我们可以使用闭包：                                
+```javascript
+var data= {    
+    table : [],    
+    tree : {}    
+};    
+     
+(function(dm){    
+    for(var i = 0; i < dm.table.rows; i++){    
+       var row = dm.table.rows[i];    
+       for(var j = 0; j < row.cells; i++){    
+           drawCell(i, j);    
+       }    
+    }    
+       
+})(data);
+```
+我们创建了一个匿名的函数，并立即执行它，由于外部无法引用它内部的变量，因此在函数执行完后会立刻释放资源，关键是不污染全局对象。                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
