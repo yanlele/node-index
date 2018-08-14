@@ -80,3 +80,97 @@ var Circle = new Function("this.PI = 3.14159;this.area = function( r ) {return r
 
 alert((new Circle()).area(1.0));
 ```
+
+
+**基础用法：**                 
+示例1：解决作用域问题                
+```javascript
+function f1(){
+    let n=1;
+    test=function(){
+        n+=1;
+    };
+    function f2(){
+        console.log('f2():', n);
+    }
+    return f2;
+}
+let res=f1();  //初始化f1()
+console.log(res());  //相当于调用f2()，结果1和undefined
+test();  //将n的值改变了
+console.log(res()); // 结果2和undefined
+```
+
+示例2：实现get 和 set 
+```javascript
+let setValue,getValue;
+(function(){
+    let n=0;
+    getValue=function(){
+        return n;
+    };
+    setValue=function(x){
+        n=x;
+    };
+})();
+
+
+//       console.log(n);  n is not defined
+console.log(getValue());
+setValue(567);
+console.log(getValue());
+```
+
+示例3：用闭包实现迭代器的效果             
+```javascript
+//迭代器中得应用
+function test(x){
+    var i=0;
+    return function(){
+        return x[i++];
+    };
+}
+var next=test(['a','b','c','d']);
+console.log(next());
+console.log(next());
+console.log(next());
+console.log(next());  //每调用一次，都可以将数组指针向下移动一次
+```
+
+示例4：            
+错误的示范：                  
+```javascript
+function f(){
+    var a=[];
+    var i;
+    for(i=0;i<3;i++){
+        a[i]=function(){
+            return i;
+        };
+    }
+    return a;
+}
+var test=f();
+console.log(test[0]());
+console.log(test[1]());
+console.log(test[2]());  //结果都是 3 3 3  这种写法是错误的
+```
+正确的示范：          
+```javascript
+function f(){
+    var a=[];
+    var i;
+    for(i=0;i<3;i++){
+        a[i]=(function(x){
+            return function(){
+                return x;
+            }
+        })(i);
+    }
+    return a;
+}
+var test=f();
+console.log(test[0]());
+console.log(test[1]());
+console.log(test[2]());
+```
