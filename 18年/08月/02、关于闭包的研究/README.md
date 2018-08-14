@@ -342,6 +342,33 @@ CachedSearchBox.attachSearchBox("input");
 这样我们在第二次调用的时候，就会从缓存中读取到该对象。                     
 
 
+### 3、封装                    
+```javascript
+var person = function(){    
+    //变量作用域为函数内部，外部无法访问    
+    var name = "default";       
+       
+    return {    
+       getName : function(){    
+           return name;    
+       },    
+       setName : function(newName){    
+           name = newName;    
+       }    
+    }    
+}();    
+     
+print(person.name);//直接访问，结果为undefined    
+print(person.getName());    
+person.setName("abruzzi");    
+print(person.getName());    
+   
+//得到结果如下：  
+   
+//undefined  
+//default  
+//abruzzi
+```
 
 
 
