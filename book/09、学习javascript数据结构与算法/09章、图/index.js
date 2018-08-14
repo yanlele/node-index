@@ -1,4 +1,5 @@
 let Dictionary = require('../07、字典和散列表/01、字典/index');
+let Queue = require('../04章、队列/02、优先队列/index');
 
 class Graph {
     constructor() {
@@ -18,6 +19,27 @@ class Graph {
         this.adjList.get(w).push(v);
     }
 
+    // 广度优先遍历算法
+    bfs(v, callback) {
+        let color = this.initializeColor(), queue = new Queue();
+        queue.enqueue(v);
+        while (!queue.isEmpty()) {
+            let u = queue.dequeue(), neighbors = this.adjList.get(u);
+            color[u] = 'grey';
+            for (let i = 0; i < neighbors.length; i++) {
+                let w = neighbors[i];
+                if (color[w] === 'white') {
+                    color[w] = 'grey';
+                    queue.enqueue(w);
+                }
+            }
+            color[u] = 'black';
+            if(callback) {
+                callback(u);
+            }
+        }
+    }
+
     toString() {
         let s = '';
         for (let i = 0; i < this.vertices.length; i++) {
@@ -29,6 +51,14 @@ class Graph {
             s += '\n';
         }
         return s;
+    }
+
+    initializeColor() {
+        let color = [];
+        for (let i = 0; i < this.vertices.length; i++) {
+            color[this.vertices[i]] = 'white';
+        }
+        return color;
     }
 }
 
