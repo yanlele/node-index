@@ -815,6 +815,8 @@ module: {
     ]
 }
 ```
+[本节实例请见: 09、配置less/sass](./01、由浅入深Webpack/09、处理css%20配置less和sass/)
+
 
 ### <div id="class1-item9">10、提取css</div>                   
 之前的样式实际上是在js中的， 现在我们要把css提取出来形成独立的文件
