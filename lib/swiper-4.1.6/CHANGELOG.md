@@ -67,7 +67,7 @@
   * Fixed issue with pagination being broken with loop mode
   * Reworked `realIndex` calculation ordering
   * ES-module files renamed (**possible breaking change**):
-    * `swiper.module.js` -> `swiper.esm.bundle.js` (exported by default)
+    * `swiper.moduleA.js` -> `swiper.esm.bundle.js` (exported by default)
     * `swiper.modular.js` -> `swiper.esm.js`
   * Minor fixes
 
@@ -76,7 +76,7 @@
   * Virtual Slides - new module that keeps in DOM just required amount of slides
   * Source code has been fully rewritten in ES-next syntax
   * Dist package contains additional ES-next modules:
-    * `swiper.module.js` - swiper bundle for `import Swiper from 'swiper'`
+    * `swiper.moduleA.js` - swiper bundle for `import Swiper from 'swiper'`
     * `swiper.modular.js` - modular version for using Swiper with required components only
   * New `scripts/build-config.js` for creating custom Swiper build with required components and custom color theme
   * jQuery version of Swiper has been removed

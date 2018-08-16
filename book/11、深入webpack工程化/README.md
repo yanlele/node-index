@@ -248,6 +248,37 @@ typings install lodash
 typeRoots：这个配置项，是告诉ts打包编译的时候，要到什么地方去找申明文件，而且这个时候我们的文件也会有报错提示了               
            
 
+### <p id='class1-item05'>05、提取公用代码</p>
+目的：减少代码冗余、提高加载速度                    
+这个时候我们就需要使用到 CommonsChunkPlugin 插件                      
+这个插件已经内置到webpack里面去了： `webpack.optimize.CommonsChunkPlugin` 
+配置：             
+```javascript
+{
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin(options)
+    ]
+}
+```
+其中options配置项:                               
+name/names: 给那些文件提出公用               
+filename: 打包之后的文件名              
+minChunks: 如果接受的是数字表示你这个公共代码出现的次数，大多这个次数了就提取公共代码。 可以是函数，自定义提取逻辑             
+chunks: 限定公用代码的提取范围，我需要在那几个代码块中提取。
+children: 表示是不是在你的模块中，或者所有模块中查找公用模块
+deepChildren: 表示是不是在你的模块中，或者所有模块中查找公用模块
+async: 创建异步的公共代码块
+
+场景：             
+单页引用、 单页引用 + 第三方依赖、 多页引用 + 第三方依赖 + webpack生成代码              
+
+在webpack中，公共代码的提取是建立在多entry的基础之上的，如果是单个entry， 是不会有任何效果的                 
+因为单页应用使用的是懒加载，所以有其他的处理方式                    
+
+所以我们要再加入一个入口 pageB:                 
+
+
+
 
 
 
