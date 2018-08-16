@@ -816,6 +816,14 @@ module: {
 }
 ```
 
+### <div id="class1-item9">10、提取css</div>                   
+extract-loader                  
+ExtractTextWebpackPlugin 这种是主流最常用的方式                           
+安装依赖包：                  
+npm install extract-text-webpack-plugin --save-dev                                      
+
+
+
 
 
 
