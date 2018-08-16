@@ -638,6 +638,42 @@ module.exports = {
 
 - style-loader/useable                    
 是用来控制样式，插入还是不插入到页面中去         
+```javascript
+module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: 'style-loader/useable'
+                    },
+                    {
+                        loader: 'css-loader'
+                    }
+                ]
+            }
+        ]
+    }
+```
+这个时候我们引入的样式文件就会获得两个方法，一个是use(), 一个是unuse(); 分别控制样式的显示和不显示；可以通过程序来控制器展示与否；
+```javascript
+import base from './css/base.css'
+import common from './css/common.css'
+
+let flag = false;
+
+setInterval(function(){
+    if(flag) {
+        base.unuse();
+        flag = false
+    } else {
+        base.use();
+        flag = true;
+    }
+}, 500);
+```
+
+**style-loader的配置项**                    
 
 
 
