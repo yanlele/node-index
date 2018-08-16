@@ -29,11 +29,21 @@ module.exports = {
                         {
                             loader: 'css-loader',
                             options: {
-                                minimize: true,
+                                // minimize: true,
                                 modules: true,
                                 localIdentName: '[path][name]_[local]_[hash:base64:5]'
                             },
                             // loader: 'file-loader'
+                        },
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                ident: 'postcss',
+                                plugins: [
+                                    // require('autoprefixer')(),
+                                    require('postcss-cssnext')()
+                                ]
+                            }
                         },
                         {
                             loader: 'less-loader'

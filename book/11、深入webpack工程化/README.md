@@ -895,13 +895,71 @@ import(
 
 ### <div id="class1-item11">11、postCss-in-webpack</div>                  
 postCss 是一个强大的处理css的一个工具                    
-安装:                 
+**安装和使用**                 
 npm install postcss postcss-loader autoprefixer cssnano postcss-cssnext --save-dev                                                      
 Autoprefixer: 可以帮我们自动加上前缀；              
 postcss-cssnano: 帮助压缩和优化css的工具；             
 postcss-cssnext: 可让我们使用css4的新语法；                
 
-安装完毕之后，就接着需要修改webpack的相关配置                      
+安装完毕之后，就接着需要修改webpack的相关配置                                      
+```javascript
+rules: [
+            {
+                test: /\.less$/,
+                use: ExtractTextWebpackPlugin.extract({
+                    fallback: {
+                        loader: 'style-loader',
+                        options: {
+                            singleton: true,
+                            transform: './css.transform.js'
+                        }
+                    },
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                // minimize: true,
+                                modules: true,
+                                localIdentName: '[path][name]_[local]_[hash:base64:5]'
+                            },
+                            // loader: 'file-loader'
+                        },
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                ident: 'postcss',
+                                plugins: [
+                                    require('autoprefixer')()
+                                ]
+                            }
+                        },
+                        {
+                            loader: 'less-loader'
+                        }
+                    ]
+                })
+            }
+        ]
+```
+然后尝试给less文件加上一个transition属性，那么打包出来的文件，就会自动加上前缀了                         
+
+
+关于cssnext的使用， cssnext中自动集成了autoprefixer的， 所以插件中，可以一处autoprefixer                
+配置文件写法类类似于上面的autoprefixer插件的写法：                             
+然后可以在less文件中写入cssnext的语法规则，然后打包编译                   
+
+
+**关于Broswerslist**                  
+因为所有插件公用：可以配置到一个地方，让所有插件都公用                 
+package.json                
+.browserslistrc                         
+
+**postcss的其他一些插件**              
+postcss-import                  
+postcss-url             
+postcss-assets              
+
+
 
 
 
