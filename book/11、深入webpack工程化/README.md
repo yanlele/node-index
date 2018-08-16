@@ -275,8 +275,104 @@ async: 创建异步的公共代码块
 在webpack中，公共代码的提取是建立在多entry的基础之上的，如果是单个entry， 是不会有任何效果的                 
 因为单页应用使用的是懒加载，所以有其他的处理方式                    
 
-所以我们要再加入一个入口 pageB:                 
+所以我们要再加入一个入口 pageB:   
 
+一般来说因为单页应用会有懒加载效果，所以我们一般都是看不出来提取公共commonjs的效果的，所以我们要处理为多页打包来看效果情况；               
+```javascript
+let webapck = require('webpack');
+let path = require('path');
+
+module.exports = {
+    entry: {
+        'pageA': './src/pageA',
+        'pageB': './src/pageB',
+        'vendor': ['lodash']
+    },
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: "[name].bundle.js",
+        chunkFilename: "[name].chunk.js"
+    },
+
+    plugins: [
+        new webapck.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: Infinity
+        })
+    ]
+};
+```
+这样打包的缺点也很明显：没有区分业务代码和第三方模块的代码
+
+
+接下来还有一个问题：如果我们希望吧pageA和pageB中的公共部分的代码提取出来，就要做如下的配置！
+```javascript
+let webapck = require('webpack');
+let path = require('path');
+
+module.exports = {
+    entry: {
+        'pageA': './src/pageA',
+        'pageB': './src/pageB',
+        'vendor': ['lodash']
+    },
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: "[name].bundle.js",
+        chunkFilename: "[name].chunk.js"
+    },
+
+    plugins: [
+        new webapck.optimize.CommonsChunkPlugin({
+            name: 'common',
+            minChunks: 2,
+            chunks: ['pageA', 'pageB']  //指定需要提取公共文件文件对象
+        }),
+
+        new webapck.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: Infinity
+        }),
+
+        new webapck.optimize.CommonsChunkPlugin({
+            name: 'mainfest',
+            minChunks: Infinity
+        })
+    ]
+};
+```
+
+对上面的代码，还可以进行一下的优化
+```javascript
+let webapck = require('webpack');
+let path = require('path');
+
+module.exports = {
+    entry: {
+        'pageA': './src/pageA',
+        'pageB': './src/pageB',
+        'vendor': ['lodash']
+    },
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: "[name].bundle.js",
+        chunkFilename: "[name].chunk.js"
+    },
+
+    plugins: [
+        new webapck.optimize.CommonsChunkPlugin({
+            name: 'common',
+            minChunks: 2,
+            chunks: ['pageA', 'pageB']  //指定需要提取公共文件文件对象
+        }),
+
+        new webapck.optimize.CommonsChunkPlugin({
+            names: ['vendor', 'mainfest'],
+            minChunks: Infinity
+        }),
+    ]
+};
+```
 
 
 
