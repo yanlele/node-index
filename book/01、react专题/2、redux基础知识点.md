@@ -51,7 +51,7 @@ export function addGunAsync() {
 
 - react-redux 具体使用：提供了两个新的接口Provider和connect        
 Provider组件在引用最外成，传入store即可，只使用一次
-> index.js 代码如下
+> app.js 代码如下
 ```jsx harmony
 import React from 'react'
 import ReactDOM from 'react-dom'

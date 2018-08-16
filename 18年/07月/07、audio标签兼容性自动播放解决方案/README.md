@@ -34,7 +34,7 @@ html：
 
 js:             
 ```javascript
-const playMusic = require('nodejs-ipr-mh5-web:/components/business-empire/playMusic/index.js');
+const playMusic = require('nodejs-ipr-mh5-web:/components/business-empire/playMusic/app.js');
 
 let index = {
     init: function() {

@@ -579,6 +579,19 @@ module.exports = {
 };
 ```
 
+### <div id="class1-item7">处理css: style-loader</div>
+css的引入：                     
+css modules             
+配置 less / sass               
+提取 css 代码                           
+
+**引入css:**                  
+style-loader: 创建样式标签，               
+css-loader: 可以让我们，在JS中直接require加载css样式文件                        
+
+style-loader:           
+与这个相关的有： `style-loader、style-loader/url、style-loader/useable`                   
+
 
 
 
