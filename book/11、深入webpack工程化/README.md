@@ -817,11 +817,78 @@ module: {
 ```
 
 ### <div id="class1-item9">10、提取css</div>                   
+之前的样式实际上是在js中的， 现在我们要把css提取出来形成独立的文件
 extract-loader                  
 ExtractTextWebpackPlugin 这种是主流最常用的方式                           
 安装依赖包：                  
 npm install extract-text-webpack-plugin --save-dev                                      
 
+```javascript
+    module: {
+        rules: [
+            {
+                test: /\.less$/,
+                use: ExtractTextWebpackPlugin.extract({
+                    fallback: {
+                        loader: 'style-loader',
+                        options: {
+                            singleton: true,
+                            transform: './css.transform.js'
+                        }
+                    },
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                minimize: true,
+                                modules: true,
+                                localIdentName: '[path][name]_[local]_[hash:base64:5]'
+                            },
+                            // loader: 'file-loader'
+                        },
+                        {
+                            loader: 'less-loader'
+                        }
+                    ]
+                })
+            }
+        ]
+    },
+
+    plugins: [
+        new ExtractTextWebpackPlugin({
+            filename: '[name].min.css',
+            allChunks: false
+        })
+    ]
+```
+在module中使用的rules中， fallback表示，如果提取失败，我们将怎么处理，下面的use表示如果提取成功，写下来还需要用什么loader处理样式文件                       
+在plugins里面，定义这输出的样式文件名；                 
+
+但是接下来的问题来了，提起出来的样式并不会自动加入到我们的html当中，需要手动添加到html当中，这样的方式是相当蛋疼的；                      
+plugins里面ExtractTextWebpackPlugin的其他配置项参数                       
+allChunks: 默认值是false ，它可以限定提取范围。如果改为true，那么所有的import进来的css样式文件都会打包到同一个文件中去。如果是false，那么它只提取初始化的样式文件（非异步加载文件样式）                           
+比如我们在app.js中实现一个异步加载                             
+```javascript
+import base from './css/base.less'
+import common from './css/common.less'
+
+let app = document.getElementById('app');
+app.innerHTML = `<div class="${base.box}"></div>`;
+
+//实现异步加载a模块
+import(
+    /* webpackChunkName: 'a' */
+    './components/a'
+    ).then(function(a) {
+        console.log(a)
+});
+```
+然后对应webpack 打包配置中allChunks设置为false, 那么模块a加载的样式是不会被独立打包到app.min.css文件里面去， 而是跟a.bundle.js一起打包到相对应的js文件去了；                
+通过allChunks可以控制初始化加载和动态加载。                              
+如果我们期望a.js引用的css能独立打包出来，这个时候，就可以直接在入口文件中添加a模块的打包入口就可以了；                     
+
+[本节实例请见: 10、处理css 提取css](./01、由浅入深Webpack/10、处理css%20提取css/)
 
 
 
