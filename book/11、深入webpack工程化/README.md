@@ -231,6 +231,23 @@ import * as _ from 'lodash';
 console.log(_.chunk([1,2,3,4,5,6,7],2));
 ```
 
+**Typings**                 
+如果觉得每次都要安装
+npm install @types/lodash 是一件很麻烦的事情，那么可以直接使用Typings来安装模块：               
+npm install typings -g             
+typings install lodash              
+
+对于这种安装模块的使用方法：                  
+这个时候需要配置tsconfig.json了：                 
+```
+"typeRoots": [
+  "./node_modules/@type",
+  "./typings/modules"
+]
+```
+typeRoots：这个配置项，是告诉ts打包编译的时候，要到什么地方去找申明文件，而且这个时候我们的文件也会有报错提示了               
+           
+
 
 
 
