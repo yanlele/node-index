@@ -148,12 +148,14 @@ babel配置文件的写法： .babelrc
 
 在我们实际开发中，我们可以不要 配置`"plugins": ["transform-runtime"]`， 直接在需要使用高级语法的地方使用 `import 'babel-polyfill';`                   
 
+请看示例文件： [03、编译ES6](./01、由浅入深Webpack/03、编译ES6/)
+
 
 ### <p id='class1-item04'>04、编译打包TS</p>          
 是JS的超集      
 需要安装 `typescript-loader`:               
 npm install typescript ts-loader --save-dev                     
-npm install awesome-typescript-loader --save-dev                
+npm install typescript awesome-typescript-loader --save-dev                
 
 配置：                 
 需要配置一个tsconfig.json 文件在根目录下面                
@@ -183,6 +185,30 @@ exclude: 不编译的路径
   "exclude": ["/node_modules"]
 }
 ```
+webpack.config.js配置文件：              
+```javascript
+module.exports = {
+    entry: {
+        'app': './src/app.ts'
+    },
+    output: {
+        filename: '[name].bundle.js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                use: {
+                    loader: 'ts-loader'
+                }
+            }
+        ]
+    }
+};
+```
+
+接下来就是定义app.ts，然后打包就可以了。                     
+
 
 
           
