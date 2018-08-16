@@ -374,6 +374,212 @@ module.exports = {
 };
 ```
 
+### <div id='class1-item06'>6、代码分割和懒加载/div> 
+
+> 实现代码分割的办法：
+
+`webapck methods` 和 `ES2015 Loader spec`
+
+**webpack methods webpack内置方法**
+
+require.ensure      
+
+    []: dependencies        
+    callback        
+    errorCallback
+    chunkName       
+
+require.include
+    
+**ES2015 Loader spec**            
+
+System.import() ->  import()
+
+
+> 代码分割的场景
+
+分离业务代码 和 第三方依赖            
+分离业务代码 和 业务公共代码 和 第三方依赖         
+分离首次加载 和 访问后加载的代码           
+
+> 具体使用方式            
+
+**用require.ensure方式分割代码的示例**        
+webpack.config.js配置文件如下：        
+```javascript
+let webapck = require('webpack');
+let path = require('path');
+
+module.exports = {
+    entry: {
+        'pageA': './src/pageA'
+    },
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: "[name].bundle.js",
+        chunkFilename: "[name].chunk.js"
+    }
+};
+```
+
+在paegA.js中做如下的模块引用：     
+```javascript
+import './subPageA'
+import './subPageB'
+
+require.ensure(['lodash'], function () {
+    let _ = require('lodash');
+    _.join([1, 2], 3);
+}, 'vendor');
+
+export default 'pageA'
+```
+
+这个时候再打包，就可以实现分别打包第三方模块代码vendor.js和我们自己的业务代码pageA.js了            
+
+**如果我们希望在pageA中提取公共的模块subPageA和subPageB**           
+那么我们可以对pageA.js做如下的改造           
+```javascript
+if(page === 'subPageA') {
+    require.ensure(['./subPageA'], function() {
+        let subPageA = require('./subPageA');
+    }, 'subPageA');
+} else if(page === 'subPageB') {
+    require.ensure(['./subPageB'], function() {
+        let subPageB = require('./subPageB');
+    }, 'subPageB');
+}
+
+require.ensure(['lodash'], function () {
+    let _ = require('lodash');
+    _.join([1, 2], 3);
+}, 'vendor');
+
+export default 'pageA'
+```
+
+但是这样还会有一个问题，就是subPageA和subPageB都同时用了moduleA，我们可以吧moduleA提出来公用           
+```javascript
+require.include('./moduleA');
+let page = 'subPageA';
+if(page === 'subPageA') {
+    require.ensure(['./subPageA'], function() {
+        let subPageA = require('./subPageA');
+    }, 'subPageA');
+} else if(page === 'subPageB') {
+    require.ensure(['./subPageB'], function() {
+        let subPageB = require('./subPageB');
+    }, 'subPageB');
+}
+
+require.ensure(['lodash'], function () {
+    let _ = require('lodash');
+    _.join([1, 2], 3);
+}, 'vendor');
+
+export default 'pageA'
+```
+这种做法实际上是吧moduleA的代码，直接提取到了pageA中去了，我们在subPageA和subPageB打包后的文件中，再也找不到moduleA的代码了！
+
+
+**关于测试：**           
+我们在根目录下面创建一个html文件，引入我们的打包后的文件，来测试一下打包是否成功，如果出现了资源找不到的情况，那我们需要改一下webpack的output中的publicPath:        
+```javascript
+let webapck = require('webpack');
+let path = require('path');
+
+module.exports = {
+    entry: {
+        'pageA': './src/pageA'
+    },
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: "[name].bundle.js",
+        publicPath: "./dist/",
+        chunkFilename: "[name].chunk.js"
+    }
+};
+```
+
+html:       
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script src="./dist/pageA.bundle.js"></script>
+</body>
+</html>
+```
+
+
+**通过实现动态import来实现分割代码的功能**          
+```javascript
+    require.include('./moduleA');
+    
+    let page = 'subPageA';
+    
+    if(page === 'subPageA') {
+        import(
+            /* webpackChunkName:'subPageA' */
+            './subPageA').then(function(subPageA) {
+            console.log(subPageA);
+        })
+    } else if(page === 'subPageB') {
+        import(
+            /* webpackChunkName:'subPageA' */
+            './subPageB').then(function(subPageB) {
+            console.log(subPageB);
+        })
+    }
+    
+    require.ensure(['lodash'], function () {
+        let _ = require('lodash');
+        _.join([1, 2], 3);
+    }, 'vendor');
+    
+    export default 'pageA'
+```
+上面的注解是魔法注解。用来让webpack识别打包模块用的           
+
+**异步分割代码: async**              
+```javascript
+let webapck = require('webpack');
+let path = require('path');
+
+module.exports = {
+    entry: {
+        'pageA': './src/pageA',
+        'pageB': './src/pageB',
+        'vendor': ['lodash']
+    },
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: "[name].bundle.js",
+        publicPath: "./dist/",
+        chunkFilename: "[name].chunk.js"
+    },
+
+    plugins: [
+        new webapck.optimize.CommonsChunkPlugin({
+            async: 'async-common',
+            children: true,
+            minChunks: 2
+        }),
+        new webapck.optimize.CommonsChunkPlugin({
+            names: ['vendor', 'mainfest'],
+            minChunks: Infinity
+        })
+    ]
+};
+```
+
+
 
 
 
