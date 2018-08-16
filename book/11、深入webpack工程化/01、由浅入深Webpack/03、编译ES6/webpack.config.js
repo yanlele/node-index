@@ -11,16 +11,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            ['babel-preset-env', {
-                                targets: {
-                                    browers: ['>1%', 'last 2 versions']
-                                }
-                            }]
-                        ]
-                    }
+                    loader: 'babel-loader'
                 },
                 exclude: '/node_modules/'
             }

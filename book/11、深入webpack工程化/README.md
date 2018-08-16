@@ -121,5 +121,29 @@ rules: [
 安装： `npm install babel-polyfill --save` 在使用的时候，只要 `import 'babel-polyfile'` 就可以随意使用高级语法了；           
 `babel tuntime Transform`: 这个是局部垫片，为开发框架准备的 - 不会污染全局；               
 安装： `npm install babel transform-plugin-transform-runtime --save-dev` 和 `npm install babel-runtime --sve`           
+安装完毕之后，直接就可以 import 'babel-polyfile',就可以直接使用了；
 
-babel配置文件的写法： .babelrc              
+babel配置文件的写法： .babelrc                  
+在webpack.config.js 的同一级目录下面定义文件，文件内容如下：         
+```json
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "> 1%",
+            "last 2 versions"
+          ]
+        }
+      }
+    ]
+  ],
+  "plugins": ["transform-runtime"]
+}
+```
+这样定义好了之后，那么webpack.config.js 配置文件里面的babel-loader的配置项就行相当于移动到了 .babelrc里面去，就可以直接删除原来的options了。                   
+
+
+          
