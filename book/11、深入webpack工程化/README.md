@@ -674,6 +674,55 @@ setInterval(function(){
 ```
 
 **style-loader的配置项**                    
+options:                
+insertAt: 插入位置                
+insertInto: 插入到具体的dom               
+singleton: 是否使用一个style标签                
+transform: 转化，在浏览器环境下，插入页面前                             
+
+```javascript
+module.export = {
+    //......
+    module: {
+            rules: [
+                {
+                    test: /\.css$/,
+                    use: [
+                        {
+                            loader: 'style-loader',
+                            options: {
+                                insertInto: '#app',
+                                singleton: true,
+                                transform: './css.transform.js'
+                            }
+                        },
+                        {
+                            loader: "css-loader"
+                        }
+                    ]
+                }
+            ]
+        }
+}
+```
+
+然后我们需要在其同级目录下面创建css.transform.js文件，这个文件就可以拿到我们所有的css样式，在这个地方我们可以修改和编辑等等的操作了！
+```javascript
+module.exports =function(css) {
+    console.log(css);
+    console.log(window.innerHeight);
+    return css;
+};
+```
+我们定义的这个函数，并不会在打包的时候执行，是在loader把我们样式人间插入浏览器的时候执行的，这个时候我们可以拿到浏览器相关的一些参数，在此之前我们可以做一切的处理；
+而且会对么一个文件都会操作一遍。
+这个知识点儿很冷门，可以不做重点掌握。
+
+
+
+
+
+
 
 
 

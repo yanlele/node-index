@@ -17,7 +17,12 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     {
-                        loader: 'style-loader/useable'
+                        loader: 'style-loader',
+                        options: {
+                            insertInto: '#app',
+                            singleton: true,
+                            transform: './css.transform.js'
+                        }
                     },
                     {
                         loader: 'css-loader'
