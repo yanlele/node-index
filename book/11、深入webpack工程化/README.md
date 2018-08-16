@@ -592,6 +592,42 @@ css-loader: 可以让我们，在JS中直接require加载css样式文件
 style-loader:           
 与这个相关的有： `style-loader、style-loader/url、style-loader/useable`                   
 
+**最单的一个实例简：**                                  
+我们首先定义样式文件，然后require加载到js文件中去，然后配置如下的webpack.config.js 文件                   
+```javascript
+const path = require('path');
+
+module.exports = {
+    entry: {
+        app: './src/app.js'
+    },
+
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].bundle.js',
+        publicPath: './dist/'
+    },
+
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader'
+                    }
+                ]
+            }
+        ]
+    }
+};
+```            
+然后把打包之后的文件，放入index.html文件中执行                
+
+
 
 
 
