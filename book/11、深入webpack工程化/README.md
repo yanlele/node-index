@@ -818,7 +818,7 @@ module: {
 [本节实例请见: 09、配置less/sass](./01、由浅入深Webpack/09、处理css%20配置less和sass/)
 
 
-### <div id="class1-item9">10、提取css</div>                   
+### <div id="class1-item10">10、提取css</div>                   
 之前的样式实际上是在js中的， 现在我们要把css提取出来形成独立的文件
 extract-loader                  
 ExtractTextWebpackPlugin 这种是主流最常用的方式                           
@@ -893,6 +893,15 @@ import(
 [本节实例请见: 10、处理css 提取css](./01、由浅入深Webpack/10、处理css%20提取css/)
 
 
+### <div id="class1-item11">11、postCss-in-webpack</div>                  
+postCss 是一个强大的处理css的一个工具                    
+安装:                 
+npm install postcss postcss-loader autoprefixer cssnano postcss-cssnext --save-dev                                                      
+Autoprefixer: 可以帮我们自动加上前缀；              
+postcss-cssnano: 帮助压缩和优化css的工具；             
+postcss-cssnext: 可让我们使用css4的新语法；                
+
+安装完毕之后，就接着需要修改webpack的相关配置                      
 
 
 
