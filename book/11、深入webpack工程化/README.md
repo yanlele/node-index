@@ -144,6 +144,45 @@ babel配置文件的写法： .babelrc
 }
 ```
 这样定义好了之后，那么webpack.config.js 配置文件里面的babel-loader的配置项就行相当于移动到了 .babelrc里面去，就可以直接删除原来的options了。                   
+然后这些都做完了之后，直接打包用就可以了；                   
+
+在我们实际开发中，我们可以不要 配置`"plugins": ["transform-runtime"]`， 直接在需要使用高级语法的地方使用 `import 'babel-polyfill';`                   
+
+
+### <p id='class1-item04'>04、编译打包TS</p>          
+是JS的超集      
+需要安装 `typescript-loader`:               
+npm install typescript ts-loader --save-dev                     
+npm install awesome-typescript-loader --save-dev                
+
+配置：                 
+需要配置一个tsconfig.json 文件在根目录下面                
+配置webpack.config.js             
+
+tsconfig.json:           
+相关配置项可以看这里：[https://www.tslang.cn/docs/handbook/compiler-options.html](https://www.tslang.cn/docs/handbook/compiler-options.html)                       
+
+常用选项：               
+compilerOptions: 就是常用选项                 
+include: 编译的文件路径
+exclude: 不编译的路径         
+
+示范：             
+```json
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "typeRoots": [
+      "/node_modules/@type",
+      "/typings/modules"
+    ],
+    "allowJs": true
+  },
+  "include": ["./src/*"],
+  "exclude": ["/node_modules"]
+}
+```
 
 
           
