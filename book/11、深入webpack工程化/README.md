@@ -627,6 +627,17 @@ module.exports = {
 ```            
 然后把打包之后的文件，放入index.html文件中执行                
 
+**style-loader/url 和 style-loader/useable的使用**                          
+- style-loader/url                  
+在我们使用style-loader的webpack.config.js的地方 直接使用style-loader/url，就可以实现让我们的样式文件直接link进来。但是这种使用还需要一个file-loader.
+之前使用css-loader的地方，要改为使用file-loader              
+这种情况下的打包，会直接打包出来一个单独的css文件              
+
+这种方式不常用，甚至很少用，因为这种不能处理多个样式。如果我们插入多个样式，就会有多个link标签，这样每一个文件都要走一次http请求，会额外侵占网络资源。                 
+
+
+- style-loader/useable                    
+是用来控制样式，插入还是不插入到页面中去         
 
 
 
