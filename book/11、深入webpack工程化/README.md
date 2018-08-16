@@ -780,6 +780,42 @@ app.innerHTML = `<div class="${base.box}"></div>`
 localIdentName: '[path][name]_[local]_[hash:base64:5]'类似于这样的格式来定义我们的的className                 
 
 
+### <div id="class1-item9">09、配置less/sass</div>                 
+首先要分别安装下面模块：                            
+npm install less-loader less --save-dev                         
+npm install sass-loader node-sass --save-dev                    
+
+在配置webpack的时候，如果全局只有一种样式文件类型，
+```javascript
+module: {
+    rules: [
+        {
+            test: /\.less$/,
+            use: [
+                {
+                    loader: 'style-loader',
+                    options: {
+                        singleton: true,
+                        transform: './css.transform.js'
+                    }
+                },
+                {
+                    loader: 'css-loader',
+                    options: {
+                        minimize: true,
+                        modules: true,
+                        localIdentName: '[path][name]_[local]_[hash:base64:5]'
+                    },
+                },
+                {
+                    loader: 'less-loader'
+                }
+            ]
+        }
+    ]
+}
+```
+
 
 
 
