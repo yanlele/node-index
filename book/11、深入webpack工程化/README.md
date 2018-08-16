@@ -209,6 +209,31 @@ module.exports = {
 
 接下来就是定义app.ts，然后打包就可以了。                     
 
+**在ts中使用js的模块**
+比如我们在js中使用到了 lodash 这个模块， 首先我们要安装这个模块 `npm install lodash --save`  
+然后我们直接使用，然后直接打包，是没有任何问题的，是可以和平共处的。                  
+
+
+**申明文件**
+但是如果直接使用，就没有typescript的申明检测了，没有办法使用ts的特性了，如果我们想使用ts的特性，那么我们可以这样来安装文件：               
+npm install @types/lodash               
+npm install @types/vue              
+用这种模块，就会在传递错误参数的时候报错。               
+例如我们装上 @types/lodash之后，在使用                  
+```javascript
+import * as _ from 'lodash';
+console.log(_.chunk(2));
+```
+这样ts文件就会报错，而且打包文件也不成功               
+然后修改为正确的语法格式，就不会报错了，而且编译打包也会成功：           
+```javascript
+import * as _ from 'lodash';
+console.log(_.chunk([1,2,3,4,5,6,7],2));
+```
+
+
+
+
 
 
           
