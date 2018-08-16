@@ -1,0 +1,11 @@
+html {
+    background: #f6edff;
+}
+
+.box {
+    height: 200px;
+    width: 200px;
+    border: 4px;
+    border-radius: 8px;
+    background-color: #00B7FF;
+}

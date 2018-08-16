@@ -374,7 +374,7 @@ module.exports = {
 };
 ```
 
-### <div id='class1-item06'>6、代码分割和懒加载/div> 
+### <div id='class1-item06'>06、代码分割和懒加载/div> 
 
 > 实现代码分割的办法：
 
@@ -579,7 +579,7 @@ module.exports = {
 };
 ```
 
-### <div id="class1-item7">处理css: style-loader</div>
+### <div id="class1-item7">07、处理css: style-loader</div>
 css的引入：                     
 css modules             
 配置 less / sass               
@@ -719,7 +719,18 @@ module.exports =function(css) {
 这个知识点儿很冷门，可以不做重点掌握。
 
 
+### <div id="class1-item8">08、处理css: css-loader</div>              
+options:                
+alias: 解析别名                 
+importLoader: 支持@import                 
+Minimize: 是否压缩样式文件                  
+modules: 是否启用css-modules                        
 
+**css-modules模块化语法**                    
+:local 本地样式                 
+:global 定义全局样式              
+compose 继承样式                
+compose ... from path 从path路径下面继承样式                 
 
 
 
