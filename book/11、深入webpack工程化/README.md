@@ -732,8 +732,52 @@ modules: 是否启用css-modules
 compose 继承样式                
 compose ... from path 从path路径下面继承样式                 
 
+例如我们队modules: true 的配置项的使用：             
+```javascript
+rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: 'style-loader',
+                        options: {
+                            singleton: true,
+                            transform: './css.transform.js'
+                        }
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            minimize: true,
+                            modules: true
+                        },
+                    }
+                ]
+            }
+        ]
+```
+```javascript
+import base from './css/base.css'
+import common from './css/common.css'
 
+let app = document.getElementById('app');
+app.innerHTML = `<div class="${base.box}"></div>`
+```
+这个时候打包出来的结果，我们的className会直接被编译了；                                
+具体样式代码可以看css文件中；                           
+```css
+.box {
+    composes: bigBox from './common.css';
+    height: 200px;
+    width: 200px;
+    border-radius: 8px;
+    background-color: #00B7FF;
+}
+```
+当我们使用composes的时候还要注意，我们要把composes放在第一行；                     
 
+这样打包出来的className 是乱的，我们可以通过配置项
+localIdentName: '[path][name]_[local]_[hash:base64:5]'类似于这样的格式来定义我们的的className                 
 
 
 
