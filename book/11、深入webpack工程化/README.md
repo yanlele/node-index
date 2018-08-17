@@ -1043,7 +1043,33 @@ module: {
 然后再次打包就可以了                      
 
 
+**CSS Tree Shaking**                 
+对于这个的tree-shaking 需要借助purifycss                 
+配置项options                  
+paths: glob.sync([]) 一个路径，检查一个路径下面的css
 
+安装： npm install purifycss-webpack glob-all purify-css --save-dev                   
+```javascript
+module.exports = {
+    // .........
+    plugins: [
+        new ExtractTextWebpackPlugin({
+            filename: '[name].min.css',
+            allChunks: false
+        }),
+
+        new PurifyCSS({
+            paths: glob.sync([
+                path.join(__dirname, './*.html'),
+                path.join(__dirname, './src/*.js')
+            ]),
+        }),
+
+        new Webpack.optimize.UglifyJsPlugin()
+    ]
+};
+```
+但是感觉PurifyCSS是打包失败的，把我所有的样式文件都祛除掉了；                         
 
 
 

@@ -1,8 +1,11 @@
-import base from './css/base.less'
+import './css/base.less'
 import {a} from './common/util';
 
 var htmlApp = document.getElementById('app');
-htmlApp.innerHTML = '<div class="'+ base.box + '"></div>';
+// htmlApp.innerHTML = '<div class="'+ base.box + '"></div>';
+var div = document.createElement('div');
+div.className = 'box';
+htmlApp.appendChild(div);
 
 console.log(a());
 
