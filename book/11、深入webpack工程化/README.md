@@ -960,6 +960,21 @@ postcss-url
 postcss-assets              
 
 
+### <div id="class1-item12">12、Tree-shaking</div>
+Tree-shaking 如果有一些代码没有用到的，或者不需要的资源。在上线的时候，不需要，这个时候就要祛除这样的的代码，tree-shaking就是做这个用处的。                  
+JS Tree Shaking             
+CSS Tree Shaking                
+
+使用场景：               
+    常规优化                    
+    引入第三方库的某一个功能                    
+    
+
+**JS Tree Shaking**             
+我们用到的插件是： webpack.optimize.uglifyJS                 
+
+
+
 
 
 
