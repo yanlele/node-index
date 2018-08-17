@@ -60,9 +60,9 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            publicPath: './assets/img',
-                            outputPath: '',
-                            useRelativePath: true
+                            // useRelativePath: true,
+                            publicPath: '../img',
+                            outputPath: 'img',
                         }
                     }
                 ]
@@ -72,7 +72,9 @@ module.exports = {
 
     plugins: [
         new ExtractTextWebpackPlugin({
-            filename: '[name].min.css',
+            filename:  (getPath) => {
+                return getPath('css/[name].min.css').replace('css/js', 'css');
+            },
             allChunks: false
         }),
 

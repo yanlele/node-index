@@ -1211,7 +1211,33 @@ module.exports = {
 打包之后，就可以直接运行html， 就可以成功访问到我们定义的图片地址了；               
 
 **遗留问题：但是这样会存在一个遗留问题，就是如果我的图片地址不是放置在src/assets/img 目录下面的，然后我就没有办法访问了。**                 
-                  
+
+这种情况的解决办法：              
+就是不使用useRelativePath， 然后直接用 outputPath 配置输出路径，然后用 publicPath 配置文件调用路径。
+实例如下：                   
+```javascript
+module.exports = {
+    module: {
+        rules: [
+            //......
+            {
+                test: /\.(png|jpg|jpeg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            publicPath: '../img',
+                            outputPath: 'img',
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+}
+```
+这样打包之后，所有的图片文件都会存放在img文件路径下面，publicPath 相对于css的文件路径而言的东西，这样就可以轻松找到我们所需要的静态图片的位置了。                   
+
 
                         
 
