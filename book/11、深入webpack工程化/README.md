@@ -1238,8 +1238,57 @@ module.exports = {
 ```
 这样打包之后，所有的图片文件都会存放在img文件路径下面，publicPath 相对于css的文件路径而言的东西，这样就可以轻松找到我们所需要的静态图片的位置了。                   
 
+#### 使用url-loader，用base64编译图片                    
+如果需要设定，当图片大小，小于多少的时候，使用base64来编译图片.                 
+这个时候就要使用 url-loader:                
+```javascript
+module.exports = {
+    module: {
+        rules: [
+            //......
+            {
+                test: /\.(png|jpg|jpeg|gif)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 1024 * 10
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+}
+```
+这样的话，打包之后，就会发现少了图片文件，但是打开页面之后，又会发现，少了的图片，依然可以展示和打开。因为小于10K的图片已经转为base64，写在了JS代码里面了。                 
+但是因为没有其他的配置项，所以打包出来的文件，也就是大于10K的文件，路径错误了。更改路径错误的办法，跟配置file-loader处理方式是一样的。                  
+实际上，他在这个地方的作用是跟file-loader作用是一样的。只是多了转换base64图片的功能。
 
-                        
+这里有一点需要注意的是，上面的是老版本的url-loader的配置方式，新版本的url-loader配置如下：             
+```javascript
+module.exports = {
+    module: {
+        rules: [
+            //......
+            {
+                loader: 'url-loader',
+                options: {
+                    limit: 1024 * 10,
+                    fallback: {
+                        loader: 'file-loader',
+                        options: {
+                            // useRelativePath: true,
+                            publicPath: '../img',
+                            outputPath: 'img',
+                        }
+                    }
+                }
+            }
+        ]
+    },
+}
+```      
 
 
 
