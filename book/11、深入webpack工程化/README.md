@@ -972,6 +972,76 @@ CSS Tree Shaking
 
 **JS Tree Shaking**             
 我们用到的插件是： webpack.optimize.uglifyJS                 
+首先我们在util.js里面定义很多的方法，然后在app.js中只使用其中某一个方法：                         
+```javascript
+import base from './css/base.less'
+import {a} from './common/util';
+
+let app = document.getElementById('app');
+app.innerHTML = `<div class="${base.box}"></div>`;
+
+console.log(a());
+```
+在不做任何配置的情况之下直接打包，那么打包之后的app.bundle.js中，会出现很全部之前定义好的方法。                  
+
+**祛除没有用到的代码的方法：**                   
+```javascript
+const Webpack = require('webpack');
+
+module.exports = {
+    //.........
+    plugins: [
+        new ExtractTextWebpackPlugin({
+            filename: '[name].min.css',
+            allChunks: false
+        }),
+
+        new Webpack.optimize.UglifyJsPlugin()
+    ]
+}
+```
+然后执行打包，我们发现打包之后的文件是被压缩了，而且我们没有用到的方法是找不到的，说明压缩的时候已经自动过滤掉了。                           
+
+- 对于第三方库祛除的一个实例，这个地方以lodash为例子                      
+在app.js中引入lodash的方法：            
+```javascript
+import {chunk} from 'lodash';
+console.log(chunk([1,2,3,4,5,6,7], 2));
+```
+然后按照上面的配置webpack不动，直接打包。会祛除掉绝大部分的没有用到的代码，但是打包之后出来的文件还是有70多K，追查原因，可以打开lodash查看其源码，发现lodash文件本身就有一万多行，
+所以我们打包的时候吧这本身一万多行的代码都打包进来了。             
+解决这个问题的办法：我们可以安装lodash的esmodule: npm install lodash-es --save                           
+```javascript
+import {chunk} from 'lodash-es';
+console.log(chunk([1,2,3,4,5,6,7], 2));
+```
+打包之后会发现，文件大小更加大了。这个就说明了有些模块是没有办法用tree-shaking来过滤掉全部没有用到的代码的，这是模块本身写法有问题。                    
+
+当然为了解决这个问题，还有其他的解决办法： npm install babel-plugin-lodash --save-dev , 初次之外，还需要安装babel全家桶
+```javascript
+module.exports = {
+    //.........
+module: {
+        rules: [
+            //......
+            {
+                test: /\.js$/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['env'],
+                            plugins: ['lodash']
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+}
+```
+然后再次打包就可以了                      
+
 
 
 
@@ -982,6 +1052,7 @@ CSS Tree Shaking
 
 1、postcss 的独立配置文件怎么写                            
 2、打包后的js和css 如何自动插入到页面中去                    
+3、多页应用程序打包方式                
 
 
           
