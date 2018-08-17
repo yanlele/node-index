@@ -177,6 +177,7 @@
     - [10、egret-core(html5游戏引擎)](https://github.com/egret-labs/egret-core)
     - [11、项目规范（包含git管理项目的使用）](https://github.com/elsewhencode/project-guidelines/blob/master/README-zh.md)
     - [12、MarkDown添加图片的三种方式 - 找时间自己总结一边](https://blog.csdn.net/slaughterdevil/article/details/79255933)
+    - [13、html转换为img、html转换为pdf:render-html-to-pdf](https://github.com/linwalker/render-html-to-pdf)
 
 
 - koa2
