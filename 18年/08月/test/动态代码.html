@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="click">点击我</button>
+<div id="container"></div>
+
+<script>
+    var container = document.querySelector('#container');
+    var clickButton = document.querySelector('#click');
+    var ol = document.createElement('ol');
+    var arr = '动态添加节点代码'.split(''), index = 0, li = null;
+    console.log(arr);
+    container.appendChild(ol);
+    clickButton.addEventListener('click', function() {
+        arr.forEach(function(item, itemIndex) {
+            if(itemIndex === index) {
+                li = document.createElement('li');
+                li.innerText = item;
+            }
+        });
+        index++;
+        if(li) {
+            ol.appendChild(li);
+        } else {
+            console.log('添加完毕');
+        }
+    })
+</script>
+</body>
+</html>
