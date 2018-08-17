@@ -1069,9 +1069,13 @@ module.exports = {
     ]
 };
 ```
-但是感觉PurifyCSS是打包失败的，把我所有的样式文件都祛除掉了；                         
+但是感觉PurifyCSS是打包失败的，把我所有的样式文件都祛除掉了；                                         
+失败的原因是这个插件是不可以和css-loader里面的modules同用的；去掉css-loader中的modules,这样就可以正常使用了。                                         
 
 与这部分相关的知识点可以直接查看：[purifycss-webpack](https://github.com/webpack-contrib/purifycss-webpack)                      
+
+
+
 
 
 
