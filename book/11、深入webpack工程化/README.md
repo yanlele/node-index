@@ -1071,6 +1071,10 @@ module.exports = {
 ```
 但是感觉PurifyCSS是打包失败的，把我所有的样式文件都祛除掉了；                         
 
+与这部分相关的知识点可以直接查看：[purifycss-webpack](https://github.com/webpack-contrib/purifycss-webpack)                      
+
+
+
 
 
 
