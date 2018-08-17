@@ -1160,7 +1160,60 @@ module.exports = {
 ```
 然后直接执行打包命令：结果是我们在根目录下面看到了四张通过file-loader处理的打包文件，直接访问页面是访问不到图片的，因为图片打包的路径有问题。                    
 处理方法：
-通过配置file-loader的options来控制路径问题              
+通过配置file-loader的options来控制路径问题                  
+```javascript
+module.exports = {
+    module: {
+        rules: [
+            //......
+            {
+                test: /\.(png|jpg|jpeg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: './dist/',
+                            useRelativePath: true
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+}
+```    
+然后重新打包，然后我们图片文件打包的地址就做了处理了，跟之前引用的图片地址是一样的了，输出的文件地址是正确的。             
+但是在html访问的时候，依然访问不到图片，图片相对文件还是访问地址是错误的。                     
+在这里时候，我们还需要继续对options进行设置 ，增加一个publicPath 配置项                   
+```javascript
+module.exports = {
+    module: {
+        rules: [
+            //......
+            {
+                test: /\.(png|jpg|jpeg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            publicPath: './assets/img',
+                            outputPath: '',
+                            useRelativePath: true
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+}
+```          
+这种配置是针对于页面就在根目录下面的情况做出的配置项                      
+打包之后，就可以直接运行html， 就可以成功访问到我们定义的图片地址了；               
+
+**遗留问题：但是这样会存在一个遗留问题，就是如果我的图片地址不是放置在src/assets/img 目录下面的，然后我就没有办法访问了。**                 
+                  
+
+                        
 
 
 
@@ -1172,6 +1225,8 @@ module.exports = {
 1、postcss 的独立配置文件怎么写                            
 2、打包后的js和css 如何自动插入到页面中去                    
 3、多页应用程序打包方式                
+4、在任意位置的图片地址访问问题处理办法                    
+
 
 
           
