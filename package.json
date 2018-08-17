@@ -53,6 +53,7 @@
     "glob-all": "^3.1.0",
     "handlebars-helpers": "^0.10.0",
     "hbs": "~4.0.1",
+    "img-loader": "^3.0.0",
     "istanbul": "^0.4.5",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
@@ -62,12 +63,14 @@
     "postcss": "^7.0.2",
     "postcss-cssnext": "^3.1.0",
     "postcss-loader": "^3.0.0",
+    "postcss-sprites": "^4.2.1",
     "power-assert": "^1.4.4",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
     "style-loader": "^0.21.0",
     "ts-loader": "^3.2.0",
     "typescript": "^2.6.2",
+    "url-loader": "^1.1.0",
     "webpack": "^3.10.0"
   },
   "browserslist": [

@@ -1089,6 +1089,79 @@ module.exports = {
 
 ## <div id="class2">二、由浅入深Webpack - 进阶</div>
 
+### <div id="class2-item01">01、文件处理 - 图片处理</div>
+文件处理分为： 图片处理、字体处理、第三方JS库（CDN地址）                                     
+
+图片的处理：css中引入的图片、自动合成雪碧图、压缩图片、Base64编码图片                 
+
+#### 需要用到的一些组件                  
+file-loader、url-loader、img-loader、postcss-sprites                       
+模块的安装 `npm install file-loader url-loader img-loader postcss-sprites --save-dev`                    
+在安装模块的时候，一直会出现报错问题： `phantomjs-prebuilt@2.1.16 install: `node install.js``                      
+解决办法：先安装 `npm install phantomjs-prebuilt@2.1.16 --ignore-scripts`
+
+#### 这些组件的使用                    
+首先把图片文件放在sec/assets/img/目录下面                
+在common.less中定义图片的使用                    
+```css
+.bigBox {
+    border: 5px solid #000000;
+    height: 400px;
+    width: 400px;
+    color: #000000;
+
+    > div {
+        width: 128px;
+        height: 128px;
+        float: left;
+    }
+
+    .ani1 {
+        background: url("../assets/img/1.jpg") no-repeat;
+    }
+
+    .ani2 {
+        background: url("../assets/img/2.jpg") no-repeat;
+    }
+    .ani3 {
+        background: url("../assets/img/3.jpg") no-repeat;
+    }
+    .ani4 {
+        background: url("../assets/img/4.jpg") no-repeat;
+    }
+}
+```
+然后在html中直接去使用就可以了
+```html
+<div class="bigBox">
+    <div class="ani1"></div>
+    <div class="ani2"></div>
+    <div class="ani3"></div>
+    <div class="ani4"></div>
+</div>
+```
+然后更改我们的webpack配置文件：                 
+```javascript
+module.exports = {
+    module: {
+        rules: [
+            //......
+            {
+                test: /\.(png|jpg|jpeg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader'
+                    }
+                ]
+            }
+        ]
+    },
+}
+```
+然后直接执行打包命令：结果是我们在根目录下面看到了四张通过file-loader处理的打包文件，直接访问页面是访问不到图片的，因为图片打包的路径有问题。                    
+处理方法：
+通过配置file-loader的options来控制路径问题              
+
 
 
 
