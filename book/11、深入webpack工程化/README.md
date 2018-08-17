@@ -7,6 +7,18 @@
     - [01、最基本的使用webpack](#class1-item01)
     - [02、打包js](#class1-item02)
     - [03、编译ES6/7](#class1-item03)
+    - [04、编译打包TS](#class1-item04)
+    - [05、提取公用代码](#class1-item05)
+    - [06、代码分割和懒加载](#class1-item06)                 
+    - [07、处理css: style-loader](#class1-item07)
+    - [08、处理css: css-loader](#class1-item08)
+    - [09、配置less/sass](#class1-item09)
+    - [10、提取css](#class1-item10)
+    - [11、postCss-in-webpack](#class1-item11)
+    - [12、Tree-shaking](#class1-item12)
+    
+- [二、由浅入深Webpack - 进阶](#class2)
+    
     
 
 ## <p id='class1'>一、由浅入深Webpack</p>              
@@ -374,7 +386,7 @@ module.exports = {
 };
 ```
 
-### <div id='class1-item06'>06、代码分割和懒加载/div> 
+### <div id='class1-item06'>06、代码分割和懒加载<div> 
 
 > 实现代码分割的办法：
 
@@ -579,7 +591,7 @@ module.exports = {
 };
 ```
 
-### <div id="class1-item7">07、处理css: style-loader</div>
+### <div id="class1-item07">07、处理css: style-loader</div>
 css的引入：                     
 css modules             
 配置 less / sass               
@@ -719,7 +731,7 @@ module.exports =function(css) {
 这个知识点儿很冷门，可以不做重点掌握。
 
 
-### <div id="class1-item8">08、处理css: css-loader</div>              
+### <div id="class1-item08">08、处理css: css-loader</div>              
 options:                
 alias: 解析别名                 
 importLoader: 支持@import                 
@@ -780,7 +792,7 @@ app.innerHTML = `<div class="${base.box}"></div>`
 localIdentName: '[path][name]_[local]_[hash:base64:5]'类似于这样的格式来定义我们的的className                 
 
 
-### <div id="class1-item9">09、配置less/sass</div>                 
+### <div id="class1-item09">09、配置less/sass</div>                 
 首先要分别安装下面模块：                            
 npm install less-loader less --save-dev                         
 npm install sass-loader node-sass --save-dev                    
@@ -1075,7 +1087,7 @@ module.exports = {
 与这部分相关的知识点可以直接查看：[purifycss-webpack](https://github.com/webpack-contrib/purifycss-webpack)                      
 
 
-
+## <div id="class2">二、由浅入深Webpack - 进阶</div>
 
 
 
