@@ -1395,6 +1395,45 @@ module.exports = {
 
 ### <div id="class2-item02">02、文件处理-字体处理</div>                  
 文件字体处理的方式，实际上还是用到的是file-loader 和 url-loader                      
+直接通过如下的简单处理：            
+```javascript
+{
+    test: /\.(eot|woff2|woff|ttf|svg)$/,
+    use: [
+        {
+            loader: 'url-loader'
+        }
+    ]
+}
+```
+这样处理之后，会吧字体文件全部打包到css里面去，会导致css非常的大; 后续继续使用file-loader来处理文件。
+```javascript
+{
+    test: /\.(eot|woff2|woff|ttf|svg)$/,
+    use: [
+        {
+            loader: 'url-loader',
+            options: {
+                limit: 1024 * 50,
+                fallback: {
+                    loader: 'file-loader',
+                    options: {
+                        // useRelativePath: true,
+                        publicPath: '../fonts',
+                        outputPath: 'fonts',
+                    }
+                }
+            }
+        }
+    ]
+}
+```
+这样就是小于50K的文件，会直接打包到css里面去，如果大于50K的，就用file-loader来处理；                            
+
+
+
+
+
 
 
 

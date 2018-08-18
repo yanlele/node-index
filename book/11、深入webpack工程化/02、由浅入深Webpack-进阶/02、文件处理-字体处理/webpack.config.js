@@ -73,6 +73,25 @@ module.exports = {
                         loader: 'img-loader'
                     }
                 ]
+            },
+            {
+                test: /\.(eot|woff2|woff|ttf|svg)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 1024 * 50,
+                            fallback: {
+                                loader: 'file-loader',
+                                options: {
+                                    // useRelativePath: true,
+                                    publicPath: '../fonts',
+                                    outputPath: 'fonts',
+                                }
+                            }
+                        }
+                    }
+                ]
             }
         ]
     },
