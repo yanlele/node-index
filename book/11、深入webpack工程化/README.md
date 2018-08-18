@@ -1100,7 +1100,7 @@ file-loader、url-loader、img-loader、postcss-sprites
 在安装模块的时候，一直会出现报错问题： `phantomjs-prebuilt@2.1.16 install: `node install.js``                      
 解决办法：先安装 `npm install phantomjs-prebuilt@2.1.16 --ignore-scripts`
 
-#### 这些组件的使用                    
+#### 这些组件的使用 - file-loader                    
 首先把图片文件放在sec/assets/img/目录下面                
 在common.less中定义图片的使用                    
 ```css
@@ -1290,6 +1290,48 @@ module.exports = {
 }
 ```      
 
+#### 压缩雪碧图和压缩图片质量 img-loader 和 postcss-sprites                          
+通过配置img-loader，可以实现压缩图片的功能，但是这个功能并不常用：                  
+因为img-loader版本更迭，所以最新文档请见：  [img-loader](https://github.com/vanwagonet/img-loader)         
+最新版本的配置项如下：                 
+```javascript
+{
+  module: {
+    rules: [
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: [
+          'url-loader?limit=10000',
+          {
+            loader: 'img-loader',
+            options: {
+              plugins: [
+                require('imagemin-gifsicle')({
+                  interlaced: false
+                }),
+                require('imagemin-mozjpeg')({
+                  progressive: true,
+                  arithmetic: false
+                }),
+                require('imagemin-pngquant')({
+                  floyd: 0.5,
+                  speed: 2
+                }),
+                require('imagemin-svgo')({
+                  plugins: [
+                    { removeTitle: true },
+                    { convertPathData: false }
+                  ]
+                })
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+```
 
 
 

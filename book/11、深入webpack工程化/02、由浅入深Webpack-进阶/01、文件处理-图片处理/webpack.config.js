@@ -78,6 +78,9 @@ module.exports = {
                                 }
                             }
                         }
+                    },
+                    {
+                        loader: 'img-loader'
                     }
                 ]
             }
