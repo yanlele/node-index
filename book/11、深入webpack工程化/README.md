@@ -1333,6 +1333,62 @@ module.exports = {
 }
 ```
 
+**合成雪碧图**                   
+webpack 配置项直接在postcss的基础上配置一条require('postcss-sprites')() 就可以了，这是最基本的用法；
+但是这种方式会在项目根目录，生成一个sprite.png的文件，这并不是我们想要的结果，所以对配置项进行如下修改：                   
+```javascript
+module.exports = {
+    //.......
+    module: {
+            rules: [
+                {
+                    test: /\.less$/,
+                    use: ExtractTextWebpackPlugin.extract({
+                        fallback: {
+                            loader: 'style-loader',
+                            options: {
+                                singleton: true,
+                                transform: './css.transform.js'
+                            }
+                        },
+                        use: [
+                            {
+                                loader: 'css-loader',
+                                options: {
+                                    // minimize: true,
+                                    // modules: true,
+                                    localIdentName: '[path][name]_[local]_[hash:base64:5]'
+                                },
+                                // loader: 'file-loader'
+                            },
+                            {
+                                loader: 'postcss-loader',
+                                options: {
+                                    ident: 'postcss',
+                                    plugins: [
+                                        // require('autoprefixer')(),
+                                        require('postcss-sprites')({
+                                            spritePath: './dist/assets/img/sprites'
+                                        }),
+                                        require('postcss-cssnext')()
+                                    ]
+                                }
+                            },
+                            {
+                                loader: 'less-loader'
+                            }
+                        ]
+                    })
+                }
+                //.......
+            ]
+        }
+        //.......
+}
+```
+**注意：** 但是这样还会有一个非常致命的缺点，就是在设置background-size 的时候，必须跟图片一样的大小，要不然css没有办法切割雪碧图。                    
+而且还有一个待解决和待研究的地方： 压缩后的雪碧图，文件体积非常的大。                     
+                                 
 
 
 
