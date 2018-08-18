@@ -1437,6 +1437,21 @@ module.exports = {
 第二个处理方式： imports-loader；
 第三种处理方式是： 全局window对象；           
 
+本节项目中，用jQuery为例子来说，如果是直接引用的cdn的jQuery，那么直接引用，就可以使用$符号了；                 
+如果jQuery是通过npm install 来安装的，这个时候我们可以在webpack中添加如下的设置：               
+```javascript
+module.exports = {
+        plugins: [
+            //......
+            new Webpack.ProvidePlugin({
+                $: 'jquery'
+            })
+            //......
+        ]
+}
+```
+
+
 
 
 
