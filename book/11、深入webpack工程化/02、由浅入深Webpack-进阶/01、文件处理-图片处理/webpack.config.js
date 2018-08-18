@@ -61,14 +61,6 @@ module.exports = {
             {
                 test: /\.(png|jpg|jpeg|gif)$/,
                 use: [
-                    /*{
-                        loader: 'file-loader',
-                        options: {
-                            // useRelativePath: true,
-                            publicPath: '../img',
-                            outputPath: 'img',
-                        }
-                    },*/
                     {
                         loader: 'url-loader',
                         options: {
