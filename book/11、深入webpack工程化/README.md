@@ -1609,9 +1609,23 @@ npm install html-loader --save-dev
 
 #### 设置本项目的绝对路径
 修改output里面的publicPath 就可以实现我们的目的
+```javascript
+module.exports = {
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].bundle.[hash:5].js',
+        publicPath: '/',
+        chunkFilename: '[name].bundle.[hash:5].js',              //动态打包文件名
+    },
+}
+```
+
+但是这样之后，所有的路径都变成了根目录下面找资源了，但是我们本地访问就直接死掉了。因为没有服务器，没有办法设置根路径。
 
 
-
+#### 处理html中图片的其他办法             
+通过require可以引入图片，这样我们不通过html-loader，也是可以处理图片问题的；                     
+`<img src="${require('./src/assets/img/react.jpg')}" alt="react">`                      
 
 
 

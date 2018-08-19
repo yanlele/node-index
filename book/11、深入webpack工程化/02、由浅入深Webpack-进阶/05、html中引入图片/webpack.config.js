@@ -13,7 +13,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].bundle.[hash:5].js',
-        publicPath: '',
+        publicPath: '/',
         chunkFilename: '[name].bundle.[hash:5].js',              //动态打包文件名
     },
 
