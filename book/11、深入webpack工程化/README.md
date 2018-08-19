@@ -1564,7 +1564,52 @@ attrs: [img:src]
 npm install html-loader --save-dev                  
 
 #### 具体使用               
-如果我们不做任何处理，直接打包，打包之后的文件是找不到图片资源的
+如果我们不做任何处理，直接打包，打包之后的文件是找不到图片资源的.                   
+我们在所有loader的最后面配置如下的loader：             
+```javascript
+{
+    test: /\.html$/,
+    use: [
+        {
+            loader: 'html-loader',
+            options: {
+                attrs: ['img:src', 'img:data-src']
+            }
+        }
+    ]
+}
+```
+然后打包，发现文件的路径确实是被替换了的，文件也被处理好了，但是还是会出现引用地址错误的问题。
+
+这个时候我们做如下的配置更改，更改url-loader配置项：                     
+```javascript
+{
+    test: /\.(png|jpg|jpeg|gif)$/,
+    use: [
+        {
+            loader: 'url-loader',
+            options: {
+                limit: 1024 * 2,
+                fallback: {
+                    loader: 'file-loader',
+                    options: {
+                        outputPath: './img/',
+                    }
+                }
+            }
+        },
+        {
+            loader: 'img-loader'
+        }
+    ]
+}
+```
+然后打包，发现html中图片位置正常了，但是css打包的图片地址又有问题了。
+这个原因是我们没有一个绝对路径的配置，我们只有相对路径的配置。因为我们上线项目中，网站的根目录就是我们的绝对路径，但是本项目里面没有绝对路径。这种情况就需要我们自己来进行配置，配置一个绝对路径就可以了。                   
+
+#### 设置本项目的绝对路径
+修改output里面的publicPath 就可以实现我们的目的
+
 
 
 

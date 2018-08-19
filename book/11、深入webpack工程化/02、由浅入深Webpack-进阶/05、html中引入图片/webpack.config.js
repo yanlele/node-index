@@ -65,13 +65,13 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 1024 * 10,
+                            limit: 1024 * 2,
                             fallback: {
                                 loader: 'file-loader',
                                 options: {
                                     // useRelativePath: true,
-                                    publicPath: '../img',
-                                    outputPath: 'img',
+                                    // publicPath: '../img',
+                                    outputPath: './img/',
                                 }
                             }
                         }
@@ -88,6 +88,17 @@ module.exports = {
                         loader: 'imports-loader',
                         options: {
                             $: 'jquery'
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: 'html-loader',
+                        options: {
+                            attrs: ['img:src', 'img:data-src']
                         }
                     }
                 ]
@@ -115,7 +126,7 @@ module.exports = {
             template: './index.html',
             chunks: ['app'],
             minify: {
-                collapseWhitespace: true                //祛除空格
+                collapseWhitespace: false                //祛除空格
             }
         }),
 
