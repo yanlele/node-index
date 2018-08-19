@@ -1555,6 +1555,19 @@ module.exports = {
 可以尝试结合图片打包，都是没有任何问题的
 
 
+### ### <div id="class2-item05">05、html中引入图片</div>
+想在html中引入图片，我们所需要借助的就是html-loader                   
+配置项：                    
+attrs: [img:src]                
+
+#### 安装模块
+npm install html-loader --save-dev                  
+
+#### 具体使用               
+如果我们不做任何处理，直接打包，打包之后的文件是找不到图片资源的
+
+
+
 
 
 
