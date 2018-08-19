@@ -1471,6 +1471,30 @@ module.exports = {
 }
 ```
 
+#### 使用imports-loader 可以插入第三方变量                 
+这个loader 可以作用在我们具体某一个文件下面，让那个引用的文件里面的模块做为通用变量的范围来使用                     
+在webpack 中做如下配置：                    
+```javascript
+module.exports = {
+    module: {
+        rules: [
+            {
+                test: path.resolve(__dirname, 'src/app.js'),
+                use: [
+                    {
+                        loader: 'imports-loader',
+                        options: {
+                            $: 'jquery'
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+这个时候，就可以删除Webpack.ProvidePlugin插件了，然后jquery文件的查找，跟上面两种方式是一样的
+
 
 
 
