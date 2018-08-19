@@ -1496,6 +1496,38 @@ module.exports = {
 这个时候，就可以删除Webpack.ProvidePlugin插件了，然后jquery文件的查找，跟上面两种方式是一样的
 
 
+### <div id="class2-item02">04、html-in-webpack-生成html</div>
+因为每次打包都会生成不同的HTML，所以我们希望没吃都自动引入JS，css等静态资源                      
+自动生成html、场景优化、
+
+#### 生成html: HtmlWebpackPlugin                  
+通过这个插件生成一个html的时候，我们通常会给定一个模板，这个模板使我们想要的html结构
+配置项:                
+template: 指定配置的模板                   
+filename: 输出文件名                 
+minify: 是否压缩                    
+chunks: 指定那些chunk是需要自动加入到html中的                     
+inject: 是否通过标签形式插入html中，如果改为false，那就只能手动插入了
+
+**首先安装模块：** npm install html-webpack-plugin --save-dev                      
+webpack 做如下配置：                      
+```javascript
+module.exports = {
+    plugins: [
+        //......
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: './index.html',
+            inject: false,
+        }),
+        //......
+    ]
+}
+```
+做如下配置之后，就只会生成html, 但是不会自动插入js和css文件                 
+如果我们做修改的时候，把CSS和JS都改为有版本号的文件名字, 然后祛除inject:false            
+打包之后，会发现样式和JS都被自动注入成功了                      
+
 
 
 
