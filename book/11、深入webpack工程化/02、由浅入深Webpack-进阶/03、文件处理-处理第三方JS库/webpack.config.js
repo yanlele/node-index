@@ -16,6 +16,12 @@ module.exports = {
         chunkFilename: '[name].bundle.js',              //动态打包文件名
     },
 
+    resolve: {
+         alias: {
+             jquery$: path.resolve(__dirname, 'src/lib/jquery.min.js')                  // 之所以要用jquery$ ,表示这是一个文件而已；
+         }
+    },
+
     module: {
         rules: [
             {

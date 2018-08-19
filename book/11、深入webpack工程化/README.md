@@ -1437,19 +1437,40 @@ module.exports = {
 第二个处理方式： imports-loader；
 第三种处理方式是： 全局window对象；           
 
-本节项目中，用jQuery为例子来说，如果是直接引用的cdn的jQuery，那么直接引用，就可以使用$符号了；                 
+本节项目中，用jQuery为例子来说，如果是直接引用的cdn的jQuery，那么直接引用，就可以使用$符号了；                                 
+
+#### 模块化的jquery使用方式                     
 如果jQuery是通过npm install 来安装的，这个时候我们可以在webpack中添加如下的设置：               
 ```javascript
 module.exports = {
-        plugins: [
-            //......
-            new Webpack.ProvidePlugin({
-                $: 'jquery'
-            })
-            //......
-        ]
+    plugins: [
+        //......
+        new Webpack.ProvidePlugin({
+            $: 'jquery'
+        })
+        //......
+    ]
 }
 ```
+然后直接打包是没有问题的，可以征程运行的。                           
+
+
+#### 如果公共资源包在本项目内部的那种情况处理办法                      
+首要要保证本地模块化安装的时候没有jQuery： npm uninstall jquery --save                    
+如果不更改配置，直接打包上面的文件，是找不到模块的。这个时候我们就要用到resolve.alias: 别名的方式，解析到我们放置jQuery的目录去。                     
+所以多添加一条这样的配置就可以了                                             
+```javascript
+module.exports = {
+    //......
+    resolve: {
+         alias: {
+             jquery$: path.resolve(__dirname, 'src/lib/jquery.min.js')                  // 之所以要用jquery$ ,表示这是一个文件而已；
+         }
+    },
+    //......
+}
+```
+
 
 
 
