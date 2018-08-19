@@ -1528,6 +1528,29 @@ module.exports = {
 如果我们做修改的时候，把CSS和JS都改为有版本号的文件名字, 然后祛除inject:false            
 打包之后，会发现样式和JS都被自动注入成功了                      
 
+#### 多entry注入                   
+如果我们不指定chunks的情况下，那么会自动把所有的entry， 都注入到html中去，但是如果指定了chunks，那么只会把指定的chunks注入到页面中去；               
+```javascript
+module.exports = {
+    plugins: [
+        //......
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: './index.html',
+            chunks: ['app'],
+            minify: {
+                collapseWhitespace: true                //祛除空格
+            }
+        }),
+        //......
+    ]
+}
+```
+
+
+#### 解决加载不到JS和CSS的问题                        
+按照上面的打包之后，打包是没有问题的，就是打包之后的页面访问不到资源，因为是资源路径有问题：                      
+原因是出在了publicPath身上，在entry配置中，删除publicPath， 或者设置为空就可以了；                          
 
 
 

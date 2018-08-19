@@ -13,7 +13,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].bundle.[hash:5].js',
-        publicPath: './dist/',
+        publicPath: '',
         chunkFilename: '[name].bundle.[hash:5].js',              //动态打包文件名
     },
 
@@ -60,6 +60,28 @@ module.exports = {
                 })
             },
             {
+                test: /\.(png|jpg|jpeg|gif)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 1024 * 10,
+                            fallback: {
+                                loader: 'file-loader',
+                                options: {
+                                    // useRelativePath: true,
+                                    publicPath: '../img',
+                                    outputPath: 'img',
+                                }
+                            }
+                        }
+                    },
+                    {
+                        loader: 'img-loader'
+                    }
+                ]
+            },
+            {
                 test: path.resolve(__dirname, 'src/app.js'),
                 use: [
                     {
@@ -90,7 +112,11 @@ module.exports = {
 
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: './index.html'
+            template: './index.html',
+            chunks: ['app'],
+            minify: {
+                collapseWhitespace: true                //祛除空格
+            }
         }),
 
         new Webpack.optimize.UglifyJsPlugin()
