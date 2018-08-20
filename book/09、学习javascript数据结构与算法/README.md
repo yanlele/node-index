@@ -1779,7 +1779,27 @@ console.log(array.toString());
 
 
 #### 10.1.3 插入排序                        
+插入排序每次排一个数组项，以此方式构建最后的排序数组。假定第一项已经排序了，接着，它和第二项进行比较，第二项是应该待在原位还是插到第一项之前呢？
+这样，头两项就已正确排序，接着和第三项比较（它是该插入到第一、第二还是第三的位置呢？），以此类推。                       
 
+具体代码实现：             
+```javascript
+// 插入法排序
+insertionSort() {
+    let length = this.array.length, j, temp;
+    for(let i = 1; i < length; i++) {
+        j = i ;
+        temp = this.array[i];
+        while (j > 0 && this.array[j -1] > temp) {
+            this.array[j] = this.array[j - 1];
+            j--;
+        }
+        this.array[j] = temp;
+    }
+}
+```
+下面的示意图展示了一个插入排序的实例：                 
+![10-4](./10章、排序和搜索算法/img/10-4.png)                     
 
 
 
