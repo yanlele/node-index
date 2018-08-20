@@ -4,6 +4,7 @@ class ArrayList {
         this.array = [];
     }
 
+    /*排序算法*/
     //冒泡法排序
     bubbleSort() {
         let length = this.array.length;
@@ -134,7 +135,18 @@ class ArrayList {
         array[index2] = temp;
     }
 
+    /*搜索算法*/
+    // 顺序搜索法
+    sequentialSearch(item) {
+        for(let i = 0; i < this.array.length, i++) {
+            if(item === this.array[i]) {
+                return i;
+            }
+        }
+        return -1;
+    }
 
+    /*辅助函数方法*/
     swap(index1, index2) {
         let temp = this.array[index1];
         this.array[index1] = this.array[index2];
