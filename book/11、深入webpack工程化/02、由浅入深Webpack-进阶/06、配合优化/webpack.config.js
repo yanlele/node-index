@@ -4,6 +4,7 @@ const PurifyCSS = require('purifycss-webpack');
 const glob = require('glob-all');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin');
 
 module.exports = {
     entry: {
@@ -25,6 +26,14 @@ module.exports = {
 
     module: {
         rules: [
+            {
+                test: /\.js$/,
+                use: [
+                    {
+                        loader: 'babel-loader'
+                    }
+                ]
+            },
             {
                 test: /\.less$/,
                 use: ExtractTextWebpackPlugin.extract({
@@ -121,10 +130,18 @@ module.exports = {
             ]),
         }),
 
+        new Webpack.optimize.CommonsChunkPlugin({
+            name: 'manifest'
+        }),
+
+        new HtmlInlineChunkPlugin({
+            inlineChunks: ['manifest']
+        }),
+
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './index.html',
-            chunks: ['app'],
+            // chunks: ['app'],
             minify: {
                 collapseWhitespace: false                //祛除空格
             }
