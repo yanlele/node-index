@@ -233,6 +233,8 @@
     - [30、handlebars-helpers注入服务端渲染方法](./18年/07月/15、handlebars-helpers注入服务端渲染方法)
     - [31、对官方handlebars-layouts进行扩展，支持指定particles](./18年/07月/16、对官方handlebars-layouts进行扩展，支持指定particles/handlebars-layout.js)
     - [32、js加解密库: crypto-js](https://github.com/brix/crypto-js)
+    - [33、服务端生成二维码:qr-image](https://github.com/alexeyten/qr-image)
+    - [34、客户端生成二维码:jrQrcode](https://github.com/diamont1001/jrQrcode)
     
 
 
