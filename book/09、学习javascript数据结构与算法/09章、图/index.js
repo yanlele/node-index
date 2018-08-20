@@ -72,6 +72,16 @@ class Graph {
         };
     }
 
+    // 深度优先算法实现
+    dfs(callback) {
+        let color = this.initializeColor();
+        for(let i = 0;i<this.vertices.length; i++) {
+            if(color[this.vertices[i]] === 'white') {
+                this.dfsVisit(this.vertices[i], color, callback);
+            }
+        }
+    }
+
 
     toString() {
         let s = '';
@@ -92,6 +102,21 @@ class Graph {
             color[this.vertices[i]] = 'white';
         }
         return color;
+    }
+
+    dfsVisit(u, color, callback) {
+        color[u] = 'grey';
+        if(callback) {
+            callback(u);
+        }
+        let neighbors = this.adjList.get(u);
+        for (let i = 0; i< neighbors.length; i++) {
+            let w = neighbors[i];
+            if(color[w] === 'white') {
+                this.dfsVisit(w, color, callback);
+            }
+        }
+        color[u] = 'black';
     }
 }
 
