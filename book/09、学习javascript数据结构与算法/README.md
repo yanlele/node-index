@@ -1678,7 +1678,7 @@ class ArrayList {
 }
 ```
 
-**10.1.1 冒泡排序**                     
+#### 10.1.1 冒泡排序                                         
 人们开始学习排序算法时，通常都先学冒泡算法，因为它在所有排序算法中最简单。然而，从运行时间的角度来看，冒泡排序是最差的一个。                  
 冒泡排序比较任何两个相邻的项，如果第一个比第二个大，则交换它们。                    
 ```javascript
@@ -1736,12 +1736,49 @@ modifiedBubbleSort() {
 ```
 下面这个示意图展示了改进后的冒泡排序算法是如何执行的：                             
 ![10-2](./10章、排序和搜索算法/img/10-2.png)                             
+                           
 
 
+#### 10.1.2 选择排序                                     
+选择排序算法是一种原址比较排序算法。选择排序大致的思路是找到数据结构中的最小值并将其放置在第一位，接着找到第二小的值并将其放在第二位，以此类推。                    
+具体代码实现示例：           
+```javascript
+// 选择排序
+selectionSort() {
+    let length = this.array.length, indexMin;
+    for(let i = 0; i < length -1; i++) {
+        indexMin = i;
+        for(let j = i; j < length; j++) {
+            if(this.array[indexMin] > this.array[j]) {
+                indexMin = j;
+            }
+        }
+        if(i !== indexMin) {
+            this.swap(i, indexMin);
+        }
+    }
+}
+
+swap(index1, index2) {
+    let temp = this.array[index1];
+    this.array[index1] = this.array[index2];
+    this.array[index2] = temp;
+}
+```
+ 
+用以下代码段来测试选择排序算法：                        
+```javascript
+array = createNonSortedArray(5);
+console.log(array.toString());
+array.selectionSort();
+console.log(array.toString());
+```
+选择排序同样也是一个复杂度为O(n 2 )的算法。和冒泡排序一样，它包含有嵌套的两个循环，这导致了二次方的复杂度。                                  
+算法执行图如下                 
+![10-3](./10章、排序和搜索算法/img/10-3.png)                     
 
 
-
-
+#### 10.1.3 插入排序                        
 
 
 

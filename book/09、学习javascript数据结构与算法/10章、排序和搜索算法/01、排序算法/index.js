@@ -32,8 +32,27 @@ class ArrayList {
         }
     }
 
+    // 选择排序
+    selectionSort() {
+        let length = this.array.length, indexMin;
+        for(let i = 0; i < length -1; i++) {
+            indexMin = i;
+            for(let j = i; j < length; j++) {
+                if(this.array[indexMin] > this.array[j]) {
+                    indexMin = j;
+                }
+            }
+            if(i !== indexMin) {
+                this.swap(i, indexMin);
+            }
+        }
+    }
 
-
+    swap(index1, index2) {
+        let temp = this.array[index1];
+        this.array[index1] = this.array[index2];
+        this.array[index2] = temp;
+    }
 
 
     insert(item) {

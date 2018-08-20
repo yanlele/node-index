@@ -7,7 +7,14 @@ function createNonSortedArray(size){
     }
     return array;
 }
+console.log('======================== 下面是冒泡排序');
 let array = createNonSortedArray(5);
 console.log(array.toString());
 array.bubbleSort();
+console.log(array.toString());
+
+console.log('======================== 下面是选择排序');
+array = createNonSortedArray(5);
+console.log(array.toString());
+array.selectionSort();
 console.log(array.toString());
