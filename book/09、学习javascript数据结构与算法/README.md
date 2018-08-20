@@ -1696,7 +1696,46 @@ bubbleSort() {
     }
 }
 ```
+下面这个示意图展示了冒泡排序的工作过程：                    
+![10-1](./10章、排序和搜索算法/img/10-1.png)                     
 
+测试代码如下：             
+```javascript
+const ArrayList = require('./index');
+
+function createNonSortedArray(size){
+    let array = new ArrayList();
+    for (let i = size; i> 0; i--){
+        array.insert(i);
+    }
+    return array;
+}
+let array = createNonSortedArray(5);
+console.log(array.toString());
+array.bubbleSort();
+console.log(array.toString());
+```
+
+**改进后的冒泡排序**                    
+如果从内循环减去外循环中已跑过的轮数，就可以避免内循环中所有不必要的比较                        
+代码示例如下：             
+```javascript
+// 改进后的冒泡法排序
+modifiedBubbleSort() {
+    let length = this.array.length;
+    for(let i = 0; i < length; i++) {
+        for (let j = 0; j < length-1-i; j++) {
+            if(this.array[j]> this.array[j+1]) {
+                let temp = this.array[j];
+                this.array[j] = this.array[j+1];
+                this.array[j+1] = temp;
+            }
+        }
+    }
+}
+```
+下面这个示意图展示了改进后的冒泡排序算法是如何执行的：                             
+![10-2](./10章、排序和搜索算法/img/10-2.png)                             
 
 
 

@@ -18,6 +18,20 @@ class ArrayList {
         }
     }
 
+    // 改进后的冒泡法排序
+    modifiedBubbleSort() {
+        let length = this.array.length;
+        for(let i = 0; i < length; i++) {
+            for (let j = 0; j < length-1-i; j++) {
+                if(this.array[j]> this.array[j+1]) {
+                    let temp = this.array[j];
+                    this.array[j] = this.array[j+1];
+                    this.array[j+1] = temp;
+                }
+            }
+        }
+    }
+
 
 
 
@@ -30,3 +44,5 @@ class ArrayList {
         return this.array.join();
     }
 }
+
+module.exports = ArrayList;
