@@ -48,3 +48,6 @@ for (let i=1; i<myVertices.length; i++){ //{10}
     }
     console.log(s); //{19}
 }
+
+console.log('================================');
+graph.dfs(printNode);

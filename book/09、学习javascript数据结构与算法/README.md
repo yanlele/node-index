@@ -1543,8 +1543,111 @@ A - B - E - I
 (3) 标注v为已被探索的（黑色）。              
 
 具体算法实现：                         
+```javascript
+class Graph {
+    constructor() {
+        this.vertices = [];
+        this.adjList = new Dictionary();
+    }
+    
+    // 深度优先算法实现
+    dfs(callback) {
+        let color = this.initializeColor();
+        for(let i = 0;i<this.vertices.length; i++) {
+            if(color[this.vertices[i]] === 'white') {
+                this.dfsVisit(this.vertices[i], color, callback);
+            }
+        }
+    }
+    
+    dfsVisit(u, color, callback) {
+        color[u] = 'grey';
+        if(callback) {
+            callback(u);
+        }
+        let neighbors = this.adjList.get(u);
+        for (let i = 0; i< neighbors.length; i++) {
+            let w = neighbors[i];
+            if(color[w] === 'white') {
+                this.dfsVisit(w, color, callback);
+            }
+        }
+        color[u] = 'black';
+    }
+}
+```
+其他省略                    
+让我们执行下面的代码段来测试一下 dfs 方法：                        
+graph.dfs(printNode);                   
+输出如下：                   
+```
+Visited vertex: A
+Visited vertex: B
+Visited vertex: E
+Visited vertex: I
+Visited vertex: F
+Visited vertex: C
+Visited vertex: D
+Visited vertex: G
+Visited vertex: H
+```
+
+下面这个示意图展示了该算法每一步的执行过程：                      
+![9-11](./09章、图/img/9-11.png)                       
 
 
+**1. 探索深度优先算法**                     
+到目前为止，我们只是展示了深度优先搜索算法的工作原理。我们可以用该算法做更多的事情，而不只是输出被访问顶点的顺序。                   
+
+对于给定的图G，我们希望深度优先搜索算法遍历图G的所有节点，构建“森林”（有根树的一个集合）以及一组源顶点（根），
+并输出两个数组：发现时间和完成探索时间。我们可以修改dfs 方法来返回给我们一些信息：                         
+
+  顶点u的发现时间d[u]；                
+  当顶点u被标注为黑色时，u的完成探索时间f[u]；                
+  顶点u的前溯点p[u]。             
+
+算法函数的具体实现                       
+```javascript
+// 深度优先算法的优化
+DFS() {
+    let color = this.initializeColor(), d = [], f = [], p = [];
+    this.time = 0;
+    for (let i = 0; i < this.vertices.length; i++) {
+        f[this.vertices[i]] = 0;
+        d[this.vertices[i]] = 0;
+        p[this.vertices[i]] = null;
+    }
+
+    for (let i = 0; i < this.vertices.length; i++) {
+        if (color[this.vertices[i]] === 'white') {
+            this.DFSVisit(this.vertices[i], color, d, f, p);
+        }
+    }
+
+    return {
+        discovery: d,
+        finished: f,
+        predecessors: p
+    }
+}
+
+DFSVisit(u, color, d, f, p) {
+    console.log('discovered ' + u);
+    color[u] = 'grey';
+    d[u] = ++this.time;
+    let neighbors = this.adjList.get(u);
+    for (let i = 0; i < neighbors.length; i++) {
+        let w = neighbors[i];
+        if (color[w] === 'white') {
+            p[w] = u;
+            this.DFSVisit(w, color, d, f, p);
+        }
+    }
+    color[u] = 'black';
+    f[u] = ++this.time;
+    console.log('explored ' + u);
+}
+```
 
 
 

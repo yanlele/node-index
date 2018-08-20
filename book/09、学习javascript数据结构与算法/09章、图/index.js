@@ -5,6 +5,7 @@ class Graph {
     constructor() {
         this.vertices = [];
         this.adjList = new Dictionary();
+        this.time = 0;
     }
 
     // 一个用来向图中添加一个新的顶点（因为图实例化后是空的）
@@ -47,7 +48,7 @@ class Graph {
             d = [], //{1}
             pred = []; //{2}
         queue.enqueue(v);
-        for (let i=0; i<this.vertices.length; i++){ //{3}
+        for (let i = 0; i < this.vertices.length; i++) { //{3}
             d[this.vertices[i]] = 0; //{4}
             pred[this.vertices[i]] = null; //{5}
         }
@@ -75,13 +76,52 @@ class Graph {
     // 深度优先算法实现
     dfs(callback) {
         let color = this.initializeColor();
-        for(let i = 0;i<this.vertices.length; i++) {
-            if(color[this.vertices[i]] === 'white') {
+        for (let i = 0; i < this.vertices.length; i++) {
+            if (color[this.vertices[i]] === 'white') {
                 this.dfsVisit(this.vertices[i], color, callback);
             }
         }
     }
 
+    // 深度优先算法的优化
+    DFS() {
+        let color = this.initializeColor(), d = [], f = [], p = [];
+        this.time = 0;
+        for (let i = 0; i < this.vertices.length; i++) {
+            f[this.vertices[i]] = 0;
+            d[this.vertices[i]] = 0;
+            p[this.vertices[i]] = null;
+        }
+
+        for (let i = 0; i < this.vertices.length; i++) {
+            if (color[this.vertices[i]] === 'white') {
+                this.DFSVisit(this.vertices[i], color, d, f, p);
+            }
+        }
+
+        return {
+            discovery: d,
+            finished: f,
+            predecessors: p
+        }
+    }
+
+    DFSVisit(u, color, d, f, p) {
+        console.log('discovered ' + u);
+        color[u] = 'grey';
+        d[u] = ++this.time;
+        let neighbors = this.adjList.get(u);
+        for (let i = 0; i < neighbors.length; i++) {
+            let w = neighbors[i];
+            if (color[w] === 'white') {
+                p[w] = u;
+                this.DFSVisit(w, color, d, f, p);
+            }
+        }
+        color[u] = 'black';
+        f[u] = ++this.time;
+        console.log('explored ' + u);
+    }
 
     toString() {
         let s = '';
@@ -106,13 +146,13 @@ class Graph {
 
     dfsVisit(u, color, callback) {
         color[u] = 'grey';
-        if(callback) {
+        if (callback) {
             callback(u);
         }
         let neighbors = this.adjList.get(u);
-        for (let i = 0; i< neighbors.length; i++) {
+        for (let i = 0; i < neighbors.length; i++) {
             let w = neighbors[i];
-            if(color[w] === 'white') {
+            if (color[w] === 'white') {
                 this.dfsVisit(w, color, callback);
             }
         }
