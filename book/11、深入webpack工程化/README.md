@@ -23,7 +23,10 @@
     - [03、文件处理-处理第三方JS库](#class2-item03)
     - [04、html-in-webpack-生成html](#class2-item04)
     - [05、html中引入图片](#class2-item05)
-    
+    - [06、配合优化](#class2-item06)
+
+- [三、webpack构建本地开发环境](#class3)
+    - [01、webpack_watch_mode](#class3-item01)
     
 
 ## <p id='class1'>一、由浅入深Webpack</p>              
@@ -1793,8 +1796,42 @@ module.exports = {
         new Webpack.optimize.UglifyJsPlugin()
     ]
 };
-
 ```
+
+## <div id="class3">三、webpack构建本地开发环境</div>
+搭建本地开发环境，通常有三种方式：                   
+webpack watch mode: 需要自己搭建服务器               
+webpack-dev-server: 官方给搭建的服务器               
+express + webpack-dev-middleware: 自己可扩展性特别高             
+
+
+### <div id="class3-item01">01、webpack_watch_mode</div>
+直接执行命令行 webpack -watch / webpack -w 就可以了                
+
+#### 模块的安装                  
+如果需要每次启动webpack 的时候，就删除之前已经打包生成的文件，就可以用到： npm install clean-webpack-plugin --save-dev
+
+#### webpack 配置
+每次启动webpack的时候，就要自动删除打包文件目录                     
+```javascript
+module.exports = {
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'js/[name].bundle.[hash:5].js',
+        publicPath: '/',
+        chunkFilename: '[name].bundle.[hash:5].js',              //动态打包文件名
+    },
+    plugins: [
+            //......
+            new CleanWebpackPlugin(['dist']),
+        ]
+}
+```
+--display-reasons
+执行命令行 `webpack --watch --progress --display-reasons --color` 可以看到打包过程              
+但是我们访问的时候还是只能通过打包后的文件访问，虽然更改了代码文件，打包文件会跟着发生变化，但是并没有起到根本上解决绝对路径的问题；                  
+这个时候需要本地搭建一个本地服务才行；
+
 
 
 

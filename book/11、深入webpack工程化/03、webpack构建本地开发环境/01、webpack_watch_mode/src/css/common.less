@@ -1,0 +1,25 @@
+body {
+    font-size: 20px;
+    color: blue;
+}
+
+:root {
+    --mainColor: red;
+}
+
+a {
+    color: var(--mainColor);
+}
+
+.bigBox {
+    border: 5px solid #000000;
+    height: 400px;
+    width: 400px;
+    color: #000;
+
+    > div {
+        width: 128px;
+        height: 128px;
+        float: left;
+    }
+}
