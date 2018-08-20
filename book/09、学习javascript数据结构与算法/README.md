@@ -1802,6 +1802,59 @@ insertionSort() {
 ![10-4](./10章、排序和搜索算法/img/10-4.png)                     
 
 
+#### 10.1.4 归并排序                        
+归并排序是第一个可以被实际使用的排序算法。你在本书中学到的前三个排序算法性能不好，但归并排序性能不错，其复杂度为O(nlog n )。                             
+
+归并排序是一种分治算法。其思想是将原始数组切分成较小的数组，直到每个小数组只有一个位置，接着将小数组归并成较大的数组，直到最后只有一个排序完毕的大数组。                        
+
+由于是分治法，归并排序也是递归的：           
+```javascript
+// 归并排序
+mergeSort() {
+    this.array = this.mergeSortRec(this.array);
+}
+mergeSortRec(array) {
+    let length = this.array.length;
+    if(length === 1) {
+        return this.array;
+    }
+    let mid = Math.floor(length/2),
+        left = this.array.slice(0, mid),
+        right = this.array.slice(mid, length);
+    return this.merge(this.mergeSortRec(left), this.mergeSortRec(right))
+}
+merge(left, right) {
+    let result = [], il = 0, ir = 0;
+    while (il < left.length && ir < right.length) {
+        if(left[il] < right[ir]) {
+            result.push(left[il++]);
+        }else {
+            result.push(right[ir++]);
+        }
+    }
+    while (il < left.length) {
+        result.push(left[il++]);
+    }
+    while (ir <right.length) {
+        result.push(right[ir++]);
+    }
+    return result;
+}
+```
+
+如果执行 mergeSort 函数，下图是具体的执行过程：                   
+![10-5](./10章、排序和搜索算法/img/10-5.png)                     
+
+
+#### 10.1.5 快速排序                    
+快速排序也许是最常用的排序算法了。它的复杂度为O(nlog n )，且它的性能通常比其他的复杂度为O(nlog n )的排序算法要好。                         
+和归并排序一样，快速排序也使用分治的方法，将原始数组分为较小的数组（但它没有像归并排序那样将它们分割开）。                   
+快速排序比到目前为止你学过的其他排序算法要复杂一些。                  
+(1) 首先，从数组中选择中间一项作为主元。                  
+(2) 创建两个指针，左边一个指向数组第一个项，右边一个指向数组最后一个项。移动左指针直到我们找到一个比主元大的元素，接着，
+移动右指针直到找到一个比主元小的元素，然后交换它们，重复这个过程，直到左指针超过了右指针。
+这个过程将使得比主元小的值都排在主元之前，而比主元大的值都排在主元之后。这一步叫作划分操作。                          
+(3) 接着，算法对划分后的小数组（较主元小的值组成的子数组，以及较主元大的值组成的子数组）重复之前的两个步骤，直至数组已完全排序。                          
 
 
 

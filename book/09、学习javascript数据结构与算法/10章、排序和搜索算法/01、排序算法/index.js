@@ -62,6 +62,39 @@ class ArrayList {
         }
     }
 
+    // 归并排序
+    mergeSort() {
+        this.array = this.mergeSortRec(this.array);
+    }
+    mergeSortRec(array) {
+        let length = this.array.length;
+        if(length === 1) {
+            return this.array;
+        }
+        let mid = Math.floor(length/2),
+            left = this.array.slice(0, mid),
+            right = this.array.slice(mid, length);
+        return this.merge(this.mergeSortRec(left), this.mergeSortRec(right))
+    }
+    merge(left, right) {
+        let result = [], il = 0, ir = 0;
+        while (il < left.length && ir < right.length) {
+            if(left[il] < right[ir]) {
+                result.push(left[il++]);
+            }else {
+                result.push(right[ir++]);
+            }
+        }
+        while (il < left.length) {
+            result.push(left[il++]);
+        }
+        while (ir <right.length) {
+            result.push(right[ir++]);
+        }
+        return result;
+    }
+
+
     swap(index1, index2) {
         let temp = this.array[index1];
         this.array[index1] = this.array[index2];
