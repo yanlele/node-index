@@ -1653,13 +1653,49 @@ DFSVisit(u, color, d, f, p) {
   时间（ time ）变量值的范围只可能在图顶点数量的一倍到两倍之间；                   
   对于所有的顶点 u ，d[u]<f[u]（意味着，发现时间的值比完成时间的值小，完成时间意思是所有顶点都已经被探索过了）。                        
 在这两个假设下，我们有如下的规则： `1 ≤ d[u] < f[u] ≤ 2|V|`                          
-![9-12](./09章、图/img/9-11.png)                   
+![9-12](./09章、图/img/9-11.png)                                   
+
+[具体代码请见本节示例](./09章、图/)                      
 
 
+## <div id="class10">10章、排序和搜索算法</div>
 
+### <div id="class10-01">10.1 排序算法</div>                    
+在开始排序算法之前，我们先创建一个数组（列表）来表示待排序和搜索的数据结构。                  
+```javascript
+class ArrayList {
+    constructor() {
+        this.array = [];
+    }
+    
+    insert(item) {
+        this.array.push(item);
+    }
+    
+    toString() {
+        return this.array.join();
+    }
+}
+```
 
-
-
+**10.1.1 冒泡排序**                     
+人们开始学习排序算法时，通常都先学冒泡算法，因为它在所有排序算法中最简单。然而，从运行时间的角度来看，冒泡排序是最差的一个。                  
+冒泡排序比较任何两个相邻的项，如果第一个比第二个大，则交换它们。                    
+```javascript
+//冒泡法排序
+bubbleSort() {
+    let length = this.array.length;
+    for(let i = 0; i < length; i++) {
+        for (let j = 0; j < length;j++) {
+            if(this.array[j]> this.array[j+1]) {
+                let temp = this.array[j];
+                this.array[j] = this.array[j+1];
+                this.array[j+1] = temp;
+            }
+        }
+    }
+}
+```
 
 
 
