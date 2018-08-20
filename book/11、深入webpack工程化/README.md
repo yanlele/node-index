@@ -18,6 +18,11 @@
     - [12、Tree-shaking](#class1-item12)
     
 - [二、由浅入深Webpack - 进阶](#class2)
+    - [01、文件处理 - 图片处理](#class2-item01)
+    - [02、文件处理-字体处理](#class2-item02)
+    - [03、文件处理-处理第三方JS库](#class2-item03)
+    - [04、html-in-webpack-生成html](#class2-item04)
+    - [05、html中引入图片](#class2-item05)
     
     
 
@@ -1496,7 +1501,7 @@ module.exports = {
 这个时候，就可以删除Webpack.ProvidePlugin插件了，然后jquery文件的查找，跟上面两种方式是一样的
 
 
-### <div id="class2-item02">04、html-in-webpack-生成html</div>
+### <div id="class2-item04">04、html-in-webpack-生成html</div>
 因为每次打包都会生成不同的HTML，所以我们希望没吃都自动引入JS，css等静态资源                      
 自动生成html、场景优化、
 
@@ -1555,7 +1560,7 @@ module.exports = {
 可以尝试结合图片打包，都是没有任何问题的
 
 
-### ### <div id="class2-item05">05、html中引入图片</div>
+### <div id="class2-item05">05、html中引入图片</div>
 想在html中引入图片，我们所需要借助的就是html-loader                   
 配置项：                    
 attrs: [img:src]                
