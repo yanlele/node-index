@@ -146,6 +146,27 @@ class ArrayList {
         return -1;
     }
 
+    //二分搜索
+    binarySearch(item) {
+        this.quickSort();
+        let low = 0, height = this.array.length -1, mid, element;
+
+        while (low <= height) {
+            mid = Math.floor((low + height) / 2);
+            element = this.array[mid];
+            if(item > element) {
+                low = mid + 1;
+            } else if(item < element) {
+                height = mid - 1;
+            } else {
+                return mid;
+            }
+        }
+        return -1;
+    }
+
+
+
     /*辅助函数方法*/
     swap(index1, index2) {
         let temp = this.array[index1];

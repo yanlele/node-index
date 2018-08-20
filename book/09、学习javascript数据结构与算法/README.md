@@ -1931,10 +1931,41 @@ sequentialSearch(item) {
 
 
 
+二分搜索算法的原理和猜数字游戏类似，就是那个有人说“我正想着一个1到100的数字”的
+游戏。我们每回应一个数字，那个人就会说这个数字是高了、低了还是对了。
 
 
+#### 10.2.2 二分搜索                    
+二分搜索算法的原理和猜数字游戏类似，就是那个有人说“我正想着一个1到100的数字”的游戏。我们每回应一个数字，那个人就会说这个数字是高了、低了还是对了。                        
+这个算法要求被搜索的数据结构已排序。以下是该算法遵循的步骤。          
+(1) 选择数组的中间值。           
+(2) 如果选中值是待搜索值，那么算法执行完毕（值找到了）。          
+(3) 如果待搜索值比选中值要小，则返回步骤1并在选中值左边的子数组中寻找。          
+(4) 如果待搜索值比选中值要大，则返回步骤1并在选种值右边的子数组中寻找。          
+具体代码实现：             
+```javascript
+//二分搜索
+binarySearch(item) {
+    this.quickSort();
+    let low = 0, height = this.array.length -1, mid, element;
 
+    while (low <= height) {
+        mid = Math.floor((low + height) / 2);
+        element = this.array[mid];
+        if(item > element) {
+            low = mid + 1;
+        } else if(item < element) {
+            height = mid - 1;
+        } else {
+            return mid;
+        }
+    }
+    return -1;
+}
+```
 
+给定下图所示数组，让我们试试看搜索2。这些是算法将会执行的步骤：                
+![10-13](./10章、排序和搜索算法/img/10-3.png)                    
 
 
 
