@@ -94,6 +94,46 @@ class ArrayList {
         return result;
     }
 
+    //快速排序
+    quickSort() {
+        this.quick(this.array, 0, this.array.length - 1);
+    }
+    quick(array, left, right) {
+        let index;
+        if(array.length > 1) {
+            index = this.partition(array, left, right);
+            if(left < index -1) {
+                this.quick(array, left, index - 1);
+            }
+            if(index < right) {
+                this.quick(array, index, right);
+            }
+        }
+    }
+    //划分过程
+    partition(array, left, right) {
+        let pivot = array[Math.floor((right + left) / 2)], i = left, j = right;
+        while (i <= j) {
+            while (array[i] < pivot) {
+                i++;
+            }
+            while (array[j] > pivot) {
+                j++;
+            }
+            if(i <= j) {
+                this.swapQuickStort(array, i, j);
+                i++;
+                j++;
+            }
+        }
+        return i;
+    }
+    swapQuickStort(array, index1, index2) {
+        let temp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = temp;
+    }
+
 
     swap(index1, index2) {
         let temp = this.array[index1];

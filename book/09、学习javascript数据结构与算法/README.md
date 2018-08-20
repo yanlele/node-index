@@ -1855,6 +1855,63 @@ merge(left, right) {
 移动右指针直到找到一个比主元小的元素，然后交换它们，重复这个过程，直到左指针超过了右指针。
 这个过程将使得比主元小的值都排在主元之前，而比主元大的值都排在主元之后。这一步叫作划分操作。                          
 (3) 接着，算法对划分后的小数组（较主元小的值组成的子数组，以及较主元大的值组成的子数组）重复之前的两个步骤，直至数组已完全排序。                          
+具体实现过程：                 
+```javascript
+//快速排序
+quickSort() {
+    this.quick(this.array, 0, this.array.length - 1);
+}
+quick(array, left, right) {
+    let index;
+    if(array.length > 1) {
+        index = this.partition(array, left, right);
+        if(left < index -1) {
+            this.quick(array, left, index - 1);
+        }
+        if(index < right) {
+            this.quick(array, index, right);
+        }
+    }
+}
+//划分过程
+partition(array, left, right) {
+    let pivot = array[Math.floor((right + left) / 2)], i = left, j = right;
+    while (i <= j) {
+        while (array[i] < pivot) {
+            i++;
+        }
+        while (array[j] > pivot) {
+            j++;
+        }
+        if(i <= j) {
+            this.swapQuickStort(array, i, j);
+            i++;
+            j++;
+        }
+    }
+    return i;
+}
+swapQuickStort(array, index1, index2) {
+    let temp = array[index1];
+    array[index1] = array[index2];
+    array[index2] = temp;
+}
+```
+让我来一步步地看一个快速排序的实际例子：                    
+![10-6](./10章、排序和搜索算法/img/10-6.png)                 
+给定数组 [3, 5, 1, 6, 4, 7, 2] ，前面的示意图展示了划分操作的第一次执行。                            
+下面的示意图展示了对有较小值的子数组执行的划分操作（注意7和6不包含在子数组之内）：                  
+![10-7](./10章、排序和搜索算法/img/10-7.png)                 
+接着，我们继续创建子数组，请看下图，但是这次操作是针对上图中有较大值的子数组（有1的那个较小子数组不用再划分了，因为它仅含有一个项）。                         
+![10-8](./10章、排序和搜索算法/img/10-8.png)                                            
+子数组（ [2, 3, 5, 4] ）中的较小子数组（ [2, 3] ）继续进行划分（算法代码中的行 {5} ）：                   
+![10-9](./10章、排序和搜索算法/img/10-9.png)                     
+然后子数组（ [2, 3, 5, 4] ）中的较大子数组（ [5, 4] ）也继续进行划分（算法中的行），示意图如下：                     
+![10-10](./10章、排序和搜索算法/img/10-9.png)                    
+最终，较大子数组 [6, 7] 也会进行划分（ partition ）操作，快速排序算法的操作执行完成。                        
+
+
+
 
 
 
