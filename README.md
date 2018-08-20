@@ -49,7 +49,7 @@
 - [08、webpack专题](./book/08、webpack)
 - [09、学习javascript数据结构与算法](./book/09、学习javascript数据结构与算法)
 - [10、DOM和BOM](./book/10、DOM和BOM)
-- [11、11、深入webpack工程化](./book/11、深入webpack工程化/)
+- [11、深入webpack工程化](./book/11、深入webpack工程化/)
 
 
 ### <div id="class05">通用功能js模块组件</div>
