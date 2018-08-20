@@ -1633,6 +1633,11 @@ module.exports = {
 `<img src="${require('./src/assets/img/react.jpg')}" alt="react">`                      
 
 
+### <div id="class2-item06">06、配合优化</div>
+提前载入webpack 加载代码:                   
+inline-manifest-webpack-plugin                  
+html-webpack-inline-chunk-plugin                 
+本节介绍的是第二个插件的使用                      
 
 
 
