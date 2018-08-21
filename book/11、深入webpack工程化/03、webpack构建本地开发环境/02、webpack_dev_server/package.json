@@ -1,0 +1,12 @@
+{
+  "name": "yanle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "css.transform.js",
+  "scripts": {
+    "server": "webpack-dev-server --open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
