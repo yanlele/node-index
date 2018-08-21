@@ -143,6 +143,7 @@
     - [31、《SVG精髓》 阅读笔记](https://github.com/xswei/SVG_Essentials)
     - [32、css3新单位vw、vh、vmin、vmax的使用详解](./18年/08月/01、css3新单位vw、vh、vmin、vmax的使用详解/)
     - [33、关于闭包的研究](./18年/08月/02、关于闭包的研究/)
+    - [34、You Don't Need jQuery](https://github.com/nefe/You-Dont-Need-jQuery/blob/master/README.zh-CN.md)
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
