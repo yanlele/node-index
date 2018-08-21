@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="./index.js"></script>
+    <script src="../../../lib/jquery.min.js"></script>
 </head>
 <body>
 
 <div class="test">
-    <p>1231313213</p>
+    <p>1231313213
+        <span>aaaa</span>
+    </p>
 </div>
+<div>3213213121111111</div>
 
 <script>
-    console.log(window.dom.query('.test'));
-    console.log(window.dom.query('.test').find('p'));
+    // window.le.query('.test').find('p');
+    console.log(window.le.query('div').find('p'));
+    // console.log(document.querySelector('div').querySelectorAll('p'));
 </script>
 </body>
 </html>

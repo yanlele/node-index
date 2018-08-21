@@ -13,21 +13,35 @@ class Index {
         switch (select) {
             case startFlag === '.':
                 if (this.$.getElementsByClassName(select).length === 1) {
-                    return this.$.getElementsByClassName(select)[0]
+                    this.dom = this.$.getElementsByClassName(select)[0];
+                    return this;
                 }
                 return this.$.getElementsByClassName(select);
             case startFlag === '#':
-                return this.$.getElementById(select);
+                this.dom = this.$.getElementById(select);
+                return this;
             default:
                 if (this.$.querySelectorAll(select).length === 1) {
-                    return this.$.querySelectorAll(select)[0];
+                    this.dom = this.$.querySelectorAll(select)[0];
+                    return this;
                 }
-                return this.$.querySelectorAll(select);
+                this.dom = this.$.querySelectorAll(select);
+                return this;
         }
     }
 
     find(select) {
-        console.log(select);
+        if(select) {
+            if(this.dom.length >= 2) {
+                Object.keys(this.dom).map((key) => {
+                    console.log(this.dom[key].querySelectorAll(select)[0]);
+                    this.dom[key].querySelectorAll(select);
+                })
+            } else {
+                this.dom = this.dom.querySelectorAll(select);
+            }
+            return this;
+        }
     }
 }
 
@@ -45,5 +59,5 @@ class Tool {
         factory(global);
     }
 }(typeof window !== "undefined" ? window : this, function (window, noGlobal) {
-    window.dom = new Index();
+    window.le = new Index();
 }));
