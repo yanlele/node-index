@@ -1861,6 +1861,17 @@ overlay: 错误提示的遮罩
 npm install webpack-dev-server --save-dev               
 
 ### 具体配置                
+```javascript
+module.exports = {
+    devServer: {
+        port: 3001
+    },
+}
+```
+然后在根目录文件的package.json 配置 "server": "webpack-dev-server --open" 就可以启动了
+**这个地方**这个地方的测试，可能需要把这个文件夹下面的项目拷贝出来，然后另外找地方安装模块和执行才能看得到效果。
+
+
 
 
 
