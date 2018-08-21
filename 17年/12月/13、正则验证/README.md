@@ -70,7 +70,7 @@ console.log('email', /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/.test(email));
 /^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}$/
 ```
 
-11、给某一些位数做掩码规则：         
+11、给某一些位数做掩码规则（替换方式）：         
 ```javascript
 let phone = '152132837sfasdf46238746497741';
 let phoneMask = phone.replace(/^(\w{3})(\w*)(\w{4})$/, "$1 **** $3");
