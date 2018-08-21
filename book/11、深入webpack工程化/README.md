@@ -1834,6 +1834,38 @@ module.exports = {
 
 
 ### <div id="class3-item02">02、webpack-dev-server</div>                     
+### 作用
+live reloading 就是文件改变之后，可以自动帮我们刷新                   
+不能打包文件          
+路径的重定向              
+支持https             
+在浏览器中显示编译错误                     
+接口代理                
+模块热更新               
+
+
+### 配置参数
+devServer
+inline:                
+contentBase: 设置文本路径             
+port: 端口                
+historyApiFallback：错误页面重定向                  
+支持https: true/false             
+proxy：代理
+hot: 是否热更新                  
+openpage: 打开初始页面                
+lazy: 懒模式，访问什么页面就打包什么页面                 
+overlay: 错误提示的遮罩
+
+### 安装
+npm install webpack-dev-server --save-dev               
+
+### 具体配置                
+
+
+
+
+
 
 
 

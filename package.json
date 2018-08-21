@@ -76,7 +76,8 @@
     "ts-loader": "^3.2.0",
     "typescript": "^2.6.2",
     "url-loader": "^1.1.0",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^3.1.5"
   },
   "browserslist": [
     ">= 1%",
