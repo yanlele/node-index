@@ -1891,6 +1891,9 @@ plugins: [
 ];
 ```
 
+**其他的配置项：**
+
+historyApiFallback: true （任何路径都会重定向我们的首页地址）             
 
 
 
