@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const HtmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const Jarvis = require('webpack-jarvis');
 
 module.exports = {
     entry: {
@@ -24,9 +25,9 @@ module.exports = {
     },
 
     resolve: {
-         alias: {
-             jquery$: path.resolve(__dirname, 'src/lib/jquery.min.js')                  // 之所以要用jquery$ ,表示这是一个文件而已；
-         }
+        alias: {
+            jquery$: path.resolve(__dirname, 'src/lib/jquery.min.js')                  // 之所以要用jquery$ ,表示这是一个文件而已；
+        }
     },
 
     module: {
@@ -122,7 +123,7 @@ module.exports = {
 
     plugins: [
         new ExtractTextWebpackPlugin({
-            filename:  (getPath) => {
+            filename: (getPath) => {
                 return getPath('css/[name].min.[hash:5].css').replace('css/js', 'css');
             },
             allChunks: false
@@ -155,5 +156,9 @@ module.exports = {
         new Webpack.optimize.UglifyJsPlugin(),
 
         new CleanWebpackPlugin(['dist']),
+
+        new Jarvis({
+            port: 3002
+        })
     ]
 };
