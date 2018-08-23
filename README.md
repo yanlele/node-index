@@ -236,6 +236,7 @@
     - [32、js加解密库: crypto-js](https://github.com/brix/crypto-js)
     - [33、服务端生成二维码:qr-image](https://github.com/alexeyten/qr-image)
     - [34、客户端生成二维码:jrQrcode](https://github.com/diamont1001/jrQrcode)
+    - [35、Inquirer.js交互式命令行工具](./18年/08月/05、Inquirer.js交互式命令行工具/)
     
 
 
