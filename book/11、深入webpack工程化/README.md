@@ -1872,6 +1872,25 @@ module.exports = {
 **这个地方**这个地方的测试，可能需要把这个文件夹下面的项目拷贝出来，然后另外找地方安装模块和执行才能看得到效果。
 这个地方还有一个坑，就是如果只安装了webpack-dev-server 很可能起不起来服务，还要安装webpack-cli: `npm install webpack-cli --save-dev`                    
 还有一个很坑的地方，就是本套教程中讲述的webpack-dev-server版本是2版本的，但是最新的webpack-dev-server是3版本的，所以启动方式不一样了。这个地方需要去看看官网。          
+然后安装2.x版本之后，就可以顺利运行。
+
+
+**扩展知识点**
+介绍一款牛逼的webpack-dev-server的日志监控系统： [jarvis](https://github.com/zouhir/jarvis)                    
+使用的时候，直接安装 `npm install webpack-jarvis --save-dev`                  
+然后做如下的配置就可以了：           
+```javascript
+const Jarvis = require("webpack-jarvis");
+
+/* the rest of your webpack configs */
+
+plugins: [
+  new Jarvis({
+    port: 1337 // optional: set a port
+  })
+];
+```
+
 
 
 
