@@ -4,6 +4,7 @@
   "description": "node整个实验基地的所有包文件管理",
   "main": "index.js",
   "scripts": {
+    "server": "webpack-dev-server --open",
     "test": "mocha 18年/2月/7、单元测试/test/02、mocha.js",
     "cover": "istanbul cover node_modules/mocha/bin/_mocha 18年/2月/7、单元测试/test/02、mocha.js",
     "build": "webpack"
