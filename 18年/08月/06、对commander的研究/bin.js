@@ -39,7 +39,7 @@ program.on('--test', function() {
 
 
 const rawName = program.args[0];
-
+console.log(rawName, program.init);
 if(rawName) {
     console.log('你输入了: ', rawName);
 } else {
