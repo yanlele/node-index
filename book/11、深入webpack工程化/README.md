@@ -1902,6 +1902,53 @@ historyApiFallback: true （任何路径都会重定向我们的首页地址）
 
 
 
+### <div id="class3-item03">03、Proxy</div>              
+实质上是直接集成了 `http-proxy-middleware` 而已                        
+设置的时候，使用devServer.proxy
+
+#### 配置参数                       
+target: 指定代理地址                  
+changeOrigin: 改变源到url ,改为true                       
+headers: 添加公共请求头                      
+logLevel:                   
+pathRewrite: 重定向一个地址                    
+
+
+#### 配置项                    
+这个时候利用我们的本地服务为代理信息：      
+```
+devServer: {
+    port: 3000,
+    proxy: {
+        '/':{
+            target: 'http://localhost:3002',
+            changeOrigin: true,
+            logLevel: 'debug',
+            pathRewrite: {
+                '':'/api/'
+            }
+        }
+    }
+},
+```   
+这个写法就是把远端/api/开头的请求，代理的本地的时候，直接就用 `/` 就可以了。                 
+如果不开启pathRewrite，那么直接就 /下去就可以了：             
+```
+devServer: {
+    port: 3000,
+    proxy: {
+        '/api':{
+            target: 'http://localhost:3002',
+            changeOrigin: true,
+            logLevel: 'debug'
+        }
+    }
+},
+```  
+
+
+
+
 
 
 
