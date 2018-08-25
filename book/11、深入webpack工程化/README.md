@@ -140,7 +140,7 @@ rules: [
 比如： Generator、Set、Map、Array.form、Array.prototype.includes 等，这些函数和方法都是需要借助上面插件来实现的；                    
 安装： `npm install babel-polyfill --save` 在使用的时候，只要 `import 'babel-polyfile'` 就可以随意使用高级语法了；           
 `babel tuntime Transform`: 这个是局部垫片，为开发框架准备的 - 不会污染全局；               
-安装： `npm install babel transform-plugin-transform-runtime --save-dev` 和 `npm install babel-runtime --sve`           
+安装： `npm install babel babel-plugin-transform-runtime --save-dev` 和 `npm install babel-runtime --sve`           
 安装完毕之后，直接就可以 import 'babel-polyfile',就可以直接使用了；
 
 babel配置文件的写法： .babelrc                  
@@ -1894,6 +1894,12 @@ plugins: [
 **其他的配置项：**
 
 historyApiFallback: true （任何路径都会重定向我们的首页地址）             
+
+
+**踩坑记录，有一个非常非常坑人的地方**                   
+
+就是在配置 `babel-plugin-transform-runtime` 插件的时候，按照官方配置，无论如何都会出错，也不知道是什么原因导致的，出现这个问题，最快的解决办法，直接把这个插件删除就是了。                  
+
 
 
 
