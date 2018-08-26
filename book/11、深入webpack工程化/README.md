@@ -1993,23 +1993,32 @@ if(module.hot) {
 
 对于 JS 的热更新是一个很蛋疼的东西，不建议去研究，如果以后需要使用的时候再去研究就可以了。                 
 如果是react或者vue项目，只需要引用
-
-
-
-
 hotOnly: 设置为true之后，无论如何都不会自动触发全局的页面刷新                  
-
-
-
-
-重启服务之后，会发现
-
 
 **踩坑记录**
 
 在这种方式有一个致命的问题，就是我们一定要使用 style-loader; 但是我们平常用的配置都是 `ExtractTextWebpackPlugin` ，这种写法就是没有办法使用热更新的。                    
 解决这个这个的办法，最好是区分一下dev环境和product环境。                   
 
+
+### <div id="class3-item05">05、开启调试模式Source Map</div> 
+我们打包之后的文件是进行编译过的，如果是报错了以后，很难告诉用户代码错误在第几行，很难调试；source map 就是进行这个作用的；                 
+
+实现办法：               
+DevTool (主要使用这个)                
+webpack.SourceMapDevToolPlugin              
+webpack.EvalSourceMapDevToolPlugin                  
+
+Development(开发环境): 一般会使用到四个参数
+eval        
+eval-source-map             
+cheap-eval-source-map               
+cheap-module-eval-source-map                
+
+Production(生产环境)： 一般会使用到三个参数                                
+source-map              
+hidden-source-map                   
+nosource-source-map                 
 
 
 
