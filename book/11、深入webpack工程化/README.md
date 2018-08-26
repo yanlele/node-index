@@ -1947,7 +1947,28 @@ devServer: {
 ```  
 
 
+### <div id="class3-item04">04、模块热更新 Module Hot Reloading</div> 
+热更新，就是不刷新浏览器的情况下，刷新页面：                  
 
+优点：保持数据状态，节省调试时间，样式调试更快
+
+#### 模块
+devServer.hot                       
+webpack.HotModuleReplacementPlugin                  
+webpack.NamedModulesPlugin              
+
+#### 配置
+module.hot.accept 其实可以自动帮我们更新插入                     
+module.hot.decline 可以排除某些路径停止热更新                    
+
+
+
+
+
+**踩坑记录**
+
+在这种方式有一个致命的问题，就是我们一定要使用 style-loader; 但是我们平常用的配置都是 `ExtractTextWebpackPlugin` ，这种写法就是没有办法使用热更新的。                    
+解决这个这个的办法，最好是区分一下dev环境和product环境。                   
 
 
 
