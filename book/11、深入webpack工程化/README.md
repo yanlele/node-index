@@ -1959,10 +1959,25 @@ webpack.NamedModulesPlugin
 
 #### 配置
 module.hot.accept 其实可以自动帮我们更新插入                     
-module.hot.decline 可以排除某些路径停止热更新                    
+module.hot.decline 可以排除某些路径停止热更新            
+如果需要对js进行热更新，那么需要添加如下代码：            
+```javascript
+if(module.hot) {
+    module.hot.accept();
+}
+```
+
+对于 JS 的热更新是一个很蛋疼的东西，不建议去研究，如果以后需要使用的时候再去研究就可以了。
 
 
 
+
+hotOnly: 设置为true之后，无论如何都不会自动触发全局的页面刷新                  
+
+
+
+
+重启服务之后，会发现
 
 
 **踩坑记录**
