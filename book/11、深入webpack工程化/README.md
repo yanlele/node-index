@@ -1960,6 +1960,30 @@ webpack.NamedModulesPlugin
 #### 配置
 module.hot.accept 其实可以自动帮我们更新插入                     
 module.hot.decline 可以排除某些路径停止热更新            
+```javascript
+devServer: {
+    port: 3000,
+    proxy: {
+        '/':{
+            target: 'http://localhost:3002',
+            changeOrigin: true,
+            logLevel: 'debug',
+            pathRewrite: {
+                '':'/api/'
+            }
+        }
+    },
+    hot: true,
+    hotOnly: true,
+}
+//........
+plugin: {
+    new Webpack.HotModuleReplacementPlugin()
+
+    new Webpack.NamedModulesPlugin()
+}
+
+```
 如果需要对js进行热更新，那么需要添加如下代码：            
 ```javascript
 if(module.hot) {
@@ -1967,7 +1991,8 @@ if(module.hot) {
 }
 ```
 
-对于 JS 的热更新是一个很蛋疼的东西，不建议去研究，如果以后需要使用的时候再去研究就可以了。
+对于 JS 的热更新是一个很蛋疼的东西，不建议去研究，如果以后需要使用的时候再去研究就可以了。                 
+如果是react或者vue项目，只需要引用
 
 
 
