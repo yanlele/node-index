@@ -2021,6 +2021,70 @@ hidden-source-map
 nosource-source-map                 
 
 
+#### 相关的配置
+需要很多相关的loader:              
+css-loader.option.sourcemap             
+less-loader.option.sourcemap             
+sass-loader.option.sourcemap             
+
+
+#### 具体配置代码
+```
+module.exports = {
+    devtool: "eval",
+}
+```
+如果开启eval 模式， 不仅有文件自己的文件，但是还有webpack 转化的代码；                  
+如果开启source-map 模式， 这个时候就可以看到我们所有打包的内容和自己写的本地开发文档是一模一样的了。 但是要注意的地方是，我们开启这个source-map的时候，一定要先删除 `new Webpack.optimize.UglifyJsPlugin()` 这个插件                          
+但是一般来说，开发过程中，建议选择 `cheap-module-source-map` 这种模式；
+线上的打包，一般可以直接就选择 `source-map`;                   
+
+
+**处理css的source-map**                    
+所有处理css的loader里面，都要加上 `sourceMap: true` 属性；但是值得注意的地方是，我们这个时候 style-loader 的 options 里面 `singleton: true` 属性要取消掉。
+```
+{
+    test: /\.less$/,
+    use: [
+        {
+            loader: 'style-loader',
+            options: {
+                // singleton: true,
+                transform: './css.transform.js',
+                sourceMap: true
+            }
+        },
+        {
+            loader: 'css-loader',
+            options: {
+                // minimize: true,
+                // modules: true,
+                localIdentName: '[path][name]_[local]_[hash:base64:5]',
+                sourceMap: true
+            },
+        },
+        {
+            loader: 'postcss-loader',
+            options: {
+                ident: 'postcss',
+                plugins: [
+                    require('postcss-cssnext')()
+                ],
+                sourceMap: true
+            }
+        },
+        {
+            loader: 'less-loader',
+            options: {
+                sourceMap: true
+            }
+        }
+    ]
+}
+```
+
+
+
 
 
 
