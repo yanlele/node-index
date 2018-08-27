@@ -190,7 +190,37 @@ d.show();
 
 #### 安全工厂方法                 
 实际上的本质还是把类的实例化移动到了原型中去，本质并没有发生变化。之前的简单工厂方法，是把对象的实例化放置在工厂方法本身上的。                 
+这个方法就实现了所有的类都写在了原型里面，动态判断了是否是工厂函数本身，根据不同的装填添加不同的方法；                     
+```javascript
+let Factory = function (type, content) {
+    if (this instanceof Factory) {
+        return new this[type](content);
+    } else {
+        return new Factory(type, content)
+    }
+};
 
+Factory.prototype = {
+    Java(content) {
+        this.content = content;
+        (function (content) {
+            console.log(content)
+        })(content);
+    },
+    Php(content) {
+        this.content = content;
+        (function (content) {
+            console.log(content)
+        })(content);
+    },
+    JavaScript(content) {
+        this.content = content;
+        (function (content) {
+            console.log(content)
+        })(content);
+    }
+};
+```
 
 
 
