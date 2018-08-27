@@ -18,7 +18,7 @@
 - [03、基于node的博客（极其经典，技术UP）](https://github.com/yanlele/N-blog)
 - [04、一个完整的react+redux项目示例和人总结](https://github.com/bailicangdu/react-pxq)
 - [05、某博客知识点儿，写的很好，找个时间可以多学习一下](https://github.com/muwoo/blogs)
-- [06、构建工具项目架构思路](./03、项目架构思路学习/01、CVMS构建工具项目架构思路.xmind)
+- [06、cvms构建工具项目架构思路](./03、项目架构思路学习/01、CVMS构建工具项目架构思路.xmind)
 
 
 ### <div id="class02">独立项目列表（已完成）</div>

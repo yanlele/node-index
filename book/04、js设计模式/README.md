@@ -111,6 +111,41 @@ function createPop(type, text) {
 let userNameAlert = createPop('alert', '用户名只能是26个字母和数字');
 ```
 
-### <div id="class02-04">04章、工厂方法模式</div>
+### <div id="class02-04">04章、工厂方法模式</div>               
+将实现创建对象的工作推迟到子类当中。这样核心类就成了抽象类，我们可以将工厂方法看做一个实例化对象的工厂类。将创建对象的基类放在工厂方法类的原型就可以了。        
 
-                       
+#### 安全模式类          
+安全模式类，可以屏蔽调用错误，没有new 关键字的时候，直接调用类，是会报错的。安全类就是可以屏蔽这个错误的类。
+```javascript
+let Demo = function(){
+
+};
+Demo.proptotype = {
+    show() {
+        console.log('获取成功');
+    }
+};
+let d = new Demo();
+d.show();
+let d = Demo();
+d.show();   // 这个地方就会报错： TypeError: Cannot read property 'show' of undefined
+```               
+安全模式就是为了解决上面问题的。                
+
+解决办法：
+```javascript
+let Demo = function(){
+    if(!(this instanceof Demo)) {
+        return new Demo();
+    }
+};
+Demo.proptotype = {
+    show() {
+        console.log('获取成功');
+    }
+};
+let d = new Demo();
+d.show();
+let d = Demo();
+d.show();
+```

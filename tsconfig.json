@@ -6,8 +6,16 @@
       "/node_modules/@type",
       "/typings/modules"
     ],
-    "allowJs": true
+    "allowJs": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "book/12、学习TypeScript/dist",
+    "baseUrl": "."
   },
-  "include": ["./src/*"],
-  "exclude": ["/node_modules"]
+  "include": [
+    "book/12、学习TypeScript/src/**/*"
+  ],
+  "exclude": [
+    "/node_modules"
+  ]
 }
