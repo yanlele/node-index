@@ -114,6 +114,44 @@ let userNameAlert = createPop('alert', '用户名只能是26个字母和数字')
 ### <div id="class02-04">04章、工厂方法模式</div>               
 将实现创建对象的工作推迟到子类当中。这样核心类就成了抽象类，我们可以将工厂方法看做一个实例化对象的工厂类。将创建对象的基类放在工厂方法类的原型就可以了。        
 
+#### 用简单方法实现的一个广告展现的示例              
+```javascript
+let Java = function(content) {
+    this.content = content;
+    (function(content) {
+        console.log(content)
+    })(content);
+};
+
+let Php = function(content) {
+    this.content = content;
+    (function(content) {
+        console.log(content)
+    })(content);
+};
+
+let JavaScript = function(content) {
+    this.content = content;
+    (function(content) {
+        console.log(content)
+    })(content);
+};
+
+// 学科工厂
+function JobFactory(type, content) {
+    switch (type) {
+        case 'java':
+            return new Java(content);
+        case 'php':
+            return new Php(content);
+        case 'javascript':
+            return new JavaScript(content);
+    }
+}
+let java = JobFactory('javascript', '我是js书籍');
+```
+缺点，如果有后续的更多的需求，需要添加类，又要修改简单工厂函数。
+
 #### 安全模式类          
 安全模式类，可以屏蔽调用错误，没有new 关键字的时候，直接调用类，是会报错的。安全类就是可以屏蔽这个错误的类。
 ```javascript
@@ -149,3 +187,11 @@ d.show();
 let d = Demo();
 d.show();
 ```
+
+#### 安全工厂方法                 
+实际上的本质还是把类的实例化移动到了原型中去，本质并没有发生变化。之前的简单工厂方法，是把对象的实例化放置在工厂方法本身上的。                 
+
+
+
+
+

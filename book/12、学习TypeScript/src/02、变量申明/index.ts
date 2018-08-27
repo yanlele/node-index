@@ -1,2 +1,2 @@
 
-var a = 10;
+let a: number = 10;
