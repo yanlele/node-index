@@ -51,3 +51,60 @@ VehicleFactory.Truck.prototype = {
         return new Error('抽象方法不能被调用')
     }
 };
+
+/*具体实现*/
+//宝马汽车子类
+let BMW = function(price, speed) {
+    this.price = price;
+    this.speed = speed;
+};
+VehicleFactory(BMW, 'Car');
+BMW.prototype.getPrice = function() {
+    return this.price;
+};
+BMW.prototype.getSpeed = function() {
+    return this.speed;
+};
+//兰博基尼汽车子类
+let Lamborghini = function(price, speed) {
+    this.price = price;
+    this.speed = speed;
+};
+VehicleFactory(Lamborghini, 'Car');
+Lamborghini.prototype.getPrice = function() {
+    return this.price;
+};
+Lamborghini.prototype.getSpeed = function() {
+    return this.speed;
+};
+
+//宇通汽车子类
+let YUTONG = function(price, speed) {
+    this.price = price;
+    this.speed = speed;
+};
+VehicleFactory(YUTONG, 'Bus');
+YUTONG.prototype.getPrice = function() {
+    return this.price;
+};
+YUTONG.prototype.getSpeed = function() {
+    return this.speed;
+};
+
+//奔驰汽车子类
+let BenzTruck = function(price, speed) {
+    this.price = price;
+    this.speed = speed;
+};
+VehicleFactory(BenzTruck, 'Truck');
+BenzTruck.prototype.getPrice = function() {
+    return this.price;
+};
+BenzTruck.prototype.getSpeed = function() {
+    return this.speed;
+};
+
+let truck = new BenzTruck(10000, 100);
+console.log(truck.getPrice());
+console.log(truck.type);
+console.log(truck.getSpeed());

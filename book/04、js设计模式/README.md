@@ -272,7 +272,7 @@ VehicleFactory.Car.prototype = {
 VehicleFactory.Bus = function() {
     this.type = 'bus'
 };
-VehicleFactory.Car.prototype = {
+VehicleFactory.Bus.prototype = {
     getPrice() {
         return new Error('抽象方法不能被调用')
     },
@@ -285,7 +285,7 @@ VehicleFactory.Car.prototype = {
 VehicleFactory.Truck = function() {
     this.type = 'truck'
 };
-VehicleFactory.Car.prototype = {
+VehicleFactory.Truck.prototype = {
     getPrice() {
         return new Error('抽象方法不能被调用')
     },
@@ -296,5 +296,65 @@ VehicleFactory.Car.prototype = {
 ```
 [源码请见02、抽象工厂的实现](./第二篇、创建型设计模式/05章、抽象工厂模式/02、抽象工厂的实现.js)
 
+抽象工厂实际上是一个实现一个子类继承一个抽象父类的方法。
 
+#### 抽象与实现
+抽象工厂是创建子类的，所以我们需要一些子类产品，让子类继承父类就可以了。具体实现如下：                     
+```javascript
+/*具体实现*/
+//宝马汽车子类
+let BMW = function(price, speed) {
+    this.price = price;
+    this.speed = speed;
+};
+VehicleFactory(BMW, 'Car');
+BMW.prototype.getPrice = function() {
+    return this.price;
+};
+BMW.prototype.getSpeed = function() {
+    return this.speed;
+};
+//兰博基尼汽车子类
+let Lamborghini = function(price, speed) {
+    this.price = price;
+    this.speed = speed;
+};
+VehicleFactory(Lamborghini, 'Car');
+Lamborghini.prototype.getPrice = function() {
+    return this.price;
+};
+Lamborghini.prototype.getSpeed = function() {
+    return this.speed;
+};
 
+//宇通汽车子类
+let YUTONG = function(price, speed) {
+    this.price = price;
+    this.speed = speed;
+};
+VehicleFactory(YUTONG, 'Bus');
+YUTONG.prototype.getPrice = function() {
+    return this.price;
+};
+YUTONG.prototype.getSpeed = function() {
+    return this.speed;
+};
+
+//奔驰汽车子类
+let BenzTruck = function(price, speed) {
+    this.price = price;
+    this.speed = speed;
+};
+VehicleFactory(BenzTruck, 'Truck');
+BenzTruck.prototype.getPrice = function() {
+    return this.price;
+};
+BenzTruck.prototype.getSpeed = function() {
+    return this.speed;
+};
+
+let truck = new BenzTruck(10000, 100);
+console.log(truck.getPrice());
+console.log(truck.type);
+console.log(truck.getSpeed());
+```
