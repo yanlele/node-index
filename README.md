@@ -37,6 +37,7 @@
 - [03、基于react 高仿csdn博客后端](https://github.com/yanlele/react-blog-server)
 - [04、react项目实战二：Webpack + React全栈工程架构项目实战精讲 *****](https://github.com/yanlele/react-cnode)
 - [05、《Node.js从入门到上线》—— Koa2 + MongoDB 搭建博客系统](https://github.com/liuxing/node-blog)
+- [06、koa2构建工具koa2-starter-cli](https://github.com/liuxing/koa2-starter-cli)
 
 
 ### <div id="class04">专题笔记归类(简书总结)</div>
