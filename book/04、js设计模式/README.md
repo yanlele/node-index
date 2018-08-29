@@ -224,5 +224,77 @@ Factory.prototype = {
 
 ### <div id="class02-05">05章、抽象工厂模式</div>
 js中abstract是保留字段，抽象类是一种申明但是不能使用的类，当你使用的时候就会报错。我们可以在类的方法中手动排除错误来模拟抽象类。                   
+```javascript
+let Car = function() {};
+Car.prototype = {
+    getPrice() {
+        return new Error('抽象方法不能被调用');
+    },
+    getSpeed() {
+        return new Error('抽象方法不能被调用');
+    }
+};
+```
+这个car类什么都不能做，不能使用，但是在继承上却很有用，因为定义类一个类，这给类具备必要的方法，如果在子类没有重写这些方法，那么调用的时候就会报错。                     
+在大型程序中，总会有一些子类去继承另外一些父类，这些父类经常会定义一些必要的方法，却没有具体实现。这种写法是忘记重写子类的这些错误遗漏的避免是很有帮助的。                   
+
+#### 抽象工厂模式                 
+```javascript
+//抽象工厂
+let VehicleFactory = function(subType, superType) {
+    if(typeof VehicleFactory[superType] === 'function') {
+        // 缓存类
+        function F(){}
+        // 集成父类的属性和方法
+        F.prototype = new VehicleFactory[superType]();
+        // 将子类的constructor 指向子类
+        superType.constructor = subType;
+        // 子类原型继承 父类
+        subType.prototype = new F();
+    } else {
+        throw new Error('没有创建该类抽象对象');
+    }
+};
+// 小汽车抽象类
+VehicleFactory.Car = function() {
+    this.type = 'car'
+};
+VehicleFactory.Car.prototype = {
+    getPrice() {
+        return new Error('抽象方法不能被调用')
+    },
+    getSpeed() {
+        return new Error('抽象方法不能被调用')
+    }
+};
+
+// 公交车
+VehicleFactory.Bus = function() {
+    this.type = 'bus'
+};
+VehicleFactory.Car.prototype = {
+    getPrice() {
+        return new Error('抽象方法不能被调用')
+    },
+    getSpeed() {
+        return new Error('抽象方法不能被调用')
+    }
+};
+
+// 货车抽象类
+VehicleFactory.Truck = function() {
+    this.type = 'truck'
+};
+VehicleFactory.Car.prototype = {
+    getPrice() {
+        return new Error('抽象方法不能被调用')
+    },
+    getSpeed() {
+        return new Error('抽象方法不能被调用')
+    }
+};
+```
+[源码请见02、抽象工厂的实现](./第二篇、创建型设计模式/05章、抽象工厂模式/02、抽象工厂的实现.js)
+
 
 
