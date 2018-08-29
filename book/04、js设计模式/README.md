@@ -358,3 +358,4 @@ console.log(truck.getPrice());
 console.log(truck.type);
 console.log(truck.getSpeed());
 ```
+[源码请见:03、抽象与实现](./02篇、创建型设计模式/05章、抽象工厂模式/03、抽象与实现.js)
