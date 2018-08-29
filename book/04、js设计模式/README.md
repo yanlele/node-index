@@ -425,4 +425,4 @@ Work.prototype.changeDescript = function(setence) {
 };
 ```
 
-#### 创建以为应聘者
+#### 创建一位应聘者                            
