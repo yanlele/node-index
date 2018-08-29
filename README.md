@@ -38,6 +38,7 @@
 - [04、react项目实战二：Webpack + React全栈工程架构项目实战精讲 *****](https://github.com/yanlele/react-cnode)
 - [05、《Node.js从入门到上线》—— Koa2 + MongoDB 搭建博客系统](https://github.com/liuxing/node-blog)
 - [06、koa2构建工具koa2-starter-cli](https://github.com/liuxing/koa2-starter-cli)
+- [07、《Node.js入门教程》](https://github.com/liuxing/node-abc)
 
 
 ### <div id="class04">专题笔记归类(简书总结)</div>
@@ -184,6 +185,7 @@
     - [12、MarkDown添加图片的三种方式 - 找时间自己总结一边](https://blog.csdn.net/slaughterdevil/article/details/79255933)
     - [13、html转换为img、html转换为pdf:render-html-to-pdf](https://github.com/linwalker/render-html-to-pdf)
     - [14、GithubPages教程 在GithubPages上搭建个人主页](https://blog.csdn.net/yanzhenjie1003/article/details/51703370)
+    - [15、一篇文章，教你学会Git](https://mp.weixin.qq.com/s/-TC07TQoiTNRUJIdBv46SQ)
 
 - koa2
     - [01、koa2-sql项目搭建的示例（通过sql链接数据库）](./18年/1月/12、koa2项目框架搭建)
