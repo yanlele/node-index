@@ -359,3 +359,70 @@ console.log(truck.type);
 console.log(truck.getSpeed());
 ```
 [源码请见:03、抽象与实现](./02篇、创建型设计模式/05章、抽象工厂模式/03、抽象与实现.js)
+
+
+### <div id="class02-06">06章、建造者模式</div>
+将一个复杂对象的构建层与其表现层相互分离
+
+#### 创建对象的另外一种形式
+工厂模式主要是为了创建对象和抽象工厂，关心的是最终产出（创建）的是什么。不关心你创建的过程，仅仅需要你知道最终创建的结果是什么就可以了。                
+建造者设计模式目的也是为了创建对象，但是更加关心的是创建这个对象的过程。比如创建一个人，不仅仅要得到人的实例，还要关心创建人的时候，这个人穿什么衣服，是男是女，兴趣爱好是什么。
+```javascript
+let Human = function(param) {
+    this.skill = param && param.skill || '保密';
+    this.hobby = param && param.hobby || '保密';
+};
+Human.prototype = {
+    getSkill() {
+        return this.skill;
+    },
+    getHobby() {
+        return this.hobby
+    }
+};
+//实例化姓名类
+let Named = function(name) {
+    let that = this;
+    (function(name, that) {
+        that.whileName = name;
+        if(name.indexOf(' ') > -1) {
+            that.firstName = name.slice(0, name.indexOf(' '));
+            that.secondName = name.slice(name.indexOf(' '));
+        }
+    })(name, that)
+};
+// 实例化工作职位类
+let Work = function(work) {
+    let that = this;
+    (function(work, thar) {
+        switch (work) {
+            case 'code':
+                that.work = '工程师';
+                that.workDescript = '写代码';
+                break;
+            case 'UI':
+            case 'UE':
+                that.work = '设计师';
+                that.workDescript = '艺术工作';
+                break;
+            case 'teach':
+                that.work = '教师';
+                thar.workDescript = '教书育人';
+                break;
+            default:
+                that.work = work;
+                that.workDescript = '没有你描述的职位'
+        }
+    })(work, that)
+};
+//期望的职位
+Work.prototype.changeWork = function(work) {
+    this.work = work;
+};
+//添加职位描述
+Work.prototype.changeDescript = function(setence) {
+    this.workDescript = setence;
+};
+```
+
+#### 创建以为应聘者
