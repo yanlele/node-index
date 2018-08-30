@@ -444,4 +444,58 @@ let Person = function(name, work) {
 
 [源码请见：02、创建一位应聘者](./02篇、创建型设计模式/06章、建造者模式/02、创建一位应聘者.js)
 
+建造者模式不仅仅要得到穿件的结果，还要参与到创建的过程，对于创建的具体实现的细节也参与了干涉。这种创建模式创建的对象是一个复杂的符合对象。
+
+
+### <div id="class02-07">07章、原型链模式</div>                
+原型链模式就是讲原型对象只想创建对象的类，使这类共享原型对象的方法与属性。
+
+#### 创建一个轮播图                                   
+创建轮播图最好的方式就是通过创建对象来一一实现：
+```javascript
+let LoopImages = function(imgArr, container) {
+    this.imagesArray = imgArr;              // 轮播图片数组
+    this.container = container;             // 轮播图片容器
+    this.createImage = function(){};        // 创建轮播图片
+    this.changeImage = function(){};        // 切换下一张图片
+}
+```
+如果一个页面有多个这类轮播图，切换动画也是变化多样，有的上下切换，有的左右切换，有的渐隐渐出，有的缩放切换等等。
+这种情况下我们就需要抽象出来一个基类，让不同的特效类去继承这个基类，对于差异化的需求，通过重写这些基类下面的属性或者方法来解决。                
+```javascript
+// 上下滑动切换类
+let SlideLoopImg = function(imgArr, container) {
+    //继承
+    LoopImages.call(this, imgArr, container);
+
+    // 重写方法
+    this.changeImage = function() {
+        console.log('上下滑动切换')
+    }
+};
+
+// 隐藏出现切换类
+let FadeLoopImg = function(imgArr, container, arrow) {
+    // 继承
+    LoopImages.call(this, imgArr, container);
+    this.arrow = arrow;
+    this.changeImage = function() {
+        console.log('隐藏出现切换类');
+    }
+};
+
+//实例化一个对象
+let fadeImg = new FadeLoopImg([
+    '1.jpg',
+    '2.jpg',
+    '3.jpg',
+], 'slide', [
+    'left.jpg',
+    'right.jpg'
+]);
+```
+                    
+
+
+
 
