@@ -368,6 +368,7 @@ console.log(truck.getSpeed());
 工厂模式主要是为了创建对象和抽象工厂，关心的是最终产出（创建）的是什么。不关心你创建的过程，仅仅需要你知道最终创建的结果是什么就可以了。                
 建造者设计模式目的也是为了创建对象，但是更加关心的是创建这个对象的过程。比如创建一个人，不仅仅要得到人的实例，还要关心创建人的时候，这个人穿什么衣服，是男是女，兴趣爱好是什么。
 ```javascript
+//应聘者类
 let Human = function(param) {
     this.skill = param && param.skill || '保密';
     this.hobby = param && param.hobby || '保密';
@@ -426,3 +427,21 @@ Work.prototype.changeDescript = function(setence) {
 ```
 
 #### 创建一位应聘者                            
+上面我们创建了三个类 - 应聘者类、姓名解析类与期望职位类。最终目的是创建一个应聘者，所以需要抽象上面三个类。写一个建造者类，在建造者类中，我们要通过对这三个类组合调用，创建一个完整的应聘者对象出来。                            
+核心代码如下：                 
+```javascript
+let Person = function(name, work) {
+    // 应聘者缓存对象
+    let _person = new Human();
+    // 姓名解析
+    _person.name = new Named(name);
+    // 应聘者职位
+    _person.work = new Work(work);
+    return _person;
+}
+```
+在创造者中，我们分为三个部分来创建一个应聘者的，首先创建一个应聘者缓存对象，缓存对象添加姓名和职位，最终得到一个完整的应聘者了。                        
+
+[源码请见：02、创建一位应聘者](./02篇、创建型设计模式/06章、建造者模式/02、创建一位应聘者.js)
+
+
