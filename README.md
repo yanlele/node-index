@@ -147,6 +147,7 @@
     - [32、css3新单位vw、vh、vmin、vmax的使用详解](./18年/08月/01、css3新单位vw、vh、vmin、vmax的使用详解/)
     - [33、关于闭包的研究](./18年/08月/02、关于闭包的研究/)
     - [34、You Don't Need jQuery](https://github.com/nefe/You-Dont-Need-jQuery/blob/master/README.zh-CN.md)
+    - [35、关于JS的触摸方法](./18年/08月/08、关于JS的触摸方法研究/)
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
