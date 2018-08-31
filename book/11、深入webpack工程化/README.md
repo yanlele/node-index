@@ -3,19 +3,19 @@
 我的目的是这个做一个最强大的webpack教程手册，供以后工作中翻阅查询                
 
 目录：             
-- [一、由浅入深Webpack](#class1)
-    - [01、最基本的使用webpack](#class1-item01)
-    - [02、打包js](#class1-item02)
-    - [03、编译ES6/7](#class1-item03)
-    - [04、编译打包TS](#class1-item04)
-    - [05、提取公用代码](#class1-item05)
-    - [06、代码分割和懒加载](#class1-item06)                 
-    - [07、处理css: style-loader](#class1-item07)
-    - [08、处理css: css-loader](#class1-item08)
-    - [09、配置less/sass](#class1-item09)
-    - [10、提取css](#class1-item10)
-    - [11、postCss-in-webpack](#class1-item11)
-    - [12、Tree-shaking](#class1-item12)
+- [一、由浅入深Webpack](./01、由浅入深Webpack/README.md#class1)
+    - [01、最基本的使用webpack](./01、由浅入深Webpack/README.md#class1-item01)
+    - [02、打包js](./01、由浅入深Webpack/README.md#class1-item02)
+    - [03、编译ES6/7](./01、由浅入深Webpack/README.md#class1-item03)
+    - [04、编译打包TS](./01、由浅入深Webpack/README.md#class1-item04)
+    - [05、提取公用代码](./01、由浅入深Webpack/README.md#class1-item05)
+    - [06、代码分割和懒加载](./01、由浅入深Webpack/README.md#class1-item06)                 
+    - [07、处理css: style-loader](./01、由浅入深Webpack/README.md#class1-item07)
+    - [08、处理css: css-loader](./01、由浅入深Webpack/README.md#class1-item08)
+    - [09、配置less/sass](./01、由浅入深Webpack/README.md#class1-item09)
+    - [10、提取css](./01、由浅入深Webpack/README.md#class1-item10)
+    - [11、postCss-in-webpack](./01、由浅入深Webpack/README.md#class1-item11)
+    - [12、Tree-shaking](./01、由浅入深Webpack/README.md#class1-item12)
     
 - [二、由浅入深Webpack - 进阶](#class2)
     - [01、文件处理 - 图片处理](#class2-item01)
@@ -2084,6 +2084,16 @@ module.exports = {
 ```
 
 
+### <div id="class3-item06">06、设置EsLint检查代码格式</div> 
+#### 需要安装的依赖包                   
+eslint             
+eslint-loader               
+eslint-plugin-html              
+eslint-friendly-formatter                   
+
+
+#### eslint配置                   
+主要是webpack config
 
 
 
