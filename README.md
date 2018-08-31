@@ -12,12 +12,12 @@
 
 
 ### <div id="class01">对别人项目的研究（详细阅读源码之后写下的一些笔记和项目注释-已完成）</div>                  
-
 - [01、express基本使用,包括注册,登陆,上传,下载,登录权限控制,session持久化,邮件发送,网络爬虫等](https://github.com/yanlele/express)
 - [02、基于webpack3多页面打包](https://github.com/yanlele/webpack-dev)
 - [03、基于node的博客（极其经典，技术UP）](https://github.com/yanlele/N-blog)
 - [04、一个完整的react+redux项目示例和人总结](https://github.com/bailicangdu/react-pxq)
 - [05、某博客知识点儿，写的很好，找个时间可以多学习一下](https://github.com/muwoo/blogs)
+- [06、cvms构建工具项目架构思路](./03、项目架构思路学习/01、CVMS构建工具项目架构思路.xmind)
 
 
 ### <div id="class02">独立项目列表（已完成）</div>
@@ -36,6 +36,9 @@
 - [02、基于react 高仿csdn博客前端](https://github.com/yanlele/react-blog-front)
 - [03、基于react 高仿csdn博客后端](https://github.com/yanlele/react-blog-server)
 - [04、react项目实战二：Webpack + React全栈工程架构项目实战精讲 *****](https://github.com/yanlele/react-cnode)
+- [05、《Node.js从入门到上线》—— Koa2 + MongoDB 搭建博客系统](https://github.com/liuxing/node-blog)
+- [06、koa2构建工具koa2-starter-cli](https://github.com/liuxing/koa2-starter-cli)
+- [07、《Node.js入门教程》](https://github.com/liuxing/node-abc)
 
 
 ### <div id="class04">专题笔记归类(简书总结)</div>
@@ -144,6 +147,8 @@
     - [32、css3新单位vw、vh、vmin、vmax的使用详解](./18年/08月/01、css3新单位vw、vh、vmin、vmax的使用详解/)
     - [33、关于闭包的研究](./18年/08月/02、关于闭包的研究/)
     - [34、You Don't Need jQuery](https://github.com/nefe/You-Dont-Need-jQuery/blob/master/README.zh-CN.md)
+    - [35、关于JS的触摸方法](./18年/08月/08、关于JS的触摸方法研究/)
+    - [37、关于屏幕高度，可见区域高度，目标元素高度，文档高度研究](./18年/08月/07、关于屏幕高度，可见区域高度，目标元素高度，文档高度研究/)
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
@@ -182,6 +187,7 @@
     - [12、MarkDown添加图片的三种方式 - 找时间自己总结一边](https://blog.csdn.net/slaughterdevil/article/details/79255933)
     - [13、html转换为img、html转换为pdf:render-html-to-pdf](https://github.com/linwalker/render-html-to-pdf)
     - [14、GithubPages教程 在GithubPages上搭建个人主页](https://blog.csdn.net/yanzhenjie1003/article/details/51703370)
+    - [15、一篇文章，教你学会Git](https://mp.weixin.qq.com/s/-TC07TQoiTNRUJIdBv46SQ)
 
 - koa2
     - [01、koa2-sql项目搭建的示例（通过sql链接数据库）](./18年/1月/12、koa2项目框架搭建)
@@ -237,6 +243,7 @@
     - [33、服务端生成二维码:qr-image](https://github.com/alexeyten/qr-image)
     - [34、客户端生成二维码:jrQrcode](https://github.com/diamont1001/jrQrcode)
     - [35、Inquirer.js交互式命令行工具](./18年/08月/05、Inquirer.js交互式命令行工具/)
+    - [36、对commander的研究](./18年/08月/06、对commander的研究/)
     
 
 
