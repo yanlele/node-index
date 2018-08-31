@@ -293,5 +293,19 @@ eslint-friendly-formatter
 
 
 #### eslint配置                   
-主要是webpack config
+主要是webpack config的配置 和 .eslintrc 文件的配置                  
+也可以在package.json 中的eslintConfig中配置                  
+
+推荐一个 Javascript Standard Style (https://standardjs.com/) js标准规范的集合                  
+eslint-config-standard              
+eslint-plugin-promise               
+eslint-plugin-standard                      
+........                    
+
+**eslint-loader**                       
+options.failOnWarning               
+options.failOnError                 
+options.formatter 第三方检测格式                   
+
+devServer.overlay 
 
