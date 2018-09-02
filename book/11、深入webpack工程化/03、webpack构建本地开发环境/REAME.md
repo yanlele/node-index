@@ -291,6 +291,8 @@ eslint-loader
 eslint-plugin-html              
 eslint-friendly-formatter                   
 
+`npm install eslint eslint-loader eslint-plugin-html eslint-friendly-formatter eslint-config-standard eslint-plugin-promise eslint-plugin-node eslint-plugin-import eslint-plugin-standard --save-dev`
+
 
 #### eslint配置                   
 主要是webpack config的配置 和 .eslintrc 文件的配置                  
@@ -307,5 +309,11 @@ options.failOnWarning
 options.failOnError                 
 options.formatter 第三方检测格式                   
 
-devServer.overlay 
+devServer.overlay 可以在浏览器中看到我们的编译提示错误
 
+ 
+#### 说明
+对于eslint这个地方的研究以后自己去研究就可以了。
+
+
+### <div id="class3-item07">07、区分开发环境和生产环境</div>
