@@ -628,3 +628,53 @@ module.exports = {
 };
 ```
 [源码请见：07、区分开发环境和生产环境](./07、区分开发环境和生产环境)
+
+
+
+### <div id="class3-item08">08、使用middleware搭建开发环境</div>
+#### 常用模块               
+express / koa               
+webpack-dev-middleware              
+webpack-hot-middleware              
+http-proxy-middleware                   
+connect-history-api-fallback                
+opn 自动弹出浏览器
+
+
+#### 安装依赖
+`npm install express opn webpack-dev-middleware webpack-hot-middleware http-proxy-middleware connect-history-api-fallback --save-dev`
+
+#### 具体实现               
+```javascript
+const express = require('express');
+const webpack = require('webpack');
+const opn = require('opn');
+
+const app = express();
+const port = 3000;
+
+const webpackDevMiddleWare = require('webpack-dev-middleware');
+const webpackHotMiddleWare = require('webpack-hot-middleware');
+const proxyMiddleWare = require('http-proxy-middleware');
+const historyApiFallback = require('connect-history-api-fallback');
+
+const config = require('./webpack.common.conf')('development');
+const proxyTable = require('proxy');
+const compiler = webpack(config);
+
+for (let context in proxyTable) {
+    app.use(proxyMiddleWare(context, proxyTable[context]))
+}
+
+app.use(webpackDevMiddleWare(compiler,  {
+    publicPath: config.output.publicPath
+}));
+
+app.use(webpackHotMiddleWare(compiler));
+
+app.listen(port, function() {
+    console.log('success listen to ' + port);
+    opn('http://localhost' + port);
+});
+```
+[源码请见：07、区分开发环境和生产环境]
