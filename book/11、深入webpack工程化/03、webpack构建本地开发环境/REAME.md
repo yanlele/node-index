@@ -317,3 +317,29 @@ devServer.overlay 可以在浏览器中看到我们的编译提示错误
 
 
 ### <div id="class3-item07">07、区分开发环境和生产环境</div>
+
+#### 不同点
+开发环境                    
+    模块热更新                   
+    sourceMap                       
+    接口代理                            
+    代码规范                    
+    
+生产环境                    
+    提取公用代码                      
+    压缩混淆                    
+    文件压缩和图片压缩                       
+    祛除无用的代码                         
+    
+
+#### 相同点
+同样的入口               
+同样的代码处理（loader处理）                       
+同样的解析配置                 
+
+#### 实现区分
+需要使用工具 `webpack-merge`              
+webpack.dev.conf.js                 
+webpack.prod.conf.js                
+webpack.common.conf.js                  
+
