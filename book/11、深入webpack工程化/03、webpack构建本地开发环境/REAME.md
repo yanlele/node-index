@@ -344,6 +344,14 @@ webpack.prod.conf.js
 webpack.common.conf.js                  
 
 我们可以在package.json里面，多设置几个script脚本，来区分各个不同的环境                                            
+```
+  "scripts": {
+    "server": "webpack-dev-server --env development --config build/webpack.common.conf.js",
+    "build": "webpack --env production --config build/webpack.common.conf.js",
+    "test": "mocha 18年/2月/7、单元测试/test/02、mocha.js",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha 18年/2月/7、单元测试/test/02、mocha.js"
+  },
+```
 这一节主要是实战，所以直接贴代码                                    
 webpack.common.conf:        
 ```javascript
@@ -677,4 +685,16 @@ app.listen(port, function() {
     opn('http://localhost' + port);
 });
 ```
-[源码请见：07、区分开发环境和生产环境]
+[源码请见：08、使用middleware搭建开发环境](./08、使用middleware搭建开发环境)                           
+
+服务的启动依然靠package.json 配置脚本命令行启动              
+```
+  "scripts": {
+    "start": "node build/server.js",
+    "server": "webpack-dev-server --env development --config build/webpack.common.conf.js",
+    "build": "webpack --env production --config build/webpack.common.conf.js",
+    "test": "mocha 18年/2月/7、单元测试/test/02、mocha.js",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha 18年/2月/7、单元测试/test/02、mocha.js"
+  },
+```             
+这一节有一些非常坑人的地方。。。。。。。。。。。。简单过一下就是了。（因为很多模块版本问题对不上，然后就会出现一些列的BUG）
