@@ -47,3 +47,26 @@ let preventDefault = function (event) {
     }
 };
 ```
+
+#### 小型代码库
+很多代码库通过外观设计模式来封装多个功能，简化底层操作方法。
+```javascript
+let Le = {
+    g(id) {
+        return document.getElementById(id)
+    },
+    css(id, key, value) {
+        this.g(id).style[key] = value;
+    },
+    attr(id, key, value) {
+        this.g(id)[key] = value;
+    },
+    html(id, value) {
+        this.g(id).innerHeight = value;
+    },
+    on(id, type, fn) {
+        this.g(id)['on' + type] = fn;
+    }
+};
+```
+
