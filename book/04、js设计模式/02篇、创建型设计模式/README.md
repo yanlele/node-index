@@ -541,5 +541,49 @@ fadeImg.changeImage();
 在原型链设计模式中，父子类的具体实现，都可以放在原型中去；
 
 
+#### 原型的扩展
+原型对象是一个共享对象，无论父类的实例还是子类的继承，都是对他的一个指向引用。所以对于原型的扩展，无论是子类还是父类的示例，都会被继承下来。
 
+
+
+### <div id="class02-08">08章、单例模式</div>  
+单例模式（Singleton） - 只允许实例化一次的对象类。
+
+#### 做一个滑动特效的示例
+```javascript
+function g(id) {
+    return document.getElementById(id)
+}
+
+function css(id, key, value) {
+    g(id).style[key] = value;
+}
+function attr(id, key, value) {
+    g(id)[key] = value;
+}
+function html(id, value) {
+    g(id).innerHeight = value;
+}
+```
+
+这些代码存在不妥的地方：如果以后有人要在页面添加新的需求，添加代码的时候定义了一个on变量，或者重写了on方法，这样就会出现代码冲突了。
+
+#### 命名空间
+用命名空间可以约束每个人定义的变量来解决上面的问题
+```javascript
+let Le = {
+    g(id) {
+        return document.getElementById(id)
+    },
+    css(id, key, value) {
+        this.g(id).style[key] = value;
+    },
+    attr(id, key, value) {
+        this.g(id)[key] = value;
+    },
+    html(id, value) {
+        this.g(id).innerHeight = value;
+    }
+};
+```
 
