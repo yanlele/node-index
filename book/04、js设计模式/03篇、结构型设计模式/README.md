@@ -121,5 +121,25 @@ A.on = function(id, type, fn) {
 
 
 #### 参数适配器
+比如一个方法需要传递多个参数：                 
+`function doSomeThing(name, title, age, color, size, prize)()`              
+记住这些参数顺序是很困难的，我们就直接传递一个对象。但是又不知道传递对象数据是否完整，所以我们需要给定一些默认值，通过是要配齐来适配传递的这个参数对象：                    
+```javascript
+function doSomeThing(obj) {
+    let _adapter = {
+        name: 'yanle',
+        title: 'no game no life',
+        age: 26,
+        color: 'prink',
+        size: 100,
+        prize: 50
+    };
+    for(let i in _adapter) {
+        _adapter[i] = obj[i] || _adapter[i]
+    }
+    
+    // do something
+}
+```
 
 
