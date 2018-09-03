@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01、兼容模式下-外观模式的实现</title>
+</head>
+<body>
+<button id="myButton">click me</button>
+
+<script>
+    function addEvent(dom , type, fn) {
+        if(dom.addEventListener) {
+            dom.addEventListener(type, fn ,false);
+        } else if(dom.attachEvent) {
+            dom.attachEvent('on' + type, fn);
+        } else {
+            dom['on' + type] = fn;
+        }
+    }
+
+    let getEvent = function(event) {
+        return event || window.event;
+    };
+    let getTarget = function(event) {
+        let myEvent = getEvent(event);
+        return myEvent.target || myEvent.srcElement;
+    };
+    //阻止默认行为
+    let preventDefault = function (event) {
+        let myEvent = getEvent(event);
+        if(myEvent.preventDefault) {
+            myEvent.preventDefault();
+        }else {
+            myEvent.returnValue = false;
+        }
+    };
+
+
+    let myButton = document.getElementById('myButton');
+    addEvent(myButton, 'click', function() {
+        console.log('click my button')
+    })
+</script>
+</body>
+</html>
