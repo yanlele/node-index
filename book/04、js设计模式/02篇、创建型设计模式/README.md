@@ -587,3 +587,25 @@ let Le = {
 };
 ```
 
+#### 无法改变的静态变量                      
+将变量放在一个函数内部，只有通过特权方法访问，如果不提供赋值变量的方法，只提供获取变量的方法，就可以做到限制变量的修改而且可以提供外界访问的需求。                   
+为了实现创建后就能使用，我们需要让穿件的函数执行一次。最后将这个对象最为一个单利放在全局空间里面，作为静态变量提供给他人使用。                 
+```javascript
+let Conf = (function () {
+    // 私有变量
+    let conf = {
+        MAX_NUM: 100,
+        MIN_NUM:1,
+        COUNT: 1000
+    };
+    return {
+        get(name) {
+            return conf[name] ? conf[name] : null
+        }
+    }
+})();
+let count = Conf.get('COUNT');
+console.log(count);
+```
+
+
