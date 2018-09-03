@@ -608,4 +608,27 @@ let count = Conf.get('COUNT');
 console.log(count);
 ```
 
+#### 惰性单例                   
+有的时候对于单例对象需要延迟创建，所以单例中还存在一种延迟创建的形式，被称为惰性创建。
+```javascript
+let LazySingle = (function () {
+    let _instance = null;
+    function single() {
+        return {
+            publicMath() {},
+            publicConst: 100
+        }
+    }
+    return function() {
+        if(!_instance) {
+            _instance = single();
+        }
+        //返回单例
+        return _instance;
+    }
+})();
+
+console.log(LazySingle().publicConst);
+```
+
 
