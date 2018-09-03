@@ -494,7 +494,10 @@ let fadeImg = new FadeLoopImg([
     'right.jpg'
 ]);
 ```
-                    
+
+
+#### 优化的解决方案                        
+上面的缺点：每次子类继承父类都要创建一次父类              
 
 
 
