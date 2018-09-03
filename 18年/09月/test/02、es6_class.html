@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    /*class Person {
+        constructor(name, age){
+            this.name = name;
+            this.age = age;
+        }
+
+        print() {
+            console.log(this.name, this.age);
+        }
+    }
+
+    var person = new Person('yanle', 25);
+    person.print();
+    console.log(person);*/
+
+
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+        this.toString = function() {
+            console.log('name is : ' + this.name + ', age is :' + this.age)
+        }
+    }
+    /*Person.prototype = {
+        toString() {
+            console.log('name is : ' + this.name + ', age is :' + this.age)
+        }
+    }*/
+
+    var person = new Person('yane', 25);
+    console.log(person.name);
+    console.log(person.age);
+    person.toString();
+    console.log(person);
+</script>
+</body>
+</html>
