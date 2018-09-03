@@ -142,4 +142,18 @@ function doSomeThing(obj) {
 }
 ```
 
-
+#### 服务端数据适配器                   
+服务端数据适配实际上就是把服务端拿下的数据，做一些适当的数据重组和检验，然后再使用。              
+```javascript
+function ajaxAdapter(data) {
+    return [data['key1'], data['key2'], data['key3']]
+}
+$.ajax({
+    url: 'xxxxxx.json',
+    success: function(data) {
+        if(data) {
+            doSomeThing(ajaxAdapter(data));
+        }
+    }
+})
+```
