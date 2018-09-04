@@ -167,4 +167,56 @@ $.ajax({
 ### <div id="class03-12">12章、装饰者模式</div>
 **装饰者模式（Decorator）**: 不改变原对象的基础上，通过对其进行包装扩展（添加属性或者方法）让原有对象可以满足用户的更复杂需求。
 
+#### 比如有这么一个需求
+用户点击输入框时，如果输入框输入的内容有限制，那么在其后面显示用户输入内容的限制格式的提示文案 ---------------->>>>>>> 现在要改为：                  
+多加一条需求，默认输入框上边显示一行文案，当用户点击输入框的时候，文案消失。                      
+这里是以前的代码：               
+```javascript
+// 输入框元素
+let telInput = document.getElementById('tel_input');
+// 输入框提示文案
+let telWarnText = document.getElementById('tel_warn_text');
+// 点击输入框显示输入框输入格式提示文案
+input.onclick = function () {
+    telWarnText.style.display = 'inline-block';
+};
+```
+这里是修改后的代码：
+```javascript
+// 输入框元素
+let telInput = document.getElementById('tel_input');
+// 输入框输入格式提示文案
+let telWarnText = document.getElementById('tel_warn_text');
+// 输入框提示输入文案
+let telDemoText = document.getElementById('tel_demo_text');
+// 点击输入框显示输入框输入格式提示文案
+input.onclick = function () {
+    telWarnText.style.display = 'inline-block';
+    telDemoText.style.display = 'none';
+};
+```
+
+但是紧接着悲剧就来了，修改了电话输入框，还有姓名、地址输入框等等；                   
+
+
+#### 装饰已有的功能对象                          
+原有的功能已经不满足用户的需求了，此时需要做的是对原有的功能添加，设置新的属性和方法来满足新的需求，但是有不影响原来已经有的部分。                          
+```javascript
+let decorator = function (input, fn) {
+    let getInput = document.getElementById(input);
+    if(typeof getInput.onclick === 'function') {
+        let oldClick = getInput.onclick;
+        getInput.onclick = function() {
+            // 原来的事件回调函数
+            oldClick();
+            // 新增的事件回调函数
+            fn();
+        }
+    } else {
+        getInput.onclick = fn;
+    }
+    // 其他事件
+};
+```
+
 
