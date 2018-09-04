@@ -268,6 +268,44 @@ spans[1].onmouseout = function () {
 };
 ```
 
+
 #### 抽取共同点                  
+对于用户信息模块的每一个部分，鼠标滑过和鼠标离开的两个时间的执行函数有很大的一部分是相似的。处理每个部件中的某个元素，他们都是处理钙元素的字体和背景颜色。
+```javascript
+//抽象
+function changeColor(dom, color, bg) {
+    //字体颜色
+    dom.style.color = color;
+    //背景颜色
+    dom.style.backgroundColor = bg;
+}
+```
+
+#### 事件与业务逻辑之间的桥梁
+我们还需要一个方法来链接事件绑定与设置样式。桥接方法，我们可以用一个匿名函数来代替，将他们耦合在一起。
+```javascript
+function changeColor(dom, color, bg) {
+    //字体颜色
+    dom.style.color = color;
+    //背景颜色
+    dom.style.backgroundColor = bg;
+}
+
+// 耦合
+let spans = document.getElementsByTagName('span');
+spans[0].onmouseover = function() {
+    changeColor(this, 'red', '#ddd')
+};
+spans[0].onmouseout = function() {
+    changeColor(this, '#333', '#f5f5f5')
+};
+
+spans[1].onmouseover = function () {
+    changeColor(this.getElementsByTagName('strong')[0], 'red', '#ddd');
+};
+spans[1].onmouseout = function () {
+    changeColor(this.getElementsByTagName('strong')[0], '#333', '#f5f5f5');
+};
+```
 
 
