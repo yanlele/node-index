@@ -219,4 +219,24 @@ let decorator = function (input, fn) {
 };
 ```
 
+调用：             
+```javascript
+// 电话输入框功能装饰
+decorator('tel_input', function() {
+    document.getElementById('tel_demo_text').sytle.display = 'none'
+});
+// 姓名输入框装饰
+decorator('name_input', function() {
+    document.getElementById('name_demo_text').sytle.display = 'none'
+});
+// 地址输入框装饰
+decorator('address_input', function() {
+    document.getElementById('address_demo_text').sytle.display = 'none'
+});
+```
+
+适配器模式是对原有的对象适配， 添加的方法和原有方法功能上大致类似。装饰者提供的方法与原来的方法有一定的区别。                     
+适配器模式使用适配器时我们新增的方法是为了调用原来的方法。装饰者不需要了解原有的功能是什么，并且对原有的方法照样可以原封不动的使用。                      
+
+
 

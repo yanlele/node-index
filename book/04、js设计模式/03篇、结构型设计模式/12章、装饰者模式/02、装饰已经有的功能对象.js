@@ -13,3 +13,17 @@ let decorator = function (input, fn) {
     }
     // 其他事件
 };
+
+/*调用*/
+// 电话输入框功能装饰
+decorator('tel_input', function() {
+    document.getElementById('tel_demo_text').sytle.display = 'none'
+});
+// 姓名输入框装饰
+decorator('name_input', function() {
+    document.getElementById('name_demo_text').sytle.display = 'none'
+});
+// 地址输入框装饰
+decorator('address_input', function() {
+    document.getElementById('address_demo_text').sytle.display = 'none'
+});
