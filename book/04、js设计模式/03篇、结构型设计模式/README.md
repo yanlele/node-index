@@ -239,4 +239,35 @@ decorator('address_input', function() {
 适配器模式使用适配器时我们新增的方法是为了调用原来的方法。装饰者不需要了解原有的功能是什么，并且对原有的方法照样可以原封不动的使用。                      
 
 
+### <div id="class03-13">13章、桥接模式</div>
+**桥接模式（Bridge）**: 在系统沿着多个纬度变化的同事，又不添加其复杂度并已达到解耦。                    
+
+#### 添加事件交互的一个例子
+给页面上部用户信息添加鼠标滑过的特效： 用户信息是由很多小部件组成的。用户名，鼠标滑过要改变背景颜色；但是用户等级和用户消息，只改变数字内容。这两种处理逻辑不一样。                  
+```javascript
+let spans = document.getElementsByTagName('span');
+
+// 为用户明绑定特效
+spans[0].onmouseover = function() {
+    this.style.color = 'red';
+    this.style.backgroundColor = '#ddd'
+};
+spans[0].onmouseout = function () {
+    this.style.color = '#333';
+    this.style.backgroundColor = '#f5f5f5'
+};
+
+// 绑定等级特效
+spans[1].onmouseover = function () {
+    this.getElementsByTagName('strong')[0].style.color = 'red';
+    this.getElementsByTagName('strong')[0].style.backgroundColor = '#ddd';
+};
+spans[1].onmouseout = function () {
+    this.getElementsByTagName('strong')[0].style.color = '#333';
+    this.getElementsByTagName('strong')[0].style.backgroundColor = '#f5f5f5';
+};
+```
+
+#### 抽取共同点                  
+
 
