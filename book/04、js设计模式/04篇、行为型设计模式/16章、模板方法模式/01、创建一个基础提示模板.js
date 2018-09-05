@@ -67,3 +67,5 @@ Alert.prototype = {
         this.panel.style.display = 'block';
     }
 };
+
+module.exports = Alert;
