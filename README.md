@@ -188,6 +188,7 @@
     - [13、html转换为img、html转换为pdf:render-html-to-pdf](https://github.com/linwalker/render-html-to-pdf)
     - [14、GithubPages教程 在GithubPages上搭建个人主页](https://blog.csdn.net/yanzhenjie1003/article/details/51703370)
     - [15、一篇文章，教你学会Git](https://mp.weixin.qq.com/s/-TC07TQoiTNRUJIdBv46SQ)
+    - [16、发布、安装自己的npm模块](https://www.cnblogs.com/yanhua2017/p/7748491.html)
 
 - koa2
     - [01、koa2-sql项目搭建的示例（通过sql链接数据库）](./18年/1月/12、koa2项目框架搭建)
