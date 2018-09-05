@@ -569,8 +569,112 @@ news1.add(
     )
 ).show();
 ```
+结果示例图：                      
+![14-01](./14章、组合模式/img/14-01.png)
 
 
+### <div id="class03-15">15章、享元模式</div>
+**享元模式（Flyweight）**: 运用共享技术有效地支持大量的细粒度对象，避免对象间拥有相同内容造成多余的开销。                    
 
+#### 翻页的需求
+一个简单的分页功能，点击下一页隐藏当前页的新闻，然后显示后面五个新闻；存在的问题，在低版本浏览器中会有卡的现象：
+```javascript
+let article = [1, 2, 3, 4, 4, 5, 6, 6, 7, 8, 9];    // 里面存放的是新闻对象
+let dom = null,                 // 缓存创建的新闻标题元素
+    paper = 0,                  // 当前页数
+    num = 5,                    // 每一页显示新闻数目
+    i = 0,                      // 创建新闻元素时候保存变量
+    len = article.length;       // 新闻数据长度
+for (; i < len; i++) {
+    dom = document.createElement('div');
+    dom.innerHTML = article[i];
+    if (i >= num) {
+        dom.style.display = 'none'
+    }
+    document.getElementById('container').appendChild(dom)
+}
+// 下一页绑定事件
+document.getElementById('next_page').onclick = function () {
+    let div = document.getElementById('container').getElementsByTagName('div'),
+        j = k = n = 0,
+        n = ++paper % Math.ceil(len / num) * num;
+    for (; j < len; j++) {
+        div[j].style.display = 'none';
+    }
+    for (; k < 5; k++) {
+        if (div[n + k]) {
+            div[n + k].style.display = 'block'
+        }
+    }
+};
+```
+
+#### 存在的问题
+上面的这种做法，实际上是把所有的新闻都插入到也页面，通过展示或者不展示来形成一个分页的效果。
+所有新闻都是相同的机构，只是内容不同，如果创建几百条新闻，同事插入页面并且操作，会造成多余的开销，导致了影响性能。
+享元模式主要是对数据和方法共享分离，它把数据和方分为了： 内部数据和内部方法、外部数据和外部方法。
+内部数据内部方法是指相似或者相同的数据和方法，所以讲这一部分提取出来，可以减少开销，提高性能。
+
+
+#### 享元对象                   
+在上面的例子中，新闻个体有相同的结构，作为内部数据，下一页绑定事件作为外部方法。内部的数据提取出来了，为了使用它们，需要提供一个操作方法。                       
+```javascript
+let Flyweight = function () {
+    let created = [];
+    function create() {
+        let dom = document.createElement('div');
+        document.getElementById('container').appendChild(dom);
+        created.push(dom);
+        return dom;
+    }
+    return {
+        getDiv: function () {
+            if(created.length < 5) {
+                return create()
+            } else {
+                // 获取第一个元素，并且插入到最后
+                let div = created.shift();
+                created.push(div);
+                return div;
+            }
+        }
+    }
+};
+```
+
+#### 需求的实现              
+```javascript
+let Flyweight = require('./02、享元对象');
+let article = [1, 2, 3, 4, 4, 5, 6, 6, 7, 8, 9];    // 里面存放的是新闻对象
+
+let paper = 0,
+    num = 5,
+    len = article.length;
+// 添加五条新闻
+for (let i = 0; i < 5; i++) {
+    if(article[i]) {
+        Flyweight().getDiv().innerHTML = article[i]
+    }
+}
+
+//给下一页添加一个事件
+document.getElementById('next_page').onclick = function () {
+    // 如果新闻内容不满足五条返回
+    if(article.length < 5) return;
+    let n = ++paper * num % len,                // 获取当前页的第一条新闻索引
+        j = 0;
+    // 插入五条新闻
+    for (; j<5;j++) {
+        if (article[n+j]) {
+            Flyweight().getDiv().innerHTML = article[n+j];
+        } else if(article[n+j-len]) {           
+            Flyweight().getDiv().innerHTML = article[n+j-len];
+        } else {
+            Flyweight().getDiv().innerHTML = ''
+        }
+    } 
+}
+```
+这样重构之后，每次就只需要插入五个元素了。
 
 
