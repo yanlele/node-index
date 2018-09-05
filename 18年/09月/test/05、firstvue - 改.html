@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ZH">
+<head>
+    <meta charset="UTF-8">
+    <title>hello vue</title>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{msg}}</p>
+    <input type="button" value="跑马灯开始" @click="start">
+    <input type="button" value="不停加速" @click="run">
+    <input type="button" value="点一次停止一次" @click="stopTep">
+</div>
+
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '跑马灯啊跑马灯~~~~~~~~~',
+            btn: "this is a button",
+            timer: '',
+            speed: 500
+        },
+        methods: {
+            start: function() {
+                this.timer = setTimeout(() => {
+                    this.start();
+                    this.msg = this.msg.substring(1) + this.msg.substring(0, 1);
+                }, this.speed);
+                console.log(this.speed);
+            },
+
+            run: function () {
+                this.speed -= 100;
+                //时间下限
+                if (this.speed <= 100) {
+                    this.speed = 100;
+                }
+                console.log(this.timer);
+            },
+            stopTep: function () {
+                this.speed += 100;
+                if (this.speed >= 500) { //时间上限
+                    clearInterval(this.timer)
+                }
+                console.log(this.speed);
+            }
+        }
+    })
+</script>
+</body>
+</html>
