@@ -33,10 +33,53 @@ Container.prototype.add = function (child) {
 Container.prototype.getElement = function () {
     return this.element;
 };
-
 // 显示方法
 Container.prototype.show = function () {
     this.parent.appendChild(this.element);
 };
+module.exports.Container = Container;
 
-/**/
+/*下一层的行成员集合类以及后面的新闻组合类实现方式与上面类似*/
+// 单个成员
+let Item = function (className) {
+    News.call(this);
+    this.className = className || '';
+    this.init();
+};
+inheritPrototype(Item,News);
+Item.prototype.init = function () {
+    this.element = document.createElement('li');
+    this.element.className = this.className;
+};
+Item.prototype.add = function (child) {
+    // 在子元素容器中插入子元素
+    this.children.push(child);
+    // 插入当前组件元素树种
+    this.element.appendChild(child.getElement());
+    return this;
+};
+Item.prototype.getElement = function () {
+    return this.element;
+};
+module.exports.Item = Item;
+
+// 新闻组
+let NewsGrout = function (className) {
+    News.call(this);
+    this.className = className || '';
+    this.init();
+};
+inheritPrototype(NewsGrout, News);
+NewsGrout.prototype.init = function () {
+    this.element = document.createElement('div');
+    this.element.className = this.className;
+};
+NewsGrout.prototype.add = function (child) {
+    this.children.push(child);
+    this.element.appendChild(child.getElement());
+    return this;
+};
+NewsGrout.prototype.getElement = function () {
+    return this.element;
+};
+module.exports.NewsGroup = NewsGrout;
