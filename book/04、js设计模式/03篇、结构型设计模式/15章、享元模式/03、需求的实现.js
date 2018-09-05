@@ -27,4 +27,4 @@ document.getElementById('next_page').onclick = function () {
             Flyweight().getDiv().innerHTML = ''
         }
     } 
-}
+};
