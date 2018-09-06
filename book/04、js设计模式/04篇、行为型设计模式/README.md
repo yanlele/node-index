@@ -181,5 +181,66 @@ new CancelAlert({
 }).init();
 ```
 
+#### 创建多类导航
+这种模板设计模式在创建页面的时候也很常用。比如创建三级导航，第一类是基础，第二类多了消息提示功能，第三类在第二类的基础上多了显示网址的功能。
+```javascript
+function formateString(str, data) {
+    return str.replace(/\{(\w+)}/g, function (match, key) {
+        return typeof data[key] === "undefined" ? '' : data[key];
+    })
+}
+
+// 基础导航类
+exports.loader = function (path) {
+    if (/.css$/.test(path)) return `<link rel="stylesheet" type="text/css" href="${config.staticURI}${path}">`;
+    else return `<script type="text/javascript" src="${config.staticURI}${path}"></script>`;
+};
+let Nav = function (data) {
+    this.item = `<a href="${href}" title="${title}">${name}</a>  `;
+    this.html = '';
+    for (let i = 0, len = data.length; i < len; i++) {
+        this.html += formateString(this.item, data[i]);
+    }
+    return this.html
+};
+
+// 带有消息提示的导航类
+let NumNav = function (data) {
+    // 创建信息模板
+    let tep = `<b>${num}</b>`;
+    // 装饰数据
+    for (let i = data.length - 1; i >= 0; i--) {
+        data[i].name += data[i].name + formateString(tep, data[i]);
+    }
+    return Nav.call(this, data);
+};
+
+//带有链接的导航地址
+let LinkNav = function (data) {
+    let tpl = `<span>${link}</span>`;
+    for (let i = data.length - 1; i >= 0; i--) {
+        data[i].name += data[i].name + formateString(tpl, data[i]);
+    }
+    return Nav.call(this, data);
+};
+```
+
+
+### <div id="class04-17">17章、观察者模式</div>
+**观察者模式（Observer）**: 又被成
+为发布者-订阅者或者消息定制，定义一种依赖关系，解决主体对象与观察者之间的功能耦合；                  
+
+#### 场景是各个模块需要通信
+当用户发表评论的时候，会在评论区展示新的评论，同事用户的信息模块消息数量递增。删除模块的时候，用户消息模块数量也会递减。整个功能是由三个不同开发做的。
+不想跟别人的代码强耦合，又希望别的模块接收到自己的推送信息。                      
+作为一个观察者对象，那应该具有两个功能，一个功能是接受被观察者发送过来的信息，第二个功能是想订阅者推送一个被观察者发送过过来的信息。                  
+还需要一个注销订阅者身份的一个方法。还需要一个保存信息的容器。
+
+总结一下： 我们需要把观察者对象创建出来，他有消息容器，有三个方法，分别是订阅信息方法，取消订阅方法，发送订阅信息方法。                        
+
+
+
+
+
 
 
