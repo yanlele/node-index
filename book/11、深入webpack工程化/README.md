@@ -31,9 +31,9 @@
     - [03、代理远程接口](./03、webpack构建本地开发环境/REAME.md#class3-item03)
     - [04、模块热更新](./03、webpack构建本地开发环境/REAME.md#class3-item04)
     - [05、开启调试模式Source Map](./03、webpack构建本地开发环境/REAME.md#class3-item05)
-    - [06、设置EsLint检查代码格式](./03、webpack构建本地开发环境/#class3-item06)
-    - [07、区分开发环境和生产环境](./03、webpack构建本地开发环境/#class3-item07)
-    - [08、使用middleware搭建开发环境](./03、webpack构建本地开发环境/#class3-item08)
+    - [06、设置EsLint检查代码格式](./03、webpack构建本地开发环境/REAME.md#class3-item06)
+    - [07、区分开发环境和生产环境](./03、webpack构建本地开发环境/REAME.md#class3-item07)
+    - [08、使用middleware搭建开发环境](./03、webpack构建本地开发环境/REAME.md#class3-item08)
 
 
 
