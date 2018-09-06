@@ -49,7 +49,7 @@
 - [05、基础知识点专题](./book/05、基础知识点专题)
 - [06、canvas总结](./book/06、canvas总结)
 - [07、leetCode-cn](./book/07、leetCode)
-- [08、webpack专题](./book/08、webpack)
+- [08、前端入门和进阶学习笔记，超详细的前端学习图文教程。从零开始学前端，做一个web全栈工程师。](https://github.com/smyhvae/Web)
 - [09、学习javascript数据结构与算法](./book/09、学习javascript数据结构与算法)
 - [10、DOM和BOM](./book/10、DOM和BOM)
 - [11、深入webpack工程化](./book/11、深入webpack工程化/)
