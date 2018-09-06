@@ -69,7 +69,7 @@ Set 结构的实例的forEach方法，用于对每个成员执行某种操作，
     set.forEach((value, key) => console.log(value * 2) )
     // 2
     // 4
-    4、通信类
+    // 6
 ```
 
 
@@ -221,7 +221,6 @@ clear方法清除所有成员，没有返回值。
     let map2 = new Map(
         [...map0].map(([k, v]) => [k * 2, '_' + v])
     );
-    4、通信类
 ```
 
 
