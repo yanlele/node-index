@@ -245,6 +245,7 @@
     - [34、客户端生成二维码:jrQrcode](https://github.com/diamont1001/jrQrcode)
     - [35、Inquirer.js交互式命令行工具](./18年/08月/05、Inquirer.js交互式命令行工具/)
     - [36、对commander的研究](./18年/08月/06、对commander的研究/)
+    - [37、测试框架mochajs详解](https://www.cnblogs.com/Leo_wl/p/5734889.html)
     
 
 
