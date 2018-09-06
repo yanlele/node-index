@@ -43,6 +43,7 @@
 
 ### <div id="class04">专题笔记归类(简书总结)</div>
 - [01、react简书笔记](./book/01、react专题)
+
 - [02、ES6/7简书笔记](./book/02、ES6&7)
     - [1、let和const](./book/02、ES6&7/1、let和const/let和const.md)
     - [2、变量的解构赋值](./book/02、ES6&7/2、变量的解构赋值/变量的解构赋值.md)
@@ -56,14 +57,18 @@
     - [10、Iterator 和 for...of 循环](./book/02、ES6&7/10、Iterator%20和%20for...of%20循环/README.md)
     - [11、Generator](./book/02、ES6&7/11、Generator/README.md)
     - [12、Promise](./book/02、ES6&7/12、Promise对象/README.md)
+    
 - [03、css3专题](./book/03、css3专题)
     - [1、css基础](./book/03、css3专题/01、css基础.md)
     - [2、css布局](./book/03、css3专题/02、css布局.md)
     - [3、css效果](./book/03、css3专题/03、css效果.md)
     - [4、css动画](./book/03、css3专题/04、css动画.md)
     - [5、媒体查询](./book/03、css3专题/05、@media媒体查询.md)
+    
 - [04、javascript设计模式](./book/04、js设计模式)
+
 - [05、基础知识点专题](./book/05、基础知识点专题)
+
 - [06、canvas总结](./book/06、canvas总结)
     - [01、canvas初级使用](./book/06、canvas总结/01、canvas初级.md)
         - [1.1、基础使用](./book/06、canvas总结/01、canvas初级.md#class01)
@@ -77,8 +82,11 @@
         - [1.9、合成](./book/06、canvas总结/01、canvas初级.md#class09)
         - [1.10、剪裁路径](./book/06、canvas总结/01、canvas初级.md#class10)
         - [1.11、动画](./book/06、canvas总结/01、canvas初级.md#class11)
+        
 - [07、leetCode-cn](./book/07、leetCode)
+
 - [08、前端入门和进阶学习笔记，超详细的前端学习图文教程。从零开始学前端，做一个web全栈工程师。](https://github.com/smyhvae/Web)
+
 - [09、学习javascript数据结构与算法](./book/09、学习javascript数据结构与算法)
     - [01章、javascript基础](./book/09、学习javascript数据结构与算法/README.md#class01)
         - [1.5、面向对象编程](./book/09、学习javascript数据结构与算法/README.md#class01-05)
@@ -111,7 +119,9 @@
     - [10章、排序和搜索算法](./book/09、学习javascript数据结构与算法/README.md#class10)
         - [10.1 排序算法](./book/09、学习javascript数据结构与算法/README.md#class10-01)
         - [10.2 搜索算法](./book/09、学习javascript数据结构与算法/README.md#class10-02)
+        
 - [10、DOM和BOM](./book/10、DOM和BOM)
+
 - [11、深入webpack工程化](./book/11、深入webpack工程化/)
 
 
