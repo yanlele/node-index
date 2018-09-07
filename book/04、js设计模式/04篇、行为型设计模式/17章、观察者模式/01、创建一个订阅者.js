@@ -11,7 +11,7 @@ class Observer {
             // 动作推送到消息对应的动作执行队列中
             this.__message[type] = [fn];
         } else {    // 消息已经存在
-            this.__message.push(fn);
+            this.__message[type].push(fn);
         }
     }
     // 发布
@@ -42,16 +42,6 @@ class Observer {
         }
     }
 }
-let observer = new Observer();
 
-// 订阅一个信息
-observer.regist('test', function (e) {
-    console.log(e.type, e.args.message)
-});
-
-// 发布一个信息
-observer.fire('test', {
-    message: '传递的参数'
-});
 
 module.exports = Observer;
