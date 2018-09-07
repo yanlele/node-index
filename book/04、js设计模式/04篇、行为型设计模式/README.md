@@ -482,3 +482,37 @@ resultState.show(3);
 对于状态模式，主要是讲条件判断的不同结果转换为状态对象的内部状态。一般作为状态对象内部的私有变量。提供一个可以调用的对象内部状态的接口方法，做增删改用。                
 
 #### 另外一个例子，超级玛丽                    
+在超级玛丽游戏中，跳跃，开枪，蹲下，奔跑等都是一个一个的状态。很多时候再游戏中需要好几个状态同时触发的。                    
+如果用普通的if else 的方式来做判断，会出现下面的结果：
+```javascript
+
+// 单动作条件判断 每增加一个动作就需要添加一个判断
+let lastAction = '';
+function changeMarry(action) {
+    if(action === 'jump') {
+        // 跳跃
+    } else if(cation === 'move') {
+        // 移动动作
+    } else {
+        // 默认情况
+    }
+}
+
+// 复合动作的判断 开销是要翻倍的
+let lastAction1 = '';
+let lastAction2 = '';
+function changeMarry(action1, cation2) {
+    if(action1 === 'shoot') {
+        // 射击
+    } else if(action1 === 'jump') {
+        // 跳跃
+    } else if(action1 === 'move' && action2 === 'shoot') {
+        // 移动射击
+    } else if(action1 === 'jump' && action2 === 'shoot') {
+        // 跳跃射击
+    }
+    //保留上一个动作
+    lastAction1 = action1 || '';
+    lastAction2 = action2 || '';
+}
+```
