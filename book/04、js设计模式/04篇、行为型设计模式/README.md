@@ -431,3 +431,54 @@ teacher.ask('简述观察者模式');
 ### <div id="class04-18">18章、状态模式</div>
 **状态模式（State）**: 当一个对象内部状态发生变化时，会导致其行为发生改变，状态改变了对下对象。                   
 
+#### 用最美图片写一个例子
+需要选出本月最美图片，根据网友的投票，每张图片有一下几个结果。
+```javascript
+// 展示结果
+function showResult(result) {
+    if(result === 0) {
+        // 处理结果 0
+    } else if (result === 1) {
+        // 处理结果1
+    } else if(result === 2) {
+        // 处理结果2
+    } else if(result === 3) {
+        // 处理结果3
+    }
+}
+```
+如果某一天项目经理心血来潮，想增删结果，那就悲剧了。用状态模式，每一种条件作为对象内部的一种状态，面对不同判断结果，它其实就只是选择对象内的一种状态而已。                   
+一个最简单的例子，我们可以将不同的判断结果封装在对象内，然后返回一个可以被调用的接口。
+```javascript
+// 投票结果状态对象
+class ResultState {
+    // 判断结果保存在内部状态中
+    constructor() {
+        this.states = {
+            state0: function () {
+                console.log('这里是第一种结果状态')
+            },
+            state1: function () {
+                console.log('这里是第二种状态结果')
+            },
+            state2: function () {
+                console.log('这里是第三种状态结果')
+            },
+            state3: function () {
+                console.log('这里是第四种状态结果')
+            }
+        }
+    }
+    show(result) {
+        this.states['state' + result] && this.states['state' + result]()
+    }
+}
+let resultState = new ResultState();
+
+/*测试*/
+resultState.show(3);
+```
+上面这个例子基本上有了状态模式的基本雏形了。
+对于状态模式，主要是讲条件判断的不同结果转换为状态对象的内部状态。一般作为状态对象内部的私有变量。提供一个可以调用的对象内部状态的接口方法，做增删改用。                
+
+#### 另外一个例子，超级玛丽                    
