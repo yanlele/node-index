@@ -574,3 +574,8 @@ class MarryState extends Action {
 let marry  = new MarryState();
 marry.changeState('jump', 'shoot').gose().gose().changeState('shoot').gose();
 ```
+
+
+### <div id="class04-19">19章、策略模式</div>
+**策略模式（Strategy）**: 将定义的一组算法封装起来，使其相互之间可以替换。封装的算法具有一定的独立性，不会碎客户端变化而变化。                  
+
