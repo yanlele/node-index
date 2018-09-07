@@ -14,7 +14,7 @@ function changeMarry(action) {
 // 复合动作的判断 开销是要翻倍的
 let lastAction1 = '';
 let lastAction2 = '';
-function changeMarry(action1, cation2) {
+function changeMarry(action1, action2) {
     if(action1 === 'shoot') {
         // 射击
     } else if(action1 === 'jump') {
