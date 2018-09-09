@@ -208,6 +208,15 @@ import('./async').then(function (a) {
 ![02](./03、长缓存优化/common_img/02.png)                 
 结果我们发现vendor还是没有发生变化，因为新版本webpack 其实已经解决的这个动态导入的问题
 
+#### 长缓存优化总结
+首先要独立打包vendor               
+其次抽出manifest(webpack runtime)               
+使用NamedChunksPlugin                                  
+使用NamedModulesPlugin                        
+
+
+
+
 
 
 
