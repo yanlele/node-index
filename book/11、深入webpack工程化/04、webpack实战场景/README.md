@@ -93,7 +93,7 @@ hash->chunkhash
 我们初始化一个非常简单的页面， 目录结构如下                      
 
 +-- src
-    +-- foo.js
+|   +-- foo.js
 +-- webpack.config.js
 
 webpack.config.js:              
