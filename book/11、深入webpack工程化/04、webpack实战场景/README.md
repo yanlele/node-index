@@ -118,6 +118,95 @@ foo.js
 import react from 'react';
 console.log('hello world');
 ```
+直接运行打包命令，会发现main文件和vendor文件是一样的哈希版本号。这样就导致如果我更改foo.js的代码，vendor的hash也会跟着改变。                     
+
+这个时候我们要把公用文件提取出来：                                    
+```javascript
+const path = require('path');
+const webpack = require('webpack');
+
+module.exports = {
+    entry: {
+        main: './src/foo.js',
+        vendor: ['react']
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].[chunkhash].js'
+    },
+
+    plugins: [
+        // 区分业务代码和第三方依赖代码
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: Infinity
+        })
+    ]
+};
+```
+这样提取出来的vendor每次打包都有有不同的hash, 这个时候需要在再加一个提取第三方代码的
+```javascript
+const path = require('path');
+const webpack = require('webpack');
+
+module.exports = {
+    // ......
+    plugins: [
+        // 区分业务代码和第三方依赖代码
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: Infinity
+        }),
+
+        // 在提取出来一个runtime
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'manifest',   // 选中上面一个entry 没有的就可以了
+        })
+    ]
+};
+```
+这个时候在打包，会发现vendor的哈希值是没有变化的了。
+
+#### 第二个场景
+如果引入一个新的模块，模块的引入顺序变化，也会引起哈希的变化。                 
+
+**解决：**                     
+NamedChunksPlugin                   
+NamedModulesPlugin                  
+
+```javascript
+plugins: [
+        new webpack.NamedChunksPlugin(),
+        new webpack.NamedModulesPlugin(),
+
+        // 区分业务代码和第三方依赖代码
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: Infinity
+        }),
+
+        // 在提取出来一个runtime
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'manifest',   // 选中上面一个entry 没有的就可以了
+        })
+    ]
+```
+![01](./03、长缓存优化/common_img/01.png)                     
+这样配置好了之后，会发现vendor的哈希又不会变化了。                    
+
+
+#### 第三个场景
+如果模块是动态引入的，vendor的哈希还是会变化                       
+
+比如我们在js中是这样引入的：             
+```javascript
+import('./async').then(function (a) {
+    console.log(a)
+});
+```
+执行打包命令之后，会发现如下的情况：              
+![02](./03、长缓存优化/common_img/02.png)                 
+结果我们发现vendor还是没有发生变化，因为新版本webpack 其实已经解决的这个动态导入的问题
 
 
 
