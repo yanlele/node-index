@@ -73,3 +73,63 @@ module.exports = {
 #### 通过happyPack加快打包速度
 这个实际上是一个loader, 可以让串行处理的loader变为并行处理。
 这方面的研究直接去看github吧。。。。。。。。
+
+
+
+### <div id="class4-item03">03、长缓存优化</div>
+####什么是长缓存：                     
+当我们输入url之后，从http中拉下来很多的资源，然后这些资源会被浏览器缓存。下次访问的时候，就直接拉取浏览器缓存的静态资源。
+利用webpack长缓存优化，实际上是希望，我们更改的文件，重新拉取。但是我们没有改变的文件，就不希望从浏览器上重新去拉取下来。                    
+
+#### 场景             
+改变app代码，vendor没有变化。但是我们不希望更改第三方的代码重新更新版本。                 
+
+解决办法：                   
+提取vendor                    
+hash->chunkhash                     
+提取webpack runtime                   
+
+#### 解决问题
+我们初始化一个非常简单的页面， 目录结构如下                      
+
++-- src
+    +-- foo.js
++-- webpack.config.js
+
+webpack.config.js:              
+```javascript
+const path = require('path');
+const webpack = require('webpack');
+
+module.exports = {
+    entry: {
+        main: './src/foo.js',
+        vendor: ['react']
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].[hash].js'
+    }
+};
+```
+
+foo.js              
+```javascript
+import react from 'react';
+console.log('hello world');
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                              
