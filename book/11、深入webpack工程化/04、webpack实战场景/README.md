@@ -53,4 +53,19 @@ module.exports = {
 };
 ```
 打包出来会出来两个json, 这两个json文件就会告诉我也业务代码，怎么区分三方依赖和自己的业务代码。
-接下来
+接下来要在生产打包配置文件中做配置： webpack.prod.config.js                       
+添加如下的plugins:   
+```javascript
+module.exports = {
+    // ......
+    plugins: [
+        new webpack.DllReferencePlugin({
+            manifest: require('../src/dll/vue-manifest.json')
+        }),
+        new webpack.DllReferencePlugin({
+            manifest: require('../src/dll/ui-manifest.json')
+        }),
+    ]
+}
+```
+然后在进行线上打包，应该会有明显的打包速度加快。原因是我们在开发打包过程中，已经把第三方的依赖包已经打包编译过一次了，我们打线上包的时候，其实只打的是我们src下面的业务代码，所以会有明显的速度加快。                        
