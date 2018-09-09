@@ -682,3 +682,100 @@ $tag('input')[1].onclick = function () {
 };
 ```
 
+### <div id="class04-20">20章、责任链模式</div>
+**责任链模式（Chain of Responsibility）**: 解决请求的发送者与请求的接受者之间的耦合。通过责任链上的多个对象分解请求流程。实现请求在多个对象之间传递，知道最后一个对象完成请求处理。                    
+
+#### 半成品的需求                     
+有一个半成品的需求，首先要在表单输入框中添事件，做输入提示和输入验证处理。完成功能需要向服务端发送请求，还要在原有的页面中创建其他的组件，但是具体输入框有哪些不确定。
+分析这个需求： 有的输入框需要绑定keyup事件，有的输入框需要绑定change事件，绑定事件是第一部分。第二部分创建XHR进行一步请求。第三部分是适配相应数据，处理数据格式。最后一部分是向组件创建器传入数据生成组件。
+```javascript
+// 异步请求对象
+let sendData = function (data, dealType, dom) {
+    let xhr = new XMLHttpRequest(),
+        url = 'getData.json?mod=userInfo';
+    // 请求返回事件
+    xhr.onload = function () {
+        if((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+            dealData(xhr.responseText, dealType, dom);
+        } else {
+            // 请求失败
+        }
+        // 拼接请求字符串
+        for (let i in data) {
+            url += '&' + i + '=' + data[i];
+        }
+        // 发送请求
+        xhr.open('get', url, true);
+        xhr.send(null);
+    }
+};
+
+// 响应数据适配模块
+let dealData = function (data, dealType, dom) {
+    let dataType = Object.prototype.toString.call(data);
+    switch (dealType) {
+        // 输入框提示
+        case 'sug':
+            // 如果是数组对象
+            if(dataType === '[object Array]') {
+                // 创建提示框组件
+                return createSug(data, dom);
+            }
+            // 将相应的对象数据转化为数组
+            if(dataType === '[object Object]') {
+                let newData = [];
+                for (let i in data) {
+                    newData.push(data[i]);
+                }
+                return createSug(newData, dom);
+            }
+            return createSug([data], dom);
+        case 'validate':
+            // 校验组件
+            return createValidateResult(data, dom);
+    }
+};
+
+// 创建提示框组件
+let createSug = function (data, dom) {
+    let i = 0,
+        len = data.length,
+        html = '';
+    // 拼接每一条语句
+    for(; i < len; i++) {
+        html += `<li> ${data[i]} </li>`
+    }
+    dom.parentNode.getElementsByTagName('ul')[0].innerHTML = html;
+};
+
+// 创建校验组件
+let createValidateResult = function (data, dom) {
+    dom.parentNode.getElementsByTagName('span')[0].innerHTML = data;
+};
+```
+
+#### 站点测试-单元测试
+```javascript
+/*站点的测试*/
+dealData('用户名不对', 'validate', input[0]);
+dealData(123, 'sug', input[1]);
+dealData(['爱奇艺', '阿里巴巴'], 'sug', input[1]);
+dealData({
+    'iqy': '爱奇艺',
+    'albb': '阿里巴巴'
+}, 'sug', input[1]);
+// 这样测试会直接调用到了， createSug 和 createValidateResult , 可以先暂时简化他们， 模拟一下测试方法
+let createSug = function (data, dom) {
+    console.log(data, dom, 'createSug');
+};
+let createValidateResult = function (data, dom) {
+    console.log(data, dom, 'createValidateResult')
+};
+// 然后就可以执行了
+```
+最后等方案确定之后，直接把我们需要的东西灌进去就可以了。
+
+#### 总结
+责任链模式，其实就是把一个较大的或者不确定的需求，拆分成一个一个细小的模块。各自做好各自模块的功能，把做好的事儿，交给下一步做。                        
+
+
