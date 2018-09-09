@@ -578,3 +578,49 @@ marry.changeState('jump', 'shoot').gose().gose().changeState('shoot').gose();
 
 ### <div id="class04-19">19章、策略模式</div>
 **策略模式（Strategy）**: 将定义的一组算法封装起来，使其相互之间可以替换。封装的算法具有一定的独立性，不会碎客户端变化而变化。                  
+
+#### 商品促销的例子                        
+在圣诞节，一部分商品五折出售，一部分八折出售，一部分九折出售。到了元旦节，普通用户满100返30， vip满100返50。
+状态模式可以处理这种多分支的情况。但是这里有圣诞节和元旦节两种情况。对于一种商品的促销策略只有一种情况，而不需要其他促销策略。因此采用策略模式。
+
+从结构上看，他和状态模式很像。内部封装一个对象，通过返回的接口对象实现内部对象的调用。不同的是策略模式不需要状态管理，状态之间没有依赖关系，策略之间可以互换，在策略对象内部保存的是相互独立的一些算法。            
+首先要讲这些算法封装在一个策略对象内，然后对每一种商品的策略调用时，直接对策略对象中的算法调用就可以了。而策略算法又独立地封装在策略对象内。
+
+#### 策略对象的实现
+```javascript
+
+// 价格策略对象
+class PriceStrategy {
+    constructor() {
+        // 内部算法对象
+        this.stragtegy = {
+            // 100返30
+            return30(price) {
+                return +price + parseInt( price / 100) * 30;
+            },
+            // 100 返 50
+            return50(price) {
+                return +price + parseInt(price/ 100) * 50;
+            },
+            // 9 折
+            percent90(price) {
+                return price * 100 * 90 / 10000
+            },
+            percent80(price) {
+                return price * 100 * 80 / 10000
+            },
+            percent50(price) {
+                return price * 100 * 50 / 10000
+            }
+        }
+    }
+    // 策略算法调用接口
+    getPrice(algorithm, price) {
+        return this.stragtegy[algorithm] && this.stragtegy[algorithm](price);
+    }
+}
+let priceStrategy = new PriceStrategy();
+let price = priceStrategy.getPrice('return50', 314.67);
+console.log(price);
+```
+
