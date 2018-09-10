@@ -1,3 +1,4 @@
+/*
 var number = 1;
 var obj = {
     number: 2,
@@ -9,4 +10,9 @@ var obj = {
         console.log(this.number)
     }
 };
-obj.show();
+obj.show();*/
+
+var number = 1;
+(function () {
+    console.log(this.number)
+})();
