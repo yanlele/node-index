@@ -776,6 +776,71 @@ let createValidateResult = function (data, dom) {
 最后等方案确定之后，直接把我们需要的东西灌进去就可以了。
 
 #### 总结
-责任链模式，其实就是把一个较大的或者不确定的需求，拆分成一个一个细小的模块。各自做好各自模块的功能，把做好的事儿，交给下一步做。                        
+责任链模式，其实就是把一个较大的或者不确定的需求，拆分成一个一个细小的模块。各自做好各自模块的功能，把做好的事儿，交给下一步做。                                          
 
+
+### <div id="class04-21">21章、命令模式</div>                         
+**命令模式（Command）**: 将请求和实现解耦并封装成为独立的对象，从而使不同的请求对客户端的实现参数化。                   
+
+#### 自由化创建视图的例子
+在莫夸里面创建一个图片，有时候又想创建多个图片。这种场景就可以使用命令模式。
+命令模式就是讲请求和实现解耦。将创建模块的逻辑封装在一个对象里面，然后对外提供一个参数化请求接口，通过调用这个接口传递一些参数实现调用命令对象内部的一些方法。
+
+#### 具体实现
+```javascript
+// 命令对象
+let viewCommand = function() {
+    let me = this;
+    let tpl = {
+        // 展示图片结构模块
+        product: [
+            `<div>
+                <img src="${me.src}" alt="">
+                <p>${me.text}</p>
+            </div>`
+        ].join(''),
+        // 展示标题结构模板
+        title: [
+            `<div class="title">
+                <div class="main">
+                    <h2>${me.title}</h2>
+                    <p>${me.text}</p>
+                </div>
+            </div>`
+        ].join('')
+    };
+    // 格式化字符串缓存字符串
+    let html = '';
+
+    // 方法集合
+    let Action = {
+        // 创建方法
+        create: function(data, view){
+            if(data.length) {
+                me = Object.assign(me, data);
+                for (let i = 0,len = data.length;i < len;i++) {
+                    // 将格式化之后的字符串缓存到html中
+                    html += tpl[view];
+                }
+            } else {
+                me = Object.assign(me, data);
+                html +=tpl[view]
+            }
+        },
+        // 展示方法
+        display: function(container, data, view){
+            if(data) {
+                this.create(data, view);
+            }
+            document.getElementById(container).innerHTML = html;
+            html = '';
+        },
+    };
+    // 命令接口
+    return function excute(msg){
+        msg.param = Object.prototype.toString.call(msg.param) === '[Object Array]' ? msg.param : [msg.param];
+        Action[msg.command].apply(Action, msg.param);
+    }
+}
+```
 

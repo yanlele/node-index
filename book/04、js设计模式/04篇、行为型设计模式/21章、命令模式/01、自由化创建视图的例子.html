@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自由化创建视图的例子</title>
+</head>
+<body>
+
+
+<script>
+    // 命令对象
+    let viewCommand = function() {
+        let me = this;
+        let tpl = {
+            // 展示图片结构模块
+            product: [
+                `<div>
+                    <img src="${me.src}" alt="">
+                    <p>${me.text}</p>
+                </div>`
+            ].join(''),
+            // 展示标题结构模板
+            title: [
+                `<div class="title">
+                    <div class="main">
+                        <h2>${me.title}</h2>
+                        <p>${me.text}</p>
+                    </div>
+                </div>`
+            ].join('')
+        };
+        // 格式化字符串缓存字符串
+        let html = '';
+
+        // 方法集合
+        let Action = {
+            // 创建方法
+            create: function(data, view){
+                if(data.length) {
+                    me = Object.assign(me, data);
+                    for (let i = 0,len = data.length;i < len;i++) {
+                        // 将格式化之后的字符串缓存到html中
+                        html += tpl[view];
+                    }
+                } else {
+                    me = Object.assign(me, data);
+                    html +=tpl[view]
+                }
+            },
+            // 展示方法
+            display: function(container, data, view){
+                if(data) {
+                    this.create(data, view);
+                }
+                document.getElementById(container).innerHTML = html;
+                html = '';
+            },
+        };
+        // 命令接口
+        return function excute(msg){
+            msg.param = Object.prototype.toString.call(msg.param) === '[Object Array]' ? msg.param : [msg.param];
+            Action[msg.command].apply(Action, msg.param);
+        }
+    }
+
+
+</script>
+</body>
+</html>
