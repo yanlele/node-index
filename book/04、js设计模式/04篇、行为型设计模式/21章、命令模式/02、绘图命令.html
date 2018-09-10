@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘图命令</title>
+</head>
+<body>
+
+<canvas id="canvas" width="300" height="300"></canvas>
+
+<script>
+    let CanvasCommand = (function () {
+        let canvas = document.getElementById('canvas');
+        ctx = canvas.getContext('2d');
+        // 内置方法
+        let Action = {
+            // 填充颜色
+            fillStyle(c) {
+                ctx.fillStyle = c;
+            },
+            // 填充矩形
+            fillRect(x, y, width, height) {
+                ctx.fillRect(x, y, width, height);
+            },
+            // 描边色彩
+            strokeStyle(c) {
+                ctx.strokeStyle = c;
+            },
+            // 描边矩形
+            strokeRect(x, y, width, height) {
+                ctx.strokeRect(x, y, width, height);
+            },
+            // 填充文字
+            fillText(text, x, y) {
+                ctx.fillText(text, x, y);
+            },
+            // 开启路径
+            beginPath() {
+                ctx.beginPath();
+            },
+            // 移动画笔
+            moveTo(x, y) {
+                ctx.moveTo(x, y);
+            },
+            // 画笔连线
+            lineTo(x, y) {
+                ctx.lineTo(x, y);
+            },
+            // 绘制弧线
+            arc(x, y, r, begin, end, dir) {
+                ctx.arc(x, y, r, begin, end, dir);
+            },
+            // 填充
+            fill() {
+                ctx.fill();
+            },
+            // 描边
+            stroke() {
+                ctx.stroke();
+            }
+        };
+
+        return {
+            // 命令接口
+            excute(msg) {
+                if(! msg) return;
+                if(msg.length) {
+                    for(let i = 0,len = msg.length;i<len;i++) {
+                        arguments.callee(msg[i]);
+                    }
+                } else {
+                    msg.param = Object.prototype.toString.call(msg.param) === '[object Array]' ? msg.param: [msg.param];
+                    Action[msg.command].apply(Action, msg.param);
+                }
+            }
+        }
+    })();
+
+    // 填充给一个矩形
+    CanvasCommand.excute([
+        {
+            command: 'fillStyle',
+            param: 'red'
+        },
+        {
+            command: 'fillRect',
+            param: [20,20,100,100]
+        }
+    ])
+</script>
+</body>
+</html>
