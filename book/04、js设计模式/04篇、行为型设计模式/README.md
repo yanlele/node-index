@@ -844,3 +844,42 @@ let viewCommand = function() {
 }
 ```
 
+#### 测试上面的代码
+```javascript
+// 测试数据
+let productData = [
+        {
+            src: 'command/01.jpg',
+            text: '图片1'
+        },
+        {
+            src: 'command/02.jpg',
+            text: '图片2'
+        },
+        {
+            src: 'command/03.jpg',
+            text: '图片3'
+        }
+    ],
+    titleData = {
+        title: '我是title',
+        tips: 'bibibibibibibibibib'
+    };
+
+// 调用
+viewCommand({
+    command: 'create',
+    //
+    param: ['title', {
+        src: 'command/01.jpg',
+        text: '图片1'
+    }, 'product']
+})
+
+// 创建多个图片
+viewCommand({
+    command: 'display',
+    param: ['product', productData, 'product']
+})
+```
+
