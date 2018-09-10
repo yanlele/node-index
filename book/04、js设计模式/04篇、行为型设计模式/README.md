@@ -874,7 +874,7 @@ viewCommand({
         src: 'command/01.jpg',
         text: '图片1'
     }, 'product']
-})
+});
 
 // 创建多个图片
 viewCommand({
@@ -966,3 +966,5 @@ CanvasCommand.excute([
 ])
 ```
 
+
+### <div id="class04-21">21章、命令模式</div>  
