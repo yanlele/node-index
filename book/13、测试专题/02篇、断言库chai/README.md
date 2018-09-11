@@ -27,8 +27,8 @@ should();  // Modifies `Object.prototype`
 ```
 
 
-### <div id="class01-02">except模块的相关api</div>
-#### 语言链修饰符                 
+
+#### <div id="class01-02">语言链修饰符</div>                 
 语言链修饰符是单纯作为语言链提供以期提高断言的可读性。除非被插件改写否则它们一般不提供测试功能。主要包括如下相关的修饰符：               
 ```
 to
@@ -51,6 +51,7 @@ expect(foo).to.is.has.which.equal('bar');
 expect(goodFn).be.has.at.same.throw(Error);  
 ```
 
+#### <div id="class01-03">except模块的相关api</div>
 - any/all               
 ```javascript
 //any:用于检测该参数是否与实际值所对应的构造函数相匹配,在keys断言之前使用any标记（与all相反）
@@ -115,6 +116,53 @@ expect(undefined).not.to.be.null;
 ```
 
 - undefined 断言目标为undefined
+```javascript
+expect(undefined).to.be.undefined;  
+expect(null).to.not.be.undefined;
+```
+
+- NaN 断言目标为NaN                  
+```javascript
+expect('foo').to.is.be.NaN;
+expect(4).is.be.NaN;
+```
+
+- exist 断言目标存在，既不为null，也不为undefined
+```javascript
+expect([]).to.be.empty
+expect('').to.be.empty
+expect({}).to.be.empty
+```
+
+- arguments 断言目标是一个参数对象arguments                
+```javascript
+function(){
+     expect(arg).to.be.has.arguements;
+}
+```
+
+- equal(value) 断言目标严格等于(===)value。另外，如果设置了deep标记，则断言目标深度等于value
+```javascript
+expect('hello').to.equal('hello');
+expect(42).to.equal(42);
+```
+
+- eql(value) 断言目标深度等于value，相当于deep.equal(value)的简写                      
+```javascript
+expect({ foo: 'bar' }).to.eql({ foo: 'bar' });
+expect([1, 2, 3]).to.eql([1, 2, 3]);
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 

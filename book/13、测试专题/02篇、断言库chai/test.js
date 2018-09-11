@@ -118,6 +118,65 @@ describe('main', function () {
             it('should null not to be undefined', function () {
                 expect(null).not.to.be.undefined;
             });
+        });
+
+        describe('NaN 断言目标为NaN', function () {
+            it('should foo is be nan', function () {
+                expect('foo').is.not.be.NaN;
+            });
+            it('should 4 is not be nan', function () {
+                expect(4).is.not.be.NaN;
+            });
+            it('should NaN is to be nan', function () {
+                expect(NaN).is.to.be.NaN;
+            });
+        });
+
+        describe('exist 断言目标存在，既不为null，也不为undefined', function() {
+            it('should hi is exist', function () {
+                expect('hi').is.to.be.exist;
+            });
+            it('should empty string is to be empty', function () {
+                expect('').is.to.be.exist;
+            });
+            it('should {} is to be exist', function () {
+                expect({}).is.to.be.exist;
+            });
+        });
+
+        describe('arguments 断言目标是一个参数对象arguments', function () {
+            it('should arg is to has arguments', function () {
+                // 这个玩意儿不知道怎么验证耶
+                function func(arg) {
+                    expect(arg).to.be.has.arguments;
+                }
+            });
+        });
+
+        describe('equal(value) 断言目标严格等于(===)value。另外，如果设置了deep标记，则断言目标深度等于value', function () {
+            it('should hello is equal hello', function () {
+                expect('hello').to.equal('hello');
+            });
+            it('should 42 is equal 42', function () {
+                expect(42).to.deep.equal(42);
+            });
+        });
+
+        describe('eql(value) 断言目标深度等于value，相当于deep.equal(value)的简写', function () {
+            it('should foo eql foo', function () {
+                expect({
+                    foo: 'bar'
+                }).to.eql({
+                    foo: 'bar'
+                })
+            });
+            it('should array eql array', function () {
+                expect([
+                    1,2,3
+                ]).to.eql([
+                    1,2,3
+                ])
+            });
         })
     })
 });
