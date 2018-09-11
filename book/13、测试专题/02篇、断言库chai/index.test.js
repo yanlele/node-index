@@ -260,6 +260,55 @@ describe('main', function () {
 
 
     describe('Chai.js断言库API中文文档', function() {
+        describe('instanceof(constructor) 断言目标是构造函数constructor的一个实例', function () {
+            it('should test1 instanceof', function () {
+                let Tea = function (name) {
+                    this.name = name
+                };
+                let yan = new Tea('yan');
+                expect(yan).to.be.an.instanceof(Tea);
+            });
+            it('should array instanceof Array', function () {
+                expect([
+                    1,2,3
+                ]).to.be.an.instanceof(Array)
+            });
+        });
+
+        describe('property(name, [value])', function () {
+            let obj = {
+                foo: 'bar'
+            };
+            let deepObj = {
+                green: {
+                    tea: 'mocha'
+                },
+                teas: [
+                    'chai',
+                    'matcha',
+                    {
+                        tea: 'konacha'
+                    }
+                ]
+            };
+            it('should obj have foo', function () {
+                expect(obj).is.have.property('foo');
+            });
+            it('should obj have foo,bar', function () {
+                expect(obj).is.have.property('foo', 'bar');
+            });
+        });
         
-    })
+        describe('respondTo(method)', function () {
+            let Klass = function () {
+                
+            };
+            Klass.prototype.bar = function () {
+                console.log('bar')  
+            };
+            it('should Klass has function bar', function () {
+                expect(Klass).has.respondTo('bar');
+            });
+        })
+    });
 });

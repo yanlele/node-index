@@ -213,6 +213,53 @@ expect(Chai).to.be.an.instanceof(Tea);
 expect([1, 2, 3]).to.be.an.instanceof(Array);
 ```
 
+- property(name, [value]) 断言目标是否拥有某个名为name的属性，可选地如果提供了value则该属性值还需要严格等于（===）value。
+如果设置了deep标记，则可以使用点.和中括号[]来指向对象和数组中的深层属性               
+name：String，属性名         
+value：Mixed，可选，属性值              
+```javascript
+// 简单引用
+var obj = { foo: 'bar' };
+expect(obj).to.have.property('foo');
+expect(pbj).to.have.property('foo', 'bar');
+
+// 深层引用
+var deepObj = {
+  green: { tea: 'matcha' },
+  teas: [ 'Chai', 'matcha', { tea: 'konacha' } ]
+};
+
+// 下面三个是错误的情况，具体情形有待研究而已
+expect(deepObj).to.have.deep.property('green.tea', 'matcha');
+expect(deepObj).to.have.deep.property('teas[1]', 'matcha');
+expect(deepObj).to.have.deep.property('teas[2].tea', 'konacha')
+```
+
+- ownProperty(name) 断言目标拥有名为name的自有属性
+```javascript
+expect('test').to.have.ownProperty('length');
+```
+
+- respondTo(method) 断言目标类或对象会响应一个方法（存在这个方法）
+如果需要检查一个构造函数是否会响应一个静态方法（挂载在构造函数本身的方法），请查看itself标记                   
+```javascript
+Klass.prototype.bar = function () {};
+expect(Klass).to.respondTo('bar');
+expect(obj).to.respondTo('bar');
+
+Klass.baz = function () {};
+expect(Klass).itself.to.respondTo('baz');
+```
+
+- itself  设置itself标记，然后使用respondTo断言            
+```javascript
+function Foo () {}
+Foo.bar = function () {};
+Foo.prototype.baz = function () {};
+
+expect(Foo).itself.to.respondTo('bar');
+expect(Foo).itself.not.to.respond('baz');
+```
 
 
 
