@@ -54,7 +54,7 @@ expect(goodFn).be.has.at.same.throw(Error);
 - any/all               
 ```javascript
 //any:用于检测该参数是否与实际值所对应的构造函数相匹配,在keys断言之前使用any标记（与all相反）
-expect(foo).to.have.any.keys('bar', 'baz')
+expect(foo).to.have.any.keys('bar', 'baz');
 
 //all:在keys断言之前使用all标记（与any相反）
 expect(foo).to.have.all.keys('bar', 'baz')
@@ -75,8 +75,8 @@ expect(new Float32Array()).to.be.a('float32array');
 - include(value) / contains(value)：Object | String | Number，包含某个内容                      
 include()和contains()即可作为属性类断言前缀语言链又可作为作为判断数组、字符串是否包含某值的断言使用。当作为语言链使用时，常用于key()断言之前                  
 ```javascript
-expect([1, 2, 3]).to.include(2)
-expect('foobar').to.include('bar')
+expect([1, 2, 3]).to.include(2);
+expect('foobar').to.include('bar');
 expect({ foo: 'bar', hello: 'universe' }).to.include.keys('foo')
 ```
 
