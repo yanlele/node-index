@@ -80,7 +80,43 @@ expect('foobar').to.include('bar');
 expect({ foo: 'bar', hello: 'universe' }).to.include.keys('foo')
 ```
 
-- not 跟在链式调用后面的否定断言                 
+- not 跟在链式调用后面的否定断言      
+```javascript
+expect(foo).to.not.equal('bar');  
+expect(goodFn).to.not.throw(Error);  
+expect({ foo: 'baz' }).to.have.property('foo').and.not.equal('bar');
+```           
+
+- deep 用来深度比较2个对象,一般用在equal和property前面              
+```javascript
+expect(foo).to.deep.equal({ bar: 'baz' });  
+expect({ foo: { bar: { baz: 'quux' } } }).to.have.deep.property('foo.bar.baz', 'quux');
+```
+
+- ok 断言目标是否为真(只判断值是否为真，类似==，隐式转换)                       
+```javascript
+expect('everthing').to.be.ok;  
+expect(1).to.be.ok;  
+expect(false).to.not.be.ok;  
+```
+
+- true/.false 断言目标是否为布尔值true,false（这里与ok的区别是不进行类型转换，只能为true/false才能通过断言）                    
+```javascript
+expect(true).to.be.true;  
+expect(1).to.not.be.true;
+expect(false).to.be.false;  
+expect(0).to.not.be.false;  
+```
+
+- null 断言目标为null            
+```javascript
+expect(null).to.be.null;  
+expect(undefined).not.to.be.null;  
+```
+
+- undefined 断言目标为undefined
+
+
 
 
 相关url文章链接：              
