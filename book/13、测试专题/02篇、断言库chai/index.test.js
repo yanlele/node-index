@@ -177,6 +177,89 @@ describe('main', function () {
                     1,2,3
                 ])
             });
+        });
+
+        describe('above(value) 断言目标大于（超过）value,也可接在length后来断言一个最小的长度。相比直接提供长度的好处是提供了更详细的错误消息', function () {
+            it('should 50 above 12', function () {
+                expect(50).to.be.above(12);
+            });
+            it('should arr.length above 2', function () {
+                expect([
+                    1,2,3
+                ]).to.have.length.above(2);
+            });
+        });
+
+        describe('least(value) 断言目标不小于，也可接在length后来断言一个最小的长度。相比直接提供长度的好处是提供了更详细的错误消息', function () {
+            it('should 23 is to be least 12', function () {
+                expect(23).is.to.be.least(12);
+            });
+            it('should array.length least 2', function () {
+                expect([
+                    1,2,3
+                ]).length.least(2)
+            });
+        });
+
+        describe('below(value) 断言目标小于，也可接在length后来断言一个最小的长度。相比直接提供长度的好处是提供了更详细的错误消息', function () {
+            it('should 5 below 12', function () {
+                expect(5).to.below(12);
+            });
+            it('should array.length below 5', function () {
+                expect([
+                    1,2,3
+                ]).length.to.below(5);
+            });
+        });
+
+        describe('most(value) 断言目标不大于，也可接在length后来断言一个最小的长度。相比直接提供长度的好处是提供了更详细的错误消息', function () {
+            it('should 5 to be most 12', function () {
+                expect(5).to.be.most(12);
+            });
+            it('should array.length most 5', function () {
+                expect([
+                    1,2,3
+                ]).to.have.length.most(5);
+            });
+        });
+
+        describe('length 设置.have.length标记作为比较length属性值的前缀', function () {
+            it('should string foo length above 2', function () {
+                expect('foo').length.above(2);
+            });
+            it('should arr.length within 2,4', function () {
+                expect([
+                    1,2,3
+                ]).length.within(2,4);
+            });
+        });
+
+        describe('lengthof() 断言目标的length属性为期望的值', function () {
+            it('should string foo lengthof 3', function () {
+                expect('foo').lengthOf(3);
+            });
+            it('should arr.lengthOf 2,4', function () {
+                expect([
+                    1,2,3
+                ]).has.lengthOf(3);
+            });
+        });
+
+        describe('match(RegExp) 断言目标匹配到一个正则表达式', function() {
+            it('should match', function () {
+                expect(123123123).is.to.be.match(/^\d+/);
+            });
+        });
+
+        describe('string(string) 断言目标字符串包含另一个字符串', function () {
+            it('should foo has string fo', function () {
+                expect('foo').to.has.string('fo');
+            });
         })
+    });
+
+
+    describe('Chai.js断言库API中文文档', function() {
+        
     })
 });

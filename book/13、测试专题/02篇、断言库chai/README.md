@@ -153,16 +153,65 @@ expect({ foo: 'bar' }).to.eql({ foo: 'bar' });
 expect([1, 2, 3]).to.eql([1, 2, 3]);
 ```
 
+- above(value) 断言目标大于(>)（超过）value,也可接在length后来断言一个最小的长度。相比直接提供长度的好处是提供了更详细的错误消息                
+```javascript
+expect(50).to.be.above(12);
+expect([1, 2, 3]).to.have.length.above(2);
+```
 
+- least(value) 断言目标不小于(>=)，也可接在length后来断言一个最小的长度。相比直接提供长度的好处是提供了更详细的错误消息
+```javascript
+expect(23).to.be.least(12);
+expect([1, 2, 3]).to.have.length.least(2);
+```
 
+- below(value) 断言目标小于(<)，也可接在length后来断言一个最小的长度。相比直接提供长度的好处是提供了更详细的错误消息
+```javascript
+expect(5).to.be.below(12);
+expect([1, 2, 3]).to.have.length.below(5);
+```
 
+- most(value) 断言目标不大于(<=)，也可接在length后来断言一个最小的长度。相比直接提供长度的好处是提供了更详细的错误消息
+```javascript
+expect(5).to.be.most(12);
+expect([1, 2, 3]).to.have.length.most(5);
+```
 
+- within(star,end) 断言目标在这个范围内
+```javascript
+expect([1, 2, 3]).to.have.length.within(2, 4);
+```
 
+- length 设置.have.length标记作为比较length属性值的前缀               
+```javascript
+expect('foo').to.have.length.above(2);
+expect([1, 2, 3]).to.have.length.within(2, 4);
+```
 
+- lengthof() 断言目标的length属性为期望的值
+```javascript
+expect('foo').is.lengthOf(2);
+expect([1, 2, 3]).to.has.lengthOf(2, 4);
+```
 
+- match(RegExp) 断言目标匹配到一个正则表达式
+```javascript
+expect(2323232).is.to.be.match(/^\d+/);
+```
 
+- string(string) 断言目标字符串包含另一个字符串
+```javascript
+expect('foo').to.has.string('fo');
+```
 
+- instanceof(constructor) 断言目标是构造函数constructor的一个实例
+```javascript
+var Tea = function (name) { this.name = name },
+  Chai = new Tea('chai');
 
+expect(Chai).to.be.an.instanceof(Tea);
+expect([1, 2, 3]).to.be.an.instanceof(Array);
+```
 
 
 
