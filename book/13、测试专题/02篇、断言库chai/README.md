@@ -1,5 +1,10 @@
 # chai.js断言库
 
+目录
+- [chai.js简介](#class01-01)
+- [语言链修饰符](#class01-02)
+- [except模块的相关api](#class01-03)
+
 
 
 ## <div id="class01">前端自动化测试之chai.js断言库</div>
@@ -261,6 +266,7 @@ expect(Foo).itself.to.respondTo('bar');
 expect(Foo).itself.not.to.respond('baz');
 ```
 
+[具体代码请见](./index.test.js)
 
 
 相关url文章链接：              
