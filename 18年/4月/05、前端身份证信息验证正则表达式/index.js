@@ -86,5 +86,4 @@ function checkId(idcard) {
     }
 }
 
-let check = checkId('500228199201066556');
-console.log(check);
+module.exports = checkId;
