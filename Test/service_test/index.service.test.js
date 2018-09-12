@@ -38,7 +38,6 @@ module.exports = function() {
                 .end((err, res) => {
                     console.log(res.body);
                     console.log(res.status);
-                    console.log(res.error);
                     expect(res.status).not.equal(200);
                     done()
                 })
