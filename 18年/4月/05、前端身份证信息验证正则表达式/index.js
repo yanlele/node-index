@@ -41,6 +41,7 @@ function checkId(idcard) {
     var idcard, Y, JYM;
     var S, M;
     var idcard_array = new Array();
+    var ereg;
     idcard_array = idcard.split("");
     //地区检验
     if (area[parseInt(idcard.substr(0, 2))] == null) return Errors[4];
