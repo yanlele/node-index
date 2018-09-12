@@ -51,7 +51,8 @@ module.exports = function() {
                 expect(formatDate(time.getTime().toString(), dateFormat)).is.a('string');
             });
             it("如果传入的是一个'', 返回 - ", function () {
-                expect(formatDate('', dateFormat)).is.equal('-')
+                expect(formatDate('', dateFormat)).is.equal('-');
+                expect(formatDate('sdfh', dateFormat)).is.equal('Invalid date');
             });
         });
 
