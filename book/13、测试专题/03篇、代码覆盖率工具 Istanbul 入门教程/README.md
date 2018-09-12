@@ -92,8 +92,42 @@ describe('sqrt', function () {
     "test": "mocha 18年/2月/7、单元测试/test/02、mocha.js",
     "cover-test": "istanbul cover node_modules/mocha/bin/_mocha 18年/2月/7、单元测试/test/02、mocha.js",
     "cover-temp": "istanbul cover node_modules/mocha/bin/_mocha book/13、测试专题/03篇、代码覆盖率工具 Istanbul 入门教程/index.test.js",
+    "test-cov": "node ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha",
     "build": "webpack"
   }
 ```
 执行结果如下:                 
+```
+  sqrt
+    √ 4的平方根等于2
+    √ 参数为负值时应该报错
+  2 passing (8ms)
+=============================== Coverage summary ===============================
+Statements   : 100% ( 13/13 )
+Branches     : 100% ( 2/2 )
+Functions    : 100% ( 5/5 )
+Lines        : 100% ( 12/12 )
+================================================================================
+```
 
+这个地方隐藏着一个巨大的坑:
+1、如果没有生成覆盖报告，可能因为istanbul版本没有升级，但是却写了es6语法，导致了覆盖测试工具不认识。升级版本：`"istanbul": "^1.0.0-alpha.2",`                
+2、如果依然没有生成报告。很有可能是因为项目里面还有其他的命名为test的文件夹存在。这个时候，可以选择把核心测试文件夹命名为Test。
+
+如果要向 mocha 传入参数，可以写成下面的样子。
+`istanbul cover _mocha -- tests/test.sqrt.js -R spec`                       
+
+### <div id="class03-05">05、忽略某些代码</div>
+istanbul 提供注释语法，允许某些代码不计入覆盖率。
+```javascript
+var object = parameter || /* istanbul ignore next */ {};
+```
+上面代码是为 object 指定默认值（一个空对象）。如果由于种种原因，没有为 object 为空对象的情况写测试，可以用注释，不将这种情况计入覆盖率。注意，注释要写在"或"运算符的后面。                  
+
+```javascript
+/* istanbul ignore if  */
+if (hardToReproduceError)) {
+    return callback(hardToReproduceError);
+}
+```
+上面代码的 if 语句块，在计算覆盖率的时候会被忽略。
