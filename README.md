@@ -124,6 +124,10 @@
 
 - [11、深入webpack工程化](./book/11、深入webpack工程化/)
 
+- [12、学习TypeScript](./book/12、学习TypeScript/)
+
+- [13、测试专题](./book/13、测试专题/)
+
 
 ### <div id="class05">通用功能js模块组件</div>
 - 原生组件和公用功能部分
