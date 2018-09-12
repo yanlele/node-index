@@ -18,6 +18,14 @@ request.get('/api/user').expect(200).end((err, response) => {
     console.log(response.body)
 });
 ```
+然后直接执行就可以了
+
+> 提示
+如果你遇到了 TypeError: app.address is not a function, 请尝试一下以下方法：             
+const request = require('supertest').agent(app.listen())
+
+
+
 
 
 
