@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>koa-demo</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="javascripts/jquery.min.js"></script>
 </head>
@@ -10,7 +10,7 @@
 
 <h1>hello world</h1>
 <p>注册信息</p>
-<form action="" class="form1">
+<form class="form1">
     <p>userName</p>
     <input type="text" name="userName"><br>
     <p>email</p>
@@ -19,7 +19,7 @@
     <input type="password" name="password">
     <p>confirmPassword</p>
     <input type="password" name="confirmPassword"><br>
-    <input value="注册" type="submit" class="singup"/>
+    <input value="注册" type="button" class="singup"/>
 </form>
 
 <hr>
@@ -29,7 +29,7 @@
     <input type="text" name="userName"><br>
     <p>passWord</p>
     <input type="password" name="password"><br>
-    <input value="登录" type="submit" class="singin"/>
+    <input value="登录" type="button" class="singin"/>
 </form>
 <a href="javascript:" class="button">我是一个a标签</a>
 
@@ -54,6 +54,9 @@
             dataType:'json',
             type:'post'
         }).done(function(res){
+            if(res.success) {
+                alert(res.message);
+            }
             console.log(res)
         })
     })
@@ -70,6 +73,9 @@
             dataType:'json',
             type:'post'
         }).done(function(res){
+            if(res.success) {
+                alert(res.message);
+            }
             console.log(res)
         })
     })
