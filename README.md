@@ -265,6 +265,8 @@
     - [16、发布、安装自己的npm模块](https://www.cnblogs.com/yanhua2017/p/7748491.html)
     - [17、eslint配置文件eslintrc参数详解](./18年/09月/01、eslint配置文件eslintrc参数详解/)
     - [18、2018前端常见题汇总，不定时更新](https://github.com/qianbin01/frontend_train)
+    - [19、mysql下载与安装过程](https://blog.csdn.net/weixin_40396510/article/details/79277731)
+    - [20、Mysql 服务无法启动 服务没有报告任何错误](https://www.cnblogs.com/wangjunyan/p/5183366.html)
 
 - koa2
     - [01、koa2-sql项目搭建的示例（通过sql链接数据库）](./18年/1月/12、koa2项目框架搭建)
