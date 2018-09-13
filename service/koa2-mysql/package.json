@@ -1,0 +1,32 @@
+{
+  "name": "koa2test",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node bin/www",
+    "dev": "./node_modules/.bin/nodemon bin/www",
+    "prd": "pm2 start bin/www",
+    "init_sql": "node ./init/index.js"
+  },
+  "dependencies": {
+    "debug": "^2.6.3",
+    "ejs": "^2.5.7",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^3.2.0",
+    "koa-convert": "^1.2.0",
+    "koa-generic-session": "^2.0.1",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^2.0.1",
+    "koa-mysql-session": "^0.0.2",
+    "koa-onerror": "^1.2.1",
+    "koa-router": "^7.1.1",
+    "koa-session-minimal": "^3.0.4",
+    "koa-static": "^3.0.0",
+    "koa-views": "^5.2.1",
+    "mysql": "^2.15.0",
+    "validator": "^9.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.8.1"
+  }
+}
