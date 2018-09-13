@@ -1,10 +1,6 @@
 const expect = require('chai').expect;
-
 const app = require('../../service/express/app');
 const request = require('supertest')(app);
-/*request.get('/api/user').expect(200).end((err, response) => {
-    console.log(response.body)
-});*/
 
 describe('check user server', function () {
     it('检查基本信息', function (done) {
@@ -13,6 +9,7 @@ describe('check user server', function () {
             .expect(200)
             .set('token', '')
             .end((err,res) => {
+                console.debug(res.body);
                 expect(res.body).have.property('name', 'yanle');
                 done()
             })
@@ -25,6 +22,7 @@ describe('check user server', function () {
                 message: 'lelelelelelele'
             })
             .end((err, res) => {
+                console.log(res.body);
                 expect(res.body).have.property('time');
                 done()
             })
