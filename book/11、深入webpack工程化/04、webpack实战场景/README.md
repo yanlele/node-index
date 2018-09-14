@@ -218,6 +218,28 @@ import('./async').then(function (a) {
 
 
 
+### <div id="class4-item04">04、webpack多页面应用</div>
+#### 多页面应用的一些特点:                 
+多入口entry                
+多页面 html                    
+每一个页面不同的chunk               
+每个页面不同的参数               
+
+#### 实现多页应用的办法
+**多配置**                                      
+webpack 3.1.0 开始支持多配置                   
+parallel-webpack 可以帮我们并行处理没有关系的多份配置                 
+
+优点：                 
+可以通过parallel-webpack可以提升打包速度                    
+配置更加独立，灵活
+
+缺点：                 
+不能多页面之间共享代码                 
+
+
+
+单配置
 
 
 
