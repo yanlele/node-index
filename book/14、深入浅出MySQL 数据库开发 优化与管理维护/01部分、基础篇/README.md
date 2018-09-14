@@ -68,9 +68,8 @@ create table emp(
 
 5.2、添加表字段               
 
-`alter table tablename ADD [COLUMN] column_definition [FIRST|AFTER col_name]`
+`alter table tablename ADD [COLUMN] column_definition [FIRST|AFTER col_name]`                   
 例如 要给emp表加新字段age, 类型为int(3): `alter table emp add column age int(3);`                                   
-``
 
 5.3、删除字段
 
