@@ -237,9 +237,17 @@ parallel-webpack 可以帮我们并行处理没有关系的多份配置
 缺点：                 
 不能多页面之间共享代码                 
 
+parallel-webpack的使用：                    
+parallel-webpack --watch                
+parallel-webpack --config                   
 
 
-单配置
+**单配置**:                    
+优点： 可以共享各个entry之间的公用代码                  
+
+缺点：             
+打包速度慢                   
+输出的内容比较复杂
 
 
 
