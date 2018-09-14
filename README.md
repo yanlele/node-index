@@ -266,7 +266,7 @@
     - [16、发布、安装自己的npm模块](https://www.cnblogs.com/yanhua2017/p/7748491.html)
     - [17、eslint配置文件eslintrc参数详解](./18年/09月/01、eslint配置文件eslintrc参数详解/)
     - [18、2018前端常见题汇总，不定时更新](https://github.com/qianbin01/frontend_train)
-    - [19、mysql下载与安装问题整理](./18年/09月/02、mysql下载与安装问题整理/)
+    
 
 - koa2
     - [01、koa2-sql项目搭建的示例（通过sql链接数据库）](./18年/1月/12、koa2项目框架搭建)
@@ -285,6 +285,8 @@
     - [03、mongoose的扩展用法](./18年/1月/7、mongoose的扩展用法)
     - [04、mongoose创建数据结构和实现基本的增删改查](./18年/1月/13、mongoose创建数据结构和实现基本的增删改查)
 
+- MySql
+    - [01、mysql下载与安装问题整理](./18年/09月/02、mysql下载与安装问题整理/)
 
 - node其他知识点
     - [01、上传文件的测试](/17年/12月/1、上传文件的测试)
