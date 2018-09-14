@@ -8,7 +8,7 @@
 
 ### <div id="class01-02">02章、sql基础</div>
 #### sql语句分类
-DDL： 数据定义语言 - create、drop、alert等                 
+DDL： 数据定义语言 - create、drop、alter等                 
 DML： 数据操作语句 - insert、delete、update、select等                
 DCL： 数据控制语句 - grant、revoke等
 
@@ -50,7 +50,32 @@ create table emp(
 );
 ```
 `desc emp;`  可以查看表的定义                   
-`show create table emp;`  可以查看更加全面的具体sql语句信息                    
+`show create table emp;`  可以查看更加全面的具体sql语句信息    
+
+
+4、删除表
+
+`drop table emp;`                   
+
+
+5、修改表
+
+5.1、修改表的类型              
+
+`alter table tablename MODIFY [COLUMN] column_definition [FIRST|AFTER col_name]`                     
+例如 要修改emp表的ename字段的定义，想varchar(10)改为varchar(20);                    
+`alter table emp modify ename varchar(20);`
+
+5.2、添加表字段               
+
+`alter table tablename ADD [COLUMN] column_definition [FIRST|AFTER col_name]`
+例如 要给emp表加新字段age, 类型为int(3): `alter table emp add column age int(3);`                                   
+``
+
+5.3、删除字段
+
+`alert table tablename DROP [COLUMN] col_name`              
+例如我们要删除 age 字段 ： `alter table emp drop column age;`                 
 
 
 
