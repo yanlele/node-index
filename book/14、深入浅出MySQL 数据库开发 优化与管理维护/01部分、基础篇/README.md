@@ -366,6 +366,34 @@ timestamp是受时区影响的，其他的类型倒是不会受时区影响
 是不严格的语法，允许很多种类型的时间格式，插入时间里面去。
 
 
+#### 字符串类型
+![01](./img/01.png)
+
+**CHAR 和 VARCHAR类型**                    
+
+char列的长度为创建表时候申明的长度，长度可以为0~255之间任何值;
+varchar 接受长度更加长而已；
+检索的时候char列删除了尾部的空格，而varchar保留了这些空格。
+都是固定长度，指定了字符串长度了之后，就不能超过指定的长度。
+
+例如 创建测试表
+```sql
+# 创建vc测试库
+create table if not exists vc(v varchar(4), c char(4));
+
+# 插入 'ab  '
+insert into vc(v,c) values ('ab  ', 'ab  ');
+
+# 现实结果
+select length(v),length(c) from vc;
+
+# 加上 + 更加可以看的清楚
+select concat(v, '+'),concat(c,'+') from vc;
+```
+
+
+
+
 
 
 
