@@ -240,6 +240,31 @@ select emp.*, deptname from emp, dept where emp.deptno=dept.deptno;
 select emp.*, dept.deptname from emp, dept where emp.deptno=dept.deptno;
 ```
 
+**4.7、记录联合**                    
+
+将两个表按照一定的查询条件查询出来之后，要把结果联合并到一起现实出来 关键词 **union 和 union all**                        
+`select * from t1 union|union all select * from t2 ...... union|union all select * from tn;`
+
+union all 是把结果合并到在一起；                   
+union 是将union all后的记过进行了以此distinct,去重处理；            
+例如 将emp和dept中部门编号联合起来现实：             
+```sql
+select deptno from emp union all select deptno from dept;
+select deptno from emp union select deptno from dept;
+```
+
+#### DCL语句
+例如 创建一个yanle数据库用户，对于sakila数据库中所有的表 select/insert 权限：                                   
+```sql
+grant select, insert on sakila.* to 'yanle'@'localhost' identified by '123456';
+```
+
+例如 收回权限
+```sql
+revoke insert on sakila.* from 'yanle'@'localhost';
+revoke select on sakila.* from 'yanle'@'localhost';
+```
+
 
 
 
