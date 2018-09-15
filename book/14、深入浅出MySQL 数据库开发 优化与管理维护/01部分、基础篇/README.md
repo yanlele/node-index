@@ -266,7 +266,39 @@ revoke select on sakila.* from 'yanle'@'localhost';
 ```
 
 
+### <div id="class01-03">03、mysql数据类型</div>
+主要包括以下五大类：
 
+整数类型：BIT、BOOL、TINY INT、SMALL INT、MEDIUM INT、 INT、 BIG INT
+
+浮点数类型：FLOAT、DOUBLE、DECIMAL
+
+字符串类型：CHAR、VARCHAR、TINY TEXT、TEXT、MEDIUM TEXT、LONGTEXT、TINY BLOB、BLOB、MEDIUM BLOB、LONG BLOB
+
+日期类型：Date、DateTime、TimeStamp、Time、Year
+
+其他数据类型：BINARY、VARBINARY、ENUM、SET、Geometry、Point、MultiPoint、LineString、MultiLineString、Polygon、GeometryCollection等
+
+
+#### 数值类型
+**1、整型**
+
+|:--|:--|
+|MySQL数据类型|	含义（有符号）|
+tinyint(m)	|1个字节  范围(-128~127)
+smallint(m)	|2个字节  范围(-32768~32767)
+mediumint(m)	|3个字节  范围(-8388608~8388607)
+int(m)	|4个字节  范围(-2147483648~2147483647)
+bigint(m)	|8个字节  范围(+-9.22*10的18次方)
+
+取值范围如果加了unsigned，则最大值翻倍，如tinyint unsigned的取值范围为(0~256)。
+
+**2、浮点型(float和double)**
+
+|:--|:--|
+MySQL数据类型	|含义
+float(m,d)	|单精度浮点型    8位精度(4字节)     m总个数，d小数位
+double(m,d)	|双精度浮点型    16位精度(8字节)    m总个数，d小数位
 
 
 
