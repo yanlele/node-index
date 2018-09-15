@@ -124,7 +124,7 @@ values
 `update tablename set field1=value1, field2=value2, .... fieldn=valuen [where condition]`
 例如 把dony的sal 从7000 改为 4000： `update emp set sal=4000 where ename='dony';`
 
-同事更新多个表中的数据：                
+同时更新多个表中的数据：                
 `update t1, t2,...... tn set t1.field1=expr1, t2.field2=expr2, ...... tn.fieldn=exprn [where condition]`                    
 例如 同时更新emp表中的sal字段和dept表中deptname字段的数据：
 ```sql
@@ -146,6 +146,41 @@ update emp a, dept b set a.sal=a.sal * b.deptno, b.deptname=a.ename where a.dept
 3、删除记录
 
 `delete from tablename [where condition]`                   
+例如 在emp中， 将ename为'dony'的记录全部删除： `delete from emp where ename='dony';`                   
+
+同时删除多个表的数据（from后面的表要用别名，则delete后面的也要用相应的别名）：         
+`delete t1, t2, ...tn from t1, t2,...tn [where condition];`                     
+例如 同时删除emp和dept中deptno为3的记录： `delete a,b from emp a, dept b where a.deptno=b.deptno and a.deptno=3;`
+
+4、查询记录
+
+`select * from tablename [where condition];`                
+例如 把所有记录都查出来： `select * from emp;`              
+例如 用逗号分隔想要查询的数据： `select ename,sal,deptno from emp;`                
+
+4.1、查询不重复的记录：使用关键字`distinct`实现                  
+`select distinct deptno from emp;`
+
+4.2、多条件查询
+例如 查询所有deptno为2的记录： `select * from emp where deptno=2;`                     
+
+多条件查询中，除了 = 还可以使用，>, <, >=, <=, != 等比较运算符号， 还可以使用and 和 or 等逻辑运算符：
+例如 `select * from emp where deptno<=5 and sal>5000;`
+
+4.3、排序和限制                   
+
+`select * from tablename [where condition] [order by field1 [desc|asc], field2 [desc|asc], ... fieldn [desc|asc]];`                                          
+asc 升序；desc 降序；默认是由低到高的排列； 如果排序字段值一样，则相同的字段按照第二个排列字段进行排序；                   
+
+例如 emp表按照sal由低到高排序： 
+```
+select * from emp order by sal;
+select * from emp order by sal asc;
+```
+例如 emp表按照sal 降序： `select * from emp order by sal desc;`                 
+
+
+
 
 
 
