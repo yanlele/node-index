@@ -391,6 +391,29 @@ select length(v),length(c) from vc;
 select concat(v, '+'),concat(c,'+') from vc;
 ```
 
+**BINARY和VARBINARY类型**
+
+类似于 CHAR 和 VARCHAR，不同的是他们包含二进制字符串，而不包含非二进制字符串。通常来说，用不上
+
+
+**ENUM类型**
+
+它值范围需要在创建的时候通过美剧的方式现实指定， 而且每次插入的时候只允许从集合中取单个值，不能取多个值.
+而且是忽略大小写的。会自动转为定义的类型。
+
+例如
+```sql
+create table if not exists test(gender enum('M','F'));
+insert into test (gender)
+values ('m'),('1'),('f'),(null);
+select * from test;
+drop table if exists test;
+```
+
+
+**SET类型**
+
+
 
 
 
