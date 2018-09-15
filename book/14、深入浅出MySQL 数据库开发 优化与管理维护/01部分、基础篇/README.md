@@ -121,7 +121,7 @@ values
 
 2、更新记录                  
 
-`update tablename set field1=value1, field2=value2, .... fieldn=valuen [where condition]`
+`update tablename set field1=value1, field2=value2, .... fieldn=valuen [where condition]`                   
 例如 把dony的sal 从7000 改为 4000： `update emp set sal=4000 where ename='dony';`
 
 同时更新多个表中的数据：                
@@ -177,7 +177,49 @@ asc 升序；desc 降序；默认是由低到高的排列； 如果排序字段�
 select * from emp order by sal;
 select * from emp order by sal asc;
 ```
-例如 emp表按照sal 降序： `select * from emp order by sal desc;`                 
+例如 emp表按照sal 降序： `select * from emp order by sal desc;`             
+例如 对于deptno相同的两条记录，可以按照工资降序排列： `select * from emp order by deptno, sal desc;`    
+
+对于后面的记录，只希望查询一部分，而不是全部，可以用limit关键字来限制：                                    
+`select ... [limit offset_start, row_count]`                             
+如果offset_start偏移量为0 ，可以省略。                  
+例如 查询emp表中对sal 排序后的钱三条： `select * from emp order by sal limit 3;`                   
+例如 第二条开始，查询三条： `select * from emp order by sal limit 1,3;`                  
+
+
+4.4、聚合操作
+
+`select [field1, field2,... fieldn] fun_name from tablename [where where_contition] [group by field1, field2, ... fieldn [with rollup]] [having where_contition]`                   
+参数说明：               
+fun_name 表示要聚合操作， 也是聚合函数， 常用的有sum(求和)、count(*)（记录数）、max、min;                        
+group my 表示要进行分类聚合的字段，比如按照部门分类统计员工数量，部门就应该写在group by 后面；                    
+WITH ROLLUP 可选语法，表示是否对分类聚合后的结果进行在汇总；                    
+HAVING 表示分类后的结果在进行条件的赛选
+
+例如 要统计emp的总人数: `select count(1) from emp;`                  
+例如 要在此基础上统计各个部门的人数： `select deptno,count(1) from emp group by deptno;`                  
+例如 既要统计各个部门的人数，又要统计总人数： `select deptno,count(1) from emp group by deptno with rollup;`                  
+例如 统计人数大于1的部门： `select deptno,count(1) from emp group by deptno having count(1)>1;`                     
+例如 最后统计公司所有员工的薪水总额，最高薪水和最低薪水： `select sum(sal),max(sal),min(sal) from emp;`                         
+
+4.5、表连接                 
+当同事需要显示多个表的字段是，就要用到表连接。表连接分为：内连接和外链接。
+区别：内连接仅选出两张表中相互匹配的记录；外链接会选出其他不匹配的记录。常用捏连接                   
+
+例如 要查处所有的雇员名字和所在部门，员工在emp表，部门在dept表中： `select ename,deptname from emp,dept where emp.deptno=dept.deptno;`               
+
+外链接又分为左连接和右连接
+左连接： 包含所有左边表中的记录，甚至是右边表中没有和它匹配的记录                   
+右连接： 包含所有左边表中的记录，甚至是左边表中没有和它匹配的记录                   
+例如 查询emp中所有用户名和所在部门名称： 
+```sql
+select ename,deptname from emp left join dept on emp.deptno=dept.deptno;
+select ename,deptname from dept right join emp on emp.deptno=dept.deptno;
+select ename,deptname from dept right join emp on dept.deptno=emp.deptno;
+```                  
+上面三种查询费结果都是一样的。                 
+
+
 
 
 
