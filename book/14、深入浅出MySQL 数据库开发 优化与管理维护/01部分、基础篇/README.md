@@ -97,10 +97,10 @@ column_definition 表示一个明确的字段定义 包括名字和属性
 #### DML语句
 1、插入语句
 
-`insert into tablename (field1, field2, ......, fieldn) values (value1, value2, ......, valuen);` 
-例如 我们向emp中插入一条数据： `insert into emp (ename, hiredate, sal, deptno) values ('yanle', '2018-08-01', '10000', 1);`                  
-例如 可以不指定字段名称，但是后面 values 后面的顺序应该和字段是一样的排列： `insert into emp values ('lele', '2018-08-01', '10000', '2');`               
-例如 只对ename和sal字段实现插入值： `insert into emp (ename, sal) values ('dony', 7000);`                    
+`insert into tablename (field1, field2, ......, fieldn) values (value1, value2, ......, valuen);`               
+例如 我们向emp中插入一条数据： `insert into emp (ename, hiredate, sal, deptno) values ('yanle', '2018-08-01', '10000', 1);`                                
+例如 可以不指定字段名称，但是后面 values 后面的顺序应该和字段是一样的排列： `insert into emp values ('lele', '2018-08-01', '10000', '2');`                             
+例如 只对ename和sal字段实现插入值： `insert into emp (ename, sal) values ('dony', 7000);`                                  
 例如 查看实际插入的值： `select * from emp;`                   
 
 一次性插入多个数据：              
@@ -173,7 +173,7 @@ update emp a, dept b set a.sal=a.sal * b.deptno, b.deptname=a.ename where a.dept
 asc 升序；desc 降序；默认是由低到高的排列； 如果排序字段值一样，则相同的字段按照第二个排列字段进行排序；                   
 
 例如 emp表按照sal由低到高排序： 
-```
+```sql
 select * from emp order by sal;
 select * from emp order by sal asc;
 ```
