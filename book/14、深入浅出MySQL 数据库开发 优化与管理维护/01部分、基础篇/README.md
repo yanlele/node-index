@@ -59,6 +59,7 @@ create table emp(
 
 
 5、修改表
+column_definition 表示一个明确的字段定义 包括名字和属性
 
 5.1、修改表的类型              
 
@@ -75,6 +76,21 @@ create table emp(
 
 `alert table tablename DROP [COLUMN] col_name`              
 例如我们要删除 age 字段 ： `alter table emp drop column age;`                 
+
+5.4、修改字段名
+
+`alter table tablename change [column] old_col_name column_definition [first|after col_name]`            
+例如 把emp表的age改名为age1，同事修改字段类型为int(4):  `alter table emp change age age1 int(4);`             
+
+5.5、修改字段排列顺序
+
+添加介绍的 add/change/modify 中还有一个可选项 first|after column_name 这个可以修改字段在表的位置；                     
+例如 add添加新字段默认在表的最后的位置， 比如添加birth data 在ename 之后： `alter table emp add birth date after ename;`              
+例如 修改age，将他放在最近前: `alter table emp modify age int(3) first;`
+
+
+
+
 
 
 
