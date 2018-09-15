@@ -42,7 +42,7 @@ column_name是列的名字；column_type是列的数据类型；constraints是�
       
 实例： 
 ```sql
-create table emp(
+create table if not exists emp(
   ename varchar(10),
   hiredate date,
   sal decimal(10,2),
@@ -55,7 +55,7 @@ create table emp(
 
 4、删除表
 
-`drop table emp;`                   
+`drop table if exists emp;`                   
 
 
 5、修改表
@@ -87,6 +87,66 @@ column_definition 表示一个明确的字段定义 包括名字和属性
 添加介绍的 add/change/modify 中还有一个可选项 first|after column_name 这个可以修改字段在表的位置；                     
 例如 add添加新字段默认在表的最后的位置， 比如添加birth data 在ename 之后： `alter table emp add birth date after ename;`              
 例如 修改age，将他放在最近前: `alter table emp modify age int(3) first;`
+
+5.6、修改表名
+
+`alter table tablename rename [to] new_tablename`                   
+例如 把emp改为emp1: `alter table emp rename emp1;`                       
+
+
+#### DML语句
+1、插入语句
+
+`insert into tablename (field1, field2, ......, fieldn) values (value1, value2, ......, valuen);` 
+例如 我们向emp中插入一条数据： `insert into emp (ename, hiredate, sal, deptno) values ('yanle', '2018-08-01', '10000', 1);`                  
+例如 可以不指定字段名称，但是后面 values 后面的顺序应该和字段是一样的排列： `insert into emp values ('lele', '2018-08-01', '10000', '2');`               
+例如 只对ename和sal字段实现插入值： `insert into emp (ename, sal) values ('dony', 7000);`                    
+例如 查看实际插入的值： `select * from emp;`                   
+
+一次性插入多个数据：              
+```sql
+insert into tablename (field1, field2, ......, fieldn)
+ values 
+ (record1_value1, record2_value2, ......, recordn_valuen),
+ ..............
+ (recordn_value1, recordn_value2, ......, recordn_valuen);
+```
+例如 对emp表一次性插入两条数据：
+```sql
+insert into emp (ename, hiredate, sal, deptno)
+values
+       ('yanle3', '2018-08-01', '10000', 3),
+       ('yanle4', '2018-09-15', '1000', 4);
+```
+
+2、更新记录                  
+
+`update tablename set field1=value1, field2=value2, .... fieldn=valuen [where condition]`
+例如 把dony的sal 从7000 改为 4000： `update emp set sal=4000 where ename='dony';`
+
+同事更新多个表中的数据：                
+`update t1, t2,...... tn set t1.field1=expr1, t2.field2=expr2, ...... tn.fieldn=exprn [where condition]`                    
+例如 同时更新emp表中的sal字段和dept表中deptname字段的数据：
+```sql
+create table if not exists dept(
+  deptno int(3),
+  deptname varchar(10)
+);
+insert into dept(deptno, deptname)
+VALUES
+       (1, 'tech'),
+       (2, 'sale'),
+       (5, 'fin');
+select * from dept;
+update emp, dept set emp.sal=emp.sal * dept.deptno, dept.deptname=emp.ename where emp.deptno=dept.deptno;
+update emp a, dept b set a.sal=a.sal * b.deptno, b.deptname=a.ename where a.deptno=b.deptno;
+```
+上面最后两条插入语句执行的效果是一样的。只是最后一句语句添加了一个别名而已。                      
+
+3、删除记录
+
+`delete from tablename [where condition]`                   
+
 
 
 
