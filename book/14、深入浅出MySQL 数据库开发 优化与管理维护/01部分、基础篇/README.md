@@ -292,7 +292,25 @@ int(m)	|4个字节  范围(-2147483648~2147483647)
 bigint(m)	|8个字节  范围(+-9.22*10的18次方)
 
 
-取值范围如果加了unsigned，则最大值翻倍，如tinyint unsigned的取值范围为(0~256)。
+取值范围如果加了unsigned，则最大值翻倍，如tinyint unsigned的取值范围为(0~256)。通常情况是保存非负数或者有较大上限值的时候使用。
+
+对于整型数据，支持后面的小括号内指定现实的宽度。例如int(5) 表示当数值宽度小于5的时候，在数字前面填满宽度。默认快读为11。一般配合serofill使用。
+如果插入值大于宽度限制，对插入的数据没有任何影响，还是会按照实际精度进行保存。
+
+整数类型还有一个属性： AUTO_INCREMENT。 在需要产生唯一标识符或者顺序值的时候，就可以用到它。设置了这个属性的值，会从1开始，每行自动增加1。对于任何都想要是用AUTO_INCREMENT属性的列，
+应该设置NOT NULL， 并定义为 PRIMARY KEY或者定义为UNIQUE键。
+例如 创建一个auto_increment列： 
+```sql
+create table if not exists AI(
+  id int auto_increment not null primary key
+);
+create table if not exists AI(
+  id int auto_increment not null, primary key(id)
+);
+CREATE TABLE IF NOT EXISTS AI(
+  id int auto_increment not null , unique (id)
+)
+```
 
 **2、浮点型(float和double)**
 
@@ -309,6 +327,43 @@ MySQL数据类型	|含义
 |:-|:-|
 decimal(m,d)	|参数m<65 是总个数，d<30且 d<m 是小数位。
  
+对于浮点型和点数类型来说，（m,d）规则都是一样的。 但是值得注意的是浮点数后面跟(m,d)是非标准用法。不建议这么使用。不指定精度的时候，贵根基实际精度来现实。
+decimal不指定精度的时候，会默认整数位为10，小数位为0；
+
+
+#### 日期时间类型
+
+MySQL数据类型|	含义
+|:-|:-|
+date	|日期 '2008-12-2'
+time	|时间 '12:25:36'
+datetime|	日期时间 '2008-12-2 22:06:44'
+timestamp|	自动存储记录修改时间
+year| 年 范围为1901~2155
+
+可以用now()函数插入当前日期                              
+
+**timestamp**                       
+例如：timestamp的问题研究
+```sql
+create table if not exists t(
+  id timestamp
+);
+insert into t value (null);
+select id from t;   # 这个时候可以得到id的一个自动保存的时间
+
+alter table t add id2 timestamp;
+show create table t;
+```
+如果存在第二个timestamp类型。则默认设置为0；可以修改为其他常量日期，但是不能设置为current_timestamp， 以为mysql中timestamp只能有一列默认值为current_timestamp;
+
+timestamp是受时区影响的，其他的类型倒是不会受时区影响                 
+查看当前时区 `show varialbes like 'time_zone'`                    
+例如我们修改库中的时区： `set tiem_zone='+9:00'`                    
+插入某一列记录的时候，如果插入null 或者不明确给出赋值，那么就自动取系统默认值                           
+
+**datetime**                        
+是不严格的语法，允许很多种类型的时间格式，插入时间里面去。
 
 
 
