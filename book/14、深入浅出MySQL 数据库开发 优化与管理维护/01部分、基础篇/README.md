@@ -13,7 +13,7 @@ DML： 数据操作语句 - insert、delete、update、select等
 DCL： 数据控制语句 - grant、revoke等
 
 #### DDL语句
-1、创建数据库               
+**1、创建数据库**               
   
 `CREATE DATABASE dbname`              
 然后可以输入： `show databases ;`可以查看已经创建的数据库                  
@@ -22,12 +22,12 @@ DCL： 数据控制语句 - grant、revoke等
 `show tables`  查看所有数据表                  
 
 
-2、删除数据库                 
+**2、删除数据库**                 
 
 `drop database dbname` 就可以删除相对应的数据库了                          
 
 
-3、创建表
+**3、创建表**
 
 ```Mysql
 CREATE TABLE tablename (
@@ -53,49 +53,49 @@ create table if not exists emp(
 `show create table emp;`  可以查看更加全面的具体sql语句信息    
 
 
-4、删除表
+**4、删除表**
 
 `drop table if exists emp;`                   
 
 
-5、修改表
+**5、修改表**
 column_definition 表示一个明确的字段定义 包括名字和属性
 
-5.1、修改表的类型              
+**5.1、修改表的类型**              
 
 `alter table tablename MODIFY [COLUMN] column_definition [FIRST|AFTER col_name]`                     
 例如 要修改emp表的ename字段的定义，想varchar(10)改为varchar(20);                    
 `alter table emp modify ename varchar(20);`
 
-5.2、添加表字段               
+**5.2、添加表字段**               
 
 `alter table tablename ADD [COLUMN] column_definition [FIRST|AFTER col_name]`                   
 例如 要给emp表加新字段age, 类型为int(3): `alter table emp add column age int(3);`                                   
 
-5.3、删除字段
+**5.3、删除字段**
 
 `alert table tablename DROP [COLUMN] col_name`              
 例如我们要删除 age 字段 ： `alter table emp drop column age;`                 
 
-5.4、修改字段名
+**5.4、修改字段名**
 
 `alter table tablename change [column] old_col_name column_definition [first|after col_name]`            
 例如 把emp表的age改名为age1，同事修改字段类型为int(4):  `alter table emp change age age1 int(4);`             
 
-5.5、修改字段排列顺序
+**5.5、修改字段排列顺序**
 
 添加介绍的 add/change/modify 中还有一个可选项 first|after column_name 这个可以修改字段在表的位置；                     
 例如 add添加新字段默认在表的最后的位置， 比如添加birth data 在ename 之后： `alter table emp add birth date after ename;`              
 例如 修改age，将他放在最近前: `alter table emp modify age int(3) first;`
 
-5.6、修改表名
+**5.6、修改表名**
 
 `alter table tablename rename [to] new_tablename`                   
 例如 把emp改为emp1: `alter table emp rename emp1;`                       
 
 
 #### DML语句
-1、插入语句
+**1、插入语句**
 
 `insert into tablename (field1, field2, ......, fieldn) values (value1, value2, ......, valuen);`               
 例如 我们向emp中插入一条数据： `insert into emp (ename, hiredate, sal, deptno) values ('yanle', '2018-08-01', '10000', 1);`                                
@@ -119,7 +119,7 @@ values
        ('yanle4', '2018-09-15', '1000', 4);
 ```
 
-2、更新记录                  
+**2、更新记录**                  
 
 `update tablename set field1=value1, field2=value2, .... fieldn=valuen [where condition]`                   
 例如 把dony的sal 从7000 改为 4000： `update emp set sal=4000 where ename='dony';`
@@ -143,7 +143,7 @@ update emp a, dept b set a.sal=a.sal * b.deptno, b.deptname=a.ename where a.dept
 ```
 上面最后两条插入语句执行的效果是一样的。只是最后一句语句添加了一个别名而已。                      
 
-3、删除记录
+**3、删除记录**
 
 `delete from tablename [where condition]`                   
 例如 在emp中， 将ename为'dony'的记录全部删除： `delete from emp where ename='dony';`                   
@@ -152,22 +152,22 @@ update emp a, dept b set a.sal=a.sal * b.deptno, b.deptname=a.ename where a.dept
 `delete t1, t2, ...tn from t1, t2,...tn [where condition];`                     
 例如 同时删除emp和dept中deptno为3的记录： `delete a,b from emp a, dept b where a.deptno=b.deptno and a.deptno=3;`
 
-4、查询记录
+**4、查询记录**
 
 `select * from tablename [where condition];`                
 例如 把所有记录都查出来： `select * from emp;`              
 例如 用逗号分隔想要查询的数据： `select ename,sal,deptno from emp;`                
 
-4.1、查询不重复的记录：使用关键字`distinct`实现                  
+**4.1、查询不重复的记录：使用关键字`distinct`实现**                  
 `select distinct deptno from emp;`
 
-4.2、多条件查询
+**4.2、多条件查询**
 例如 查询所有deptno为2的记录： `select * from emp where deptno=2;`                     
 
 多条件查询中，除了 = 还可以使用，>, <, >=, <=, != 等比较运算符号， 还可以使用and 和 or 等逻辑运算符：
 例如 `select * from emp where deptno<=5 and sal>5000;`
 
-4.3、排序和限制                   
+**4.3、排序和限制**                   
 
 `select * from tablename [where condition] [order by field1 [desc|asc], field2 [desc|asc], ... fieldn [desc|asc]];`                                          
 asc 升序；desc 降序；默认是由低到高的排列； 如果排序字段值一样，则相同的字段按照第二个排列字段进行排序；                   
@@ -187,7 +187,7 @@ select * from emp order by sal asc;
 例如 第二条开始，查询三条： `select * from emp order by sal limit 1,3;`                  
 
 
-4.4、聚合操作
+**4.4、聚合操作**
 
 `select [field1, field2,... fieldn] fun_name from tablename [where where_contition] [group by field1, field2, ... fieldn [with rollup]] [having where_contition]`                   
 参数说明：               
@@ -202,7 +202,7 @@ HAVING 表示分类后的结果在进行条件的赛选
 例如 统计人数大于1的部门： `select deptno,count(1) from emp group by deptno having count(1)>1;`                     
 例如 最后统计公司所有员工的薪水总额，最高薪水和最低薪水： `select sum(sal),max(sal),min(sal) from emp;`                         
 
-4.5、表连接                 
+**4.5、表连接**                 
 当同事需要显示多个表的字段是，就要用到表连接。表连接分为：内连接和外链接。
 区别：内连接仅选出两张表中相互匹配的记录；外链接会选出其他不匹配的记录。常用捏连接                   
 
@@ -219,6 +219,26 @@ select ename,deptname from dept right join emp on dept.deptno=emp.deptno;
 ```                  
 上面三种查询费结果都是一样的。                 
 
+**4.6、子查询**                     
+如果需要的条件是另外一个select语句的结果，就要用到子查询。                    
+关键字： `in、not in、=、!=、exists、not exists`等                            
+
+例如 从emp 中查询出所有部门在dept中的所有记录： `select * from emp where deptno in(select deptno from dept);`                                    
+
+如果子查询记录数唯一，可以用 = 代替 in:                     
+例如 `select * from emp where deptno =(select deptno from dept);`会报错，以为select deptno from dept 查询出来的deptno不止一个；                                          
+例如 `select * from emp where deptno =(select deptno from dept limit 1);` 就不报错了；                  
+
+例如 子查询可以转为表连接查询： 
+```sql
+select emp.*,dept.* from emp, dept where emp.deptno=dept.deptno;
+select emp.* from emp, dept where emp.deptno=dept.deptno;
+select dept.* from emp, dept where emp.deptno=dept.deptno;
+select ename,deptname from emp, dept where emp.deptno=dept.deptno;
+select emp.* from emp, dept where emp.deptno=dept.deptno;
+select emp.*, deptname from emp, dept where emp.deptno=dept.deptno;
+select emp.*, dept.deptname from emp, dept where emp.deptno=dept.deptno;
+```
 
 
 
