@@ -501,6 +501,41 @@ drop table if exists test;
 ![08](./img/08.png)
 
 
+#### 流程函数 重要
+![09](./img/09.png)
+
+例如 一个关于薪水问题的一个测试
+```sql
+create table if not exists salary(
+  userid int(11) auto_increment,
+  salary decimal(9,2),
+  primary key (userid)
+);
+insert into salary (salary)
+values (1000),
+       (2000),
+       (3000),
+       (4000),
+       (5000),
+       (null);
+select * from salary;
+# 如果月薪2000以上的属于高工资，用height 表示，反之 用 low表示
+select if(salary>2000, 'height', 'low') from salary;
+# 如果出现null直接用0替换就是了
+select ifnull(salary, 0) from salary;
+# 实现高低工资的问题
+select case when salary<=2000 then 'low' else 'height' end from salary;
+# 薪水分为高中低三种情况
+select case salary when 1000 then 'low' when 2000 then 'middle' else 'height' end from salary;
+drop table if exists salary;
+```
+
+#### 其他常用函数
+![10](./img/10.png)
+
+
+### <div id="class01-06">06、图形化工具的使用</div>
+使用mysql世界上还有比[datagrip](https://www.jetbrains.com/zh/datagrip/specials/datagrip/datagrip.html)还好用的工具吗？没有！！！
 
 
 
