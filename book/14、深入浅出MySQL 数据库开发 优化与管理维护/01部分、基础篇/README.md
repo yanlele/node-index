@@ -413,6 +413,70 @@ drop table if exists test;
 
 **SET类型**
 
+与enum类型，但是不同的地方是，可以一次性选择多个成员。           
+例如                  
+```sql
+create table if not exists test(col set('a','b','c','d'));
+insert into test
+values ('a,b'),('a,d,a'),('a,b'),('d');
+select * from test;
+drop table if exists test;
+```
+值得注意的是重复的成员集合只取一次；
+
+
+
+### <div id="class01-04">04、mysql中的运算符</div>
+
+#### 算数运算符
++、-、#、/、%
+
+#### 比较运算符
+![02](./img/02.png)                     
+![03](./img/03.png)
+
+比较结果为真，返回1， 为假返回0；                  
+'BETWEEN' 的使用格式为 `a BETWEEN min and max`; 比较包含上下界相等的情况；                     
+'IN' 使用格式为 `a IN (value1, value2, ...)`；                        
+'NULL' 使用格式为 `a IS NULL` 或者 `a IS NOT NULL`；                    
+**'LIKE''** 使用格式为 `a LIKE %123%`，a中有'123'时，返回1； 例如： `select 123456 like '123%', 123456 like '%123%', 123456 like '%321%';`
+
+#### 逻辑运算符              
+![04](./img/04.png)
+
+#### 位运算符
+略。。。。。。。
+
+
+
+### <div id="class01-05">05、常用函数</div>
+#### 常用字符串函数
+![05](./img/05.png)                 
+![06](./img/06.png)
+
+**CONCAT(S1,S2,......)**： 包传入的参数连接成为一个字符串                   
+字符串与null连接的结果都将是null
+
+**INSERT(str,x,y,instr)**： 字符串str从第X位开始，Y个字符串的子串替换为字符串instr                 
+例如 `select insert('beijing2008you', 12, 3, 'me');`
+
+**LOWER(str)和UPPER(str)**: 把字符串转为大写或者小写
+
+**LEFT(str,x)和RIGHT(str,y)**： 分别返回字符串最左边的x字符串和最右边的y个字符；
+
+**LPAD(str,n,pad)和RPAD(str,n,pad)**: 用字符串pad对str最左边和左右边进行填充，直到长度为n个字符长度；
+
+**LTRIM(str)和RTRIM(str)**: 祛除字符串左和右侧的空格；
+
+**REPEAT(str,x)**： 返回str重复X次；                   
+
+**REPLACE(str,a,b)**： 用字符串b替换字符串str出现的字符串a;                 
+
+**TRIM(str)**: 祛除左右两侧空格；
+
+**SUBSTRING(str,x,y)**： 返回字符串str从x位置起，y个字符长度的字符串；
+
+
 
 
 
