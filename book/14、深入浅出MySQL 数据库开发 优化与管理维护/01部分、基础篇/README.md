@@ -360,7 +360,25 @@ show create table t;
 timestamp是受时区影响的，其他的类型倒是不会受时区影响                 
 查看当前时区 `show varialbes like 'time_zone'`                    
 例如我们修改库中的时区： `set tiem_zone='+9:00'`                    
-插入某一列记录的时候，如果插入null 或者不明确给出赋值，那么就自动取系统默认值                           
+插入某一列记录的时候，如果插入null 或者不明确给出赋值，那么就自动取系统默认值       
+
+例如 创建一个时间自增的表
+```sql
+create table if not exists test(
+  id int(11) auto_increment not null,
+  name varchar(100),
+  age int(3),
+  create_time date,
+  update_time timestamp,
+  primary key (id)
+);
+alter table test modify create_time datetime;
+desc test;
+insert into test(name, age, create_time)
+values ('yanle1', 26, now());
+select * from test;
+update test set name='yanlele' where id=1;
+```                    
 
 **datetime**                        
 是不严格的语法，允许很多种类型的时间格式，插入时间里面去。
