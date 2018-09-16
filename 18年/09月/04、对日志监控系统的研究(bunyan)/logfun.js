@@ -4,7 +4,10 @@
  */
 const chalk = require('chalk');
 const moment = require('moment');
-const now  = moment(new Date()).format('YYYY-MM-DD HH:ss:mm');
+const now = moment(new Date()).format('YYYY-MM-DD HH:ss:mm');
+const fs = require('fs');
+const path = require('path');
+
 const logTypeList = [
     {
         'type': 'info',
@@ -43,10 +46,40 @@ const logTypeList = [
     }
 ];
 
-logTypeList.forEach(function(logType) {
-    exports[logType.type] = function() {
+const defaultPath = path.resolve(__dirname, 'logs');
+const applicationName = '我是程序日志';
+logTypeList.forEach(function (logType) {
+    exports[logType.type] = function () {
         let args = Array.prototype.slice.call(arguments, 0);
-        if(logType.icon) args = [logType.icon].concat(args);
-        global.console.log(`[${now} - ${logType.type}] ${chalk[logType.color].apply(global.console, args)}`);
+        let writeMessage = `[${now} - ${logType.type}] ${args}` + '\n';
+        if (logType.icon) args = [logType.icon].concat(args);
+        let message = `[${now} - ${logType.type}] ${chalk[logType.color].apply(global.console, args)}`;
+        global.console.log(message);
+        if (logType.type === 'info' || logType.type === 'error' || logType === 'fate') {
+            // 如果是这三种情况的日志，就需要输入 到日志文件夹
+
+            fs.exists(defaultPath, function (filePathMsg) {
+                if (filePathMsg) {
+                    // 文件夹存在 直接写入日志
+                    writeLogFile({type: logType.type, writeMessage});
+                } else {
+                    new Error('文件夹不存在');
+                }
+            })
+        }
     };
 });
+
+function writeLogFile(options) {
+    let defaultOptions = {
+        writeMessage: '',
+        type: ''
+    };
+    options = Object.assign(defaultOptions, options);
+    let filePath = path.resolve(defaultPath, applicationName + options.type + '.log');
+    fs.writeFile(filePath, options.writeMessage, {
+        'flag': 'a'
+    }, function (err) {
+        new Error('写入文件失败')
+    })
+}

@@ -4,6 +4,7 @@ const filename=path.resolve('test3.txt');
 console.log(filename);
 
 
+/*
 function write(){
     return new Promise((resolve,reject)=>{
         fs.writeFile(filename,'我希望我是追加的内容',{'flag':'a'},(err)=>{
@@ -28,4 +29,4 @@ async function start(){
     })
 }
 
-start();
+start();*/
