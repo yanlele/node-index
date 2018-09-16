@@ -4,6 +4,7 @@
  */
 const chalk = require('chalk');
 const moment = require('moment');
+const now  = moment(new Date()).format('YYYY-MM-DD HH:ss:mm');
 const logTypeList = [
     {
         'type': 'info',
@@ -27,7 +28,7 @@ const logTypeList = [
     },
     {
         'type': 'debug',
-        'color': 'bgBlack',
+        'color': 'blue',
         'icon': '*'
     },
     {
@@ -46,6 +47,6 @@ logTypeList.forEach(function(logType) {
     exports[logType.type] = function() {
         let args = Array.prototype.slice.call(arguments, 0);
         if(logType.icon) args = [logType.icon].concat(args);
-        global.console.log(chalk[logType.color].apply(global.console, args));
+        global.console.log(`[${now} - ${logType.type}] ${chalk[logType.color].apply(global.console, args)}`);
     };
 });
