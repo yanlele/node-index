@@ -476,6 +476,11 @@ drop table if exists test;
 
 **SUBSTRING(str,x,y)**： 返回字符串str从x位置起，y个字符长度的字符串；
 
+#### 数值函数
+![07](./img/07.png)             
+
+#### 日期和时间函数
+![08](./img/08.png)
 
 
 
