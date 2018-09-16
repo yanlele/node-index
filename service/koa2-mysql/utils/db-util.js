@@ -7,7 +7,7 @@ const pool = mysql.createPool({
     user: config.USERNAME,
     password: config.PASSWORD,
     database: config.DATABASE
-})
+});
 
 let query = function (sql, values) {
     return new Promise((resolve, reject) => {
