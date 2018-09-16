@@ -266,7 +266,7 @@ revoke select on sakila.* from 'yanle'@'localhost';
 ```
 
 
-### <div id="class01-03">03、mysql数据类型</div>
+### <div id="class01-03">03章、mysql数据类型</div>
 主要包括以下五大类：
 
 整数类型：BIT、BOOL、TINY INT、SMALL INT、MEDIUM INT、 INT、 BIG INT
@@ -444,7 +444,7 @@ drop table if exists test;
 
 
 
-### <div id="class01-04">04、mysql中的运算符</div>
+### <div id="class01-04">04章、mysql中的运算符</div>
 
 #### 算数运算符
 +、-、#、/、%
@@ -536,17 +536,4 @@ drop table if exists salary;
 
 ### <div id="class01-06">06、图形化工具的使用</div>
 使用mysql世界上还有比[datagrip](https://www.jetbrains.com/zh/datagrip/specials/datagrip/datagrip.html)还好用的工具吗？没有！！！
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+所以略过
