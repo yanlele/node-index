@@ -76,7 +76,7 @@ function writeLogFile(options) {
         type: ''
     };
     options = Object.assign(defaultOptions, options);
-    let filePath = path.resolve(defaultPath, applicationName + options.type + '.log');
+    let filePath = path.resolve(defaultPath, applicationName + '_' + options.type + '.log');
     fs.writeFile(filePath, options.writeMessage, {
         'flag': 'a'
     }, function (err) {
