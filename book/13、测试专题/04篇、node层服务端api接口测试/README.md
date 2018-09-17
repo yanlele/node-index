@@ -73,6 +73,9 @@ describe('check user server', function () {
 });
 ```
 
+如果你遇到了 TypeError: app.address is not a function , 请尝试一下以下方法：                    
+`const request = require('supertest').agent(app.listen())`
+
 
 
 
