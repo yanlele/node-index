@@ -266,6 +266,7 @@
     - [16、发布、安装自己的npm模块](https://www.cnblogs.com/yanhua2017/p/7748491.html)
     - [17、eslint配置文件eslintrc参数详解](./18年/09月/01、eslint配置文件eslintrc参数详解/)
     - [18、2018前端常见题汇总，不定时更新](https://github.com/qianbin01/frontend_train)
+    - [19、npm镜像源的切换问题](./18年/09月/05、npm镜像源切换问题/)
     
 
 - koa2
@@ -287,6 +288,8 @@
 
 - MySql
     - [01、mysql下载与安装问题整理](./18年/09月/02、mysql下载与安装问题整理/)
+    - [02、node_mysql模块的使用](./18年/09月/03、node_mysql模块的使用/index.js)
+    
 
 - node其他知识点
     - [01、上传文件的测试](/17年/12月/1、上传文件的测试)
@@ -326,6 +329,7 @@
     - [35、Inquirer.js交互式命令行工具](./18年/08月/05、Inquirer.js交互式命令行工具/)
     - [36、对commander的研究](./18年/08月/06、对commander的研究/)
     - [37、测试框架mochajs详解](https://github.com/zhaosaisai/mocha-in-chinese)
+    - [40、对日志监控系统的研究(bunyan)](./18年/09月/04、对日志监控系统的研究(bunyan)/)
     
 
 
