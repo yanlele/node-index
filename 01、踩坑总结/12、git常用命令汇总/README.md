@@ -209,6 +209,8 @@ git whatchanged [file]
 创建一个新的commit， 用来撤销指定的commit。                    
 后者所有变化都将被前者抵消，并且应用于当前分支： `git revert [commit]`
 
+
+
 暂时将未提交的变化移除，稍后在移入： 
 ```
 git stash
@@ -218,4 +220,8 @@ git stash pop
 
 ### 10、其他
 打包生成一个可供发布的压缩包： `git archive`
+
+强制提交回退的代码： `git push -f origin master`;
+
+一个回滚的方法： [https://www.cnblogs.com/human/p/5128482.html](https://www.cnblogs.com/human/p/5128482.html)
 
