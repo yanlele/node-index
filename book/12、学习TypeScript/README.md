@@ -47,7 +47,36 @@ let list: number[] = [1, 2, 3];
 let list: Array<number> = [1, 2, 3];
 ```
 
-**元组 Tuple**: 元组类型允许表示一个已知元素数量和类型的数组，各元素的类型不必相同。
+**元组 Tuple**: 元组类型允许表示一个已知元素数量和类型的数组，各元素的类型不必相同。                            
+```typescript
+// Declare a tuple type
+let x: [string, number];
+// Initialize it
+x = ['hello', 10]; // OK
+// Initialize it incorrectly
+x = [10, 'hello']; // Error
+```
+
+**枚举**:                         
+```typescript
+enum Color {Red, Green, Blue}
+let c: Color = Color.Green;
+
+enum Color {Red = 1, Green, Blue}   // 1开始编号
+let c: Color = Color.Green;
+```
+
+
+**Any**:                
+```typescript
+let notSure: any = 4;
+notSure = "maybe a string instead";
+notSure = false; // okay, definitely a boolean
+
+let list: any[] = [1, true, "free"];
+list[1] = 100;
+```
+
 
 
 
