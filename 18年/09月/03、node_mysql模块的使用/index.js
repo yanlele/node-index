@@ -2,7 +2,7 @@ const mysql = require('mysql');
 
 const pool = mysql.createPool({
     host: '127.0.0.1',
-    database: 'test',
+    database: '001_koa_demo',
     user: 'root',
     password: '53693750'
 });
@@ -27,12 +27,12 @@ let query = function (sql, values) {
     })
 };
 
-const queryField = 'salary,userid';
-const userId = 2;
-query(`select ${queryField} from salary where userid=${2}`).then(function(data) {
-    console.log(JSON.stringify(data[0]));
+const queryField = ['name', 'id'];
+const userId = 1;
+query(`select ?? from user_info where id>?`, [['name', 'email'], userId]).then(function(data) {
+    console.log(JSON.stringify(data));
 });
 
-query('select * from salary').then(function(data) {
-    console.log(JSON.stringify(data[0]))
+query('select ?? from user_info where password=?', [queryField, '123456']).then(function(data) {
+    console.log(JSON.stringify(data))
 });
