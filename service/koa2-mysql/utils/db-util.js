@@ -29,6 +29,10 @@ let query = function (sql, values) {
     })
 }
 
+function escape(value) {
+    return pool.escape(value)
+}
+
 let createTable = function (sql) {
     return query(sql, [])
 }
@@ -84,4 +88,5 @@ module.exports = {
     updateData,
     select,
     count,
+    escape
 }
