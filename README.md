@@ -330,6 +330,8 @@
     - [36、对commander的研究](./18年/08月/06、对commander的研究/)
     - [37、测试框架mochajs详解](https://github.com/zhaosaisai/mocha-in-chinese)
     - [40、对日志监控系统的研究(bunyan)](./18年/09月/04、对日志监控系统的研究(bunyan)/)
+    - [41、启动本地文件服务的一个模块serve](https://github.com/zeit/serve)
+    - [42、快速线上部署的模块now](https://github.com/zeit/now-cli)
     
 
 
