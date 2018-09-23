@@ -257,10 +257,15 @@ select deptno from emp union select deptno from dept;
 例如 创建一个yanle数据库用户，对于sakila数据库中所有的表 select/insert 权限：                                   
 ```sql
 grant select, insert on sakila.* to 'yanle'@'localhost' identified by '123456';
+GRANT ALL PRIVILEGES ON *.* TO 'user1'@'localhost';
+
+FLUSH PRIVILEGES;
 ```
 
 例如 收回权限
 ```sql
+REVOKE ALL PRIVILEGES ON *.* FROM 'user1'@'localhost';
+
 revoke insert on sakila.* from 'yanle'@'localhost';
 revoke select on sakila.* from 'yanle'@'localhost';
 ```
