@@ -36,3 +36,7 @@ query(`select ?? from user_info where id>?`, [['name', 'email'], userId]).then(f
 query('select ?? from user_info where password=?', [queryField, '123456']).then(function(data) {
     console.log(JSON.stringify(data))
 });
+
+query(`select ?? from user_info where id = ?`, [['name'], userId]).then(function(data) {
+    console.log(JSON.stringify(data));
+});

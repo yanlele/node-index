@@ -10,7 +10,7 @@ const test = require('./test');
 
 router.use('/test', test.routes(), test.allowedMethods());
 router.use('/user',user.routes(),user.allowedMethods());
-router.use('/test', home.routes(), test.allowedMethods());
+router.use('/home', home.routes(), test.allowedMethods());
 
 module.exports = router;
 
