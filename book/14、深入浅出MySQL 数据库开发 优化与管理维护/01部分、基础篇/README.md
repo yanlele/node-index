@@ -388,6 +388,21 @@ update test set name='yanlele' where id=1;
 **datetime**                        
 是不严格的语法，允许很多种类型的时间格式，插入时间里面去。
 
+**补充时间比较大小**
+```sql
+select * from product where add_time = '2013-01-12'
+
+select * from product where Date(add_time) = '2013-01-12'
+
+select * from product where date(add_time) between '2013-01-01' and '2013-01-31'
+
+// 你还可以这样写：
+select * from product where Year(add_time) = 2013 and Month(add_time) = 1
+
+mysql> SELECT something FROM table 
+WHERE TO_DAYS(NOW()) - TO_DAYS(date_col) <= 30;
+```
+
 
 #### 字符串类型
 ![01](./img/01.png)
