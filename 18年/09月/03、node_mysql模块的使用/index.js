@@ -41,8 +41,11 @@ query(`select ?? from user_info where id = ?`, [['name'], userId]).then(function
     console.log(JSON.stringify(data));
 });
 
-query(`insert into user_info set ?`, {
+const result =  query(`insert into user_info set ?`, {
     name: 'yanle',
     password: '123123123',
     email: '123123@qq.com'
 });
+async function getResult() {
+    console.log(await result);
+}
