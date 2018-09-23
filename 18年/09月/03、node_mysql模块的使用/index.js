@@ -40,3 +40,9 @@ query('select ?? from user_info where password=?', [queryField, '123456']).then(
 query(`select ?? from user_info where id = ?`, [['name'], userId]).then(function(data) {
     console.log(JSON.stringify(data));
 });
+
+query(`insert into user_info set ?`, {
+    name: 'yanle',
+    password: '123123123',
+    email: '123123@qq.com'
+});

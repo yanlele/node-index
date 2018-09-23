@@ -111,6 +111,7 @@ insert into tablename (field1, field2, ......, fieldn)
  ..............
  (recordn_value1, recordn_value2, ......, recordn_valuen);
 ```
+
 例如 对emp表一次性插入两条数据：
 ```sql
 insert into emp (ename, hiredate, sal, deptno)
@@ -118,6 +119,12 @@ values
        ('yanle3', '2018-08-01', '10000', 3),
        ('yanle4', '2018-09-15', '1000', 4);
 ```
+
+第二种更新数据的办法：
+```sql
+insert into emp set name='admin001', email='admin001@example.com', password='123456';
+```
+
 
 **2、更新记录**                  
 
