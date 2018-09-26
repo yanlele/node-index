@@ -29,7 +29,7 @@ function myMath() {
     return myMath();
 }
 
-let arr = []
+let arr = [];
 for (let i = 0 ;i<=10;i++ ) {
     console.log(myMath());
     arr.map(function (item) {
