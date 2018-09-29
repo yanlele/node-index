@@ -34,7 +34,7 @@ module.exports = {
         console.log(formData);
         console.log(result.success);
 
-        if (formData.source === 'form' && result.success === true) {
+        if (result && result.success === true) {
             let session = ctx.session
             session.isLogin = true
             session.userName = userResult.name
