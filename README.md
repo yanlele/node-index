@@ -227,6 +227,7 @@
     - [38、非常厉害的关于css样式](https://github.com/chokcoco/iCSS)
     - [39、lodash中常用的方法](./18年/09月/07、lodash中常用的方法/index.js)
     - [40、生成UUID算法总结](./18年/09月/08、生成UUID算法总结/index.js)
+    - [41、ts配置文件详解](./18年/09月/09、ts配置文件详解/tsconfig.json)
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
