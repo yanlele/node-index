@@ -337,6 +337,7 @@
     - [41、启动本地文件服务的一个模块serve](https://github.com/zeit/serve)
     - [42、快速线上部署的模块now](https://github.com/zeit/now-cli)
     - [43、Windows上使用redis的文章](https://blog.csdn.net/u010137839/article/details/80210328)
+    - [44、koa连接redis做缓存](./18年/10月/01、koa连接redis做缓存/README.md)
     
 
 
