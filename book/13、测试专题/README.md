@@ -24,3 +24,8 @@
 - [node层服务端api接口测试](./04篇、node层服务端api接口测试/README.md)
     - [01、编写单元测试基本流程](./04篇、node层服务端api接口测试/README.md#class04-01)
     - [02、api测试的具体实现](./04篇、node层服务端api接口测试/README.md#class04-02)
+    
+    
+## 05篇、TypeScript测试
+- [01、基础安装包的安装](./05篇、TypeScript测试/REAMDE.md#class05-01)
+- [02、测试用例的编写 和 配置文件的导入](./05篇、TypeScript测试/REAMDE.md#class05-02)
