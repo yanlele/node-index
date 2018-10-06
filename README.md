@@ -125,7 +125,7 @@
 
 - [11、深入webpack工程化](./book/11、深入webpack工程化/)
 
-- [12、学习TypeScript](./book/12、学习TypeScript/)
+- [12、学习TypeScript](https://github.com/yanlele/TyepScript-learning)
 
 - [13、测试专题](./book/13、测试专题/)
 
