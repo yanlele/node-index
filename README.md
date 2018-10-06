@@ -1,17 +1,21 @@
 # 这里集合了自己github的一个索引和专题demo
 
 ### 目录
-- [一、对别人项目的研究（详细阅读源码之后写下的一些笔记和项目注释-已完成）](#class01)
-- [二、独立项目列表（已完成）](#class02)
-- [三、正在进行的独立项目(进行中)](#class03)
-- [四、专题笔记归类(简书总结)](#class04)
-- [五、通用功能js模块组件](#class05)
-- [六、基础框架知识归类](#class06)
-- [七、年度计划和日志目录](#class07)
+- [一、已经发布npm的开源模块](#class01)
+- [二、对别人项目的研究（详细阅读源码之后写下的一些笔记和项目注释-已完成）](#class02)
+- [三、独立项目列表（已完成）](#class03)
+- [四、正在进行的独立项目(进行中)](#class04)
+- [五、专题笔记归类(简书总结)](#class05)
+- [六、通用功能js模块组件](#class06)
+- [七、基础框架知识归类](#class07)
+- [八、年度计划和日志目录](#class08)
+
+### <div id="class01">已经发布npm的开源模块</div>      
+- [koa2日志监控中间件:koa-logs-middleware](https://github.com/yanlele/koa-logs-middleware)
 
 
 
-### <div id="class01">对别人项目的研究（详细阅读源码之后写下的一些笔记和项目注释-已完成）</div>                  
+### <div id="class02">对别人项目的研究（详细阅读源码之后写下的一些笔记和项目注释-已完成）</div>                  
 - [01、express基本使用,包括注册,登陆,上传,下载,登录权限控制,session持久化,邮件发送,网络爬虫等](https://github.com/yanlele/express)
 - [02、基于webpack3多页面打包](https://github.com/yanlele/webpack-dev)
 - [03、基于node的博客（极其经典，技术UP）](https://github.com/yanlele/N-blog)
@@ -20,7 +24,7 @@
 - [06、cvms构建工具项目架构思路](./03、项目架构思路学习/01、CVMS构建工具项目架构思路.xmind)
 
 
-### <div id="class02">独立项目列表（已完成）</div>
+### <div id="class03">独立项目列表（已完成）</div>
 - [01、基于vue和express的一个小型电商全栈项目](https://github.com/yanlele/nodeMall)
 - [02、react新闻站项目pc+移动双端](https://github.com/yanlele/React-News)
 - [03、基于socket.IO 的一个较为复杂的项目案例，参考自《node.js实战》](https://github.com/yanlele/chatApplication)
@@ -31,7 +35,7 @@
 - [08、koa2的学习笔记项目demo](https://github.com/yanlele/koa-study)
 
 
-### <div id="class03">正在进行的独立项目(进行中)</div>
+### <div id="class04">正在进行的独立项目(进行中)</div>
 - [01、基于webpack3的前端工程自动化构建（实现可配置的jQuery、vue、react和全栈项目脚手架）](https://github.com/yanlele/le-cli)
 - [02、基于react 高仿csdn博客前端](https://github.com/yanlele/react-blog-front)
 - [03、基于react 高仿csdn博客后端](https://github.com/yanlele/react-blog-server)
@@ -41,7 +45,7 @@
 - [07、《Node.js入门教程》](https://github.com/liuxing/node-abc)
 
 
-### <div id="class04">专题笔记归类(简书总结)</div>
+### <div id="class05">专题笔记归类(简书总结)</div>
 - [01、react简书笔记](./book/01、react专题)
 
 - [02、ES6/7简书笔记](./book/02、ES6&7)
@@ -132,7 +136,7 @@
 - [14、深入浅出MySQL 数据库开发 优化与管理维护](./book/14、深入浅出MySQL%20数据库开发%20优化与管理维护/)
 
 
-### <div id="class05">通用功能js模块组件</div>
+### <div id="class06">通用功能js模块组件</div>
 - 原生组件和公用功能部分
     - [01、常用功能函数:url带参数跳转，获取url参数，请求序列化param等功能](./通用功能js模块/js/1、site/site.js)
     - [02、日期格式化组件](./通用功能js模块/js/2、日期格式化组件/dateFormat.js)
@@ -173,7 +177,7 @@
 - [其他开源常用模块组件收录目录](./通用功能js模块/other)
 
 
-### <div id="class06">基础框架知识归类</div>
+### <div id="class07">基础框架知识归类</div>
 - [踩坑记录和一些项目的总结](./踩坑总结)
     - [01、对隐藏右边滚动条的研究](./01、踩坑总结/01、对隐藏右边滚动条的研究/index.html)
     - [02、给table的tr加不上bottom样式的解决方案](01、踩坑总结/02、给table的tr加不上bottom样式的解决方案/README.md)
@@ -343,7 +347,7 @@
     
 
 
-### <div id="class07">年度计划和日志目录</div>
+### <div id="class08">年度计划和日志目录</div>
 
 - 17年
     - [17年计划书和记录](./17年/17年前端进阶计划.md)
