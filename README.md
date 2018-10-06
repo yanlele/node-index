@@ -35,7 +35,7 @@
 - [01、基于webpack3的前端工程自动化构建（实现可配置的jQuery、vue、react和全栈项目脚手架）](https://github.com/yanlele/le-cli)
 - [02、基于react 高仿csdn博客前端](https://github.com/yanlele/react-blog-front)
 - [03、基于react 高仿csdn博客后端](https://github.com/yanlele/react-blog-server)
-- [04、react项目实战二：Webpack + React全栈工程架构项目实战精讲 *****](https://github.com/yanlele/react-cnode)
+- [04、koa+TypeScript构建商城类项目服务端*****](https://github.com/yanlele/koa-typescript)
 - [05、《Node.js从入门到上线》—— Koa2 + MongoDB 搭建博客系统](https://github.com/liuxing/node-blog)
 - [06、koa2构建工具koa2-starter-cli](https://github.com/liuxing/koa2-starter-cli)
 - [07、《Node.js入门教程》](https://github.com/liuxing/node-abc)
