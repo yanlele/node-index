@@ -3,8 +3,8 @@ const mysql = require('mysql');
 const pool = mysql.createPool({
     host: '127.0.0.1',
     database: '001_koa_demo',
-    user: 'root',
-    password: '53693750'
+    user: 'yanle',
+    password: '123456'
 });
 
 let query = function (sql, values) {
