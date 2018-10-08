@@ -25,6 +25,10 @@ console.log(phoneMask);*/
 
 
 //验证非数字和点
-let value = 18371.1111;
-console.log(/^[0-9]+([.]{1}[0-9]{1,2})?$/.test(value));
+// let value = 18371.1111;
+// console.log(/^[0-9]+([.]{1}[0-9]{1,2})?$/.test(value));
 
+
+// 手机号码验证
+let phone = 15213497741;
+console.log(/^1[345789]\d{9}$/.test(phone));
