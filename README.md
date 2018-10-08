@@ -345,6 +345,7 @@
     - [43、Windows上使用redis的文章](https://blog.csdn.net/u010137839/article/details/80210328)
     - [44、koa连接redis做缓存](./18年/10月/01、koa连接redis做缓存/README.md)
     - [45、json验证模块jsonschema的使用](./18年/10月/02、json验证模块jsonschema的使用/)
+    - [46、Safely and quickly serialize JavaScript objects](https://github.com/davidmarkclements/fast-safe-stringify)
     
 
 
