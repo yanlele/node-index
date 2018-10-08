@@ -3,7 +3,7 @@
  */
 
 'use strict';
-var inquirer = require('..');
+var inquirer = require('inquirer');
 var chalkPipe = require('chalk-pipe');
 
 var questions = [

@@ -3,7 +3,7 @@
  */
 
 'use strict';
-var inquirer = require('..');
+var inquirer = require('inquirer');
 
 var directionsPrompt = {
   type: 'list',
@@ -18,7 +18,7 @@ function main() {
 }
 
 function exitHouse() {
-  inquirer.prompt(directionsPrompt).then(answers => {
+    inquirer.prompt(directionsPrompt).then(answers => {
     if (answers.direction === 'Forward') {
       console.log('You find yourself in a forest');
       console.log(

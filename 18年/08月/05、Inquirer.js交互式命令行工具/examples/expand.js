@@ -8,7 +8,7 @@ var inquirer = require('inquirer');
 inquirer
   .prompt([
     {
-      type: 'expand',
+      type: 'expaynd',
       message: 'Conflict on `file.js`: ',
       name: 'overwrite',
       choices: [
