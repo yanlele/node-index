@@ -1,10 +1,13 @@
-# DOM 和 BOM
+# DOM 和 BOM 
 
 目录              
 - [DOM部分](#dom)             
-    - [document对象](#dom-class01)                
-    - [html dom对象](#dom-class02)
-    - [DOM 属性 对象](#dom-class03)
+    - [01、document对象](#dom-class01)                
+    - [02、html dom对象](#dom-class02)
+    - [03、DOM 属性 对象](#dom-class03)
+    - [04、HTML DOM 事件](#dom-class04)
+    
+- [BOM](#bom)
 
 
 ## <p id='dom'>DOM 部分</p>
@@ -374,3 +377,26 @@ shiftKey	|返回当事件被触发时，"SHIFT" 键是否被按下。|	2
 |:-|:-|:-|              
 initMouseEvent()	|初始化鼠标事件对象的值	|2
 initKeyboardEvent()	|初始化键盘事件对象的值	|3
+
+
+### <p id='dom-class05'>05、Console 对象</p>  
+
+方法	|描述
+|:-|:-|
+console.assert(expression, message)|如果断言为 false，则在信息到控制台输出错误信息。
+clear()	|清除控制台上的信息。
+count()	|记录 count() 调用次数，一般用于计数。
+error()	|输出错误信息到控制台
+group()	|在控制台创建一个信息分组。 一个完整的信息分组以 console.group() 开始，console.groupEnd() 结束
+groupCollapsed()	|在控制台创建一个信息分组。 类似 console.group() ，但它默认是折叠的。
+groupEnd()	|设置当前信息分组结束
+info()	|控制台输出一条信息
+log()	|控制台输出一条信息
+console.table(tabledata[Array 或 Object], tablecolumns[Array])	|以表格形式显示数据
+time()	|计时器，开始计时间，与 timeEnd() 联合使用，用于算出一个操作所花费的准确时间。
+timeEnd()	|计时结束
+trace()	|显示当前执行的代码在堆栈中的调用路径。
+warn()	|输出警告信息，信息最前面加一个黄色三角，表示警告
+
+
+## <p id='bom'>BOM 部分</p>
