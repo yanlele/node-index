@@ -12,6 +12,7 @@
 |split()|	把字符串分割为字符串数组。|
 |string.substr(start,length)|substr() 方法可在字符串中抽取从 开始 下标开始的指定数目的字符。|
 |string.substring(startIndex, endIndex)| 取字符串中介于两个指定下标之间的字符。 |
+|string.slice(start,end)|提取字符串的片断，并在新的字符串中返回被提取的部分。|
 
 
 ## 常见数组的操作

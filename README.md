@@ -346,6 +346,7 @@
     - [44、koa连接redis做缓存](./18年/10月/01、koa连接redis做缓存/README.md)
     - [45、json验证模块jsonschema的使用](./18年/10月/02、json验证模块jsonschema的使用/)
     - [46、Safely and quickly serialize JavaScript objects](https://github.com/davidmarkclements/fast-safe-stringify)
+    - [47、关于内存泄漏的文章](https://github.com/zhansingsong/js-leakage-patterns)
     
 
 
