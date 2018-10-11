@@ -12,3 +12,5 @@
     - [1.9、合成](./01、canvas初级.md#class09)
     - [1.10、剪裁路径](./01、canvas初级.md#class10)
     - [1.11、动画](./01、canvas初级.md#class11)
+
+- [02、canvas小游戏-birds]()
