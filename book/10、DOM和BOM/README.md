@@ -1,4 +1,4 @@
-# DOM 和 BOM 
+# DOM 和 BOM 和 you dont need jquery
 
 目录              
 - [DOM部分](#dom)             
@@ -403,7 +403,7 @@ warn()	|输出警告信息，信息最前面加一个黄色三角，表示警告
 
 ### <p id='bom-class01'>01、window对象</p> 
 
-Window 对象属性
+#### Window 对象属性
 
 属性|	描述
 |:-|:-|
@@ -434,3 +434,29 @@ screenY	|返回相对于屏幕窗口的y坐标
 self	|返回对当前窗口的引用。等价于 Window 属性。
 status	|设置窗口状态栏的文本。
 top	|返回最顶层的父窗口。
+
+
+#### Navigator 对象
+Navigator 对象包含有关浏览器的信息。                 
+
+属性	|说明
+|:-|:-|
+appCodeName	|返回浏览器的代码名
+appName	|返回浏览器的名称
+appVersion	|返回浏览器的平台和版本信息
+cookieEnabled	|返回指明浏览器中是否启用 cookie 的布尔值
+platform	|返回运行浏览器的操作系统平台
+userAgent	|返回由客户机发送服务器的user-agent 头部的值
+
+
+#### Screen 对象
+Screen 对象包含有关客户端显示屏幕的信息。
+
+属性	|说明
+:-|:-
+availHeight	|返回屏幕的高度（不包括Windows任务栏）
+availWidth	|返回屏幕的宽度（不包括Windows任务栏）
+colorDepth	|返回目标设备或缓冲器上的调色板的比特深度
+height	|返回屏幕的总高度
+pixelDepth	|返回屏幕的颜色分辨率（每象素的位数）
+width	|返回屏幕的总宽度
