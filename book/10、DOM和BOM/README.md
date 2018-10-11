@@ -460,3 +460,34 @@ colorDepth	|返回目标设备或缓冲器上的调色板的比特深度
 height	|返回屏幕的总高度
 pixelDepth	|返回屏幕的颜色分辨率（每象素的位数）
 width	|返回屏幕的总宽度
+
+
+#### History 对象
+History 对象包含用户（在浏览器窗口中）访问过的 URL。                        
+
+方法	|说明
+:-|:-
+back()	|加载 history 列表中的前一个 URL
+forward()	|加载 history 列表中的下一个 URL
+go()	|加载 history 列表中的某个具体页面
+
+
+#### Location 对象
+
+属性|	描述
+:-|:-
+hash	|返回一个URL的锚部分
+host	|返回一个URL的主机名和端口
+hostname	|返回URL的主机名
+href	|返回完整的URL
+pathname	|返回的URL路径名。
+port	|返回一个URL服务器使用的端口号
+protocol	|返回一个URL协议
+search	|返回一个URL的查询部分
+
+
+方法	|说明
+:-|:-
+assign()	|载入一个新的文档
+reload()	|重新载入当前文档
+replace()	|用新的文档替换当前文档
