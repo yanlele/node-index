@@ -190,7 +190,7 @@ onhashchange	|该事件在当前 URL 的锚部分发生修改时触发。|
 onload	|一张页面或一幅图像完成加载。|	2
 onpageshow	|该事件在用户访问页面时触发	|
 onpagehide	|该事件在用户离开当前网页跳转到另外一个页面时触发	|
-onresize	|窗口或框架被重新调整大小。|	2
+**onresize**	|窗口或框架被重新调整大小。 监听屏幕大小变化|	2
 onscroll	|当文档被滚动时发生的事件。|	2
 onunload	|用户退出页面。 ( <body> 和 <frameset>)|	2
 
