@@ -24,7 +24,7 @@
 - [06、cvms构建工具项目架构思路](./03、项目架构思路学习/01、CVMS构建工具项目架构思路.xmind)
 
 
-### <div id="class03">独立项目列表（已完成）</div>
+### <div id="class03">个人项目列表（已完成）</div>
 - [01、基于vue和express的一个小型电商全栈项目](https://github.com/yanlele/nodeMall)
 - [02、react新闻站项目pc+移动双端](https://github.com/yanlele/React-News)
 - [03、基于socket.IO 的一个较为复杂的项目案例，参考自《node.js实战》](https://github.com/yanlele/chatApplication)
@@ -35,7 +35,7 @@
 - [08、koa2的学习笔记项目demo](https://github.com/yanlele/koa-study)
 
 
-### <div id="class04">正在进行的独立项目(进行中)</div>
+### <div id="class04">正在进行的个人项目 - 包含待研究的项目(进行中)</div>
 - [01、基于webpack3的前端工程自动化构建（实现可配置的jQuery、vue、react和全栈项目脚手架）](https://github.com/yanlele/le-cli)
 - [02、基于react 高仿csdn博客前端](https://github.com/yanlele/react-blog-front)
 - [03、基于react 高仿csdn博客后端](https://github.com/yanlele/react-blog-server)
@@ -43,6 +43,9 @@
 - [05、《Node.js从入门到上线》—— Koa2 + MongoDB 搭建博客系统](https://github.com/liuxing/node-blog)
 - [06、koa2构建工具koa2-starter-cli](https://github.com/liuxing/koa2-starter-cli)
 - [07、《Node.js入门教程》](https://github.com/liuxing/node-abc)
+- [08、canvas-test](https://github.com/whxaxes/canvas-test)
+- [09、超多经典 canvas 实例，动态离子背景、移动炫彩小球、贪吃蛇、坦克大战、是男人就下100层、心形文字等等等](https://github.com/bxm0927/canvas-special)
+- [10、一个基于Phaser的小游戏集合](https://github.com/channingbreeze/games)
 
 
 ### <div id="class05">专题笔记归类(简书总结)</div>
