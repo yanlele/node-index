@@ -351,6 +351,15 @@ scp（scp test@ip:/tmp/yanle.txt ./）| 把服务器的文件下载到本地来
 
 其实xshell 也可以实现文件的上传和下载。但是 要求我们在服务器上安装一个软件，名字叫做 lrzsz: yum install lrzsz                 
 这个命令是需要在服务器上执行的：
+在root 用户中 输入visudo 进入 文件命令之后 大写G 就可以找到文件末尾了。
+这个时候在下面这一段中，加入我们自己的用户就可以了
+```
+## Allows people in group wheel to run all commands
+%wheel  ALL=(ALL)       ALL
+test ALL=(ALL)       ALL
+
+service network restart
+```
 
 命令 | 描述
 :-|:-
