@@ -1,4 +1,4 @@
-# DOM 和 BOM 
+# DOM 和 BOM 和 you dont need jquery
 
 目录              
 - [DOM部分](#dom)             
@@ -190,7 +190,7 @@ onhashchange	|该事件在当前 URL 的锚部分发生修改时触发。|
 onload	|一张页面或一幅图像完成加载。|	2
 onpageshow	|该事件在用户访问页面时触发	|
 onpagehide	|该事件在用户离开当前网页跳转到另外一个页面时触发	|
-onresize	|窗口或框架被重新调整大小。|	2
+**onresize**	|窗口或框架被重新调整大小。 监听屏幕大小变化|	2
 onscroll	|当文档被滚动时发生的事件。|	2
 onunload	|用户退出页面。 ( <body> 和 <frameset>)|	2
 
@@ -403,7 +403,7 @@ warn()	|输出警告信息，信息最前面加一个黄色三角，表示警告
 
 ### <p id='bom-class01'>01、window对象</p> 
 
-Window 对象属性
+#### Window 对象属性
 
 属性|	描述
 |:-|:-|
@@ -434,3 +434,60 @@ screenY	|返回相对于屏幕窗口的y坐标
 self	|返回对当前窗口的引用。等价于 Window 属性。
 status	|设置窗口状态栏的文本。
 top	|返回最顶层的父窗口。
+
+
+#### Navigator 对象
+Navigator 对象包含有关浏览器的信息。                 
+
+属性	|说明
+|:-|:-|
+appCodeName	|返回浏览器的代码名
+appName	|返回浏览器的名称
+appVersion	|返回浏览器的平台和版本信息
+cookieEnabled	|返回指明浏览器中是否启用 cookie 的布尔值
+platform	|返回运行浏览器的操作系统平台
+userAgent	|返回由客户机发送服务器的user-agent 头部的值
+
+
+#### Screen 对象
+Screen 对象包含有关客户端显示屏幕的信息。
+
+属性	|说明
+:-|:-
+availHeight	|返回屏幕的高度（不包括Windows任务栏）
+availWidth	|返回屏幕的宽度（不包括Windows任务栏）
+colorDepth	|返回目标设备或缓冲器上的调色板的比特深度
+height	|返回屏幕的总高度
+pixelDepth	|返回屏幕的颜色分辨率（每象素的位数）
+width	|返回屏幕的总宽度
+
+
+#### History 对象
+History 对象包含用户（在浏览器窗口中）访问过的 URL。                        
+
+方法	|说明
+:-|:-
+back()	|加载 history 列表中的前一个 URL
+forward()	|加载 history 列表中的下一个 URL
+go()	|加载 history 列表中的某个具体页面
+
+
+#### Location 对象
+
+属性|	描述
+:-|:-
+hash	|返回一个URL的锚部分
+host	|返回一个URL的主机名和端口
+hostname	|返回URL的主机名
+href	|返回完整的URL
+pathname	|返回的URL路径名。
+port	|返回一个URL服务器使用的端口号
+protocol	|返回一个URL协议
+search	|返回一个URL的查询部分
+
+
+方法	|说明
+:-|:-
+assign()	|载入一个新的文档
+reload()	|重新载入当前文档
+replace()	|用新的文档替换当前文档
