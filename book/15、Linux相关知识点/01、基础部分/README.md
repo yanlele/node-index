@@ -75,4 +75,15 @@ mac 的路径跟Linux 是一样的。windows不需要这个。。。。
 
 
 #### SSH 安全密码登录
+ssh key 使用非堆成加密方式生成公钥和私钥                                
+存放路径 ~/.ssh/config                      
+公钥是可以对外公开的，放在服务器的 ~/.ssh/authorized_keys
+
+密钥的生成 ssh-keygen -t rsa 或者 ssh-keygen -t dsa                
+创建的时候，会默认让我们输入我们的文件名，生成之后的密钥就直接放在了 ~/.ssh/ 这个文件夹下面。
+
+一般的使用情况是window生成公钥，然后把公钥放在服务器上， 就可以直接连接了。
+
+
+#### SSH 安全端口
 
