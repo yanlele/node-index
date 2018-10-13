@@ -295,6 +295,23 @@ firewall-cmd --list-port=22/top | 列出有哪些服务
 防火墙控制的有两个方向一个是服务，一个是端口。我们常用的都是端口这种的方式控制。
 
 
+### <div id="class01-09">09、提权与文件上传和下载</div>
+
+命令 | 描述
+:-|:-
+sudo | 提权
+wget XXX / curl -o saveFileName XXX | 下载， 其中XX是下载地址, saveFileName 是保存的文件的名字
+scp（scp yanle.txt test@ip:/tmp/）| 上传把本地指定的文件上传到服务器指定位置
+scp（scp test@ip:/tmp/yanle.txt ./）| 把服务器的文件下载到本地来
+
+其实xshell 也可以实现文件的上传和下载。但是 要求我们在服务器上安装一个软件，名字叫做 lrzsz: yum install lrzsz                 
+这个命令是需要在服务器上执行的：
+
+命令 | 描述
+:-|:-
+rz | 上传到服务器的文件
+sz fileName | 服务器上文件下载到本地
+
 
 
 
