@@ -226,7 +226,16 @@ wc | 统计个数
 
 
 #### 文件解压缩
-tar 命令
+tar 的常用命令
+
+命令 | 描述
+:-|:-
+tar -czvf test.tar.gz a.c | 压缩 a.c文件为test.tar.gz
+tar -tzvf test.tar.gz  | 列出压缩文件内容 `-rw-r--r-- root/root     0 2010-05-24 16:51:59 a.c`
+tar -xzvf test.tar.gz a.c | 解压文件
+
+-czvf 这个命令 第二个参数说明打包方式是gz的打包方式，第三个参数v 表示要现实这个文件的情况
+
 
 
 
