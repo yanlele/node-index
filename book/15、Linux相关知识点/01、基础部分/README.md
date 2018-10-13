@@ -27,7 +27,7 @@ wget XXXXXXXXXX
 阿里云的centos也是默认安装了这个玩意儿的。
 
 
-### <div id="class01-02">SSH连接</div>
+### <div id="class01-02"> </div>
 Secure Shell  网络安全协议
 
 #### 服务端SSH
@@ -51,3 +51,28 @@ ssh serviceName@ip 就可以直接连接服务端了
 |Port|端口|
 |User|用户名|
 |IdentityFile|密匙文件的路径|
+
+举一个简单的例子：
+```
+cd ~/.ssh
+touch config
+
+vim config
+
+// 修改文件了， 例如我们把文件修改为这样
+host "yanle"
+    HostName 192.168.0.101
+    User root
+    Port 22
+
+// 然后保存退出
+```
+
+这个时候我们想要连接 主机 `192.168.0.101` 就可以直接 ssh yanle 就可以连接了。 这种情况一般出现在我们的Linux系统想要连接别的服务器系统的情况。                    
+如果有多态服务器，那么按着这个命名规则，在config 中继续配置就可以了。
+
+mac 的路径跟Linux 是一样的。windows不需要这个。。。。
+
+
+#### SSH 安全密码登录
+
