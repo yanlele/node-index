@@ -100,3 +100,10 @@ ssh key 使用非堆成加密方式生成公钥和私钥
 软件包信息： yum info xxx                 
 
      
+### <div id="class01-04">服务器硬件资源相关命令</div>
+内存: free -m                         
+硬盘： df -h               
+负载： w/top               
+cup个数/核数： cat /proc/cpuinfo             
+可视化磁盘： fdisk
+
