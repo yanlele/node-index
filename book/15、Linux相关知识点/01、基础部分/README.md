@@ -89,3 +89,14 @@ ssh key 使用非堆成加密方式生成公钥和私钥
 修改端口： vim /etc/ssh/sshd_config  默认22             
 这个地方有一个字段port 就可以更改SSH连接的端口号了。 可以允许多个端口。
 
+
+### <div id="class01-03">软件命令</div>
+软件包管理： yum                      
+安装软件： yum install xxx               
+卸载软件： yum remove xxx                
+搜索软件： yum search xxx                
+清理缓存： yum clean packages            
+列出已经安装： yum list                
+软件包信息： yum info xxx                 
+
+     
