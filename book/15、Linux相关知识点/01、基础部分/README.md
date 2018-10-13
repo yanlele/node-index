@@ -139,7 +139,7 @@ touch | 新建文件
 mkdir|新建文件夹
 rm|删除文件和目录
 cp|复制
-mv|移动
+mv|移动 还可以更改文件名字
 pwd|现实路径
 
 说明：                 
@@ -157,6 +157,17 @@ mkdir -p yanle/test/test1/test2 这样就可以了
 - 复制命令详解                
 命令格式：cp [-adfilprsu] 源文件(source) 目标文件(destination)              
 cp [option] source1 source2 source3 ... directory
+
+- mv 命令详解
+
+|命令|解释|
+|:-|:-|
+mv 文件名 文件名 |	将源文件名改为目标文件名
+mv 文件名 目录名 |	将文件移动到目标目录
+mv 目录名 目录名 |	目标目录已存在，将源目录移动到目标目录；目标目录不存在则改名
+mv 目录名 文件名 |	出错
+
+
 
 参数 | 说明
 :- | :-
@@ -237,7 +248,26 @@ tar -xzvf test.tar.gz a.c | 解压文件
 -czvf 这个命令 第二个参数说明打包方式是gz的打包方式，第三个参数v 表示要现实这个文件的情况
 
 
+### <div id="class01-07">07、系统级命令操作用户</div>
 
+命令 | 描述
+:-|:-
+useradd userName | 添加用户
+adduser userName | 添加用户
+userdel -r userName | 删除用户
+passwd userName | 设置密码
+
+用户相关的添加操作要放到 /home 目录下面
+
+
+### <div id="class01-08">08、防火墙相关</div>
+
+命令 | 描述
+:-|:-
+安装防火墙 | yum install firewalld
+启动防火墙 | service firewalld start
+检查防火墙状态 | service firewalld status
+关闭或者禁用防火墙 | service firewalld stop/disable
 
 
 
