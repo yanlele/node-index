@@ -158,6 +158,15 @@ cp [option] source1 source2 source3 ... directory
 -u:若目标文件比源文件旧，更新目标文件 
 
 
+### <div id="class01-06">06、文本编辑器vim</div>
+命令大全： [http://www.runoob.com/linux/linux-vim.html](http://www.runoob.com/linux/linux-vim.html)
+
+vim创建文件并且打开： vim fileName                   
+快速移动到行位或者行首：非插入模式，大写模式下按下 G 移动到行尾 、 小写模式下按下 gg 两次，移动到行首                                            
+删除某一行: 非插入模式下面 按下两次小写的 dd 就可以了                                
+撤销删除： 非插入模式，按下小写的 u 就可以了                    
+复制和粘贴： 非插入模式， 在某一行按下两个yy ，然后在想要粘贴的行， 按下p                    
+
 
 
 
