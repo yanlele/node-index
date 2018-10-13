@@ -266,8 +266,37 @@ passwd userName | 设置密码
 :-|:-
 安装防火墙 | yum install firewalld
 启动防火墙 | service firewalld start
+重庆防火墙 | service firewalld restart
 检查防火墙状态 | service firewalld status
 关闭或者禁用防火墙 | service firewalld stop/disable
+
+其他相关命令补充：
+
+命令 | 描述
+:-|:-
+`ps -ef | grep firewall` | 可以查看防火墙的启动状态，是否启动
+firewall-cmd --state | 查看防火墙的状态
+firewall-cmd --get-zones | 查看区域
+firewall-cmd --get-default-zones | 查看默认区域
+firewall-cmd --list-all-zone | 查看每一个区域具体配置信息
+
+#### 添加一个服务，允许一个服务访问
+
+命令 | 描述
+:-|:-
+firewall-cmd --add-service=ssh | 添加某一个服务
+firewall-cmd --query-service=ssh | 有没有查询服务
+firewall-cmd --remove-service=ssh | 移除某一个服务
+firewall-cmd --list-service=ssh | 列出有哪些服务
+firewall-cmd --query-port=22/tcp | 查询22端口是否有tcp协议
+firewall-cmd --add-port=22/tcp | 22端口添加tcp协议
+firewall-cmd --list-port=22/top | 列出有哪些服务
+
+防火墙控制的有两个方向一个是服务，一个是端口。我们常用的都是端口这种的方式控制。
+
+
+
+
 
 
 
