@@ -27,7 +27,7 @@ wget XXXXXXXXXX
 阿里云的centos也是默认安装了这个玩意儿的。
 
 
-### <div id="class01-02">SSH</div>
+### <div id="class01-02">02、SSH</div>
 Secure Shell  网络安全协议
 
 #### 服务端SSH
@@ -93,7 +93,7 @@ ssh key 使用非堆成加密方式生成公钥和私钥
 这个地方有一个字段port 就可以更改SSH连接的端口号了。 可以允许多个端口。
 
 
-### <div id="class01-03">软件命令</div>
+### <div id="class01-03">03、软件命令</div>
 
 说明 | 命令
 :-|:-
@@ -106,7 +106,7 @@ ssh key 使用非堆成加密方式生成公钥和私钥
 软件包信息| yum info xxx                 
 
      
-### <div id="class01-04">服务器硬件资源相关命令</div>
+### <div id="class01-04">04、服务器硬件资源相关命令</div>
 
 说明 | 命令
 :-|:-
