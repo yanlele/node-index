@@ -107,3 +107,59 @@ ssh key 使用非堆成加密方式生成公钥和私钥
 cup个数/核数： cat /proc/cpuinfo             
 可视化磁盘： fdisk
 
+
+### <div id="class01-05">05、文件操作命令行</div>
+#### 文件目录结构
+根目录: /               
+家目录: /home               
+临时目录: /tmp           
+配置目录: /etc               
+用户程序目录: /usr                 
+
+查看文件列表: ls -al                      
+
+#### 文件操作的基本命令
+
+|命令|解释|
+|:-|:-|
+ls|查看目录下面的文件
+touch | 新建文件
+mkdir|新建文件夹
+rm|删除文件和目录
+cp|复制
+mv|移动
+pwd|现实路径
+
+说明：                 
+- 创建文件夹的时候， 如果想创建多层级的文件夹，可以这样创建                 
+mkdir -p yanle/test/test1/test2 这样就可以了
+
+- 删除文件夹的时候要这样操作                 
+`rm -r dir_name/` 这样可以循环删除文件夹里面的内容， 但是这样会一遍一遍的询问是否删除文件夹                     
+`rm -rf dir_name/` 强制删除文件夹，不会提示
+
+- 复制和剪切文件的操作                   
+`cp pathName targetPathName` 要不要斜杠都可以                        
+`cp -r pathName targetPathName` 如果是文件夹的复制操作，需要加上 -r
+
+- 复制命令详解                
+命令格式：cp [-adfilprsu] 源文件(source) 目标文件(destination)              
+cp [option] source1 source2 source3 ... directory
+
+参数说明：
+-a:是指archive的意思，也说是指复制所有的目录
+-d:若源文件为连接文件(link file)，则复制连接文件属性而非文件本身
+-f:强制(force)，若有重复或其它疑问时，不会询问用户，而强制复制
+-i:若目标文件(destination)已存在，在覆盖时会先询问是否真的操作
+-l:建立硬连接(hard link)的连接文件，而非复制文件本身
+-p:与文件的属性一起复制，而非使用默认属性
+-r:递归复制，用于目录的复制操作
+-s:复制成符号连接文件(symbolic link)，即“快捷方式”文件
+-u:若目标文件比源文件旧，更新目标文件 
+
+
+
+
+
+
+
