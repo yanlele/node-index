@@ -31,9 +31,12 @@ wget XXXXXXXXXX
 Secure Shell  网络安全协议
 
 #### 服务端SSH
-安装： yum install openssh-server          
-启动： service sshd start              
-开机启动： chkconfig sshd on        
+
+说明|命令
+:-|:-
+安装 | yum install openssh-server          
+启动 | service sshd start              
+开机启动 | chkconfig sshd on        
 
 默认会有 openssh-clients 这个东西可以让我们在服务器的Linux连接别的服务器Linux         
 
@@ -91,30 +94,39 @@ ssh key 使用非堆成加密方式生成公钥和私钥
 
 
 ### <div id="class01-03">软件命令</div>
-软件包管理： yum                      
-安装软件： yum install xxx               
-卸载软件： yum remove xxx                
-搜索软件： yum search xxx                
-清理缓存： yum clean packages            
-列出已经安装： yum list                
-软件包信息： yum info xxx                 
+
+说明 | 命令
+:-|:-
+软件包管理| yum                      
+安装软件| yum install xxx               
+卸载软件| yum remove xxx                
+搜索软件| yum search xxx                
+清理缓存| yum clean packages            
+列出已经安装| yum list                
+软件包信息| yum info xxx                 
 
      
 ### <div id="class01-04">服务器硬件资源相关命令</div>
-内存: free -m                         
-硬盘： df -h               
-负载： w/top               
-cup个数/核数： cat /proc/cpuinfo             
-可视化磁盘： fdisk
+
+说明 | 命令
+:-|:-
+内存| free -m                         
+硬盘| df -h               
+负载| w/top               
+cup个数/核数| cat /proc/cpuinfo             
+可视化磁盘| fdisk
 
 
 ### <div id="class01-05">05、文件操作命令行</div>
 #### 文件目录结构
-根目录: /               
-家目录: /home               
-临时目录: /tmp           
-配置目录: /etc               
-用户程序目录: /usr                 
+
+说明 | 路径
+:-|:-
+根目录| /               
+家目录| /home               
+临时目录| /tmp           
+配置目录| /etc               
+用户程序目录| /usr                 
 
 查看文件列表: ls -al                      
 
@@ -146,16 +158,17 @@ mkdir -p yanle/test/test1/test2 这样就可以了
 命令格式：cp [-adfilprsu] 源文件(source) 目标文件(destination)              
 cp [option] source1 source2 source3 ... directory
 
-参数说明：
--a:是指archive的意思，也说是指复制所有的目录
--d:若源文件为连接文件(link file)，则复制连接文件属性而非文件本身
--f:强制(force)，若有重复或其它疑问时，不会询问用户，而强制复制
--i:若目标文件(destination)已存在，在覆盖时会先询问是否真的操作
--l:建立硬连接(hard link)的连接文件，而非复制文件本身
--p:与文件的属性一起复制，而非使用默认属性
--r:递归复制，用于目录的复制操作
--s:复制成符号连接文件(symbolic link)，即“快捷方式”文件
--u:若目标文件比源文件旧，更新目标文件 
+参数 | 说明
+:- | :-
+-a|是指archive的意思，也说是指复制所有的目录
+-d|若源文件为连接文件(link file)，则复制连接文件属性而非文件本身
+-f|强制(force)，若有重复或其它疑问时，不会询问用户，而强制复制
+-i|若目标文件(destination)已存在，在覆盖时会先询问是否真的操作
+-l|建立硬连接(hard link)的连接文件，而非复制文件本身
+-p|与文件的属性一起复制，而非使用默认属性
+-r|递归复制，用于目录的复制操作
+-s|复制成符号连接文件(symbolic link)，即“快捷方式”文件
+-u|若目标文件比源文件旧，更新目标文件 
 
 
 ### <div id="class01-06">06、文本编辑器vim</div>
