@@ -153,7 +153,7 @@ mkdir|新建文件夹
 rm|删除文件和目录
 cp|复制
 mv|移动 还可以更改文件名字
-pwd|现实路径
+pwd|现实路径， 获取当前路径， 获取路径
 
 说明：                 
 - 创建文件夹的时候， 如果想创建多层级的文件夹，可以这样创建                 
@@ -345,6 +345,7 @@ firewall-cmd --list-port=22/top | 列出有哪些服务
 命令 | 描述
 :-|:-
 sudo | 提权
+chown -R test:test /data | 更改文件或者文件夹的权限所属人为test
 wget XXX / curl -o saveFileName XXX | 下载， 其中XX是下载地址, saveFileName 是保存的文件的名字
 scp（scp yanle.txt test@ip:/tmp/）| 上传把本地指定的文件上传到服务器指定位置
 scp（scp test@ip:/tmp/yanle.txt ./）| 把服务器的文件下载到本地来
