@@ -47,3 +47,14 @@ setenforce 0 | 可能服务器里面会有一些设置。
 ![03](../img/03.png)                    
 
 其他的自己慢慢研究吧。。。。。。
+
+
+### <div id="class02-03">03、nginx基础</div>
+#### nginx 基本操作
+
+说明 | 命令
+:-|:-
+安装 | yum install nginx
+启动 | service nginx start
+停止 | service nginx stop
+重载 | service nginx reload
