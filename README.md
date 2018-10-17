@@ -66,67 +66,20 @@
     - [12、Promise](./book/02、ES6&7/12、Promise对象/README.md)
     
 - [03、css3专题](./book/03、css3专题)
-    - [1、css基础](./book/03、css3专题/01、css基础.md)
-    - [2、css布局](./book/03、css3专题/02、css布局.md)
-    - [3、css效果](./book/03、css3专题/03、css效果.md)
-    - [4、css动画](./book/03、css3专题/04、css动画.md)
-    - [5、媒体查询](./book/03、css3专题/05、@media媒体查询.md)
-    - [6、一套响应式栅格布局](./18年/09月/06、一套响应式栅格布局/index.html)
     
 - [04、javascript设计模式](./book/04、js设计模式)
 
 - [05、基础知识点专题](./book/05、基础知识点专题)
 
 - [06、canvas总结](./book/06、canvas总结)
-    - [01、canvas初级使用](./book/06、canvas总结/01、canvas初级.md)
-        - [1.1、基础使用](./book/06、canvas总结/01、canvas初级.md#class01)
-        - [1.2、绘制形状](./book/06、canvas总结/01、canvas初级.md#class02)
-        - [1.3、绘制路径](./book/06、canvas总结/01、canvas初级.md#class03)
-        - [1.4、添加样式和颜色](./book/06、canvas总结/01、canvas初级.md#class04)
-        - [1.5、绘制文本](./book/06、canvas总结/01、canvas初级.md/#class05)
-        - [1.6、绘制图片](./book/06、canvas总结/01、canvas初级.md#class06)
-        - [1.7、状态的保存和恢复](./book/06、canvas总结/01、canvas初级.md#class07)
-        - [1.8、变形](./book/06、canvas总结/01、canvas初级.md#class08)
-        - [1.9、合成](./book/06、canvas总结/01、canvas初级.md#class09)
-        - [1.10、剪裁路径](./book/06、canvas总结/01、canvas初级.md#class10)
-        - [1.11、动画](./book/06、canvas总结/01、canvas初级.md#class11)
+    - [01、canvas初级使用](./book/06、canvas总结/01、canvas初级.md)x
+    - [02、基于canvas的小游戏和其他demo](https://github.com/yanlele/canvas-game)
         
 - [07、leetCode-cn](./book/07、leetCode)
 
 - [08、前端入门和进阶学习笔记，超详细的前端学习图文教程。从零开始学前端，做一个web全栈工程师。](https://github.com/smyhvae/Web)
 
 - [09、学习javascript数据结构与算法](./book/09、学习javascript数据结构与算法)
-    - [01章、javascript基础](./book/09、学习javascript数据结构与算法/README.md#class01)
-        - [1.5、面向对象编程](./book/09、学习javascript数据结构与算法/README.md#class01-05)
-    - [03章、栈](./book/09、学习javascript数据结构与算法/README.md#class03)
-        - [3.1、栈的创建](./book/09、学习javascript数据结构与算法/README.md#class03-01)
-        - [3.2、从十进制到二进制](./book/09、学习javascript数据结构与算法/README.md#class03-02)
-    - [04章、队列](./book/09、学习javascript数据结构与算法/README.md#class04)
-        - [4.1、创建队列](./book/09、学习javascript数据结构与算法/README.md#class04-01)
-        - [4.2、优先队列](./book/09、学习javascript数据结构与算法/README.md#class04-02)
-        - [4.3、循环队列](./book/09、学习javascript数据结构与算法/README.md#class04-03)
-    - [05章、链表](./book/09、学习javascript数据结构与算法/README.md#class05)
-        - [5.1、创建一个链表](./book/09、学习javascript数据结构与算法/README.md#class05-01)
-        - [5.2、双向链表](./book/09、学习javascript数据结构与算法/README.md#class05-02)
-    - [06章、集合](./book/09、学习javascript数据结构与算法/README.md#class06)
-        - [6.1、创建一个集合](./book/09、学习javascript数据结构与算法/README.md#class06-01)
-        - [6.2、集合操作](./book/09、学习javascript数据结构与算法/README.md#class06-02)
-    - [07章、字典和散列表](./book/09、学习javascript数据结构与算法/README.md#class07)
-        - [7.1、字典](./book/09、学习javascript数据结构与算法/README.md#class07-01)
-        - [7.2、散列表](./book/09、学习javascript数据结构与算法/README.md#class07-02)
-    - [08章、树](./book/09、学习javascript数据结构与算法/README.md#class08)
-        - [8.1、树的相关术语](./book/09、学习javascript数据结构与算法/README.md#class08-01)
-        - [8.2、二叉树和二叉搜索树](./book/09、学习javascript数据结构与算法/README.md#class08-02)              
-        - [8.3、树的遍历](./book/09、学习javascript数据结构与算法/README.md#class08-03)
-        - [8.4、搜索树中的值](./book/09、学习javascript数据结构与算法/README.md#class08-04)
-    - [09章、图](./book/09、学习javascript数据结构与算法/README.md#class09)
-        - [9.1 图的相关术语](./book/09、学习javascript数据结构与算法/README.md#class09-01)
-        - [9.2 图的表示](./book/09、学习javascript数据结构与算法/README.md#class09-02)
-        - [9.3 创建图类](./book/09、学习javascript数据结构与算法/README.md#class09-03)
-        - [9.4 图的遍历](./book/09、学习javascript数据结构与算法/README.md#class09-04)
-    - [10章、排序和搜索算法](./book/09、学习javascript数据结构与算法/README.md#class10)
-        - [10.1 排序算法](./book/09、学习javascript数据结构与算法/README.md#class10-01)
-        - [10.2 搜索算法](./book/09、学习javascript数据结构与算法/README.md#class10-02)
         
 - [10、DOM和BOM](./book/10、DOM和BOM)
 
@@ -137,6 +90,10 @@
 - [13、测试专题](./book/13、测试专题/)
 
 - [14、深入浅出MySQL 数据库开发 优化与管理维护](./book/14、深入浅出MySQL%20数据库开发%20优化与管理维护/)
+
+- [15、Linux相关学习](./book/15、Linux相关知识点)
+
+- [16、前端数据可视化D3.js学习](https://github.com/yanlele/D3.js-learning)
 
 
 ### <div id="class06">通用功能js模块组件</div>
