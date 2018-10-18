@@ -100,7 +100,8 @@
     "url-loader": "^1.1.0",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.3",
-    "webpack-jarvis": "^0.3.2"
+    "webpack-jarvis": "^0.3.2",
+    "webpack-merge": "^4.1.4"
   },
   "browserslist": [
     ">= 1%",
