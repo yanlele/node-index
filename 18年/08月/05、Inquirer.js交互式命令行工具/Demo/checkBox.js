@@ -1,15 +1,19 @@
 /**
+ * create by yanlele
+ * create time 2018-11-01 18:03
+ */
+
+/**
  * Checkbox list examples
  */
 
-'use strict';
-var inquirer = require('inquirer');
+let inquirer = require('inquirer');
 
 inquirer
     .prompt([
         {
             type: 'checkbox',
-            message: 'Select toppings',
+            message: '请选择',
             name: 'toppings',
             choices: [
                 new inquirer.Separator(' = The Meats = '),

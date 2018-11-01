@@ -21,5 +21,3 @@ node packages/inquirer/examples/pizza.js
 node packages/inquirer/examples/checkbox.js
 # etc...
 ```
-
-
