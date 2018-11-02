@@ -3,6 +3,7 @@
  * create time 2018-11-02 12:08
  */
 
+const merge = require('deepmerge');
 
 let obj1 = {
     name: 'address',
@@ -14,11 +15,11 @@ let obj1 = {
 
 let obj2 = {
     address: {
-        house: '重庆'
+        house: '重庆',
     },
     work: 'print'
 };
 
-let obj = Object.assign({}, obj1, obj2);
+let obj = merge( obj1, obj2);
 
 console.log(obj);
