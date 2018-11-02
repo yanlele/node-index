@@ -21,6 +21,7 @@
     "connect-mongo": "^2.0.0",
     "consolidate": "^0.14.5",
     "cookie-parser": "^1.4.3",
+    "deepmerge": "^2.2.1",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "express-formidable": "^1.0.0",
