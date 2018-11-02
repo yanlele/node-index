@@ -311,6 +311,7 @@
     - [46、Safely and quickly serialize JavaScript objects](https://github.com/davidmarkclements/fast-safe-stringify)
     - [47、关于内存泄漏的文章](https://github.com/zhansingsong/js-leakage-patterns)
     - [48、WebSocket和Socket.io](https://www.jianshu.com/p/4e80b931cdea)
+    - [49、深度递归合并JS对象](https://github.com/KyleAMathews/deepmerge)
     
 
 
