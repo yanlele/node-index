@@ -14,11 +14,11 @@ inquirer
         {
             type: 'checkbox',
             message: '请选择',
-            name: 'toppings',
+            name: 'select',
             choices: [
-                new inquirer.Separator(' = The Meats = '),
+                new inquirer.Separator(' = 前台程序 = '),
                 {
-                    name: 'Pepperoni'
+                    name: 'Pepperoni',
                 },
                 {
                     name: 'Ham'
@@ -29,39 +29,21 @@ inquirer
                 {
                     name: 'Bacon'
                 },
-                new inquirer.Separator(' = The Cheeses = '),
-                {
-                    name: 'Mozzarella',
-                    checked: true
-                },
-                {
-                    name: 'Cheddar'
-                },
-                {
-                    name: 'Parmesan'
-                },
-                new inquirer.Separator(' = The usual ='),
+                new inquirer.Separator(' = node 后台程序 ='),
                 {
                     name: 'Mushroom'
                 },
                 {
                     name: 'Tomato'
                 },
-                new inquirer.Separator(' = The extras = '),
+                new inquirer.Separator(' = java 后台程序 = '),
                 {
                     name: 'Pineapple'
-                },
-                {
-                    name: 'Olives',
-                    disabled: 'out of stock'
-                },
-                {
-                    name: 'Extra cheese'
                 }
             ],
             validate: function (answer) {
-                if (answer.length < 1) {
-                    return 'You must choose at least one topping.';
+                if (answer.length !== 1) {
+                    return '只能选择一个初始化项目模板';
                 }
                 return true;
             }
