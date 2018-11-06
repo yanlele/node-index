@@ -13,7 +13,8 @@ let index = {
             temp3: {
                 getName: function() {
                     console.log(this);
-                }
+                },
+                age: 25
             }
         }
     }
