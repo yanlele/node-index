@@ -5,6 +5,9 @@
 
 
 let index = {
+    data: {
+        age: 26
+    },
     temp1: {
         temp2: {
             temp3: {
