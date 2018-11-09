@@ -69,7 +69,7 @@
     
 - [04、javascript设计模式](./book/04、js设计模式)
 
-- [05、基础知识点专题](./book/05、基础知识点专题)
+- [05、基础知识点总结](./book/05、基础知识点专题)
 
 - [06、canvas总结](./book/06、canvas总结)
     - [01、canvas初级使用](./book/06、canvas总结/01、canvas初级.md)x
