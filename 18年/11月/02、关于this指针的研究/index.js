@@ -4,20 +4,12 @@
  */
 
 
-let index = {
-    data: {
-        age: 26
-    },
-    temp1: {
-        temp2: {
-            temp3: {
-                getName: function() {
-                    console.log(this);
-                },
-                age: 25
-            }
-        }
-    }
-};
 
-index.temp1.temp2.temp3.getName();
+
+var name = "Kevin Yang";
+function sayHi(){
+    console.log("你好，我的名字叫" + this.name);
+}
+var person = {name:"Marry"};
+person.sayHello = sayHi;
+person.sayHello();
