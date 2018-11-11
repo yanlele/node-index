@@ -201,7 +201,41 @@ function bind(){
 当我们在页面中定义了函数 doSomething()的时候，它的owner是页面，或者是JavaScript中的window对象（或 global对象）。
 对于一个onclick属性，它为它所属的HTML元素所拥有，this应该指向该HTML元素。
 
+在几种常见场景中this的变化
+ ```javascript
+function doSomething () { 
+    alert(this.navigator); //appCodeName 
+    this.value = "I am from the Object constructor"; 
+    this.style.backgroundColor = "# 000000"; 
+} 
+```
+- 作为普通函数直接调用时，this指向window对象.                                   
+- 作为控件事件触发时                                     
+    - inline event registration 内联事件注册 .将事件直接写在HTML代码中(<element onclick=”doSomething()”>), 此时this指向 window对象 。                          
+    - Traditional event registration 传统事件注册 （DHTML方式）. 形如 element.onclick = doSomething; 此时this指向 element对象                         
+    - <element onclick=”doSomething(this)”>作为参数传递可以指向element                            
+- 作为对象使用时this指向当前对象。形如：new doSomething();                       
+- 使用apply 或者call方法时，this指向所传递的对象。 形如：var obj={}; doSomething.apply(obj,new Array(”nothing”));                        
 
+
+## 接下来文章中我们将要讨论的问题是：在函数doSomething()中this所指的是什么？ 
+```javascript
+function doSomething() { 
+    this.style.color = '#cc0000'; 
+} 
+```
+在 JavaScript中，this通常指向的是我们正在执行的函数本身（译者注：用owner代表this所指向的内容），或者是，指向该函数所属的对 象。
+当我们在页面中定义了函数doSomething()的时候，它的owner是页面，或者是JavaScript中的window对象（或 global对象）。
+对于一个onclick属性，它为它所属的HTML元素所拥有，this应该指向该HTML元素。                          
+这种“所有权”就是JavaScript中面向对象的一种方式。在Objects as associative arrays中可以查看一些更多的信息。 
+![img](./img/11_02.gif)                 
+
+
+## 总结 
+怎样在一个代码环境中快速的找到this所指的对象呢？                      
+- 1、 要清楚的知道对于函数的每一步操作是拷贝还是引用（调用）                        
+- 2、 要清楚的知道函数的拥有者（owner）是什么                         
+- 3、 对于一个function，我们要搞清楚我们是把它当作函数使用还是在当作类使用                             
 
 
 
