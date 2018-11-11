@@ -96,5 +96,60 @@ kevin.sayHello();
 ```
 
 
+### 示例2——临时变量导致的this指针丢失
+```html
+<script type="text/javascript">   
+	var Utility = {     
+		decode:function(str){       return unescape(str);     },     
+		getCookie:function(key){       
+			// ... 省略提取cookie字符串的代码       
+			var value = "i%27m%20a%20cookie";       
+			return this.decode(value);     
+		}   
+	};   
+	console.log(Utility.getCookie("identity")) 
+</script>
+```
+一般都会自己封装一个Utility的类，然后将一些常用的函数作为Utility类的属性，如客户端经常会 用到的getCookie函数和解码函数。
+如果每个函数都是彼此独立的，那么还好办，问题是，函数之间有时候会相互引用。例如上面的getCookie函 数，
+会对从document.cookie中提取到的字符串进行decode之后再返回。如果我们通过Utility.getCookie去调用的话，那 么没有问题，
+我们知道，getCookie内部的this指针指向的还是Utility对象，而Utility对象时包含decode属性的。代码可以成 功执行。
+
+但是有个人不小心这样使用Utility对象呢？
+```html
+<script type="text/javascript">   
+	function showUserIdentity(){     
+		// 保存getCookie函数到一个局部变量，因为下面会经常用到     
+		var getCookie = Utility.getCookie;     
+		alert(getCookie("identity"));   
+	}   
+	showUserIdentity(); 
+</script>
+```
+这个时候运行代码会抛出异常“this.decode is not a function”。
+运用上面我们讲到的指导原则，很好理解，因为此时Utility.getCookie对象被赋给了临时变量getCookie，
+而临 时变量是属于window对象的——只不过外界不能直接引用，只对Javascript引擎可见——于是在getCookie函数内部的this指针指向 的就是window对象了，
+而window对象没有定义一个decode的函数对象，因此就会抛出这样的异常来。
+
+这个问题是由于引入了临时变量导致的this指针的转移。解决此问题的办法有几个：                         
+不引入临时变量，每次使用均使用Utility.getCookie进行调用                        
+getCookie函数内部使用Utility.decode显式引用decode对象而不通过this指针隐式引用（如果Utility是一个实例化的对象，也即是通过new生成的，那么此法不可用）                 
+**使用Funtion.apply或者Function.call函数指定this指针**                            
+
+第三种使用apply 和 call 修正的办法实例如下：
+```html
+<script type="text/javascript">   
+	function showUserIdentity(){     
+		// 保存getCookie函数到一个局部变量，因为下面会经常用到     
+		var getCookie = Utility.getCookie;     
+		alert(getCookie.call(Utility,"identity"));     
+		alert(getCookie.apply(Utility,["identity"]));   
+	}   
+	showUserIdentity(); 
+</script>
+```
+
+
+
 
 
