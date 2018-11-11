@@ -171,6 +171,38 @@ getCookie函数内部使用Utility.decode显式引用decode对象而不通过thi
 也就是说，整个过程就跟上面我们定义了一个getCookie的临时变量，再将Utility.getCookie赋值给这个临时变量一样。只不过在这个示例中，容易忽视临时变量导致的bug。
 
 
+## 函数对象传参
+Prototype的解决方案——传参之前使用bind方法将函数封装起来，并返回封装后的对象
+```html
+<script type="text/javascript">   
+	var person = {    
+		name:"Kevin Yang",     
+		sayHi:function(){       
+			alert("你好，我是"+this.name);     
+		}   
+	}   
+	var boundFunc = person.sayHi.bind(person,person.sayHi);   
+	setTimeout(boundFunc,5000); 
+</script>
+```
+bind方法的实现其实是用到了Javascript又一个高级特性——**闭包**。我们来看一下源代码：
+```javascript
+function bind(){  
+	if (arguments.length < 2 && arguments[0] === undefined)      
+		return this;   
+	var __method = this, args = $A(arguments), object = args.shift();   
+	return function(){     return __method.apply(object, args.concat($A(arguments)));   } 
+}
+```
+首先将this指针存入函数内部临时变量，然后在返回的函数对象中引用此临时变量从而形成闭包。
+
+## 变化的this 
+在JavaScript中，this通常 指向的是我们正在执行的函数本身，或者是指向该函数所属的对象（运行时）。
+当我们在页面中定义了函数 doSomething()的时候，它的owner是页面，或者是JavaScript中的window对象（或 global对象）。
+对于一个onclick属性，它为它所属的HTML元素所拥有，this应该指向该HTML元素。
+
+
+
 
 
 
