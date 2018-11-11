@@ -149,6 +149,28 @@ getCookie函数内部使用Utility.decode显式引用decode对象而不通过thi
 </script>
 ```
 
+### 示例3——函数传参时导致的this指针丢失
+```html
+<script type="text/javascript">   
+	var person = {     
+		name:"Kevin Yang",     
+		sayHi:function(){       
+			alert("你好，我是"+this.name);     
+		}   
+	}   
+	setTimeout(person.sayHi,5000); 
+</script>
+```
+
+这段代码期望在访客进入页面5秒钟之后向访客打声招呼。setTimeout函数接收一个函数作为参数，并在指定的触发时刻执行这个函数。
+可是，当我们等了5秒钟之后，弹出的对话框显示的this.name却是undefined。
+
+其实这个问题和上一个示例中的问题是类似的，都是因为临时变量而导致的问题。
+当我们执行函数的时候，如果函数带有参数，那么这个时候Javascript引擎会创建一个临时变量，
+并将传入的参数复制（注意，Javascript里面都是值传递的，没有引用传递的概念）给此临时变量。
+也就是说，整个过程就跟上面我们定义了一个getCookie的临时变量，再将Utility.getCookie赋值给这个临时变量一样。只不过在这个示例中，容易忽视临时变量导致的bug。
+
+
 
 
 
