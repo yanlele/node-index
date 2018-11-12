@@ -50,8 +50,27 @@
 
 ## <div id='class02'>02、3D-transform</div>      
 3D变换的关键点在于translate属性           
-如果希望看到3D需要在父级元素节点上设置 `perspective: 500px;` 属性，子元素节点上设置 `transform-style: preserve-3d;` 属性；      
+如果希望看到3D需要在父级元素节点上设置 `perspective: 500px;` 属性，子元素节点上设置 `transform-style: preserve-3d;` 属性；   
 [代码示例1](./demo/01、3Dtransform.html)
+
+### CSS3中的变形功能transform
+这css3中，可以利用transform功能来实现文字或图像的旋转、缩放、倾斜、移动这四种类型的变形处理。
+2D Transform 方法
+
+函数|	描述
+matrix(n,n,n,n,n,n)|	定义 2D 转换，使用六个值的矩阵。
+translate(x,y)|	定义 2D 转换，沿着 X 和 Y 轴移动元素。
+translateX(n)|	定义 2D 转换，沿着 X 轴移动元素。
+translateY(n)|	定义 2D 转换，沿着 Y 轴移动元素。
+scale(x,y)|	定义 2D 缩放转换，改变元素的宽度和高度。值是指定的缩放倍率
+scaleX(n)|	定义 2D 缩放转换，改变元素的宽度。值是指定的缩放倍率
+scaleY(n)|	定义 2D 缩放转换，改变元素的高度。值是指定的缩放倍率
+rotate(angle)|	定义 2D 旋转，在参数中规定角度。（单位deg）
+skew(x-angle,y-angle)|	定义 2D 倾斜转换，沿着 X 和 Y 轴。
+skewX(angle)|	定义 2D 倾斜转换，沿着 X 轴。
+skewY(angle)|	定义 2D 倾斜转换，沿着 Y 轴。
+   
+使用方法：transform:方法1 方法2 方法3 方法4；  空格分隔  而且还有优先级的问题
 
 
 [进阶内容补充](http://yunkus.com/css-clip-path/)

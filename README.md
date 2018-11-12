@@ -72,7 +72,7 @@
 - [05、基础知识点总结](./book/05、基础知识点专题)
 
 - [06、canvas总结](./book/06、canvas总结)
-    - [01、canvas初级使用](./book/06、canvas总结/01、canvas初级.md)x
+    - [01、canvas初级使用](./book/06、canvas总结/01、canvas初级.md)
     - [02、基于canvas的小游戏和其他demo](https://github.com/yanlele/canvas-game)
         
 - [07、leetCode-cn](./book/07、leetCode)

@@ -3,7 +3,7 @@
 css动画主要分类：
 transition补间动画；keyframe关键帧动画；逐帧动画；
 
-## <div class='class01'>1、补间动画</div>            
+## <div class='class01'>1、补间动画 transition</div>            
 位置-平移（left/right/margin/transform）      
 方位-旋转（transform）        
 大小-缩放（transform）        
