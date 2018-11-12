@@ -1,4 +1,20 @@
-#  常用的正则校验
+## JavaScript正则
+支持正则表达式的String 对象方法
+search(返回查询到的字符串的索引下标)、match(返回数组对象，第一个是检索到的字符串，第二个是索引， 第三个是检测的字符串)、replace、split
+
+如果是先正则的方式来给与的方式，有两个方法：                               
+RegExpObject.test(string) - 检测true 和 false 返回是否匹配上
+RegExpObject.exec(string) - 返回的结果跟字符串match 结果是一样的
+```javascript
+let phone = '15213497741';
+console.log(/^1[345789]\d{9}$/.exec(phone));            // [ '15213497741', index: 0, input: '15213497741' ]
+console.log(phone.match(/^1[345789]\d{9}$/));           // [ '15213497741', index: 0, input: '15213497741' ]
+console.log(phone.search(/213/));                       // 2
+```
+
+
+
+##  常用的正则校验
 
 1、  用于校验中间带 · 的外文名字，例如：理查德·泰深
 ```javascript
@@ -108,6 +124,25 @@ console.log(input);
 14、JS正则--非负整数或小数，小数最多精确到小数点后两位
 ```javascript
 /^[0-9]+([.]{1}[0-9]{1,2})?$/
+```
+
+15、正则替换的使用
+```javascript
+// 正则替换：
+var str='this is a test';
+var newStr=str.replace(/IS/ig,'!');  //搜索到以后，找到的元素通过！替换
+console.log(newStr);  //th! ! a test
+
+var str="2015-09-26";
+var newStr=str.replace(/(\d{4})-(\d{2})-(\d{2})/,"$2/$3/$1");
+console.log(newStr);  //结果09-26-2015
+
+var str="2015-09-25";
+var newStr=str.replace(/(\d{4})-(\d{2})-(\d{2})/,func);
+function func(match,d1,d2,d3){
+   return [d2,d3,d1].join('/');
+}
+console.log(newStr);  //结果同上
 ```
 
 ### 常用正则表达式收集
