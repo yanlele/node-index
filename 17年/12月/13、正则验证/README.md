@@ -63,12 +63,14 @@ n$|	匹配任何结尾为 n 的字符串。
 
 
 ## JavaScript正则方法
-支持正则表达式的String 对象方法
-search(返回查询到的字符串的索引下标)、match(返回数组对象，第一个是检索到的字符串，第二个是索引， 第三个是检测的字符串)、replace、split
+支持正则表达式的String 对象方法                                 
+search(返回查询到的字符串的索引下标)、                         
+match(返回数组对象，第一个是检索到的字符串，第二个是索引， 第三个是检测的字符串)、                       
+replace、split                               
 
 如果是先正则的方式来给与的方式，有两个方法：                               
-RegExpObject.test(string) - 检测true 和 false 返回是否匹配上
-RegExpObject.exec(string) - 返回的结果跟字符串match 结果是一样的
+RegExpObject.test(string) - 检测true 和 false 返回是否匹配上                              
+RegExpObject.exec(string) - 返回的结果跟字符串match 结果是一样的                                   
 ```javascript
 let phone = '15213497741';
 console.log(/^1[345789]\d{9}$/.exec(phone));            // [ '15213497741', index: 0, input: '15213497741' ]
