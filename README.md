@@ -244,6 +244,8 @@
     - [19、npm镜像源的切换问题](./18年/09月/05、npm镜像源切换问题/)
     - [20、基于HTML5技术的幻灯片编辑、播放、控制的全套方案](https://github.com/Jinjiang/h5slides)
     - [21、每个 JavaScript 工程师都应懂的33个概念](https://github.com/stephentian/33-js-concepts)
+    - [22、JavaScript音频播放库](https://github.com/goldfire/howler.js)
+    - [23、内容一键复制到剪切板模块](https://github.com/zenorocha/clipboard.js)
     
 
 - koa2
