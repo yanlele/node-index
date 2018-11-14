@@ -20,5 +20,8 @@ function extend(p, c={}) {
     return c;
 }
 
-console.log(extend())
+
 console.log(extend(person, programer));
+programer.name = '123';
+console.log(person);
+console.log(programer);
