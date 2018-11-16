@@ -277,7 +277,7 @@
     - [04、fs模块对文件的操作](./17年/12月/4、fs对文件的操作)
     - [05、mock终极解决方案(mock2easy-middleware)](./17年/12月/6、mock终极解决方案/server.js)
     - [06、使用multer处理文件上传](./17年/12月/9、使用multer处理文件上传)
-    - [07、Common.js模块规范](./18年/2月/1、commonjs)
+    - [07、CommonJs模块规范](./18年/2月/1、commonjs)
     - [08、node基础api_path](./18年/2月/3、node基础api_path)
     - [09、node基础api_Buffer](./18年/2月/4、node基础api_Buffer)
     - [10、node基础api_event](./18年/2月/5、node基础api_event)
