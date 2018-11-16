@@ -33,3 +33,25 @@
     - [08、内存泄漏](./02_01、进阶知识部分1-10.md#class02-08)
     - [09、JavaScript中的对象-对象的结构](./02_01、进阶知识部分1-10.md#class02-09)
     - [10、深入异步](./02_01、进阶知识部分1-10.md#class02-10)
+    
+    
+    
+- 待总结的知识点
+dom react原理 
+css布局 
+js原型链继承
+fetch取消
+eventloop
+instanceof
+promise封装setstate
+redux基本组成和设计单向数据流
+https协议的过程
+https获取加密密钥的过程
+http的方法有哪几种
+类式继承的方案
+prototype继承的实现
+数字千分位处理，正则和非正则都要实现
+借用构造继承，几种组合继承方式
+看编程代码说出运行结果：
+Process.nextTick，setImmediate 和promise.then 的优先级
+Process.nextTick，pronise, setImmediate的优先级
