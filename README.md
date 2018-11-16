@@ -321,6 +321,11 @@
     - [49、深度递归合并JS对象](https://github.com/KyleAMathews/deepmerge)
     - [50、深度递归对比JS对象](https://github.com/flitbit/diff)
     
+    
+- 其他优秀技术文章收集
+    - [前端九部](https://github.com/frontend9/fe9-library)
+    - [冴羽博客](https://github.com/mqyqingfeng/Blog)
+    
 
 
 ### <div id="class08">年度计划和日志目录</div>
