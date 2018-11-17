@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>snabbdom</title>
+    <script src="https://cdn.bootcss.com/snabbdom/0.7.1/snabbdom.js"></script>
+    <script src="https://cdn.bootcss.com/snabbdom/0.7.1/snabbdom-class.js"></script>
+    <script src="https://cdn.bootcss.com/snabbdom/0.7.1/snabbdom-props.js"></script>
+    <script src="https://cdn.bootcss.com/snabbdom/0.7.1/snabbdom-style.js"></script>
+    <script src="https://cdn.bootcss.com/snabbdom/0.7.1/snabbdom-eventlisteners.js"></script>
+    <script src="https://cdn.bootcss.com/snabbdom/0.7.1/h.js"></script>
 </head>
 <body>
 <div id="container"></div><br>
@@ -10,5 +16,38 @@
 <button id="btn-change">change</button>
 
 
+<script>
+    let snabbdom = window.snabbdom;
+    let container = document.getElementById('container');
+    let buttonChange = document.getElementById('btn-change');
+
+    // 定义patch
+    let patch = snabbdom.init([
+        snabbdom_class,
+        snabbdom_props,
+        snabbdom_style,
+        snabbdom_eventlisteners
+    ]);
+
+    // 定义h
+    let h = snabbdom.h;
+
+    // 生成vnode
+    let vnode = h('ul#list', {}, [
+        h('li.item', {}, 'item1'),
+        h('li.item', {}, 'item2')
+    ]);
+    patch(container, vnode);
+
+    // 模拟一个修改的情况
+    buttonChange.addEventListener('click', function () {
+        let newVnode = h('ul#list', {}, [
+            h('li.item', {}, 'item1'),
+            h('li.item', {}, 'item B'),
+            h('li.item', {}, 'item 3')
+        ]);
+        patch(vnode, newVnode);
+    })
+</script>
 </body>
 </html>
