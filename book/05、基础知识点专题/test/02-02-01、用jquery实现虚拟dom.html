@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="../../../lib/jquery.min.js"></script>
 </head>
 <body>
 <div id="container"></div>
@@ -32,13 +31,36 @@
 
     // 渲染函数
     function render(data) {
+        let $container = document.getElementById('container');
+        $container.innerHTML = '';
 
+        let $table = document.createElement('table');
+        $table.setAttribute('border', true);
+        $table.insertAdjacentHTML('beforeEnd', `<tr>
+                                    <td>name</td>
+                                    <td>age</td>
+                                    <td>address</td>
+                                    </tr>`);
+
+        data.forEach(function (item) {
+            $table.insertAdjacentHTML('beforeEnd',
+                `<tr>
+                    <td>${item.name}</td>
+                    <td>${item.age}</td>
+                    <td>${item.address}</td>
+                </tr>`
+            )
+        });
+
+        $container.appendChild($table);
     }
 
     // 修改信息
-    $('#btn-change').click(function () {
+    let button = document.getElementById('btn-change');
+    button.addEventListener('click', function () {
+        data[1].name = '徐老毕';
         data[1].age = 30;
-        data[2].address  = '深圳';
+        data[1].address  = '深圳';
         render(data);
     });
     render(data);
