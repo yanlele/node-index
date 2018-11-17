@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../../lib/jquery.min.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<br>
+<button id="btn-change">change</button>
+
+
+<script>
+    let data = [
+        {
+            name: 'yanle',
+            age: '20',
+            address: '重庆'
+        },
+        {
+            name: 'yanle2',
+            age: '25',
+            address: '成都'
+        },
+        {
+            name: 'yanle3',
+            age: '27',
+            address: '深圳'
+        }
+    ];
+
+    // 渲染函数
+    function render(data) {
+
+    }
+
+    // 修改信息
+    $('#btn-change').click(function () {
+        data[1].age = 30;
+        data[2].address  = '深圳';
+        render(data);
+    });
+    render(data);
+</script>
+
+</body>
+</html>
