@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://cdn.bootcss.com/snabbdom/0.7.1/snabbdom.js"></script>
-    <script src="https://cdn.bootcss.com/snabbdom/0.7.1/snabbdom-class.js"></script>
-    <script src="https://cdn.bootcss.com/snabbdom/0.7.1/snabbdom-props.js"></script>
-    <script src="https://cdn.bootcss.com/snabbdom/0.7.1/snabbdom-style.js"></script>
-    <script src="https://cdn.bootcss.com/snabbdom/0.7.1/snabbdom-eventlisteners.js"></script>
-    <script src="https://cdn.bootcss.com/snabbdom/0.7.1/h.js"></script>
 </head>
 <body>
 <div id="container"></div>
 <br>
 <button id="btn-change">change</button>
+
+
+<script src="https://cdn.bootcss.com/snabbdom/0.7.1/snabbdom.js"></script>
+<script src="https://cdn.bootcss.com/snabbdom/0.7.1/snabbdom-class.js"></script>
+<script src="https://cdn.bootcss.com/snabbdom/0.7.1/snabbdom-props.js"></script>
+<script src="https://cdn.bootcss.com/snabbdom/0.7.1/snabbdom-style.js"></script>
+<script src="https://cdn.bootcss.com/snabbdom/0.7.1/snabbdom-eventlisteners.js"></script>
+<script src="https://cdn.bootcss.com/snabbdom/0.7.1/h.js"></script>
 <script>
     let snabbdom = window.snabbdom;
     let container = document.getElementById('container');
@@ -21,10 +23,10 @@
 
     // 定义patch
     let patch = snabbdom.init([
-        snabbdom_class,
-        snabbdom_props,
-        snabbdom_style,
-        snabbdom_eventlisteners
+        window.snabbdom_class,
+        window.snabbdom_props,
+        window.snabbdom_style,
+        window.snabbdom_eventlisteners
     ]);
 
     // 定义h
@@ -55,7 +57,7 @@
 
     let vnode;
     function render(data) {
-        let newVnode = h('table', {'attrs': {border: true}}, data.map(function (item) {
+        let newVnode = h('table', {class: 'name'}, data.map(function (item) {
             let tds = [];
             let i ;
             for (i in item) {
