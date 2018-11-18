@@ -94,8 +94,8 @@ element.getUserData()|	返回一个元素中关联键值的对象。
 **element.id**|	设置或者返回元素的 id。
 **element.innerHTML**|	设置或者返回元素的内容。
 **element.insertBefore()**|	现有的子元素之前插入一个新的子元素
-**element.insertAdjacentHTML(position, text);** |  following strings:           'beforebegin': Before the element itself;               'afterbegin': Just inside the element, before its first child;              'beforeend': Just inside the element, after its last child;                 'afterend': After the element itself.
-**element.insertAdjacentText(position, element);** | following strings:             'beforebegin': Before the element itself;               'afterbegin': Just inside the element, before its first child;                  'beforeend': Just inside the element, after its last child;                 'afterend': After the element itself.
+**element.insertAdjacentHTML(position, text);** | 'beforebegin': Before the element itself;'afterbegin': Just inside the element, before its first child;'beforeend': Just inside the element, after its last child;'afterend': After the element itself.
+**element.insertAdjacentText(position, element);** | following strings:'beforebegin': Before the element itself;'afterbegin': Just inside the element, before its first child;'beforeend': Just inside the element, after its last child;'afterend': After the element itself.
 element.isContentEditable|	如果元素内容可编辑返回 true，否则返回false
 element.isDefaultNamespace()|	如果指定了namespaceURI 返回 true，否则返回 false。
 element.isEqualNode()|	检查两个元素是否相等
