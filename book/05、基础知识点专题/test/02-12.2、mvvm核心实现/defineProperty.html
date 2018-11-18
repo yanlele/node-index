@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    // let obj = {
+    //     name: 'yanle',
+    //     age: 25
+    // };
+
+
+    let obj = {};
+    let _name = 'yanle';
+    Object.defineProperty(obj, 'name',  {
+        get: function () {
+            console.log('get', _name);
+            return _name;
+        },
+
+        set: function (newVal) {
+            console.log('set', newVal);
+            _name = newVal
+        }
+    })
+</script>
+
+</body>
+</html>
