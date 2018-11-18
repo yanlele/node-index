@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../../../lib/vue.2.5.13.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{price}}</p>
+</div>
+
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            price: 200
+        }
+    });
+
+    // 一下是手写的
+    function render() {
+        with (this) {               // 就是vm
+            _c(
+                'div',
+                {
+                    attr: {'id': 'app'}
+                },
+                [
+                    _c('p', [_v(_s(price))])
+                ]
+            )
+        }
+    }
+
+    function render1() {
+        return vm._c(
+            'div',
+            {
+                attr: {'id': 'app'}
+            },
+            [
+                _c('p', [vm._v(vm._s(vm.price))])       // vm._v 是创建文本， _s 就是toString
+            ]
+        )
+    }
+</script>
+</body>
+</html>
