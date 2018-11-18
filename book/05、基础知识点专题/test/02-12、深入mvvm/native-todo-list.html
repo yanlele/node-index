@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>native-todo-list</title>
+</head>
+<body>
+<div>
+    <input type="text" name="" id="txt-title"> <br>
+    <button id="btn-submit">submit</button>
+</div>
+<div>
+    <ul id="ul-list"></ul>
+</div>
+<script>
+    let $txtTitle = document.getElementById('txt-title');
+    let $buttonSubmit = document.getElementById('btn-submit');
+    let $ulList = document.getElementById('ul-list');
+    $buttonSubmit.addEventListener('click', function () {
+        let title = $txtTitle.value;
+        if(!title) return false;
+
+        let $li = document.createElement('li');
+        $li.innerText = title;
+
+        $ulList.appendChild($li);
+        $txtTitle.value = '';
+    })
+</script>
+</body>
+</html>
