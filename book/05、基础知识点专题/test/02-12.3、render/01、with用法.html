@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>test</p>
+
+<script>
+    let obj = {
+        name: 'yanle',
+        age: 20,
+        getAddress: function () {
+            alert('重庆')
+        }
+    };
+    // 不用with 的情况
+    // function fn() {
+    //     alert(obj.name);
+    //     alert(obj.age);
+    //     obj.getAddress();
+    // }
+    // fn();
+
+    // 使用with的情况
+    function fn1() {
+        with (obj) {
+            alert(name);
+            alert(age);
+            getAddress();
+        }
+    }
+    fn1();
+</script>
+</body>
+</html>
