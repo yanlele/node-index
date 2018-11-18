@@ -14,19 +14,45 @@
     // };
 
 
-    let obj = {};
-    let _name = 'yanle';
-    Object.defineProperty(obj, 'name',  {
-        get: function () {
-            console.log('get', _name);
-            return _name;
-        },
+    // let obj = {};
+    // let _name = 'yanle';
+    // Object.defineProperty(obj, 'name',  {
+    //     get: function () {
+    //         console.log('get', _name);
+    //         return _name;
+    //     },
+    //
+    //     set: function (newVal) {
+    //         console.log('set', newVal);
+    //         _name = newVal
+    //     }
+    // })
 
-        set: function (newVal) {
-            console.log('set', newVal);
-            _name = newVal
-        }
-    })
+    // 模拟实现
+    let title = document.createElement('p');
+    title.innerText = '模拟实现';
+    document.getElementsByTagName('body')[0].appendChild(title);
+
+    let vm = {};
+    let data = {
+        name: 'yanle',
+        age: 25
+    };
+    let key, value;
+    for (key in data) {
+        (function (key) {
+            Object.defineProperty(vm, key, {
+                get: function () {
+                    console.log('get', data[key]);
+                    return data[key];
+                },
+                set: function (newValue) {
+                    console.log('set', newValue);
+                    data[key] = newValue;
+                }
+            })
+        })(key)
+    }
 </script>
 
 </body>
