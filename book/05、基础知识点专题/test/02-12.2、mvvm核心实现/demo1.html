@@ -9,13 +9,19 @@
 <div id="app">
     <p>{{name}}</p>
     <p>{{age}}</p>
+
+    <input type="text" :value="info['message']?info['message']:123">
 </div>
 <script>
     let vm = new window.Vue({
         el: '#app',
         data: {
             name: 'yanle',
-            age: 25
+            age: 25,
+            info: {
+                message: 'message',
+                address: 'chongqing'
+            }
         }
     })
 </script>
