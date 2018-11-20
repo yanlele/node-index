@@ -13,24 +13,31 @@ let number = 1234567.01;
 // }
 // console.log(numToMoneyField(1234567));
 
-
-// 字符串拆分方法
+/**
+ * 字符串拆分方法 - 效率极低
+ * 存在问题： 没有办法解决小数点之后的位数问题
+ * @param num
+ * @returns {string}
+ */
 function fun1(num) {
     let result = [], counter = 0;
     num = (num || 0).toString().split('');          // 这个地方就直接格式化为一个字符串了
-    /*for (let i = num.length;i >=0 ; i-- ) {
+    for (let i = num.length - 1;i >=0 ; i-- ) {
         counter++;
-        console.log(i);
         result.unshift(num[i]);
-        if(!(i % 3) && i!==0) {
+        if(!(counter % 3) && i!==0) {         // 边界限定条件
             result.unshift(',')
         }
-    }*/
-    for (let i = 0;i<num.length;i++) {
-
     }
-
     return result.join('');
 }
+
+
+function fun2(num) {
+    let result = '',counter = 0;
+    num = (num || 0).toString();
+
+}
+
 
 console.log(fun1(1234567));
