@@ -36,4 +36,4 @@ console.log(phoneMask);*/
 // console.log(phone.search(/213/));
 
 
-console.log(/\*{2,}/.test('13*111'));
+// console.log(/\*{2,}/.test('13*111'));

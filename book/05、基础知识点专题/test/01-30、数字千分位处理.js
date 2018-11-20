@@ -80,5 +80,53 @@ function fun3(num) {
     return result;
 }
 
+/**
+ * 方法三的字符串版
+ * 没啥好说的额，就是避免写正则而已
+ * @param num
+ * @returns {string}
+ */
+function fun4(num) {
+    num = (num || 0).toString();
+    let result = '';
+    while (num.length > 3) {
+        result = ',' + num.slice(-3) + result;
+        num = num.slice(0, num.length - 3);
+    }
+    if(num) {
+        result = num + result;
+    }
+    return result;
+}
 
-console.log(fun3(1234567));
+/**
+ * 分组合并法
+ * @param num
+ * @returns {string}
+ */
+function fun5(num) {
+    num = (num || 0).toString();
+    let  temp = num.length % 3;
+    switch (temp) {
+        case 1:
+            num = '00' + num;
+            break;
+        case 2:
+            num = '0' + num;
+            break;
+    }
+    console.log(num.match(/\d{3}/g));
+    return num.match(/\d{3}/g).join(',').replace(/^0+/, '');
+}
+
+/**
+ * 正则大法
+ * @returns {string}
+ */
+function fun6() {
+    return (num || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
+}
+
+
+
+console.log(fun5(1234567));
