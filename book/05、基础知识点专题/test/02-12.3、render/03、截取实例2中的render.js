@@ -41,7 +41,9 @@ function codeRender() {
                         {attrs: {"id": "ul-list"}},
                         _l((list), function (item) {                // 数组节点
                             return _c('li', [_v(_s(item))])
-                        }))])
+                        })
+                    )
+                ])
             ])
     }
 }
