@@ -50,5 +50,35 @@ function fun2(num) {
     return result;
 }
 
+/**
+ * 循环匹配末尾的三个数字
+ * 通过正则表达式循环匹配末尾的三个数字，每匹配一次，就把逗号和匹配到的内容插入到结果字符串的开头，然后把匹配目标（num）赋值为还没匹配的内容（RegExp.leftContext）。
+ * 1.如果数字的位数是3的倍数时，最后一次匹配到的内容肯定是三个数字，但是最前面的三个数字前不需要加逗号；
+ * 2.如果数字的位数不是3的倍数，那num变量最后肯定会剩下1到2个数字，循环过后，要把剩余的数字插入到结果字符串的开头。
+ * 虽然方法三减少了循环次数（一次循环处理三个字符），但由于用到了正则表达式，一定程度上增加了消耗。
+ * @param num
+ * @returns {string}
+ */
+function fun3(num) {
+    num = (num || 0).toString();
+    let re = /\d{3}$/,
+        result = '';
+    while (re.test(num)) {
+        result = RegExp.lastMatch + result;
+        console.log(RegExp.lastMatch);
+        if (num !== RegExp.lastMatch) {
+            result = ',' + result;
+            num = RegExp.leftContext;
+        } else {
+            num = '';
+            break;
+        }
+    }
+    if (num) {
+        result = num + result;
+    }
+    return result;
+}
 
-console.log(fun2(1234567));
+
+console.log(fun3(1234567));
