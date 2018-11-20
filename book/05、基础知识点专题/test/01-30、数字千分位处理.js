@@ -22,22 +22,33 @@ let number = 1234567.01;
 function fun1(num) {
     let result = [], counter = 0;
     num = (num || 0).toString().split('');          // 这个地方就直接格式化为一个字符串了
-    for (let i = num.length - 1;i >=0 ; i-- ) {
+    for (let i = num.length - 1; i >= 0; i--) {
         counter++;
         result.unshift(num[i]);
-        if(!(counter % 3) && i!==0) {         // 边界限定条件
+        if (!(counter % 3) && i !== 0) {         // 边界限定条件
             result.unshift(',')
         }
     }
     return result.join('');
 }
 
-
+/**
+ * 字符串操作大法
+ * @param num
+ * @returns {string}
+ */
 function fun2(num) {
-    let result = '',counter = 0;
+    let result = '', counter = 0;
     num = (num || 0).toString();
-
+    for (let i = num.length - 1; i >= 0; i--) {
+        counter++;
+        result = num.charAt(i) + result;
+        if (!(counter % 3) && i !== 0) {
+            result = ',' + result;
+        }
+    }
+    return result;
 }
 
 
-console.log(fun1(1234567));
+console.log(fun2(1234567));
