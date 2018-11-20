@@ -65,3 +65,10 @@ prototype继承的实现
 看编程代码说出运行结果：
 Process.nextTick，setImmediate 和promise.then 的优先级
 Process.nextTick，pronise, setImmediate的优先级
+
+
+浏览器性能优化                         
+redux深入理解                               
+react-router深入理解                                        
+
+
