@@ -243,3 +243,52 @@ let state = {
 - 操作结束后，再送出一个 Action，触发 State 更新为"操作结束"状态，View 再一次重新渲染
 
 ### 总结
+在异步请求的时候，其实很多时候都是直接发出请求如果请求成功了之后，在存入reducers, 并不是不管成功与否，都存入reducers。                                        
+
+
+### redux-thunk中间件
+异步操作至少要送出两个 Action：用户触发第一个 Action，这个跟同步操作一样，没有问题；如何才能在操作结束时，系统自动送出第二个 Action 呢？
+奥妙就在 Action Creator 之中。
+```javascript
+class AsyncApp extends Component {
+  componentDidMount() {
+    const { dispatch, selectedPost } = this.props
+    dispatch(getApplyList(selectedPost))
+  }
+}
+// ...
+```
+上面代码是一个异步组件的例子。加载成功后（componentDidMount方法），它送出了（dispatch方法）一个 Action，向服务器要求数据 fetchPosts(selectedSubreddit)。
+这里的fetchPosts就是 Action Creator。                         
+下面就是getApplyList的代码，关键之处就在里面。
+```javascript
+export function getApplyList(query) {
+    return function(dispatch) {
+        dispatch(modalUpdate({
+            loadingTable: true
+        }));
+        fetch('apply', query)
+            .then(function(res) {
+                dispatch(updateApply(res.data));                // 这个是调用的action Mppper
+                dispatch(modalUpdate({
+                    loadingTable: false
+                }));
+            }).catch(function(err) {
+                dispatch(modalUpdate({
+                    pageWarn: err.message,
+                    loadingTable: false
+                }));
+            });
+    };
+}
+
+// 对应的action Mapper
+export function updateApply(data) {
+    return {
+        type: UPDATE_APPLY,
+        data
+    };
+}
+```
+
+
