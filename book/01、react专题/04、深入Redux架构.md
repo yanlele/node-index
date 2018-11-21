@@ -368,4 +368,104 @@ const Title = value => <h1>{value}</h1>;
 React-Redux 规定，所有的 UI 组件都由用户提供，容器组件则是由 React-Redux 自动生成。也就是说，用户负责视觉层，状态管理则是全部交给它。
 
 ### connect()
+React-Redux 提供connect方法，用于从 UI 组件生成容器组件。connect的意思，就是将这两种组件连起来。                         
+connect方法的完整 API 如下。下面这个例子是我在项目中使用的一个完整结构示例                    
+```javascript
+/* eslint-disable react/jsx-no-target-blank */
+import React, {Component} from 'react';
+import {push} from 'react-router-redux';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import {Button, message} from 'antd';
+
+// mapStateToProps
+function propMap(state, ownProps) {
+    return {
+        modal: state.modal,
+        routing: ownProps
+    };
+}
+
+class InvoiceList extends Component {
+    constructor() {
+        super();
+        this.state = {
+            invoiceListData: {}
+        };
+        this.handleGetList = this.handleGetList.bind(this);
+    }
+
+    componentDidMount() {
+        // 每次刷新空拉数据一次
+        this.handleGetList();
+    }
+
+    render() {
+        const {routing, modal} = this.props;
+        return (
+            <div className="app-reimbursement-invoice-list">
+                <ReimbursementHeaderNav current="invoice-list"/>
+                {/*.......*/}
+            </div>
+        );
+    }
+
+    // 点击查询数据
+    handleGetList(filters, type) {
+        console.log('点击查询数据')
+    }
+}
+InvoiceList.propTypes = {
+    routing: PropTypes.object.isRequired,
+    modal: PropTypes.object.isRequired,
+    dispatch: PropTypes.func.isRequired
+};
+export default connect(propMap)(InvoiceList);
+```
+InvoiceList就是由 React-Redux 通过connect方法自动生成的容器组件。
+connect方法接受两个参数：mapStateToProps和mapDispatchToProps。
+它们定义了 UI 组件的业务逻辑。前者负责输入逻辑，即将state映射到 UI 组件的参数（props），后者负责输出逻辑，即将用户对 UI 组件的操作映射成 Action。
+通常我们只使用了第一个参数；                      
+
+### mapStateToProps                         
+mapStateToProps是一个函数。它的作用就是像它的名字那样，建立一个从（外部的）state对象到（UI 组件的）props对象的映射关系。
+作为函数，mapStateToProps执行后应该返回一个对象，里面的每一个键值对就是一个映射。                    
+```javascript
+const mapStateToProps = (state) => {
+  return {
+    todos: getVisibleTodos(state.todos, state.visibilityFilter)
+  }
+}
+```
+上面代码中，mapStateToProps是一个函数，它接受state作为参数，返回一个对象。这个对象有一个todos属性，代表 UI 组件的同名参数，
+后面的getVisibleTodos也是一个函数，可以从state算出 todos 的值。                       
+下面就是getVisibleTodos的一个例子，用来算出todos。                     
+```javascript
+const getVisibleTodos = (todos, filter) => {
+  switch (filter) {
+    case 'SHOW_ALL':
+      return todos
+    case 'SHOW_COMPLETED':
+      return todos.filter(t => t.completed)
+    case 'SHOW_ACTIVE':
+      return todos.filter(t => !t.completed)
+    default:
+      throw new Error('Unknown filter: ' + filter)
+  }
+}
+```
+mapStateToProps会订阅 Store，每当state更新的时候，就会自动执行，重新计算 UI 组件的参数，从而触发 UI 组件的重新渲染。                     
+mapStateToProps的第一个参数总是state对象，还可以使用第二个参数，代表容器组件的props对象                            
+```javascript
+const mapStateToProps = (state, ownProps) => {
+  return {
+    active: ownProps.filter === state.visibilityFilter
+  }
+}
+```
+使用ownProps作为参数后，如果容器组件的参数发生变化，也会引发 UI 组件重新渲染。                   
+connect方法可以省略mapStateToProps参数，那样的话，UI 组件就不会订阅Store，就是说 Store 的更新不会引起 UI 组件的更新。                     
+
+
+
 
