@@ -1,5 +1,6 @@
 # 深入Redux架构
 
+[http://www.cnblogs.com/MuYunyun/p/6530715.html](http://www.cnblogs.com/MuYunyun/p/6530715.html)
 
 ## 1、关于redux
 
@@ -40,3 +41,6 @@ function listerner() {
 ```
 
 如果现在没理解以上流程，不要急，看完以下API就差不多能懂得Redux的核心机制了。
+
+## 2、API                                
+
