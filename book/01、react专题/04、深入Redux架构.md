@@ -1,8 +1,15 @@
 # 深入Redux架构
 
-[http://www.cnblogs.com/MuYunyun/p/6530715.html](http://www.cnblogs.com/MuYunyun/p/6530715.html)
+目录：
+- [1、关于redux](#01)
+- [2、API](#02)
+- [3、中间件与异步操作](#03)
+- [4、异步操作的基本思路](#04)
+- [5、React-Redux的用法](#05)
 
-## 1、关于redux
+参考文章：[http://www.cnblogs.com/MuYunyun/p/6530715.html](http://www.cnblogs.com/MuYunyun/p/6530715.html)
+
+## <div id="01">1、关于redux</div>
 
 ### 1.1、什么情况需要用redux？
 - 用户的使用方式复杂
@@ -42,7 +49,7 @@ function listerner() {
 
 如果现在没理解以上流程，不要急，看完以下API就差不多能懂得Redux的核心机制了。
 
-## 2、API                                
+## <div id="02">2、API</div>                         
 
 ### Store
 Store 就是保存数据的地方，你可以把它看成一个容器。整个应用只能有一个 Store。
@@ -159,7 +166,7 @@ unsubscribe();
 ```
 
 
-## 3、中间件与异步操作
+## <div id="03">3、中间件与异步操作</div>
 一个关键问题没有解决：异步操作怎么办？Action 发出以后，Reducer 立即算出 State，这叫做同步；Action 发出以后，过一段时间再执行 Reducer，这就是异步。                             
 怎么才能 Reducer 在异步操作结束后自动执行呢？这就要用到新的工具：中间件（middleware）。
 
@@ -205,7 +212,7 @@ const store = createStore(
 上面代码中，applyMiddleware方法的三个参数，就是三个中间件。有的中间件有次序要求，使用前要查一下文档。比如，logger就一定要放在最后，否则输出结果会不正确。
 
 
-## 4、异步操作的基本思路
+## <div id="04">4、异步操作的基本思路</div>
 
 理解了中间件以后，就可以处理异步操作了。
 
@@ -335,7 +342,7 @@ const store = createStore(
 因此，异步操作的第一种解决方案就是，写出一个返回函数的 Action Creator，然后使用redux-thunk中间件改造store.dispatch。
 
 
-## 5、React-Redux的用法
+## <div id="05">5、React-Redux的用法</div>
 为了方便使用，Redux 的作者封装了一个 React 专用的库 React-Redux，本文主要介绍它。                       
 这个库是可以选用的。实际项目中，你应该权衡一下，是直接使用 Redux，还是使用 React-Redux。后者虽然提供了便利，但是需要掌握额外的 API，并且要遵守它的组件拆分规范。
 
