@@ -129,3 +129,31 @@ const state = reducer(1, {
   payload: 2
 });
 ```
+上面代码中，reducer函数收到名为ADD的 Action 以后，就返回一个新的 State，作为加法的计算结果。
+其他运算的逻辑（比如减法），也可以根据 Action 的不同来实现。                                        
+实际应用中，Reducer 函数不用像上面这样手动调用，store.dispatch方法会触发 Reducer 的自动执行。
+为此，Store 需要知道 Reducer 函数，做法就是在生成 Store 的时候，将 Reducer 传入createStore方法。                           
+```javascript
+import { createStore } from 'redux';
+const store = createStore(reducer);
+```
+上面代码中，createStore接受 Reducer 作为参数，生成一个新的 Store。
+以后每当store.dispatch发送过来一个新的 Action，就会自动调用 Reducer，得到新的 State。
+
+
+### store.subscribe()
+Store 允许使用store.subscribe方法设置监听函数，一旦 State 发生变化，就自动执行这个函数。                      
+```javascript
+import { createStore } from 'redux';
+const store = createStore(reducer);
+
+store.subscribe(listener);
+```
+显然，只要把 View 的更新函数（对于 React 项目，就是组件的render方法或setState方法）放入listen，就会实现 View 的自动渲染。                        
+store.subscribe方法返回一个函数，调用这个函数就可以解除监听。                      
+```javascript
+let unsubscribe = store.subscribe(() =>
+  console.log(store.getState())
+);
+unsubscribe();
+```
