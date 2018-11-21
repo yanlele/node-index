@@ -3,6 +3,7 @@
 
 #### redux
 - [redux基础知识点](./2、redux基础知识点.md)
+- [深入Redux架构](./04、深入Redux架构.md)
 
 #### react-router4
 - [react-router4和reducers合并](./3、react-router4.md)
