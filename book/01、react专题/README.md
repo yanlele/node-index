@@ -10,6 +10,7 @@
 - [React-Router4.x中文文档](https://github.com/git-zhangsan/react-router4)
 - [React Router 中文文档](https://segmentfault.com/a/1190000014294604#articleHeader0)
 - [React Router 4：痛过之后的豁然开朗](https://www.jianshu.com/p/bf6b45ce5bcc)
+- [react-router-redux](https://github.com/reactjs/react-router-redux)
 
 #### 实战相关知识点
 
