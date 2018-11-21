@@ -205,4 +205,41 @@ const store = createStore(
 上面代码中，applyMiddleware方法的三个参数，就是三个中间件。有的中间件有次序要求，使用前要查一下文档。比如，logger就一定要放在最后，否则输出结果会不正确。
 
 
+## 4、异步操作的基本思路
 
+理解了中间件以后，就可以处理异步操作了。
+
+同步操作只要发出一种 Action 即可，异步操作的差别是它要发出三种 Action。                                 
+- 操作发起时的 Action
+- 操作成功时的 Action
+- 操作失败时的 Action
+
+以向服务器取出数据为例，三种 Action 可以有两种不同的写法。
+```
+// 写法一：名称相同，参数不同
+{ type: 'FETCH_POSTS' }
+{ type: 'FETCH_POSTS', status: 'error', error: 'Oops' }
+{ type: 'FETCH_POSTS', status: 'success', response: { ... } }
+
+// 写法二：名称不同
+{ type: 'FETCH_POSTS_REQUEST' }
+{ type: 'FETCH_POSTS_FAILURE', error: 'Oops' }
+{ type: 'FETCH_POSTS_SUCCESS', response: { ... } }
+```
+
+除了 Action 种类不同，异步操作的 State 也要进行改造，反映不同的操作状态。下面是 State 的一个例子。
+```javascript
+let state = {
+  // ... 
+  isFetching: true,
+  didInvalidate: true,
+  lastUpdated: 'xxxxxxx'
+};
+```
+上面代码中，State 的属性isFetching表示是否在抓取数据。didInvalidate表示数据是否过时，lastUpdated表示上一次更新时间。
+
+现在，整个异步操作的思路就很清楚了。                              
+- 操作开始时，送出一个 Action，触发 State 更新为"正在操作"状态，View 重新渲染
+- 操作结束后，再送出一个 Action，触发 State 更新为"操作结束"状态，View 再一次重新渲染
+
+### 总结
