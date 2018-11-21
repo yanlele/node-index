@@ -157,3 +157,31 @@ let unsubscribe = store.subscribe(() =>
 );
 unsubscribe();
 ```
+
+
+## 3、中间件与异步操作
+一个关键问题没有解决：异步操作怎么办？Action 发出以后，Reducer 立即算出 State，这叫做同步；Action 发出以后，过一段时间再执行 Reducer，这就是异步。                             
+怎么才能 Reducer 在异步操作结束后自动执行呢？这就要用到新的工具：中间件（middleware）。
+
+为了理解中间件，让我们站在框架作者的角度思考问题：如果要添加功能，你会在哪个环节添加？                         
+（1）Reducer：纯函数，只承担计算 State 的功能，不合适承担其他功能，也承担不了，因为理论上，纯函数不能进行读写操作。                       
+（2）View：与 State 一一对应，可以看作 State 的视觉层，也不合适承担其他功能。                        
+（3）Action：存放数据的对象，即消息的载体，只能被别人操作，自己不能进行任何操作。                        
+想来想去，只有发送 Action 的这个步骤，即store.dispatch()方法，可以添加功能。                              
+
+### 中间件的用法
+本文不涉及如何编写中间件，因为常用的中间件都有现成的，只要引用别人写好的模块即可。                       
+```javascript
+import { applyMiddleware, createStore } from 'redux';
+import createLogger from 'redux-logger';
+const logger = createLogger();
+
+const store = createStore(
+  reducer,
+  applyMiddleware(logger)
+);
+```
+
+上面代码中，redux-logger提供一个生成器createLogger，可以生成日志中间件logger。
+然后，将它放在applyMiddleware方法之中，传入createStore方法，就完成了store.dispatch()的功能增强。
+
