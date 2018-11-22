@@ -1,4 +1,3 @@
-/*
 function* helloWorldGenerator() {
     yield 'hello';
     yield 'world';
@@ -13,7 +12,7 @@ hw.next()
 hw.next()
 // { value: 'ending', done: true }
 hw.next()
-// { value: undefined, done: true }*/
+// { value: undefined, done: true }
 
 
 /*function* f() {

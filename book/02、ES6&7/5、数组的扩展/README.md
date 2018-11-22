@@ -52,7 +52,7 @@ Array.of方法用于将一组值，转换为数组。
 ```javascript
 语法：Array.prototype.copyWithin(target, start = 0, end = this.length)             
 ```                     
-target （必需）：从该位置开始替换数据。             
+target （必需）：从该位置开始替换数据的下标位置。             
 start （可选）：从该位置开始读取数据，默认为 0 。如果为负值，表示倒数。        
 end （可选）：到该位置前停止读取数据，默认等于数组长度。如果为负值，表示倒数。           
 
@@ -65,10 +65,10 @@ end （可选）：到该位置前停止读取数据，默认等于数组长度�
     [1, 2, 3, 4, 5].copyWithin(0, 3, 4)
     // [4, 2, 3, 4, 5]
     // -2 相当于 3 号位， -1 相当于 4 号位
-        [1, 2, 3, 4, 5].copyWithin(0, -2, -1)
+    [1, 2, 3, 4, 5].copyWithin(0, -2, -1)
     // [4, 2, 3, 4, 5]
     //  将 3 号位复制到 0 号位
-        [].copyWithin.call({length: 5, 3: 1}, 0, 3)
+    [].copyWithin.call({length: 5, 3: 1}, 0, 3)
     // {0: 1, 3: 1, length: 5}
     //  将 2 号位到数组结束，复制到 0 号位
     var i32a = new Int32Array([1, 2, 3, 4, 5]);
