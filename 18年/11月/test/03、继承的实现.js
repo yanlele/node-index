@@ -96,16 +96,17 @@
 
 
 /*2.5、组合继承3*/
-function Parent() {
-    this.name = 'parent5';
-    this.play = [1, 2, 3];
-}
-function Child() {
-    Parent.call(this);
-    this.type = 'child5'
-}
-Child.prototype = Object.create(Parent.prototype);
-Child.prototype.constructor = Child;
+// function Parent() {
+//     this.name = 'parent5';
+//     this.play = [1, 2, 3];
+// }
+// function Child() {
+//     Parent.call(this);
+//     this.type = 'child5'
+// }
+// Child.prototype = Object.create(Parent.prototype);
+// Child.prototype.constructor = Child;
+
 
 
 
