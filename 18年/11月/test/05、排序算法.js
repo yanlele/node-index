@@ -24,7 +24,6 @@ let quickSort = function (arr) {
     }
     return quickSort(left).concat([pivot], quickSort(right));
 };
-
 console.log(quickSort(arrayNumber));
 
 /*选择排序*/
@@ -36,7 +35,7 @@ let selectionSort = function (arr) {
     for (let i = 0; i < arr.length - 1; i++) {
         minIndex = i;
         for (let j = i + 1; j < arr.length; j++) {
-            if(arr[j] < arr[minIndex]) {
+            if (arr[j] < arr[minIndex]) {
                 minIndex = j;
             }
         }
@@ -46,5 +45,38 @@ let selectionSort = function (arr) {
     }
     return arr;
 };
-
 console.log(selectionSort(arrayNumber));
+
+
+/*插入排序*/
+let insertSort = function (arr) {
+    let len = arr.length;
+    let preIndex, current;
+    for (let i = 1; i < len; i++) {
+        preIndex = i - 1;
+        current = arr[i];
+        while (preIndex >= 0 && arr[preIndex] > current) {
+            arr[preIndex + 1] = arr[preIndex];
+            preIndex--;
+        }
+        arr[preIndex + 1] = current;
+    }
+    return arr;
+};
+console.log(insertSort(arrayNumber));
+
+/*冒泡法排序*/
+let bubbleSort = function (arr) {
+    let len = arr.length;
+    for (let i =0 ; i< len -1; i ++ ) {
+        for (let j =0;j<len -1 -i;j++) {
+            if(arr[j]> arr[j+1]) {
+                let temp = arr[j+1];
+                arr[j+1] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    return arr;
+};
+console.log(bubbleSort(arrayNumber));
