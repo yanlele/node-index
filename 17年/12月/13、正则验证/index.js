@@ -37,3 +37,9 @@ console.log(phoneMask);*/
 
 
 // console.log(/\*{2,}/.test('13*111'));
+
+
+// 千分位
+let number = '1234567890.01';
+let reg = /(\d{1,3})(?=(\d{3})+(?:$|\.))/g;
+console.log(number.toString().replace(reg, '$1,'));
