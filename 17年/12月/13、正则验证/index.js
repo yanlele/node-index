@@ -30,7 +30,7 @@ console.log(phoneMask);*/
 
 
 // 手机号码验证
-// let phone = '15213497741';
+let phone = '15213497741';
 // console.log(/^1[345789]\d{9}$/.exec(phone));
 // console.log(phone.match(/^1[345789]\d{9}$/));
 // console.log(phone.search(/213/));
