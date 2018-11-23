@@ -43,3 +43,19 @@ let unique3 = function (arr) {
 };
 console.log(unique3(arrNumber));
 
+let unique4 = function (arr) {
+    arr.sort();
+    let re = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== re[re.length - 1]) {
+            re.push(arr[i])
+        }
+    }
+    return re;
+};
+console.log(unique4(arrNumber));
+
+
+let unique5 = function (arr) {
+
+};

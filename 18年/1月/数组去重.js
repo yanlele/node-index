@@ -63,8 +63,8 @@ if (!Array.prototype.indexOf) {
     // 新增indexOf方法
     Array.prototype.indexOf = function (item) {
         var result = -1, a_item = null;
-        if (this.length === 0) {
-            return result;
+            if (this.length === 0) {
+                return result;
         }
         for (var i = 0, len = this.length; i < len; i++) {
             a_item = this[i];
