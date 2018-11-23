@@ -51,7 +51,7 @@ let Child = function () {
 };
 Child.prototype = Parent.prototype;*/
 
-function Parent5() {
+/*function Parent5() {
     this.name = 'parent5';
     this.play = [1, 2, 3];
 }
@@ -63,6 +63,5 @@ function Child5() {
 
 Child5.prototype = Object.create(Parent5.prototype);
 //这个时候虽然隔离了，但是constructor还是只想的Parent5的，因为constructor会一直向上找
-Child5.prototype.constructor=Child5;
-
+Child5.prototype.constructor=Child5;*/
 
