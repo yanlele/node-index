@@ -42,22 +42,24 @@
 /*
 * 2.2、通过原型链继承
 * */
-// function Parent() {
-//     this.name = 'lelel';
-//     this.getName = function () {
-//         console.log(this.name)
-//     }
-// }
-//
-// function Child() {
-//     this.type = 'child';
-// }
-// Child.prototype = new Parent();
-//
-// let child1 = new Child();
-// let child2 = new Child();
-// child1.age = 15;
-// console.log(child2.age);
+/*function Parent() {
+    this.name = 'lelel';
+    this.getName = function () {
+        console.log(this.name)
+    }
+}
+
+function Child() {
+    this.type = 'child';
+}
+Child.prototype.getAge = '123';
+Child.prototype = new Parent();
+
+let child1 = new Child();
+let child2 = new Child();
+child1.age = 15;
+console.log(child1.name);
+console.log(child2.getAge);*/
 
 
 /*
