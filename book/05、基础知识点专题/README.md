@@ -45,6 +45,10 @@
     - [10、深入异步](./02_01、进阶知识部分1-10.md#class02-10)
     
     
+- 其他
+    - [01、FE-interview](https://github.com/qiu-deqing/FE-interview)
+    
+    
     
 - 待总结的知识点
 dom react原理                                              
