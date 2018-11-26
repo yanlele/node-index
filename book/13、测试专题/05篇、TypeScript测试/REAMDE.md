@@ -27,7 +27,7 @@
 
 ### <div id="class05-02">02、测试用例的编写 和 配置文件的导入</div>
 
-- 配置文件的导入
+- 配置文件`mocha.opts`的导入
 ```
 --recursive
 --require ./node_modules/ts-node/register
