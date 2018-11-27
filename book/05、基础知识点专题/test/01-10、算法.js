@@ -5,13 +5,13 @@
  */
 
 let arrNumber = [11,5, 23, 4,43, 6, 7, 88, 77, 66];
-var quickSort = function(arr) {
+let quickSort = function(arr) {
     if (arr.length <= 1) { return arr; }
-    var pivotIndex = Math.floor(arr.length / 2);   //基准位置（理论上可任意选取）
-    var pivot = arr.splice(pivotIndex, 1)[0];  //基准数   splice 会改改变源数组！！！！！！！！
-    var left = [];
-    var right = [];
-    for (var i = 0; i < arr.length; i++){
+    let pivotIndex = Math.floor(arr.length / 2);   //基准位置（理论上可任意选取）
+    let pivot = arr.splice(pivotIndex, 1)[0];  //基准数   splice 会改改变源数组！！！！！！！！
+    let left = [];
+    let right = [];
+    for (let i = 0; i < arr.length; i++){
         if (arr[i] < pivot) {
             left.push(arr[i]);
         } else {
@@ -23,11 +23,11 @@ var quickSort = function(arr) {
 console.log(quickSort(arrNumber.slice(0)));
 
 function selectionSort(arr) {
-    var len = arr.length;
-    var minIndex, temp;
-    for (var i = 0; i < len - 1; i++) {
+    let len = arr.length;
+    let minIndex, temp;
+    for (let i = 0; i < len - 1; i++) {
         minIndex = i;
-        for (var j = i + 1; j < len; j++) {
+        for (let j = i + 1; j < len; j++) {
             if (arr[j] < arr[minIndex]) {     // 寻找最小的数
                 minIndex = j;                 // 将最小数的索引保存
             }
@@ -42,9 +42,9 @@ console.log(selectionSort(arrNumber));
 
 
 function insertionSort(arr) {
-    var len = arr.length;
-    var preIndex, current;
-    for (var i = 1; i < len; i++) {
+    let len = arr.length;
+    let preIndex, current;
+    for (let i = 1; i < len; i++) {
         preIndex = i - 1;
         current = arr[i];
         while(preIndex >= 0 && arr[preIndex] > current) {
@@ -60,11 +60,11 @@ console.log(insertionSort(arrNumber));
 
 
 function bubbleSort(arr) {
-    var len = arr.length;
-    for (var i = 0; i < len - 1; i++) {
-        for (var j = 0; j < len - 1 - i; j++) {
+    let len = arr.length;
+    for (let i = 0; i < len - 1; i++) {
+        for (let j = 0; j < len - 1 - i; j++) {
             if (arr[j] > arr[j+1]) {        // 相邻元素两两对比
-                var temp = arr[j+1];        // 元素交换
+                let temp = arr[j+1];        // 元素交换
                 arr[j+1] = arr[j];
                 arr[j] = temp;
             }
