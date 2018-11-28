@@ -1,4 +1,5 @@
 # 深入call、apply、bind实现原理
+[https://www.jianshu.com/p/6a1bc149b598](https://www.jianshu.com/p/6a1bc149b598)
 
 简单粗暴地来说，call，apply，bind是用于绑定this指向的。
 
