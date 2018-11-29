@@ -37,6 +37,79 @@ yanle.sayHello.apply(lele, [21]);       // hello, i am lele and 21 years old
 
 总结一句话介绍call和apply                           
 call()方法在使用一个指定的this值和若干个指定的参数值的前提下调用某个函数或方法。                           
-apply()方法在使用一个指定的this值和参数值必须是数组类型的前提下调用某个函数或方法                          
+apply()方法在使用一个指定的this值和参数值必须是数组类型的前提下调用某个函数或方法  
+
+
+### 分析call和apply的原理
+上面代码，我们注意到了两点：                  
+1、call和apply改变了this的指向，指向到lulin                 
+2、sayHello函数执行了                 
+
+这里默认大家都对this有一个基本的了解，知道什么时候this该指向谁，
+我们结合这两句话来分析这个通用函数：f.apply(o),我们直接看一本书对其中原理的解读，
+具体什么书，我也不知道，参数我们先不管，先了解其中的大致原理。
+
+![01](./img/img01.png)                          
+
+知道了这个基本原来我们再来看看刚才jawil.sayHello.call(lulin, 24)执行的过程：                       
+```javascript
+// 第一步
+lulin.fn = jawil.sayHello
+// 第二步
+lulin.fn()
+// 第三步
+delete lulin.fn
+```
+
+上面的说的是原理，可能你看的还有点抽象，下面我们用代码模拟实现apply一下。
+
+### 实现aplly方法
+
+#### 模拟实现第一步
+根据这个思路，我们可以尝试着去写第一版的 applyOne 函数：
+```javascript
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
 
 
