@@ -186,8 +186,43 @@ function sayHello() {
 sayHello.apply(); // 'jawil'
 ```
 
-         
+2.函数是可以有返回值的         
+```javascript
+var obj = {
+    name: 'jawil'
+}
 
+function sayHello(age) {
+    return {
+        name: this.name,
+        age: age
+    }
+}
+
+console.log(sayHello.apply(obj,[24]));// {name: "jawil", age: 24}
+```
+
+这些都是小问题，想到了，就很好解决。我们来看看此时的第三版apply模拟方法。
+```javascript
+//原生JavaScript封装apply方法，第三版
+Function.prototype.applyThree = function(context) {
+    var context = context || window
+    var args = arguments[1] //获取传入的数组参数
+    context.fn = this //假想context对象预先不存在名为fn的属性
+    if (args == void 0) { //没有传入参数直接执行
+        return context.fn()
+    }
+    var fnStr = 'context.fn('
+    for (var i = 0; i < args.length; i++) {
+        //得到"context.fn(arg1,arg2,arg3...)"这个字符串在，最后用eval执行
+        fnStr += i == args.length - 1 ? args[i] : args[i] + ','
+    }
+    fnStr += ')'
+    var returnValue = eval(fnStr) //还是eval强大
+    delete context.fn //执行完毕之后删除这个属性
+    return returnValue
+}
+```
 
 
 
