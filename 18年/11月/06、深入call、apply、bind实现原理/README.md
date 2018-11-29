@@ -632,6 +632,7 @@ function sayHello(age) {
 
 console.log(sayHello.bind(obj,24)());// 完美输出{name: "jawil", age: 24}
 ```
+[请看demo7](./demo7.js)                       
 
 
 

@@ -200,6 +200,7 @@
     - [45、关于this指针的研究](./18年/11月/02、关于this指针的研究/README.md)
     - [46、垂直和水平居中方案](./18年/11月/04、水平和垂直方案/README.md)
     - [47、深入fetch](./18年/11月/05、深入fetch/README.md)
+    - [48、深入call、apply、bind实现原理](./18年/11月/06、深入call、apply、bind实现原理/README.md)
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
