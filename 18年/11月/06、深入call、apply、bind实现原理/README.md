@@ -386,7 +386,7 @@ console.log(sayHello.applyFive(obj,[24]));// 完美输出{name: "jawil", age: 24
 ```javascript
 //原生JavaScript封装call方法
 Function.prototype.callOne = function(context) {
-    return this.applyFive(([].shift.applyFive(arguments), arguments);
+    return this.applyFive(([].shift.applyFive(arguments), arguments));
     //巧妙地运用上面已经实现的applyFive函数
 }
 ```
@@ -411,12 +411,226 @@ function sayHello(age) {
 console.log(sayHello.callOne(obj,24));// 完美输出{name: "jawil", age: 24}
 ```
 
+### 实现bind方法
+什么是bind函数               
+如果掌握了上面实现apply的方法，我想理解起来模拟实现bind方法也是轻而易举，原理都差不多，我们还是来看看bind方法的定义。                       
+我们还是简单的看下ECMAScript规范对bind方法的定义，暂时看不懂不要紧，获取几个关键信息就行。                            
+
+bind() 方法会创建一个新函数，当这个新函数被调用时，它的 this 值是传递给 bind() 的第一个参数, 
+它的参数是 bind() 的其他参数和其原本的参数，
+bind返回的绑定函数也能使用new操作符创建对象：这种行为就像把原函数当成构造器。
+提供的this值被忽略，同时调用时的参数被提供给模拟函数。。
+
+语法是这样样子的： `fun.bind(thisArg[, arg1[, arg2[, ...]]])`
+
+是不是似曾相识，这不是call方法的语法一个样子么，，，但它们是一样的吗？
+
+bind方法传递给调用函数的参数可以逐个列出，也可以写在数组中。
+bind方法与call、apply最大的不同就是前者返回一个绑定上下文的函数，
+而后两者是直接执行了函数。由于这个原因，上面的代码也可以这样写:
+```javascript
+jawil.sayHello.bind(lulin)(24); //hello, i am lulin 24 years old
+jawil.sayHello.bind(lulin)([24]); //hello, i am lulin 24 years old
+```
+
+bind方法还可以这样写 fn.bind(obj, arg1)(arg2).
+
+**用一句话总结bind的用法：**
+该方法创建一个新函数，称为绑定函数，绑定函数会以创建它时传入bind方法的第一个参数作为this，
+传入bind方法的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数。
+
+以前解决这个问题的办法通常是缓存this，例如：
+```javascript
+function Person(name){
+  this.nickname = name;
+  this.distractedGreeting = function() {
+    var self = this; // <-- 注意这一行!
+    setTimeout(function(){
+      console.log("Hello, my name is " + self.nickname); // <-- 还有这一行!
+    }, 500);
+  }
+}
+ 
+var alice = new Person('jawil');
+alice.distractedGreeting();
+// after 500ms logs "Hello, my name is jawil"
+```
+
+但是现在有一个更好的办法！您可以使用bind。上面的例子中被更新为：
+```javascript
+function Person(name){
+  this.nickname = name;
+  this.distractedGreeting = function() {
+    setTimeout(function(){
+      console.log("Hello, my name is " + this.nickname);
+    }.bind(this), 500); // <-- this line!
+  }
+}
+ 
+var alice = new Person('jawil');
+alice.distractedGreeting();
+// after 500ms logs "Hello, my name is jawil"
+```
+
+**用法总结：**                   
+bind() 最简单的用法是创建一个函数，使这个函数不论怎么调用都有同样的 this 值。
+JavaScript新手经常犯的一个错误是将一个方法从对象中拿出来，然后再调用，希望方法中的 this 是原来的对象。
+（比如在回调中传入这个方法。）如果不做特殊处理的话，一般会丢失原来的对象。
+从原来的函数和原来的对象创建一个绑定函数，则能很漂亮地解决这个问题：
+```javascript
+this.x = 9; 
+var module = {
+  x: 81,
+  getX: function() { return this.x; }
+};
+ 
+module.getX(); // 81
+ 
+var getX = module.getX;
+getX(); // 9, 因为在这个例子中，"this"指向全局对象
+ 
+// 创建一个'this'绑定到module的函数
+var boundGetX = getX.bind(module);
+boundGetX(); // 81
+```
+备注：                     
+很不幸，Function.prototype.bind 在IE8及以下的版本中不被支持，
+所以如果你没有一个备用方案的话，可能在运行时会出现问题。
+bind 函数在 ECMA-262 第五版才被加入；它可能无法在所有浏览器上运行。
+你可以部份地在脚本开头加入以下代码，就能使它运作，让不支持的浏览器也能使用 bind() 功能。
+
+#### 初级实现
+了解了以上内容，我们来实现一个初级的bind函数Polyfill:                   
+```javascript
+Function.prototype.bind = function (context) {
+    var me = this;
+    var argsArray = Array.prototype.slice.callOne(arguments);
+    return function () {
+        return me.applyFive(context, argsArray.slice(1))
+    }
+}
+```
+简单解读：
+基本原理是使用apply进行模拟。函数体内的this，就是需要绑定this的实例函数，或者说是原函数。
+最后我们使用apply来进行参数（context）绑定，并返回。                
+同时，将第一个参数（context）以外的其他参数，作为提供给原函数的预设参数，这也是基本的“颗粒化（curring）”基础。                             
 
 
+#### 初级实现的加分项
+进行兼容处理，就是锦上添花了。
+```javascript
+Function.prototype.bind = Function.prototype.bind || function (context) {
+    ...
+}
+```
+
+#### 颗粒化（curring）实现
+对于函数的柯里化不太了解的童鞋，可以先尝试读读这篇文章：[前端基础进阶（八）：深入详解函数的柯里化](https://www.jianshu.com/p/5e1899fe7d6b)。                           
+上述的实现方式中，我们返回的参数列表里包含：atgsArray.slice(1)，他的问题在于存在预置参数功能丢失的现象。                           
+想象我们返回的绑定函数中，如果想实现预设传参（就像bind所实现的那样），就面临尴尬的局面。真正实现颗粒化的“完美方式”是：                          
+```javascript
+Function.prototype.bind = Function.prototype.bind || function (context) {
+    var me = this;
+    var args = Array.prototype.slice.callOne(arguments, 1);
+    return function () {
+        var innerArgs = Array.prototype.slice.callOne(arguments);
+        var finalArgs = args.concat(innerArgs);
+        return me.applyFive(context, finalArgs);
+    }
+}
+```
+
+#### 构造函数场景下的兼容
+```javascript
+Function.prototype.bind = Function.prototype.bind || function (context) {
+    var me = this;
+    var args = Array.prototype.slice.callOne(arguments, 1);
+    var F = function () {};
+    F.prototype = this.prototype;
+    var bound = function () {
+        var innerArgs = Array.prototype.slice.callOne(arguments);
+        var finalArgs = args.concat(innerArgs);
+        return me.apply(this instanceof F ? this : context || this, finalArgs);
+    }
+    bound.prototype = new F();
+    return bound;
+}
+```
 
 
+#### 更严谨的做法
+我们需要调用bind方法的一定要是一个函数，所以可以在函数体内做一个判断：
+
+if (typeof this !== "function") {
+  throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
+}
+做到所有这一切，基本算是完成了。其实MDN上有个自己实现的polyfill，就是如此实现的。
+另外，《JavaScript Web Application》一书中对bind()的实现，也是如此。
 
 
+#### 最终答案
+```javascript
+//简单模拟Symbol属性
+function jawilSymbol(obj) {
+    var unique_proper = "00" + Math.random();
+    if (obj.hasOwnProperty(unique_proper)) {
+        arguments.callee(obj)//如果obj已经有了这个属性，递归调用，直到没有这个属性
+    } else {
+        return unique_proper;
+    }
+}
+//原生JavaScript封装apply方法，第五版
+Function.prototype.applyFive = function(context) {
+    var context = context || window
+    var args = arguments[1] //获取传入的数组参数
+    var fn = jawilSymbol(context);
+    context[fn] = this //假想context对象预先不存在名为fn的属性
+    if (args == void 0) { //没有传入参数直接执行
+        return context[fn]()
+    }
+    var fnStr = 'context[fn]('
+    for (var i = 0; i < args.length; i++) {
+        //得到"context.fn(arg1,arg2,arg3...)"这个字符串在，最后用eval执行
+        fnStr += i == args.length - 1 ? args[i] : args[i] + ','
+    }
+    fnStr += ')'
+    var returnValue = eval(fnStr) //还是eval强大
+    delete context[fn] //执行完毕之后删除这个属性
+    return returnValue
+}
+//简单模拟call函数
+Function.prototype.callOne = function(context) {
+    return this.applyFive(([].shift.applyFive(arguments)), arguments)
+    //巧妙地运用上面已经实现的applyFive函数
+}
+
+//简单模拟bind函数
+Function.prototype.bind = Function.prototype.bind || function (context) {
+    var me = this;
+    var args = Array.prototype.slice.callOne(arguments, 1);
+    var F = function () {};
+    F.prototype = this.prototype;
+    var bound = function () {
+        var innerArgs = Array.prototype.slice.callOne(arguments);
+        var finalArgs = args.concat(innerArgs);
+        return me.applyFive(this instanceof F ? this : context || this, finalArgs);
+    }
+    bound.prototype = new F();
+    return bound;
+}
+var obj = {
+    name: 'jawil'
+}
+
+function sayHello(age) {
+    return {
+        name: this.name,
+        age: age
+    }
+}
+
+console.log(sayHello.bind(obj,24)());// 完美输出{name: "jawil", age: 24}
+```
 
 
 
