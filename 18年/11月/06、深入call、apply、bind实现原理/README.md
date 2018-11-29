@@ -223,8 +223,72 @@ Function.prototype.applyThree = function(context) {
     return returnValue
 }
 ```
+[demo4](./demo4.js)                                 
 
 
+#### 模拟实现第四步
+其实一开始就埋下了一个隐患，我们看看这段代码：                     
+```javascript
+Function.prototype.applyThree = function(context) {
+    var context = context || window
+    var args = arguments[1] //获取传入的数组参数
+    context.fn = this //假想context对象预先不存在名为fn的属性
+    ......
+}
+```
+就是这句话， `context.fn = this //假想context对象预先不存在名为fn的属性` ,这就是一开始的隐患,
+我们只是假设，但是并不能防止contenx对象一开始就没有这个属性，要想做到完美，就要保证这个context.fn中的fn的唯一性。
+
+于是我自然而然的想到了强大的ES6,这玩意还是好用啊，幸好早就了解并一直在使用ES6,还没有学习过ES6的童鞋赶紧学习一下，没有坏处的。
+
+重新复习下新知识：                       
+基本数据类型有6种：Undefined、Null、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）。
+
+ES5对象属性名都是字符串容易造成属性名的冲突。
+```javascript
+var a = { name: 'jawil'};
+a.name = 'lulin';
+//这样就会重写属性
+```
+
+ES6引入了一种新的原始数据类型Symbol，表示独一无二的值。                
+注意，Symbol函数前不能使用new命令，否则会报错。这是因为生成的Symbol是一个原始类型的值，不是对象                     
+Symbol函数可以接受一个字符串作为参数，表示对Symbol实例的描述，主要是为了在控制台显示，或者转为字符串时，比较容易区分。                       
+
+```javascript
+// 没有参数的情况
+var s1 = Symbol();
+var s2 = Symbol();
+s1 === s2 // false
+
+// 有参数的情况
+var s1 = Symbol("foo");
+var s2 = Symbol("foo");
+s1 === s2 // false
+```
+注意：Symbol值不能与其他类型的值进行运算。                    
+
+作为属性名的Symbol
+```javascript
+var mySymbol = Symbol();
+
+// 第一种写法
+var a = {};
+a[mySymbol] = 'Hello!';
+
+// 第二种写法
+var a = {
+  [mySymbol]: 'Hello!'
+};
+
+// 第三种写法
+var a = {};
+Object.defineProperty(a, mySymbol, { value: 'Hello!' });
+
+// 以上写法都得到同样结果
+a[mySymbol] // "Hello!"
+```
+注意，Symbol值作为对象属性名时，不能用点运算符。
 
 
 

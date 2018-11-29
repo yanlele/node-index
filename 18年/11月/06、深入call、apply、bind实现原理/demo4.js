@@ -13,7 +13,7 @@ Function.prototype.applyThree = function(context) {
     }
     fnStr += ')'
     var returnValue = eval(fnStr) //还是eval强大
-    delete context.fn //执行完毕之后删除这个属性
+    delete context.fn //执行完毕之后删除这个属性R
     return returnValue
 }
 //测试一下
@@ -28,4 +28,4 @@ var  lulin = {
     name: "lulin",
 };
 
-jawil.sayHello.applyTwo(lulin,[24])//lulin 24
+jawil.sayHello.applyThree(lulin,[24])//lulin 24
