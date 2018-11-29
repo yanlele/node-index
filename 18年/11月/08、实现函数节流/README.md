@@ -171,3 +171,12 @@ function throttle(func, wait, options) {
     return throttled;
 }
 ```
+
+如果想添加一个取消功能：
+```javascript
+throttled.cancel = function() {
+    clearTimeout(time);
+    time = null;
+    previous = 0;
+}
+```
