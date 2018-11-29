@@ -560,10 +560,11 @@ Function.prototype.bind = Function.prototype.bind || function (context) {
 
 #### 更严谨的做法
 我们需要调用bind方法的一定要是一个函数，所以可以在函数体内做一个判断：
-
+```javascript
 if (typeof this !== "function") {
   throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
 }
+```
 做到所有这一切，基本算是完成了。其实MDN上有个自己实现的polyfill，就是如此实现的。
 另外，《JavaScript Web Application》一书中对bind()的实现，也是如此。
 
