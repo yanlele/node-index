@@ -28,3 +28,13 @@ function debounce(func, wait) {
 container.onmousemove = debounce(doSomething, 1000);
 ```
 
+### 注解：关于闭包
+每当事件被触发，执行的都是那个被返回的闭包函数。                            
+因为闭包带来的其作用域链中引用的上层函数变量声明周期延长的效果，
+debounce 函数的 settimeout计时器 ID timeout 变量可以在debounce 函数执行结束后依然留存在内存中，供闭包使用。                          
+
+### 优化：修复
+相比于未防抖时的                    
+```javascript
+container.onmousemove = doSomething 
+```
