@@ -378,7 +378,41 @@ function sayHello(age) {
 }
 console.log(sayHello.applyFive(obj,[24]));// 完美输出{name: "jawil", age: 24}
 ```
-[请看demo6](./demo6.js)
+[请看demo6](./demo6.js)                   
+
+
+### 实现Call方法
+这个不需要讲了吧，道理都一样，就是参数一样，这里我给出我实现的一种方式，看不懂，自己写一个去。
+```javascript
+//原生JavaScript封装call方法
+Function.prototype.callOne = function(context) {
+    return this.applyFive(([].shift.applyFive(arguments), arguments);
+    //巧妙地运用上面已经实现的applyFive函数
+}
+```
+看不太明白也不能怪我咯，我就不细讲了，看个demo证明一下，这个写法没问题。
+```javascript
+Function.prototype.applyFive = function(context) {//刚才写的一大串}
+Function.prototype.callOne = function(context) {
+    return this.applyFive(([].shift.applyFive(arguments)), arguments)
+    //巧妙地运用上面已经实现的applyFive函数
+};
+//测试一下
+var obj = {
+    name: 'jawil'
+};
+
+function sayHello(age) {
+    return {
+        name: this.name,
+        age: age
+    }
+}
+console.log(sayHello.callOne(obj,24));// 完美输出{name: "jawil", age: 24}
+```
+
+
+
 
 
 
