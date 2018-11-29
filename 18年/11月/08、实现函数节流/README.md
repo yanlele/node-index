@@ -130,6 +130,7 @@ function throttle(func, wait) {
     };
 }
 ```
+[请看demo1](./demo1.js)
 
 
 #### 更进一步的优化
@@ -171,6 +172,7 @@ function throttle(func, wait, options) {
     return throttled;
 }
 ```
+[请看demo2](./demo2.js)
 
 如果想添加一个取消功能：
 ```javascript
