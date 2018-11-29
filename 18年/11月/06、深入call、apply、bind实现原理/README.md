@@ -161,6 +161,32 @@ var  lulin = {
 
 jawil.sayHello.applyTwo(lulin,[24])//lulin 24
 ```
+[请看demo3](./demo3.js)
+
+好像就行了是不是，其实这只是最粗糙的版本，能用，但是不完善，完成了大约百分之六七十了。
+
+
+#### 模拟实现第三步
+1.this参数可以传null或者不传，当为null的时候，视为指向window             
+
+demo1:
+```javascript
+var name = 'jawil';
+function sayHello() {
+    console.log(this.name);
+}
+sayHello.apply(null); // 'jawil'
+```
+demo2:                                  
+```javascript
+var name = 'jawil';
+function sayHello() {
+    console.log(this.name);
+}
+sayHello.apply(); // 'jawil'
+```
+
+         
 
 
 
