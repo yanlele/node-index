@@ -290,6 +290,53 @@ a[mySymbol] // "Hello!"
 ```
 注意，Symbol值作为对象属性名时，不能用点运算符。
 
+继续看下面这个例子：
+```javascript
+var a = {};
+var name = Symbol();
+a.name = 'jawil';
+a[name] = 'lulin';
+console.log(a.name,a[name]);             //jawil,lulin
+```
+Symbol值作为属性名时，该属性还是公开属性，不是私有属性。                                                 
+这个有点类似于java中的protected属性
+（protected和private的区别：在类的外部都是不可以访问的，在类内的子类可以继承protected不可以继承private）                            
+但是这里的Symbol在类外部也是可以访问的，只是不会出现在for...in、for...of循环中，
+也不会被Object.keys()、Object.getOwnPropertyNames()返回。
+但有一个 `Object.getOwnPropertySymbols` 方法，可以获取指定对象的所有Symbol属性名。                            
+
+看看第四版的实现demo，想必大家了解上面知识已经猜得到怎么写了，很简单。
+直接加个var fn = Symbol()就行了
+```javascript
+//原生JavaScript封装apply方法，第四版
+Function.prototype.applyFour = function(context) {
+    var context = context || window
+    var args = arguments[1] //获取传入的数组参数
+    var fn = Symbol()
+    context[fn] = this //假想context对象预先不存在名为fn的属性
+    if (args == void 0) { //没有传入参数直接执行
+        return context[fn]()
+    }
+    var fnStr = 'context[fn]('
+    for (var i = 0; i < args.length; i++) {
+        //得到"context.fn(arg1,arg2,arg3...)"这个字符串在，最后用eval执行
+        fnStr += i == args.length - 1 ? args[i] : args[i] + ','
+    }
+    fnStr += ')'
+    var returnValue = eval(fnStr) //还是eval强大
+    delete context[fn] //执行完毕之后删除这个属性
+    return returnValue
+}
+```
+
+#### 模拟实现第五步
+呃呃呃额额，慢着，ES3就出现的方法，你用ES6来实现，你好意思么？
+你可能会说，不管黑猫白猫，只要能抓住老鼠的猫就是好猫，面试官直说不准用call和apply方法但是没说不准用ES6语法啊。                           
+反正公说公有理婆说婆有理，这里还是不用Symbol方法实现一下，我们知道，ES6其实都是语法糖，ES6能写的，
+咋们ES5都能实现，这就导致了babel这类把ES6语法转化成ES5的代码了。                                 
+至于babel把Symbol属性转换成啥代码了，我也没去看，有兴趣的可以看一下稍微研究一下，这里我说一下简单的模拟。                                      
+ES5 没有 Sybmol，属性名称只可能是一个字符串，如果我们能做到这个字符串不可预料，
+那么就基本达到目标。要达到不可预期，一个随机数基本上就解决了。                                 
 
 
 
