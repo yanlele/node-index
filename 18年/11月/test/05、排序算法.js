@@ -24,7 +24,7 @@ let quickSort = function (arr) {
     }
     return quickSort(left).concat([pivot], quickSort(right));
 };
-console.log(quickSort(arrayNumber));
+console.log(quickSort(arrayNumber.slice(0)));
 
 /*选择排序*/
 let selectionSort = function (arr) {
@@ -45,7 +45,23 @@ let selectionSort = function (arr) {
     }
     return arr;
 };
-console.log(selectionSort(arrayNumber));
+console.log(selectionSort(arrayNumber.slice(0)));
+
+/*冒泡法排序*/
+let bubbleSort = function (arr) {
+    let len = arr.length;
+    for (let i =0 ; i< len -1; i ++ ) {
+        for (let j =0;j<len -1 -i;j++) {
+            if(arr[j]> arr[j+1]) {
+                let temp = arr[j+1];
+                arr[j+1] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    return arr;
+};
+console.log(bubbleSort(arrayNumber.slice(0)));
 
 
 /*插入排序*/
@@ -63,20 +79,5 @@ let insertSort = function (arr) {
     }
     return arr;
 };
-console.log(insertSort(arrayNumber));
+console.log(insertSort(arrayNumber.slice(0)));
 
-/*冒泡法排序*/
-let bubbleSort = function (arr) {
-    let len = arr.length;
-    for (let i =0 ; i< len -1; i ++ ) {
-        for (let j =0;j<len -1 -i;j++) {
-            if(arr[j]> arr[j+1]) {
-                let temp = arr[j+1];
-                arr[j+1] = arr[j];
-                arr[j] = temp;
-            }
-        }
-    }
-    return arr;
-};
-console.log(bubbleSort(arrayNumber));
