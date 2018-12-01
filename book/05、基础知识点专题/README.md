@@ -76,7 +76,8 @@ redux深入理解（完成）
 react-router深入理解（完成）                                        
 整理一下ICSS （延后整理）                   
 [React.CreateContext](https://blog.csdn.net/weixin_33768153/article/details/82668110) （延后整理）
-整理 call、apply、bind 实现原理                         
+整理 call、apply、bind 实现原理(完成)                                         
+整理和总结 promise、gentator、async/await 的区别                          
 
 
 
