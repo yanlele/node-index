@@ -441,6 +441,9 @@ Reflect.getPrototypeOf(target)
 Reflect.setPrototypeOf(target, prototype)        
 
 
+[其他相关概念可以看这里 传送门->](../../05、基础知识点专题/01_02、基础知识部分11-20.md#class01-15)
+
+
 
 
 
