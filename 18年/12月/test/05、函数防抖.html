@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="start1">开始防抖函数</button>
+<br>
+<button id="expire1">停止防抖函数</button>
+
+
+<script>
+    let debounce = function (func, wait, immediate) {
+        let time;
+        let debounced = function () {
+            let context = this;
+            if(time) {
+                clearTimeout(time)
+            }
+
+            if(immediate) {
+                let callNow = !time;
+                if(callNow) func.call(context, arguments);
+                time = setTimeout(()=>time = null, wait)
+            } else {
+                time = setTimeout(()=> func.call(context, arguments), wait)
+            }
+        };
+
+        let cancel = function () {
+            clearTimeout(time);
+            time = null;
+        };
+
+        return {
+            debounced,
+            cancel
+        }
+    };
+
+    let {debounced, cancel} = debounce(function () {
+        console.log('防抖函数')
+    }, 2000, false);
+
+    let $start1 = document.getElementById('start1');
+    let $expire1 = document.getElementById('expire1');
+
+    $start1.addEventListener('click', function () {
+        debounced();
+    });
+
+    $expire1.addEventListener('click', function () {
+        cancel();
+    })
+</script>
+</body>
+</html>
