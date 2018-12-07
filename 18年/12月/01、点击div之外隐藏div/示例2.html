@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style type="text/css">
+    #test{
+        width: 300px;
+        height: 300px;
+        background: pink;
+    }
+</style>
+<body>
+<div id="test">
+</div>
+</body>
+</html>
+<script src="../../../lib/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    function stopPropagation(e) {
+        if(e.stopPropagation){
+            e.stopPropagation();
+        }
+        else{
+            e.cancelBubble = true;
+        }
+    }
+    $(document).bind('click', function() {
+        $('#test').css('display', 'none');
+    });
+    $('#test').bind('click', function(e) {
+        stopPropagation(e);
+    });
+</script>
