@@ -206,6 +206,72 @@ JavaScriptCore 的大致流程为：源代码-→抽象语法树-→字节码-�
 JavaScriptCore与V8有一些不同之处，其中最大的不同就是新增了字节码的中间表示，
 并加入了多层JIT编译器（如：简单JIT编译器、DFG JIT编译器、LLVM等）优化性能，不停的对本地代码进行优化(在V8 的 5.9 版本中，新增了一个 Ignition 字节码解释器)。                                                                                
 
-## 功能扩展
+## 功能扩展                         
+JavaScript引擎的主要功能是解析和执行JavaScript代码，往往不能满足使用者多样化的需要，
+那么就可以增加扩展以提升它的能力。V8引擎有两种扩展机制：绑定和扩展。
 
+### 绑定                  
+使用IDL文件或接口文件生成绑定文件，将这些文件同V8引擎一起编译。
+WebKit中使用IDL来定义JavaScript，但又与IDL有所不同，有一些改变。定义一个新的接口的步骤大致如下：                     
+1.定义新的接口文件，可以在JavaScript代码进行调用，如mymodule.MyObj.myAttr：                      
+```javascript
+module mymodule {
+    interface [
+            InterfaceName = MyObject
+    ] MyObj { 
+        readonly attribute long myAttr;
+        DOMString myMethod (DOMString myArg);
+    };
+}
+``` 
 
+2.按照引擎定义的标准接口为基础实现接口类，生成JavaScript引擎所需的绑定文件。
+WebKit提供了工具帮助生成所需的绑定类，根据引擎不同和引擎开发语言的不同而有所差异。
+V8引擎会为上述示例代码生成 v8MyObj.h (MyObj类具体的实现代码)和 V8MyObj.cpp (桥接代码，辅组注册桥接的函数到V8引擎)两个绑定文件。
+
+JavaScript引擎绑定机制需要将扩展代码和JavaScript引擎一块编译和打包，
+不能根据需要在引擎启动后再动态注入这些本地代码。
+在实际WEB开发中，开发者都是基于现有浏览器的，根本不可能介入到JavaScript引擎的编译中，
+绑定机制有很大的局限性，但其非常高效，适用于对性能要求较高的场景。
+
+### Extension                       
+通过V8的基类Extension进行能力扩展，无需和V8引擎一起编译，可以动态为引擎增加功能特性，具有很强的灵活性。                          
+Extension机制的大致思路就是，V8提供一个基类Extension和一个全局注册函数，要想扩展JavaScript能力，需要经过以下步骤：                                    
+```c++
+class MYExtension : public v8::Extension {
+    public:
+        MYExtension() : v8::Extension("v8/My", "native function my();") {}
+        virtual v8::Handle<v8::FunctionTemplate> GetNativeFunction (
+        v8::Handle<v8::String> name) {
+            // 可以根据name来返回不同的函数
+            return v8::FunctionTemplate::New(MYExtention::MY);
+        }
+        static v8::Handle<v8::Value> MY(const v8::Arguments& args) {
+            // Do sth here
+            return v8::Undefined();
+        }
+};
+MYExtension extension;
+RegisterExtension(&extension);
+```
+1.基于Extension基类构建一个它的子类，并实现它的虚函数—GetNativeFunction，根据参数name来决定返回实函数；                            
+2.创建一个该子类的对象，并通过注册函数将该对象注册到V8引擎，当JavaScript调用’my’函数时就可被调用到。
+Extension机制是调用V8的接口注入新函数，动态扩展非常方便，但没有绑定机制高效，适用于对性能要求不高的场景。
+
+## 总结                           
+作为一个提高JavaScript渲染的高效引擎，学习V8引擎应该重点掌握以下几个概念：
+
+- 类型。                                                                                                                                                                       
+    对于函数，JavaScript是一种动态类型语言，JavaScriptCore和V8都使用隐藏类和内嵌缓存来提高性能，
+    为了保证缓存命中率，一个函数应该使用较少的数据类型；
+    对于数组，应尽量存放相同类型的数据，这样就可以通过偏移位置来访问。                       
+- 数据表示。                     
+    简单类型数据（如整型）直接保存在句柄中，可以减少寻址时间和内存占用，
+    如果可以使用整数表示的，尽量不要用浮点类型。
+- 内存。
+    虽然JavaScript语言会自己进行垃圾回收，但我们也应尽量做到及时回收不用的内存，
+    对不再使用的对象设置为null或使用delete方法来删除(使用delete方法删除会触发隐藏类新建，需要更多的额外操作)。
+- 优化回滚。
+    在执行多次之后，不要出现修改对象类型的语句，尽量不要触发优化回滚，否则会大幅度降低代码的性能。 
+- 新机制。
+    使用JavaScript引擎或者渲染引擎提供的新机制和新接口提高性能。
