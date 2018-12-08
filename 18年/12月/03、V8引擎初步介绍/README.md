@@ -14,7 +14,7 @@
     - [内存管理](#内存管理)
     - [垃圾回收](#垃圾回收)
     - [快照](#快照)
-    - [V8 VS JavaScriptCore](#V8 VS JavaScriptCore)
+    - [V8 VS JavaScriptCore](#V8-VS-JavaScriptCore)
 - [功能扩展](#功能扩展)
     - [绑定](#绑定)
     - [Extension](#Extension)
