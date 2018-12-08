@@ -327,6 +327,7 @@
     - [49、深度递归合并JS对象](https://github.com/KyleAMathews/deepmerge)
     - [50、深度递归对比JS对象](https://github.com/flitbit/diff)
     - [51、《HTTP权威指南》每章的知识点总结](https://github.com/woai30231/http)
+    - [52、V8引擎初步介绍](./18年/12月/03、V8引擎初步介绍/README.md)
     
     
 - 其他优秀技术文章收集
