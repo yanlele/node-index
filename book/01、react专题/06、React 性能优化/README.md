@@ -72,7 +72,7 @@ class App extends Component {
 
 class Demo extends Component {
     shouldComponentUpdate(nextProps, nextState) {
-        if(nextState.title === this.props.title) {
+        if(nextProps.title === this.props.title) {
             return false;
         }
         return true;
