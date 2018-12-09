@@ -3,7 +3,9 @@
 
 #### redux
 - [redux基础知识点](./2、redux基础知识点.md)
-- [深入Redux架构](./04、深入Redux架构.md)
+- [深入Redux构建](./04、深入Redux架构.md)
+- [react 高阶函数的一个使用示例](./05、react%20高阶函数的一个使用示例/REAMDME.md)
+- [React 性能优化](./06、React%20性能优化/README.md)
 
 #### react-router4
 - [react-router4和reducers合并](./3、react-router4.md)

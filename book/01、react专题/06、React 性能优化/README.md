@@ -1,6 +1,15 @@
 # React 性能优化
 
 目录
+- [react组件的性能优化（渲染角度优化）](#react组件的性能优化（渲染角度优化）)
+    - [查看性能工具](#查看性能工具)
+    - [render里面尽量减少新建变量和bind函数，传递参数是尽量减少传递参数的数量](#render里面尽量减少新建变量和bind函数，传递参数是尽量减少传递参数的数量)
+    - [定制shouldComponentUpdate函数](#定制shouldComponentUpdate函数)
+    - [Immutable.js](#Immutable.js)
+    - [多个react组件性能优化，key的优化](#多个react组件性能优化，key的优化)
+ - [redux性能优化：reselect（数据获取时优化）](#redux性能优化：reselect（数据获取时优化）)
+
+
 
 ## react组件的性能优化（渲染角度优化）
 
