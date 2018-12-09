@@ -206,6 +206,7 @@
     - [49、实现函数防抖](./18年/11月/07、实现函数防抖/README.md)
     - [50、实现函数节流](./18年/11月/08、实现函数节流/README.md)
     - [51、深入理解JavaScript中的尾调用](./18年/11月/09、深入理解JavaScript中的尾调用/README.md)
+    - [52、Promise原理与实现](./18年/12月/05、Promise原理与实现/README.md)
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
