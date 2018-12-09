@@ -9,8 +9,6 @@
 就可以在chrome浏览器的performance，我们可以查看User Timeing来查看组件的加载时间。
 
 
-### 单个react组件性能优化
-
 ### render里面尽量减少新建变量和bind函数，传递参数是尽量减少传递参数的数量
 首先我们先思考一个问题，比如我要实现一个点击按钮使相应的num增加1，我们有哪一些方法。
 
@@ -124,8 +122,14 @@ console.log(obj === obj1); // 返回false
 容易与原生的对象进行混淆                                                
 
 
+### 多个react组件性能优化，key的优化
+react为了追求高性能，采用了时间复杂度为O(N)来比较两个属性结构的区别，因为要确切比较两个树形结构，需要通过O(N^3)，这会降低性能。
+关于key的使用我们要注意的是，这个key值要稳定不变的，就如同身份证号之于我们是稳定不变的一样。                       
+一个常见的错误就是，拿数组的的下标值去当做key，这个是很危险的，代码如下，我们一定要避免。                          
 
-
+## redux性能优化：reselect（数据获取时优化）
+这个时候，reselect就应运而生了，它的动作原理：只要相关的状态没有改变，那么就直接使用上一次的缓存结果。
+可以参考这个文章： [翻译|Redux的中间件-Reselect](https://www.jianshu.com/p/6e38c66366cd)
 
 
 
@@ -135,3 +139,4 @@ console.log(obj === obj1); // 返回false
 
 参考文章
 - [React 性能优化，你需要知道的几个点](https://www.jianshu.com/p/333f390f2e84)
+- [翻译|Redux的中间件-Reselect](https://www.jianshu.com/p/6e38c66366cd)
