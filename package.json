@@ -68,6 +68,7 @@
     "colors": "^1.2.5",
     "css-loader": "^0.28.11",
     "cssnano": "^4.0.5",
+    "deep-diff": "^1.0.2",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
     "fs-extra": "^7.0.0",
