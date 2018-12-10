@@ -78,10 +78,16 @@ module.exports = function() {
             console.log(changes);
         });
 
-        it.only('对比两个数组对象的不同', function () {
+        it('对比两个数组对象的不同', function () {
             let changes = diff(leftArr, rightArr);
             expect(changes).length.above(0);
             console.log(changes)
-        })
+        });
+
+        it.only('两个对象是一模一样的， 返回undefined', function () {
+            let changes = diff([1,2,3], [3,2,1]);
+            expect(changes).length.equal(0);
+            console.log(changes)
+        });
     })
 }

@@ -301,7 +301,7 @@
                 }
             } : undefined;
         var changes = observableDiff(lhs, rhs, observer, prefilter);
-        // 如果changes 存在 就直接changes 函数
+        // 如果changes 存在 就直接changes
         return (accum) ? accum : (changes.length) ? changes : undefined;
     }
 
