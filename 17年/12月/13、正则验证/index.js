@@ -32,7 +32,7 @@ console.log(phoneMask);*/
 // 手机号码验证
 let phone = '15213497741';
 // console.log(/^1[345789]\d{9}$/.exec(phone));
-// console.log(phone.match(/^1[345789]\d{9}$/));
+console.log(phone.match(/^1[345789]\d{9}$/));
 // console.log(phone.search(/213/));
 
 
@@ -40,6 +40,6 @@ let phone = '15213497741';
 
 
 // 千分位
-let number = '1234567890.01';
-let reg = /(\d{1,3})(?=(\d{3})+(?:$|\.))/g;
-console.log(number.toString().replace(reg, '$1,'));
+// let number = '1234567890.01';
+// let reg = /(\d{1,3})(?=(\d{3})+(?:$|\.))/g;
+// console.log(number.toString().replace(reg, '$1,'));
