@@ -332,13 +332,14 @@
     - [53、node内存优化](./18年/12月/04、node内存优化/README.md)
     
     
-- 其他优秀技术文章收集
+- 其他优秀技术文章与前沿技术收集
     - [前端九部](https://github.com/frontend9/fe9-library)
     - [冴羽博客](https://github.com/mqyqingfeng/Blog)
     - [梁少峰博客](https://github.com/youngwind/blog)
     - [多个关于react的好文章合集: 搭建react全家桶、react高阶组件、react-router4、理解redux](https://github.com/brickspert/blog)                     
     - [SunShinewyf博客:webpack、koa、express、egg、react](https://github.com/SunShinewyf/issue-blog)                      
     - [node-interview](https://github.com/ElemeFE/node-interview/tree/master/sections/zh-cn)
+    - [微前端的那些事儿](https://blog.csdn.net/qappleh/article/details/80928434)
 
     
 

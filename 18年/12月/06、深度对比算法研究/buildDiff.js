@@ -77,7 +77,7 @@ inherits(DiffArray, Diff);
 
 // 获取对象的类型
 function realTypeOf(subject) {
-    var type = typeof subject;
+    let type = typeof subject;
     if (type !== 'object') {
         return type;
     }
@@ -101,7 +101,7 @@ function realTypeOf(subject) {
  * @param lhs   左边对象
  * @param rhs   右边对象
  * @param changes   变化结果
- * @param path     变化的索引
+ * @param path      变化的索引
  * @param key       变化的具体位置
  * @param stack     比较的两个对象缓存
  */
@@ -109,24 +109,24 @@ function deepDiff(lhs, rhs, changes, path=null, key=null, stack=[]) {
     changes = changes || [];
     path = path || [];
     stack = stack || [];
-    var currentPath = path.slice(0);
+    let currentPath = path.slice(0);            // 返回新的数组对象，与原来的数组对象断开连接
     if (typeof key !== 'undefined' && key !== null) {
         currentPath.push(key);
     }
-    // Use string comparison for regexes
+    // 方法和正则表达式就按照字符串做对比
     if (realTypeOf(lhs) === 'regexp' && realTypeOf(rhs) === 'regexp') {
         lhs = lhs.toString();
         rhs = rhs.toString();
     }
 
-    var ltype = typeof lhs;
-    var rtype = typeof rhs;
-    var i, j, k, other;
+    let ltype = typeof lhs;
+    let rtype = typeof rhs;
+    let i, j, k, other;
 
-    var ldefined = ltype !== 'undefined' ||
+    let ldefined = ltype !== 'undefined' ||
         (stack && (stack.length > 0) && stack[stack.length - 1].lhs &&
             Object.getOwnPropertyDescriptor(stack[stack.length - 1].lhs, key));
-    var rdefined = rtype !== 'undefined' ||
+    let rdefined = rtype !== 'undefined' ||
         (stack && (stack.length > 0) && stack[stack.length - 1].rhs &&
             Object.getOwnPropertyDescriptor(stack[stack.length - 1].rhs, key));
 
@@ -161,8 +161,8 @@ function deepDiff(lhs, rhs, changes, path=null, key=null, stack=[]) {
                     deepDiff(lhs[i], rhs[i], changes, currentPath, i, stack);
                 }
             } else {
-                var akeys = Object.keys(lhs);
-                var pkeys = Object.keys(rhs);
+                let akeys = Object.keys(lhs);
+                let pkeys = Object.keys(rhs);
                 for (i = 0; i < akeys.length; ++i) {
                     k = akeys[i];
                     other = pkeys.indexOf(k);
@@ -195,7 +195,7 @@ function deepDiff(lhs, rhs, changes, path=null, key=null, stack=[]) {
 
 // 观察函数 观察， 直接注册执行对比不同的地方
 function observableDiff(lhs, rhs) {
-    var changes = [];
+    let changes = [];
     deepDiff(lhs, rhs, changes);
     return changes;
 }
@@ -203,7 +203,7 @@ function observableDiff(lhs, rhs) {
 
 // 入口函数
 let diff = function (lhs, rhs) {
-    var changes = observableDiff(lhs, rhs);
+    let changes = observableDiff(lhs, rhs);
     // 如果changes 存在 就直接changes 函数
     return changes.length ? changes : undefined;
 };
