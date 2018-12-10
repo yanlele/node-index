@@ -101,12 +101,11 @@ function realTypeOf(subject) {
  * @param lhs   左边对象
  * @param rhs   右边对象
  * @param changes   变化结果
- * @param path
- * @param key
- * @param stack
- * @param orderIndependent
+ * @param path     变化的索引
+ * @param key       变化的具体位置
+ * @param stack     比较的两个对象缓存
  */
-function deepDiff(lhs, rhs, changes, path=null, key=null, stack=null, orderIndependent=null) {
+function deepDiff(lhs, rhs, changes, path=null, key=null, stack=[]) {
     changes = changes || [];
     path = path || [];
     stack = stack || [];
@@ -114,8 +113,6 @@ function deepDiff(lhs, rhs, changes, path=null, key=null, stack=null, orderIndep
     if (typeof key !== 'undefined' && key !== null) {
         currentPath.push(key);
     }
-
-
     // Use string comparison for regexes
     if (realTypeOf(lhs) === 'regexp' && realTypeOf(rhs) === 'regexp') {
         lhs = lhs.toString();
@@ -151,16 +148,7 @@ function deepDiff(lhs, rhs, changes, path=null, key=null, stack=null, orderIndep
         if (!other) {
             stack.push({ lhs: lhs, rhs: rhs });
             if (Array.isArray(lhs)) {
-                // If order doesn't matter, we need to sort our arrays
-                if (orderIndependent) {
-                    lhs.sort(function (a, b) {
-                        return getOrderIndependentHash(a) - getOrderIndependentHash(b);
-                    });
 
-                    rhs.sort(function (a, b) {
-                        return getOrderIndependentHash(a) - getOrderIndependentHash(b);
-                    });
-                }
                 i = rhs.length - 1;
                 j = lhs.length - 1;
                 while (i > j) {
@@ -170,7 +158,7 @@ function deepDiff(lhs, rhs, changes, path=null, key=null, stack=null, orderIndep
                     changes.push(new DiffArray(currentPath, j, new DiffDeleted(undefined, lhs[j--])));
                 }
                 for (; i >= 0; --i) {
-                    deepDiff(lhs[i], rhs[i], changes, currentPath, i, stack, orderIndependent);
+                    deepDiff(lhs[i], rhs[i], changes, currentPath, i, stack);
                 }
             } else {
                 var akeys = Object.keys(lhs);
@@ -179,16 +167,16 @@ function deepDiff(lhs, rhs, changes, path=null, key=null, stack=null, orderIndep
                     k = akeys[i];
                     other = pkeys.indexOf(k);
                     if (other >= 0) {
-                        deepDiff(lhs[k], rhs[k], changes, currentPath, k, stack, orderIndependent);
+                        deepDiff(lhs[k], rhs[k], changes, currentPath, k, stack);
                         pkeys[other] = null;
                     } else {
-                        deepDiff(lhs[k], undefined, changes, currentPath, k, stack, orderIndependent);
+                        deepDiff(lhs[k], undefined, changes, currentPath, k, stack);
                     }
                 }
                 for (i = 0; i < pkeys.length; ++i) {
                     k = pkeys[i];
                     if (k) {
-                        deepDiff(undefined, rhs[k], changes, currentPath, k, stack, orderIndependent);
+                        deepDiff(undefined, rhs[k], changes, currentPath, k, stack);
                     }
                 }
             }
