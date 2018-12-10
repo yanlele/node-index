@@ -11,7 +11,7 @@
 - [1、react-router4和reducers合并](./3、react-router4.md)
 - [2、React-Router4.x中文文档](https://github.com/git-zhangsan/react-router4)
 - [3、React Router 中文文档](https://segmentfault.com/a/1190000014294604#articleHeader0)
-- [4、React Router 4：痛过之后的豁然开朗](https://www.jianshu.com/p/bf6b45ce5bcc)
+- [4、React-router4迁移与旧版本的对比](./07、React-router4迁移与旧版本的对比/README.md˚)
 - [5、react-router-redux](https://github.com/reactjs/react-router-redux)
 
 #### 实战相关知识点

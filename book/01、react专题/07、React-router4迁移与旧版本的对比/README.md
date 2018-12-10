@@ -1,6 +1,14 @@
 # React4迁移与旧版本的对比
 
 目录
+- [核心区别](#核心区别)
+- [包含式路由与exact](#包含式路由与exact)
+- [独立路由Switch](#独立路由Switch)
+- ["Index Routes" 和 "Not Found"](#"Index-Routes"-和-"Not-Found")
+- [嵌套布局](#嵌套布局)
+- [Match](#Match)
+- [其他](#其他)
+- [参考文章](#参考文章)
 
 
 
@@ -274,3 +282,7 @@ const UserProfilePage = ({match}) => {
 
 ## 其他
 另外，他还提到了React Router v4 中的其它部分，如 <Link> vs <NavLink>、URL Query Strings 以及 Dynamic Routes。
+
+
+## 参考文章
+- [React Router 4：痛过之后的豁然开朗](https://www.jianshu.com/p/bf6b45ce5bcc)
