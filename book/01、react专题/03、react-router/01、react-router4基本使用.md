@@ -65,7 +65,7 @@ export default combineReducers({counter,auth})
 ```
 它的作用是合并reducer,然后抛出给index.js中，让react-redux处理之后给注入给react项目用
 
-- [react-router4与合并reducers示例](../../17年/12月/12、react-router4与合并reducers示例)
+- [react-router4与合并reducers示例](../../../17年/12月/12、react-router4与合并reducers示例)
 
 > 3. 关于this.props.match.params的使用        
 

@@ -6,13 +6,13 @@
 ### redux
 - [01、redux基础知识点](./02、redux/01、redux基础知识点.md)
 - [02、深入Redux架构](./02、redux/02、深入Redux架构.md)
+- [03、理解redux和redux的中间件redux-thunk]()
 
 ### react-router4
 - [01、react-router4基本使用](./03、react-router/01、react-router4基本使用.md)
 - [02、React-router4迁移与旧版本的对比](./03、react-router/02、React-router4迁移与旧版本的对比/README.md)
 
 ### 其他知识点和实战相关知识点
-
 - [01、常用react技术栈模块介绍](./04、其他/01、常用react技术栈模块介绍.md)
 - [02、构建](./04、其他/02、构建)
 
