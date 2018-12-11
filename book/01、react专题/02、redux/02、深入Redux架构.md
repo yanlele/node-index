@@ -26,7 +26,7 @@
 
 ### 1.3、Redux工作流程
 
-![04-01](./img/react04-01.png)                              
+![04-01](../img/react04-01.png)                              
 
 首先，用户发出 Action。                         
 `store.dispatch(action);`                               

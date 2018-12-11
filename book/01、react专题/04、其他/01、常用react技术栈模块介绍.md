@@ -6,6 +6,7 @@
     - [redux](https://github.com/reactjs/redux)
     - [react-redux](https://github.com/reactjs/react-redux)
     - [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+    - [react-router-redux](https://github.com/reactjs/react-router-redux)
     
 - 其他衍生模块
     - [redux-thunk](https://github.com/gaearon/redux-thunk)      让redux有处理异步的能力

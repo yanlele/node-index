@@ -28,7 +28,7 @@ import reducers from './reducer'
 const store = createStore(reducers, compose(
 	applyMiddleware(thunk),
 	window.devToolsExtension?window.devToolsExtension():f=>f
-))
+));
 
 
 // boss genius me msg 4个页面
