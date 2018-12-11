@@ -7,6 +7,7 @@
 - [01、redux基础知识点](./02、redux/01、redux基础知识点.md)
 - [02、深入Redux架构](./02、redux/02、深入Redux架构.md)
 - [03、理解redux和redux的中间件redux-thunk](./02、redux/03、理解redux和redux的中间件redux-thunk/README.md)
+- [04、原始redux的单独使用](./02、redux/04、redux)
 
 ### react-router4
 - [01、react-router4基本使用](./03、react-router/01、react-router4基本使用.md)
