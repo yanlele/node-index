@@ -6,6 +6,7 @@
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 export const RESET = 'RESET';
+export const SET = 'SET';
 
 /*action mapper*/
 export function increment() {
@@ -23,5 +24,12 @@ export function decrement() {
 export function reset() {
     return {
         type: RESET
+    }
+}
+
+export function set(value) {
+    return {
+        data: value,
+        type: SET
     }
 }

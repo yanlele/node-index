@@ -3,7 +3,7 @@
  * create time 2018/12/11 下午8:30
  */
 
-import {increment, decrement, reset} from "./actions/counter";
+import {increment, decrement, reset, set} from "./actions/counter";
 
 import store from './store';
 
@@ -20,6 +20,7 @@ let unsubscribe = store.subscribe(()=> {
 store.dispatch(increment());
 store.dispatch(increment());
 store.dispatch(decrement());
+store.dispatch(set(100));
 store.dispatch(reset());
 
 unsubscribe();

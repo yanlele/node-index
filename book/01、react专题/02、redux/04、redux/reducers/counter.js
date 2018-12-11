@@ -6,7 +6,8 @@
 import {
     INCREMENT,
     DECREMENT,
-    RESET
+    RESET,
+    SET
 } from '../actions/counter';
 
 /*初始化数据*/
@@ -29,6 +30,10 @@ export default function reducer(state = initState, action) {
         case RESET:
             return {
                 count: 0
+            };
+        case SET:
+            return {
+                count: action.data
             };
         default:
             return state
