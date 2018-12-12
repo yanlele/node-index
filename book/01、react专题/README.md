@@ -23,3 +23,4 @@
 - [02、React-Router4.x中文文档](https://github.com/git-zhangsan/react-router4)
 - [03、React项目构建三部曲](https://github.com/ZengTianShengZ/react-lesson)
 - [04、超级经典和全面的redux的文章](http://cn.redux.js.org/)
+- [05、react-redux之connect 方法详解](http://taobaofed.org/blog/2016/08/18/react-redux-connect/)
