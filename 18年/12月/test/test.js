@@ -1,26 +1,16 @@
-/**
- * create by yanle
- * create time 2018/12/11 上午10:04
- */
+let a = [
+    {
+        a: 1,
+        b: 2
+    }
+];
+let b = a.slice(0);
+b[0].a = 2;
 
 
-let vm = {};
-let data = {
-    pageNum: 3,
-};
+console.log(a[0].a);
 
-let key, value;
-for (key in data) {
-    (function (key) {
-        Object.defineProperty(vm, key, {
-            get: function () {
-                console.log('get', data[key]);
-                return data[key];
-            },
-            set: function (newValue) {
-                console.log('set', newValue);
-                data[key] = newValue;
-            }
-        })
-    })(key)
-}
+
+console.log(a == b);
+
+console.log('1' == 1);
