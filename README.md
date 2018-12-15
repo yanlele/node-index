@@ -249,7 +249,7 @@
     - [16、发布、安装自己的npm模块](https://www.cnblogs.com/yanhua2017/p/7748491.html)
     - [17、eslint配置文件eslintrc参数详解](./18年/09月/01、eslint配置文件eslintrc参数详解/)
     - [18、2018前端常见题汇总，不定时更新](https://github.com/qianbin01/frontend_train)
-    - [19、npm镜像源的切换问题](./18年/09月/05、npm镜像源切换问题/)
+    - [19、npm镜像源的切换问题](./18年/09月/05、npm镜像源切换问题/README.md)
     - [20、基于HTML5技术的幻灯片编辑、播放、控制的全套方案](https://github.com/Jinjiang/h5slides)
     - [21、每个 JavaScript 工程师都应懂的33个概念](https://github.com/stephentian/33-js-concepts)
     - [22、JavaScript音频播放库](https://github.com/goldfire/howler.js)
