@@ -12,6 +12,7 @@
 
 ### <div id="class01">已经发布npm的开源模块</div>      
 - [koa2日志监控中间件:koa-logs-middleware](https://github.com/yanlele/koa-logs-middleware)
+- [前端工程化](https://github.com/yanlele/le-cli)
 
 
 
