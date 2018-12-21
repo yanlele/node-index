@@ -41,6 +41,11 @@
     - [38、ES6 模块与 CommonJS 模块的差异](./01_04、基础知识部分31-40.md#class01-38)
     - [39、Promise原理与实现](./01_04、基础知识部分31-40.md#class01-39)
     - [40、CSS选择器有哪些](./01_04、基础知识部分31-40.md#class01-40)
+    - [41、`display: none;`与`visibility: hidden;`的区别](./01_05、基础知识部分41-50.md#class01-41)
+    - [42、css问题汇总整编](./01_05、基础知识部分41-50.md#class01-42)
+    - [43、DOM元素e的e.getAttribute(propName)和e.propName有什么区别和联系](./01_05、基础知识部分41-50.md#class01-43)
+    - [44、offsetWidth/offsetHeight,clientWidth/clientHeight与scrollWidth/scrollHeight的区别](./01_05、基础知识部分41-50.md#class01-44)
+    - [45、请实现一个Event类,继承自此类的对象都会拥有两个方法on,off,once和trigger](./01_05、基础知识部分41-50.md#class01-45)
     
     
 - 进阶知识部分
