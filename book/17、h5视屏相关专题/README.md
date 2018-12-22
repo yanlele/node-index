@@ -33,3 +33,7 @@ RTMP是Real Time Messaging Protocol（实时消息传输协议）的首字母缩
 该协议基于TCP，是一个协议族，包括RTMP基本协议及RTMPT/RTMPS/RTMPE等多种变种。
 RTMP是一种设计用来进行实时数据通信的网络协议，主要用来在Flash/AIR平台和支持RTMP协议的流媒体/交互服务器之间进行音视频和数据通信。
 支持该协议的软件包括Adobe Media Server/Ultrant Media Server/red5等。
+
+最后使用的文件格式还是flv 格式文件。
+
+### HTTP-FLV协议
