@@ -13,3 +13,6 @@
 - [12、Promise](./12、Promise对象/README.md)
 - 13、其他知识点儿的总结
     - [01、Proxy和Reflect总结](./13、其他知识点儿的总结/01、Proxy和Reflect总结.md)
+    - [02、Iterator](./13、其他知识点儿的总结/02、Iterator.md)
+    - [03、Symbol](./13、其他知识点儿的总结/03、Symbol.md)
+    - [06、Generator总结](./13、其他知识点儿的总结/04、Generator总结.md)

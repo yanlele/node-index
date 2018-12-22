@@ -67,6 +67,7 @@
     - [10、Iterator 和 for...of 循环](./book/02、ES6&7/10、Iterator%20和%20for...of%20循环/README.md)
     - [11、Generator](./book/02、ES6&7/11、Generator/README.md)
     - [12、Promise](./book/02、ES6&7/12、Promise对象/README.md)
+    - [13、其他知识点儿的总结](./book/02、ES6&7/13、其他知识点儿的总结)
     
 - [03、css3专题](./book/03、css3专题)
     
