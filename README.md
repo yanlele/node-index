@@ -343,6 +343,7 @@
     - [SunShinewyf博客:webpack、koa、express、egg、react](https://github.com/SunShinewyf/issue-blog)                      
     - [node-interview](https://github.com/ElemeFE/node-interview/tree/master/sections/zh-cn)
     - [微前端的那些事儿](https://blog.csdn.net/qappleh/article/details/80928434)
+    - [《Node.js从入门到上线》A blog build with Koa2](https://github.com/liuxing/node-blog)
 
     
 
