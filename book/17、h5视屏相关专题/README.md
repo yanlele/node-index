@@ -106,3 +106,13 @@ widthNew	|pixels|	设置视频播放器的宽度。
 </script>
 ```
 
+#### 备用地址切换
+如果第一个地址不能播放， 制动切换到第二个地址
+```html
+<video width="320" height="240" controls>
+    <source src="movie.mp4" type="video/mp4">           
+    <source src="movie.ogg" type="video/ogg">
+    您的浏览器不支持 video 标签。
+</video>
+```
+当用了这种source 的方式之后， 那我们用video.src 是获取不到视频地址的。我们要用currentSrc 属性来获取当前地址。
