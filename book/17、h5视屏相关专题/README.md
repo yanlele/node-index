@@ -41,3 +41,78 @@ RTMP是一种设计用来进行实时数据通信的网络协议，主要用来�
 ### 总结
 - 协议之间的区别
 - 掌握不同场景采用不同协议
+
+
+
+## 2.video相关知识点儿
+比如慕课网的视频， 他们用的是blob地址， 这个是一个虚拟地址， 是为了防止视频被下载的一种措施。                      
+
+### 2.1.video属性和方法
+```html
+<video width="320" height="240" controls>
+    <source src="movie.mp4" type="video/mp4">
+    <source src="movie.ogg" type="video/ogg">
+    您的浏览器不支持 video 标签。
+</video>
+```
+
+#### 音频格式的 MIME 类型
+
+格式	|MIME-type
+:-|:-
+MP4|	video/mp4
+WebM|	video/webm
+Ogg	|video/ogg
+
+#### 可选属性
+
+属性	|值|	描述
+:-|:-|:-
+autoplay |	autoplay|	如果出现该属性，则视频在就绪后马上播放。
+controls |	controls|	如果出现该属性，则向用户显示控件，比如播放按钮。
+height |	pixels|	设置视频播放器的高度。
+loop |	loop|	如果出现该属性，则当媒介文件完成播放后再次开始播放。
+muted	|muted|	如果出现该属性，视频的音频输出为静音。
+**poster**	| URL |	规定视频正在下载时显示的图像，直到用户点击播放按钮。
+preload |	auto\metadata\none	| 如果出现该属性，则视频在页面加载时进行加载，并预备播放。如果使用 "autoplay"，则忽略该属性。
+srcNew	|URL|	要播放的视频的 URL。
+widthNew	|pixels|	设置视频播放器的宽度。
+
+#### 如果希望控制音量大小， 是必须要用js 来控制
+```html
+<script !src="">
+    let video = document.getElementById('video');
+    video.volume = 0.5;
+</script>
+```
+
+#### 播放时间的控制
+```html
+<script >
+    let video = document.getElementById('video');
+    let currentTime = video.currentTime;            // 当前时间点， 秒
+    video.currentTime = 60;
+</script>
+```
+
+#### 播放地址切换
+```html
+<script >
+    let video = document.getElementById('video');
+    let src= video.src;
+    setTimeout(function() {
+        video.src = './test-2.mp4'
+    }, 2000);
+</script>
+```
+
+#### 备用地址切换
+如果第一个地址不能播放， 制动切换到第二个地址
+```html
+<video width="320" height="240" controls>
+    <source src="movie.mp4" type="video/mp4">           
+    <source src="movie.ogg" type="video/ogg">
+    您的浏览器不支持 video 标签。
+</video>
+```
+当用了这种source 的方式之后， 那我们用video.src 是获取不到视频地址的。我们要用currentSrc 属性来获取当前地址。
