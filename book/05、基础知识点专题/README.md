@@ -46,6 +46,7 @@
     - [43、DOM元素e的e.getAttribute(propName)和e.propName有什么区别和联系](./01_05、基础知识部分41-50.md#class01-43)
     - [44、offsetWidth/offsetHeight,clientWidth/clientHeight与scrollWidth/scrollHeight的区别](./01_05、基础知识部分41-50.md#class01-44)
     - [45、请实现一个Event类,继承自此类的对象都会拥有两个方法on,off,once和trigger](./01_05、基础知识部分41-50.md#class01-45)
+    - [46、海量数据的处理-10亿个数中找出最大的10000个数](./01_05、基础知识部分41-50.md#class01-46)
     
     
 - 进阶知识部分
