@@ -12,7 +12,7 @@ const program = require('commander');
 program
     .usage('le start')
     .version('0.0.1')
-    .option('s, start', '清空项目缓存')
+    .option('-s, --start', '开启cli模板选择')
     .parse(process.argv);
 
 program.on('--help', function () {
@@ -21,12 +21,6 @@ program.on('--help', function () {
     console.log(chalk.gray('    le start'));
 });
 
-program.on('--test', function() {
-    console.log(chalk.red('我是一个test 而已'))
-});
-
-
-console.log('program', program.start);
 if(program.start) {
     console.log('你输入了: ', 'start');
 } else {
