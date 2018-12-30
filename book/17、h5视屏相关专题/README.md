@@ -130,9 +130,35 @@ widthNew	|pixels|	设置视频播放器的宽度。
     
     // durationchange  监听时长变化
     v.addEventListener('durationchange', function(e) {
-        console.log('durationchange', v.duration);          // 打印视频总时长, 创建视频的时候， 时长是NaN
+        console.log('durationchange', v.duration);   // 打印视频总时长, 创建视频的时候， 时长是NaN
     });
     
-    v.addEventListener()
+    // loadedmetadata   表示视频元数据加载
+    v.addEventListener('loadedmetadata', function(e) {
+        console.log('loadedmetadata');          // 表示视频元数据加载， 在durationchange之后触发
+    });
+    
+    // loadeddata   表示视频元数据足够了
+    v.addEventListener('loadeddata', function(e) {
+        console.log('loadeddata');              // 表示视频元数据足够了， 在loadedmetadata之后触发
+    });
+    
+    // progress  下载过程
+    v.addEventListener('progress', function(e) {
+        console.log('progress');                // 下载过程
+    });
+    
+    // canplay   表示可以播放了
+    v.addEventListener('canplay', function(e) {
+        console.log('canplay');                 // 表示可以播放了
+    });
+    
+    // canplaythrough   可以流畅播放了
+    v.addEventListener('canplaythrough', function(e) {
+        console.log('canplaythrough');          // 可以流畅播放了
+    });
 </script>
 ```
+正常要控制视频的播放或者暂停， 要坚挺canplay 和 canplaythrough
+
+
