@@ -157,6 +157,51 @@ widthNew	|pixels|	设置视频播放器的宽度。
     v.addEventListener('canplaythrough', function(e) {
         console.log('canplaythrough');          // 可以流畅播放了
     });
+    
+    // play  播放
+    v.addEventListener('play', function(e) {
+        console.log('play');                    // 视频播放
+    });
+    
+    // pause 暂停
+    v.addEventListener('pause', function(e) {
+        console.log('pause');                   // 视频暂停
+    });
+    
+    // seeking
+    v.addEventListener('seeking', function(e) {
+        console.log('seeking');                 // 用户正在出发拖动进度条的行为
+    });
+    
+    // seeked
+    v.addEventListener('seeked', function(e) {
+        console.log('seeked');                  // 用户seeking 结束
+    });
+    
+    // waiting
+    v.addEventListener('waiting', function(e) {
+        console.log('waiting');                 // 点击某个进度的时候， 如果process 是失败的, 就会出发一个waiting
+    });
+    
+    // playing
+    v.addEventListener('playing', function(e) {
+        console.log('playing');                 // 没有播放到播放过程， 就是playing 状态
+    });
+    
+    // timeupdate
+    v.addEventListener('timeupdate', function(e) {
+        console.log('timeupdate');              // 播放时间更新的时候出发的事件, 可以用于自定义进度条
+    });
+    
+    // ended
+    v.addEventListener('ended', function(e) {
+        console.log('ended');                   // 视频播放结束
+    });
+    
+    // error
+    v.addEventListener('error', function(e) {
+        console.log('error', e);                   // 错误监听
+    });
 </script>
 ```
 正常要控制视频的播放或者暂停， 要坚挺canplay 和 canplaythrough
