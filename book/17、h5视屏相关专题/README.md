@@ -1,5 +1,20 @@
 # h5视屏相关专题
 
+
+目录
+- [1.视频直播的原理](#1.视频直播的原理)
+    - [HLS协议(Safari)原理](#HLS协议(Safari)原理)
+    - [RTMP协议](#RTMP协议)
+    - [HTTP-FLV协议](#HTTP-FLV协议)
+    - [总结](#总结)
+- [2.video相关知识点儿](#2.video相关知识点儿)
+    - [video属性和方法](#2.1.video属性和方法)
+    - [video常用事件](#2.2.video常用事件)
+    
+
+
+
+
 ## 1.视频直播的原理
 ![01](./img/01.png)
 
@@ -204,6 +219,9 @@ widthNew	|pixels|	设置视频播放器的宽度。
     });
 </script>
 ```
-正常要控制视频的播放或者暂停， 要坚挺canplay 和 canplaythrough
+正常要控制视频的播放或者暂停， 要坚挺canplay 和 canplaythrough;
+
+
+
 
 
