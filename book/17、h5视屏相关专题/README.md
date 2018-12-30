@@ -62,7 +62,7 @@ RTMP是一种设计用来进行实时数据通信的网络协议，主要用来�
 :-|:-
 MP4|	video/mp4
 WebM|	video/webm
-Ogg	|video/ogg
+Ogg	|   video/ogg
 
 #### 可选属性
 
@@ -116,3 +116,23 @@ widthNew	|pixels|	设置视频播放器的宽度。
 </video>
 ```
 当用了这种source 的方式之后， 那我们用video.src 是获取不到视频地址的。我们要用currentSrc 属性来获取当前地址。
+
+### 2.2.video常用事件
+有如下常用事件： 视频查找、时长变化、元数据加载、视频下载监听、可播放监听、播放监听、暂停监听、查找开始、查找结束、视频加载等待、视频结束
+```html
+<script >
+    let v = document.getElementById('vs');
+    
+    // loadstart 视频查找
+    v.addEventListener('loadstart', function(e) {
+        console.log('loadstart');               // 视频查找
+    });
+    
+    // durationchange  监听时长变化
+    v.addEventListener('durationchange', function(e) {
+        console.log('durationchange', v.duration);          // 打印视频总时长, 创建视频的时候， 时长是NaN
+    });
+    
+    v.addEventListener()
+</script>
+```
