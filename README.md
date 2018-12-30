@@ -350,6 +350,7 @@
     - [《Koa.js 设计模式-学习笔记》](https://github.com/chenshenhai/koajs-design-note)
     - [learn-rxjs](https://github.com/btroncone/learn-rxjs)
     - [vue源码解析](https://github.com/muwoo/blogs)
+    - [每日时报，会以前端技术体系为主要分享课题](https://github.com/wubaiqing/zaobao)
     
 
 
