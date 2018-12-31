@@ -13,7 +13,22 @@ let bindEvent = function (dom, type, fn) {
     }
 };
 
+
+/**
+ * 下面的在IE低版本浏览器运行会有问题
+ * 这个地方运行就有问题了，因为this.style 中的this 在低版本IE中，指向的是window对象
+ * @type {HTMLElement | null}
+ */
 let demo = document.getElementById('dome');
 bindEvent(demo, 'click', function () {
     this.style.background = 'red';
 });
+
+
+// 低版本IE 绑定的实现
+function bindIEEvent(dom, type, fn, data) {
+    let data = data || {};
+    dom.attachEvent('on'+ type, function (e) {
+        fn.call(dom, e, data);
+    })
+}
