@@ -26,9 +26,9 @@ bindEvent(demo, 'click', function () {
 
 
 // 低版本IE 绑定的实现
-function bindIEEvent(dom, type, fn, data) {
+let bindIEEvent = function (dom, type, fn, data) {
     let data = data || {};
     dom.attachEvent('on'+ type, function (e) {
         fn.call(dom, e, data);
-    })
-}
+    });
+};
