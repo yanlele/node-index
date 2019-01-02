@@ -40,6 +40,8 @@ class Mediator {
     }
 }
 
+module.exports = Mediator;
+
 let mediator = new Mediator();
 mediator.register('demo', function () {
     console.log('first');
@@ -49,3 +51,5 @@ mediator.register('demo', function () {
 });
 
 mediator.send('demo');  // 分别输出first, second
+
+
