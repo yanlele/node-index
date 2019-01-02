@@ -14,6 +14,38 @@ class Iterator {
 
         // 当前索引值， 默认： 0
         this.index = 0;
-        this.splice = [].splice()
+        this.splice = [].splice();
+    }
+
+    first() {
+
+    }
+
+    second() {
+
+    }
+
+    pre() {
+
+    }
+
+    next() {
+
+    }
+
+    get() {
+
+    }
+
+    dealEach() {
+
+    }
+
+    dealItem() {
+
+    }
+
+    exclusive() {
+
     }
 }
