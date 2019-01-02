@@ -26,6 +26,16 @@ let Visitor = {
 };
 
 
-// 操作类数组
+// 这样就可以操作类数组的方式操作对象了
 let a = {};
-console.log(a.length);
+console.log(a.length);          // undefined
+Visitor.push(a, 1,2,3,4);
+console.log(a.length);          // 4
+Visitor.push(a, 4,5,6);
+console.log(a);                 // { '0': 1, '1': 2, '2': 3, '3': 4, '4': 4, '5': 5, '6': 6, length: 7 }
+console.log(a.length);          // 7
+Visitor.pop(a);
+console.log(a);                 // { '0': 1, '1': 2, '2': 3, '3': 4, '4': 4, '5': 5, length: 6 }
+console.log(a.length);          // 6
+Visitor.splice(a, 2);
+console.log(a);                 // { '0': 1, '1': 2, length: 2 }
