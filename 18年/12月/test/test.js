@@ -1,16 +1,14 @@
-let a = [
-    {
-        a: 1,
-        b: 2
-    }
-];
-let b = a.slice(0);
-b[0].a = 2;
+let obj = {
+    name: 'yanle',
+    age: 27,
+    address: 'chongqing'
+};
 
 
-console.log(a[0].a);
+for (let [key, value] of Object.entries(obj)) {
+    // console.log([key, value]); // ['a', 1], ['b', 2], ['c', 3]
 
+    console.log([key]);
+}
 
-console.log(a == b);
-
-console.log('1' == 1);
+// console.log(Object.entries(obj));
