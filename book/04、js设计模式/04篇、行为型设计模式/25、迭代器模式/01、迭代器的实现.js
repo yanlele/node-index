@@ -79,3 +79,28 @@ class Iterator {
         }
     }
 }
+
+
+/*
+* 比如获取页面中id 为 container 的ul元素中的4个li元素
+* */
+let demo  = new Iterator('li', 'container');
+console.log(demo.first());          // <li>1</li>
+console.log(demo.pre());            // null
+console.log(demo.next());           // <li>2</li>
+console.log(demo.get(2000));        // <li>1</li>
+
+// 处理所有元素
+demo.dealEach(function (text, color) {
+    this.innerHTML = text;
+    this.style.background = color;
+}, 'test', 'pink');
+
+// 排他思想处理3，4元素
+demo.exclusive([2,3], function () {
+    this.innerHTML = '被排除了';
+    this.style.background = 'green';
+}, function () {
+    this.innerHTML = '选中的';
+    this.style.background = 'red';
+});
