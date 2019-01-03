@@ -18,7 +18,7 @@ let newPerson = deepExtend({} ,person);
 console.log('实例1：                 ');
 console.log('newPerson', newPerson);
 console.log('=============');
-newPerson.name = '123123123123';
+person.name = '123123123123';
 console.log('newPerson', newPerson);
 console.log('person', person);
 
