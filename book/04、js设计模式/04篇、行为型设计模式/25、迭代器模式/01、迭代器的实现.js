@@ -60,11 +60,22 @@ class Iterator {
         }
     }
 
-    dealItem() {
-
+    // 对某一个元素执行某一个方法
+    dealItem(num, fn) {
+        fn.apply(this.get(num), this.splice.call(arguments, 2))
     }
 
-    exclusive() {
-
+    // 排他方式处理某一个元素
+    exclusive(nums, allfn, numfn) {
+        // 对所有元素执行回调函数
+        this.dealEach(allfn);
+        // 如果是num类型的数组
+        if(Object.prototype.toString.call(nums) === "[object Array]") {
+            nums.forEach((num) => {
+                this.dealItem(num, numfn)
+            })
+        } else {
+            this.dealItem(nums, numfn)
+        }
     }
 }
