@@ -68,7 +68,7 @@ A.extend = A.fn.extend = function () {
         target = arguments[0],          // 第一个参数作为原对象
         j;                              // 拓展对象中的属性
     if(i === len) {
-        target = this;
+        // target = this;
         i--;
     }
     for (; i < len; i++) {
@@ -79,3 +79,25 @@ A.extend = A.fn.extend = function () {
     return target;
 };
 
+let demo = A.extend({first: 1});
+console.log(demo);
+
+// 扩展 A.fn 方式1
+A.extend(A.fn, {version: '1.0'});
+console.log(A('demo').version);
+
+// 扩展 A.fn 方式2
+A.fn.extend({
+    getVersion: function () {
+        return this.version
+    }
+});
+console.log(A('demo').getVersion());
+
+// 扩展 A 方式1
+A.extend(A, {author: 'yanle'});
+console.log(A.author);
+
+// 扩展 A 方式2
+A.extend({nickName: 'yanlele'});
+console.log(A.nickName);
