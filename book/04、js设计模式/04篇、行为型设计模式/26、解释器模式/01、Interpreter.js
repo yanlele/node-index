@@ -66,3 +66,7 @@ class Interpreter {
         return path;
     }
 }
+
+// 使用方式
+let path = Interpreter.main(document.getElementById('span7'));
+console.log(path);          // HTML>BODY|HEAD>DEV2>DEV2>DEV>UL>LI2>SPAN
