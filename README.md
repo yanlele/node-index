@@ -257,6 +257,7 @@
     - [21、每个 JavaScript 工程师都应懂的33个概念](https://github.com/stephentian/33-js-concepts)
     - [22、JavaScript音频播放库](https://github.com/goldfire/howler.js)
     - [23、内容一键复制到剪切板模块](https://github.com/zenorocha/clipboard.js)
+    - [24、参数校验模块:parameter](https://github.com/node-modules/parameter)
     
 
 - koa2
