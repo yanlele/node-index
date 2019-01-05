@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="container">
+    <button id="btn">dom</button>
+</div>
+
+
+<script>
+
+    /*
+    * 下面一段代码中， g变量中保存了元素绑定的click事件没有清楚， 这个时间就会泄露到内存中去
+    * 失去了对其的控制
+    * */
+    let g = function (id) {
+        return document.getElementById(id);
+    };
+    g('btn').onclick = function () {
+        g('container').innerHTML = '触发了事件'
+    };
+
+    /*
+    * 利用委托模式解决上面所面临的问题
+    * */
+    g('container').onclick = function (e = window.event.srcElement) {
+        let target = e && e.target;
+        if(target.id === 'btn') {
+            g('container').innerHTML = '触发了事件'
+        }
+    }
+</script>
+</body>
+</html>
