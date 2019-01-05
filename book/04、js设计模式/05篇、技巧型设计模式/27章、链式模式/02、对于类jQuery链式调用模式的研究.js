@@ -67,7 +67,7 @@ A.extend = A.fn.extend = function () {
         len = arguments.length,         // 获取参数长度
         target = arguments[0],          // 第一个参数作为原对象
         j;                              // 拓展对象中的属性
-    if(i === len) {
+    if (i === len) {
         // target = this;
         i--;
     }
@@ -101,3 +101,39 @@ console.log(A.author);
 // 扩展 A 方式2
 A.extend({nickName: 'yanlele'});
 console.log(A.nickName);
+
+
+/*
+* 我们想A.fn对象中添加的方法简介的添加到了A.fn.init的原型对象上了。
+* 对于此还有继续添加扩展其他的方法
+* */
+A.fn.extend({
+    // 添加事件
+    on: function () {
+        if (document.addEventListener) {
+            return function (type, fn) {
+                let i = this.length - 1;
+                for (; i >= 0 ; i--) {
+                    this[i].addEventListener(type, fn, false);
+                }
+                return this;
+            }
+        } else if(document.attachEvent) {
+            return function (type, fn) {
+                let i = this.length - 1;
+                for (; i >= 0; i--) {
+                    this[i].addEvent('on'+type, fn);
+                }
+                return this;
+            }
+        } else {
+            return function (type, fn) {
+                let i = this.length - 1;
+                for(;i >= 0;i--) {
+                    this[i]['on'+type] = fn;
+                }
+                return this;
+            }
+        }
+    }
+});

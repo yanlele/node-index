@@ -10,10 +10,10 @@
 - [七、基础框架知识归类](#class07)
 - [八、年度计划和日志目录](#class08)
 
+
 ### <div id="class01">已经发布npm的开源模块</div>      
 - [koa2日志监控中间件:koa-logs-middleware](https://github.com/yanlele/koa-logs-middleware)
 - [前端工程化](https://github.com/yanlele/le-cli)
-
 
 
 ### <div id="class02">对别人项目的研究（详细阅读源码之后写下的一些笔记和项目注释-已完成）</div>                  
@@ -23,7 +23,6 @@
 - [04、一个完整的react+redux项目示例和人总结](https://github.com/bailicangdu/react-pxq)
 - [05、某博客知识点儿，写的很好，找个时间可以多学习一下](https://github.com/muwoo/blogs)
 - [06、cvms构建工具项目架构思路](./03、项目架构思路学习/01、CVMS构建工具项目架构思路.xmind)
-
 
 
 ### <div id="class03">个人项目列表（已完成）</div>
@@ -136,7 +135,6 @@
     - [05、jquery 实现轮播图](./18年/3月/12、jquery%20实现轮播图/index.html)
     - [06、jQuery网站公告上下滚动自动轮播代码](./18年/3月/13、jQuery网站公告上下滚动自动轮播代码/index.html)
     - [07、jquery上传组件plupload使用示例](./18年/3月/15、jquery上传组件plupload使用示例/index.js)
-    
     
     
 - [其他开源常用模块组件收录目录](./通用功能js模块/other)
