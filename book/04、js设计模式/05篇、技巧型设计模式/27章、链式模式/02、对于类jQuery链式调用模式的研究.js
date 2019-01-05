@@ -137,3 +137,12 @@ A.fn.extend({
         }
     }
 });
+
+A.fn.extend({
+    // 将 '-' 分割线转为驼峰式： 'border-color' -> 'borderColor'
+    camelCase: function (str) {
+        return str.replace(/\-(\w)/g, function (all, letter) {
+            return letter.toUpperCase();
+        })
+    }
+});
