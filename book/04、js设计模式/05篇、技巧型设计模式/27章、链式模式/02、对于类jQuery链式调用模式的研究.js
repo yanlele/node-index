@@ -162,19 +162,61 @@ A.extend({
                 } else {
                     return getComputedStyle(this[0], false)[name];
                 }
-            } else if(typeof args[0] === 'object') {    // 为对象时则设置多个样式
-                for(let i in args[0]) {
+            } else if (typeof args[0] === 'object') {    // 为对象时则设置多个样式
+                for (let i in args[0]) {
                     for (let j = this.length - 1; j >= 0; j--) {
                         // 调用拓展方法 camelCase
                         this[j].style[A.camelcase(i)] = args[0][i];
                     }
                 }
             }
-        }else if(len === 2) {     // 两个参数则设置一个样式
-            for(let j = this.length - 1; j>=0;j--) {
+        } else if (len === 2) {     // 两个参数则设置一个样式
+            for (let j = this.length - 1; j >= 0; j--) {
                 this[j].style[A.camelCase(args[0])] = args[1];
             }
         }
         return this;
     }
 });
+
+A.fn.extend({
+    attr: function () {
+        let args = arguments,
+            len = args.length;
+        if (this.length < 1) {
+            return this;
+        }
+        // 如果一个参数的情况
+        if (len === 1) {
+            if (typeof args[0] === 'string') {
+                return this[0].getAddress(args[0]);
+            } else if (typeof args[0] === 'object') {        // 多个属性的情况
+                for (let i in args[0]) {
+                    for (let j = this.length - 1; j >= 0; j--) {
+                        this[j].setAttribute(i, arg[0][i]);
+                    }
+                }
+            }
+        } else if (len === 2) {          // 两个参数则设置每个元素的单个属性
+            for (let j = this.length - 1; j >= 0; j--) {
+                this[j].setAttribute(args[0], args[1]);
+            }
+        }
+        return this;
+    }
+});
+
+A.fn.extend({
+    html: function () {
+        let args = arguments,
+            len = arg.length;
+        if (len === 0) {
+            return this[0] && this[0].innerHTML;
+        } else {
+            for (let i = this.length - 1; i >= 0; i--) {
+                this[i].innerHTML = args[0]
+            }
+        }
+        return this;
+    }
+})
