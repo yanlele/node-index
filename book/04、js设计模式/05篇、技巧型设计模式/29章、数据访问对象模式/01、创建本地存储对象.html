@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    class BaseLocalStorage {
+        constructor(preId, timeSign) {
+            this.preId = preId;
+            this.timeSing = timeSign;
+            this.status = {
+                SUCCESS: 0,         // 成功
+                FAILURE: 1,         // 失败
+                OVERFLOW: 2,        // 溢出
+                TIMEOUT: 3,         // 过期
+            };
+            this.strage = localStorage || window.localStorage;
+        }
+
+        // 获取本地存储数据库数据真实字段
+        getKey(key) {
+            return this.preId + key;
+        }
+
+        // 添加或者修改数据
+        set(key, value, callback, time) {
+
+        }
+
+        // 获取数据
+        get(key, callback) {
+
+        }
+
+        // 删除数据
+        remove(key, vallback) {
+
+        }
+    }
+</script>
+</body>
+</html>
