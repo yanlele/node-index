@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="container">
+    <li>111111111111111111111111111111111</li>
+    <li>2222222222222222222222222</li>
+    <li>33333333333333333333333333</li>
+    <li>444444444444444444444444444</li>
+    <li>5555555555555555555555555</li>
+</ul>
+
+
+<script>
+
+    /*
+    * 日历模块， 用户点击每个日期格子的时候将格子的背景色变为灰色， 大多数的做法就是把每个日期格子都绑定一个事件
+    * 这样做的缺点是绑定事件太多， 内存消耗太大
+    * */
+    // let li = document.getElementsByTagName('li'),
+    //     len = li.length - 1;
+    // for (; len >= 0; len--) {
+    //     li[len].onclick = function () {
+    //         this.style.color = 'red';
+    //     }
+    // }
+
+
+    /*
+    * 委托模式实际上就是讲事件委托给更高层面上的肤元素去绑定执行。
+    * */
+    let ul = document.getElementById('container');
+    ul.onclick = function (e = window.event) {
+        let tar = e.target || e.srcElement;
+        if (tar.nodeName.toLowerCase() === 'li') {
+            tar.style.color = 'blue';
+        }
+    }
+</script>
+</body>
+</html>
