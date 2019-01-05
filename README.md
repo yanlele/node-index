@@ -23,7 +23,7 @@
 - [04、一个完整的react+redux项目示例和人总结](https://github.com/bailicangdu/react-pxq)
 - [05、某博客知识点儿，写的很好，找个时间可以多学习一下](https://github.com/muwoo/blogs)
 - [06、cvms构建工具项目架构思路](./03、项目架构思路学习/01、CVMS构建工具项目架构思路.xmind)
-- [07、DoraCMS是基于Nodejs+express+mongodb编写的一套内容管理系统:DoraCMS](https://github.com/doramart/DoraCMS)
+
 
 
 ### <div id="class03">个人项目列表（已完成）</div>
@@ -39,7 +39,7 @@
 
 ### <div id="class04">正在进行的个人项目 - 包含待研究的项目(进行中)</div>
 - [01、基于webpack3的前端工程自动化构建（实现可配置的jQuery、vue、react和全栈项目脚手架）](https://github.com/yanlele/le-cli)
-- [02、基于react 高仿csdn博客前端](https://github.com/yanlele/react-blog-front)
+- [02、DoraCMS是基于Nodejs+express+mongodb编写的一套内容管理系统:DoraCMS](https://github.com/doramart/DoraCMS)
 - [03、基于react 高仿csdn博客后端](https://github.com/yanlele/react-blog-server)
 - [04、koa+TypeScript构建商城类项目服务端*****](https://github.com/yanlele/koa-typescript)
 - [05、《Node.js从入门到上线》—— Koa2 + MongoDB 搭建博客系统](https://github.com/liuxing/node-blog)
