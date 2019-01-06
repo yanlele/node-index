@@ -91,9 +91,20 @@
             }).on(this.container, 'mouseleave', function () {
                 throttle(hideLayer);
                 throttle(true, showLayer);
-            })
+            });
 
             // 绑定icon 事件
+            for (let i = 0; i < this.lis.length; i++) {
+                this.lis[i].index = i;
+                this.on(this.lis[i], 'mouseenter', function () {
+                    let index = this.index;
+                    for (let i = 0; i < this.imgs.length; i++) {
+                        this.imgs[i].className = '';
+                    }
+                    this.imgs[index].className = 'show';
+                    this.layer.style.left = -22 + 60 * index + 'px';l
+                })
+            }
         }
 
         // 绑定方法
