@@ -9,7 +9,7 @@
 
 <script>
     class BaseLocalStorage {
-        constructor(preId, timeSign) {
+        constructor(preId, timeSign = '|-|') {
             this.preId = preId;
             this.timeSing = timeSign;
             this.status = {
@@ -36,7 +36,7 @@
         set(key, value, callback, time) {
             // 默认操作状态是成功的
             let status = this.status.SUCCESS,
-                key = this.getKey(key);
+                getKey = this.getKey(key);
             try {
                 time = +new Date(time) || time.getTime();
             } catch (e) {
@@ -45,12 +45,12 @@
             }
 
             try {
-                this.storage.setItem(key, time + this.timeSing + value);
+                this.storage.setItem(getKey, time + this.timeSing + value);
             } catch (e) {
                 // 溢出失败， 返回溢出状态
                 status = this.status.OVERFLOW;
             }
-            callback && callback.call(this, status, key, value);
+            callback && callback.call(this, status, getKey, value);
         }
 
         /**
@@ -61,15 +61,14 @@
          */
         get(key, callback) {
             let status = this.status.SUCCESS,
-                key = this.getKey(key),
+                getKey = this.getKey(key),
                 value = null,                   // 默认值为空
                 timeSignLen = this.timeSing.length,         // 时间戳与存储数据之间的拼接长度
-                _this = this,
                 index,                  // 时间戳与春出数据之间的拼接符其实位置
                 time,                   // 时间戳
                 result;                 // 最终获取到的数据
             try {
-                value = this.storage.getItem(key);
+                value = this.storage.getItem(getKey);
             } catch (e) {
                 result = {
                     status: this.status.FAILURE,
@@ -111,23 +110,35 @@
          * @param callback      回调函数
          */
         remove(key, callback) {
-            let status = this.status.SUCCESS,
-                key = this.getKey(key),
+            let status = this.status.FAILURE,
+                getKey = this.getKey(key),
                 value = null;
-            try {
-                value = this.storage.getItem(key);
-            } catch(e) {
-                if(value) {
-                    try {
-                        // 删除数据
-                        this.storage.removeItem(key);
-                        status = this.status.SUCCESS;
-                    } catch (e) {}
-                }
+            value = this.storage.getItem(getKey);
+            if (value) {
+                // 删除数据
+                this.storage.removeItem(getKey);
+                status = this.status.SUCCESS;
             }
-            callback && callback.call(this, status, status > 0 ? null : value.slice(value.indexOf(this.timeSing)+this.timeSing.length))
+            callback && callback.call(this, status, status > 0 ? null : value.slice(value.indexOf(this.timeSing) + this.timeSing.length))
         }
     }
+
+    let LS = new BaseLocalStorage('LS__');
+    LS.set('a', 'xiao ming', function () {
+        console.log(arguments)
+    });
+    LS.get('a', function () {
+        console.log(arguments)
+    });
+    LS.remove('a', function () {
+        console.log(arguments)
+    });
+    LS.remove('a', function () {
+        console.log(arguments)
+    });
+    LS.get('a', function () {
+        console.log(arguments)
+    });
 </script>
 </body>
 </html>
