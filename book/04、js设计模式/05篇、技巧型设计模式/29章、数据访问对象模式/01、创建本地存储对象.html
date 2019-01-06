@@ -26,7 +26,13 @@
             return this.preId + key;
         }
 
-        // 添加或者修改数据
+        /**
+         * 添加或者修改数据
+         * @param key           数据字段标识
+         * @param value         数据值
+         * @param callback      回到函数
+         * @param time          添加时间
+         */
         set(key, value, callback, time) {
             // 默认操作状态是成功的
             let status = this.status.SUCCESS,
@@ -47,9 +53,56 @@
             callback && callback.call(this, status, key, value);
         }
 
-        // 获取数据
+        /**
+         * 获取数据
+         * @param key           数据字段标识
+         * @param callback      回调函数
+         * @returns {*}
+         */
         get(key, callback) {
+            let status = this.status.SUCCESS,
+                key = this.getKey(key),
+                value = null,                   // 默认值为空
+                timeSignLen = this.timeSing.length,         // 时间戳与存储数据之间的拼接长度
+                _this = this,
+                index,                  // 时间戳与春出数据之间的拼接符其实位置
+                time,                   // 时间戳
+                result;                 // 最终获取到的数据
+            try {
+                value = this.storage.getItem(key);
+            } catch (e) {
+                result = {
+                    status: this.status.FAILURE,
+                    value: null
+                };
+                callback && callback.call(this, result.status, result, value);
+                return result;
+            }
 
+            // 获取成功
+            if (value) {
+                index = value.indexOf(this.timeSing);
+                time = +value.slice(0, index);          // 获取时间戳
+                if (+new Date(time) > +new Date() || time === 0) {
+                    // 获取数据结果（拼接后面的字符串）
+                    value = value.slice(index + timeSignLen);
+                } else {
+                    // 获取则结果为null
+                    value = null;
+                    status = this.status.TIMEOUT;
+                    time.remove(key);
+                }
+            } else {
+                status = this.status.FAILURE;
+            }
+
+            // 设置结果
+            result = {
+                status: status,
+                value: value
+            };
+            callback && callback.call(this, result.status, result.value);
+            return result;
         }
 
         // 删除数据
