@@ -12,7 +12,7 @@
         let isClear = arguments[0], fn;
 
         // 第一个参数表示是否清楚计时器
-        if(typeof isClear === 'boolean') {
+        if (typeof isClear === 'boolean') {
             // 第二个参数则为函数
             fn = arguments[1];
             fn.__trottleID && clearTimeout(fn.__trottleID);
@@ -31,7 +31,18 @@
                 fn.apply(p.context, p.args)
             }, p.time)
         }
+    };
+
+    // 实际使用
+    function moveScroll() {
+        let top = $(document).scrollTo();
+        $('#back').animate({top: top + 30}, 400, 'easeOutCubic')
     }
+
+    // 监听页面滚动事件
+    $(window).on('scroll', function () {
+        throttle(moveScroll);
+    })
 </script>
 </body>
 </html>
