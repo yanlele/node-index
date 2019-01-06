@@ -18,7 +18,7 @@
                 OVERFLOW: 2,        // 溢出
                 TIMEOUT: 3,         // 过期
             };
-            this.strage = localStorage || window.localStorage;
+            this.storage = localStorage || window.localStorage;
         }
 
         // 获取本地存储数据库数据真实字段
@@ -29,7 +29,22 @@
         // 添加或者修改数据
         set(key, value, callback, time) {
             // 默认操作状态是成功的
-            let status = this.status.SUCCESS;
+            let status = this.status.SUCCESS,
+                key = this.getKey(key);
+            try {
+                time = +new Date(time) || time.getTime();
+            } catch (e) {
+                // 传入的时间参数或者时间参数有无获取默认时间， 一个月
+                time = +new Date() + 1000 * 60 * 60 * 24 * 31;
+            }
+
+            try {
+                this.storage.setItem(key, time + this.timeSing + value);
+            } catch (e) {
+                // 溢出失败， 返回溢出状态
+                status = this.status.OVERFLOW;
+            }
+            callback && callback.call(this, status, key, value);
         }
 
         // 获取数据
@@ -38,7 +53,7 @@
         }
 
         // 删除数据
-        remove(key, vallback) {
+        remove(key, callback) {
 
         }
     }
