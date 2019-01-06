@@ -88,7 +88,12 @@
                 throttle(true, hideLayer);
                 // 延迟显示浮层方法
                 throttle(showLayer);
+            }).on(this.container, 'mouseleave', function () {
+                throttle(hideLayer);
+                throttle(true, showLayer);
             })
+
+            // 绑定icon 事件
         }
 
         // 绑定方法
