@@ -105,9 +105,27 @@
             return result;
         }
 
-        // 删除数据
+        /**
+         * 删除数据
+         * @param key           数据字段标识
+         * @param callback      回调函数
+         */
         remove(key, callback) {
-
+            let status = this.status.SUCCESS,
+                key = this.getKey(key),
+                value = null;
+            try {
+                value = this.storage.getItem(key);
+            } catch(e) {
+                if(value) {
+                    try {
+                        // 删除数据
+                        this.storage.removeItem(key);
+                        status = this.status.SUCCESS;
+                    } catch (e) {}
+                }
+            }
+            callback && callback.call(this, status, status > 0 ? null : value.slice(value.indexOf(this.timeSing)+this.timeSing.length))
         }
     }
 </script>
