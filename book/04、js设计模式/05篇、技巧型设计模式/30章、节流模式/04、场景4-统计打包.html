@@ -17,12 +17,29 @@
             this.img = new Image();                 // 请求触发器， 实现简单的get请求
         }
 
+        // 发送请求方法
         sendLog() {
-
+            let logStr = '',                                        // 请求参数
+                fireData = this.data.splice(0, this.MaxNum);        // 截取MaxNum个统计项发送
+            for (let i = 0, len = fireData.length; i < len; i++) {
+                logStr += 'log' + i + '=';
+                for (let j in fireData[i]) {
+                    // 添加统计项参数键 + i + '='
+                    logStr += j + this.keyValueSplitStr + fireData[i][j];
+                    // 添加统计项统计参数之间的间隔
+                    logStr += this.itemSplitStr;
+                }
+                // 拼接参数
+                logStr = logStr.replace(/\|$/, '') + '&';
+            }
+            // 添加统计项打包长度
+            logStr += 'logLength=' + len;
+            // 发送请求
+            this.img.src = 'a.gif?' + logStr;
         }
 
         run(param) {
-            if(!param) {
+            if (!param) {
                 this.sendLog();
                 return false;
             }
@@ -32,6 +49,25 @@
             this.data.length >= this.MaxNum && this.sendLog();
         }
     }
+
+    let logPack = new LogPack();
+    let btn = document.getElementById('btn');
+
+    // 多次出发四件才会发送一个大包后的统计
+    btn.onClick = function () {
+        logPack.run({
+            btnId: this.id,
+            context: this.innerHTML,
+            type: 'click'
+        })
+    };
+    btn.onClick = function () {
+        logPack.run({
+            btnId: this.id,
+            context: this.innerHTML,
+            type: 'click'
+        })
+    };
 </script>
 </body>
 </html>
