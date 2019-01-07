@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    class LogPack {
+        constructor() {
+            this.data = [];                         // 缓存数据组
+            this.MaxNum = 10;                       // 请求缓存
+            this.itemSplitStr = '|';                // 统计项统计参数间隔符
+            this.keyValueSplitStr = '*';            // 统计项统计参数键值对间隔符
+            this.img = new Image();                 // 请求触发器， 实现简单的get请求
+        }
+
+        sendLog() {
+
+        }
+
+        run(param) {
+            if(!param) {
+                this.sendLog();
+                return false;
+            }
+            // 添加统计项
+            this.data.push(param);
+            // 如果统计项大于请求缓存最大值， 则发送请求包
+            this.data.length >= this.MaxNum && this.sendLog();
+        }
+    }
+</script>
+</body>
+</html>
