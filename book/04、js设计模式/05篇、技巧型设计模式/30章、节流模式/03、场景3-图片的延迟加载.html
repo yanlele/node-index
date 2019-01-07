@@ -51,13 +51,33 @@
         }
 
         // 判断图片是否在可视范围内
-        shouldShow() {
+        shouldShow(i) {
+            let img = this.imgs[i];
 
+            let scrollTop = document.documentElement.scrollTop || document.body.scrollTop,      // 可视范围顶部
+                scrollBottom  = scrollTop + document.documentElement.clientHeight;              // 可视范围底部
+            let imgTop = this.pageY(img),                   // 图片的顶部位置
+                imgBottom = imgTop + img.offsetHeight;      // 图片的额底部位置
+
+            /*
+            * 判断图片是否在可视范围内：
+            * 图片底部高度大于可视视图顶部高度并且图片底部低于可视视图底部高度，
+            * 或者 图片顶部高度大于可视视图顶部高度并且图片顶部高度小于可视视图底部高度
+            * */
+            if(imgBottom > scrollTop && imgBottom < scrollBottom || (imgTop > scrollTop && imgTop < scrollBottom)) {
+                return true;
+            }
+            // 不满足上面的条件
+            return false;
         }
 
         // 获取元素页面中的纵坐标
-        pageY() {
-
+        pageY(element) {
+            if(element.offsetParent) {
+                return element.offsetTop + this.pageY(element.offsetParent);
+            } else {
+                return element.offsetTop;
+            }
         }
 
         // 绑定时间简化版
