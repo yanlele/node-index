@@ -7,6 +7,31 @@
 <body>
 
 <script>
+    let throttle = function () {
+        let isClear = arguments[0], fn;
+
+        // 第一个参数表示是否清楚计时器
+        if (typeof isClear === 'boolean') {
+            // 第二个参数则为函数
+            fn = arguments[1];
+            fn.__trottleID && clearTimeout(fn.__trottleID);
+        } else {
+            // 第一个参数为函数
+            fn = isClear;
+            // 第二个参数为函数执行时候的参数
+            let param = arguments[1];
+            let p = Object.assign({
+                context: null,
+                args: [],
+                time: 300
+            }, param);
+            arguments.callee(true, fn);
+            fn.__trottleID = setTimeout(function () {
+                fn.apply(p.context, p.args)
+            }, p.time)
+        }
+    };
+
     /*
     * 首先是坚挺页面的scroll 与 resize 事件， 对这两个时间做节流处理
     * */
@@ -81,13 +106,27 @@
         }
 
         // 绑定时间简化版
-        on() {
-
+        on(element, type, fn) {
+            if(element.addEventListener) {
+                addEventListener(type, fn, false);
+            } else {
+                element.attachEvent('on'+type, fn, false);
+            }
         }
 
         // 为窗口帮绑定resize事件与scroll 事件
         bindEvent() {
-
+            this.on(window, 'resize',  () => {
+                // 节流处理更新图片逻辑
+                throttle(this.update, {
+                    context: this
+                })
+            });
+            this.on(window, 'scroll', ()=> {
+                throttle(this.update, {
+                    context: this
+                })
+            })
         }
     }
 </script>
