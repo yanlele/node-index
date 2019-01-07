@@ -25,12 +25,29 @@
 
         // 获取延迟加载图片
         getImgs() {
-
+            let arr = [];
+            let imgs = this.container.getElementsByTagName('img');
+            for (let i = 0, len = imgs.length; i < len; i++) {
+                arr.push(imgs[i])
+            }
+            return arr;
         }
 
         // 加载图片
         update() {
-
+            if (!this.imgs.length) {
+                return false;
+            }
+            // 图片长度
+            let i = this.imgs.length;
+            // 遍历图片
+            for (--i; i >= 0; i--) {
+                if(this.shouldShow(i)) {
+                    this.imgs[i].src = this.imgs[i].getAttribute('data-src');
+                    // 清除缓存图片
+                    this.igms.splice(i, 1);
+                }
+            }
         }
 
         // 判断图片是否在可视范围内
