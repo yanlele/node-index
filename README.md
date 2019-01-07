@@ -257,6 +257,7 @@
     - [22、JavaScript音频播放库](https://github.com/goldfire/howler.js)
     - [23、内容一键复制到剪切板模块](https://github.com/zenorocha/clipboard.js)
     - [24、参数校验模块:parameter](https://github.com/node-modules/parameter)
+    - [25、WebStrom Live Template 建代码块](https://blog.csdn.net/liangrongliu1991/article/details/79626960)
     
 
 - koa2
