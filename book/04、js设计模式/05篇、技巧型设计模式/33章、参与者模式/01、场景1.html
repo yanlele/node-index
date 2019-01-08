@@ -29,11 +29,28 @@
             }, false);
         }
         // .............
-    }
+    };
 
     /*
-    *
+    * 上面的方法确实是解决了参数传递的问题， 但是引发了一个新的问题
+    * 新的问题就是添加事件回调函数就不能移除了
+    * 为了解决这个问题， 就引入了bind 闭包
     * */
+    let bind = function (fn, context) {
+        return function () {
+            return fn.apply(context, arguments)
+        }
+    };
+    // 对于bind 方法的测试
+    let demoObj = {
+        title: '这是一个例子'
+    };
+    let demoFn = function () {
+        console.log(this.title)
+    };
+    let bindFn = bind(demoFn, demoObj);
+    demoFn();               // undefined
+    bindFn();               // '这是一个例子'
 </script>
 </body>
 </html>
