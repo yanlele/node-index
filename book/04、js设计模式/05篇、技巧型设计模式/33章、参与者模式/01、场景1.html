@@ -68,6 +68,22 @@
     bindFn = bind(demoFn, p);
     button.addEventListener('click', bindFn);           // [MouseEvent]  Window
     button.removeEventListener('click', bindFn)
+
+    /*
+    * 第一个需求是添加事件和移除事件已经成功了
+    * 第二个需求就是函数添加额外的自定义参数
+    * 这个时候就需要借助于函数柯里化了
+    * 函数柯里化： 根据传递的参数不同， 让一个函数存在多种状态， 处理的是函数
+    * */
+    let curry = function () {
+        let Slice = [].slice;
+        let args = Slice.call(arguments, 1);
+        return function () {
+            let addArgs = Slice.call(arguments),
+                allArgs = args.concat(addArgs);
+            return fn.apply(null, allArgs);
+        }
+    }
 </script>
 </body>
 </html>
