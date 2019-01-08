@@ -51,7 +51,36 @@
                 throw new Error('您的浏览器不支持Ajax.');
             }
         }
-    })()
+    })();
+
+    /*
+    * 第二种方案： 惰性加载
+    * 加载时不损失性能， 第一次调用的时候损失性能
+    * */
+    let createXHR2 = function () {
+        if (typeof XMLHttpRequest !== 'undefined') {
+            createXHR2 = function () {
+                return new XMLHttpRequest();
+            }
+        } else if (typeof ActiveXObject !== 'undefined') {
+            createXHR2 =  function () {
+                if (typeof arguments.callee.activeXString !== 'string') {
+                    let versions = ['MSXML2.XMLHttp.6.0', 'MSXML2.XMLHttp.3.0', 'MSXML2.XMLHttp'],
+                        i = 0,
+                        len = versions.length;
+                    for (; i < len; i++) {
+                        new ActiveXObject(versions[i]);
+                        arguments.callee.activeXString = versions[i];
+                    }
+                }
+            }
+        } else {
+            createXHR2 = function () {
+                throw new Error('您的浏览器不支持Ajax.');
+            }
+        }
+        return createXHR2;
+    }
 </script>
 </body>
 </html>
