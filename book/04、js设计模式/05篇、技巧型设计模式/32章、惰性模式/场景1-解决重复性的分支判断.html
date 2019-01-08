@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    let A = {};
+    A.on = function (dom, type, fn) {
+        if (dom.addEventListener) {
+            dom.addEventListener(type, fn, false);
+        } else if (dom.attachEvent) {
+            dom.attachEvent('on' + type, fn);
+        } else {
+            dom['on' + type] = fn;
+        }
+    };
+    /*
+    * 上面的代码存在的问题， 每次添加事件都要走一遍能力检测。
+    * 解决办法之一， 对document能力检测， 通过闭包在页面加载时执行， 达到重写A.on的目的
+    * */
+    A.on2 = function (dom, type, fn) {
+        if (document.addEventListener) {
+            return function (dom, type, fn) {
+                dom.addEventListener(type, fn, false);
+            }
+        } else if (document.attachEvent) {
+            return function (dom, type, fn) {
+                dom.attachEvent('on' + type, fn);
+            }
+        } else {
+            return function (dom, type, fn) {
+                dom['on' + type] = fn;
+            }
+        }
+    }()
+</script>
+</body>
+</html>
