@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let A = {
+        event: {}
+    };
+    // 事件模块
+    A.event.on = function (dom, type, fn) {
+        if (dom.addEventListener) {
+            dom.addEventListener(type, fun, false);
+        } else if (dom.attachEvent) {
+            dom.attachEvent('on' + type, fn);
+        } else {
+            dom['on' + type] = fn;
+        }
+    };
+
+    /*上面存在的问题， addEventListener 没有办法在回到中传递参数， 做如下的修改*/
+    A.event.on2 = function (dom, tyoe, fn, data) {
+        if (dom.addEventListener) {
+            dom.addEventListener(type, function (e) {
+                fn.call(dom, e, data)
+            }, false);
+        }
+        // .............
+    }
+
+    /*
+    *
+    * */
+</script>
+</body>
+</html>
