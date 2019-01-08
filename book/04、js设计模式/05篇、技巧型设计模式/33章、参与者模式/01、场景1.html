@@ -85,18 +85,31 @@
         }
     };
     // 柯里化的测试
-    let add = function (num1, num2) {
-        return num1 + num2;
-    };
-    let add5 = function (num) {
-        return add(5, num)
-    };
-    console.log(add(1, 2));          // 3
-    console.log(add5(6));           // 11
-    add5 = curry(add, 5);
-    console.log(add5(7));           // 12
-    let add7and8 = curry(add, 7, 8);
-    console.log(add7and8());        // 15
+    // let add = function (num1, num2) {
+    //     return num1 + num2;
+    // };
+    // let add5 = function (num) {
+    //     return add(5, num)
+    // };
+    // console.log(add(1, 2));          // 3
+    // console.log(add5(6));           // 11
+    // add5 = curry(add, 5);
+    // console.log(add5(7));           // 12
+    // let add7and8 = curry(add, 7, 8);
+    // console.log(add7and8());        // 15
+
+    /*
+    * 通过柯里化重写bind
+    * */
+    bind = function (fn, context) {
+        let Slice = Array.prototype.slice,
+            args = Slice.call(arguments, 2);
+        return function () {
+            let addArgs = Slice.call(arguments),
+                allArgs = addArgs.concat(args);
+            return fn.apply(context, allArgs);
+        }
+    }
 </script>
 </body>
 </html>
