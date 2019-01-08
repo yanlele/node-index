@@ -6,6 +6,9 @@
 </head>
 <body>
 
+<button>click me</button>
+<p></p>
+
 <script>
     let A = {
         event: {}
@@ -42,15 +45,26 @@
         }
     };
     // 对于bind 方法的测试
-    let demoObj = {
-        title: '这是一个例子'
-    };
+    // let demoObj = {
+    //     title: '这是一个例子'
+    // };
+    // let demoFn = function () {
+    //     console.log(this.title)
+    // };
+    // let bindFn = bind(demoFn, demoObj);
+    // demoFn();               // undefined
+    // bindFn();               // '这是一个例子'
+
+    /*
+    * 实际应用
+    * */
+    let button  = document.getElementsByTagName('button')[0];
+    let p = document.getElementsByTagName('p')[0];
     let demoFn = function () {
-        console.log(this.title)
+        console.log(arguments, this);
     };
-    let bindFn = bind(demoFn, demoObj);
-    demoFn();               // undefined
-    bindFn();               // '这是一个例子'
+    let bindFn = bind(demoFn);
+    button.addEventListener('click', bindFn);           // [MouseEvent]  Window
 </script>
 </body>
 </html>
