@@ -7,7 +7,7 @@
 <body>
 
 <button>click me</button>
-<p></p>
+<p>123</p>
 
 <script>
     let A = {
@@ -64,7 +64,10 @@
         console.log(arguments, this);
     };
     let bindFn = bind(demoFn);
+    bindFn = bind(demoFn, button);
+    bindFn = bind(demoFn, p);
     button.addEventListener('click', bindFn);           // [MouseEvent]  Window
+    button.removeEventListener('click', bindFn)
 </script>
 </body>
 </html>
