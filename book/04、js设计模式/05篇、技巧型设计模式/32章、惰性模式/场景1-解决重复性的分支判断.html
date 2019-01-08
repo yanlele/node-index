@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-
+<button id="click">click</button>
 
 <script>
     let A = {};
@@ -36,7 +36,30 @@
                 dom['on' + type] = fn;
             }
         }
-    }()
+    }();
+
+    /*
+    * 解决办法之二： 惰性执行
+    * */
+    A.on3 = function (dom, type, fn) {
+        if (document.addEventListener) {
+            A.on3 = function (dom, type, fn) {
+                dom.addEventListener(type, fn, false);
+            }
+        } else if (document.attachEvent) {
+            A.on3 = function (dom, type, fn) {
+                dom.attachEvent('on' + type, fn);
+            }
+        } else {
+            A.on3 = function (dom, type, fn) {
+                dom['on' + type] = fn;
+            }
+        }
+        A.on3(dom, type, fn);
+    };
+    A.on3(document.getElementById('click'), 'click', function () {
+        console.log(11)
+    })
 </script>
 </body>
 </html>
