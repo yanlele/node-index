@@ -109,7 +109,18 @@
                 allArgs = addArgs.concat(args);
             return fn.apply(context, allArgs);
         }
-    }
+    };
+    // 测试
+    // let demoDate1 = {
+    //     text: '这是第一组数据'
+    // };
+    // let demoData2 = {
+    //     text: '这是第二组数据'
+    // };
+    // bindFn = bind(demoFn, button, demoDate1);
+    // bindFn = bind(demoFn, button, demoDate1, demoData2);
+    // bindFn = bind(demoFn, p, demoDate1);
+    // bindFn = demoFn.bind(p, demoDate1);
 </script>
 </body>
 </html>
