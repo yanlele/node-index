@@ -136,6 +136,24 @@
             }
         }
     }
+
+    /*
+    * 反柯里化函数
+    * */
+    Function.prototype.unCurry = function () {
+        return ()=> {
+            return Function.prototype.call.apply(this, arguments);
+        }
+    };
+    // 验证方法
+    let toString = Object.prototype.toString.unCurry();
+    console.log(toString(function(){}));
+    console.log(toString([]));
+
+    let push = [].push.unCurry();
+    let demoArr = {};
+    push(demoArr, '第一个成员', '第二个成员');
+    console.log(demoArr);
 </script>
 </body>
 </html>
