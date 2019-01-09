@@ -121,6 +121,21 @@
     // bindFn = bind(demoFn, button, demoDate1, demoData2);
     // bindFn = bind(demoFn, p, demoDate1);
     // bindFn = demoFn.bind(p, demoDate1);
+
+    /*
+    * 为了浏览器兼容性的实现， 我们需要给未提供bind方法的浏览器添加bind方法
+    * */
+    if(Function.prototype.bind === undefined) {
+        Function.prototype.bind = function (context) {
+            let Slice = Array.prototype.slice,
+                args = Slice.call(arguments, 1);
+            return () => {
+                let addArgs = Slice.call(arguments),
+                    allArgs = args.concat(addArgs);
+                return this.apply(context, allArgs);
+            }
+        }
+    }
 </script>
 </body>
 </html>
