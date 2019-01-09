@@ -10,6 +10,27 @@
 <script>
     class Writer {
         constructor() {
+            this.dfd = [];                  // 注册了的等待对象容器
+            this.doneArr = [];              // 成功回调方法容器
+            this.failArr = [];              // 失败回调方法容器
+            this.slice = Array.prototype.slice;     // 缓存Array.slice方法
+        }
+    }
+
+    // 监控兑现各类
+    class Promise {
+        constructor() {
+            this.resolved = false;          // 监控对象是否解决成功状态
+            this.rejected = false;          // 监控对象是否解决失败状态
+        }
+
+        // 解决成功
+        resolve() {
+
+        }
+
+        // 解决失败
+        reject() {
 
         }
     }
