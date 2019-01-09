@@ -15,10 +15,33 @@
             this.failArr = [];              // 失败回调方法容器
             this.slice = Array.prototype.slice;     // 缓存Array.slice方法
         }
+
+        // 创建监听对象
+        deferred() {
+            return new PromiseRebuild();
+        }
+
+        // 回调执行方法
+        _exec(arr) {
+
+        }
+
+        // 监控异步方法
+        when() {
+
+        }
+
+        done() {
+
+        }
+
+        fail() {
+
+        }
     }
 
     // 监控兑现各类
-    class Promise {
+    class PromiseRebuild {
         constructor() {
             this.resolved = false;          // 监控对象是否解决成功状态
             this.rejected = false;          // 监控对象是否解决失败状态
