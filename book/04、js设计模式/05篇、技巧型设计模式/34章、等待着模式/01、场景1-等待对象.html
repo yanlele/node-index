@@ -32,15 +32,25 @@
 
         // 监控异步方法
         when() {
-
+            // 设置监控对象
+            this.dfd = this.slice.call(arguments);
+            let i = this.dfd.length;
+            for (--i; i >= 0; i--) {
+                if(!this.dfd[i] || this.dfd[i].resolved || this.dfd[i].rejected || !this.dfd[i] instanceof PromiseRebuild) {
+                    this.dfd.splice(i, 1);
+                }
+            }
+            return this;
         }
 
         done() {
-
+            this.doneArr = this.doneArr.concat(this.slice.call(arguments));
+            return this;
         }
 
         fail() {
-
+            this.failArr = this.failArr.concat(this.slice.call(arguments));
+            return this;
         }
     }
 
