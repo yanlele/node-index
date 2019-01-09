@@ -23,7 +23,11 @@
 
         // 回调执行方法
         _exec(arr) {
-
+            let i = 0,
+                len = arr.length;
+            for (; i < len; i++) {
+                arr[i] && arr[i]();
+            }
         }
 
         // 监控异步方法
@@ -40,21 +44,41 @@
         }
     }
 
-    // 监控兑现各类
-    class PromiseRebuild {
+    // 监控对象类
+    class PromiseRebuild extends Writer {
         constructor() {
+            super();
             this.resolved = false;          // 监控对象是否解决成功状态
             this.rejected = false;          // 监控对象是否解决失败状态
         }
 
         // 解决成功
         resolve() {
-
+            // 修改状态
+            this.resolved = true;
+            if (!this.dfd.length) {
+                return false;
+            }
+            // 遍历所有监控对象
+            for (let i = this.dfd.length - 1; i >= 0; i--) {
+                // 如果有任意一个监控兑现更没有被解决或者解决失败则返回
+                if (this.dfd[i] && !this.dfd.resolved || this.dfd[i].rejected) {
+                    return false;
+                }
+                this.dfd.splice(i, 1);
+            }
+            this._exec(this.doneArr)
         }
 
         // 解决失败
         reject() {
-
+            this.rejected = true;
+            if (!this.dfd.length) {
+                return false;
+            }
+            // 清除所有监控对象
+            this.dfd.splice(0);
+            this._exec();
         }
     }
 </script>
