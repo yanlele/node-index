@@ -8,7 +8,7 @@
 
 
 <script>
-    class Writer {
+    class Waiter {
         constructor() {
             this.dfd = [];                  // 注册了的等待对象容器
             this.doneArr = [];              // 成功回调方法容器
@@ -17,7 +17,7 @@
         }
 
         // 创建监听对象
-        deferred() {
+        Deferred() {
             return new PromiseRebuild();
         }
 
@@ -55,7 +55,7 @@
     }
 
     // 监控对象类
-    class PromiseRebuild extends Writer {
+    class PromiseRebuild extends Waiter {
         constructor() {
             super();
             this.resolved = false;          // 监控对象是否解决成功状态
@@ -91,6 +91,36 @@
             this._exec();
         }
     }
+
+    let waiter = new Waiter();
+    let first = function () {
+        let dtd = waiter.Deferred();
+        setTimeout(function () {
+            console.log('first finish');
+            dtd.resolve();
+        }, 5000);
+        return dtd;
+    };
+    first();
+    let second = function () {
+        let dtd = waiter.Deferred();
+        setTimeout(function () {
+            console.log('second finish');
+            dtd.resolve()
+        }, 10000);
+        return dtd;
+    };
+    second();
+
+    waiter.when(first, second)
+        .done(function () {
+            console.log('success')
+        }, function () {
+            console.log('success again')
+        })
+        .fail(function () {
+            console.log('fail');
+        });
 </script>
 </body>
 </html>
