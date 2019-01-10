@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    /*
+    * 封装一个get请求
+    * */
+    let ajaxGet = function (url, success, fail) {
+        let xhr = new XMLHttpRequest();
+        let dtd = waiter.Deferred();
+        xhr.onload = function (event) {
+            // 请求成功
+            if((xhr.status >= 200 && xhr.status <=300) || xhr.status === 304) {
+                success && success();
+                dtd.resolve();
+            } else {
+                // 请求失败
+                dtd.reject();
+                fail && fail();
+            }
+        };
+        xhr.open('get', url, true);
+        xhr.send(null);
+    }
+</script>
+</body>
+</html>
