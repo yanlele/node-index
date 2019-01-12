@@ -366,14 +366,3 @@ service network restart
 :-|:-
 rz | 上传到服务器的文件
 sz fileName | 服务器上文件下载到本地
-
-
-
-
-
-
-
-
-
-
-
