@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    /*
+    * 普通的场景情况
+    * */
+    let data = null,
+        dom = A('#nav'),
+        createNav = function () {
+            // A 工程师完成创建导航创建逻辑
+            let li  = A('li', dom);
+            for (let i = 0, len = data.length; i < len; i++) {
+                if(data[i].hasGuide) {
+                    $(li[i]).addClass('has-guide')
+                }
+            }
+
+            // B 工程师加入 完成对导航添加事件需求
+            let li = A('li', dom);
+            li.on('mouseover', function () {
+                // 显示下拉框逻辑
+            }).on('mouseout', function () {
+                // 隐藏下拉框逻辑
+            })
+        };
+
+        A.ajax('/data/nav', function () {
+            if(res.errorNo === 0) {
+                data = res.data;
+                createNav();
+            }
+        })
+</script>
+</body>
+</html>
