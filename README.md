@@ -363,6 +363,7 @@
     - [react-redux-typescript-boilerplate](https://github.com/rokoroku/react-redux-typescript-boilerplate)
     - [react-webpack-typescript-starter](https://github.com/vikpe/react-webpack-typescript-starter)
     - [typescript-react-redux](https://github.com/rjz/typescript-react-redux)
+    - [TypeScript [ React + React-Router + Redux + Redux-Thunk ] Starter](https://github.com/welearnmore/WLM-TypeScript-React-Starter)
 
 
 ### <div id="class08">年度计划和日志目录</div>
