@@ -356,6 +356,7 @@
     - [vue源码解析](https://github.com/muwoo/blogs)
     - [每日时报，会以前端技术体系为主要分享课题](https://github.com/wubaiqing/zaobao)
     - [《快乐的 Linux 命令行》](https://github.com/billie66/TLCL)
+    - [学习资源 or 大前端导航](https://github.com/webproblem/learning-article)
 
 - 值得好好学习的开源项目
     - [基于 node.js + Mongodb 构建的后台系统](https://github.com/bailicangdu/node-elm)
