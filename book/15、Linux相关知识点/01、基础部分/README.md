@@ -61,6 +61,7 @@ ssh serviceName@ip 就可以直接连接服务端了
 
 配置语法：
 
+| 名称 | 描述|
 |:-|:-|
 |Host|别名|
 |HostName|主机名|
