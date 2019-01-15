@@ -362,6 +362,7 @@
     - [基于 node.js + Mongodb 构建的后台系统](https://github.com/bailicangdu/node-elm)
     - [react-redux-typescript-boilerplate](https://github.com/rokoroku/react-redux-typescript-boilerplate)
     - [react-webpack-typescript-starter](https://github.com/vikpe/react-webpack-typescript-starter)
+    - [typescript-react-redux](https://github.com/rjz/typescript-react-redux)
 
 
 ### <div id="class08">年度计划和日志目录</div>
