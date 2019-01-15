@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    // 模块管理对象F
+    class F {
+        /**
+         * 创建模块
+         * @param str
+         * @param fn
+         * @returns {*}
+         */
+        static define(str, fn) {
+            let parts = str.split('.'),
+                old = this,
+                parent = this,
+                i = 0,
+                len = 0;                // i 是模块成绩， len是模块层级长度
+            // 如果第一个模块是管理模块器， 则移除
+            if (parts[0] === 'F') {
+                parts = parts.slice(1);
+            }
+            // 屏蔽对define与module模块
+            if (parts[0] === 'define' || parts[0] === 'module') {
+                return false;
+            }
+
+            // 遍历路由模块并且定义每层模块
+            for (len = parts.length; i < len; i++) {
+                // 如果父模块中不存在当前模块
+                if (typeof parent[parts[i]] === 'undefined') {
+                    // 申明当前模块
+                    parent[parts[i]] = {};
+                }
+                // 缓存下一层的祖父模块
+                old = parent;
+                // 缓存下一层的父级模块
+                parent = parent[parts[i]];
+            }
+            // 如果给定模块方法则定义该模块方法
+            if (fn) {
+                // 此时 i 等于 parts.length , 所以要减一
+                old[parts[--i]] = fn();
+            }
+            return this;
+        };
+
+        // 使用模块
+        static module() {
+            let args = Array.prototype.slice.call(arguments),               // 参数转为数组
+                fn = args.pop(),                // 获取执行的函数
+                parts = args[0] && args[0] instanceof Array ? args[0] : args,
+                modules = [],               // 依赖模块列表
+                modIDs = [],                // 模块路由
+                i = 0,                      // 依赖路由
+                ilen = parts.length,        // 依赖模块长度
+                parent, j, jlen;            // 分别是福模块， 模块路由层级索引， 模块路由层级长度
+
+            // 遍历依赖模块
+            while (i < ilen) {
+                if (typeof parts[i] === 'string') {
+                    parent = this;
+                    modIDs = parts[i].replace(/^F\./, '').split('.');
+                    // 遍历模块路由层级
+                    for (j = 0, jlen = modIDs.length; j < jlen; j++) {
+                        // 重置父模块
+                        parent = parent[modIDs[j]] || false;
+                    }
+                    // 将模块添加到依赖模块列表中去。
+                    modules.push(parent);
+                } else {
+                    // 直接头添加依赖模块列表中
+                    modules.push(parts[i]);
+                }
+                // 获取下一个依赖
+                i++;
+            }
+            fn.apply(null, modules);
+        }
+    }
+
+    // 加载脚本
+    let loadScript = function (src) {
+        let _script = document.createElement('script');
+        _script.type = 'text/JavaScript';
+        _script.src = src;
+        document.getElementsByTagName('head')[0].appendChild(_script);
+    };
+
+    /**
+     * 加载localstroage文件
+     * 这个地方是注定加载不到的， 请求script 是异步操作
+     */
+    loadScript('localstorage.js');
+    F.module('localstorage', function (ls) {
+        // do something
+    });
+
+    /*
+    * 创建和调度模块
+    * */
+    F.module = function (url, modDeps, modCallBack) {
+        let args = Array.prototype.call(arguments),
+            callback = args.pop(),
+            deps = (args.length && args[args.length - 1] instanceof Array) ? args.pop() : [],
+            url = arugs.length ? args.pop() : null,
+            params = [],                // 依赖模块列表
+            depsCount = 0,
+            i = 0,
+            len;
+        if(len = deps.length) {
+            // 遍历依赖模块
+            while (i < len) {
+                (function (i) {
+                    // 添加未加载依赖模块数量统计
+                    depsCount ++;
+                    loadModule(deps[i], function (mod) {
+                        // 依赖模块序列中添加依赖模块接口引用
+                        params[i] = mod;
+                        depsCount--;
+                        if(depsCount === 0) {
+                            setModule(url, params, callback);
+                        }
+                    });
+                })(i);
+                i++;
+            }
+        } else {
+            // 在模块缓存器中矫正模块， 并且执行构造函数
+            setModule(url, [], callback);
+        }
+    }
+</script>
+</body>
+</html>
