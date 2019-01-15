@@ -57,8 +57,32 @@
                 parts = parts.slice(1);
             }
             // 屏蔽对define与module模块
+            if(parts[0] === 'define' || parts[0] === 'module') {
+                return false;
+            }
+
+            // 遍历路由模块并且定义每层模块
+            for(len = parts.length; i<len;i++) {
+                // 如果父模块中不存在当前模块
+                if(typeof parts[parts[i]] === 'undefined') {
+                    // 申明当前模块
+                    parent[parts[i]] = {};
+                }
+                // 缓存下一层的祖父模块
+                old = parent;
+                // 缓存下一层的父级模块
+                parent = parent[parts[i]];
+            }
+            // 如果给定模块方法则定义该模块方法
+            if(fn) {
+                // 此时 i 等于 parts.length , 所以要减一
+                old[parts[--i]] = fn();
+            }
+            return this;
         };
     }
+
+
 </script>
 </body>
 </html>
