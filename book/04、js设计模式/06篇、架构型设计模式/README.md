@@ -15,11 +15,11 @@
 开发一个模块管理核心。
 ```js
 /*
-    * 模块化开发就是讲复杂的系统分解为高内聚，低耦合的模块。
-    * 每个工程师都可以去开发自己的模块实现复杂的系统可控， 可维护， 可扩展。 模块相互之间可以调用
-    * 要点： 首先要有一个模块管理器， 管理模块的创建和调度
-    * 模块调动： 调用分为两类， 一类同步模块调用的实现， 第二类是一步模块的实现
-    * */
+* 模块化开发就是讲复杂的系统分解为高内聚，低耦合的模块。
+* 每个工程师都可以去开发自己的模块实现复杂的系统可控， 可维护， 可扩展。 模块相互之间可以调用
+* 要点： 首先要有一个模块管理器， 管理模块的创建和调度
+* 模块调动： 调用分为两类， 一类同步模块调用的实现， 第二类是一步模块的实现
+* */
 // 模块管理对象F
 class F {
     /**
@@ -111,3 +111,101 @@ class F {
 #### 实际场景
 场景一                     
 对于加载的文件模块调用， 及时加载这个文件还是调用不到的。
+```js
+/*
+* 上面的module方法里面， 有两个方法我们还没有定义的， 一个是loadModule方法， 还有一个是 setModule方法。
+* 我们先实现loadModule, loadModule 又分为三种情况
+* 1、模块已经加载过， 我们要区分文件已经加载完成还是正在加载中
+* 2、文件没有加载完成， 我们要将加载完成回调函数缓存入模块加载完成回调函数容器中。
+* 3、一俩模块对应的文件未被要求加载过， 那么我们要加载该文件， 并且将该依赖模块的初始化信息写入模块缓存器中
+* */
+let getUrl = function (moduleName) {
+    return String(moduleName).replace(/\.js$/g, '') + '.js';
+};
+loadScript = function (src) {
+    // 创建script
+    let _script = document.createElement('script');
+    _script.type = 'type/JavaScript';
+    _script.charset = 'UTF-8';
+    _script.async = src;
+    _script.src = src;
+    document.getElementsByTagName('head')[0].appendChild(_script);
+};
+let moduleCache = {},
+    setModule = function (moduleName, params, callback) {
+        let _module, fn;
+        if (moduleCache[moduleName]) {
+            _module = moduleCache[moduleName];
+            _module.status = 'loaded';
+            _module.exports = callback ? callback.apply(_module, params) : null;
+            while (fn = _module.onload.shift()) {
+                fn(_module.exports);
+            }
+        } else {
+            callback && callback.apply(null, params);
+        }
+    };
+let loadModule = function (moduleName, callback) {
+    // 依赖模块
+    let _module;
+    if (moduleCache[moduleName]) {
+        _module = moduleCache[moduleName];
+        if (_module.satus === 'loaded') {
+            setTimeout(callback(_module.exports), 0);
+        } else {
+            _module.onload.push(callback);
+        }
+    } else {
+        moduleCache[moduleName] = {
+            moduleName: moduleName,
+            status: 'loading',
+            exports: null,
+            onload: [callback]
+        };
+        loadScript(getUrl(moduleName));
+    }
+};
+
+/*
+* 创建和调度模块
+* */
+F.module = function (url, modDeps, modCallBack) {
+    let args = Array.prototype.call(arguments),
+        callback = args.pop(),
+        deps = (args.length && args[args.length - 1] instanceof Array) ? args.pop() : [],
+        url = arugs.length ? args.pop() : null,
+        params = [],                // 依赖模块列表
+        depsCount = 0,
+        i = 0,
+        len;
+    if (len = deps.length) {
+        // 遍历依赖模块
+        while (i < len) {
+            (function (i) {
+                // 添加未加载依赖模块数量统计
+                depsCount++;
+                loadModule(deps[i], function (mod) {
+                    // 依赖模块序列中添加依赖模块接口引用
+                    params[i] = mod;
+                    depsCount--;
+                    if (depsCount === 0) {
+                        setModule(url, params, callback);
+                    }
+                });
+            })(i);
+            i++;
+        }
+    } else {
+        // 在模块缓存器中矫正模块， 并且执行构造函数
+        setModule(url, [], callback);
+    }
+};
+```
+代码示例： [异步模块加载](./36章、异步模块模式/01、场景1-异步模块加载.html)
+
+
+
+
+
+
+
