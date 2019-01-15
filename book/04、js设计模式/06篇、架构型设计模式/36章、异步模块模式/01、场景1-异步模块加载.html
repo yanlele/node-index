@@ -110,10 +110,10 @@
     * 2、文件没有加载完成， 我们要将加载完成回调函数缓存入模块加载完成回调函数容器中。
     * 3、一俩模块对应的文件未被要求加载过， 那么我们要加载该文件， 并且将该依赖模块的初始化信息写入模块缓存器中
     * */
-    let getUrl = function(moduleName) {
+    let getUrl = function (moduleName) {
         return String(moduleName).replace(/\.js$/g, '') + '.js';
     };
-    loadScript = function(src){
+    loadScript = function (src) {
         // 创建script
         let _script = document.createElement('script');
         _script.type = 'type/JavaScript';
@@ -124,14 +124,24 @@
     };
     let moduleCache = {},
         setModule = function (moduleName, params, callback) {
-
+            let _module, fn;
+            if (moduleCache[moduleName]) {
+                _module = moduleCache[moduleName];
+                _module.status = 'loaded';
+                _module.exports = callback ? callback.apply(_module, params) : null;
+                while (fn = _module.onload.shift()) {
+                    fn(_module.exports);
+                }
+            } else {
+                callback && callback.apply(null, params);
+            }
         };
     let loadModule = function (moduleName, callback) {
         // 依赖模块
         let _module;
-        if(moduleCache[moduleName]) {
+        if (moduleCache[moduleName]) {
             _module = moduleCache[moduleName];
-            if(_module.satus === 'loaded') {
+            if (_module.satus === 'loaded') {
                 setTimeout(callback(_module.exports), 0);
             } else {
                 _module.onload.push(callback);
@@ -159,17 +169,17 @@
             depsCount = 0,
             i = 0,
             len;
-        if(len = deps.length) {
+        if (len = deps.length) {
             // 遍历依赖模块
             while (i < len) {
                 (function (i) {
                     // 添加未加载依赖模块数量统计
-                    depsCount ++;
+                    depsCount++;
                     loadModule(deps[i], function (mod) {
                         // 依赖模块序列中添加依赖模块接口引用
                         params[i] = mod;
                         depsCount--;
-                        if(depsCount === 0) {
+                        if (depsCount === 0) {
                             setModule(url, params, callback);
                         }
                     });
