@@ -102,6 +102,51 @@
         // do something
     });
 
+
+    /*
+    * 上面的module方法里面， 有两个方法我们还没有定义的， 一个是loadModule方法， 还有一个是 setModule方法。
+    * 我们先实现loadModule, loadModule 又分为三种情况
+    * 1、模块已经加载过， 我们要区分文件已经加载完成还是正在加载中
+    * 2、文件没有加载完成， 我们要将加载完成回调函数缓存入模块加载完成回调函数容器中。
+    * 3、一俩模块对应的文件未被要求加载过， 那么我们要加载该文件， 并且将该依赖模块的初始化信息写入模块缓存器中
+    * */
+    let getUrl = function(moduleName) {
+        return String(moduleName).replace(/\.js$/g, '') + '.js';
+    };
+    loadScript = function(src){
+        // 创建script
+        let _script = document.createElement('script');
+        _script.type = 'type/JavaScript';
+        _script.charset = 'UTF-8';
+        _script.async = src;
+        _script.src = src;
+        document.getElementsByTagName('head')[0].appendChild(_script);
+    };
+    let moduleCache = {},
+        setModule = function (moduleName, params, callback) {
+
+        };
+    let loadModule = function (moduleName, callback) {
+        // 依赖模块
+        let _module;
+        if(moduleCache[moduleName]) {
+            _module = moduleCache[moduleName];
+            if(_module.satus === 'loaded') {
+                setTimeout(callback(_module.exports), 0);
+            } else {
+                _module.onload.push(callback);
+            }
+        } else {
+            moduleCache[moduleName] = {
+                moduleName: moduleName,
+                status: 'loading',
+                exports: null,
+                onload: [callback]
+            };
+            loadScript(getUrl(moduleName));
+        }
+    };
+
     /*
     * 创建和调度模块
     * */
@@ -135,7 +180,7 @@
             // 在模块缓存器中矫正模块， 并且执行构造函数
             setModule(url, [], callback);
         }
-    }
+    };
 </script>
 </body>
 </html>
