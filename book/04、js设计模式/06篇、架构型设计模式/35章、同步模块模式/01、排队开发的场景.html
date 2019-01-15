@@ -6,6 +6,7 @@
 </head>
 <body>
 
+<dvi id="test"> test</dvi>
 
 <script>
     /*
@@ -50,22 +51,23 @@
     class F {
         static define(str, fn) {
             let parts = str.split('.'),
-                old = parent = this,
+                old = this,
+                parent = this,
                 i = 0,
                 len = 0;                // i 是模块成绩， len是模块层级长度
             // 如果第一个模块是管理模块器， 则移除
-            if(parts[0] === 'F') {
+            if (parts[0] === 'F') {
                 parts = parts.slice(1);
             }
             // 屏蔽对define与module模块
-            if(parts[0] === 'define' || parts[0] === 'module') {
+            if (parts[0] === 'define' || parts[0] === 'module') {
                 return false;
             }
 
             // 遍历路由模块并且定义每层模块
-            for(len = parts.length; i<len;i++) {
+            for (len = parts.length; i < len; i++) {
                 // 如果父模块中不存在当前模块
-                if(typeof parts[parts[i]] === 'undefined') {
+                if (typeof parent[parts[i]] === 'undefined') {
                     // 申明当前模块
                     parent[parts[i]] = {};
                 }
@@ -75,7 +77,7 @@
                 parent = parent[parts[i]];
             }
             // 如果给定模块方法则定义该模块方法
-            if(fn) {
+            if (fn) {
                 // 此时 i 等于 parts.length , 所以要减一
                 old[parts[--i]] = fn();
             }
@@ -88,12 +90,46 @@
         return {
             trim: function (str) {
                 // return str.trim();
-                return str.replace(/^\s+|\s+$/gm,'');
+                return str.replace(/^\s+|\s+$/gm, '');
             }
         }
     });
     // 测试一下
     console.log(F.string.trim('          11231234555111      '));
+
+
+    /*
+    * 对于模块的回调函数， 我们可以用构造函函数形式返回接口
+    * */
+    F.define('dom', function () {
+        let $ = function (id) {
+            $.dom = document.getElementById(id);
+            return $;
+        };
+        $.html = function (html) {
+            if (html) {
+                this.dom.innerHTML = html;
+                return this;
+            } else {
+                return this.dom.innerHTML;
+            }
+        };
+        return $;
+    });
+    // 测试
+    console.log(F.dom('test').html());
+
+    // 为dom 添加 addClass方法
+    F.define('dom.addClass');
+    F.dom.addClass = function (type, fn) {
+        return function (className) {
+            if (this.dom.className.indexOf(className) === -1) {
+                // 简单添加class
+                this.dom.className += ' ' + className;
+            }
+        }
+    }();
+    F.dom('test').addClass('123');
 </script>
 </body>
 </html>
