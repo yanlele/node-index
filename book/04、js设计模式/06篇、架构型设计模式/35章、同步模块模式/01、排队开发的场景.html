@@ -13,7 +13,7 @@
     * 这样写的好处是方便， A工程师把数据和导航元素容器都保存在这里了， 我们可以直接用
     * 缺点： A工程师正在修改导航， 那么BC工程师对导航的新需求就无法执行了。
     * */
-    let data = null,
+    /*let data = null,
         dom = A('#nav'),
         createNav = function () {
             // A 工程师完成创建导航创建逻辑
@@ -38,7 +38,7 @@
                 data = res.data;
                 createNav();
             }
-        });
+        });*/
 
     /*
     * 模块化开发就是讲复杂的系统分解为高内聚，低耦合的模块。
@@ -51,7 +51,8 @@
         static define(str, fn) {
             let parts = str.split('.'),
                 old = parent = this,
-                i = len = 0;                // i 是模块成绩， len是模块层级长度
+                i = 0,
+                len = 0;                // i 是模块成绩， len是模块层级长度
             // 如果第一个模块是管理模块器， 则移除
             if(parts[0] === 'F') {
                 parts = parts.slice(1);
@@ -82,7 +83,17 @@
         };
     }
 
-
+    // 测试模块的运行
+    F.define('string', function () {
+        return {
+            trim: function (str) {
+                // return str.trim();
+                return str.replace(/^\s+|\s+$/gm,'');
+            }
+        }
+    });
+    // 测试一下
+    console.log(F.string.trim('          11231234555111      '));
 </script>
 </body>
 </html>
