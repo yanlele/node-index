@@ -169,6 +169,19 @@
         }
     }();
     F.dom('test').addClass('123');
+
+    // 模块调用的测试
+    F.module(['dom', document], function (dom, doc) {
+        dom('test').html('new add!!!!');
+        doc.body.style.color = 'red';
+    });
+
+    F.module('dom', 'string.trim', function (dom, trim) {
+        let html = dom('test').html();
+        let str = trim(html);
+        console.log('html: ', html);
+        console.log('str: ', str);
+    })
 </script>
 </body>
 </html>
