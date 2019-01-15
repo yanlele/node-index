@@ -47,8 +47,14 @@
     * 要点： 首先要有一个模块管理器， 管理模块的创建和调度
     * 模块调动： 调用分为两类， 一类同步模块调用的实现， 第二类是一步模块的实现
     * */
-    // 闯进模块管理对象F
+    // 模块管理对象F
     class F {
+        /**
+         * 创建模块
+         * @param str
+         * @param fn
+         * @returns {*}
+         */
         static define(str, fn) {
             let parts = str.split('.'),
                 old = this,
@@ -83,6 +89,39 @@
             }
             return this;
         };
+
+        // 使用模块
+        static module() {
+            let args = Array.prototype.slice.call(arguments),               // 参数转为数组
+                fn = args.pop(),                // 获取执行的函数
+                parts = args[0] && args[0] instanceof Array ? args[0] : args,
+                modules = [],               // 依赖模块列表
+                modIDs = [],                // 模块路由
+                i = 0,                      // 依赖路由
+                ilen = parts.length,        // 依赖模块长度
+                parent, j, jlen;            // 分别是福模块， 模块路由层级索引， 模块路由层级长度
+
+            // 遍历依赖模块
+            while (i < ilen) {
+                if(typeof parts[i] === 'string') {
+                    parent = this;
+                    modIDs = parts[i].replace(/^F\./, '').split('.');
+                    // 遍历模块路由层级
+                    for(j = 0, jlen = modIDs.length; j< jlen; j++) {
+                        // 重置父模块
+                        parent = parent[modIDs[j]] || false;
+                    }
+                    // 将模块添加到依赖模块列表中去。
+                    modules.push(parent);
+                } else {
+                    // 直接头添加依赖模块列表中
+                    modules.push(parts[i]);
+                }
+                // 获取下一个依赖
+                i++;
+            }
+            fn.apply(null, modules);
+        }
     }
 
     // 测试模块的运行
