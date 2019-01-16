@@ -260,6 +260,8 @@
     - [25、WebStrom Live Template 建代码块](https://blog.csdn.net/liangrongliu1991/article/details/79626960)
     - [26、Git的奇技淫巧](https://github.com/521xueweihan/git-tips)
     - [27、Sequelize 文档的中文版本](https://github.com/demopark/sequelize-docs-Zh-CN)
+    - [28、常用eslint配置](./19年/01月/01、常用eslint配置)
+    - [29、常用tslint配置](./19年/01月/02、常用tslint配置)
     
 
 - koa2
@@ -364,7 +366,7 @@
     - [react-webpack-typescript-starter](https://github.com/vikpe/react-webpack-typescript-starter)
     - [typescript-react-redux](https://github.com/rjz/typescript-react-redux)
     - [TypeScript [ React + React-Router + Redux + Redux-Thunk ] Starter](https://github.com/welearnmore/WLM-TypeScript-React-Starter)
-    - [webpack4 + React 16 + TypeScript](https://github.com/BruceCham/react-cli)
+    - [webpack4 + React 16 + TypeScript:react-cli](https://github.com/BruceCham/react-cli)
 
 
 ### <div id="class08">年度计划和日志目录</div>
