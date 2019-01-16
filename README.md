@@ -364,6 +364,7 @@
     - [react-webpack-typescript-starter](https://github.com/vikpe/react-webpack-typescript-starter)
     - [typescript-react-redux](https://github.com/rjz/typescript-react-redux)
     - [TypeScript [ React + React-Router + Redux + Redux-Thunk ] Starter](https://github.com/welearnmore/WLM-TypeScript-React-Starter)
+    - [webpack4 + React 16 + TypeScript](https://github.com/BruceCham/react-cli)
 
 
 ### <div id="class08">年度计划和日志目录</div>
