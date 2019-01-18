@@ -48,6 +48,7 @@
     - [02、配置一套属于自己的React项目的webpack配置](https://github.com/heyushuo/Webpack-React)
     - [03、从零开始配置TypeScript + React + React-Router + Redux + Webpack开发环境](https://www.cnblogs.com/baqiphp/p/7647912.html)
     - [04、webpack4系列中文教程和配套代码](https://github.com/dongyuanxin/webpack-demos)
+    - [学习webpack4.0的最新配置语法和新特性](https://github.com/wlx200510/webpack4.x-learn)
     
 
 
