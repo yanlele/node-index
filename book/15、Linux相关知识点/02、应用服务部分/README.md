@@ -64,8 +64,23 @@ nginx 的默认配置项目录是： `/etc/nginx/`
 
 
 #### 配置虚拟主机
-主要配置需要在 `conf.d/default.conf` 这个里面配置, 如果没有这个文件，就自己创建一个就OK了
-也有一些nginx 的配置就在nginx 根目录下面
+主要配置需要在 `conf.d/default.conf` 这个里面配置, 如果没有这个文件，就自己创建一个就OK了                                                  
+也有一些nginx 的配置就在nginx 根目录下面                                      
+需要查看目录结构也可以在 配置目录下面的 `nginx.conf` 文件里面查看                                                
+
+如果我们把默认配置拷贝一份到 `conf.d/default.conf/` 文件目录下面， 然后再做修改， 如果这个文件目录下面有配置文件，优先读取我们的配置文件：                           
+做一个最简单的配置
+```
+server {
+    listen 80;
+    server_name: www.yanle.com;
+    root /data/www;
+    index: index.html index.htm;
+}
+```
+
+发现一个问题，这样配置了以后， 一点儿用都没有。 最后解决办法， 把主配置文件里面的nginx.conf 备份一个到conf.d 文件里面， 取一个名字叫default.conf
+
 
 
 
