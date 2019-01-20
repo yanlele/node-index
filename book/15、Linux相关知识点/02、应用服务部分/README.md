@@ -58,3 +58,14 @@ setenforce 0 | 可能服务器里面会有一些设置。
 启动 | service nginx start
 停止 | service nginx stop
 重载 | service nginx reload
+先杀死进程再重载 | service nginx restart
+
+nginx 的默认配置项目录是： `/etc/nginx/`
+
+
+#### 配置虚拟主机
+主要配置需要在 `conf.d/default.conf` 这个里面配置, 如果没有这个文件，就自己创建一个就OK了
+也有一些nginx 的配置就在nginx 根目录下面
+
+
+
