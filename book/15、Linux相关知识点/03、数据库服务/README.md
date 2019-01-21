@@ -27,7 +27,7 @@
 拿到密码之后， 就可以直接通过命令行进入mysql了： `mysql -uroot -p`;
 
 输入初始密码，此时不能做任何事情，因为MySQL默认必须修改密码之后才能操作数据库：
-修改密码： `set password=password('53693750cfz');` 或者 `ALTER USER 'root'@'localhost' IDENTIFIED BY 'new password';`
+修改密码： `set password=password('123456');` 或者 `ALTER USER 'root'@'localhost' IDENTIFIED BY 'new password';`
                            
 一般来说当密码过于简单的时候会报错 `ERROR 1819 (HY000): Your password does not satisfy the current policy requirements` ;                                
 原因是因为MySQL有密码设置的规范，具体是与validate_password_policy的值有关：                        
@@ -54,3 +54,11 @@ shwo databases; 就可以看到里面有一个mysql 数据库， 进入这个库
 然后设置开关: `set global general_log=on;`                                        
 
 这个日志就可以记录我们所有数据库操作语句
+
+
+#### 创建用户操作
+首先要在服务器上登录mysql;                                    
+`create user 'yanle'@'%' identified by '123456'`;  
+赋予权限： grant all privileages on *.* to 'yanle'@'%' identified by '123456' with grant option;                     
+
+关于数据库相关权限问题， 以及其他知识点儿。看转专题14就可以了；
