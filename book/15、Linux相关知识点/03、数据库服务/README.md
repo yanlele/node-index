@@ -21,3 +21,20 @@
 `[root@localhost ~]# yum -y install mysql-community-server`                                        
 然后就可以把服务安装完成了。
 安装完成之后， 直接 `service mysqld start` 就可以启动服务了
+
+**第一次安装mysql的相关配置**
+查看密码： `cat var/log/mysqld.log|grep password`                                
+拿到密码之后， 就可以直接通过命令行进入mysql了： `mysql -uroot -p`;
+
+输入初始密码，此时不能做任何事情，因为MySQL默认必须修改密码之后才能操作数据库：
+修改密码： `set password=password('53693750cfz');` 或者 `ALTER USER 'root'@'localhost' IDENTIFIED BY 'new password';`
+                           
+一般来说当密码过于简单的时候会报错 `ERROR 1819 (HY000): Your password does not satisfy the current policy requirements` ;                                
+原因是因为MySQL有密码设置的规范，具体是与validate_password_policy的值有关：                        
+可以通过如下命令修改：
+```
+mysql> set global validate_password_policy=0;
+mysql> set global validate_password_length=1;
+```
+再次之后修改密码成功；
+
