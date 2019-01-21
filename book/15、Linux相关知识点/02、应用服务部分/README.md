@@ -188,3 +188,29 @@ server {
 
 
 #### 伪静态的实现
+nginx 的伪静态（转发）是通过location 关键字实现的：
+```
+    server {
+        keepalive_requests 120; #单连接请求上限次数。
+        listen       4545;   #监听端口
+        server_name  127.0.0.1;   #监听地址       
+        location  / {       #请求的url过滤，正则匹配，~为区分大小写，~*为不区分大小写。
+           rewrite ^（.*）\.htmp$ /index.html       
+        } 
+    }
+```
+这个意思就是以任意.htmp结尾的， 都转向到index.html 上面去。
+
+
+#### nginx日志
+可以直接看nginx.conf 文件
+```
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+```
+上面一个是日志格式， 后面这个是日志输出地址。
+值域详细的配置， 可以直接去网上搜索看 nginx log_format
+
