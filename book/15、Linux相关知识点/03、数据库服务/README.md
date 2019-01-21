@@ -38,3 +38,14 @@ mysql> set global validate_password_length=1;
 ```
 再次之后修改密码成功；
 
+
+**远程连接**
+第一次连接远程连接的时候是连接不上的， 还需要进行设置;
+现在远程服务器登录进入mysql；                               
+shwo databases; 就可以看到里面有一个mysql 数据库， 进入这个库 `use mysql`; `show tables;`就可以看到里面会有一个user 的表；                               
+`update user set host="%" where Host="localhost" and User="root";` 执行这个语句就可以直接赋予权限， 任何主机都可以连接， 账号是root;                     
+然后刷新权限： `fulsh privileges;` 就可以连接mysql了， 如果还有安全组， 就添加安全组， 如果有防火墙，就关闭防火墙： `service firewalld stop`;                                  
+一般来说这样之后， 就可以进行远程连接了。
+
+
+
