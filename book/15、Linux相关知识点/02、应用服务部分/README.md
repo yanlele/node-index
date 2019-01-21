@@ -214,3 +214,24 @@ nginx 的伪静态（转发）是通过location 关键字实现的：
 上面一个是日志格式， 后面这个是日志输出地址。
 值域详细的配置， 可以直接去网上搜索看 nginx log_format
 
+#### 反向代理和负载均衡
+概念没有什么好说的， 自己去搜索一下就可以了。
+```
+upstream yanel_web {
+    # server ip:端口
+    server 118.89.106.129:80; 
+}
+server {
+    keepalive_requests 120; #单连接请求上限次数。
+    listen       4545;   #监听端口
+    server_name  127.0.0.1;   #监听地址       
+    location  / {       #请求的url过滤，正则匹配，~为区分大小写，~*为不区分大小写。
+       proxy_set_header Host www.54php.com
+       proxy_pass  http://yanle_web;  #请求转向yanle_web 定义的服务器列表, 这个地方直接写ip 也是可以的
+    } 
+}
+```
+这个时候，访问服务器所在的ip地址，就可以转发到118.89.106.129:80。 实际上就是把118.89.106.129:80 的服务全部都代理到了当前服务器上面来。
+
+
+
