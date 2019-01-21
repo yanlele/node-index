@@ -48,4 +48,9 @@ shwo databases; 就可以看到里面有一个mysql 数据库， 进入这个库
 一般来说这样之后， 就可以进行远程连接了。
 
 
+#### genelog
+首先要在服务器上登录mysql;                                
+`set global general_log_file="/tmp/general.log";`                             
+然后设置开关: `set global general_log=on;`                                        
 
+这个日志就可以记录我们所有数据库操作语句
