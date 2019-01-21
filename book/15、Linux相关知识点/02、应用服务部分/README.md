@@ -242,3 +242,28 @@ upstream yanel_web {
     server 192.168.0.196:80 weight=1;
 }
 ```
+负载均衡是一给请求分流的过程。 
+
+#### nginx调试
+例如我们希望知道我们访问的域名， 代理的到底是那个服务ip, 就可以添加下面的配置：
+add_header Content-Type "text/plain;charset=utf-8";                                         
+return 200 "$http_host";                            
+return 里面的东西， 可以通过log_format格式展示就可以了。                               
+```
+upstream yanel_web {
+    # server ip:端口
+    server 118.89.106.129:80; 
+    server 192.168.0.196:80;
+}
+server {
+    keepalive_requests 120; #单连接请求上限次数。
+    listen       4545;   #监听端口
+    server_name  127.0.0.1;   #监听地址       
+    add_header Content-Type "text/plain;charset=utf-8";
+    return 200 "$http_host";
+    location  / {       #请求的url过滤，正则匹配，~为区分大小写，~*为不区分大小写。
+       proxy_set_header Host www.54php.com
+       proxy_pass  http://yanle_web;  #请求转向yanle_web 定义的服务器列表, 这个地方直接写ip 也是可以的
+    } 
+}
+```
