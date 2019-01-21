@@ -164,5 +164,27 @@ server {
 
 发现一个问题，这样配置了以后， 一点儿用都没有。 最后解决办法， 把主配置文件里面的nginx.conf 备份一个到conf.d 文件里面， 取一个名字叫default.conf
 
+如果要配置多个端口， 最简单的办法就是直接在listen 配置项里面多加一个端口就OK了。
+```
+server {
+    listen 80;
+    listen 8080;
+    server_name: www.yanle.com;
+    root /data/www;
+    index: index.html index.htm;
+}
+```
+
+多域名单服务的情况
+```
+server {
+    listen 80;
+    listen 8080;
+    server_name: www.yanle.com www.lele.com;
+    root /data/www;
+    index: index.html index.htm;
+}
+```
 
 
+#### 伪静态的实现
