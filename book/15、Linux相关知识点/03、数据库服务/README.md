@@ -62,3 +62,10 @@ shwo databases; 就可以看到里面有一个mysql 数据库， 进入这个库
 赋予权限： grant all privileages on *.* to 'yanle'@'%' identified by '123456' with grant option;                     
 
 关于数据库相关权限问题， 以及其他知识点儿。看转专题14就可以了；
+
+**如果忘记密码， 找回和重置密码的方式**：                                     
+vim /etc/my.conf                        
+然后在最后添加一行： skip-grant-tables                    
+重启服务mysql, 之后就可以不需要密码就进入了。然后修改密码就可以了。
+`update user set authentication_string=password("123456") where user='root'`;                                   
+然后刷新权限， 删除那一句命令行就可以了。
