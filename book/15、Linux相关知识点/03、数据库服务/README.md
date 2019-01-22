@@ -106,3 +106,4 @@ Redis没有其他外部依赖，安装过程很简单。编译后在Redis源代�
 
 更多内容可以参看这个文章：[CentOS下Redis的安装](https://www.cnblogs.com/renzhicai/p/7773080.html)                                
 redis相关教程： [Redis教程](http://www.runoob.com/redis/redis-tutorial.html)
+
