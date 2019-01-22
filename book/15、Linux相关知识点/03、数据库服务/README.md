@@ -82,7 +82,24 @@ vim /etc/my.conf
 停止 | redis-server stop
 客户端 | redis-clict
 
-redis扩展知识点：                                             
-//..... 后续自己补充
+redis扩展知识点：                                                                       
+//..... 后续自己补充                              
+如果经常需要查看某个端口是否是启动的， 可以用telnet 来查看服务是否启动；
 
 
+**Redis的安装**                                                    
+首先在tmp 文件目录下面直接下载文件源码： `wget http://download.redis.io/releases/redis-4.0.2.tar.gz`;                                     
+```
+tar -xzvf redis-4.0.2.tar.gz
+cd redis-4.0.2
+make
+make install
+```
+Redis没有其他外部依赖，安装过程很简单。编译后在Redis源代码目录的src文件夹中可以找到若干个可执行程序，安装完后，在/usr/local/bin目录中可以找到刚刚安装的redis可执行文件。
+
+**启动和停止Redis**                                                                          
+直接在安装目录src里面运行./redis-server即可启动Redis                           
+也可以在在/usr/local/bin目录中可以找到刚刚安装的redis可执行文件。                                                  
+通过初始化脚本启动Redis: 
+在Redis源代码目录的utils文件夹中有一个名为 `redis_init_script` 的初始化脚本文件。需要配置Redis的运行方式和持久化文件、日志文件的存储位置。步骤如下：
+更多内容可以参看这个文章：[CentOS下Redis的安装](https://www.cnblogs.com/renzhicai/p/7773080.html)
