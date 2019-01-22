@@ -69,3 +69,20 @@ vim /etc/my.conf
 重启服务mysql, 之后就可以不需要密码就进入了。然后修改密码就可以了。
 `update user set authentication_string=password("123456") where user='root'`;                                   
 然后刷新权限， 删除那一句命令行就可以了。
+
+
+
+### <div id="class03-02">02、缓存服务</div>
+#### Redis基本操作                                                       
+
+说明 | 命令
+:-|:-
+安装 | 源码比编译安装
+启动 | redis-server start/restart
+停止 | redis-server stop
+客户端 | redis-clict
+
+redis扩展知识点：                                             
+//..... 后续自己补充
+
+
