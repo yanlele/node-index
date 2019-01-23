@@ -1,4 +1,174 @@
+### 前端测试库Mocha 和 Jest
 
+`Mocha`作为可以说是使用最多的库，官方是主打灵活、简单的一个测试库，提供给开发者的只有一个基础测试结构。所以在使用的时候， 需要外置一个断言库， 例如`chai、assert`，以及覆盖库`istanbul`。 `Mochai` 拥有一些列的插件机制， 可以轻易对`Mochai` 进行很方便的扩展和增强。 
+
+但是说到前端单元测试，就不得不说到`Jest`，`Jest`安装配置简单，非常容易上手。内置`Istanbul`，可以查看到测试覆盖率，完美的支持React组件化测试。
+
+Jest既简单又强大，内置支持以下功能：
+- 灵活的配置：比如，可以用文件名通配符来检测测试文件。
+- 测试的事前步骤(Setup)和事后步骤(Teardown)，同时也包括测试范围。
+- 匹配表达式(Matchers)：能使用期望expect句法来验证不同的内容。
+- 测试异步代码：支持承诺(promise)数据类型和异步等待async / await功能。
+- 模拟函数：可以修改或监查某个函数的行为。
+- 手动模拟：测试代码时可以忽略模块的依存关系。
+- 虚拟计时：帮助控制时间推移。
+
+这篇文章先介绍mocha的使用， 以后再介绍Jest的使用
+
+### 开始第一个示例
+```
+$ npm install mocha
+$ mkdir test
+$ $EDITOR test/test.js     # 或者使用你喜欢的编辑器打开
+```
+简单的可以编写如下的测试代码：
+```js
+const expect = require('chai').expect;
+describe('#main', function () {
+    it('must be array', function () {
+        expect([1, 2, 3]).to.be.an.instanceof(Array);
+    });
+    it('should array length equal 3', function () {
+        expect([1,2,3]).length.eq(4);
+    })
+});
+```
+
+然后运行测试代码：
+`./node_modules/mocha/bin/mocha`就可以得到如下的测试结果：
+```
+  #main
+    ✓ must be array
+    1) should array length equal 3
+
+
+  1 passing (74ms)
+  1 failing
+
+  1) #main
+       should array length equal 3:
+       AssertionError: expected [ 1, 2, 3 ] to equal 4
+```
+
+同样可以在 `package.json` 里面设置一个测试启动脚本
+```
+"scripts": {
+    "test": "mocha"
+  }
+```
+然后执行 `npm run test`；就可以得到上面一样的结果了。 默认查找的是test文件夹下面的test.js文件为主启动文件， 如果希望修改启动文件路径， mocha 后面添加路径就可以了 `mocha [path]`。
+
+
+### 主要断言库推荐
+`mocha`本身是不带断言库的，可以安装三方断言库， 主要有以下断言库：
+- should.js
+- expect.js
+- chai
+- assert
+其中assert 是node自带的模块， 可以直接就用，但是在下推荐用chai， 非常强大非常好用。
+在后面的文章中， 在下会继续对chai做详细介绍。
+
+
+### 异步测试 done() 与超时时间timeout
+**先来聊聊超时时间timeout问题**：
+Mocha默认每个测试用例最多执行 `2000` 毫秒，如果到时没有得到结果，就报错。对于涉及异步操作的测试用例，这个时间往往是不够的，需要用 `-t或--timeout` 参数指定超时门槛。
+例如启动的时候这样启动测试用例： `mocha -t 5000 timeout.test.js`
+
+上面这种设置超时时间是全局的， 针对所有的it测试用例单元。 但是还有一种使用得更多的方式， 就是在每个测试单元， 或者describe 里面设置单独的超时时间。
+```js
+describe('a suite of tests', function() {
+    this.timeout(500);
+
+    it('should take less than 500ms', function(done){
+        setTimeout(done, 300);
+    });
+
+    it('should take less than 500ms as well', function(done){
+        setTimeout(done, 250);
+    });
+
+    it('should take less than 500ms', function(done){
+        this.timeout(500);
+        setTimeout(done, 300);
+    });
+})
+```
+需要注意的地方：
+这个地方都是用到了this指针， Mocha传递箭头函数是不好的，由于this的词法作用域的问题，箭头函数是不能够访问mocha的上下文的。例如，由于箭头函数本身的机制，下面的代码会失败。
+```js
+describe('my suite', () => {
+    it('my test', () => {
+        // should set the timeout of this test to 1000 ms; instead will fail
+        this.timeout(1000);
+        assert.ok(true);
+    });
+});
+```
+所以一定要慎用箭头函数， 当我们不用到上下文this的时候， 箭头函数是可以用的， 但是尽量少用箭头函数， 除非迫不得已。 因为箭头函数会导致this上下文的混淆。
+
+`slow`:
+测试中，我们更多的会关注失败的测试用例和耗时较长的用例。那么问题来了，怎么算耗时过长呢？不同的地方可能有不同的要求。Mocha提供了 slow 函数来解决这个事情。当一个用例耗时超过一定值后，Mocha 会在reportor中明显地标记出来。
+
+
+
+**异步测试 done()**:
+先看一个异步的示例， 测试用例里面，有一个`done`函数。it块执行的时候，传入一个`done`参数，当测试结束的时候，必须显式调用这个函数，告诉Mocha测试结束了。否则，Mocha就无法知道，测试是否结束，会一直等到超时报错。
+```js
+it('测试应该5000毫秒后结束', function(done) {
+    var x = true;
+    var f = function() {
+        x = false;
+        expect(x).to.be.not.ok;
+        done(); // 通知Mocha测试结束
+    };
+    setTimeout(f, 4000);
+});
+```
+
+其中更加常用的一个示例是做接口api测试的时候， 一定会设计到大量的异步操作。 一个简单的示例如下：
+```js
+it('异步请求应该返回一个对象', function(done){
+    request
+        .get('https://api.github.com')
+        .end(function(err, res){
+            expect(res).to.be.an('object');
+            done();
+        });
+});
+```
+
+对于 `Promise` 的异步测试， 因为mocha内部是默认支持`Promise`的，允许直接返回`Promise`，等到它的状态改变，再执行断言，而不用显式调用done方法。请看下面示例：
+```js
+it('异步请求应该返回一个对象', function() {
+    return fetch('https://api.github.com')
+        .then(function(res) {
+            return res.json();
+        }).then(function(json) {
+            expect(json).to.be.an('object');
+        });
+});
+```
+
+如果node版本7.6+可以使用async/await， 也可以这样来写异步代码：
+```js
+describe('#find()', function() {
+    it('responds with matching records', async function() {
+        const users = await db.find({ type: 'User' });
+        users.should.have.length(3);
+    });
+});
+```
+
+### 时间钩子函数
+
+
+
+
+
+### 参考文章
+- [mochajs.org](https://mochajs.org/)
+- [测试框架 Mocha 实例教程](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)
+- [测试框架Mocha](https://blog.csdn.net/hustzw07/article/details/73468970)
 
 
 ### 补充知识点儿
