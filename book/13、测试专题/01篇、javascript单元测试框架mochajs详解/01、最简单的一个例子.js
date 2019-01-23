@@ -1,7 +1,6 @@
 const assert = require('assert');
 describe('Array', function() {
     describe('#indexOf()', function() {
-
         before(function () {
             console.log('before')
         });
@@ -17,7 +16,7 @@ describe('Array', function() {
 
         it('just is a console.log', function () {
             console.log('123');
-        })
+        });
 
         afterEach(function () {
             console.log('afterEach')
