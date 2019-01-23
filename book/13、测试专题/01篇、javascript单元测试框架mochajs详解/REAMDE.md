@@ -171,7 +171,7 @@ it('异步请求应该返回一个对象', function() {
 });
 ```
 
-如果node版本7.6+可以使用async/await， 也可以这样来写异步代码：
+如果node版本7.6+可以使用 `async/await`， 也可以这样来写异步代码：
 ```js
 describe('#find()', function() {
     it('responds with matching records', async function() {
@@ -231,6 +231,24 @@ after
 
   2 passing (61ms)
 ```
+这里还有一个需要注意的地方： 如果 `beforeEach/before` 这样类型的生命中周期中， 有异步操作， 需要等异步操作结束之后， 在进行后续的测试用例。例如下面的示例， 我们是执行测试是运行成功的结果。
+```js
+describe('异步 beforeEach 示例', function() {
+    var foo = false;
+
+    beforeEach(function(done) {
+        setTimeout(function() {
+            foo = true;
+            done();
+        }, 50);
+    });
+
+    it('全局变量异步修改应该成功', function() {
+        expect(foo).to.be.equal(true);
+    });
+});
+```
+
 
 
 
