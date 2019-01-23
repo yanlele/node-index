@@ -108,7 +108,29 @@ describe('my suite', () => {
 
 `slow`:
 测试中，我们更多的会关注失败的测试用例和耗时较长的用例。那么问题来了，怎么算耗时过长呢？不同的地方可能有不同的要求。Mocha提供了 slow 函数来解决这个事情。当一个用例耗时超过一定值后，Mocha 会在reportor中明显地标记出来。
+```js
+describe('For compare with Test slow', function() {
+    this.slow(100);
+    // 标记耗时过长
+    it('It would warning', function(done) {
+        var callback = function() {
+            console.log("------");
+            done();
+        };
+        setTimeout(callback, 200);
+    });
+});
+```
+使用命令行执行测试文件之后， 可以得到以下的测试结果：
+```
+  For compare with Test slow
+------
+    ✓ It would warning (208ms)
 
+
+  1 passing (264ms)
+```
+发现当耗时接近 slow() 函数设定的值的一半时，时间值开始被标记为黄色。 超过slow设定值得时候， 会直接标红。
 
 
 **异步测试 done()**:
@@ -160,6 +182,56 @@ describe('#find()', function() {
 ```
 
 ### 时间钩子函数
+Mocha在describe块之中，提供测试用例的四个钩子： `before()、after()、beforeEach()和afterEach()` 。它们会在指定时间执行。
+- before   在本区块的所有测试用例之前执行
+- after   在本区块的所有测试用例之后执行
+- beforeEach   在本区块的每个测试用例之前执行
+- afterEach   在本区块的每个测试用例之后执行
+
+```js
+const assert = require('assert');
+describe('Array', function() {
+    describe('#indexOf()', function() {
+        before(function () {
+            console.log('before')
+        });
+        beforeEach(function() {
+            console.log('beforeEach')
+        });
+        it('should return -1 when the value is not present', function() {
+            assert.equal(-1, [1, 2, 3].indexOf(4));
+            console.log('it');
+        });
+        it('just is a console.log', function () {
+            console.log('123');
+        });
+        afterEach(function () {
+            console.log('afterEach')
+        });
+        after(function () {
+            console.log('after')
+        });
+    })
+});
+```
+输入结果如下：     
+```
+  Array
+    #indexOf()
+before
+beforeEach
+it
+      ✓ should return -1 when the value is not present
+afterEach
+beforeEach
+123
+      ✓ just is a console.log
+afterEach
+after
+
+  2 passing (61ms)
+```
+
 
 
 
