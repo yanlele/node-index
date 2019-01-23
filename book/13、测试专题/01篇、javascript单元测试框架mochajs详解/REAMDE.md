@@ -1,3 +1,18 @@
+
+目录
+- [前端测试库Mocha 和 Jest](#前端测试库Mocha-和-Jest)
+- [开始第一个示例](#开始第一个示例)
+- [主要断言库推荐](#主要断言库推荐)
+- [异步测试 done() 与超时时间timeout](#异步测试-done()-与超时时间timeout)
+- [时间钩子函数](#时间钩子函数)
+- [测试用例管理 only(), skip()](#测试用例管理-only(),-skip())
+- [配置文件mocha.opts](#配置文件mocha.opts)
+- [TypeScript测试](#TypeScript测试)
+- [mocha的命令的基本选项](#mocha的命令的基本选项)
+- [补充知识点儿](#补充知识点儿)
+- [参考文章](#参考文章)
+
+
 ### 前端测试库Mocha 和 Jest
 
 `Mocha`作为可以说是使用最多的库，官方是主打灵活、简单的一个测试库，提供给开发者的只有一个基础测试结构。所以在使用的时候， 需要外置一个断言库， 例如`chai、assert`，以及覆盖库`istanbul`。 `Mochai` 拥有一些列的插件机制， 可以轻易对`Mochai` 进行很方便的扩展和增强。 
@@ -328,16 +343,97 @@ $ ../node_modules/.bin/mocha --reporter mochawesome
 上面代码中，mocha命令使用了项目内安装的版本，而不是全局安装的版本，因为mochawesome模块是安装在项目内的。然后，测试结果报告就在mochaawesome-reports子目录生成。
 
 
+### TypeScript测试
+首先必须要安装如下几个安装包：
+```json
+{
+  "devDependencies": {
+    "@types/chai": "^4.1.6",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.1"
+  }
+}
+```
+配置文件`mocha.opts`的导入
+```
+--recursive
+--require ./node_modules/ts-node/register
+--ui bdd
+--timeout 60000
+--watch-extensions ts
+test/**/*.ts
+```
+
+- 测试代码的编写
+```typescript
+import 'mocha'
+describe('main', function() {
+    it('should ', function () {
+        console.log(123);
+    });
+})
+```
+后续操作和JS的测试是一模一样的了
+
+
+### mocha的命令的基本选项
+
+```
+Options:
+
+    -h, --help                  输出帮助信息
+    -V, --version               输出mocha的版本号
+    -A, --async-only            强制所有的测试用例必须使用callback或者返回一个promise的格式来确定异步的正确性
+    -c, --colors                在报告中显示颜色
+    -C, --no-colors             在报告中禁止显示颜色
+    -g, --growl                 在桌面上显示测试报告的结果
+    -O, --reporter-options <k=v,k2=v2,...>  设置报告的基本选项
+    -R, --reporter <name>       指定测试报告的格式
+    -S, --sort                  对测试文件进行排序
+    -b, --bail                  在第一个测试没有通过的时候就停止执行后面所有的测试
+    -d, --debug                 启用node的debugger功能
+    -g, --grep <pattern>        用于搜索测试用例的名称，然后只执行匹配的测试用例
+    -f, --fgrep <string>        只执行测试用例的名称中含有string的测试用例
+    -gc, --expose-gc            展示垃圾回收的log内容
+    -i, --invert                只运行不符合条件的测试用例，必须和--grep或--fgrep之一同时运行
+    -r, --require <name>        require指定模块
+    -s, --slow <ms>             指定slow的时间，单位是ms，默认是75ms
+    -t, --timeout <ms>          指定超时时间，单位是ms，默认是200ms
+    -u, --ui <name>             指定user-interface (bdd|tdd|exports)中的一种
+    -w, --watch                 用来监视指定的测试脚本。只要测试脚本有变化，就会自动运行Mocha
+    --check-leaks               检测全局变量造成的内存泄漏问题
+    --full-trace                展示完整的错误栈信息
+    --compilers <ext>:<module>,...  使用给定的模块来编译文件
+    --debug-brk                 启用nodejs的debug模式
+    --es_staging                启用全部staged特性
+    --harmony<_classes,_generators,...>     all node --harmony* flags are available
+    --preserve-symlinks                     告知模块加载器在解析和缓存模块的时候，保留模块本身的软链接信息
+    --icu-data-dir                          include ICU data
+    --inline-diffs              用内联的方式展示actual/expected之间的不同
+    --inspect                   激活chrome浏览器的控制台
+    --interfaces                展示所有可用的接口
+    --no-deprecation            不展示warning信息
+    --no-exit                   require a clean shutdown of the event loop: mocha will not call process.exit
+    --no-timeouts               禁用超时功能
+    --opts <path>               定义option文件路径 
+    --perf-basic-prof           启用linux的分析功能
+    --prof                      打印出统计分析信息
+    --recursive                 包含子目录中的测试用例
+    --reporters                 展示所有可以使用的测试报告的名称
+    --retries <times>           设置对于失败的测试用例的尝试的次数
+    --throw-deprecation         无论任何时候使用过时的函数都抛出一个异常
+    --trace                     追踪函数的调用过程
+    --trace-deprecation         展示追踪错误栈
+    --use_strict                强制使用严格模式
+    --watch-extensions <ext>,... --watch监控的扩展 
+    --delay                     异步测试用例的延迟时间
+```
 
 
 
-
-### 参考文章
-- [mochajs.org](https://mochajs.org/)
-- [Mocha中文文档](https://github.com/zhaosaisai/mocha-in-chinese)
-- [测试框架 Mocha 实例教程](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)
-- [测试框架Mocha](https://blog.csdn.net/hustzw07/article/details/73468970)
-- [mocha 测试模块学习备忘](https://blog.csdn.net/xs20691718/article/details/52200349)
 
 
 ### 补充知识点儿
@@ -354,3 +450,11 @@ $ ../node_modules/.bin/mocha --reporter mochawesome
 ```
 
 其中intelli-espower-loader 是一个解释性增强的插件
+
+
+### 参考文章
+- [mochajs.org](https://mochajs.org/)
+- [Mocha中文文档](https://github.com/zhaosaisai/mocha-in-chinese)
+- [测试框架 Mocha 实例教程](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)
+- [测试框架Mocha](https://blog.csdn.net/hustzw07/article/details/73468970)
+- [mocha 测试模块学习备忘](https://blog.csdn.net/xs20691718/article/details/52200349)
