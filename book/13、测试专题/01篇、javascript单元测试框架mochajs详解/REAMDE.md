@@ -294,18 +294,50 @@ it('should only test in the correct environment', function () {
 ### 配置文件mocha.opts
 在服务端运行的时候，mocha会去加载test目录下的mocha.opts文件，来读取mocha配置项。这个配置文件中的每一行代表一项配置。如果运行mocha命令的时候，带上的配置参数与这个配置文件中的配置冲突的话，以命令中的为准。                    
 这里介绍一些常见的配置命令行：
+
+**添加mocha插件**                               
+如果我们的模块是es6语法编写的， 但是mocha默认是不认识es6语法的， 这个时候我们就要借助babel相关插件。以及如果希望加入其它的插件， 我们就可以用下面的方式来添加插件。
+```
+--require intelli-espower-loader
+--require babel-core/register
+--require babel-polyfill
+```
+同事需要安装对应的插件：
+```
+yarn add intelli-espower-loader babel-core babel-polyfill --dev
+或者
+npm install intelli-espower-loader babel-core babel-polyfill --save-dev
 ```
 
+**通过reporter生成漂亮的测试报告**
+--reporter
 
+--reporter 参数用来指定测试报告的格式，默认是 spec。使用 mochawesome 模块，可以生成漂亮的 HTML 格式的模块。
 ```
+$ npm install mochawesome -D   // 或者 yarn add mochawesone --dev
+$ ../node_modules/.bin/mocha --reporter mochawesome
+```
+同样的这个配置我们也可以写入配置文件mocha.opts中去， 这样可以让测试变得更加简单可控
+```
+--require intelli-espower-loader
+--require babel-core/register
+--require babel-polyfill
+--reporter mochawesome
+```
+
+上面代码中，mocha命令使用了项目内安装的版本，而不是全局安装的版本，因为mochawesome模块是安装在项目内的。然后，测试结果报告就在mochaawesome-reports子目录生成。
+
+
 
 
 
 
 ### 参考文章
 - [mochajs.org](https://mochajs.org/)
+- [Mocha中文文档](https://github.com/zhaosaisai/mocha-in-chinese)
 - [测试框架 Mocha 实例教程](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)
 - [测试框架Mocha](https://blog.csdn.net/hustzw07/article/details/73468970)
+- [mocha 测试模块学习备忘](https://blog.csdn.net/xs20691718/article/details/52200349)
 
 
 ### 补充知识点儿
