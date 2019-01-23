@@ -249,8 +249,55 @@ describe('异步 beforeEach 示例', function() {
 });
 ```
 
+### 测试用例管理 only(), skip()
+**only()**                            
+大型项目有很多测试用例。有时，我们希望只运行其中的几个，这时可以用 `only` 方法。describe块和it块都允许调用only方法，可以让mocha只测试此用例集合或者用例单元。其他的测试就测试集合或者用例单元就直接跳过不测试了。
+```js
+describe('Array', function() {
+    describe('#indexOf', function() {
+        it.only('should return -1 unless preset', function () {
+            // 执行测试用例单元
+        });
+        it('should return the index when present', function () {
+            // 不执行
+        })
+    })
+})
+```
+在mochav3.0.0版本及以后，.only()可以被定义多次来定义一系列的测试子集。也就是说可以让mocha只测试only标记的用例集合或者用例单元， 其他的测试用例集合或者用例单元直接跳过。
 
 
+**skip()**
+和only()方法相反，.skip()方法可以用于跳过某些测试测试集合和测试用例。所有被跳过的用例都会被标记为pending用例，在报告中也会以pending用例显示。
+```js
+it.skip('任何数加0应该等于自身', function() {
+  expect(add(1, 0)).to.be.equal(1);
+});
+```
+上面的测试用例就会直接跳过
+
+有些时候，测试用例需要某些特定的环境或者一些特殊的配置，但我们事先是无法确定的。这个时候，我们可以使用this.skip() 根据条件在运行的时候跳过某些测试用例。
+```js
+it('should only test in the correct environment', function () {
+    if(/* check the environment */) {
+        // make assertions
+    } else {
+        this.skip()
+    }
+})
+```
+这个测试在报告中会以pending状态呈现。为了避免测试逻辑混乱，在调用skip函数之后，就不要再在用例函数或after钩子中执行更多的逻辑了。
+
+我们也可以在异步的测试用例和钩子函数中使用.skip()来跳过多个测试用例或者测试集合。
+
+
+### 配置文件mocha.opts
+在服务端运行的时候，mocha会去加载test目录下的mocha.opts文件，来读取mocha配置项。这个配置文件中的每一行代表一项配置。如果运行mocha命令的时候，带上的配置参数与这个配置文件中的配置冲突的话，以命令中的为准。                    
+这里介绍一些常见的配置命令行：
+```
+
+
+```
 
 
 
