@@ -8,4 +8,4 @@ describe('a suite of tests', function() {
     it('should take less than 500ms as well', function(done){
         setTimeout(done, 250);
     });
-})
+});
