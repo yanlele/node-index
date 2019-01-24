@@ -131,3 +131,9 @@ if (hardToReproduceError)) {
 }
 ```
 上面代码的 if 语句块，在计算覆盖率的时候会被忽略。
+
+### 参考文章
+- [代码覆盖率工具 Istanbul 入门教程: 阮一峰](http://www.ruanyifeng.com/blog/2015/06/istanbul.html)
+- [使用istanbul做JavaScript的代码覆盖](https://blog.csdn.net/csr0312/article/details/47044259)
+
+

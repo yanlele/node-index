@@ -270,6 +270,7 @@ expect(Foo).itself.not.to.respond('baz');
 
 
 相关url文章链接：              
-[前端自动化测试之chai.js断言库](https://blog.csdn.net/fly_home_ysc/article/details/76082302)                       
 [Chai.js断言库API中文文档](https://www.jianshu.com/p/f200a75a15d2)
+[前端自动化测试之chai.js断言库](https://blog.csdn.net/fly_home_ysc/article/details/76082302)                       
+
 
