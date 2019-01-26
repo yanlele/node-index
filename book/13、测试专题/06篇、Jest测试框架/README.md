@@ -62,6 +62,16 @@ Time:        2.031s
 ```
 
 
+### 断言
+- expect(value) 期望断言某个value, value可以是一个function的返回值
+- expect.extend(matchers)                       
+    对expect 期望的一个扩展， 可以添加自己的匹配器到Jest， 甚至可以添加异步匹配器（支持async/await）                        
+    
+
+
+
+
+
 
 ### 参考文章
 - [简书：Jest](https://www.jianshu.com/p/eaaf07c1b88f)
