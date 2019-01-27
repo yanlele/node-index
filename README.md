@@ -262,6 +262,8 @@
     - [27、Sequelize 文档的中文版本](https://github.com/demopark/sequelize-docs-Zh-CN)
     - [28、常用eslint配置](./19年/01月/01、常用eslint配置)
     - [29、常用tslint配置](./19年/01月/02、常用tslint配置)
+    - [30、Some CSS tricks,一些 CSS 常用样式](https://github.com/QiShaoXuan/css_tricks)
+    - [31、React的一个动画库：react-spring](https://github.com/react-spring/react-spring)
     
 
 - koa2
