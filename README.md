@@ -264,6 +264,7 @@
     - [29、常用tslint配置](./19年/01月/02、常用tslint配置)
     - [30、Some CSS tricks,一些 CSS 常用样式](https://github.com/QiShaoXuan/css_tricks)
     - [31、React的一个动画库：react-spring](https://github.com/react-spring/react-spring)
+    - [32、解决mac安装homebrew后报错-bash: brew: command not found](https://blog.csdn.net/li396864285/article/details/52572163)
     
 
 - koa2
