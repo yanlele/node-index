@@ -265,7 +265,7 @@
     - [30、Some CSS tricks,一些 CSS 常用样式](https://github.com/QiShaoXuan/css_tricks)
     - [31、React的一个动画库：react-spring](https://github.com/react-spring/react-spring)
     - [32、解决mac安装homebrew后报错-bash: brew: command not found](https://blog.csdn.net/li396864285/article/details/52572163)
-    
+    - [33、mac 上安装 nvm 遇到的坑](https://www.jianshu.com/p/f6c3ecfdbd97)
 
 - koa2
     - [01、koa2-sql项目搭建的示例（通过sql链接数据库）](./18年/1月/12、koa2项目框架搭建)
