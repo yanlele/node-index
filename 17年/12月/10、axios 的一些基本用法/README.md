@@ -1,4 +1,4 @@
-# axios 的一些高级用法
+# axios 的一些基本用法
 
 > 设置axios公共的header
 ```javascript
