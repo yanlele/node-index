@@ -370,3 +370,24 @@ console.log(_.trimStart('##abc###', '#')); // => abc###
 console.log(_.trimEnd('##abc###', '#')); // => #abc
 
 console.log(_.truncate('hi-diddly-ho there, neighborino', { 'length': 5 })); // => hi...
+
+
+/*迭代器reduce*/
+let sourceArr = ['name', 'age', 'address', 'school', 'phone'];
+let result = _.reduce(sourceArr, (arr, val, index)=> {
+    arr.push({
+        name: val
+    });
+    return arr;
+}, []);
+// [ { name: 'name' },
+//   { name: 'age' },
+//   { name: 'address' },
+//   { name: 'school' },
+//   { name: 'phone' } ]
+
+let sourceNumber = [1,2,3,6,7,8,9];
+let resultNumber = _.reduce(sourceNumber, (sum, value, index) => {
+    return sum + value
+}, 0);
+// 36
