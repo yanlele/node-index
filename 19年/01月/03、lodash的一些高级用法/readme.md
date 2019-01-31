@@ -93,4 +93,34 @@ let result = _.pickBy(object, function (value, key) {
 console.log(result);    // { b: '2' }
 ```
 
+#### _.values(object)
+创建 object 自身可枚举属性的值为数组。 非对象的值会强制转换为对象。
+```js
+function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+ 
+Foo.prototype.c = 3;
+ 
+_.values(new Foo);
+// => [1, 2] (无法保证遍历的顺序)
+ 
+_.values('hi');
+// => ['h', 'i']
+```
+
+#### _.valuesIn(object) 
+创建 object 自身和继承的可枚举属性的值为数组 .非对象的值会强制转换为对象。
+```js
+function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.valuesIn(new Foo);
+// => [1, 2, 3] (无法保证遍历的顺序)
+```
 
