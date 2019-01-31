@@ -1,4 +1,4 @@
-# lodash 的一些高级用法
+# lodash的一些高级用法
 
 #### intersection
 ```js
