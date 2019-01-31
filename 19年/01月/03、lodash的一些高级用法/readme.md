@@ -1,5 +1,24 @@
 # lodash的一些高级用法
 
+### webpack 优化 lodash 打包
+lodash webpack 打包无法threeShaking， 导致之后体积过大的问题解决方案                            
+组合拳： `npm install babel-plugin-lodash lodash-webpack-plugin --save`                             
+```js
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const config = {
+    plugins: [
+        new LodashModuleReplacementPlugin({
+            path: true,
+            flattening: true
+        })
+    ]
+};
+
+//.babelrc
+plugins: ['transform-runtime', 'lodash']
+```
+
+
 #### intersection
 ```js
 //返回一个包含所有传入数组交集元素的新数组
