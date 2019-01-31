@@ -211,6 +211,7 @@
     - [53、常用工具库收集:licia](https://github.com/liriliri/licia)
     - [54、lodash中文文档](http://lodash.net)
     - [55、CSS3的calc()使用](https://www.w3cplus.com/css3/how-to-use-css3-calc-function.html)
+    - [56、lodash的一些高级用法](./19年/01月/03、lodash的一些高级用法/)
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
