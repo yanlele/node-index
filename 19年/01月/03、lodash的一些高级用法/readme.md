@@ -44,5 +44,32 @@ let resultNumber = _.reduce(sourceNumber, (sum, value, index) => {
 ```
 
 #### get
+根据 object对象的path路径获取值。 如果解析 value 是 undefined 会以 defaultValue 取代。
+```js
+var object = { 'a': [{ 'b': { 'c': 3 } }] };
+ 
+_.get(object, 'a[0].b.c');
+// => 3
+ 
+_.get(object, ['a', '0', 'b', 'c']);
+// => 3
+ 
+_.get(object, 'a.b.c', 'default');
+// => 'default'
+```
+
+#### unescape([string=''])
+这个方法转换string字符串中的 HTML 实体 &amp;, &lt;, &gt;, &quot;, &#39;, 和 &#96; 为对应的字符。     
+```js
+_.unescape('fred, barney, &amp; pebbles');
+// => 'fred, barney, & pebbles'
+```
+
+#### _.escape([string=''])
+转义string中的 "&", "<", ">", '"', "'", 和 "`" 字符为HTML实体字符。 
+```js
+_.escape('fred, barney, & pebbles');
+// => 'fred, barney, &amp; pebbles'
+```
 
 
