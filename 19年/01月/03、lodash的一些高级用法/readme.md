@@ -143,3 +143,13 @@ _.valuesIn(new Foo);
 // => [1, 2, 3] (无法保证遍历的顺序)
 ```
 
+#### uniqueId([prefix=''])
+生成唯一ID。 如果提供了 prefix ，会被添加到ID前缀上。
+```js
+_.uniqueId('contact_');
+// => 'contact_104'
+ 
+_.uniqueId();
+// => '105'
+```
+
