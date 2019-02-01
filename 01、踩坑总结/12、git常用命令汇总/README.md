@@ -225,3 +225,11 @@ git stash pop
 
 一个回滚的方法： [https://www.cnblogs.com/human/p/5128482.html](https://www.cnblogs.com/human/p/5128482.html)
 
+#### 修改git commit message
+比如要修改的commit是倒数第三条，使用下述命令                       
+`git rebase -i HEAD~3`
+
+把相对应的把pick改为edit， 然后:wq 保存退出， 接下来按照提示一路走下来就可以了。有提示的。
+具体文章也可以参看这个文章： [如何修改Git commit的信息](https://www.cnblogs.com/shenh062326/p/git.html)
+
+
