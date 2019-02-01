@@ -26,3 +26,10 @@ arr.forEach((item,index)=>{
 console.log('会议结束了，这个时候要散场了');
 arr = [];
 console.log('看看名单上是否还有小伙伴儿，', arr);
+
+
+// let arr = ['许海峰', '杜鹏', '郭涛'];
+// let result = arr.find((item) => {
+//     return item.length === 3
+// });
+// console.log(result);

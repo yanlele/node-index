@@ -9,6 +9,8 @@
     
 - [BOM](#bom)
 
+- [补充](#补充)
+
 
 ## <p id='dom'>DOM 部分</p>
 
@@ -493,3 +495,29 @@ search	|返回一个URL的查询部分
 assign()	|载入一个新的文档
 reload()	|重新载入当前文档
 replace()	|用新的文档替换当前文档
+
+
+
+
+## 补充
+- element.matches
+`let result = element.matches(selectorString);`                         
+result 的值为 true 或 false.                            
+selectorString 是个css选择器字符串.                             
+例子：
+```html
+<ul id="birds">
+  <li>Orange-winged parrot</li>
+  <li class="endangered">Philippine eagle</li>
+  <li>Great white pelican</li>
+</ul>
+
+<script type="text/javascript">
+  var birds = document.getElementsByTagName('li');
+  for (var i = 0; i < birds.length; i++) {
+    if (birds[i].matches('.endangered')) {
+      console.log('The ' + birds[i].textContent + ' is endangered!');
+    }
+  }
+</script>
+```
