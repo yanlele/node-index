@@ -58,7 +58,7 @@ click$.pipe(take(1))
     });
 ```
 
-## 创建 Observable
+### 创建 Observable
 要创建一个 Observable，只要给 new Observable 传递一个接收 observer 参数的回调函数，在这个函数中去定义如何发送数据。
 ```js
 import {Observable} from 'rxjs';
@@ -78,7 +78,7 @@ console.log('end');
 上面的代码通过 new Observable 创建了一个 Observable，调用它的 subscribe 方法进行订阅，执行结果为依次输出 'start'，1，2，3，'end'。
 
 下面我们再看一个异步的例子：
-```
+```js
 import {Observable} from 'rxjs';
    
 const source$ = new Observable(observer => {
@@ -94,6 +94,99 @@ console.log('start');
 source$.subscribe(observer);
 console.log('end');
 ```
+
+
+### 观察者 Observer
+观察者 Observer 是一个有三个方法的对象：                               
+next: 当 Observable 发出新的值时被调用，接收这个值作为参数                          
+complete：当 Observable 完结，没有更多数据时被调用。complete 之后，next 方法无效                                                       
+error：当 Observable 内部发生错误时被调用，之后不会调用 complete，next 方法无效                                                 
+```js
+import {Observable} from 'rxjs';
+
+const source$ = new Observable(observer => {
+    observer.next(1);
+    observer.next(2);
+    observer.complete();
+    observer.next(3);
+});
+const observer = {
+    next: item => console.log(item),
+    complete: () => console.log('complete')
+};
+
+source$.subscribe(observer);
+```
+上面的代码会输出 1，2，'complete'，而不会输出 3。
+
+```js
+import {Observable} from 'rxjs';
+
+const source$ = new Observable(observer => {
+    try {
+        observer.next(1);
+        observer.next(2);
+        throw new Error('there is an exception');
+        observer.complete();
+    } catch (e) {
+        observer.error(e)
+    }
+});
+const observer = {
+    next: item => console.log(item),
+    error: e => console.log(e),
+    complete: () => console.log('complete')
+};
+source$.subscribe(observer);
+```
+注意 error 之后不会再调用 complete。
+
+
+Observer 还有简单形式，即不用构建一个对象，而是直接把函数作为 subscribe 方法的参数。
+```js
+import {Observable} from 'rxjs';
+
+const source$ = new Observable(observer => {
+    try {
+        observer.next(1);
+        observer.next(2);
+        throw new Error('there is an exception');
+        observer.complete();
+    } catch (e) {
+        observer.error(e)
+    }
+});
+source$.subscribe(
+    item => console.log(item),
+    e => console.log(e),
+    () => console.log('complete')
+);
+```
+
+### 退订（unsubscribe）
+```js
+import {Observable} from 'rxjs';
+
+const source$ = new Observable(observer => {
+    let number = 1;
+    setInterval(() => {
+        observer.next(number++)
+    }, 1000)
+});
+const observer = {
+    next: item => console.log(item)
+};
+const subscription = source$.subscribe(observer);
+
+setTimeout(() => {
+    subscription.unsubscribe()
+}, 5000);
+```
+
+
+
+
+
 
 
 
