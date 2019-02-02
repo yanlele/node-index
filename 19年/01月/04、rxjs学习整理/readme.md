@@ -8,7 +8,7 @@
     - [创建一个简单的Observable例子](#创建一个简单的Observable例子)
     - [观察者 Observer](#观察者-Observer)
     - [退订（unsubscribe）](#退订（unsubscribe）)
-    - [操作符](#操作符)
+    - [简单操作符示例](#简单操作符示例)
     - [弹珠图](#弹珠图)
     
 - [创建 Observable](#创建-Observable)
@@ -201,7 +201,7 @@ setTimeout(() => {
 }, 5000);
 ```
 
-### 操作符
+### 简单操作符示例
 在 RxJS 中，操作符是用来处理数据流的。
 我们往往需要对数据流做一系列处理，才交给 Observer，这时一个操作符就像一个管道一样，数据进入管道，完成处理，流出管道。
 ```js
@@ -391,6 +391,46 @@ defer(() => ajax(ajaxUrl))
 只有订阅了才会去发送 ajax 请求。                             
 
 
+## 操作符
+操作符其实看作是处理数据流的管道，每个操作符实现了针对某个小的具体应用问题的功能，
+RxJS 编程最大的难点其实就是如何去组合这些操作符从而解决我们的问题。                                
+在 RxJS 中，有各种各样的操作符，有转化类、过滤类、合并类、多播类、错误处理类、辅助工具类等等。
+一般不需要自己去实现操作符，但是我们需要知道操作符是一个函数，实现的时候必须考虑以下功能：                                   
+- 返回一个全新的 Observable 对象
+- 对上游和下游的订阅和退订处理
+- 处理异常情况
+- 及时释放资源
+
+### pipeable操作符
+现在需要这样使用：
+```typescript
+import {Observable} from 'rxjs';
+import {filter, map} from "rxjs/operators";
+
+const source$ = new Observable(observer => {
+    observer.next(2);
+    observer.next(4);
+    observer.next(8);
+});
+
+const observer = {
+    next: item => console.log(item)
+};
+
+const subscription = source$
+    .pipe(
+        filter((x: number) => {
+            return x === 2;
+        }),
+        map((x: number) => {
+            return  x * 2
+        }),
+    )
+    .subscribe(observer);
+```
+其实也很好理解，pipe 就是管道的意思，数据流通过操作符处理，流出然后交给下一个操作符。
+
+
 
 
 
@@ -410,6 +450,7 @@ defer(() => ajax(ajaxUrl))
 ## 参考文章
 - [RxJS v6 学习指南](https://www.imooc.com/article/70323)
 - [rxjs6学习笔记----结合react，redux使用](https://blog.csdn.net/github_36487770/article/details/81168346)
+- [rxjs 常用的管道操作符](https://www.cnblogs.com/ajanuw/p/8986776.html)
 
 
 
