@@ -11,6 +11,10 @@
     - [操作符](#操作符)
     - [弹珠图](#弹珠图)
     
+- [创建 Observable](#创建-Observable)
+
+
+    
     
     
     
@@ -226,7 +230,171 @@ newest: -----0-----1-----4-----9--...
 
 具体关于弹珠图的使用可以查看这个网站 [http://rxmarbles.com/](http://rxmarbles.com/)。
 
+
+
+
 ## 创建 Observable
+创建 Observable 的这些方法就是用来创建 Observable 数据流的，**注意和操作符不同，它们是从 rxjs 中导入的，而不是 rxjs/operators 。**
+
+### of方法
+之前我们写的这种形式：
+```js
+import {Observable, of} from 'rxjs';
+const source$ = new Observable(observer => {
+    observer.next(1);
+    observer.next(2);
+    observer.next(3);
+});
+const observer = {
+    next: item => console.log(item)
+};
+const subscription = source$.subscribe(observer);
+```
+
+使用 of 方法将会非常简洁：
+```js
+import {Observable, of} from 'rxjs';
+
+const source$ = of(1, 2, 3);
+const observer = {
+    next: item => console.log(item)
+};
+const subscription = source$.subscribe(observer);
+```
+
+### form方法
+如果上面的代码用from则是这样的写法， 实现的功能是一样的
+```js
+import {from, Observable, of} from 'rxjs';
+
+const source$ = from([1, 2, 3]);
+const observer = {
+    next: item => console.log(item)
+};
+const subscription = source$.subscribe(observer);
+```
+from 可以将可遍历的对象（iterable）转化为一个 Observable，字符串也部署有 iterator 接口，所以也支持。                             
+from 还可以根据 promise 创建一个 Observable。
+我们用 fetch 或者 axios 等类库发送的请求都是一个 promise 对象，我们可以使用 from 将其处理为一个 Observable 对象。
+
+### fromEvent方法
+用 DOM 事件创建 Observable，第一个参数为 DOM 对象，第二个参数为事件名称。具体示例见前面 RxJS 入门章节的一个简单例子。
+
+
+### formEventPattern方法
+将添加事件处理器、删除事件处理器的 API 转化为 Observable。
+```js
+import {fromEventPattern} from 'rxjs';
+
+function addClickHandler(handler) {
+    document.addEventListener('click', handler);
+}
+
+function removeClickHandler(handler) {
+    document.removeEventListener('click', handler);
+}
+
+fromEventPattern(
+    addClickHandler,
+    removeClickHandler
+).subscribe(x => console.log(x));
+```
+
+也可以是我们自己实现的和事件类似，拥有注册监听和移除监听的 API。
+```js
+import {fromEventPattern} from 'rxjs'
+
+class EventEmitter {
+    private readonly handlers: {};
+
+    constructor() {
+        this.handlers = {}
+    }
+
+    on(eventName, name = null, handler) {
+        if (!this.handlers[eventName]) {
+            this.handlers[eventName] = []
+        }
+        if (name) {
+            console.log(`订阅人: ${name}`);
+        }
+        if (typeof handler === 'function') {
+            this.handlers[eventName].push(handler)
+        } else {
+            throw new Error('handler 不是函数！！！')
+        }
+    }
+
+    off(eventName, handler) {
+        this.handlers[eventName].splice(this.handlers[eventName].indexOf(handler), 1)
+    }
+
+    emit(eventName, ...args) {
+        this.handlers[eventName].forEach(handler => {
+            handler(...args)
+        })
+    }
+}
+
+const event = new EventEmitter();
+
+const subscription = fromEventPattern(
+    event.on.bind(event, 'say', 'yanle'),
+    event.off.bind(event, 'say')
+).subscribe(x => console.log(x));
+
+let timer = (() => {
+    let number = 1;
+    return setInterval(() => {
+        if (number === 5) {
+            clearInterval(timer);
+            timer = null
+        }
+        event.emit('say', number++)
+    }, 1000)
+})();
+
+setTimeout(() => {
+    subscription.unsubscribe()
+}, 3000);
+```
+这里有一个值得注意的地方， subscribe 订阅方法的时候， 给的方法入参， 是订阅对象的最后一个参数。
+
+### interval和timer
+interval 和 JS 中的 setInterval 类似，参数为间隔时间，下面的代码每隔 1000 ms 会发出一个递增的整数。                         
+```js
+interval(1000).subscribe(console.log)
+// 0// 1// 2// ...
+```
+timer 则可以接收两个参数，第一个参数为发出第一个值需要等待的时间，第二个参数为之后的间隔时间。
+第一个参数可以是数字，也可以是一个 Date 对象，第二个参数可省。
+
+
+### range
+操作符 of 产生较少的数据时可以直接写如 of(1, 2, 3)，但是如果是 100 个呢？这时我们可以使用 range 操作符。
+
+
+### empty、throwError、never
+empty 是创建一个立即完结的 Observable，
+throwError 是创建一个抛出错误的 Observable，
+never 则是创建一个什么也不做的 Observable（不完结、不吐出数据、不抛出错误）。                             
+这三个操作符单独用时没有什么意义，主要用来与其他操作符进行组合。                                
+目前官方不推荐使用 empty 和 never 方法，而是推荐使用常量 EMPTY 和 NEVER（注意不是方法，已经是一个 Observable 对象了）。
+
+
+### defer
+defer 创建的 Observable 只有在订阅时才会去创建我们真正想要操作的 Observable。
+defer 延迟了创建 Observable，而又有一个 Observable 方便我们去订阅，这样也就推迟了占用资源。
+```js
+defer(() => ajax(ajaxUrl))
+```
+只有订阅了才会去发送 ajax 请求。                             
+
+
+
+
+
+
 
 
 
