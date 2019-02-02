@@ -431,6 +431,43 @@ const subscription = source$
 其实也很好理解，pipe 就是管道的意思，数据流通过操作符处理，流出然后交给下一个操作符。
 
 
+### 几个类似数组方法的基础操作符
+
+map、filter 和数组的 map、filter 方法类似，                        
+scan 则是和 reduce 方法类似，                               
+mapTo 是将所有发出的数据映射到一个给定的值。
+```js
+import {mapTo} from 'rxjs/operators'
+fromEvent(document, 'click').pipe(
+  mapTo('Hi')
+).subscribe(x => console.log(x))
+```
+每次点击页面时都会输出 Hi。
+
+
+### 一些过滤的操作符
+- take 是从数据流中选取最先发出的若干数据
+- takeLast 是从数据流中选取最后发出的若干数据
+- takeUntil 是从数据流中选取直到发生某种情况前发出的若干数据
+- first 是获得满足判断条件的第一个数据
+- last 是获得满足判断条件的最后一个数据
+- skip 是从数据流中忽略最先发出的若干数据
+- skipLast 是从数据流中忽略最后发出的若干数据
+```js
+import {interval} from 'rxjs';
+import {take} from 'rxjs/operators';
+
+interval(1000).pipe(
+    take(3)
+).subscribe(
+    x => console.log(x),
+    null,
+    () => console.log('complete')
+);
+```
+
+
+
 
 
 
