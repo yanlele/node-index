@@ -12,6 +12,23 @@
     - [弹珠图](#弹珠图)
     
 - [创建 Observable](#创建-Observable)
+    - [of方法](#of方法)
+    - [form方法](#form方法)
+    - [fromEvent方法](#fromEvent方法)
+    - [formEventPattern方法](#formEventPattern方法)
+    - [interval和timer](#interval和timer)
+    - [range](#range)
+    - [empty、throwError、never](#empty、throwError、never)
+    - [defer](#defer)
+    
+- [操作符](#操作符)
+    - [pipeable操作符](#pipeable操作符)
+    - [几个类似数组方法的基础操作符](#几个类似数组方法的基础操作符)
+    - [一些过滤的操作符](#一些过滤的操作符)
+    - [合并类操作符](#合并类操作符)
+    
+- [一个小的练习](#一个小的练习)
+    
 
 
     
@@ -532,7 +549,7 @@ RxJS 中提供了对应的更简洁的 API。使用的效果可以用下面的�
 `concatMap = map + concatAllmergeMap = map + mergeAllswitchMap = map + switchAll`
 
 **4）zip、combineLatest、withLatestFrom**                              
-zip 有拉链的意思，这个操作符和拉链的相似之处在于数据一定是一一对应的。                               
+**zip** 有拉链的意思，这个操作符和拉链的相似之处在于数据一定是一一对应的。                               
 ```js
 import {interval} from 'rxjs';
 import {zip, take} from 'rxjs/operators';
@@ -572,6 +589,89 @@ zip(source$, newest$).pipe(
 ).subscribe(x => console.log(x));
 ```
 
+
+使用 zip 当有数据流吐出数据很快，而有数据流发出值很慢时，要小心数据积压的问题。
+这时快的数据流已经发出了很多数据，由于对应的数据还没发出，RxJS 只能保存数据，
+快的数据流不断地发出数据，积压的数据越来越多，消耗的内存也会越来越大。                             
+
+**combineLatest** 与 zip 不同，只要其他的 Observable 已经发出过值就行，顾名思义，就是与其他 Observable 最近发出的值结合。                    
+```js
+import {interval, combineLatest} from 'rxjs';
+import {take} from 'rxjs/operators';
+
+const source$ = interval(500).pipe(take(3));
+const newest$ = interval(300).pipe(take(6));
+
+combineLatest(source$, newest$).subscribe(x => console.log(x));
+// [0, 0]// [0, 1]// [0, 2]// [1, 2]// [1, 3]// [2, 3]// [2, 4]// [2, 5]
+```
+
+
+**withLatestFrom** 没有静态方法，只有操作符方法，前面的方法所有 Observable 地位是平等的，而这个方法是使用这个操作符的 Observable 起到了主导作用，即只有它发出值才会进行合并产生数据发出给下游。
+```js
+import {interval} from 'rxjs';
+import {take, withLatestFrom} from 'rxjs/operators';
+
+const source$ = interval(500).pipe(take(3));
+const newest$ = interval(300).pipe(take(6));
+
+source$.pipe(
+    withLatestFrom(newest$)
+).subscribe(x => console.log(x));// [0, 0]// [1, 2]// [2, 4]
+```
+source 发出 0 时，newest 最新发出的值为 0，结合为 [0, 0] 发出                                    
+source 发出 1，此时 newest 最新发出的值为 2，结合为 [1, 2] 发出                                   
+source 发出 2，此时 newest 最新发出的值为 4，结合为 [2, 4] 发出                                   
+source 完结，整个 Observable 完结                                  
+
+**5）startWith、forkJoin、race**
+**startWith** 是在 Observable 的一开始加入初始数据，同步立即发送，常用来提供初始状态。
+```typescript
+import {fromEvent, from} from 'rxjs';
+import {startWith, switchMap} from 'rxjs/operators';
+
+const source$ = fromEvent(document.querySelector('#btn'), 'click');
+let number = 0;
+const fakeRequest = x => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(number++)
+        }, 1000)
+    })
+};
+
+source$.pipe(
+    startWith('initData'),
+    switchMap(x => {
+        console.log(x); // initData`
+        return from(fakeRequest(x))
+    })
+).subscribe((x: string) => document.querySelector('#number').textContent = x);
+```
+这里通过 startWith 操作符获取了页面的初始数据，之后通过点击按钮获取更新数据。                            
+forkJoin 只有静态方法形式，类似 Promise.all ，它会等内部所有 Observable 都完结之后，
+将所有 Observable 对象最后发出来的最后一个数据合并成 Observable。                            
+
+race 操作符产生的 Observable 会完全镜像最先吐出数据的 Observable。
+```typescript
+import {interval, race} from "rxjs";
+import {mapTo} from "rxjs/operators";
+
+const obs1 = interval(1000).pipe(mapTo('fast one'));
+const obs2 = interval(3000).pipe(mapTo('medium one'));
+const obs3 = interval(5000).pipe(mapTo('slow one'));
+
+race(obs3, obs1, obs2)
+    .subscribe(
+        winner => console.log(winner)
+    );// result:// a series of 'fast one'
+```
+
+
+
+## 一个小的练习
+
+待补充
 
 
 
