@@ -555,8 +555,22 @@ newest 发出第四个值 3，但这时 source 还没有发出第四个值，所
 source 发出第三个值 2，此时 newest 之前已发出了第一个值 2，执行 resultSelector 函数得到结果 4，发出这个结果                                            
 source 完结，不可能再有对应的数据了，整个 Observable 完结                                          
 
+上面如果没有传递最后一个参数 resultSelector 函数，
+将会依次输出数组 [0, 0]、[1, 1]、[2, 2]。在更新指南中，
+官方指出不推荐使用 resultSelector 参数，将会在 v7 中移除。
+加上之前提到的推荐使用静态方法，这个示例应该改成这样：
+```js
+import {interval, zip} from 'rxjs';
+import {take, map} from 'rxjs/operators';
 
+const source$ = interval(500).pipe(take(3));
+const newest$ = interval(300).pipe(take(6));
+const add = (x, y) => x + y;
 
+zip(source$, newest$).pipe(
+    map(x => add(...x))
+).subscribe(x => console.log(x));
+```
 
 
 
