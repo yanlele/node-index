@@ -18,5 +18,6 @@
     - [material-ui](https://github.com/mui-org/material-ui)     谷歌出品最酷炫的react-UI组件库
     
     
-- 其他机器重要的模块
+- 其他重要的模块
     - [ducks-modular-redux](https://github.com/erikras/ducks-modular-redux)  一种redux的解决方案
+    - [redux-observable](https://github.com/redux-observable/redux-observable) rxjs middle for redux
