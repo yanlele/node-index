@@ -18,7 +18,7 @@ const config = {
 plugins: ['transform-runtime', 'lodash']
 ```
 
-
+### lodash 相关的一些高级用法
 #### intersection
 ```js
 //返回一个包含所有传入数组交集元素的新数组
@@ -153,3 +153,15 @@ _.uniqueId();
 // => '105'
 ```
 
+
+#### _.flow([funcs])
+创建一个函数。 返回的结果是调用提供函数的结果，this 会绑定到创建函数。 每一个连续调用，传入的参数都是前一个函数返回的结果。
+```js
+function square(n) {
+  return n * n;
+}
+ 
+var addSquare = _.flow([_.add, square]);
+addSquare(1, 2);
+// => 9
+```

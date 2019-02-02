@@ -1,4 +1,4 @@
-#  常用react技术栈模块介绍
+`#  常用react技术栈模块介绍
 
 - 核心模块（根本不多解释，不会的自己打屁屁）
     - [react](https://github.com/facebook/react)
@@ -21,3 +21,5 @@
 - 其他重要的模块
     - [ducks-modular-redux](https://github.com/erikras/ducks-modular-redux)  一种redux的解决方案
     - [redux-observable](https://github.com/redux-observable/redux-observable) rxjs middle for redux
+    
+`

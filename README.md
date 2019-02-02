@@ -371,6 +371,7 @@
     - [《快乐的 Linux 命令行》](https://github.com/billie66/TLCL)
     - [学习资源 or 大前端导航](https://github.com/webproblem/learning-article)
     - [Styled-Components](https://segmentfault.com/a/1190000014682665)
+    - [redux-observable](https://redux-observable-cn.js.org)
 
 - 值得好好学习的开源项目
     - [基于 node.js + Mongodb 构建的后台系统](https://github.com/bailicangdu/node-elm)
