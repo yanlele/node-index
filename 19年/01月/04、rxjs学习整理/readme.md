@@ -467,6 +467,34 @@ interval(1000).pipe(
 ```
 
 
+### 合并类操作符
+合并类操作符用来将多个数据流合并。
+
+1）concat、merge
+concat、merge 都是用来把多个 Observable 合并成一个，
+但是 concat 要等上一个 Observable 对象 complete 之后才会去订阅第二个 Observable 对象获取数据并把数据传给下游，
+而 merge 时同时处理多个 Observable。
+```js
+import {interval} from 'rxjs'
+import {merge, take} from 'rxjs/operators'
+
+interval(500).pipe(
+    take(3),
+    merge(interval(300).pipe(take(6)))
+).subscribe(x => console.log(x));
+```
+concat 的结果应该比较好理解，merge 借助弹珠图也比较好理解，它是在时间上对数据进行了合并。
+```
+source : ----0----1----2|source2: --0--1--2--3--4--5|
+            merge()example:       --0-01--21-3--(24)--5|
+```
+
+
+
+
+
+
+
 
 
 
