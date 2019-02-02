@@ -195,6 +195,22 @@ const source$ = interval(1000).pipe(
 );
 source$.subscribe(x => console.log(x));
 ```
+interval 操作符创造了一个数据流，interval(1000) 会产生一个每隔 1000 ms 就发出一个从 0 开始递增的数据。
+map 操作符和数组的 map 方法类似，可以对数据流进行处理。                                
+这个 map 和数组的 map 方法会产生新的数组类似，它会产生新的 Observable。
+每一个操作符都会产生一个新的 Observable，不会对上游的 Observable 做任何修改，这完全符合函数式编程“数据不可变”的要求。
+
+### 弹珠图
+弹珠图（Marble diagrams）就是用图例形象地表示 Observable 和各种操作符的一种方法。                      
+用 - 表示一小段时间，X 代表有错误发生， | 表示结束，() 表示同步发生。                        
+上面的例子可以如下表示：                        
+```
+source: -----0-----1-----2-----3--...
+        map(x => x * x)
+newest: -----0-----1-----4-----9--...
+```
+
+具体关于弹珠图的使用可以查看这个网站 [http://rxmarbles.com/](http://rxmarbles.com/)。
 
 
 
@@ -209,6 +225,7 @@ source$.subscribe(x => console.log(x));
 
 ## 参考文章
 - [RxJS v6 学习指南](https://www.imooc.com/article/70323)
+- [rxjs6学习笔记----结合react，redux使用](https://blog.csdn.net/github_36487770/article/details/81168346)
 
 
 
