@@ -1,10 +1,24 @@
 # rxjs整理学习
 
 
+目录
+- [Rxjs使用入门](#Rxjs使用入门)
+    - [RxJS 的 import 路径有以下 5 种](#RxJS的import路径有以下5种)
+    - [一个简单的例子](#一个简单的例子)
+    - [创建一个简单的Observable例子](#创建一个简单的Observable例子)
+    - [观察者 Observer](#观察者-Observer)
+    - [退订（unsubscribe）](#退订（unsubscribe）)
+    - [操作符](#操作符)
+    - [弹珠图](#弹珠图)
+    
+    
+    
+    
+
 主要整理rxjs 6版本
 
 ## Rxjs使用入门
-### RxJS 的 import 路径有以下 5 种：
+### RxJS的import路径有以下5种
 创建 Observable 的方法、types、schedulers 和一些工具方法                      
 ```js
 import { 
@@ -58,7 +72,7 @@ click$.pipe(take(1))
     });
 ```
 
-### 创建 Observable
+### 创建一个简单的Observable例子
 要创建一个 Observable，只要给 new Observable 传递一个接收 observer 参数的回调函数，在这个函数中去定义如何发送数据。
 ```js
 import {Observable} from 'rxjs';
@@ -211,6 +225,8 @@ newest: -----0-----1-----4-----9--...
 ```
 
 具体关于弹珠图的使用可以查看这个网站 [http://rxmarbles.com/](http://rxmarbles.com/)。
+
+## 创建 Observable
 
 
 
