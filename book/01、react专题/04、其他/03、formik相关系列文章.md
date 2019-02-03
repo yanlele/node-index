@@ -506,6 +506,88 @@ export const MyApp: React.SFC<{} /* whatever */> = () => {
 最后继续运行你的提交函数吧（例如是onSubmit或者handleSubmit）。你可以通过在你的处理器函数中调用setSubmitting(false) 来结束生命周期。
 
 
+### 常用api
+#### Formik的api
+
+**`<Formik/>`**这个API共提供了三种渲染方法，它们是：                          
+- <Formik component>
+- <Formik render>
+- <Formik children>
+
+
+**Formik props列表分析**                            
+- dirty: boolean                        
+当values与初始值不绝对相等时这个属性的值会返回true；否则返回false                
+
+- errors: { [field: string]: string }   
+- handleBlur: (e: any) => void
+- handleChange: (e: React.ChangeEvent<any>) => void
+- handleReset: () => void
+- handleSubmit: (e: React.FormEvent<HTMLFormEvent>) => void
+- isSubmitting: boolean
+- isValid: boolean                      
+在不发生错误的情况下这个属性值将为true；或者返回当表单处于pristine条件（例如没有dirty）时会返回isInitialValid的结果值。
+- isValidating: boolean
+- resetForm: (nextValues?: Values) => void
+强行复位表单。这个调用会清除所有错误及字段「润色」信息，并且设置isSubmitting为false，设置isValidating为false，并且把mapPropsToValues返回值设置为当前的WrappedComponent的props或者是传递过去的参数。
+- setErrors: (fields: { [field: string]: string }) => void
+- setFieldError: (field: string, errorMsg: string) => void
+- setFieldTouched: (field: string, isTouched: boolean, shouldValidate?: boolean) => void
+- submitForm: () => void
+- submitCount: number
+- setFieldValue: (field: string, value: any, shouldValidate?: boolean) => void
+- setStatus: (status?: any) => void
+- setSubmitting: (isSubmitting: boolean) => void
+- setTouched: (fields: { [field: string]: boolean }) => void
+- setValues: (fields: { [field: string]: any }) => void
+- status?: any
+- touched: { [field: string]: boolean }
+此属性用于润色表单中对应的字段值。每一个键都相应于一个刚刚被「动过」（touched）或者访问过的字段。
+- values: { [field: string]: any }
+- validateForm: (values?: any) => void
+- validateField: (field: string) => void
+
+
+**component**:                      
+下面给出此属性的典型使用方法：
+```jsx harmony
+<Formik component={ContactForm} />;
+const ContactForm = ({
+  handleSubmit,
+  handleChange,
+  handleBlur,
+  values,
+  errors,
+}) => (
+  <form onSubmit={handleSubmit}>
+    <input
+      type="text"
+      onChange={handleChange}
+      onBlur={handleBlur}
+      value={values.name}
+      name="name"
+    />
+    {errors.name && <div>{errors.name}</div>}
+    <button type="submit">Submit</button>
+  </form>;
+};
+```
+- render: (props: FormikProps<Values>) => ReactNode
+- children: func
+- enableReinitialize?: boolean
+默认值为false。此属性用于在initialValues变化时控制是否重置表单。
+- isInitialValid?: boolean
+- initialValues?: Values
+- onReset?: (values: Values, formikBag: FormikBag) => void
+- onSubmit: (values: Values, formikBag: FormikBag) => void
+- validate?: (values: Values) => FormikErrors<Values> | Promise<any>
+- validateOnBlur?: boolean
+- validateOnChange?: boolean
+- validationSchema?: Schema | (() => Schema)
+
+
+
+
 
 ## 参考文章
 - [官方网站](https://github.com/jaredpalmer/formik)
