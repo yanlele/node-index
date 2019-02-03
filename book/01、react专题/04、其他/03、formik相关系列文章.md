@@ -450,6 +450,61 @@ export default Test;
 ```
 
 
+Formik是使用TypeScript写的，Formik中的类型十分类似于React Router 4中的<Route>。
+```jsx harmony
+import * as React from 'react';
+import { Formik, FormikProps, Form, Field, FieldProps } from 'formik';
+
+interface MyFormValues {
+  firstName: string;
+}
+
+export const MyApp: React.SFC<{} /* whatever */> = () => {
+  return (
+    <div>
+      <h1>My Example</h1>
+      <Formik
+        initialValues={{ firstName: '' }}
+        onSubmit={(values: MyFormValues) => alert(JSON.stringify(values))}
+        render={(formikBag: FormikProps<MyFormValues>) => (
+          <Form>
+            <Field
+              name="firstName"
+              render={({ field, form }: FieldProps<MyFormValues>) => (
+                <div>
+                  <input type="text" {...field} placeholder="First Name" />
+                  {form.touched.firstName &&
+                    form.errors.firstName &&
+                    form.errors.firstName}
+                </div>
+              )}
+            />
+          </Form>
+        )}
+      />
+    </div>
+  );
+};
+```
+
+### formik表单提交原理
+要在Formik中提交表单，你需要以某种方式触发 handleSubmit(e) 或者submitForm属性调用（在Formik中这两个方法都是以属性的方式提供的）。
+当调用其中一个方法时，Formik每次都会执行下面的伪代码：
+
+- （一）预提交
+    - （1）修改所有字段
+    - （2）把isSubmitting 设置为true
+    - （3）submitCount + 1
+- （二）校验
+    - （1）把isValidating设置为true
+    - （2）异步运行所有字段级的校验和validationSchema，并深度合并执行结果
+    - （3）判断是否存在错误：                              
+        如果存在错误：取消提交，把isValidating设置为false，设置错误信息，并把isSubmitting设置为false
+        如果不存在错误：Set isValidating to false, proceed to "Submission"
+        
+- （三）提交                                 
+最后继续运行你的提交函数吧（例如是onSubmit或者handleSubmit）。你可以通过在你的处理器函数中调用setSubmitting(false) 来结束生命周期。
+
 
 
 ## 参考文章
