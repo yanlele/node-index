@@ -586,6 +586,69 @@ const ContactForm = ({
 - validationSchema?: Schema | (() => Schema)
 
 
+**<Field />**                           
+<Field />会自动把表单中的输入字段「加入」到Formik系统中。
+它使用name属性匹配Formik中的状态（ state）。 
+<Field />会默认对应一个HTML的 <input />元素。
+复杂情形下，你可以改变这个底层元素——这可以通过指定此API的component属性的方式实现（这些思路与redux-form都是一致的！）。
+在此，component属性值可以是一个简单的字符串，如“ select”，也可能是另一个复杂的React组件。
+当然， <Field /> 还拥有一个很重要的render属性。                        
+下面的代码片断给出了<Field />及其重要属性（component属性和render属性）的典型应用展示。                         
+```typescript jsx
+import React from 'react';
+import { Formik, Field } from 'formik';
+
+const Example = () => (
+  <div>
+    <h1>My Form</h1>
+    <Formik
+      initialValues={{ email: '', color: 'red', firstName: '' }}
+      onSubmit={(values, actions) => {
+        setTimeout(() => {
+          alert(JSON.stringify(values, null, 2));
+          actions.setSubmitting(false);
+        }, 1000);
+      }}
+      render={(props: FormikProps<Values>) => (
+        <form onSubmit={props.handleSubmit}>
+          <Field type="email" name="email" placeholder="Email" />
+          <Field component="select" name="color">
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+          </Field>
+          <Field name="firstName" component={CustomInputComponent} />
+          <Field
+            name="lastName"
+            render={({ field /* _form */ }) => (
+              <input {...field} placeholder="firstName" />
+            )}
+          />
+          <button type="submit">Submit</button>
+        </form>
+      )}
+    />
+  </div>
+);
+
+const CustomInputComponent: React.SFC<
+  FieldProps<Values> & CustomInputProps
+> = ({
+  field, // { name, value, onChange, onBlur }
+  form: { touched, errors }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
+  ...props
+}) => (
+  <div>
+    <input type="text" {...field} {...props} />
+    {touched[field.name] &&
+      errors[field.name] && <div className="error">{errors[field.name]}</div>}
+  </div>
+);
+```
+相关重要api解析， 可以看这个文章： 
+- [使用Formik轻松开发更高质量的React表单（四）其他几个API解析](http://blog.51cto.com/zhuxianzhong/2152020)
+
+
 
 
 
