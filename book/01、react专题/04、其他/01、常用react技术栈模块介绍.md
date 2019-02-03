@@ -1,4 +1,4 @@
-`#  常用react技术栈模块介绍
+#  常用react技术栈模块介绍
 
 - 核心模块（根本不多解释，不会的自己打屁屁）
     - [react](https://github.com/facebook/react)
