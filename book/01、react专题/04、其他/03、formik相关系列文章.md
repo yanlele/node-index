@@ -1,4 +1,8 @@
 # formik相关系列文章
+
+
+
+
 ## 入门
 安装依赖包
 `yarn add formik yup --dev`
@@ -210,6 +214,152 @@ export default Basic;
 它提供了一种十分类似于Joi / React PropTypes的API，只不过在浏览器中尺寸十分小巧，且对运行时应用来说已经足够快。
 在此建议同学们也积极使用Yup。并且在Formik中也针对Yup提供了一种特别的配置选项/属性称作validationSchema，
 它能够把Yup的校验错误自动转换成一种很小的对象（对象中也提供了values和touched等键支持）。
+
+
+## 使用指南
+
+### 一个基本的例子
+设想你要开发一个可以编辑用户数据的表单。不过，你的用户API端使用了具有类似下面的嵌套对象表达
+```
+{
+   id: string,
+   email: string,
+   social: {
+     facebook: string,
+     twitter: string,
+     // ...
+   }
+}
+```
+最后，我们想使开发的对话框表单能够接收下面几个属性（props）：
+user，updateUser和onClose（显然，user是一个对象，updateUser和onClose却都是两个方法）。
+```jsx harmony
+import React from 'react';
+import {Formik} from 'formik';
+
+const EditUserDialog = ({user, updateUser, onClose}) => {
+    return (
+        <div onClose={onClose}>
+            <h1>Edit User</h1>
+            <Formik
+                initialValues={user /** { email, social } */}
+                onSubmit={(values, actions) => {
+                    console.log(values);
+                    // console.log(actions);
+                    /*CallMyApi(user.id, values).then(
+                        updatedUser => {
+                            actions.setSubmitting(false);
+                            updateUser(updatedUser);
+                            onClose();
+                        },
+                        error => {
+                            actions.setSubmitting(false);
+                            actions.setErrors(transformMyAPIErrorToAnObject(error));
+                        }
+                    );*/
+                    setTimeout(()=> {
+                        actions.setSubmitting(false)
+                    }, 2000)
+                }}
+                render={({
+                             values,
+                             errors,
+                             touched,
+                             handleBlur,
+                             handleChange,
+                             handleSubmit,
+                             isSubmitting,
+                         }) => {
+                    console.log(isSubmitting);
+                    return (
+                        <form onSubmit={handleSubmit}>
+                            <input
+                                type="text"
+                                name="id"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.id}
+                            />
+                            {errors.id && touched.id && <div>{errors.id}</div>}
+                            <br/>
+                            <input
+                                type="text"
+                                name="email"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.email}
+                            />
+                            {errors.email && touched.email && <div>{errors.email}</div>}
+                            <br/>
+                            <input
+                                type="text"
+                                name="social.facebook"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.social.facebook}
+                            />
+                            {errors.social &&
+                            errors.social.facebook &&
+                            touched.facebook && <div>{errors.social.facebook}</div>}
+                            <br/>
+                            <input
+                                type="text"
+                                name="social.twitter"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.social.twitter}
+                            />
+                            {errors.social &&
+                            errors.social.twitter &&
+                            touched.twitter && <div>{errors.social.twitter}</div>}
+                            <br/>
+                            <button type="submit" disabled={isSubmitting}>
+                                Submit
+                            </button>
+                        </form>
+                    )
+                }}
+            />
+        </div>
+    );
+};
+
+
+class Test extends React.PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
+            user: {
+                id: '',
+                email: '',
+                social: {
+                    facebook: '',
+                    twitter: '',
+                }
+            }
+        }
+    };
+
+    handleUpdateUser = (user) => {
+        this.setState({
+            user
+        })
+    };
+
+    render() {
+        console.log(this.state.user);
+        return (
+            <div>
+                {EditUserDialog({
+                    user: this.state.user,
+                    updateUser: this.handleUpdateUser
+                })}
+            </div>
+        )
+    }
+}
+export default Test;
+```
 
 
 
