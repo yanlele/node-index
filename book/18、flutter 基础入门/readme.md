@@ -1,5 +1,12 @@
 # Flutter基础入门
 
+目录
+- [常用组件](#常用组件)
+    - [01.Text Widget文本组件的使用](#01.Text Widget文本组件的使用)
+    - [02.Container容器组件的使用](#02.Container容器组件的使用)
+
+
+
 关于环境搭建 可直接看中文网就可以了， 首先第一步， 一定要翻墙， 不翻墙一切免谈； 记得要下载JDK8， 这一点官网并没有说。。。
 
 ## 常用组件
@@ -191,6 +198,144 @@ child: Container(
     ),
   )
 ```
+
+#### 02-4.margin属性
+会了padding属性的设置，margin就变的非常容易了，因为方法基本上一样。不过margin是外边距，只的是container和外部元素的距离。                      
+现在要把container的外边距设置为10个单位，代码如下
+```dart
+child: Container(
+    alignment: Alignment.topLeft,
+    width: 500,
+    height: 400,
+    color: Colors.lightBlue,
+    padding: const EdgeInsets.fromLTRB(10, 30, 0, 0),
+    margin: const EdgeInsets.all(10),
+    child: Text(
+      'hello yanle',
+      style: TextStyle(
+        fontSize: 40,
+        color: Colors.white
+      ),
+    ),
+  )
+```
+当然你也可以分别设置不同的外边距，方法也是使用fromLTRB，这里就不累述了。
+
+#### 02-05.decoration属性
+decoration是 container 的修饰器，主要的功能是设置背景和边框。
+比如你需要给背景加入一个渐变，这时候需要使用BoxDecoration这个类，代码如下
+（需要注意的是如果你设置了decoration，就不要再设置color属性了，因为这样会冲突）。
+```dart
+child: Container(
+    alignment: Alignment.topLeft,
+    width: 500,
+    height: 400,
+    padding: const EdgeInsets.fromLTRB(10, 30, 0, 0),
+    margin: const EdgeInsets.all(10),
+    decoration: new BoxDecoration(
+      gradient: const LinearGradient(
+          colors: [Colors.lightBlue, Colors.greenAccent, Colors.purple]
+      )
+    ),
+    child: Text(
+      'hello yanle',
+      style: TextStyle(
+        fontSize: 40,
+        color: Colors.white
+      ),
+    ),
+  )
+```
+上面的代码去掉了color的设置
+
+**渐变**： `gradient`                              
+```dart
+  gradient: const LinearGradient(
+      colors: [Colors.lightBlue, Colors.greenAccent, Colors.purple]
+  )
+```
+
+**设置边框**: `border`                        
+设置边框可以在decoration里设置`border`属性，比如你现在要设置一个红色边框，宽度为2。
+```dart
+child: Container(
+    alignment: Alignment.topLeft,
+    width: 500,
+    height: 400,
+    padding: const EdgeInsets.fromLTRB(10, 30, 0, 0),
+    margin: const EdgeInsets.all(10),
+    decoration: new BoxDecoration(
+      gradient: const LinearGradient(
+          colors: [Colors.lightBlue, Colors.greenAccent, Colors.purple]
+      ),
+      border: Border.all(
+        width: 2,
+        color: Colors.red,
+      )
+    ),
+    child: Text(
+      'hello yanle',
+      style: TextStyle(
+        fontSize: 40,
+        color: Colors.white
+      ),
+    ),
+  )
+```
+关键代码： `border: Border.all(width, color)`
+
+完整代码示例：
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Text Widget',
+      home: Scaffold(
+          body: Center(
+              child: Container(
+        alignment: Alignment.topLeft,
+        width: 500,
+        height: 400,
+        padding: const EdgeInsets.fromLTRB(10, 30, 0, 0),
+        margin: const EdgeInsets.all(10),
+        decoration: new BoxDecoration(
+            gradient: const LinearGradient(
+                colors: [Colors.lightBlue, Colors.greenAccent, Colors.purple]),
+            border: Border.all(
+              width: 2,
+              color: Colors.red,
+            )),
+        child: Text(
+          'hello yanle',
+          style: TextStyle(fontSize: 40, color: Colors.white),
+        ),
+      ))),
+    );
+  }
+}
+```
+
+
+### 03.Image图片组件的使用
+
+#### 03-1.加入图片的几种方式
+- Image.asset:加载资源图片，就是加载项目资源目录中的图片,加入图片后会增大打包的包体体积，用的是相对路径。
+- Image.network:网络资源图片，意思就是你需要加入一段http://xxxx.xxx的这样的网络路径地址。
+- Image.file:加载本地图片，就是加载本地文件中的图片，这个是一个绝对路径，跟包体无关。
+- Image.memory: 加载Uint8List资源图片,这个我目前用的不是很多，所以没什么发言权。
+
+来一个添加网络图片的例子， Container 中添加一个图片：
+```dart
+
+```
+
+
+
+
 
 
 
