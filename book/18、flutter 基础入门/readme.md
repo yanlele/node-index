@@ -94,7 +94,7 @@ body: Center(
 Container（容器控件）在Flutter是经常使用的控件，它就相当于我们HTML里的<div>标签，
 每个页面或者说每个视图都离不开它。那这节课我们就来学习一下。
 
-### 02-1.Alignment属性
+#### 02-1.Alignment属性
 其实容器的作用就是方便我们进行布局的，Flutter这点也作的很好，我们先来看容器属性中的 **Alignment**。                            
 这个属性针对的是Container内child的对齐方式，也就是容器子内容的对齐方式，并不是容器本身的对齐方式。                    
 先作一个效果：建立一个容器，然后容器内加入一段文字Hello JSPang, 并让它居中对齐。                                 
@@ -122,6 +122,75 @@ body: Center(
 - topLeft：顶部左侧对齐。
 - topCenter：顶部居中对齐。
 - topRight： 顶部居左对齐。
+
+#### 02-2.设置宽、高和颜色属性
+设置宽、高和颜色属性是相对容易的，只要在属性名称后面加入浮点型数字就可以了，比如要设置宽是500，高是400，颜色为亮蓝色。
+```dart
+body: Center(
+  child: Container(
+    alignment: Alignment.center,
+    width: 500,
+    height: 400,
+    color: Colors.lightBlue,
+    child: Text(
+      'hello yanle',
+      style: TextStyle(
+        fontSize: 40,
+        color: Colors.white
+      ),
+    ),
+  )
+)
+```
+
+---------------------
+
+上节已经简单的学习了一下Container容器组件的用法，这节我们继续学习，主要讲解一下的**padding,margin和decoration**这几个属性。我们先来看看Padding属性。
+
+#### 02-3.padding属性
+padding的属性就是一个内边距，它和你使用的前端技术CSS里的padding表现形式一样，
+指的是Container边缘和child内容的距离。先来看一个内边距为10的例子。
+```dart
+child: Container(
+    alignment: Alignment.center,
+    width: 500,
+    height: 400,
+    color: Colors.lightBlue,
+    padding: const EdgeInsets.all(10),
+    child: Text(
+        'hello yanle',
+        style: TextStyle(
+        fontSize: 40,
+        color: Colors.white
+        ),
+    ),
+)
+```
+上面主要的padding代码就一句。                              
+
+`padding:const EdgeInsets.all(10.0),` 这句的意思是设置Container的内边距是10，左右上下全部为10，这看起来非常容易。
+那我们再加大一点难度。如果上边距为30，左边距为10，这时候EdgeInsets.all()就满足不了我们了。
+
+**`EdgeInsets.fromLTRB(value1,value2,value3,value4)`**：                         
+我们用EdgeInsets.fromLTRB(value1,value2,value3,value4) 可以满足我们的需求，LTRB分别代表左、上、右、下。
+
+那我们设置上边距为30，左边距为10，就可以用下面的代码来编写。
+```dart
+child: Container(
+    alignment: Alignment.topLeft,
+    width: 500,
+    height: 400,
+    color: Colors.lightBlue,
+    padding: const EdgeInsets.fromLTRB(10, 30, 0, 0),
+    child: Text(
+      'hello yanle',
+      style: TextStyle(
+        fontSize: 40,
+        color: Colors.white
+      ),
+    ),
+  )
+```
 
 
 
