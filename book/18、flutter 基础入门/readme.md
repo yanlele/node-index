@@ -297,23 +297,23 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
           body: Center(
               child: Container(
-        alignment: Alignment.topLeft,
-        width: 500,
-        height: 400,
-        padding: const EdgeInsets.fromLTRB(10, 30, 0, 0),
-        margin: const EdgeInsets.all(10),
-        decoration: new BoxDecoration(
-            gradient: const LinearGradient(
-                colors: [Colors.lightBlue, Colors.greenAccent, Colors.purple]),
-            border: Border.all(
-              width: 2,
-              color: Colors.red,
-            )),
-        child: Text(
-          'hello yanle',
-          style: TextStyle(fontSize: 40, color: Colors.white),
-        ),
-      ))),
+                alignment: Alignment.topLeft,
+                width: 500,
+                height: 400,
+                padding: const EdgeInsets.fromLTRB(10, 30, 0, 0),
+                margin: const EdgeInsets.all(10),
+                decoration: new BoxDecoration(
+                    gradient: const LinearGradient(
+                        colors: [Colors.lightBlue, Colors.greenAccent, Colors.purple]),
+                    border: Border.all(
+                      width: 2,
+                      color: Colors.red,
+                    )),
+                child: Text(
+                  'hello yanle',
+                  style: TextStyle(fontSize: 40, color: Colors.white),
+                ),
+              ))),
     );
   }
 }
@@ -330,8 +330,39 @@ class MyApp extends StatelessWidget {
 
 来一个添加网络图片的例子， Container 中添加一个图片：
 ```dart
+import 'package:flutter/material.dart';
 
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Text widget',
+      home: Scaffold(
+        body: Center(
+          child: Container(
+            child: new Image.network(
+              'https://avatars3.githubusercontent.com/u/22188674?s=460&v=4',
+              scale: 1,
+            ),
+            width: 300,
+            height: 300,
+            decoration: new BoxDecoration(
+              border: Border.all(
+                width: 3,
+                color: Colors.lightBlue,
+              )
+            ),
+          ),
+        )
+      ),
+    );
+  }
+}
 ```
+这时候就可以看到图片被加入进来了，当然我们还顺便设置了容器的宽和高。                              
+
 
 
 
