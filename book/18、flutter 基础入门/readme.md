@@ -376,6 +376,41 @@ fit属性可以控制图片的拉伸和挤压，这些都是根据图片的父�
 - BoxFit.scaleDown：效果和contain差不多，但是此属性不允许显示超过源图片大小，可小不可大。
 
 
+#### 03-3.图片的混合模式
+图片混合模式（colorBlendMode）和color属性配合使用，能让图片改变颜色，里边的模式非常的多，产生的效果也是非常丰富的。在这里作几个简单的例子
+```dart
+home: Scaffold(
+      body: Center(
+    child: Container(
+      alignment: Alignment.center,
+      width: 300,
+      height: 300,
+      decoration: new BoxDecoration(
+          border: Border.all(
+        width: 3,
+        color: Colors.lightBlue,
+      )),
+      child: new Image.network(
+        'https://avatars3.githubusercontent.com/u/22188674?s=460&v=4',
+        color: Colors.greenAccent,
+        colorBlendMode: BlendMode.colorBurn,
+      ),
+    ),
+  )),
+```
+核心代码：
+```dart
+child: new Image.network(
+    'https://avatars3.githubusercontent.com/u/22188674?s=460&v=4',
+    color: Colors.greenAccent,
+    colorBlendMode: BlendMode.colorBurn,
+  ),
+```
+- color：是要混合的颜色，如果你只设置color是没有意义的。
+- colorBlendMode:是混合模式，相当于我们如何混合。
+
+
+
 
 
 
