@@ -410,6 +410,10 @@ child: new Image.network(
 - colorBlendMode:是混合模式，相当于我们如何混合。
 
 
+#### 03-4.repeat图片重复
+- ImageRepeat.repeat : 横向和纵向都进行重复，直到铺满整个画布。
+- ImageRepeat.repeatX: 横向重复，纵向不重复。
+- ImageRepeat.repeatY：纵向重复，横向不重复。
 
 
 
