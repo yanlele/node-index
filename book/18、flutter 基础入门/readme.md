@@ -501,6 +501,138 @@ body: new ListView(
 
 
 ### 05.横向列表的使用
+已经对ListView有了清楚的认识，也做出了普通的纵向（竖向列表）。 
+其实还是使用我们的ListView组件，只是在ListView组件里加一个**ScrollDirection**属性。
+
+#### 05-1.制作横向列表
+这个我们先来看效果，然后再具体讲解使用方法
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  return runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'yanle flutter',
+      home: Scaffold(
+        appBar: new AppBar(
+          title: Text('ListView Widget'),
+        ),
+        body: Center(
+          child: Container(
+            height: 200,
+            child: new ListView(
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                new Container(
+                  width: 180,
+                  color: Colors.lightBlue,
+                ),
+                new Container(
+                  width: 180,
+                  color: Colors.amber,
+                ),
+                new Container(
+                  width: 180,
+                  color: Colors.deepOrange,
+                ),
+                new Container(
+                  width: 180,
+                  color: Colors.deepPurpleAccent,
+                )
+              ],
+            ),
+          ),
+        )
+      ),
+    );
+  }
+}
+```
+我们先是加入了Center组件，作用是让我们的横向列表可以居中到屏幕的中间位置，
+然后在center组件的下面加入了Container容器组件，并设置了容器组件的高是200，
+在容器组件里我们加入了ListView组件，然后设置了组件的scrollDirection属性。
+然后再ListView的子组件里加入了Container容器组件，然后设置了不同颜色.
+
+
+#### 05-2.scrollDirection属性
+`scrollDirection: Axis.horizontal`:                             
+ListView组件的scrollDirection属性只有两个值，一个是横向滚动，一个是纵向滚动。
+默认的就是垂直滚动，所以如果是垂直滚动，我们一般都不进行设置。                         
+- Axis.horizontal:横向滚动或者叫水平方向滚动。
+- Axis.vertical:纵向滚动或者叫垂直方向滚动。
+
+
+#### 05-3.优化代码简介
+学到这里，我相信很多小伙伴一定心里很多草泥马在崩腾了，Flutter太反人类了，全是嵌套，让我们如何维护。
+其实这不能怪Flutter，这是我为了教学简单，所以没有把组件分开定义。                       
+现在把列表组件独立定义成一个类，然后我们再加入到主组件中。
+再工作中会把组件分的很细，这样既能很好的复用有便于维护，还有利于分工，我个人是非常喜欢Flutter这种万物皆组件的形式的。                              
+我们声明一个MyList的类，然后把嵌套的代码放到这个类里,代码如下。                             
+```dart
+import 'package:flutter/material.dart';
+
+class MyList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      scrollDirection: Axis.horizontal,
+      children: <Widget>[
+        new Container(
+          width: 180,
+          color: Colors.lightBlue,
+        ),
+        new Container(
+          width: 180,
+          color: Colors.amber,
+        ),
+        new Container(
+          width: 180,
+          color: Colors.deepOrange,
+        ),
+        new Container(
+          width: 180,
+          color: Colors.deepPurpleAccent,
+        )
+      ],
+    );
+  }
+}
+```
+
+然后再MyAPP类里直接使用这个类，这样就减少了嵌套:  main.dart
+```dart
+import 'package:flutter/material.dart';
+import 'package:flutter_app/MyList.dart';
+
+void main() {
+  return runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'yanle flutter',
+      home: Scaffold(
+        appBar: new AppBar(
+          title: Text('ListView Widget121'),
+        ),
+        body: Center(
+          child: Container(
+            height: 200,
+            child: MyList(),
+          ),
+        )
+      ),
+    );
+  }
+}
+```
 
 
 
