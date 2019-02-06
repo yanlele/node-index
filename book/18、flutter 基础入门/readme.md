@@ -8,6 +8,7 @@
     - [04.ListView 列表组件简介](#04.ListView-列表组件简介)
     - [05.横向列表的使用](#05.横向列表的使用)
     - [06.动态列表的使用](#06.动态列表的使用)
+    - [07.GridView网格列表组件](#07.GridView网格列表组件)
 
 
 
@@ -700,6 +701,47 @@ class MyApp extends StatelessWidget{
 }
 ```
 
+
+### 07.GridView网格列表组件
+那还有一种常用的列表，叫做网格列表。网格列表经常用来显示多张图片，比如我们经常使用的手机里的相册功能，大部分形式都是网格列表。
+
+#### 07-1.简单例子演示
+我们先不做一个相册的应用，而是使用文字，作一个最简单的网格列表，目的是先熟悉一下 `GridView` 的基本语法，代码如下
+```dart
+import 'package:flutter/material.dart';
+
+void main () => runApp(MyApp());
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'ListView widget',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('yanle web flutter'),
+        ),
+        body: GridView.count(
+          padding: const EdgeInsets.all(20),
+          crossAxisSpacing: 10,
+          crossAxisCount: 3,
+          children: <Widget>[
+            const Text('name is yanle'),
+            const Text('I love web'),
+            const Text('github.com/yanle'),
+            const Text('age 27'),
+            const Text('home chongqing'),
+            const Text('bilibili')
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+我们在body属性中加入了网格组件，然后给了一些常用属性:                       
+- padding:表示内边距，这个小伙伴们应该很熟悉。
+- crossAxisSpacing:网格间的空当，相当于每个网格之间的间距。
+- crossAxisCount:网格的列数，相当于一行放置的网格数量。
 
 
 
