@@ -417,6 +417,69 @@ child: new Image.network(
 
 
 
+### 04.ListView 列表组件简介
+列表组件的知识其实是很多的，也是一个经常使用的组件，我们这里先作一个简介，让大家有个直观的感受，先敲开大门，大家就好深入了。
+
+#### 04-1.ListView的声明
+主要练习的代码如下
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  return runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'yanle flutter',
+      home: Scaffold(
+        appBar: new AppBar(
+          title: Text('ListView Widget'),
+        ),
+        body: Center(
+          child: Text('ListView Text'),
+        ),
+      ),
+    );
+  }
+}
+```
+
+有了最基本的结构后，就可以加入ListView组件，在body代码处加入下面的代码：                      
+```dart
+body: new ListView(
+  children: <Widget>[
+    new ListTile(
+      leading: new Icon(Icons.access_time),
+      title: Text('access_time'),
+    )
+  ],
+),
+```
+
+我们使用了ListView，然后在他的内部children中，使用了widget数组，因为是一个列表，所以它接受一个数组，然后有使用了listTite组件（列表瓦片），在组件中放置了图标和文字。                       
+当然我们还可以多加入几行列表，比如我们再加入一行，代码如下。
+```dart
+body: new ListView(
+  children: <Widget>[
+    new ListTile(
+      leading: new Icon(Icons.access_time),
+      title: Text('access_time'),
+    ),
+    new ListTile(
+      leading: new Icon(Icons.account_balance),
+      title: new Text('account_balance')
+    )
+  ],
+),
+```
+这个时候已经有两行列表了。 
+
+
+
+
 
 
 
