@@ -744,6 +744,46 @@ class MyApp extends StatelessWidget{
 - crossAxisCount:网格的列数，相当于一行放置的网格数量。
 
 
+#### 07-2.图片网格列表
+加入文字作网格列表总是怪怪的，也不是很直观，我们利用图片来作一些网格列表。
+当然我们用一种更原生的方法，现在官方已经不鼓励使用这种方法了，但是为了你碰到时，不至于不知道怎么回事，
+所以我们作一下这种形式，但主要是为了作图片布局。
+```dart
+import 'package:flutter/material.dart';
+void main () => runApp(MyApp());
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context ){
+    return MaterialApp(
+      title:'ListView widget',
+      home:Scaffold(
+          body:GridView(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                mainAxisSpacing: 2.0,
+                crossAxisSpacing: 2.0,
+                childAspectRatio: 0.7
+            ),
+            children: <Widget>[
+              new Image.network('http://img5.mtime.cn/mt/2018/10/22/104316.77318635_180X260X4.jpg',fit: BoxFit.cover),
+              new Image.network('http://img5.mtime.cn/mt/2018/10/10/112514.30587089_180X260X4.jpg',fit: BoxFit.cover),
+              new Image.network('http://img5.mtime.cn/mt/2018/11/13/093605.61422332_180X260X4.jpg',fit: BoxFit.cover),
+              new Image.network('http://img5.mtime.cn/mt/2018/11/07/092515.55805319_180X260X4.jpg',fit: BoxFit.cover),
+              new Image.network('http://img5.mtime.cn/mt/2018/11/21/090246.16772408_135X190X4.jpg',fit: BoxFit.cover),
+              new Image.network('http://img5.mtime.cn/mt/2018/11/17/162028.94879602_135X190X4.jpg',fit: BoxFit.cover),
+              new Image.network('http://img5.mtime.cn/mt/2018/11/19/165350.52237320_135X190X4.jpg',fit: BoxFit.cover),
+              new Image.network('http://img5.mtime.cn/mt/2018/11/16/115256.24365160_180X260X4.jpg',fit: BoxFit.cover),
+              new Image.network('http://img5.mtime.cn/mt/2018/11/20/141608.71613590_135X190X4.jpg',fit: BoxFit.cover),
+            ],
+          )
+      ),
+    );
+  }
+}
+```
+- childAspectRatio:宽高比                      
+这个值的意思是宽是高的多少倍，如果宽是高的2倍，那我们就写2.0，如果高是宽的2倍，我们就写0.5。希望小伙伴们理解一下。
+
 
 
 
