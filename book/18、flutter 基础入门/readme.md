@@ -477,6 +477,37 @@ body: new ListView(
 ```
 这个时候已经有两行列表了。 
 
+#### 04-2.图片列表的使用
+在这里我们就在列表中加入图片来试一下。我们插入4幅图片，然后看一下效果，代码如下：
+```dart
+body: new ListView(
+  children:<Widget>[
+    new Image.network(
+        'http://jspang.com/static/upload/20181111/G-wj-ZQuocWlYOHM6MT2Hbh5.jpg'
+    ),
+    new Image.network(
+        'http://jspang.com/static/upload/20181109/1bHNoNGpZjyriCNcvqdKo3s6.jpg'
+    ),
+    new Image.network(
+        'http://jspang.com/static/myimg/typescript_banner.jpg'
+    ),new Image.network(
+        'http://jspang.com/static/myimg/smile-vue.jpg'
+    )
+  ]
+),
+```
+我们使用了网络的方式，插入了4张图片，并且这4张图片形成了一个列表。
+
+
+
+### 05.横向列表的使用
+
+
+
+
+
+
+
 
 
 
