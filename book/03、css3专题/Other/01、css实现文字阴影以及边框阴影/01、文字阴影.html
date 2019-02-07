@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文字阴影（text-shadow: 1px 1px 1px lightgray）</title>
+    <style>
+        @keyframes move {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 0 100px;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            width: 500px;
+            height: 130px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 80px;
+        }
+
+        p:nth-of-type(1) {
+            background-color: tan;
+            background-image: linear-gradient(red, orange, yellow, yellowgreen, skyblue, pink, pink, skyblue, yellowgreen, yellow, orange, red);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: move 2s linear infinite;
+        }
+
+        p:nth-of-type(2) {
+            background-color: #555;
+            text-shadow: 1px 1px 1px lightgray, -1px -1px 1px #aaa;
+        }
+
+        p:nth-of-type(3) {
+            background-color: #ccc;
+            color: #fff;
+            text-shadow: 0 1px 0 #eee,
+            0 2px 0 #ccc,
+            0 3px 0 #bababa,
+            0 4px 0 #aaa,
+            0 5px 0 #999,
+            0 6px 0 #888,
+            0 7px 0 #777;
+        }
+        p:nth-of-type(4) {
+            background-color: #000;
+            color: #fff;
+            text-shadow: 5px 5px 15px hotpink,
+            -5px 5px 35px hotpink,
+            5px -5px 35px hotpink,
+            -5px -5px 35px hotpink;
+        }
+        p:nth-of-type(5) {
+            background-color: #ccc;
+            color: transparent;
+            text-shadow: 0 0 10px hotpink;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+文字阴影（text-shadow: 1px 1px 1px lightgray）
+
+text-shadow: 1px 1px 1px lightgray；
+第一个1px:是向x坐标方向的偏移
+第二个1px;是向y坐标方向的偏移
+第三个1px；是模糊距离
+第四的参数：颜色
+-->
+
+<p>静夜思</p>
+<p>床前明月光</p>
+<p>疑是地上霜</p>
+<p>举头望明月</p>
+<p>低头思故乡</p>
+
+</body>
+</html>
