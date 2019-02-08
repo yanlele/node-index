@@ -378,6 +378,7 @@
     - [Styled-Components](https://segmentfault.com/a/1190000014682665)
     - [redux-observable](https://redux-observable-cn.js.org)
     - [内网渗透TIPS相关文章](https://github.com/Ridter/Intranet_Penetration_Tips)
+    - [learning-threejs](https://github.com/josdirksen/learning-threejs)
 
 - 值得好好学习的开源项目
     - [基于 node.js + Mongodb 构建的后台系统](https://github.com/bailicangdu/node-elm)
