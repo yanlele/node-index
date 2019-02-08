@@ -278,6 +278,7 @@
     - [33、mac 上安装 nvm 遇到的坑](https://www.jianshu.com/p/f6c3ecfdbd97)
     - [34、node服务端模拟json mock模块:dyson](https://github.com/webpro/dyson)
     - [35、使用lerna管理大型前端项目](https://www.jianshu.com/p/2f9c05b119c9)
+    - [36、自动添加一个进度条到项目里面， 监听加载：pace](https://github.com/HubSpot/pace)
     
 
 - koa2
