@@ -2,8 +2,8 @@
 
 ## 遇到的高级语法, 待整理
 - [React.createRef()](./04、React.createRef()/README.md)
-- [React.createRef()](./05、react%20portals.md)
-- SyntheticEvent
+- [ReactDOM.createPortal](./05、react%20portals.md)
+- [React.Fragment](https://www.jianshu.com/p/0c486b8f8b65)
 
 
 
