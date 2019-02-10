@@ -8,6 +8,7 @@
 - [02、深入Redux架构](./02、redux/02、深入Redux架构.md)
 - [03、理解redux和redux的中间件redux-thunk](./02、redux/03、理解redux和redux的中间件redux-thunk/README.md)
 - [04、原始redux的单独使用](./02、redux/04、redux)
+- [05、翻译|Redux的中间件-Reselect](https://www.jianshu.com/p/6e38c66366cd)
 
 ### react-router4
 - [01、react-router4基本使用](./03、react-router/01、react-router4基本使用.md)
