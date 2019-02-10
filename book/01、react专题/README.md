@@ -33,3 +33,4 @@
 - [06、React 16 新特性](https://blog.csdn.net/xcg132566/article/details/78836306)
 - [07、React Automaticaly - 保持最新技术 pwa react16 redux4 router4 webpack4 babel7](https://github.com/javaLuo/react-luo)
 - [08、理解react16.3的fiber架构](https://blog.csdn.net/songshuzhong/article/details/80642651)
+- [09、fantasticsoul/react-control-center: 状态管理类库](https://github.com/fantasticsoul/react-control-center)
