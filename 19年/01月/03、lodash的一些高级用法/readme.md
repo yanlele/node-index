@@ -165,3 +165,17 @@ var addSquare = _.flow([_.add, square]);
 addSquare(1, 2);
 // => 9
 ```
+
+
+#### isNil(value)
+检查 value 是否是 null 或者 undefined。
+```js
+_.isNil(null);
+// => true
+ 
+_.isNil(void 0);
+// => true
+ 
+_.isNil(NaN);
+// => false
+```
