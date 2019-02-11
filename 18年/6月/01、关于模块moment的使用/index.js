@@ -18,4 +18,6 @@ let time = moment([2010, 11, 5, 10, 10, 10, 222]).year(1111);
 console.log(time);*/
 
 let time  = moment(new Date()).format('YYYY-MM-DD HH:ss:mm');
+let time2 = moment(new Date()).format('YYYY-MM-DD');
 console.log(time);
+console.log(time2);
