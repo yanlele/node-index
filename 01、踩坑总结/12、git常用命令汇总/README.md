@@ -92,6 +92,8 @@ git branch -dr [remote/branch]
 
 建立追踪关系，在现有分支和指定的远程分支之间： `git branch --set-upstream [branch] [remote-branch]`
 
+提交新建的本地分支到远程： `git push --set-upstream origin [branch-name]`
+
 合并指定分支到当前分支： `git merge [branch]`
 
 衍合指定分支到当前分支： `git rebase <branch>`
