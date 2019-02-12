@@ -274,6 +274,7 @@
     - [34、node服务端模拟json mock模块:dyson](https://github.com/webpro/dyson)
     - [35、使用lerna管理大型前端项目](https://www.jianshu.com/p/2f9c05b119c9)
     - [36、自动添加一个进度条到项目里面， 监听加载：pace](https://github.com/HubSpot/pace)
+    - [37、Git Submodule项目子模块管理](https://blog.csdn.net/xiangzhihong8/article/details/80535495)
     
 
 - koa2
