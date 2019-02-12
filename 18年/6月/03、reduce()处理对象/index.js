@@ -86,7 +86,7 @@ let groupedPeople = groupBy(people, 'age');
 /*使用扩展运算符和initialValue绑定包含在对象数组中的数组*/
 // friends - 对象数组
 // where object field "books" - list of favorite books
-var friends = [{
+let friends = [{
     name: 'Anna',
     books: ['Bible', 'Harry Potter'],
     age: 21
@@ -102,7 +102,7 @@ var friends = [{
 
 // allbooks - list which will contain all friends' books +
 // additional list contained in initialValue
-var allbooks = friends.reduce(function (prev, curr) {
+let allbooks = friends.reduce(function (prev, curr) {
     return [...prev, ...curr.books];
 }, ['Alphabet']);
 
@@ -187,14 +187,14 @@ if (!Array.prototype.reduce) {
             }
 
             // 1. Let O be ? ToObject(this value).
-            var o = Object(this);
+            let o = Object(this);
 
             // 2. Let len be ? ToLength(? Get(O, "length")).
-            var len = o.length >>> 0;
+            let len = o.length >>> 0;
 
             // Steps 3, 4, 5, 6, 7
-            var k = 0;
-            var value;
+            let k = 0;
+            let value;
 
             if (arguments.length >= 2) {
                 value = arguments[1];
