@@ -276,6 +276,8 @@
     - [36、自动添加一个进度条到项目里面， 监听加载：pace](https://github.com/HubSpot/pace)
     - [37、Git Submodule项目子模块管理](https://blog.csdn.net/xiangzhihong8/article/details/80535495)
     - [38、commitlint+husky规范commit 日志](https://blog.csdn.net/wei371522/article/details/84070803)
+    - [39、Git commit message和工作流规范](https://www.imooc.com/article/16780)
+    - [40、git合并多个提交](https://www.cnblogs.com/tocy/p/git-rebase-merge-commit.html)
     
 
 - koa2
