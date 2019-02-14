@@ -235,3 +235,4 @@ git stash pop
 具体文章也可以参看这个文章： [如何修改Git commit的信息](https://www.cnblogs.com/shenh062326/p/git.html)
 
 
+- [git合并多个提交](https://www.cnblogs.com/tocy/p/git-rebase-merge-commit.html)
