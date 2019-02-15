@@ -232,6 +232,14 @@ git stash pop
 `git rebase -i HEAD~3`
 
 把相对应的把pick改为edit， 然后:wq 保存退出， 接下来按照提示一路走下来就可以了。有提示的。
+
+使用命令行：git commit --amend   就可以进入到修改message 的vim 里面去, 修改信息之后:wq 退出
+
+在使用命令行： git rebase --continue
+
+最后强行提交： git push --force
+
+
 具体文章也可以参看这个文章： [如何修改Git commit的信息](https://www.cnblogs.com/shenh062326/p/git.html)
 
 
