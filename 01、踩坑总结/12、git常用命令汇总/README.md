@@ -249,4 +249,16 @@ git log   找到提交的HEAD
 git push 就OK了
 
 
+
+#### 多个提交合并
+`git rebase -i commitId` 或者 `git rebase -i HEAD~n` 这样可以检出我们需要的rebase                            
+需要注意的是： s 命令是指针对新分支衍合到老分支                       
+
+改了之后， 就可以修改合并的message 了                         
+
+然后强行push : git push --force
+
+说明： 如果废弃rebase : git rebase --abort
+
+- [git 几个commit点合并成一个commit点](https://blog.csdn.net/u013276277/article/details/82470177)
 - [git合并多个提交](https://www.cnblogs.com/tocy/p/git-rebase-merge-commit.html)
