@@ -243,4 +243,10 @@ git stash pop
 具体文章也可以参看这个文章： [如何修改Git commit的信息](https://www.cnblogs.com/shenh062326/p/git.html)
 
 
+#### 处理提交commit revert 的情况
+git log   找到提交的HEAD                                     
+撤销指定的提交： `git revert <commit>`                          
+git push 就OK了
+
+
 - [git合并多个提交](https://www.cnblogs.com/tocy/p/git-rebase-merge-commit.html)
