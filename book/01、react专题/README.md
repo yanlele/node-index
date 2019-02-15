@@ -21,7 +21,7 @@
 - [04、React.createRef()](./04、其他/04、React.createRef())
 - [05、react portals](./04、其他/05、react%20portals.md)
 - [06、react16高级语法总结以及其他高级模块](./04、其他/06、react16高级语法总结以及其他高级模块.md)
-- [07、animated burgers for React](https://github.com/march08/animated-burgers)
+- [07、react16 hooks](./04、其他/07、react16%20hooks.md)
 
 
 ### 其他经典文章

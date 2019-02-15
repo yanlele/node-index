@@ -16,6 +16,7 @@
     - [Ant Design](https://github.com/ant-design/ant-design)    蚂蚁金服大名鼎鼎的react-UI组件库
     - [antd-mobile](https://github.com/ant-design/ant-design-mobile)        antd的移动版本
     - [material-ui](https://github.com/mui-org/material-ui)     谷歌出品最酷炫的react-UI组件库
+    - [animated burgers for React](https://github.com/march08/animated-burgers)     react 动画库
     
     
 - 其他重要的模块
