@@ -256,7 +256,31 @@ export default function TestUseCallback({ num }) {
 ```jsx harmony
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 ```
+这个api实现的功能实际上是跟useCallback 是一样的。 
 
+
+### useRef
+```jsx harmony
+const refContainer = useRef(initialValue);
+```
+useRef 返回一个可变的 ref 对象，其 current 属性被初始化为传递的参数 initialValue。返回的对象将持续整个组件的生命周期。                                        
+常见的使用场景是强制访问子组件：                    
+```jsx harmony
+function TextInputWithFocusButton() {
+  const inputEl = useRef(null);
+  const onButtonClick = () => {
+    // `current` points to the mounted text input element
+    inputEl.current.focus();
+  };
+  return (
+    <>
+      <input ref={inputEl} type="text" />
+      <button onClick={onButtonClick}>Focus the input</button>
+    </>
+  );
+}
+```
+请注意 useRef() 比直接使用 ref 属性有用。保持任何可变值的方式类似于在类中使用实例字段的方法。
 
 
 
