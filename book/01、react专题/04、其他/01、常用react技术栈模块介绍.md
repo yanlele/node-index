@@ -17,10 +17,10 @@
     - [antd-mobile](https://github.com/ant-design/ant-design-mobile)        antd的移动版本
     - [material-ui](https://github.com/mui-org/material-ui)     谷歌出品最酷炫的react-UI组件库
     - [animated burgers for React](https://github.com/march08/animated-burgers)     react 动画库
-    
+    - [connected-react-router:A Redux binding for React Router v4](https://github.com/supasate/connected-react-router)
+    - [react-router-config:](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config)
     
 - 其他重要的模块
     - [ducks-modular-redux](https://github.com/erikras/ducks-modular-redux)  一种redux的解决方案
     - [redux-observable](https://github.com/redux-observable/redux-observable) rxjs middle for redux
     
-`
