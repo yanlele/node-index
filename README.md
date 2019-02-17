@@ -364,6 +364,7 @@
     - [@chenshenhai的博客](https://github.com/chenshenhai/blog)
     - [木易杨博客](https://github.com/yygmind/blog)
     - [浪里行舟博客:vue、页面优化、js](https://github.com/ljianshu/Blog)
+    - [颜海镜的个人博客:react以及杂类](https://github.com/yanhaijing/yanhaijing.github.io)
     - [多个关于react的好文章合集: 搭建react全家桶、react高阶组件、react-router4、理解redux](https://github.com/brickspert/blog)                     
     - [SunShinewyf博客:webpack、koa、express、egg、react](https://github.com/SunShinewyf/issue-blog)                      
     - [node-interview](https://github.com/ElemeFE/node-interview/tree/master/sections/zh-cn)
