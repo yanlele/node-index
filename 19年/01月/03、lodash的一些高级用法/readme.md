@@ -166,6 +166,18 @@ addSquare(1, 2);
 // => 9
 ```
 
+#### _.flowRight([funcs])
+这个方法类似 _.flow，除了它调用函数的顺序是从右往左的。
+```js
+function square(n) {
+  return n * n;
+}
+ 
+var addSquare = _.flowRight([square, _.add]);
+addSquare(1, 2);
+// => 9
+```
+
 
 #### isNil(value)
 检查 value 是否是 null 或者 undefined。
@@ -179,3 +191,8 @@ _.isNil(void 0);
 _.isNil(NaN);
 // => false
 ```
+
+
+
+### 参考文档
+- [lodash中文文档](http://lodash.net)

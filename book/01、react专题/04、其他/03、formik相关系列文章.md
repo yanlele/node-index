@@ -451,7 +451,7 @@ export default Test;
 
 
 Formik是使用TypeScript写的，Formik中的类型十分类似于React Router 4中的<Route>。
-```jsx harmony
+```typescript jsx
 import * as React from 'react';
 import { Formik, FormikProps, Form, Field, FieldProps } from 'formik';
 
