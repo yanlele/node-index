@@ -278,6 +278,7 @@
     - [38、commitlint+husky规范commit 日志](https://blog.csdn.net/wei371522/article/details/84070803)
     - [39、Git commit message和工作流规范](https://www.imooc.com/article/16780)
     - [40、git合并多个提交](https://www.cnblogs.com/tocy/p/git-rebase-merge-commit.html)
+    - [41、Git提交消息: git-cz](https://www.jianshu.com/p/28617fd95c67)
     
 
 - koa2
