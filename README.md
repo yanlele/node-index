@@ -390,6 +390,8 @@
     - [typescript-react-redux](https://github.com/rjz/typescript-react-redux)
     - [TypeScript [ React + React-Router + Redux + Redux-Thunk ] Starter](https://github.com/welearnmore/WLM-TypeScript-React-Starter)
     - [webpack4 + React 16 + TypeScript:react-cli](https://github.com/BruceCham/react-cli)
+    - [nodepress: nest](https://github.com/surmon-china/nodepress)
+    - [blog-service: nest](https://github.com/jkchao/blog-service)
 
 
 ### <div id="class08">年度计划和日志目录</div>
