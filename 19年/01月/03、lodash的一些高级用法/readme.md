@@ -103,7 +103,7 @@ console.log(result);    // { a: 1, c: 3 }
 ```
 
 #### pickBy(object, [predicate=_.identity])
-创建一个对象，这个对象组成为从 object 中经 predicate 判断为真值的属性。 predicate调用2个参数：(value, key)。
+创建一个对象，这个对象组成为从 object 中经 predicate 判断**为真值**的属性。 predicate调用2个参数：(value, key)。
 ```js
 let object = {'a': 1, 'b': '2', 'c': 3};
 let result = _.pickBy(object, function (value, key) {

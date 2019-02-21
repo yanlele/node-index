@@ -27,6 +27,8 @@
     - [一些过滤的操作符](#一些过滤的操作符)
     - [合并类操作符](#合并类操作符)
     
+- [场景使用]()
+    
 - [一个小的练习](#一个小的练习)
     
 
@@ -546,7 +548,7 @@ interval(1500).pipe(
 从上面的例子我们也可以看到高阶 Observable 常常是由 map 操作符将每个数据映射为 Observable 产生的，
 而我们订阅的时候需要将其压平为一阶 Observable，而就是要先使用 map 操作符再使用 concatAll 或 mergeAll 或 switchAll 这些操作符中的一个。
 RxJS 中提供了对应的更简洁的 API。使用的效果可以用下面的公式表示：                               
-`concatMap = map + concatAllmergeMap = map + mergeAllswitchMap = map + switchAll`
+`concatMap = map + concatAll  mergeMap = map + mergeAll  switchMap = map + switchAll`
 
 **4）zip、combineLatest、withLatestFrom**                              
 **zip** 有拉链的意思，这个操作符和拉链的相似之处在于数据一定是一一对应的。                               
@@ -666,6 +668,28 @@ race(obs3, obs1, obs2)
         winner => console.log(winner)
     );// result:// a series of 'fast one'
 ```
+
+
+
+
+## 场景使用
+### 第一个场景使用： 链式调用api请求最简单的用法
+```typescript jsx
+import { Epic, ofType } from 'redux-observable';
+import { catchError, map, mergeMap } from 'rxjs/operators';
+const actionEpic: Epic = (action$, state$, dependencies) => 
+    action$.pipe(
+        ofType(SELECT_ACTION_TYPE),
+        mergeMap((payload: {options}) => 
+            rxjsApi(options).pipe(
+                mergeMap(()=> rxjsApi2()),
+                map(response => resoultAction(response))
+            )
+        ),
+        catchError(err=>resolveErrorAction(err))
+    );
+```
+
 
 
 
