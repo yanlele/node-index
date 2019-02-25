@@ -397,6 +397,7 @@
     - [webpack4 + React 16 + TypeScript:react-cli](https://github.com/BruceCham/react-cli)
     - [nodepress: nest](https://github.com/surmon-china/nodepress)
     - [blog-service: nest](https://github.com/jkchao/blog-service)
+    - [Flutter完整项目，WanAndroid客户端](https://github.com/Sky24n/flutter_wanandroid)
 
 
 ### <div id="class08">年度计划和日志目录</div>
