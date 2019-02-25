@@ -279,6 +279,7 @@
     - [39、Git commit message和工作流规范](https://www.imooc.com/article/16780)
     - [40、git合并多个提交](https://www.cnblogs.com/tocy/p/git-rebase-merge-commit.html)
     - [41、Git提交消息: git-cz](https://www.jianshu.com/p/28617fd95c67)
+    - [42、汉字拼音 ➜ hàn zì pīn yīn](https://github.com/hotoo/pinyin)
     
 
 - koa2
@@ -387,6 +388,7 @@
     - [《动手学深度学习》](https://github.com/d2l-ai/d2l-zh)
     - [侧重后端应用与对Node核心的理解](https://github.com/jimuyouyou/node-interview-questions)
     - [TS + React + Antd + Koa2 + MongoDB实现的 TodoList 全栈应用](https://github.com/B2D1/TodoList)
+    - [前端算法基础](https://github.com/Advanced-Frontend/Daily-Interview-Question)
 
 - 值得好好学习的开源项目
     - [基于 node.js + Mongodb 构建的后台系统](https://github.com/bailicangdu/node-elm)
