@@ -383,6 +383,10 @@
     - [learning-threejs](https://github.com/josdirksen/learning-threejs)
     - [Fiber and hooks](https://github.com/132yse/fre)
     - [Python数据挖掘与实战](https://github.com/LinXueyuanStdio/PythonDataMining)
+    - [JS 全栈开发，技术栈：Egg.js + Vue.js + MySQL](https://github.com/padipata/js-summarize)
+    - [《动手学深度学习》](https://github.com/d2l-ai/d2l-zh)
+    - [侧重后端应用与对Node核心的理解](https://github.com/jimuyouyou/node-interview-questions)
+    - [TS + React + Antd + Koa2 + MongoDB实现的 TodoList 全栈应用](https://github.com/B2D1/TodoList)
 
 - 值得好好学习的开源项目
     - [基于 node.js + Mongodb 构建的后台系统](https://github.com/bailicangdu/node-elm)
