@@ -27,19 +27,6 @@ const function5 = function(callback) {
         callback(5)
     }, 1000)
 };
+var a = function1(function2(function3(function4(function5(function () {
 
-function1(function(res1) {
-    console.log('function1', res1);
-    function2(function (res2) {
-        console.log('function2', res2);
-        function3(function(res3) {
-            console.log('function3执行', res3);
-            function4(function (res4) {
-                console.log('function4执行', res4);
-                function5(function (res5) {
-                    console.log('function5执行', res5);
-                })
-            })
-        })
-    })
-});
+})))))

@@ -42,4 +42,4 @@ checkLogin().then((res) => {
  */
 Promise.all([checkLogin(),getUserInfo()]).then(([res1,res2])=>{
     console.log(`result1:${res1.result},result2:${res2.userId}`)
-})
+});
