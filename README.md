@@ -214,6 +214,7 @@
     - [56、lodash的一些高级用法](./19年/01月/03、lodash的一些高级用法/)
     - [57、RxJS v6 学习指南](https://www.imooc.com/article/70323)
     - [58、rxjs学习整理](./19年/01月/04、rxjs学习整理/)
+    - [59、JavaScript 异步、栈、事件循环、任务队列](https://segmentfault.com/a/1190000011198232)
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
