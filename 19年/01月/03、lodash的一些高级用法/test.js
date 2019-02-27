@@ -7,7 +7,7 @@ let result = _.pickBy(object, function (value, key) {
 });
 console.log(result);    // { b: '2' }*/
 
-console.log(_.isEmpty(true));
+/*console.log(_.isEmpty(true));
 
 
 const data = {
@@ -15,4 +15,12 @@ const data = {
     age: 25
 };
 
-console.log(Object.entries(data));
+console.log(Object.entries(data));*/
+
+const print = function () {
+    console.log('print');
+};
+
+const printDebounce = _.debounce(print, 3000);
+printDebounce();
+
