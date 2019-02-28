@@ -21,6 +21,6 @@ const print = function () {
     console.log('print');
 };
 
-const printDebounce = _.debounce(print, 3000);
-printDebounce();
+_.debounce(print, 1000)();
+
 
