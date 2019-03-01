@@ -283,6 +283,7 @@
     - [41、Git提交消息: git-cz](https://www.jianshu.com/p/28617fd95c67)
     - [42、汉字拼音 ➜ hàn zì pīn yīn](https://github.com/hotoo/pinyin)
     - [43、数据驱动、渐进式Canvas库，配备Chrome调试插件，支持微信小游戏、物理引擎、2D&3D混合渲染等](https://github.com/c-zhuo/easycanvas)
+    - [44、git commit message emoji 使用指南](https://github.com/liuchengxu/git-commit-emoji-cn)
     
 
 - koa2
