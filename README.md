@@ -372,6 +372,7 @@
     - [颜海镜的个人博客:react以及杂类](https://github.com/yanhaijing/yanhaijing.github.io)
     - [多个关于react的好文章合集: 搭建react全家桶、react高阶组件、react-router4、理解redux](https://github.com/brickspert/blog)                     
     - [SunShinewyf博客:webpack、koa、express、egg、react](https://github.com/SunShinewyf/issue-blog)                      
+    - [muwoo/blogs博客：关于vue 源码解析](https://github.com/muwoo/blogs)
     - [node-interview](https://github.com/ElemeFE/node-interview/tree/master/sections/zh-cn)
     - [微前端的那些事儿](https://blog.csdn.net/qappleh/article/details/80928434)
     - [《Node.js从入门到上线》A blog build with Koa2](https://github.com/liuxing/node-blog)
@@ -403,6 +404,7 @@
     - [nodepress: nest](https://github.com/surmon-china/nodepress)
     - [blog-service: nest](https://github.com/jkchao/blog-service)
     - [Flutter完整项目，WanAndroid客户端](https://github.com/Sky24n/flutter_wanandroid)
+    - [活动页杀手，快速搭建活动页，告别加班~(提供一个比较好的解决方案思路)](https://github.com/muwoo/rose)
 
 
 ### <div id="class08">年度计划和日志目录</div>
