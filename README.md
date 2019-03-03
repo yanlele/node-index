@@ -394,6 +394,7 @@
     - [侧重后端应用与对Node核心的理解](https://github.com/jimuyouyou/node-interview-questions)
     - [TS + React + Antd + Koa2 + MongoDB实现的 TodoList 全栈应用](https://github.com/B2D1/TodoList)
     - [前端算法基础](https://github.com/Advanced-Frontend/Daily-Interview-Question)
+    - [git rebase 还是 merge的使用场景最通俗的解释](https://www.jianshu.com/p/4079284dd970)
 
 - 值得好好学习的开源项目
     - [基于 node.js + Mongodb 构建的后台系统](https://github.com/bailicangdu/node-elm)
