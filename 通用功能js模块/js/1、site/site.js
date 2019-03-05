@@ -21,7 +21,7 @@ function buildParams(prefix, obj, add) {
     }
 }
 
-module.exports = {
+const site = {
     getParam: function(name){
         var url = window.location.href;
         var start = url.indexOf('?'), end = url.indexOf('#');
@@ -56,3 +56,15 @@ module.exports = {
         window.location.href = url + (params?'?':'') + params;
     }
 };
+
+const sendData = {
+    username: '1111',
+    task_id: 'rest.taskId',
+    from_date: 'rest.fromDate',
+    to_date: 'rest.toDate',
+};
+
+console.log(site.param(sendData));
+
+
+module.exports = site;
