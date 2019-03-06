@@ -407,6 +407,7 @@
     - [blog-service: nest](https://github.com/jkchao/blog-service)
     - [Flutter完整项目，WanAndroid客户端](https://github.com/Sky24n/flutter_wanandroid)
     - [活动页杀手，快速搭建活动页，告别加班~(提供一个比较好的解决方案思路)](https://github.com/muwoo/rose)
+    - [GSYGithubAppFlutter](https://github.com/CarGuo/GSYGithubAppFlutter)
 
 
 ### <div id="class08">年度计划和日志目录</div>
