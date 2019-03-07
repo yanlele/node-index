@@ -9,6 +9,7 @@
 - [03、理解redux和redux的中间件redux-thunk](./02、redux/03、理解redux和redux的中间件redux-thunk/README.md)
 - [04、原始redux的单独使用](./02、redux/04、redux)
 - [05、翻译|Redux的中间件-Reselect](https://www.jianshu.com/p/6e38c66366cd)
+- [06、Redux-saga 中文文档](https://github.com/superRaytin/redux-saga-in-chinese)
 
 ### react-router4
 - [01、react-router4基本使用](./03、react-router/01、react-router4基本使用.md)
