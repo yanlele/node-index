@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="main">
+    <div class="child1">
+        <div class="child2">
+            child2
+        </div>
+    </div>
+    <div class="child1_1">
+        child1-1
+    </div>
+</div>
+
+<div class="other">
+    other
+</div>
+
+
+<script>
+    let $main = document.querySelector('.main');
+    let $child1 = document.querySelector('.child1');
+    let $child2 = document.querySelector('.child2');
+    let $child1_1 = document.querySelector('.child1_1');
+    let $other = document.querySelector('.other');
+
+    // console.log($main.contains($other));
+
+    while ($main.nextSibling && $main.nextSibling.nodeType &&  $main.contains($main.nextSibling)) {
+        console.log($main.contains($main.nextSibling));
+        $main.removeChild($main.nextSibling);
+    }
+
+    console.log('gogoing');
+</script>
+
+</body>
+</html>
