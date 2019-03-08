@@ -6,22 +6,22 @@
  * @lastUpdate 2014-08-14 09:35
  * @function: 1. init(ctn ,data)
  */
-(function(root, factory) {
-    if(typeof define === 'function' && define.amd) {
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
         define([], factory);
     } else {
         root['folder2tree'] = factory();
     }
-}(this, function() {
+}(this, function () {
 
-    var arr2obj = function(arr) {
+    var arr2obj = function (arr) {
         var obj = {};
-        for(var i = 0, len = arr.length; i < len; i++) {
+        for (var i = 0, len = arr.length; i < len; i++) {
             var em = arr[i];
-            if(typeof(em) === "string" || typeof(em) === "number") {
+            if (typeof (em) === "string" || typeof (em) === "number") {
                 obj[em] = em;
-            } else if(typeof(em) === "object") {
-                for(var key in em) {
+            } else if (typeof (em) === "object") {
+                for (var key in em) {
                     obj[key] = arr2obj(em[key]);
                 }
             }
@@ -31,7 +31,7 @@
 
     function getObjLen(obj) {
         var count = 0;
-        for(var em in obj) {
+        for (var em in obj) {
             count++;
         }
         return count;
@@ -40,7 +40,7 @@
     function getTree(data) {
         var result = createDiv();
         var all = show(data, '');
-        for(var i = 0; i < all.length; i++) {
+        for (var i = 0; i < all.length; i++) {
             result.appendChild(all[i]);
         }
         return result;
@@ -51,17 +51,17 @@
         var len = getObjLen(data);
         var count = 1;
 
-        for(var i in data) {
+        for (var i in data) {
             var front = content;
             var isLast = (count === len) ? true : false;
             front += isLast ? '&emsp;&nbsp;&nbsp;' : '│&emsp;';
-            if(typeof data[i] === 'string' || typeof data[i] === 'number') {
+            if (typeof data[i] === 'string' || typeof data[i] === 'number') {
                 all.push(createDiv(i, data[i], content, isLast));
-            } else if(typeof data[i] === "object") {
+            } else if (typeof data[i] === "object") {
                 all.push(createDiv(i, i, content, isLast));
                 var arr = arguments.callee(data[i], front);
                 var parent = createDiv(i, '', content, isLast);
-                for(var j in arr) {
+                for (var j in arr) {
                     parent.appendChild(arr[j]);
                 }
                 all = all.concat(parent);
@@ -77,10 +77,10 @@
         var key = key || '';
         var value = value || '';
         var div = document.createElement('div');
-        if(key !== '') {
+        if (key !== '') {
             div.setAttribute('data-key', key);
         }
-        if(value !== '') {
+        if (value !== '') {
             var content = isLast ? '└─' : '├─';
             div.innerHTML = front + content + value;
         }
@@ -94,10 +94,10 @@
          * @param {Dom} ctn 父级dom节点
          * @param {Object} data 描述文件夹层级关系对象
          */
-        init: function(ctn, data) {
+        init: function (ctn, data) {
             ctn = ctn || document.getElementsByTagName("body")[0];
-            if(data) {
-                if(data instanceof Array) {
+            if (data) {
+                if (data instanceof Array) {
                     data = arr2obj(data);
                 }
                 console.log(data);

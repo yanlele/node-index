@@ -18,28 +18,31 @@
 
     folder2tree.init(document.getElementById("ctn"), [
         {
-            "img" : [
+            "img": [
                 "sprite.png",
                 "bg.png"
             ]
-        },{
+        },
+        {
             "js": [{
                 "common": [
-                    "jquery.js",{
+                    "jquery.js", {
                         "highcharts": [{
                             "modules": ["exporting.js"]
                         },
                             "highcharts.js"
-                        ]}
+                        ]
+                    }
                 ]
-            },{
+            }, {
                 "index": [
-                    "mian.js",{
+                    "mian.js", {
                         "modules": ["mod.video.js"]
                     }
                 ]
             }]
-        },{
+        },
+        {
             "css": [
                 "base.css",
                 "index-main.css",
