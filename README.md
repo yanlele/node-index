@@ -285,6 +285,7 @@
     - [43、数据驱动、渐进式Canvas库，配备Chrome调试插件，支持微信小游戏、物理引擎、2D&3D混合渲染等](https://github.com/c-zhuo/easycanvas)
     - [44、git commit message emoji 使用指南](https://github.com/liuchengxu/git-commit-emoji-cn)
     - [45、impress.js制作漂亮前端页面级别PPT](https://github.com/impress/impress.js)
+    - [46、Github上开源项目readme里好看的高大上的有趣的徽章从何而来](https://blog.csdn.net/xialonghua/article/details/87373052)
     
 
 - koa2
