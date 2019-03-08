@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A simple demo for folder2tree</title>
+</head>
+<body>
+<div id="ctn"></div>
+
+<script src="./folder2tree.js"></script>
+<script>
+    /**
+     * 初始化方法
+     *
+     * @param {Dom} 父级dom节点
+     * @param {Array} 描述文件夹层级关系对象
+     */
+
+    folder2tree.init(document.getElementById("ctn"), [
+        {
+            "img" : [
+                "sprite.png",
+                "bg.png"
+            ]
+        },{
+            "js": [{
+                "common": [
+                    "jquery.js",{
+                        "highcharts": [{
+                            "modules": ["exporting.js"]
+                        },
+                            "highcharts.js"
+                        ]}
+                ]
+            },{
+                "index": [
+                    "mian.js",{
+                        "modules": ["mod.video.js"]
+                    }
+                ]
+            }]
+        },{
+            "css": [
+                "base.css",
+                "index-main.css",
+                "index-video.css"
+            ]
+        },
+        "index.html",
+        "favicon.ico"
+    ]);
+</script>
+</body>
+</html>
