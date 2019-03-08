@@ -284,6 +284,7 @@
     - [42、汉字拼音 ➜ hàn zì pīn yīn](https://github.com/hotoo/pinyin)
     - [43、数据驱动、渐进式Canvas库，配备Chrome调试插件，支持微信小游戏、物理引擎、2D&3D混合渲染等](https://github.com/c-zhuo/easycanvas)
     - [44、git commit message emoji 使用指南](https://github.com/liuchengxu/git-commit-emoji-cn)
+    - [45、impress.js制作漂亮前端页面级别PPT](https://github.com/impress/impress.js)
     
 
 - koa2
@@ -410,6 +411,7 @@
     - [Flutter完整项目，WanAndroid客户端](https://github.com/Sky24n/flutter_wanandroid)
     - [活动页杀手，快速搭建活动页，告别加班~(提供一个比较好的解决方案思路)](https://github.com/muwoo/rose)
     - [GSYGithubAppFlutter](https://github.com/CarGuo/GSYGithubAppFlutter)
+    - [yuque app that builded by flutter](https://github.com/okoala/yuque)
 
 
 ### <div id="class08">年度计划和日志目录</div>
