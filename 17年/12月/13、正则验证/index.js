@@ -45,8 +45,19 @@ console.log(phoneMask);*/
 // console.log(number.toString().replace(reg, '$1,'));
 
 
-var str = "出租方：*合同名称*  *@fileName: test.ts*（以下简称甲方）承租方：*选商方式*";
-// let str = '/* *@fileName: test.ts@ */'
-var reg = /\*([^*]+)\*/g;
-var s = str.match(reg);
-console.log(s);
+// var str = "出租方：*合同名称*  *@fileName: test.ts*（以下简称甲方）承租方：*选商方式*";
+// // let str = '/* *@fileName: test.ts@ */'
+// var reg = /\*([^*]+)\*/g;
+// var s = str.match(reg);
+// console.log(s);
+
+var str = `/*
+* @fileName:     test.tssdkflsdf sdkfsldkfjadf kljsdkfjsadfadf jsdlkfja@
+* @fileDescription: 这是一个给我们大家公用的一个组件
+sdfsdkfjlsdkfjaskdfjadlf@
+*
+* */`;
+// str = str.match(/\@fileName:\s*([\s|\S]*?)\@/);
+// console.log(str);//结果bbbcccdddeee
+
+console.log(str.match(/\@fileDescription:\s*([\s|\S]*?)\@/));
