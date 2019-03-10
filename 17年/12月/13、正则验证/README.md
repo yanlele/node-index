@@ -67,7 +67,8 @@ n$|	匹配任何结尾为 n 的字符串。
 支持正则表达式的String 对象方法                                 
 search(返回查询到的字符串的索引下标)、                         
 match(返回数组对象，第一个是检索到的字符串，第二个是索引， 第三个是检测的字符串)、                       
-replace、split                               
+replace、
+split、                               
 
 如果是先正则的方式来给与的方式，有两个方法：                               
 RegExpObject.test(string) - 检测true 和 false 返回是否匹配上                              

@@ -30,9 +30,9 @@ console.log(phoneMask);*/
 
 
 // 手机号码验证
-let phone = '15213497741';
+// let phone = '15213497741';
 // console.log(/^1[345789]\d{9}$/.exec(phone));
-console.log(phone.match(/^1[345789]\d{9}$/));
+// console.log(phone.match(/^1[345789]\d{9}$/));
 // console.log(phone.search(/213/));
 
 
@@ -43,3 +43,10 @@ console.log(phone.match(/^1[345789]\d{9}$/));
 // let number = '1234567890.01';
 // let reg = /(\d{1,3})(?=(\d{3})+(?:$|\.))/g;
 // console.log(number.toString().replace(reg, '$1,'));
+
+
+var str = "出租方：*合同名称*  *@fileName: test.ts*（以下简称甲方）承租方：*选商方式*";
+// let str = '/* *@fileName: test.ts@ */'
+var reg = /\*([^*]+)\*/g;
+var s = str.match(reg);
+console.log(s);
