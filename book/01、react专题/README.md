@@ -26,12 +26,13 @@
 
 
 ### 其他经典文章
-- [01、React Router 中文文档](https://segmentfault.com/a/1190000014294604#articleHeader0)
-- [02、React-Router4.x中文文档](https://github.com/git-zhangsan/react-router4)
-- [03、React项目构建三部曲](https://github.com/ZengTianShengZ/react-lesson)
-- [04、超级经典和全面的redux的文章](http://cn.redux.js.org/)
-- [05、react-redux之connect 方法详解](http://taobaofed.org/blog/2016/08/18/react-redux-connect/)
-- [06、React 16 新特性](https://blog.csdn.net/xcg132566/article/details/78836306)
-- [07、React Automaticaly - 保持最新技术 pwa react16 redux4 router4 webpack4 babel7](https://github.com/javaLuo/react-luo)
-- [08、理解react16.3的fiber架构](https://blog.csdn.net/songshuzhong/article/details/80642651)
-- [09、fantasticsoul/react-control-center: 状态管理类库](https://github.com/fantasticsoul/react-control-center)
+- [React Router 中文文档](https://segmentfault.com/a/1190000014294604#articleHeader0)
+- [React-Router4.x中文文档](https://github.com/git-zhangsan/react-router4)
+- [React项目构建三部曲](https://github.com/ZengTianShengZ/react-lesson)
+- [超级经典和全面的redux的文章](http://cn.redux.js.org/)
+- [react-redux之connect 方法详解](http://taobaofed.org/blog/2016/08/18/react-redux-connect/)
+- [React 16 新特性](https://blog.csdn.net/xcg132566/article/details/78836306)
+- [React Automaticaly - 保持最新技术 pwa react16 redux4 router4 webpack4 babel7](https://github.com/javaLuo/react-luo)
+- [理解react16.3的fiber架构](https://blog.csdn.net/songshuzhong/article/details/80642651)
+- [fantasticsoul/react-control-center: 状态管理类库](https://github.com/fantasticsoul/react-control-center)
+- [React-如何进行组件的单元测试](https://blog.csdn.net/qiqingjin/article/details/82389088)
