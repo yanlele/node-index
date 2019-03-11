@@ -83,6 +83,30 @@ const context = useContext(Context);
 ```
 接受上下文对象（从 React.createContext 返回的值）并且返回当前的上下文值，由给定上下文的最近上下文提供程序给出。                      
 当提供程序更新时，这个 Hook 将使用最新的上下文值触发 re-render。
+```jsx harmony
+const Context = React.createContext('light');
+
+// Provider
+class Provider extends Component {
+  render() {
+    return (
+      <Context.Provider value={'dark'}>
+        <DeepTree />
+      </Context.Provider>
+    )
+  }
+}
+
+// Consumer
+function Consumer(props) {
+  const context = useContext(Context);
+  return (
+    <div>
+      {context} // dark
+    </div>
+  );
+}
+```
 
 
 -----------------------
