@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: #eef1f8;
+        }
+
+        #one {
+            padding: 10px 15px;
+            background-color: #FFFFFF;
+            background-image: url(http://pic.58pic.com/58pic/12/28/02/05J58PICUwy.jpg);
+            background-repeat: no-repeat;
+            background-size: 50%;
+            background-position: center;
+            opacity: 0.9;
+        }
+
+        #two {
+            padding: 10px 15px;
+            background-color: #FFFFFF;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        #three {
+            padding: 10px 15px;
+            background-color: #FFFFFF;
+            margin-top: 10px;
+        }
+
+        #two-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 0;
+            width: 200px;
+            height: 200px;
+        }
+
+        #two-bg img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<!--使用背景图添加水印-->
+<div id="one">
+    <p>这是一段文字</p>
+    <ul>
+        <li>这是第1个</li>
+        <li>这是第2个</li>
+        <li>这是第3个</li>
+        <li>这是第4个</li>
+        <li>这是第5个</li>
+    </ul>
+</div>
+<!--使用定位添加水印-->
+<div id="two">
+    <p>这是一大段文字照着找着做做做做做做做做做做做做做做做</p>
+    <ul>
+        <li>这是第1个</li>
+        <li>这是第2个</li>
+        <li>这是第3个</li>
+        <li>这是第4个</li>
+        <li>这是第5个</li>
+    </ul>
+    <!--图片透明 png格式的图片-->
+    <div id="two-bg">图片图片图片</div>
+</div>
+<!---->
+<div id="three">
+    <p>看看看看扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩</p>
+    <ul>
+        <li>这是第1个</li>
+        <li>这是第2个</li>
+        <li>这是第3个</li>
+        <li>这是第4个</li>
+        <li>这是第5个</li>
+    </ul>
+</div>
+
+
+<script>
+    const watermark = settings => {
+        //默认设置
+        var defaultSettings = {
+            watermark_txt: "text",
+            watermark_x: 100,//水印起始位置x轴坐标
+            watermark_y: 20,//水印起始位置Y轴坐标
+            watermark_rows: 20,//水印行数
+            watermark_cols: 20,//水印列数
+            watermark_x_space: 100,//水印x轴间隔
+            watermark_y_space: 50,//水印y轴间隔
+            watermark_color: '#000000',//水印字体颜色
+            watermark_alpha: 0.3,//水印透明度
+            watermark_fontsize: '18px',//水印字体大小
+            watermark_font: '微软雅黑',//水印字体
+            watermark_width: 120,//水印宽度
+            watermark_height: 80,//水印长度
+            watermark_angle: 15//水印倾斜度数
+        };
+        Object.assign(defaultSettings, settings);
+
+        var oTemp = document.createDocumentFragment();
+
+        //获取页面最大宽度
+        var page_width = Math.max(document.body.scrollWidth, document.body.clientWidth);
+        //获取页面最大长度
+        var page_height = Math.max(document.body.scrollHeight, document.body.clientHeight);
+
+        //如果将水印列数设置为0，或水印列数设置过大，超过页面最大宽度，则重新计算水印列数和水印x轴间隔
+        if (defaultSettings.watermark_cols === 0 ||
+            (parseInt(defaultSettings.watermark_x
+                + defaultSettings.watermark_width * defaultSettings.watermark_cols
+                + defaultSettings.watermark_x_space * (defaultSettings.watermark_cols - 1))
+                > page_width)) {
+            defaultSettings.watermark_cols =
+                parseInt((page_width
+                    - defaultSettings.watermark_x
+                    + defaultSettings.watermark_x_space)
+                    / (defaultSettings.watermark_width
+                        + defaultSettings.watermark_x_space));
+            defaultSettings.watermark_x_space =
+                parseInt((page_width
+                    - defaultSettings.watermark_x
+                    - defaultSettings.watermark_width
+                    * defaultSettings.watermark_cols)
+                    / (defaultSettings.watermark_cols - 1));
+        }
+        //如果将水印行数设置为0，或水印行数设置过大，超过页面最大长度，则重新计算水印行数和水印y轴间隔
+        if (defaultSettings.watermark_rows === 0 ||
+            (parseInt(defaultSettings.watermark_y
+                + defaultSettings.watermark_height * defaultSettings.watermark_rows
+                + defaultSettings.watermark_y_space * (defaultSettings.watermark_rows - 1))
+                > page_height)) {
+            defaultSettings.watermark_rows =
+                parseInt((defaultSettings.watermark_y_space
+                    + page_height - defaultSettings.watermark_y)
+                    / (defaultSettings.watermark_height + defaultSettings.watermark_y_space));
+            defaultSettings.watermark_y_space =
+                parseInt((page_height
+                    - defaultSettings.watermark_y
+                    - defaultSettings.watermark_height
+                    * defaultSettings.watermark_rows)
+                    / (defaultSettings.watermark_rows - 1));
+        }
+        var x;
+        var y;
+        for (var i = 0; i < defaultSettings.watermark_rows; i++) {
+            y = defaultSettings.watermark_y + (defaultSettings.watermark_y_space + defaultSettings.watermark_height) * i;
+            for (var j = 0; j < defaultSettings.watermark_cols; j++) {
+                x = defaultSettings.watermark_x + (defaultSettings.watermark_width + defaultSettings.watermark_x_space) * j;
+
+                var mask_div = document.createElement('div');
+                mask_div.id = 'mask_div' + i + j;
+                mask_div.appendChild(document.createTextNode(defaultSettings.watermark_txt));
+                //设置水印div倾斜显示
+                mask_div.style.webkitTransform = "rotate(-" + defaultSettings.watermark_angle + "deg)";
+                mask_div.style.MozTransform = "rotate(-" + defaultSettings.watermark_angle + "deg)";
+                mask_div.style.msTransform = "rotate(-" + defaultSettings.watermark_angle + "deg)";
+                mask_div.style.OTransform = "rotate(-" + defaultSettings.watermark_angle + "deg)";
+                mask_div.style.transform = "rotate(-" + defaultSettings.watermark_angle + "deg)";
+                mask_div.style.visibility = "";
+                mask_div.style.position = "absolute";
+                mask_div.style.left = x + 'px';
+                mask_div.style.top = y + 'px';
+                mask_div.style.overflow = "hidden";
+                mask_div.style.zIndex = "9999";
+                //mask_div.style.border="solid #eee 1px";
+                mask_div.style.opacity = defaultSettings.watermark_alpha;
+                mask_div.style.fontSize = defaultSettings.watermark_fontsize;
+                mask_div.style.fontFamily = defaultSettings.watermark_font;
+                mask_div.style.color = defaultSettings.watermark_color;
+                mask_div.style.textAlign = "center";
+                mask_div.style.width = defaultSettings.watermark_width + 'px';
+                mask_div.style.height = defaultSettings.watermark_height + 'px';
+                mask_div.style.display = "block";
+                mask_div.style.userSelect = 'none';
+                mask_div.style.msUserSelect = 'none';
+                mask_div.style.webkitUserSelect = 'none';
+                mask_div.style.cursor = 'default';
+                oTemp.appendChild(mask_div);
+            }
+        }
+        document.body.appendChild(oTemp);
+    }
+
+    watermark({watermark_txt: "测试水印"})//传入动态水印内容
+</script>
+
+</body>
+</html>
