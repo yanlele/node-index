@@ -2,7 +2,7 @@
 
 /**
  * 列出目录下的所有文件
- *
+ * https://github.com/leizongmin/node-rd
  * @author Zongmin Lei<leizongmin@gmail.com>
  */
 
