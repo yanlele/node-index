@@ -22,4 +22,8 @@
     - [React+Jest+Enzyme测试](https://blog.csdn.net/qq_22755565/article/details/84304064)
     - [React测试框架之enzyme](https://blog.csdn.net/xiangzhihong8/article/details/83827626)
     - [React 16 之 测试单元(Jest+React+Enzyme)](https://blog.csdn.net/zhangda89/article/details/80862401)
-    - [jest+enzyme测试react组件](https://blog.csdn.net/weixin_34119545/article/details/88157089
+    - [jest+enzyme测试react组件](https://blog.csdn.net/weixin_34119545/article/details/88157089)
+
+- 测试示例项目
+    - [react-test-demo:React test demo with Jest and Enzyme](https://github.com/superman66/react-test-demo)
+    - [react-enzyme-jest](https://github.com/twclark0/react-enzyme-jest)
