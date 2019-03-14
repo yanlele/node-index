@@ -417,6 +417,7 @@
     - [使用koa 2 + vue 2搭建自己的博客系统](https://github.com/StudentWan/ashen-blog)
     - [《一起学 Node.js》](https://github.com/nswbmw/N-blog)
     - [《Go语言四十二章经》](https://github.com/ffhelicopter/Go42)
+    - [基于node&typescript重写知乎助手](https://github.com/YaoZeyuan/zhihuhelp_with_node)
 
 
 ### <div id="class08">年度计划和日志目录</div>
