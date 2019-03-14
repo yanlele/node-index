@@ -286,6 +286,7 @@
     - [44、git commit message emoji 使用指南](https://github.com/liuchengxu/git-commit-emoji-cn)
     - [45、impress.js制作漂亮前端页面级别PPT](https://github.com/impress/impress.js)
     - [46、Github上开源项目readme里好看的高大上的有趣的徽章从何而来](https://blog.csdn.net/xialonghua/article/details/87373052)
+    - [47、nodeppt: 把md文档做成PPT](https://github.com/ksky521/nodeppt)
     
 
 - koa2
@@ -418,6 +419,7 @@
     - [《一起学 Node.js》](https://github.com/nswbmw/N-blog)
     - [《Go语言四十二章经》](https://github.com/ffhelicopter/Go42)
     - [基于node&typescript重写知乎助手](https://github.com/YaoZeyuan/zhihuhelp_with_node)
+    - [zhihu-flutter: Flutter 高仿知乎 UI](https://github.com/HackSoul/zhihu-flutter)
 
 
 ### <div id="class08">年度计划和日志目录</div>
