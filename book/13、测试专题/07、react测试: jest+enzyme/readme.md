@@ -1,5 +1,6 @@
 # react测试: jest+enzyme
 
+- [jsx接入测试](./01、jsx接入测试.md)
 
 - 重要文章整理
     - [React 16 Jest快照测试](https://blog.csdn.net/zhangda89/article/details/80978844)
