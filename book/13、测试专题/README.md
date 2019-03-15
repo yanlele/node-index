@@ -29,3 +29,15 @@
 ## 05篇、TypeScript测试
 - [01、基础安装包的安装](./05篇、TypeScript测试/REAMDE.md#class05-01)
 - [02、测试用例的编写 和 配置文件的导入](./05篇、TypeScript测试/REAMDE.md#class05-02)
+
+
+## 06篇、Jest测试框架
+- [01、基础篇](./06篇、Jest测试框架/01、基础篇.md)
+    - [1.简介](./06篇、Jest测试框架/01、基础篇.md#1-简介)
+    - [2.开始](./06篇、Jest测试框架/01、基础篇.md#2-开始)
+    - [3.匹配器](./06篇、Jest测试框架/01、基础篇.md#3-匹配器)
+    - [4.测试异步代码](./06篇、Jest测试框架/01、基础篇.md#4-测试异步代码)
+    - [5.Setup and Teardown](./06篇、Jest测试框架/01、基础篇.md#5-Setup-and-Teardown)
+    - [6.mock function](./06篇、Jest测试框架/01、基础篇.md#6-Mock-Function)
+- [其他细碎知识点](./06篇、Jest测试框架/其他细碎知识点.md)
+- [代码示例](https://github.com/yanlele/TypeScript-build-index/tree/master/Test)
