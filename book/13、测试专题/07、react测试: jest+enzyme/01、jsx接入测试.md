@@ -112,3 +112,103 @@ Snapshots:   0 total
 Time:        1.195s
 Ran all test suites.
 ```
+
+
+### 一个最简单的react测试示例
+比如我们先创建一个这样的常见的react组件:                 
+Test/index.js:                          
+```jsx harmony
+import React, {PureComponent} from 'react';
+import PropTypes from 'prop-types';
+
+class Test extends PureComponent {
+  static propTypes = {
+    labelOn: PropTypes.string.isRequired,
+    labelOff: PropTypes.string.isRequired,
+  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      isChecked: false,
+    }
+  }
+
+  onChange = () => {
+    this.setState({
+      isChecked: !this.state.isChecked,
+    })
+  };
+
+  render() {
+    const {isChecked} = this.state;
+    return (
+        <label htmlFor="label">
+          <input
+              type="checkbox"
+              checked={this.state.isChecked}
+              onChange={this.onChange}
+          />
+          {isChecked ? this.props.labelOn : this.props.labelOff}
+        </label>
+    );
+  }
+}
+export default Test;
+```
+
+然后定义这样的测试文件：                    
+Test/__test__/index.test.js:                    
+```jsx harmony
+import React from 'react';
+import {mount} from 'enzyme';
+import Test from '../index';
+
+describe('Test', () => {
+  const checkbox = mount(<Test labelOff="off" labelOn="on"/>);
+  it('default test eq off', function () {
+    expect(checkbox.text()).toEqual('off');
+  });
+
+  it('change and eq on', function () {
+    checkbox.find('input').simulate('change');
+    expect(checkbox.text()).toEqual('on');
+  });
+});
+```
+
+然后运行命令行：`yarn test`
+得到如下测试报告：               
+```
+$ jest --config=jest.config.js --notify --watchman=false --detectOpenHandles
+ PASS  src/pages/Test/__test__/index.test.js
+ PASS  src/__tests__/sum.test.js
+
+Test Suites: 2 passed, 2 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        1.896s
+Ran all test suites.
+```
+
+### 测试报告与覆盖率
+如果希望得到测试报告文件和测试报告覆盖率， 这个时候， 就可以直接在jest.config.js 文件里面做配置就可以了。 
+在上面的配置文件中添加如下的配置
+```
+collectCoverage: true,      // 指出是否收集测试时的覆盖率信息。
+coverageReporters: [        // 生成什么样的报告文件
+"json",
+"lcov",
+"text",
+"clover"
+],
+coverageDirectory: "<rootDir>/coverage-client",     // 报告输出地址
+coverageThreshold: {        // 报告阈值
+    global: {
+      branches: 80,
+      functions: 60,
+      lines: 80,
+      statements: 80
+    }
+}
+```
