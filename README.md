@@ -287,6 +287,8 @@
     - [45、impress.js制作漂亮前端页面级别PPT](https://github.com/impress/impress.js)
     - [46、Github上开源项目readme里好看的高大上的有趣的徽章从何而来](https://blog.csdn.net/xialonghua/article/details/87373052)
     - [47、nodeppt: 把md文档做成PPT](https://github.com/ksky521/nodeppt)
+    - [48、对于水印的研究](./19年/03月/04、水印)
+
     
 
 - koa2
@@ -364,6 +366,9 @@
     - [52、V8引擎初步介绍](./18年/12月/03、V8引擎初步介绍/README.md)
     - [53、node内存优化](./18年/12月/04、node内存优化/README.md)
     - [54、深度对比算法研究](./18年/12月/06、深度对比算法研究/buildDiff.js)
+    - [55、html输出文件结构](./19年/03月/01、html输出文件结构)
+    - [56、node-rd: 遍历目录下面所有文件目录](./19年/03月/03、node-rd)
+    
     
     
 - 其他优秀技术文章与前沿技术收集
