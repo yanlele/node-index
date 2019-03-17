@@ -216,6 +216,7 @@
     - [58、rxjs学习整理](./19年/01月/04、rxjs学习整理/)
     - [59、JavaScript 异步、栈、事件循环、任务队列](https://segmentfault.com/a/1190000011198232)
     - [60、FormData使用方法详解](https://www.jianshu.com/p/e438fb2238cf)
+    - [61、基于JavaScript判断浏览器到底是关闭还是刷新](http://udn.yyuap.com/forum.php?mod=viewthread&tid=96309)
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
