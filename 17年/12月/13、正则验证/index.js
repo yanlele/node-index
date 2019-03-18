@@ -51,13 +51,17 @@ console.log(phoneMask);*/
 // var s = str.match(reg);
 // console.log(s);
 
-var str = `/*
-* @fileName:     test.tssdkflsdf sdkfsldkfjadf kljsdkfjsadfadf jsdlkfja@
-* @fileDescription: 这是一个给我们大家公用的一个组件
-sdfsdkfjlsdkfjaskdfjadlf@
-*
-* */`;
-// str = str.match(/\@fileName:\s*([\s|\S]*?)\@/);
-// console.log(str);//结果bbbcccdddeee
+// var str = `/*
+// * @fileName:     test.tssdkflsdf sdkfsldkfjadf kljsdkfjsadfadf jsdlkfja@
+// * @fileDescription: 这是一个给我们大家公用的一个组件
+// sdfsdkfjlsdkfjaskdfjadlf@
+// *
+// * */`;
+// // str = str.match(/\@fileName:\s*([\s|\S]*?)\@/);
+// // console.log(str);//结果bbbcccdddeee
+//
+// console.log(str.match(/\@fileDescription:\s*([\s|\S]*?)\@/));
 
-console.log(str.match(/\@fileDescription:\s*([\s|\S]*?)\@/));
+
+// 只能输入数字和英文的校验
+console.log(/^[a-z0-9A-Z_]+$/.test(123));

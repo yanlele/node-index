@@ -109,5 +109,11 @@ react-router深入理解（完成）
 整理 call、apply、bind 实现原理(完成)                                         
 整理和总结 promise、gentator、async/await 的区别                          
 
+问：                      
+ES6 class 是怎么样实现的；
+vue/react 数据是怎么渲染到页面的
+
+
+
 
 
