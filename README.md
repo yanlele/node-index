@@ -141,7 +141,7 @@
 
 
 ### <div id="class07">基础框架知识归类</div>
-- [踩坑记录和一些项目的总结](./踩坑总结)
+- [踩坑记录和一些项目的总结](./01、踩坑总结)
     - [01、对隐藏右边滚动条的研究](./01、踩坑总结/01、对隐藏右边滚动条的研究/index.html)
     - [02、给table的tr加不上bottom样式的解决方案](01、踩坑总结/02、给table的tr加不上bottom样式的解决方案/README.md)
     - [03、jquery老项目模块cmd改装方案](01、踩坑总结/03、jquery老项目模块cmd改装方案/index.js)
@@ -290,6 +290,7 @@
     - [47、nodeppt: 把md文档做成PPT](https://github.com/ksky521/nodeppt)
     - [48、对于水印的研究](./19年/03月/04、水印)
     - [49、css加载会造成阻塞吗？](./19年/03月/05、css%20加载会造成阻塞吗？/index.md)
+    - [50、Dexie.js:A Minimalistic Wrapper for IndexedDB](https://github.com/dfahlander/Dexie.js)
 
     
 
@@ -407,6 +408,8 @@
     - [前端算法基础](https://github.com/Advanced-Frontend/Daily-Interview-Question)
     - [git rebase 还是 merge的使用场景最通俗的解释](https://www.jianshu.com/p/4079284dd970)
     - [Java 程序员眼中的 Linux](https://github.com/judasn/Linux-Tutorial)
+    - [浏览器数据库 IndexedDB 入门教程](http://www.ruanyifeng.com/blog/2018/07/indexeddb.html)
+
 
 - 值得好好学习的开源项目
     - [基于 node.js + Mongodb 构建的后台系统](https://github.com/bailicangdu/node-elm)
