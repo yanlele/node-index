@@ -19,11 +19,14 @@
         var canvas = document.getElementById('tutorial');
         if (!canvas.getContext) return;
         var ctx = canvas.getContext("2d");
-        var img = document.querySelector("img");
+        // var img = document.querySelector("img");
+        // console.log(img);
+        const img = document.createElement('img');
+        img.setAttribute('src', './img.jpg');
         ctx.drawImage(img, 0, 0, 400, 200);
     }
     document.querySelector("img").onclick = function (){
         draw();
-    }
+    };
 </script>
 </html>
