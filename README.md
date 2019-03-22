@@ -414,6 +414,7 @@
         - [git rebase 还是 merge的使用场景最通俗的解释](https://www.jianshu.com/p/4079284dd970)
         - [Java 程序员眼中的 Linux](https://github.com/judasn/Linux-Tutorial)
         - [浏览器数据库 IndexedDB 入门教程](http://www.ruanyifeng.com/blog/2018/07/indexeddb.html)
+        - [跨域资源共享 CORS 详解](http://www.ruanyifeng.com/blog/2016/04/cors.html)
 
 
 - 值得好好学习的开源项目
