@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    img {
+      display: block;
+      width: 500px;
+    }
+
+    .box {
+      text-align: center;
+      margin: 0 auto;
+      width: 820px;
+      margin-top: 100px;
+    }
+
+    .card {
+      display: inline-block;
+      position: relative;
+      width: 400px;
+      height: 250px;
+    }
+
+    .card img {
+      width: 100%;
+    }
+
+    .card .down_btn_a {
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 100px;
+      height: 40px;
+      line-height: 40px;
+      background-color: #20b1aa;
+      text-decoration: none;
+      text-align: center;
+      color: #fff;
+    }
+
+    .card .down_btn_a:hover {
+      background-color: #ccc;
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+<div class="box">
+  <div class="card">
+    <img id="testimg2" src="timg.jpg"/>
+    <a href="javascript:;" class="down_btn_a">点击下载</a>
+  </div>
+  <div class="card">
+    <img id="testimg3" src="https://pic2.zhimg.com/v2-5ec052fff9d691c6a61654ed16440547_400x224.jpg"/>
+    <a href="javascript:;" class="down_btn_a">点击下载</a>
+  </div>
+</div>
+
+
+<script>
+  //判断是否为Trident内核浏览器(IE等)函数
+  function browserIsIe() {
+    return !!window.ActiveXObject || "ActiveXObject" in window;
+  }
+
+  const $IframeReportImg = document.querySelector('#IframeReportImg');
+
+  //创建iframe并赋值的函数,传入参数为图片的src属性值.
+  function createIframe(imgSrc) {
+    //如果隐藏的iframe不存在则创建
+    if ($IframeReportImg.length === 0) {
+      const $iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      iframe.setAttribute('id', 'IframeReportImg');
+      iframe.setAttribute('name', 'IframeReportImg');
+      iframe.setAttribute('width', '0');
+      iframe.setAttribute('height', '0');
+      iframe.setAttribute('src', 'about:blank');
+      document.querySelector('body').appendChild($iframe);
+    }
+    //iframe的src属性如不指向图片地址,则手动修改,加载图片
+
+    if ($IframeReportImg.getAttribute('src') !== imgSrc) {
+      $IframeReportImg.setAttribute('src', imgSrc)
+    } else {
+      //如指向图片地址,直接调用下载方法
+      downloadImg();
+    }
+  }
+
+  //下载图片的函数
+  function downloadImg() {
+    //iframe的src属性不为空,调用execCommand(),保存图片
+    if ($IframeReportImg.getAttribute('src') !== "about:blank") {
+      window.frames["IframeReportImg"].document.execCommand("SaveAs");
+    }
+  }
+
+  //接下来进行事件绑定
+  const aBtn = document.querySelector('.down_btn_a');
+  const $img = Array.prototype.filter.call(aBtn.parentNode.children, (child) => child !== aBtn)[0];
+  const imgSrc = $img.getAttribute('src');
+  aBtn.addEventListener('click', () => {
+    if (browserIsIe()) {
+      createIframe(imgSrc);
+    } else {
+      const $downLink = document.createElement('a');
+      $downLink.setAttribute('download', imgSrc);
+      $downLink.setAttribute('href', imgSrc);
+      $downLink.click();
+    }
+  });
+</script>
+</body>
+
+</html>
