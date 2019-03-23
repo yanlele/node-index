@@ -57,6 +57,10 @@ const saveFile = function (data, filename) {
 ```
 
 
+### 一个比较成熟的示例
+- [下载图片](./下载图片.html)
+
+
 
 ### 参考文章
 - [html页面点击生成图片并可以下载图片](https://blog.csdn.net/qq_35695041/article/details/82344490)
