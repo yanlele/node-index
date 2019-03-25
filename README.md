@@ -5,10 +5,11 @@
 - [二、对别人项目的研究（详细阅读源码之后写下的一些笔记和项目注释-已完成）](#class02)
 - [三、独立项目列表（已完成）](#class03)
 - [四、正在进行的独立项目(进行中)](#class04)
-- [五、专题笔记归类(简书总结)](#class05)
-- [六、通用功能js模块组件](#class06)
-- [七、基础框架知识归类](#class07)
-- [八、年度计划和日志目录](#class08)
+- [五、源码研究](#class05)
+- [六、专题笔记归类(简书总结)](#class06)
+- [七、通用功能js模块组件](#class07)
+- [八、基础框架知识归类](#class08)
+- [九、年度计划和日志目录](#class09)
 
 
 ### <div id="class01">已经发布npm的开源模块</div>      
@@ -51,7 +52,11 @@
 - [12、基于vue2 + vue-router + vuex 构建的一个新闻类单页面应用 —— 今日头条（移动端）](https://github.com/uncleLian/vue2-news)
 
 
-### <div id="class05">专题笔记归类(简书总结)</div>
+### <div id="class05">源码研究</div>
+- [time-formater:在javascript中显示日期](https://github.com/pengng/time-formater)
+
+
+### <div id="class06">专题笔记归类(简书总结)</div>
 - [01、react简书笔记](./book/01、react专题)
 
 - [02、ES6/7简书笔记](./book/02、ES6&7)
@@ -100,7 +105,7 @@
 - [16、前端数据可视化D3.js学习](https://github.com/yanlele/D3.js-learning)
 
 
-### <div id="class06">通用功能js模块组件</div>
+### <div id="class07">通用功能js模块组件</div>
 - 原生组件和公用功能部分
     - [01、常用功能函数:url带参数跳转，获取url参数，请求序列化param等功能](./通用功能js模块/js/1、site/site.js)
     - [02、日期格式化组件](./通用功能js模块/js/2、日期格式化组件/dateFormat.js)
@@ -140,7 +145,7 @@
 - [其他开源常用模块组件收录目录](./通用功能js模块/other)
 
 
-### <div id="class07">基础框架知识归类</div>
+### <div id="class08">基础框架知识归类</div>
 - [踩坑记录和一些项目的总结](./01、踩坑总结)
     - [01、对隐藏右边滚动条的研究](./01、踩坑总结/01、对隐藏右边滚动条的研究/index.html)
     - [02、给table的tr加不上bottom样式的解决方案](01、踩坑总结/02、给table的tr加不上bottom样式的解决方案/README.md)
@@ -440,7 +445,7 @@
     - [zhihu-flutter: Flutter 高仿知乎 UI](https://github.com/HackSoul/zhihu-flutter)
 
 
-### <div id="class08">年度计划和日志目录</div>
+### <div id="class09">年度计划和日志目录</div>
 
 - 17年
     - [17年计划书和记录](./17年/17年前端进阶计划.md)
