@@ -10,6 +10,9 @@
     - [6.mock function](./01、基础篇.md#6-Mock-Function)
     
     
+- [02、进阶使用篇]
+    
+    
 - [其他细碎知识点](./其他细碎知识点.md)
 
 - [代码示例](https://github.com/yanlele/TypeScript-build-index/tree/master/Test)
