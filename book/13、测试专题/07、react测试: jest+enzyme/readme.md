@@ -2,6 +2,10 @@
 
 - [jsx接入测试](./01、jsx接入测试.md)
 
+- [tsx接入测试](./02、tsx接入测试.md)
+
+- [其他](./03、其他.md)
+
 - 重要文章整理
     - [React 16 Jest快照测试](https://blog.csdn.net/zhangda89/article/details/80978844)
     - [使用jest+enzyme进行react项目测试 - 测试手法篇](http://echizen.github.io/tech/2017/02-12-jest-enzyme-method)
