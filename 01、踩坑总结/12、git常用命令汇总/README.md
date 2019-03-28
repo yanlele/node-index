@@ -266,7 +266,7 @@ git push 就OK了
 
 
 #### cherry-pick合并多个commit
-1、使用方法以及作用                      
+**1、使用方法以及作用**                      
 
 git cherry-pick可以选择某一个分支中的一个或几个commit(s)来进行操作（操作的对象是commit）。
 例如，假设我们有个稳定版本的分支，叫v2.0，另外还有个开发版本的分支v3.0，我们不能直接把两个分支合并，
@@ -300,17 +300,18 @@ Date:   Mon Aug 8 14:41:54 2016 +0800
 其中0771a0c107dbf4c96806d22bbc6ef4c58dfe7075就是我们的commit id                
 注意：当执行完 cherry-pick 以后，将会 生成一个新的提交；这个新的提交的哈希值和原来的不同，但标识名 一样；(commit id会变)                   
 
-2、实践
+**2、实践**
 
 首先切换到你要添加commit的分支，如：你要将A分支上面的commit添加到B分支上面，我们可以要先切换到B分支上面。
 （注意：cherry-pick是一个本地的操作，假如你pull代码之后有人在A分支上有了新的commit，
 需要你先pull代码在进行cherry-pick，原因及其错误提示请见最后）。
 
+`git checkout B`                                
+将0771a0c107dbf4c96806d22bbc6ef4c58dfe7075这个commit（提交）合并到B分支上面。
+正常情况下，可以给出全部的commit id，也可以只给出前面的一段，只要你提交中没有这一段重复的就好，剩下的部分git会帮你填充。                      
+`git cherry-pick 0771a0c107dbf4c`#将上面的commit id为0771a0c107dbf4c96806d22bbc6ef4c58dfe7075的提交添加到B分支上面                     
 
-
-
-
-
+参看文档                    
 - [git cherry-pick合并某个commit](https://www.cnblogs.com/0201zcr/p/5752771.html)
 
 
