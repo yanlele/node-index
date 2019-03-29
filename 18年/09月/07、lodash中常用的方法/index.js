@@ -391,3 +391,12 @@ let resultNumber = _.reduce(sourceNumber, (sum, value, index) => {
     return sum + value
 }, 0);
 // 36
+
+
+const obj = {
+    name: 'yanle',
+    age: 27
+};
+const obj1 = _.cloneDeep(obj);
+console.log(obj1);
+console.log(obj1 === obj);
