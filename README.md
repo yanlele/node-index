@@ -104,6 +104,10 @@
 
 - [16、前端数据可视化D3.js学习](https://github.com/yanlele/D3.js-learning)
 
+- [17、数据结构与算法专题](./book/17、数据结构与算法专题)
+
+- [18、flutter 基础入门](./book/18、flutter%20基础入门)
+
 
 ### <div id="class07">通用功能js模块组件</div>
 - 原生组件和公用功能部分
