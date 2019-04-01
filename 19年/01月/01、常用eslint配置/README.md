@@ -1,6 +1,6 @@
 # 常用eslint配置
 
-```json
+```
 "no-alert": 0,//禁止使用alert confirm prompt
 "no-array-constructor": 2,//禁止使用数组构造器
 "no-bitwise": 0,//禁止使用按位运算符
@@ -175,4 +175,72 @@
 "wrap-iife": [2, "inside"],//立即执行函数表达式的小括号风格
 "wrap-regex": 0,//正则表达式字面量用小括号包起来
 "yoda": [2, "never"]//禁止尤达条件
+```
+
+
+### 项目配置
+```
+{
+  "parser": "babel-eslint",
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "config/webpack.config.base.js"
+      }
+    }
+  },
+  "rules": {
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "prefer-destructuring": 0,
+    "camelcase": 0,
+    "no-param-reassign": 1,
+    "class-methods-use-this": 0,
+    "react/no-unused-state": 1,
+    "react/no-unused-prop-types": 1,
+    "import/first": 1,
+    "react/require-default-props": 0,
+    "react/prefer-stateless-function": 1,
+    "react/jsx-indent": 1,
+    "react/jsx-closing-tag-location": 1,
+    "import/no-unresolved": 1,
+    "react/sort-comp": "off",
+    "react/prop-types": 0,
+    "react/no-multi-comp": 0,
+    "max-lines": 0,
+    "react/no-array-index-key": 1,
+    "consistent-return": 0,
+    "jsx-a11y/no-static-element-interactions": 1,
+    "no-mixed-operators": 0,
+    "no-underscore-dangle": [
+      2,
+      {
+        "allow": [
+          "_store"
+        ]
+      }
+    ],
+    "no-unused-expressions": [
+      2,
+      {
+        "allowShortCircuit": true
+      }
+    ],
+    "react/no-did-mount-set-state": 1,
+    "react/jsx-no-target-blank": 0,
+    "max-len": [
+      2,
+      120
+    ]
+  }
+}
+```
+
+
+### eslint需要安装的依赖包
+```
+"babel-eslint": "^10.0.1",
+"eslint": "^5.9.0",
+"eslint-import-resolver-webpack": "^0.10.1",
+"eslint-loader": "^2.1.1",
 ```

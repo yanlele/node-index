@@ -187,3 +187,45 @@
   "no-unsafe-finally": true
 }
 ```
+
+
+### 项目配置
+```
+{
+  "defaultSeverity": "error",
+  // "extends": ["tslint:recommended", "tslint-config-airbnb", "tslint-react"],
+  "jsRules": {},
+  "rules": {
+    "jsx-no-multiline-js": false,
+    "quotemark": [true, "single", "jsx-double"],
+    "no-console": [true, "warn"],
+    "no-unused-expression": [true, "allow-fast-null-checks"],
+    "variable-name": [true, "allow-snake-case", "allow-pascal-case"],
+    "only-arrow-functions": [
+      true,
+      "allow-declarations",
+      "allow-named-functions"
+    ],
+    "member-access": false,
+    "no-unused-variable": true,
+    "interface-name": false,
+    "import-name": false,
+    "ter-arrow-parens": [true, "as-needed"],
+    "object-literal-sort-keys": false,
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "no-trailing-whitespace": [true, "ignore-blank-lines"],
+    "align": false,
+    "array-type": [true, "array"],
+    "max-line-length": [true, 120]
+  },
+  "rulesDirectory": []
+}
+```
+
+
+### 依赖包安装
+```
+"tslint": "^5.12.1",
+"tslint-config-airbnb": "^5.11.1",
+"tslint-react": "^3.6.0",
+```
