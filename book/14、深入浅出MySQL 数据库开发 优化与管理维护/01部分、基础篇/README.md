@@ -1,5 +1,15 @@
 ## <div id="class01">第一部分、基础篇</div>
 
+目录                  
+- [01章、mysql的安装与配置](#class01-01)
+- [02章、sql基础](#class01-02)
+- [03章、mysql数据类型](#class01-03)
+- [04章、mysql中的运算符](#class01-04)
+- [05、常用函数](#class01-05)
+- [06、图形化工具的使用](#class01-06)
+- [07、补充知识点儿：查看mysql数据库及表编码格式](#class01-07)
+
+
 ### <div id="class01-01">01章、mysql的安装与配置</div>
 这个部分的东西太过于基础，直接看网上搜索的文章就可以了：
 [mysql下载与安装问题整理](../../../18年/09月/02、mysql下载与安装问题整理/)
@@ -564,3 +574,50 @@ drop table if exists salary;
 ### <div id="class01-06">06、图形化工具的使用</div>
 使用mysql世界上还有比[datagrip](https://www.jetbrains.com/zh/datagrip/specials/datagrip/datagrip.html)还好用的工具吗？没有！！！
 所以略过
+
+
+
+### <div id="class01-07">07、补充知识点儿：查看mysql数据库及表编码格式</div>
+1、查看数据库编码格式                     
+`mysql> show variables like 'character_set_database';`
+
+2、查看数据表的编码格式                    
+`mysql> show create table <表名>;`
+
+3、创建数据库时指定数据库的字符集                       
+`mysql>create database <数据库名> character set utf8;`                      
+
+4、创建数据表时指定数据表的编码格式                      
+```
+create table tb_books (
+    name varchar(45) not null,
+    price double not null,
+    bookCount int not null,
+    author varchar(45) not null ) default charset = utf8;
+```
+
+5、修改数据库的编码格式                
+`mysql>alter database <数据库名> character set utf8;`                   
+
+6、修改数据表格编码格式                
+`mysql>alter table <表名> character set utf8;`                        
+
+7、修改字段编码格式                            
+```
+mysql>alter table <表名> change <字段名> <字段名> <类型> character set utf8;
+
+mysql>alter table user change username username varchar(20) character set utf8 not null;
+```
+
+8、添加外键                     
+```
+mysql>alter table tb_product add constraint fk_1 foreign key(factoryid) references tb_factory(factoryid);
+mysql>alter table <表名> add constraint <外键名> foreign key<字段名> REFERENCES <外表表名><字段名>;
+``` 
+
+9、删除外键                      
+```
+mysql>alter table tb_people drop foreign key fk_1;
+mysql>alter table <表名> drop foreign key <外键名>;
+```
+
