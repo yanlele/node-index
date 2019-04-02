@@ -20,3 +20,4 @@
 ### 值得推荐的headless模块
 - [puppeteer](https://github.com/GoogleChrome/puppeteer)
 - [nightmare](https://github.com/segmentio/nightmare)
+- [Puppeteer中文api](https://zhaoqize.github.io/puppeteer-api-zh_CN/)
