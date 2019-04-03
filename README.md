@@ -302,6 +302,7 @@
     - [48、对于水印的研究](./19年/03月/04、水印)
     - [49、css加载会造成阻塞吗？](./19年/03月/05、css%20加载会造成阻塞吗？/index.md)
     - [50、Dexie.js:A Minimalistic Wrapper for IndexedDB](https://github.com/dfahlander/Dexie.js)
+    - [51、Commitizen(git-cz)配置](./19年/04月/02、Commitizen(git-cz)配置)
 
     
 
@@ -382,6 +383,7 @@
     - [54、深度对比算法研究](./18年/12月/06、深度对比算法研究/buildDiff.js)
     - [55、html输出文件结构](./19年/03月/01、html输出文件结构)
     - [56、node-rd: 遍历目录下面所有文件目录](./19年/03月/03、node-rd)
+    - [57、node爬虫](./19年/04月/01、node爬虫)
     
     
     
