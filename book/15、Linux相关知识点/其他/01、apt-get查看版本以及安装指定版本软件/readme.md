@@ -1,4 +1,4 @@
-apt-get 安装指定版本软件
+## apt-get 安装指定版本软件
 
 有时候 Ubuntu安装软件时候会提示你缺少对应版本的软件，这时候你就需要用到 sudo apt-get install softname=version 来安装对应的软件。
 ```
