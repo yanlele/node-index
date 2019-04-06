@@ -1,5 +1,9 @@
 ## docker环境搭建
 
+目录
+- [如果没有云服务器怎么搭建Docker环境](#class01-01)
+- [CentOs7安装Docker](#CentOs7安装Docker)
+
 
 有远程服务器上面的虚拟机，啥都好说， 怎么安装就不多说了。                       
 网上自行找安装文章， 看官网也行， 看这个文章也行： [centos7安装docker](https://note.youdao.com/ynoteshare1/index.html?id=86fe5f7ae74004c70eade69edc54f8ea&type=note)
@@ -11,7 +15,7 @@
 如果都安装在虚拟机里面， 删除的时候， 直接删除我们的虚拟机， 就会方便非常多。)
 
 
-### 如果没有云服务器
+### <div id="class01-01">如果没有云服务器</div>
 直接在本地计算机开启虚拟机就可以了， 建议使用VirtualBox+vagrant 
 
 
@@ -51,6 +55,7 @@ vagrant基本命令:
 - `vagrant status` 查找虚拟机的运行状态
 - `vagrant destroy` 销毁当前虚拟机
 
+这个过程中最重要的是 `Vagrantfile`， 这个文件的配置， 可以直接去官方网站看就可以了
 
 
                   
@@ -58,3 +63,25 @@ vagrant基本命令:
 - [征服诱人的Vagrant！](https://www.cnblogs.com/hafiz/p/9175484.html)
 - [使用 Vagrant 打造跨平台开发环境](https://segmentfault.com/a/1190000000264347)
 
+
+
+### <div class="class01-02">CentOs7安装Docker</div> 
+#### 简要说一下安装步骤                      
+首先卸载之前的依赖： `sudo yum remove docker  docker-common docker-selinux docker-engine`                         
+安装驱动包： `sudo yum install -y yum-utils device-mapper-persistent-data lvm2`                   
+设置yum源： `sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo`                                    
+可以查看所有仓库中所有docker版本，并选择特定版本安装： `yum list docker-ce --showduplicates | sort -r`                          
+安装docker: `sudo yum install docker-ce  #由于repo中默认只开启stable仓库，故这里安装的是最新稳定版`
+    或者: `sudo yum install <FQPN>  # 例如：sudo yum install docker-ce-17.12.0.ce`                       
+启动并加入开机启动: `sudo systemctl start docker` 、 `sudo systemctl enable docker`                       
+验证安装是否成功(有client和service两部分表示docker安装启动都成功了)： `docker version`                          
+
+#### 在这过程中可能还需要解决几个问题
+- [Linux系统软件安装更新下载太慢解决方法（更换国内源）](https://blog.csdn.net/weixin_38034182/article/details/76672906)
+- [CentOS7上安装Docker并使用镜像加速解决docker拉取慢问题](https://www.jianshu.com/p/d611047c4387)
+
+
+参考文章：
+- [centos7安装docker](https://note.youdao.com/ynoteshare1/index.html?id=86fe5f7ae74004c70eade69edc54f8ea&type=note)
+- [Linux系统软件安装更新下载太慢解决方法（更换国内源）](https://blog.csdn.net/weixin_38034182/article/details/76672906)
+- [CentOS7上安装Docker并使用镜像加速解决docker拉取慢问题](https://www.jianshu.com/p/d611047c4387)
