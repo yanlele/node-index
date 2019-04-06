@@ -171,6 +171,26 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 发现我们的debian 已经常驻内存了
 
 
+#### 常用命令
+
+命令行 | 作用
+:-|:-
+`docker container rm [container id]` | 删除容器
+`docker ps -a` | `docker container ls -a` 的简写版本
+`docker rm [container id]` | `docker container rm [container id]` 的简写版本
+`docker images` | `docker image ls` 的简写版本
+`docker image rm [image id]` | 删除镜像
+`docker rmi [image id]` | 删除镜像
+`docker container ls -aq` | 列举所有容器的id
+`docker image ls -q` | 列举所有的镜像id
+`docker rm ${docker container ls -aq}` | 删除所有的容器
+`docker contaienr ls -f 'status=exited'` | 列出所有退出的容器
+`docker contaienr ls -f 'status=exited' -q` | 列出所有退出的容器的id
+`docker contaienr ls -f 'status=exited' -q` | 列出所有退出的容器的id
+`docker rm ${docker contaienr ls -f 'status=exited' -q}` | 删除所有已经退出的容器
+
+
+
 
 
 
