@@ -69,8 +69,9 @@ vagrant基本命令:
 #### 简要说一下安装步骤                      
 首先卸载之前的依赖： `sudo yum remove docker  docker-common docker-selinux docker-engine`                         
 安装驱动包： `sudo yum install -y yum-utils device-mapper-persistent-data lvm2`                   
-设置yum源： `sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo`                                    
-可以查看所有仓库中所有docker版本，并选择特定版本安装： `yum list docker-ce --showduplicates | sort -r`                          
+设置yum源(官方源奇慢无比)： `sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo`                                    
+设置alidocker-ce源： `sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo`
+可以查看所有仓库中所有docker版本，并选择特定版本安装： `sudo yum list docker-ce --showduplicates | sort -r`                          
 安装docker: `sudo yum install docker-ce  #由于repo中默认只开启stable仓库，故这里安装的是最新稳定版`
     或者: `sudo yum install <FQPN>  # 例如：sudo yum install docker-ce-17.12.0.ce`                       
 启动并加入开机启动: `sudo systemctl start docker` 、 `sudo systemctl enable docker`                       
@@ -108,7 +109,7 @@ See 'docker --help'
   config.vm.provision "shell", inline: <<-SHELL
     sudo yum remove docker  docker-common docker-selinux docker-engine
     sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-    sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
     sudo yum install docker-ce-17.12.0.ce
     sudo systemctl start docker
   SHELL
@@ -119,6 +120,7 @@ See 'docker --help'
 
 
 #### 在这过程中可能还需要解决几个问题
+- [Centos7系统下Docker ce的安装及镜像加速](http://www.bubuko.com/infodetail-2371059.html)
 - [Linux系统软件安装更新下载太慢解决方法（更换国内源）](https://blog.csdn.net/weixin_38034182/article/details/76672906)
 - [CentOS7上安装Docker并使用镜像加速解决docker拉取慢问题](https://www.jianshu.com/p/d611047c4387)
 - [安装Docker](https://help.aliyun.com/document_detail/60742.html)
