@@ -3,6 +3,7 @@
 目录
 - [Docker核心](#class02-01)
 - [Docker镜像](#calss02-02)
+ -[打包自己的一个image](#class02-03)
 
 
 
@@ -57,18 +58,22 @@ debian              8                   7cd9fb1ee74f        10 days ago         
 所有的镜像分为官方镜像和个人镜像， 其他的以后慢慢研究。
 
 
+### <div class="02-03">打包自己的一个image</div>
 
 
-
-
-
+### 其他补充
+我们每次运行 `docker` 命令行的时候， 就需要用到 `sudo`, 那么如何取消这个 `sudo` 呢                         
+- 添加一个docker group : `sudo groupadd docker`
+- 添加当前用户到group: `sudo gpasswd -a vagrant docker`
+- 重启docker服务： `sudo service docker restart`
+- 如果还是不行， 尝试重新登录虚拟机
 
 
 参考文章
 - [Docker 架构详解](https://www.cnblogs.com/CloudMan6/p/6763789.html)
 - [几张图帮你理解 docker 基本原理及快速入门](https://www.cnblogs.com/SzeCheng/p/6822905.html)
 - [10张图带你深入理解Docker容器和镜像](http://dockone.io/article/783)
-
+- [dcoker入门,使用docker部署NodeJs应用](https://www.cnblogs.com/pass245939319/p/8473861.html)
 
 
 
