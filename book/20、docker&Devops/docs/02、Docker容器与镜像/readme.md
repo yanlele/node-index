@@ -59,6 +59,55 @@ debian              8                   7cd9fb1ee74f        10 days ago         
 
 
 ### <div class="02-03">打包自己的一个image</div>
+#### 这里先看一个简单的一个官方demo                          
+- 拉取镜像： `docker pull hello-world`
+- 查看当前镜像： `docker image ls`
+- 执行拉取到的helloWorld: `docker run hello-world`
+
+#### 如何自己实现一个helloWorld
+以为想实现一个纯可执行的， 不需要任何依赖的hello word ， 所以考虑使用 C 语言的hello world                      
+~/hello-world/hello.c
+```
+#include <stdio.h>
+
+int main(){
+	printf("hello docker\n");
+}
+```
+然后需要安装编译工具， 先查看自己 极其上是否有编译工具： `yum list|grep gcc` / `yum list |grep glibc`                      
+所需要的是工具是： `gcc、glibc-static` 如果没有这两个工具， 直接 yum 安装就可以了。
+
+然后用gcc 编译C 语言， 让其输出一个在Linux 环境下的一个可执行文件： `gcc -static hello.c -o hello`                     
+运行之后， 在当前目录多了一个可执行文件。
+
+#### 创建Dockerfile打包
+当前目录创建Dockerfile: `vim Dockerfile`                      
+```
+FROM scratch
+ADD hello /
+CMD ["/hello"]
+```
+保存退出之后， 直接进行docker 打包： `docker build -t yanlele/hello-world .`                          
+运行过程如下：
+```
+Sending build context to Docker daemon  860.7kB
+Step 1/3 : FROM scratch
+ ---> 
+Step 2/3 : ADD hello /
+ ---> 3cf6370e3b3d
+Step 3/3 : CMD ["/hello"]
+ ---> Running in 0df423cf29e7
+Removing intermediate container 0df423cf29e7
+ ---> e436b5b7ed18
+Successfully built e436b5b7ed18
+Successfully tagged yanlele/hello-world:latest
+```
+通过 `docker image ls` 就可以查看自己刚才的那个docker 镜像了
+
+
+
+
+
 
 
 ### 其他补充
@@ -74,6 +123,7 @@ debian              8                   7cd9fb1ee74f        10 days ago         
 - [几张图帮你理解 docker 基本原理及快速入门](https://www.cnblogs.com/SzeCheng/p/6822905.html)
 - [10张图带你深入理解Docker容器和镜像](http://dockone.io/article/783)
 - [dcoker入门,使用docker部署NodeJs应用](https://www.cnblogs.com/pass245939319/p/8473861.html)
+- [Linux（CentOS）安装Node.JS和npm的两种方式（yum安装和源码安装）](https://blog.csdn.net/abcdefg2343/article/details/81355002)
 
 
 
