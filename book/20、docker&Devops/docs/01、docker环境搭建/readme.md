@@ -70,7 +70,7 @@ vagrant基本命令:
 首先卸载之前的依赖： `sudo yum remove docker  docker-common docker-selinux docker-engine`                         
 安装驱动包： `sudo yum install -y yum-utils device-mapper-persistent-data lvm2`                   
 设置yum源(官方源奇慢无比)： `sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo`                                    
-设置alidocker-ce源： `sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo`
+设置ali-docker-ce源： `sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo`
 可以查看所有仓库中所有docker版本，并选择特定版本安装： `sudo yum list docker-ce --showduplicates | sort -r`                          
 安装docker: `sudo yum install docker-ce  #由于repo中默认只开启stable仓库，故这里安装的是最新稳定版`
     或者: `sudo yum install <FQPN>  # 例如：sudo yum install docker-ce-17.12.0.ce`                       
@@ -128,6 +128,7 @@ See 'docker --help'
 
 参考文章：
 - [centos7安装docker](https://note.youdao.com/ynoteshare1/index.html?id=86fe5f7ae74004c70eade69edc54f8ea&type=note)
+- [Centos7系统下Docker ce的安装及镜像加速](http://www.bubuko.com/infodetail-2371059.html)
 - [Linux系统软件安装更新下载太慢解决方法（更换国内源）](https://blog.csdn.net/weixin_38034182/article/details/76672906)
 - [CentOS7上安装Docker并使用镜像加速解决docker拉取慢问题](https://www.jianshu.com/p/d611047c4387)
 - [安装Docker](https://help.aliyun.com/document_detail/60742.html)
