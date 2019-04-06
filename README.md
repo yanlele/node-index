@@ -165,6 +165,7 @@
     - [10、input属性为number，maxlength不起作用如何解决](01、踩坑总结/10、input属性为number，maxlength不起作用如何解决/index.html)
     - [11、基于jquery的锚点跳转](01、踩坑总结/11、基于jquery的锚点跳转/index.html)
     - [12、git常用命令汇总, git命令行](01、踩坑总结/12、git常用命令汇总/README.md)
+    - [13、Mac系统占用空间大、空间不够、查看系统文件大小分布](https://blog.csdn.net/u011423056/article/details/79450845)
 
 
 - 前端基础
