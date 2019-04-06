@@ -158,6 +158,18 @@ fd8ac474c124        debian:8              "bash"              9 seconds ago     
 发现一个问题， debian 也不会常驻内存
 
 
+#### 交互式运行容器
+上面遗留了一个问题： `debian 也不会常驻内存`, 那么如何让debian常驻内存。                       
+交互式运行镜像创建容器：  `docker run -it debian:8`                 
+这样我们就能直接 debian 容器里面去了
+
+再启动一个terminal窗口， 进入之前的 虚拟机， 运行命令： `docker container ls`
+```
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+9e26736a2eeb        debian:8            "bash"              56 seconds ago      Up 56 seconds                           upbeat_allen
+```
+发现我们的debian 已经常驻内存了
+
 
 
 
