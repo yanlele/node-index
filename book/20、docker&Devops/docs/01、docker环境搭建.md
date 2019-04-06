@@ -14,6 +14,8 @@
 ### 如果没有云服务器
 直接在本地计算机开启虚拟机就可以了， 建议使用VirtualBox+vagrant 
 
+
+#### 基本安装
 比如说我们要创建一个centos7 的虚拟机， 用vagrant 命令行直接： `vagrant init centos/7` 。
 这个时候就直接会给我们初始化一个 `Vagrantfile` 的文件，这个文件就是配置一些列的 vagrant 的配置, `more Vagrantfile` 可以查看详情
 里面有详细的文档， 但是重要的就是这两句话：
@@ -25,6 +27,30 @@ Vagrant.configure("2") do |config|
 
 有了 `Vagrantfile` 之后， 我们可以直接在 `Vagrantfile` 的目录下面直接启动 `vagrant up`               
 这个过程首先要去找 centos7 的一个basebox 如果，本地有的话， 直接就从本地加载过来， 如果本地没有镜像， 就会直接去下载（过程很漫长）。
+然后如果安装成功之后， 直接去看我们的 `VirtualBox` 就会发现一个正在运行的 `centos7` 了
+
+当我们直接创建好了之后 我们可以直接运行 `vagrant ssh` 就可以登录到我们创建好的那个 `centos7` 系统了(当然要牢记我们进入的文件目录， 以为系统是放在当前指定的文件目录下面的)
+当我们需要分享我们的虚拟机的时候，只用分享我们的 `Vagrantfile` 就可以了。
+
+#### 基本使用
+vagrant box基本命令:                    
+- `vagrant box list` 列出本地环境中所有的box
+- `vagrant box add box-name(box-url)` 添加box到本地vagrant环境
+- `vagrant box update box-name` 更新本地环境中指定的box
+- `vagrant box remove box-name` 删除本地环境中指定的box
+- `vagrant box repackage box-name` 重新打包本地环境中指定的box
+- [https://app.vagrantup.com/boxes/search](https://app.vagrantup.com/boxes/search) 在线查找需要的box
+
+vagrant基本命令:                    
+- `vagrant init [box-name]` 在空文件夹初始化虚拟机
+- `vagrant up` 在初始化完的文件夹内启动虚拟机
+- `vagrant ssh` ssh登录启动的虚拟机
+- `vagrant suspend` 挂起启动的虚拟机
+- `vagrant reload` 重启虚拟机
+- `vagrant halt` 关闭虚拟机
+- `vagrant status` 查找虚拟机的运行状态
+- `vagrant destroy` 销毁当前虚拟机
+
 
 
                   
