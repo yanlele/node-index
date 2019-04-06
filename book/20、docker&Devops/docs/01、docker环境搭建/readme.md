@@ -75,13 +75,57 @@ vagrant基本命令:
     或者: `sudo yum install <FQPN>  # 例如：sudo yum install docker-ce-17.12.0.ce`                       
 启动并加入开机启动: `sudo systemctl start docker` 、 `sudo systemctl enable docker`                       
 验证安装是否成功(有client和service两部分表示docker安装启动都成功了)： `docker version`                          
+```
+[vagrant@localhost yum.repos.d]$ sudo docker version
+Client:
+ Version:	17.12.0-ce
+ API version:	1.35
+ Go version:	go1.9.2
+ Git commit:	c97c6d6
+ Built:	Wed Dec 27 20:10:14 2017
+ OS/Arch:	linux/amd64
+
+Server:
+ Engine:
+  Version:	17.12.0-ce
+  API version:	1.35 (minimum version 1.12)
+  Go version:	go1.9.2
+  Git commit:	c97c6d6
+  Built:	Wed Dec 27 20:12:46 2017
+  OS/Arch:	linux/amd64
+  Experimental:	false
+[vagrant@localhost yum.repos.d]$ docker list
+docker: 'list' is not a docker command.
+See 'docker --help'
+```
+
+官方有个demo `hello-world` 我们可以下载下来看一看:  `sudo docker run hello-world`                                        
+问题来了， 本地是没有 `hello-world` ， 是通过 `docker hub` 拉去的。
+
+
+#### 通过`vagrantFile`启动虚拟机的时候自动安装docker
+```
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo yum remove docker  docker-common docker-selinux docker-engine
+    sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+    sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    sudo yum install docker-ce-17.12.0.ce
+    sudo systemctl start docker
+  SHELL
+```
+然后重新安装 `vagrant up` 就可以搞定了
+
+
+
 
 #### 在这过程中可能还需要解决几个问题
 - [Linux系统软件安装更新下载太慢解决方法（更换国内源）](https://blog.csdn.net/weixin_38034182/article/details/76672906)
 - [CentOS7上安装Docker并使用镜像加速解决docker拉取慢问题](https://www.jianshu.com/p/d611047c4387)
+- [安装Docker](https://help.aliyun.com/document_detail/60742.html)
 
 
 参考文章：
 - [centos7安装docker](https://note.youdao.com/ynoteshare1/index.html?id=86fe5f7ae74004c70eade69edc54f8ea&type=note)
 - [Linux系统软件安装更新下载太慢解决方法（更换国内源）](https://blog.csdn.net/weixin_38034182/article/details/76672906)
 - [CentOS7上安装Docker并使用镜像加速解决docker拉取慢问题](https://www.jianshu.com/p/d611047c4387)
+- [安装Docker](https://help.aliyun.com/document_detail/60742.html)
