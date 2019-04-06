@@ -183,11 +183,11 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 `docker rmi [image id]` | 删除镜像
 `docker container ls -aq` | 列举所有容器的id
 `docker image ls -q` | 列举所有的镜像id
-`docker rm ${docker container ls -aq}` | 删除所有的容器
+`docker rm $(docker container ls -aq)` | 删除所有的容器
 `docker contaienr ls -f 'status=exited'` | 列出所有退出的容器
 `docker contaienr ls -f 'status=exited' -q` | 列出所有退出的容器的id
 `docker contaienr ls -f 'status=exited' -q` | 列出所有退出的容器的id
-`docker rm ${docker contaienr ls -f 'status=exited' -q}` | 删除所有已经退出的容器
+`docker rm $(docker contaienr ls -f 'status=exited' -q)` | 删除所有已经退出的容器
 
 
 
