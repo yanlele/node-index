@@ -4,7 +4,7 @@
 - [Docker核心](#class02-01)
 - [Docker镜像](#calss02-02)
  -[打包自己的一个image](#class02-03)
-
+- [Docker容器: Container](#class02-04)
 
 
 ### <div class="class02-01">Docker核心</div>
@@ -121,8 +121,41 @@ e436b5b7ed18        7 minutes ago       /bin/sh -c #(nop)  CMD ["/hello"]       
 
 
 
+### <div id="class02-04">Docker容器: Container</div>
+基础知识看这个文章 [10张图带你深入理解Docker容器和镜像](http://dockone.io/article/783)
 
+#### `container` 和 `image` 的关系
+主要从这三方方面理解                      
+- `container` 是通过 `image` 创建的， 实际上就是在 `image layer(只读)`之上建立了的一个 `container layer(可读写)`                    
+- 可以把 `container` 和 `image` 的关系 类比于 `类(image)于实例(container)`                      
+- `image`负责app的存储和分发 `container` 负责运行app
 
+#### 如何创建 `container`
+最简单的方式就是直接通过： `docker run [docker image name]`
+
+列出当前正在运行的容器： `docker container ls`                      
+值得注意的地方： 上面运行的 `hello world` 容器， 无论怎么运行， 都不会出现在 `docker container ls` 里面，
+这个是因为 `hello world` 容器运行之后， 就退出了， 不会常驻内存里面。
+
+列出当前所有的容器(包括正在运行的和已经退出的)： `docker container ls -a`
+```
+[vagrant@docker-host hello-word]$ docker container ls -a
+CONTAINER ID        IMAGE                 COMMAND             CREATED             STATUS                         PORTS               NAMES
+819f91112ba1        yanlele/hello-world   "/hello"            12 minutes ago      Exited (13) 12 minutes ago                         elastic_mclean
+2f3f72f34396        hello-world           "/hello"            About an hour ago   Exited (0) About an hour ago                       condescending_swanson
+```
+
+#### 看一个比较复杂的`image:CentOs`             
+启动： `docker run debian:8`               
+之后查看容器： `docker container ls -a`                
+```
+CONTAINER ID        IMAGE                 COMMAND             CREATED             STATUS                         PORTS               NAMES
+fd8ac474c124        debian:8              "bash"              9 seconds ago       Exited (0) 8 seconds ago                           infallible_nobel
+819f91112ba1        yanlele/hello-world   "/hello"            16 minutes ago      Exited (13) 16 minutes ago                         elastic_mclean
+2f3f72f34396        hello-world           "/hello"            About an hour ago   Exited (0) About an hour ago                       condescending_swanson
+```
+
+发现一个问题， debian 也不会常驻内存
 
 
 
