@@ -58,6 +58,18 @@ vagrant基本命令:
 这个过程中最重要的是 `Vagrantfile`， 这个文件的配置， 可以直接去官方网站看就可以了
 
 
+#### 通过`vagrantFile`启动虚拟机的时候自动安装docker
+```
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo yum remove docker  docker-common docker-selinux docker-engine
+    sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+    sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+    sudo yum install docker-ce-17.12.0.ce
+    sudo systemctl start docker
+  SHELL
+```
+然后重新安装 `vagrant up` 就可以搞定了
+
                   
 参考文章:                   
 - [征服诱人的Vagrant！](https://www.cnblogs.com/hafiz/p/9175484.html)
@@ -100,22 +112,10 @@ docker: 'list' is not a docker command.
 See 'docker --help'
 ```
 
+可以通过 `ps -ef | grep docker` 查看docker 当前的进程
+ 
 官方有个demo `hello-world` 我们可以下载下来看一看:  `sudo docker run hello-world`                                        
 问题来了， 本地是没有 `hello-world` ， 是通过 `docker hub` 拉去的。
-
-
-#### 通过`vagrantFile`启动虚拟机的时候自动安装docker
-```
-  config.vm.provision "shell", inline: <<-SHELL
-    sudo yum remove docker  docker-common docker-selinux docker-engine
-    sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-    sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-    sudo yum install docker-ce-17.12.0.ce
-    sudo systemctl start docker
-  SHELL
-```
-然后重新安装 `vagrant up` 就可以搞定了
-
 
 
 
