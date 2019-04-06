@@ -104,6 +104,25 @@ Successfully tagged yanlele/hello-world:latest
 ```
 通过 `docker image ls` 就可以查看自己刚才的那个docker 镜像了
 
+运行我们的 docker image: `docker run yanlele/hello-world`
+
+
+
+#### 查看docker构建分层
+通过`docker image`可以去看docker 分层情况： `docker history [docker image id]`                    
+```
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+e436b5b7ed18        7 minutes ago       /bin/sh -c #(nop)  CMD ["/hello"]               0B                  
+3cf6370e3b3d        7 minutes ago       /bin/sh -c #(nop) ADD file:0bd91ef318c5fa6bf…   857kB  
+```
+
+**注意一点:**                                          
+在构建 Dockerfile 里面 `FROM scratch` 表示不base 任何镜像文件， 所以这里不算一层
+
+
+
+
+
 
 
 
