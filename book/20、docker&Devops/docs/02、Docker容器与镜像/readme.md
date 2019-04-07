@@ -5,6 +5,7 @@
 - [Docker镜像](#calss02-02)
  -[打包自己的一个image](#class02-03)
 - [Docker容器: Container](#class02-04)
+- [构建自己的镜像](#class02-05)
 
 
 ### <div class="class02-01">Docker核心</div>
@@ -190,6 +191,8 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 `docker rm $(docker contaienr ls -f 'status=exited' -q)` | 删除所有已经退出的容器
 
 
+
+### <div id="class02-05">构建自己的镜像</div>
 
 
 
