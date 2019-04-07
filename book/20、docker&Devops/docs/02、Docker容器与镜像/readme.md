@@ -194,6 +194,21 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 ### <div id="class02-05">构建自己的镜像</div>
 
+#### 创建一个新的镜像的方式
+- 通过 `docker container commit` 就可以看到命令行语法：                
+`Usage:  docker container commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]] [flags]` 可以简写为 `docker commit`                            
+这个就是通过image 创建好 container , 然后对container 做出改变之后， 再把改变后的container重新打包为image
+
+- `docker image build`
+`Usage:  docker image build [OPTIONS] PATH | URL | - [flags]`                       
+根据一个已有的image , build 一个新的 image
+
+#### 举一个例子
+我们交互式运行一个centos的镜像，并且对镜像做出改变： `docker run it centos`                        
+然后安装一个vim:  `sudo yum install -y vim`                            
+
+安装成功之后， 我就有了一个vim , 然后退出容器之后， `docker container ls -a` 就可以找到我们已经退出来的容器（这个容器安装了vim）                      
+
 
 
 
