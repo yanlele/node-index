@@ -279,6 +279,41 @@ FROM scratch # 制作base image
 FROM centos # 使用base image
 FROM ubuntu:14.04 # 使用指定版本的 image
 ```
+**注意**                  
+尽量使用官方的image 作为 base image
+
+
+
+#### LABEL
+```
+LABEL maintainer="331393627@qq.com"
+LABEL version="1.0"
+LABEL description="This is description"
+```
+**注意**                      
+尽量要加上LABEL, 类似于 注释
+
+#### RUN
+```
+RUN yum update && yum install -y vum \
+    python-dev # 反斜杠
+```
+
+```
+RUN apt-get update && apt-get install -y perl \
+    pwgen --no-install-recommends && rm -fe \
+    /var/lib/apt/lists/*  # 注意清理cache
+```
+
+```
+RUN /bin/bash -c 'source $HOME/.bashrc;echo $HOME'
+```
+
+**注意**                          
+每次运行RUM 都会生成一层， 所以可以 \ 一个run来执行多个命令行， 只生成一层
+
+
+
 
 
 
