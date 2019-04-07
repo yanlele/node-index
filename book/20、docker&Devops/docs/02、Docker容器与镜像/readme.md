@@ -203,11 +203,58 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 `Usage:  docker image build [OPTIONS] PATH | URL | - [flags]`                       
 根据一个已有的image , build 一个新的 image
 
-#### 举一个例子
+#### 举一个例子 - 通过容器创建镜像
 我们交互式运行一个centos的镜像，并且对镜像做出改变： `docker run it centos`                        
 然后安装一个vim:  `sudo yum install -y vim`                            
 
 安装成功之后， 我就有了一个vim , 然后退出容器之后， `docker container ls -a` 就可以找到我们已经退出来的容器（这个容器安装了vim）                      
+```
+[vagrant@docker-host ~]$ docker container ls -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                       PORTS               NAMES
+89851b821678        centos              "/bin/bash"         4 minutes ago       Exited (127) 7 seconds ago                       sad_fermi
+```
+
+直接运行 `docker commit [contaienr name] [new image name: tag]`
+```
+[vagrant@docker-host ~]$ docker commit sad_fermi yanlele/centos-vim
+sha256:72d96eef3aa846ae2fa7c5e642f87802aa9dc826bc18c11941c41e464496d8d0
+```
+
+成功之后就会有一个新的 `docker image`: `docker image ls`
+```
+[vagrant@docker-host ~]$ docker image ls
+REPOSITORY            TAG                 IMAGE ID            CREATED              SIZE
+yanlele/centos-vim    latest              72d96eef3aa8        About a minute ago   340MB
+yanlele/hello-world   latest              e436b5b7ed18        23 hours ago         857kB
+debian                8                   7cd9fb1ee74f        11 days ago          129MB
+centos                latest              9f38484d220f        3 weeks ago          202MB
+hello-world           latest              fce289e99eb9        3 months ago         1.84kB
+```
+
+**两个镜像的关系**                         
+```
+yanlele/centos-vim    latest              72d96eef3aa8        About a minute ago   340MB
+centos                latest              9f38484d220f        3 weeks ago          202MB
+```
+这两个镜像其实是公用了很多层的， 可以通过 `docker history [image id]` 查看                                                            
+比如先看centos 镜像的 层：                         
+```
+[vagrant@docker-host ~]$ docker history 9f38484d220f
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+9f38484d220f        3 weeks ago         /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B                  
+<missing>           3 weeks ago         /bin/sh -c #(nop)  LABEL org.label-schema.sc…   0B                  
+<missing>           3 weeks ago         /bin/sh -c #(nop) ADD file:074f2c974463ab38c…   202MB  
+```
+
+再看 `yanlele/centos-vim` 的层：                         
+```
+[vagrant@docker-host ~]$ docker history 72d96eef3aa8
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+72d96eef3aa8        About an hour ago   /bin/bash                                       139MB               
+9f38484d220f        3 weeks ago         /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B                  
+<missing>           3 weeks ago         /bin/sh -c #(nop)  LABEL org.label-schema.sc…   0B                  
+<missing>           3 weeks ago         /bin/sh -c #(nop) ADD file:074f2c974463ab38c…   202MB 
+```
 
 
 
