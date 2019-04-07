@@ -293,6 +293,7 @@ LABEL description="This is description"
 **注意**                      
 尽量要加上LABEL, 类似于 注释
 
+
 #### RUN
 ```
 RUN yum update && yum install -y vum \
@@ -313,7 +314,30 @@ RUN /bin/bash -c 'source $HOME/.bashrc;echo $HOME'
 每次运行RUM 都会生成一层， 所以可以 \ 一个run来执行多个命令行， 只生成一层
 
 
+#### WORKDIR
+设定当前工作目录                                
+```
+WORKDIR /root
 
+WORKDIR /test  # 如果没有目录， 会自动创建test 目录
+WORKDIR demo
+RUN pwd  # 输出结果应该是 /test/demo
+```
+**注意**                              
+尽量用 `WORKDIR` ， 不要用 `RUN cd`! 尽量使用绝对路径
+
+
+#### AND/COPY
+```
+ADD hello /
+ADD test.tar.gz /  # 添加到根目录并解压
+
+WORKDIR /root
+ADD hello test/
+
+WORKDIR /root
+COPY hello test/
+```
 
 
 
