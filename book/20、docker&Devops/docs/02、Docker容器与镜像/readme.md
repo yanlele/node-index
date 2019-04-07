@@ -199,7 +199,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 `Usage:  docker container commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]] [flags]` 可以简写为 `docker commit`                            
 这个就是通过image 创建好 container , 然后对container 做出改变之后， 再把改变后的container重新打包为image
 
-- `docker image build`
+- `docker image build` 可以简写为 `docker build`
 `Usage:  docker image build [OPTIONS] PATH | URL | - [flags]`                       
 根据一个已有的image , build 一个新的 image
 
@@ -255,6 +255,19 @@ IMAGE               CREATED             CREATED BY                              
 <missing>           3 weeks ago         /bin/sh -c #(nop)  LABEL org.label-schema.sc…   0B                  
 <missing>           3 weeks ago         /bin/sh -c #(nop) ADD file:074f2c974463ab38c…   202MB 
 ```
+
+**注意**                          
+非常不推荐使用这种方式， 以为使用者不知道这个image 里面有什么， 这个镜像是不安全的。
+
+
+#### 举一个例子 - 通过Dockerfile创建image
+创建一个文件夹 `~/docker-centos-vim` 然后进去之后， 创建Dockerfile文件                                                                     
+```
+FROM centos
+RUN yum install -y vim
+```
+然后运行命令行 `docker build -t yanlele/centos-vim-new .`                          
+就可以执行镜像打包了                              
 
 
 
