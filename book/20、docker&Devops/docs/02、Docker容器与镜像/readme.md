@@ -6,6 +6,7 @@
  -[打包自己的一个image](#class02-03)
 - [Docker容器: Container](#class02-04)
 - [构建自己的镜像](#class02-05)
+- [Dockerfile](#class02-06)
 
 
 ### <div class="class02-01">Docker核心</div>
@@ -268,6 +269,16 @@ RUN yum install -y vim
 ```
 然后运行命令行 `docker build -t yanlele/centos-vim-new .`                          
 就可以执行镜像打包了                              
+
+
+### <div id="class02-06">Dockerfile</div>
+
+#### FROM
+```
+FROM scratch # 制作base image
+FROM centos # 使用base image
+FROM ubuntu:14.04 # 使用指定版本的 image
+```
 
 
 
