@@ -472,6 +472,11 @@ Login Succeeded
 
 
 #### 搭建私有DockerHub
+在docker hub 上面找到 `registry` 这个这个镜像就是帮助构建私有 `docker hub`(没有界面) 仓库的
+**需要的时候在研究**
+
+
+
 
 
 
