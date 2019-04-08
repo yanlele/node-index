@@ -352,6 +352,54 @@ RUN rm -rf /var/lib/apt/lists/*
 ```
 **要常用ENV**
 
+
+
+#### 几个重要的执行命令对比                            
+**RUN**: 执行命令并且创建新的image layer                          
+**CMD**: 设置容器启动后默认执行的命令和参数                              
+**ENTRYPOINT**: 设置容器启动时运行的命令                                
+
+#### 两种命令行格式
+**shell**:                      
+格式                      
+```
+RUM apt-get install -y vim
+CMD echo "hello docker"
+ENTRYPOINT echo "hello docker"
+```
+
+参数                      
+```
+FROM centos
+NEV name Docker
+ENTRYPOINT echo "helloo $name"
+```
+
+**exec**：                           
+格式                      
+```
+RUN ["apt-get", "install",  "-y", "vim"]
+CMD ["/bin/echo", "hello docker"]
+ENTRYPOINT ["/bin/echo", "hello docker"]
+```
+
+参数                      
+```
+FROM centos
+ENV name Docker
+ENTRYPOINT ["/bin/echo", "hello $name"]
+```
+
+
+
+
+
+
+
+
+
+
+
 #### 其他
 多余dockerfile 的语法和写法， 可以多多参考这个项目 [https://github.com/docker-library](https://github.com/docker-library)
 docker 官方文档： [https://docs.docker.com/](https://docs.docker.com/)
