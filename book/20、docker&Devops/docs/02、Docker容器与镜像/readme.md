@@ -333,11 +333,31 @@ ADD hello /
 ADD test.tar.gz /  # 添加到根目录并解压
 
 WORKDIR /root
-ADD hello test/
+ADD hello test/  # /root/test/hello
 
 WORKDIR /root
 COPY hello test/
 ```
+
+**注意**                          
+ADD 可以接压缩                       
+大多数情况下 copy 使用优先级高于 add
+
+
+#### ENV
+```
+ENV MYSQL_VERSION 5.6  # 设置常量
+RUN apt-get install -y mysql-version = "${MYSQL_VERSION}"  # 引用常量
+RUN rm -rf /var/lib/apt/lists/* 
+```
+**要常用ENV**
+
+#### 其他
+多余dockerfile 的语法和写法， 可以多多参考这个项目 [https://github.com/docker-library](https://github.com/docker-library)
+docker 官方文档： [https://docs.docker.com/](https://docs.docker.com/)
+
+
+
 
 
 
