@@ -7,6 +7,7 @@
 - [Docker容器: Container](#class02-04)
 - [构建自己的镜像](#class02-05)
 - [Dockerfile](#class02-06)
+- [发布镜像](#class02-07)
 
 
 ### <div class="class02-01">Docker核心</div>
@@ -435,14 +436,43 @@ CMD ["mongod"]
 ```
 
 
-
-
-
-
-
 #### 其他
 多余dockerfile 的语法和写法， 可以多多参考这个项目 [https://github.com/docker-library](https://github.com/docker-library)
 docker 官方文档： [https://docs.docker.com/](https://docs.docker.com/)
+
+
+
+
+### <div id="class02-07">镜像发布</div>                             
+[https://hub.docker.com](https://hub.docker.com) 注册账号和密码
+
+然后回到虚拟机， 通过 `docker login` 登录                           
+```
+[vagrant@docker-host helloDocker]$ docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: yanlele	
+Password: 
+Login Succeeded
+```
+说明就的登录成功了
+
+
+#### 推送image
+`docker push`: `Usage:  docker push [OPTIONS] NAME[:TAG] [flags]`                   
+例如我们要push hello-world: `docker push yanlele/hello-world:latest`
+
+就可以等待推送完成了， 想拉取这个镜像， 就就可以这样: `docker pull yanlele/hello-world`
+
+**不推荐**
+
+#### 推送Dockerfile
+关联github -> github 项目里面放置Dockerfile -> 自动触发build
+**推荐**
+
+
+
+#### 搭建私有DockerHub
+
 
 
 
