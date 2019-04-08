@@ -10,6 +10,7 @@
 - [发布镜像](#class02-07)
 - [来一个简单的例子](#class02-08)
 - [容器操作](#class02-09)
+- [再看一个小栗子 - 打包一个命令行工具](#class02-09)
 
 
 ### <div class="class02-01">Docker核心</div>
@@ -495,6 +496,9 @@ Login Succeeded
 `docker [container] start [container id]` | 启动容器
 `docker run -d --name=demo [image]` | 给启动的容器取一个名字（不取名字， 名称随机）
 `docker inspect [container id|name]` | 获取到容器信息 
+
+
+### <div id="class02-10">再看一个小栗子 - 打包一个node程序</div>
 
 
 
