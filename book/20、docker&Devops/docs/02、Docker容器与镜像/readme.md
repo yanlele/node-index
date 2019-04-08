@@ -478,6 +478,14 @@ Login Succeeded
 
 
 
+### <div id="class02-08">来一个简单的例子</div>
+如果容器打包过程中除了问题， 提议动过查看临时容器ID, 进去查看问题原因， 做调试作用: `docker run -it [temp id] /bin/bash`                    
+
+对于服务的话，如何才能后台运行: `dcoker run -d [docker image]`
+
+
+
+
 
 
 
