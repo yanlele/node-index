@@ -422,6 +422,17 @@ CMD echo "hello $name"
 `docker run -it [image] /bin/bash` 不会输出 hello Docker
 
 
+#### ENTRYPOINT
+- 让容器以程序或者服务的方式去运行
+- 不会被忽略， 一定执行
+- 最佳实践是写一个shell脚本作为`ENTRYPOINT`去执行
+
+```
+COPY docker-entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["docker-entrypoint.sh"]
+EXPOSE 27017
+CMD ["mongod"]
+```
 
 
 
