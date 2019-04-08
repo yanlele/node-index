@@ -1,0 +1,5 @@
+flake8==2.4.0
+Flask-Testing==0.4.2
+discover
+nose
+coverage==4.0.3
