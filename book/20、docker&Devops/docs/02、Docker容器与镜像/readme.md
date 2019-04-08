@@ -8,6 +8,8 @@
 - [构建自己的镜像](#class02-05)
 - [Dockerfile](#class02-06)
 - [发布镜像](#class02-07)
+- [来一个简单的例子](#class02-08)
+- [容器操作](#class02-09)
 
 
 ### <div class="class02-01">Docker核心</div>
@@ -484,9 +486,13 @@ Login Succeeded
 对于服务的话，如何才能后台运行: `dcoker run -d [docker image]`
 
 
+### <div id="class02-09">容器操作</div>
 
-
-
+命令 | 说明
+:- | :-
+`docker exec -it [container id] [命令]` | 对运行中的容器执行命令， 比如可以 执行 `/bin/bash`、`python`等
+`docker stop [container id]` | 停掉运行中的容器
+`docker run -d --name=demo [image]` | 给启动的容器取一个名字（不取名字， 名称随机）
 
 
 
