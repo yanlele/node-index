@@ -491,9 +491,10 @@ Login Succeeded
 命令 | 说明
 :- | :-
 `docker exec -it [container id] [命令]` | 对运行中的容器执行命令， 比如可以 执行 `/bin/bash`、`python`等
-`docker stop [container id]` | 停掉运行中的容器
+`docker [container] stop [container id]` | 停掉运行中的容器
+`docker [container] start [container id]` | 启动容器
 `docker run -d --name=demo [image]` | 给启动的容器取一个名字（不取名字， 名称随机）
-
+`docker inspect [container id|name]` | 获取到容器信息 
 
 
 
