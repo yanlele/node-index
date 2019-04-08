@@ -390,7 +390,36 @@ ENV name Docker
 ENTRYPOINT ["/bin/echo", "hello $name"]
 ```
 
+问题来了， 我们发现按照这个方式 是没有办法输出 hello Docker 的
+```
+FROM centos
+ENV name Docker
+ENTRYPOINT ["/bin/echo", "hello $name"]
+```
+输出结果： `hello $name`
 
+修改方式1：              
+```
+FROM centos
+ENV name Docker
+ENTRYPOINT ["/bin/bash", "-c", "echo hello $name"]
+```
+
+#### CMD
+- 容器启动时默认执行的命令
+- 如果docker run 指定了其他命令， CMD 命令被忽略
+- 多个CMD命令， 只执行最后一个
+
+```
+FROM centos
+ENV name Docker
+CMD echo "hello $name"
+```
+
+运行：                 
+`docker run [image]` 输出 hello Docker
+
+`docker run -it [image] /bin/bash` 不会输出 hello Docker
 
 
 
