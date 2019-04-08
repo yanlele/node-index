@@ -527,6 +527,8 @@ docker 容器启动是要吃内存的， 如果不做限定， 就会一直吃�
 - 如果还是不行， 尝试重新登录虚拟机
 
 
+**查看cpu进程使用情况**： `top`
+
 参考文章
 - [Docker 架构详解](https://www.cnblogs.com/CloudMan6/p/6763789.html)
 - [几张图帮你理解 docker 基本原理及快速入门](https://www.cnblogs.com/SzeCheng/p/6822905.html)
