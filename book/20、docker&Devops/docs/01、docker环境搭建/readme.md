@@ -134,3 +134,4 @@ See 'docker --help'
 - [Linux系统软件安装更新下载太慢解决方法（更换国内源）](https://blog.csdn.net/weixin_38034182/article/details/76672906)
 - [CentOS7上安装Docker并使用镜像加速解决docker拉取慢问题](https://www.jianshu.com/p/d611047c4387)
 - [安装Docker](https://help.aliyun.com/document_detail/60742.html)
+- [使用Vagrant管理虚拟机](https://blog.csdn.net/hongweiit/article/details/81148357#8)
