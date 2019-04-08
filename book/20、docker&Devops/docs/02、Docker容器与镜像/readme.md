@@ -502,6 +502,21 @@ Login Succeeded
 
 
 
+### <div id="class02-11">容器资源限制</div>
+docker 容器启动是要吃内存的， 如果不做限定， 就会一直吃虚拟机的内存， 没有内存了， 容器就退出了。
+`docker run [options] [image]`                      
+
+重要限定参数 | 含义
+:- | :-
+`--memory` | 内存限制
+`--memory-swap` | 也是内存限制， 如果 `--memory-swap`不做限制， 那么内存大小跟 `--memory` 是一样的
+`--vm [int]` | 启动进程个数
+`--verbose` | 日志输出
+`--cpu-shares [int]` | cpu 使用权重
+
+如果内存超过宿主， 那么久直接退出
+
+
 
 
 ### 其他补充
