@@ -36,6 +36,8 @@ Vagrant.configure("2") do |config|
 当我们直接创建好了之后 我们可以直接运行 `vagrant ssh` 就可以登录到我们创建好的那个 `centos7` 系统了(当然要牢记我们进入的文件目录， 以为系统是放在当前指定的文件目录下面的)
 当我们需要分享我们的虚拟机的时候，只用分享我们的 `Vagrantfile` 就可以了。
 
+如果有多个 `vagrant` 虚拟机， 当登录到具体的某一台虚拟机， 就可以使用 这个命令行: `vagrant ssh [vargant name]`
+
 #### 基本使用
 vagrant box基本命令:                    
 - `vagrant box list` 列出本地环境中所有的box
