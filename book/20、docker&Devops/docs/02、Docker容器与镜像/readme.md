@@ -10,7 +10,8 @@
 - [发布镜像](#class02-07)
 - [来一个简单的例子](#class02-08)
 - [容器操作](#class02-09)
-- [再看一个小栗子 - 打包一个命令行工具](#class02-09)
+- [再看一个小栗子 - 打包一个命令行工具](#class02-10)
+- [容器资源限制](#class02-11)
 
 
 ### <div class="class02-01">Docker核心</div>
@@ -530,9 +531,30 @@ CMD ["python", "app.py"]
 
 
 ### <div id="class02-10">再看一个小栗子 - 打包一个node程序</div>
+server.js
+```javascript
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(3001, '0.0.0.0');
+console.log('Server running at http://127.0.0.1:3001/');
+```
 
+Dockerfile
+```Dockerfile
+FROM node:8.9-alpine
+LABEL maintainer="yanlele 331393627@qq.com"
 
+ADD . /app/
+WORKDIR /app
+EXPOSE 3001
 
+CMD ["node", "start"]
+```
+
+执行打包： `docker build -t yanlele/node-demo`                                        
+执行docker 容器： `docker run -d -p 3001:3001 --name=node-demo yanlele/node-demo`
 
 
 ### <div id="class02-11">容器资源限制</div>
