@@ -7,6 +7,10 @@
 - [Docker容器: Container](#class02-04)
 - [构建自己的镜像](#class02-05)
 - [Dockerfile](#class02-06)
+- [发布镜像](#class02-07)
+- [来一个简单的例子](#class02-08)
+- [容器操作](#class02-09)
+- [再看一个小栗子 - 打包一个命令行工具](#class02-09)
 
 
 ### <div class="class02-01">Docker核心</div>
@@ -333,11 +337,184 @@ ADD hello /
 ADD test.tar.gz /  # 添加到根目录并解压
 
 WORKDIR /root
-ADD hello test/
+ADD hello test/  # /root/test/hello
 
 WORKDIR /root
 COPY hello test/
 ```
+
+**注意**                          
+ADD 可以接压缩                       
+大多数情况下 copy 使用优先级高于 add
+
+
+#### ENV
+```
+ENV MYSQL_VERSION 5.6  # 设置常量
+RUN apt-get install -y mysql-version = "${MYSQL_VERSION}"  # 引用常量
+RUN rm -rf /var/lib/apt/lists/* 
+```
+**要常用ENV**
+
+
+
+#### 几个重要的执行命令对比                            
+**RUN**: 执行命令并且创建新的image layer                          
+**CMD**: 设置容器启动后默认执行的命令和参数                              
+**ENTRYPOINT**: 设置容器启动时运行的命令                                
+
+#### 两种命令行格式
+**shell**:                      
+格式                      
+```
+RUM apt-get install -y vim
+CMD echo "hello docker"
+ENTRYPOINT echo "hello docker"
+```
+
+参数                      
+```
+FROM centos
+NEV name Docker
+ENTRYPOINT echo "helloo $name"
+```
+
+**exec**：                           
+格式                      
+```
+RUN ["apt-get", "install",  "-y", "vim"]
+CMD ["/bin/echo", "hello docker"]
+ENTRYPOINT ["/bin/echo", "hello docker"]
+```
+
+参数                      
+```
+FROM centos
+ENV name Docker
+ENTRYPOINT ["/bin/echo", "hello $name"]
+```
+
+问题来了， 我们发现按照这个方式 是没有办法输出 hello Docker 的
+```
+FROM centos
+ENV name Docker
+ENTRYPOINT ["/bin/echo", "hello $name"]
+```
+输出结果： `hello $name`
+
+修改方式1：              
+```
+FROM centos
+ENV name Docker
+ENTRYPOINT ["/bin/bash", "-c", "echo hello $name"]
+```
+
+#### CMD
+- 容器启动时默认执行的命令
+- 如果docker run 指定了其他命令， CMD 命令被忽略
+- 多个CMD命令， 只执行最后一个
+
+```
+FROM centos
+ENV name Docker
+CMD echo "hello $name"
+```
+
+运行：                 
+`docker run [image]` 输出 hello Docker
+
+`docker run -it [image] /bin/bash` 不会输出 hello Docker
+
+
+#### ENTRYPOINT
+- 让容器以程序或者服务的方式去运行
+- 不会被忽略， 一定执行
+- 最佳实践是写一个shell脚本作为`ENTRYPOINT`去执行
+
+```
+COPY docker-entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["docker-entrypoint.sh"]
+EXPOSE 27017
+CMD ["mongod"]
+```
+
+
+#### 其他
+多余dockerfile 的语法和写法， 可以多多参考这个项目 [https://github.com/docker-library](https://github.com/docker-library)
+docker 官方文档： [https://docs.docker.com/](https://docs.docker.com/)
+
+
+
+
+### <div id="class02-07">镜像发布</div>                             
+[https://hub.docker.com](https://hub.docker.com) 注册账号和密码
+
+然后回到虚拟机， 通过 `docker login` 登录                           
+```
+[vagrant@docker-host helloDocker]$ docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: yanlele	
+Password: 
+Login Succeeded
+```
+说明就的登录成功了
+
+
+#### 推送image
+`docker push`: `Usage:  docker push [OPTIONS] NAME[:TAG] [flags]`                   
+例如我们要push hello-world: `docker push yanlele/hello-world:latest`
+
+就可以等待推送完成了， 想拉取这个镜像， 就就可以这样: `docker pull yanlele/hello-world`
+
+**不推荐**
+
+#### 推送Dockerfile
+关联github -> github 项目里面放置Dockerfile -> 自动触发build
+**推荐**
+
+
+
+#### 搭建私有DockerHub
+在docker hub 上面找到 `registry` 这个这个镜像就是帮助构建私有 `docker hub`(没有界面) 仓库的
+**需要的时候在研究**
+
+
+
+
+### <div id="class02-08">来一个简单的例子</div>
+如果容器打包过程中除了问题， 提议动过查看临时容器ID, 进去查看问题原因， 做调试作用: `docker run -it [temp id] /bin/bash`                    
+
+对于服务的话，如何才能后台运行: `dcoker run -d [docker image]`
+
+
+### <div id="class02-09">容器操作</div>
+
+命令 | 说明
+:- | :-
+`docker exec -it [container id] [命令]` | 对运行中的容器执行命令， 比如可以 执行 `/bin/bash`、`python`等
+`docker [container] stop [container id]` | 停掉运行中的容器
+`docker [container] start [container id]` | 启动容器
+`docker run -d --name=demo [image]` | 给启动的容器取一个名字（不取名字， 名称随机）
+`docker inspect [container id|name]` | 获取到容器信息 
+
+
+### <div id="class02-10">再看一个小栗子 - 打包一个node程序</div>
+
+
+
+### <div id="class02-11">容器资源限制</div>
+docker 容器启动是要吃内存的， 如果不做限定， 就会一直吃虚拟机的内存， 没有内存了， 容器就退出了。
+`docker run [options] [image]`                      
+
+重要限定参数 | 含义
+:- | :-
+`--memory` | 内存限制
+`--memory-swap` | 也是内存限制， 如果 `--memory-swap`不做限制， 那么内存大小跟 `--memory` 是一样的
+`--vm [int]` | 启动进程个数
+`--verbose` | 日志输出
+`--cpu-shares [int]` | cpu 使用权重
+
+如果内存超过宿主， 那么久直接退出
 
 
 
@@ -349,6 +526,8 @@ COPY hello test/
 - 重启docker服务： `sudo service docker restart`
 - 如果还是不行， 尝试重新登录虚拟机
 
+
+**查看cpu进程使用情况**： `top`
 
 参考文章
 - [Docker 架构详解](https://www.cnblogs.com/CloudMan6/p/6763789.html)

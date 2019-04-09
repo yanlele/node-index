@@ -1,0 +1,16 @@
+[run]
+source = skeleton
+omit =
+    skeleton/tests/*
+    */__init__.py
+
+[report]
+exclude_lines =
+    def __repr__
+    def __str__
+    def parse_args
+    pragma: no cover
+    raise NotImplementedError
+    if __name__ == .__main__.:
+
+ignore_errors = True
