@@ -351,7 +351,7 @@ ADD 可以接压缩
 #### ENV
 ```
 ENV MYSQL_VERSION 5.6  # 设置常量
-RUN apt-get install -y mysql-version = "${MYSQL_VERSION}"  # 引用常量
+RUN apt-get install -node-hello-worldy mysql-version = "${MYSQL_VERSION}"  # 引用常量
 RUN rm -rf /var/lib/apt/lists/* 
 ```
 **要常用ENV**
@@ -482,9 +482,40 @@ Login Succeeded
 
 
 ### <div id="class02-08">来一个简单的例子</div>
-如果容器打包过程中除了问题， 提议动过查看临时容器ID, 进去查看问题原因， 做调试作用: `docker run -it [temp id] /bin/bash`                    
+这里用一个打包一个python flask 服务为例子                             
+app.py
+```
+from flask import Flask
+app = Flask(__name__)
+@app.route('/')
+def hello():
+    return "hello docker"
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=5000)
+```
 
-对于服务的话，如何才能后台运行: `dcoker run -d [docker image]`
+Dockerfile                  
+```Dockerfile
+FROM python:2.7
+LABEL maintainer="Peng Xiao<xiaoquwl@gmail.com>"
+RUN pip install flask
+COPY app.py /app/
+WORKDIR /app
+EXPOSE 5000
+CMD ["python", "app.py"]
+```
+
+然后运行命令行 `docker build -t yanlele/flask-demo`                        
+打包完成之后 `docker run -d -p 5000:5000 --name=flask-demo yanlele/flask-demo`                    
+运行容器
+
+**注意**
+
+1、如果希望宿主机器访问， 必须要加上 -p [point]:[point]， 这样可以把容器ip 代理到 宿主机器
+
+2、如果容器打包过程中除了问题， 提议动过查看临时容器ID, 进去查看问题原因， 做调试作用: `docker run -it [temp id] /bin/bash`                    
+
+3、对于服务的话，如何才能后台运行: `dcoker run -d [docker image]`
 
 
 ### <div id="class02-09">容器操作</div>
@@ -499,6 +530,8 @@ Login Succeeded
 
 
 ### <div id="class02-10">再看一个小栗子 - 打包一个node程序</div>
+
+
 
 
 
