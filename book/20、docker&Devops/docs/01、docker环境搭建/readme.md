@@ -76,7 +76,7 @@ vagrant基本命令:
 参考文章:                   
 - [征服诱人的Vagrant！](https://www.cnblogs.com/hafiz/p/9175484.html)
 - [使用 Vagrant 打造跨平台开发环境](https://segmentfault.com/a/1190000000264347)
-
+- [vagrant使用三种网络配置](https://blog.csdn.net/zc474235918/article/details/51039150)
 
 
 ### <div class="class01-02">CentOs7安装Docker</div> 
