@@ -26,13 +26,14 @@ vi /etc/sysconfig/network-scripts/ifcfg-xx  这个里面去改变 ONBOOT=yes 就
 安装net-tools: `yum install net-tools` 安装了这个之后，就可以使用ifconfig这个命令了
 
 #### 切换默认源： 
-例如却换 http://mirrors.163.com/.help/centos.html
+例如却换 `http://mirrors.163.com/.help/centos.html`
 
 如果是阿里云的云服务器，其实是不用管这个问题的，他们的速度非常快；
 
 如果需要查看主机版本： cat /etc/redhat-release
 
 wget XXXXXXXXXX
+`wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo`
 
 
 #### 安装vim:

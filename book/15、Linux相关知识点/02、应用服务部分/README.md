@@ -67,6 +67,8 @@ setenforce 0 | 可能服务器里面会有一些设置。
 
 nginx 的默认配置项目录是： `/etc/nginx/`
 
+如果上面的安装方式无法安装， 可以看看这个方法 [CentOS 7 下安装 Nginx](https://www.cnblogs.com/liujuncm5/p/6713784.html)
+
 
 #### 配置虚拟主机
 主要配置需要在 `conf.d/default.conf` 这个里面配置, 如果没有这个文件，就自己创建一个就OK了                                                  
