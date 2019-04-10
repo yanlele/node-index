@@ -119,6 +119,7 @@ ssh key 使用非堆成加密方式生成公钥和私钥
 清理缓存| yum clean packages            
 列出已经安装| yum list                
 软件包信息| yum info xxx                 
+查看某软件安装位置 | whereis xxx
 
      
 ### <div id="class01-04">04、服务器硬件资源相关命令</div>
