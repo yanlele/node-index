@@ -199,7 +199,8 @@ mv 目录名 文件名 |	出错
 
 
 ### <div id="class01-06">06、文本编辑器vim</div>
-命令大全： [http://www.runoob.com/linux/linux-vim.html](http://www.runoob.com/linux/linux-vim.html)
+命令大全： [http://www.runoob.com/linux/linux-vim.html](http://www.runoob.com/linux/linux-vim.html)                                  
+[Mac终端 vi/vim 的简单使用](https://www.cnblogs.com/fanxiaocong/p/7070130.html)
 
 vim创建文件并且打开： vim fileName                   
 快速移动到行位或者行首：非插入模式，大写模式下按下 G 移动到行尾 、 小写模式下按下 gg 两次，移动到行首                                            
