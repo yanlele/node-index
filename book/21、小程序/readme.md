@@ -16,6 +16,7 @@
     - [vant-weapp](https://github.com/youzan/vant-weapp)
     - [wux-weapp](https://github.com/wux-weapp/wux-weapp)
     - [iview-weapp](https://github.com/TalkingData/iview-weapp)
+    - [wxParse-微信小程序富文本解析自定义组件](https://github.com/icindy/wxParse)
     
     
     
