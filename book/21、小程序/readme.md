@@ -7,4 +7,17 @@
 目录
 
 - 基础部分总结
-    - [1、小程序生命周期](./01、基础部分总结/)
+    - [1、小程序生命周期](./01、基础部分总结)
+    
+    
+    
+    
+- 推荐几个好用的小程序组件库
+    - [vant-weapp](https://github.com/youzan/vant-weapp)
+    - [wux-weapp](https://github.com/wux-weapp/wux-weapp)
+    - [iview-weapp](https://github.com/TalkingData/iview-weapp)
+    
+    
+    
+- 其他
+    - [持续更新中的微信小程序和小游戏的源码案例库](https://github.com/Data-Camp/WeApp_Demos)
