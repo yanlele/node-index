@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04、justify-content</title>
+  <style>
+    .container {
+      border: 2px solid cadetblue;
+      border-radius: 35px;
+      width: 500px;
+      padding: 10px;
+
+      display: flex;
+      /*justify-content: flex-start;*/
+      /*justify-content: center;*/
+      /*justify-content: flex-end;*/
+      /*justify-content: space-between;*/
+      /*justify-content: space-around;*/
+      justify-content: space-evenly;
+    }
+
+    .container .child {
+      width: 100px;
+      height: 100px;
+      background-color: #817dff;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 50%;
+    }
+    .child p {
+      line-height: 100px;
+      margin: 0;
+      color: #fff1ff;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="child">
+    <p>1</p>
+  </div>
+
+  <div class="child">
+    <p>2</p>
+  </div>
+
+  <div class="child">
+    <p>3</p>
+  </div>
+</div>
+
+</body>
+</html>
