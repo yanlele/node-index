@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>order</title>
+  <style>
+    .container {
+      border: 2px solid cadetblue;
+      border-radius: 35px;
+      width: 500px;
+      padding: 10px;
+
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .container .child {
+      width: 100px;
+      height: 100px;
+      background-color: #817dff;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 50%;
+    }
+    .child p {
+      line-height: 100px;
+      margin: 0;
+      color: #fff1ff;
+    }
+
+    .item3 {
+      order: -1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="child item1">
+    <p>1</p>
+  </div>
+
+  <div class="child item2">
+    <p>2</p>
+  </div>
+
+  <div class="child item3">
+    <p>3</p>
+  </div>
+
+  <div class="child item4">
+    <p>4</p>
+  </div>
+
+  <div class="child item5">
+    <p>5</p>
+  </div>
+
+  <div class="child item6">
+    <p>6</p>
+  </div>
+
+  <div class="child">
+    <p>7</p>
+  </div>
+</div>
+
+</body>
+</html>
