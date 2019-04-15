@@ -9,12 +9,16 @@
         .container{
             width: 100px;
             height: 100px;
-            background: red;
-            animation: run 1s linear;
+            background: #3323ff;
+            /*animation: run 1s linear;*/
             /* animation-direction: reverse; */
             /* animation-fill-mode: forwards; */
-            animation-iteration-count: infinite;
+            /*animation-iteration-count: infinite;*/
             /* animation-play-state: paused; */
+
+            -webkit-animation: run 2s ease infinite;
+            -o-animation: run 2s ease infinite;
+            animation: run 2s ease infinite;
         }
         @keyframes run{
             0%{
@@ -22,6 +26,7 @@
             }
             50%{
                 width: 800px;
+                background: #00B7FF;
             }
             100%{
                 width: 100px;

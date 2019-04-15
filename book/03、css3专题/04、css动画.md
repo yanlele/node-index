@@ -29,15 +29,17 @@ ease-in-out	       | 规定以慢速开始和结束的过渡效果（等于 cubi
 关键字： `animation`、`@keyframes`       
 基础语法： `animation: name duration timing-function delay iteration-count direction fill-mode play-state;`
 
-属性：     
-animation-name	                指定要绑定到选择器的关键帧的名称        
-animation-duration	            动画指定需要多少秒或毫秒完成      
-animation-timing-function	    设置动画将如何完成一个周期       
-animation-delay	                设置动画在启动前的延迟间隔。      
-[animation-iteration-count](http://www.runoob.com/cssref/css3-pr-animation-iteration-count.html)       定义动画的播放次数。      
-[animation-direction](http://www.runoob.com/cssref/css3-pr-animation-direction.html)	            指定是否应该轮流反向播放动画。     
+属性 | 描述     
+:- |:-
+
+animation-name	                |指定要绑定到选择器的关键帧的名称        
+animation-duration	            |动画指定需要多少秒或毫秒完成      
+animation-timing-function	    |设置动画将如何完成一个周期       
+animation-delay	                |设置动画在启动前的延迟间隔。      
+[animation-iteration-count](http://www.runoob.com/cssref/css3-pr-animation-iteration-count.html) |      定义动画的播放次数。      
+[animation-direction](http://www.runoob.com/cssref/css3-pr-animation-direction.html)	         |   指定是否应该轮流反向播放动画。     
 [animation-fill-mode](http://www.runoob.com/cssref/css3-pr-animation-fill-mode.html)	            规定当动画不播放时（当动画完成时，或当动画有一个延迟未开始播放时），要应用到元素的样式。            
-[animation-play-state](http://www.runoob.com/cssref/css3-pr-animation-play-state.html)	        指定动画是否正在运行或已暂停。             
+[animation-play-state](http://www.runoob.com/cssref/css3-pr-animation-play-state.html)	      |  指定动画是否正在运行或已暂停。             
 
 [代码示例3](./demo/03-keyframe.html)
 
@@ -45,5 +47,11 @@ animation-delay	                设置动画在启动前的延迟间隔。
 
 ## <div class='class03'>3、逐帧动画</div>
 适用于无法补间动画计算的动画；资源比较大；使用steps;           
+```
+animation: run .5s infinite;
+animation-timing-function: steps(1);
+```
+
+
 
 [代码示例4](./demo/04-animal.html)
