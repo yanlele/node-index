@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        .container{
-            width: 100px;
-            height: 100px;
-            background: red;
-            transition: all 1s;
-            /* transition-timing-function: ease-in-out; */
-            transition-timing-function: cubic-bezier(0.405, -0.495, 0.645, 1.505);
-            /* transition-delay: 1s; */
-        }
-        .container:hover{
-            width: 800px;
-            background:green;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 100px;
+      height: 100px;
+      background: blue;
+      transition: all 1s;
+      /* transition-timing-function: ease-in-out; */
+      transition-timing-function: cubic-bezier(0.405, -0.495, 0.645, 1.505);
+      /* transition-delay: 1s; */
+    }
+
+    .container-hover {
+      width: 800px;
+      background: blueviolet;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-    </div>
+<div class="container">
+</div>
 </body>
+
+<script>
+  const $container = document.querySelector('.container');
+  $container.addEventListener('click', function () {
+    const classList = Array.from(this.classList);
+    if (classList.includes('container-hover')) {
+      this.classList.remove('container-hover');
+    } else {
+      this.classList.add('container-hover')
+    }
+  })
+</script>
 </html>
