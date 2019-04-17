@@ -24,3 +24,5 @@
 - 其他
     - [持续更新中的微信小程序和小游戏的源码案例库](https://github.com/Data-Camp/WeApp_Demos)
     - [微信小程序开发资源汇总](https://github.com/justjavac/awesome-wechat-weapp)
+    - [小程序官网api说明](https://developers.weixin.qq.com/miniprogram/dev/)
+    - [api-typings](https://github.com/wechat-miniprogram/api-typings)
