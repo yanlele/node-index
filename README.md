@@ -391,7 +391,7 @@
     - [55、html输出文件结构](./19年/03月/01、html输出文件结构)
     - [56、node-rd: 遍历目录下面所有文件目录](./19年/03月/03、node-rd)
     - [57、node爬虫](./19年/04月/01、node爬虫)
-    
+    - [58、Cross platform setting of environment scripts:cross-env](https://github.com/kentcdodds/cross-env)
     
     
 - 其他优秀技术文章与前沿技术收集
