@@ -41,3 +41,10 @@
     - [6.mock function](./06篇、Jest测试框架/01、基础篇.md#6-Mock-Function)
 - [其他细碎知识点](./06篇、Jest测试框架/其他细碎知识点.md)
 - [代码示例](https://github.com/yanlele/TypeScript-build-index/tree/master/Test)
+
+
+## 07篇、react测试：jest+enzyme
+- [总目录](./07、react测试:jest+enzyme)
+    - [jsx接入测试](./07、react测试:jest+enzyme/01、jsx接入测试.md)
+    - [tsx接入测试](./07、react测试:jest+enzyme/02、tsx接入测试.md)
+    - [其他](./07、react测试:jest+enzyme/03、其他.md)
