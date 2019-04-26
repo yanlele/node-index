@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>定位元素实现多行文本截断</title>
+  <style>
+    .container {
+      width: 300px;
+      height: 300px;
+      border: 1px solid aquamarine;
+      border-radius: 20px;
+
+
+    }
+
+    .container p {
+      position: relative;
+      line-height: 18px;
+      height: 36px;
+      overflow: hidden;
+    }
+    .container p::after {
+      content:"...";
+      font-weight:bold;
+      position:absolute;
+      bottom:0;
+      right:0;
+      padding:0 20px 1px 45px;
+
+      /* 为了展示效果更好 */
+      background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(white), color-stop(50%, white));
+      background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+      background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+      background: -ms-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <p>老司机大号不发货吧考得好安康杯哈咖啡比较好暴风科技肯德基发红包打开发布会爱不爱好地方把的罚款比较好的分别就开会</p>
+</div>
+
+
+</body>
+</html>
