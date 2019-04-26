@@ -232,6 +232,7 @@
     - [61、基于JavaScript判断浏览器到底是关闭还是刷新](http://udn.yyuap.com/forum.php?mod=viewthread&tid=96309)
     - [62、canvas导出图片方法总结](https://www.cnblogs.com/dupd/p/5893754.html)
     - [53、点击链接下载图片研究](./19年/03月/06、点击链接下载的研究)
+    - [03、thumbStyle](./19年/04月/03、thumbStyle/styleToCssString.js)
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
