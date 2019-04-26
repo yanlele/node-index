@@ -3,7 +3,7 @@
 目录
 - [Docker核心](#class02-01)
 - [Docker镜像](#calss02-02)
- -[打包自己的一个image](#class02-03)
+- [打包自己的一个image](#class02-03)
 - [Docker容器: Container](#class02-04)
 - [构建自己的镜像](#class02-05)
 - [Dockerfile](#class02-06)
