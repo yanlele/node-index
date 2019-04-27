@@ -19,6 +19,7 @@
     - [iview-weapp](https://github.com/TalkingData/iview-weapp)
     - [wxParse-微信小程序富文本解析自定义组件](https://github.com/icindy/wxParse)
     - [基于规范的小程序 UI 组件库minui](https://github.com/meili/minui)
+    - [微信小程序图片裁剪工具](https://github.com/we-plugin/we-cropper)
     
     
     
