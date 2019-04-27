@@ -458,6 +458,7 @@
     - [《Go语言四十二章经》](https://github.com/ffhelicopter/Go42)
     - [基于node&typescript重写知乎助手](https://github.com/YaoZeyuan/zhihuhelp_with_node)
     - [zhihu-flutter: Flutter 高仿知乎 UI](https://github.com/HackSoul/zhihu-flutter)
+    - [基于 React + NodeJS + Express + MongoDB 开发的一个社区系统(**极其经典**)](https://github.com/54sword/xiaoduyu.com)
 
 
 ### <div id="class09">年度计划和日志目录</div>
