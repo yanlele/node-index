@@ -402,6 +402,7 @@
     - [56、node-rd: 遍历目录下面所有文件目录](./19年/03月/03、node-rd)
     - [57、node爬虫](./19年/04月/01、node爬虫)
     - [58、Cross platform setting of environment scripts:cross-env](https://github.com/kentcdodds/cross-env)
+    - [59、Download and extract a git repository (GitHub, GitLab, Bitbucket) from node.](https://github.com/flipxfx/download-git-repo)
     
     
 - 其他优秀技术文章与前沿技术收集
@@ -445,6 +446,8 @@
         - [Java 程序员眼中的 Linux](https://github.com/judasn/Linux-Tutorial)
         - [浏览器数据库 IndexedDB 入门教程](http://www.ruanyifeng.com/blog/2018/07/indexeddb.html)
         - [跨域资源共享 CORS 详解](http://www.ruanyifeng.com/blog/2016/04/cors.html)
+        - [走进Vue-cli源码，自己动手搭建前端脚手架工具](https://www.jianshu.com/p/749b22170b7b)
+        - [vue-cli的简单实现](https://www.jianshu.com/p/fe174b7eeee3)
 
 
 - 值得好好学习的开源项目
