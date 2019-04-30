@@ -448,6 +448,7 @@
         - [跨域资源共享 CORS 详解](http://www.ruanyifeng.com/blog/2016/04/cors.html)
         - [走进Vue-cli源码，自己动手搭建前端脚手架工具](https://www.jianshu.com/p/749b22170b7b)
         - [vue-cli的简单实现](https://www.jianshu.com/p/fe174b7eeee3)
+        - [使用 NPM 发布与维护 TypeScript 模块](https://my.oschina.net/fenying/blog/1607571)
 
 
 - 值得好好学习的开源项目
