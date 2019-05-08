@@ -120,6 +120,8 @@
 
 - [20、docker&DevOps](./book/20、docker&Devops)
 
+- [21、小程序](./book/21、小程序)
+
 ### <div id="class07">通用功能js模块组件</div>
 - 原生组件和公用功能部分
     - [01、常用功能函数:url带参数跳转，获取url参数，请求序列化param等功能](./通用功能js模块/js/1、site/site.js)
