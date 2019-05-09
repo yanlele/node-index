@@ -24,7 +24,23 @@ ip 地址是网络唯一标识 略.........
 
 Ping(ICMP协议) 和 telnet                   
 Ping：验证IP的可达性                       
+```
+[vagrant@docker-node1 ~]$ ping www.baidu.com
+PING www.a.shifen.com (180.97.33.107) 56(84) bytes of data.
+64 bytes from 180.97.33.107 (180.97.33.107): icmp_seq=1 ttl=63 time=44.0 ms
+64 bytes from 180.97.33.107 (180.97.33.107): icmp_seq=2 ttl=63 time=91.3 ms
+64 bytes from 180.97.33.107 (180.97.33.107): icmp_seq=3 ttl=63 time=38.6 ms
+64 bytes from 180.97.33.107 (180.97.33.107): icmp_seq=4 ttl=63 time=43.5 ms
+64 bytes from 180.97.33.107 (180.97.33.107): icmp_seq=5 ttl=63 time=55.7 ms
+^C
+--- www.a.shifen.com ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4011ms
+rtt min/avg/max/mdev = 38.671/54.664/91.302/19.155 ms
+```
+
 telnet: 验证服务的可用性
+
+
 
 
 
