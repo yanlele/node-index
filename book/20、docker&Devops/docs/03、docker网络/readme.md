@@ -158,9 +158,58 @@ round-trip min/avg/max = 0.077/0.170/0.268 ms
 同理， test2 也是可以ping通 test1, 这就说明了， 这两个容器的`net work space`是可以相互通信的。 
 
 
-#### 创建一个Linux Net Work Space
+#### 创建一个Linux NetWork NameSpace
+查看本机的`net work space`: `sudo ip netns list`                       
+删除本机的`net work space`: `sudo ip netns delete [nws name]`                   
+创建本机的`net work space`: `sudo ip netns add [nws name]`
+
+例如我创建了两个`net work space`, 分比为 test1  和 test2。                   
+查看这两个创建好的`net work space`的ip: `sudo ip netns exec test1 ip address`                 
+```
+[vagrant@docker-node1 ~]$ sudo ip netns exec test1 ip a
+1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+```
+会发现有一个本地端口， 端口没有地址，没有up 状态。
+
+输入命令行: `ip link ` 可以查看 链接状态
+```
+[vagrant@docker-node1 ~]$ ip link
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000
+    link/ether 52:54:00:26:10:60 brd ff:ff:ff:ff:ff:ff
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000
+    link/ether 08:00:27:b3:7d:f8 brd ff:ff:ff:ff:ff:ff
+4: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether 02:42:5e:b4:8e:8d brd ff:ff:ff:ff:ff:ff
+6: vethdb34b3d@if5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP mode DEFAULT group default 
+    link/ether ea:07:f0:af:67:25 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+8: veth9d224da@if7: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP mode DEFAULT group default 
+    link/ether 46:18:24:54:94:9e brd ff:ff:ff:ff:ff:ff link-netnsid 1
+```
+
+查看test1 的ip link 状态： `sudo ip netns exec test1 ip link`
+```
+1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+```
+
+如何让 test1 的ip 状态 up 起来: `sudo ip netns exec test1 ip link set dev lo up`                    
+然后查看link状态
+```
+[vagrant@docker-node1 ~]$ sudo ip netns exec test1 ip link
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+```
+
+发现一个问题， 这个ip 的状态是一个 `UNKNOWN` ， 而且本机的local 端口也是一个 `UNKNOWN` 状态。
+出现这个情况的原因实际上是以为， ip link 是需要链接起来， 两个 `NetWork NameSpace` 链接起来之后， 才能是up 状态。 单个端口是没有办法up的。 
 
 
+
+
+ 
 
 
 
