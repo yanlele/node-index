@@ -105,6 +105,12 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 
 
+### <div id="class03-03">03、bridge</div>
+上一节说的两个`net work space` 虽然是完全隔壁的， 但是是可以相互ping 通的。 
+
+
+
+
 
 
 
