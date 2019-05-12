@@ -42,7 +42,8 @@ telnet: 验证服务的可用性
 
 
 ### <div id="class03-02">02、网络命名空间</div>
-首先拉取一个 `busybox`(非常小的一个linux镜像)                  
+首先拉取一个 `busybox`(非常小的一个linux镜像) 
+                 
 然后运行它: `sudo docker run -d --name=test1 busybox /bin/sh -c "while true; do sleep 3600; done"` 这个命令就是为了保证这个容器会一直在后台执行
 ```
 [vagrant@docker-node1 ~]$ docker container ls
@@ -101,6 +102,68 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 上面的也是一个 网络命名空间
 
 两个网络命名空间是不一样的， 而且是完全隔离的。
+
+#### 运行第二个容器
+`sudo docker run -d --name=test2 busybox /bin/sh -c "while true; do sleep 3600; done"`              
+```
+[vagrant@docker-node1 ~]$ docker container ls 
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+04ac9d71cf7b        busybox             "/bin/sh -c 'while t…"   5 seconds ago       Up 5 seconds                            test2
+3688c4bbc164        busybox             "/bin/sh -c 'while t…"   2 days ago          Up 28 seconds                           test1
+```
+
+如果只是想看某一个容器的网络， 就可以直接运行这样的命名: `sudo docker exec [container id | name] ip address`                 
+例如， 查看第一个容器的IP 地址： `sudo docker exec 04ac9d71cf7b ip address`
+```
+[vagrant@docker-node1 ~]$ docker exec test1 ip address
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+5: eth0@if6: <BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN> mtu 1500 qdisc noqueue 
+    link/ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.2/16 brd 172.17.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+```
+就可以打印出容器的命名空间
+
+查看容器 test2 的命名空空间： `docker exec test2 ip address`
+```
+[vagrant@docker-node1 ~]$ docker exec test2 ip address
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+7: eth0@if8: <BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN> mtu 1500 qdisc noqueue 
+    link/ether 02:42:ac:11:00:03 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.3/16 brd 172.17.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+```
+可以发现 test1 和 test2 的命名空间的区别。 
+
+同时可以进入 test1 里面， 是能够ping通test2的。 例如交互式进入test1: `[vagrant@docker-node1 ~]$ docker exec -it test1 /bin/sh`                
+```
+/ # ping 127.0.0.3
+PING 127.0.0.3 (127.0.0.3): 56 data bytes
+64 bytes from 127.0.0.3: seq=0 ttl=64 time=0.077 ms
+64 bytes from 127.0.0.3: seq=1 ttl=64 time=0.095 ms
+64 bytes from 127.0.0.3: seq=2 ttl=64 time=0.268 ms
+64 bytes from 127.0.0.3: seq=3 ttl=64 time=0.243 ms
+^
+--- 127.0.0.3 ping statistics ---
+4 packets transmitted, 4 packets received, 0% packet loss
+round-trip min/avg/max = 0.077/0.170/0.268 ms
+```
+
+同理， test2 也是可以ping通 test1, 这就说明了， 这两个容器的`net work space`是可以相互通信的。 
+
+
+#### 创建一个Linux Net Work Space
+
+
+
+
+
 
 
 
