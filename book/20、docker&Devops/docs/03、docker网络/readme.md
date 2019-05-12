@@ -206,6 +206,7 @@ round-trip min/avg/max = 0.077/0.170/0.268 ms
 发现一个问题， 这个ip 的状态是一个 `UNKNOWN` ， 而且本机的local 端口也是一个 `UNKNOWN` 状态。
 出现这个情况的原因实际上是以为， ip link 是需要链接起来， 两个 `NetWork NameSpace` 链接起来之后， 才能是up 状态。 单个端口是没有办法up的。 
 
+#### 创建一对链接
 
 
 
