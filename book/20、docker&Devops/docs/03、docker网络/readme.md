@@ -24,7 +24,7 @@ ip 地址是网络唯一标识 略.........
 
 Ping(ICMP协议) 和 telnet                   
 Ping：验证IP的可达性                       
-```
+```bash
 [vagrant@docker-node1 ~]$ ping www.baidu.com
 PING www.a.shifen.com (180.97.33.107) 56(84) bytes of data.
 64 bytes from 180.97.33.107 (180.97.33.107): icmp_seq=1 ttl=63 time=44.0 ms
@@ -45,7 +45,7 @@ telnet: 验证服务的可用性
 首先拉取一个 `busybox`(非常小的一个linux镜像) 
                  
 然后运行它: `sudo docker run -d --name=test1 busybox /bin/sh -c "while true; do sleep 3600; done"` 这个命令就是为了保证这个容器会一直在后台执行
-```
+```bash
 [vagrant@docker-node1 ~]$ docker container ls
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
 3688c4bbc164        busybox             "/bin/sh -c 'while t…"   17 seconds ago      Up 16 seconds                           test1
@@ -54,7 +54,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 通过交互式命令 进入到容器里面： `docker exec -it 3688c4bbc164 /bin/sh`                         
 在容器里面就可以运行命令了。                      
 首先运行 `ip a / ip address`                    
-```
+```bash
 / # ip address
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -68,7 +68,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 上面就是一个网络的 `name space` 网络命名空间                   
 
 在虚拟机本地也可以运行 `ip address` 命令
-```
+```bash
 [vagrant@docker-node1 ~]$ ip address
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -105,7 +105,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 #### 运行第二个容器
 `sudo docker run -d --name=test2 busybox /bin/sh -c "while true; do sleep 3600; done"`              
-```
+```bash
 [vagrant@docker-node1 ~]$ docker container ls 
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
 04ac9d71cf7b        busybox             "/bin/sh -c 'while t…"   5 seconds ago       Up 5 seconds                            test2
@@ -114,7 +114,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 如果只是想看某一个容器的网络， 就可以直接运行这样的命名: `sudo docker exec [container id | name] ip address`                 
 例如， 查看第一个容器的IP 地址： `sudo docker exec 04ac9d71cf7b ip address`
-```
+```bash
 [vagrant@docker-node1 ~]$ docker exec test1 ip address
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -128,7 +128,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 就可以打印出容器的命名空间
 
 查看容器 test2 的命名空空间： `docker exec test2 ip address`
-```
+```bash
 [vagrant@docker-node1 ~]$ docker exec test2 ip address
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -142,7 +142,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 可以发现 test1 和 test2 的命名空间的区别。 
 
 同时可以进入 test1 里面， 是能够ping通test2的。 例如交互式进入test1: `[vagrant@docker-node1 ~]$ docker exec -it test1 /bin/sh`                
-```
+```bash
 / # ping 127.0.0.3
 PING 127.0.0.3 (127.0.0.3): 56 data bytes
 64 bytes from 127.0.0.3: seq=0 ttl=64 time=0.077 ms
@@ -173,7 +173,7 @@ round-trip min/avg/max = 0.077/0.170/0.268 ms
 会发现有一个本地端口， 端口没有地址，没有up 状态。
 
 输入命令行: `ip link ` 可以查看 链接状态
-```
+```bash
 [vagrant@docker-node1 ~]$ ip link
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -190,14 +190,14 @@ round-trip min/avg/max = 0.077/0.170/0.268 ms
 ```
 
 查看test1 的ip link 状态： `sudo ip netns exec test1 ip link`
-```
+```bash
 1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
 ```
 
 如何让 test1 的ip 状态 up 起来: `sudo ip netns exec test1 ip link set dev lo up`                    
 然后查看link状态
-```
+```bash
 [vagrant@docker-node1 ~]$ sudo ip netns exec test1 ip link
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -209,7 +209,7 @@ round-trip min/avg/max = 0.077/0.170/0.268 ms
 #### 创建一对链接
 通过 `ip link` 可以查看本机link
 添加一对link: `sudo ip link add veth-test1 type veth peer name veth-test2`
-```
+```bash
 [vagrant@docker-node1 ~]$ sudo ip link add veth-test1 type veth peer name veth-test2
 [vagrant@docker-node1 ~]$ ip link
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
@@ -229,7 +229,7 @@ round-trip min/avg/max = 0.077/0.170/0.268 ms
 最后一对链接就是新添加的， 没有ip 状态也是down 的。
 
 把 `veth-test1` 添加到 test1 里面去： `sudo ip link set veth-test1 netns test1`                     
-```
+```bash
 [vagrant@docker-node1 ~]$ sudo ip netns exec test1 ip link
 1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -240,7 +240,7 @@ round-trip min/avg/max = 0.077/0.170/0.268 ms
 
 同理 `sudo ip link set veth-test2 natns test2`                                
 然后会发现本地， 原来的第五条link 也不见了， 这一天link 被添加到test2 里面去了。                       
-```
+```bash
 [vagrant@docker-node1 ~]$ sudo ip netns exec test2 ip link
 1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -264,7 +264,7 @@ round-trip min/avg/max = 0.077/0.170/0.268 ms
 通过: `sudo ip netns exec test1 ip a`
 
 这样已经有ip 地址了， 也是up 起来了。 这就说明两个netns 已经完全链接起来了。                   
-```
+```bash
 [vagrant@docker-node1 ~]$ sudo ip netns exec test1 ping 192.168.1.2
 PING 192.168.1.2 (192.168.1.2) 56(84) bytes of data.
 64 bytes from 192.168.1.2: icmp_seq=1 ttl=64 time=0.062 ms
@@ -286,7 +286,7 @@ rtt min/avg/max/mdev = 0.062/0.064/0.066/0.007 ms
 
 启动一个容器test1: `sudo docker run -d --name=test1 busybox /bin/sh -c "while true; do sleep 3600; done"`
 查看 docker 的网络： `docker network ls`
-```
+```bash
 [vagrant@docker-node1 ~]$ docker network ls
 NETWORK ID          NAME                DRIVER              SCOPE
 dd09816eb1ce        bridge              bridge              local
@@ -311,7 +311,7 @@ ad589c9fa968        host                host                local
 ```
 
 可以查看本机ip情况
-```
+```bash
 [vagrant@docker-node1 ~]$ ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -344,7 +344,7 @@ ad589c9fa968        host                host                local
 ```
 
 其中docker0的 netns 是本机， 那么 `test1 container` 是如何连接 本机的呢， 就是通过 `vetha622445@if7` 连接的。
-```
+```bash
 [vagrant@docker-node1 ~]$ docker exec test1 ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -358,6 +358,24 @@ ad589c9fa968        host                host                local
 其中 `eth0@if8` 和 本机的 `vetha622445@if7`实际上是一对link. 通过这样的链接， 
 就可以链接到主机上面去了， 准确的说是链接到 `docker0`的网络上面去了
 
+链接情况的验证： `brctl`                        
+这个工具是需要安装的： `sudo yum install -y bridge-utils`
+```bash
+[vagrant@docker-node1 ~]$ brctl show
+bridge name	bridge id		STP enabled	interfaces
+docker0		8000.0242408519da	no		vetha622445
+```
 
+如果在创建一个container： `sudo docker run -d --name=test2 busybox /bin/sh -c "while true; do sleep 3600; done"`
+```bash
+bridge name	bridge id		STP enabled	interfaces
+docker0		8000.0242408519da	no		vetha622445
+							            vethbe1a1b5
+```
+就有两个链接了。
 
+两个容器之间的通信：                  
+![01](../../imgs/01.png)                            
 
+外网链接：                   
+![02](../../imgs/02.png)                    
