@@ -281,13 +281,18 @@ rtt min/avg/max/mdev = 0.062/0.064/0.066/0.007 ms
 
 
 
-
-
-
-
 ### <div id="class03-03">03、bridge</div>
 上一节说的两个`net work space` 虽然是完全隔壁的， 但是是可以相互ping 通的。 
 
+启动一个容器test1: `sudo docker run -d --name=test1 busybox /bin/sh -c "while true; do sleep 3600; done"`
+查看 docker 的网络： `docker network ls`
+```
+[vagrant@docker-node1 ~]$ docker network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+dd09816eb1ce        bridge              bridge              local
+ad589c9fa968        host                host                local
+0dfc9dbf0808        none                null                local
+```
 
 
 
