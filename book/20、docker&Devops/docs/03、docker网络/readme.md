@@ -293,9 +293,70 @@ dd09816eb1ce        bridge              bridge              local
 ad589c9fa968        host                host                local
 0dfc9dbf0808        none                null                local
 ```
+其中那个 bridge 就是本机的网络模式
 
+查看docker 网络宿主情况： `sudo docker network inspect [network id]`
+```
+......
+"Containers": {
+    "3688c4bbc1644ec80362ed97fc9159d80f32e62135cdd7e79280c6b7f1aee72f": {
+        "Name": "test1",
+        "EndpointID": "d442b1182e6ca30a8107df5ea3c24595cd87423d95ffc215f28070802b187f21",
+        "MacAddress": "02:42:ac:11:00:02",
+        "IPv4Address": "172.17.0.2/16",
+        "IPv6Address": ""
+    }
+},
+......
+```
 
+可以查看本机ip情况
+```
+[vagrant@docker-node1 ~]$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 52:54:00:26:10:60 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.15/24 brd 10.0.2.255 scope global noprefixroute dynamic eth0
+       valid_lft 82167sec preferred_lft 82167sec
+    inet6 fe80::5054:ff:fe26:1060/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 08:00:27:b3:7d:f8 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.205.10/24 brd 192.168.205.255 scope global noprefixroute eth1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::a00:27ff:feb3:7df8/64 scope link 
+       valid_lft forever preferred_lft forever
+4: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 02:42:40:85:19:da brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:40ff:fe85:19da/64 scope link 
+       valid_lft forever preferred_lft forever
+8: vetha622445@if7: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP group default 
+    link/ether 4e:f1:3d:44:92:5b brd ff:ff:ff:ff:ff:ff link-netnsid 2
+    inet6 fe80::4cf1:3dff:fe44:925b/64 scope link 
+       valid_lft forever preferred_lft forever
+```
 
+其中docker0的 netns 是本机， 那么 `test1 container` 是如何连接 本机的呢， 就是通过 `vetha622445@if7` 连接的。
+```
+[vagrant@docker-node1 ~]$ docker exec test1 ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+7: eth0@if8: <BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN> mtu 1500 qdisc noqueue 
+    link/ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.2/16 brd 172.17.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+```
+其中 `eth0@if8` 和 本机的 `vetha622445@if7`实际上是一对link. 通过这样的链接， 
+就可以链接到主机上面去了， 准确的说是链接到 `docker0`的网络上面去了
 
 
 
