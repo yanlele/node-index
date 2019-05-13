@@ -248,7 +248,36 @@ round-trip min/avg/max = 0.077/0.170/0.268 ms
     link/ether 92:b2:ab:20:ed:43 brd ff:ff:ff:ff:ff:ff link-netnsid 0
 ```
 
- 
+这样我们就成功的将这一对link 分别添加到了 两个 netns 中。                     
+会有连个问题， 这两个link 都是down 的状态， 而且没有IP地址。
+
+分别给两个 `veth-test` 分配地址：
+`sudo ip netns  exec test1 ip addr add 192.168.1.1/24 dev veth-test1`                                   
+`sudo ip netns  exec test2 ip addr add 192.168.1.2/24 dev veth-test2`                                   
+
+但是添加了之后， 查看ip link 依然没有ip 地址                    
+需要先启动这两个link:                       
+`sudo ip netns exec test1 ip link set dev veth-test1 up`                       
+`sudo ip netns exec test2 ip link set dev veth-test2 up`
+
+启动完成之后， 就可以通过: `sudo ip netns exec test1 ip link` 查看link 状态                     
+通过: `sudo ip netns exec test1 ip a`
+
+这样已经有ip 地址了， 也是up 起来了。 这就说明两个netns 已经完全链接起来了。                   
+```
+[vagrant@docker-node1 ~]$ sudo ip netns exec test1 ping 192.168.1.2
+PING 192.168.1.2 (192.168.1.2) 56(84) bytes of data.
+64 bytes from 192.168.1.2: icmp_seq=1 ttl=64 time=0.062 ms
+64 bytes from 192.168.1.2: icmp_seq=2 ttl=64 time=0.065 ms
+64 bytes from 192.168.1.2: icmp_seq=3 ttl=64 time=0.064 ms
+64 bytes from 192.168.1.2: icmp_seq=4 ttl=64 time=0.066 ms
+64 bytes from 192.168.1.2: icmp_seq=5 ttl=64 time=0.065 ms
+--- 192.168.1.2 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4001ms
+rtt min/avg/max/mdev = 0.062/0.064/0.066/0.007 ms
+```
+
+同理 test2 netns 也可以ping 通 test1
 
 
 
