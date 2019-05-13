@@ -77,6 +77,7 @@
     
 - 其他
     - [01、FE-interview](https://github.com/qiu-deqing/FE-interview)
+    - [02、Weekly-FE-Interview](https://github.com/airuikun/Weekly-FE-Interview)
     
     
     
