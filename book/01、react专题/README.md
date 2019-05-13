@@ -24,6 +24,11 @@
 - [06、react16高级语法总结以及其他高级模块](./04、其他/06、react16高级语法总结以及其他高级模块.md)
 - [07、react16 hooks](./04、其他/07、react16%20hooks.md)
 
+### 源码分析
+- [深入理解React16之：（一）.Fiber架构](https://www.jianshu.com/p/bf824722b496)
+- [React-从源码分析React Fiber工作原理](https://blog.csdn.net/qiqingjin/article/details/80118669)
+- [fre](https://github.com/132yse/fre)
+
 
 ### 其他经典文章
 - [React Router 中文文档](https://segmentfault.com/a/1190000014294604#articleHeader0)
