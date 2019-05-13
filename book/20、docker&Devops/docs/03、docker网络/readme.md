@@ -207,8 +207,46 @@ round-trip min/avg/max = 0.077/0.170/0.268 ms
 出现这个情况的原因实际上是以为， ip link 是需要链接起来， 两个 `NetWork NameSpace` 链接起来之后， 才能是up 状态。 单个端口是没有办法up的。 
 
 #### 创建一对链接
+通过 `ip link` 可以查看本机link
+添加一对link: `sudo ip link add veth-test1 type veth peer name veth-test2`
+```
+[vagrant@docker-node1 ~]$ sudo ip link add veth-test1 type veth peer name veth-test2
+[vagrant@docker-node1 ~]$ ip link
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000
+    link/ether 52:54:00:26:10:60 brd ff:ff:ff:ff:ff:ff
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000
+    link/ether 08:00:27:b3:7d:f8 brd ff:ff:ff:ff:ff:ff
+4: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default 
+    link/ether 02:42:40:85:19:da brd ff:ff:ff:ff:ff:ff
+5: veth-test2@veth-test1: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 92:b2:ab:20:ed:43 brd ff:ff:ff:ff:ff:ff
+6: veth-test1@veth-test2: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether b2:28:fa:22:69:34 brd ff:ff:ff:ff:ff:ff
+```
 
+最后一对链接就是新添加的， 没有ip 状态也是down 的。
 
+把 `veth-test1` 添加到 test1 里面去： `sudo ip link set veth-test1 netns test1`                     
+```
+[vagrant@docker-node1 ~]$ sudo ip netns exec test1 ip link
+1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+6: veth-test1@if5: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether b2:28:fa:22:69:34 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+```
+执行之后， 发现， 这一条link 添加到 test1 里面去了， 然后本地的 这一条link 不见了。
+
+同理 `sudo ip link set veth-test2 natns test2`                                
+然后会发现本地， 原来的第五条link 也不见了， 这一天link 被添加到test2 里面去了。                       
+```
+[vagrant@docker-node1 ~]$ sudo ip netns exec test2 ip link
+1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+5: veth-test2@if6: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 92:b2:ab:20:ed:43 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+```
 
  
 
