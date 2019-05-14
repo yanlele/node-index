@@ -68,10 +68,10 @@ $('#user-info3').html(template3(res.data));
 ```
 模板：
 ```html
-<p>{ {title} }</p>
-<p>{ {obj.version} }</p>
-<p>{ {obj/category} }</p>
-<p>{ {obj.date~} }</p>
+<p>{ {title}}</p>
+<p>{ {obj.version}}</p>
+<p>{ {obj/category}}</p>
+<p>{ {obj.date~}}</p>
 ```
 
 ** “&&”,"||","!"这类逻辑判断是不能出现在表达式中的！**
@@ -84,35 +84,35 @@ $('#user-info3').html(template3(res.data));
 **if else**
 用法1：
 ```html
-  { {#if author} }
-    <h1>{ {firstName} } { {lastName} }</h1>
-  { {else} }
+  {{#if author}}
+    <h1>{{firstName}} {{lastName}}</h1>
+  {{else}}
     <h1>Unknown Author</h1>
-  { {/if} }
+  {{/if}}
 ```
 用法2：
 ```html
-{ {#if isActive} }
+{{#if isActive}}
   <img src="star.gif" alt="Active">
-{ {else if isInactive} }
+{{else if isInactive}}
   <img src="cry.gif" alt="Inactive">
-{ {/if} }
+{{/if}}
 ```
 if else 的语法只能判断是否有值，不能做逻辑判断
 
 **unless**
 与if相反的helper
 ```html
- { {#unless license} }
+ {{#unless license}}
   <h3 class="warning">WARNING: This entry does not have a license!</h3>
- { {/unless} }
+ {{/unless}}
 ```
 上面这段代码就等价于  
 ```html
-{ {#if license} }
-{ {else} }
+{{#if license}}
+{{else}}
 <h3 class="warning">WARNING: This entry does not have a license!</h3>
-{ {/if} }
+{{/if}}
 ```
 
 **each**
@@ -122,29 +122,29 @@ each相当于for循环。不过有些地方需要注意：
 - 可以用 as |xxx|的形式给变量起别名，循环中通过别名可以引用父级变量值。当然也可以通过相对路径的方式引用父级变量。          
 示例1:        
 ```html
-{ {#each passage} }
-    { {#each paragraphs} }
-      { {@../index} }:{ {@index} }:{ {this} }</p>
-    { {else} }
+{{#each passage}}
+    {{#each paragraphs}}
+      {{@../index}}:{{@index}}:{{this}}</p>
+    {{else}}
       <p class="empty">No content</p>
-    { {/each} }
-{ {/each} }
+    {{/each}}
+{{/each}}
 ```
 
 示例2：        
 ```html
-{ {#each array as |value, key|} }
-  { {#each child as |childValue, childKey|} }
-    { {key} } - { {childKey} }. { {childValue} }
-  { {/each} }
-{ {/each} }
+{{#each array as |value, key|}}
+  {{#each child as |childValue, childKey|}}
+    {{key}} - {{childKey}}. {{childValue}}
+  {{/each}}
+{{/each}}
 ```
 
 示例3：同时也可以用来遍历对象，这时@key表示属性名,this表示对应的值
 ```html
-{ {#each object} }
-  { {@key} }: { {this} }
-{ {/each} }
+{{#each object}}
+  {{@key}}: {{this}}
+{{/each}}
 ```
 
 **with**
@@ -211,7 +211,7 @@ hbs.registerHelper('agree_button', function(p) {
 数据：     
 ```
 var context = {
-    person:{name: "亚里士朱德", blog: "https://yalishizhude.github.io"} };
+    person:{name: "亚里士朱德", blog: "https://yalishizhude.github.io"}};
 };
 ```
 
@@ -225,9 +225,9 @@ var context = {
 块级helper获取参数的方式跟之前差不多，只是最后多了一个参数，这个参数有两个函数fn和revers可以和else搭配使用。后面将会讲解。          
 模板：     
 ```html
-{ {#list nav} }
-  <a href="{ {url} }">{ {title} }</a>
-{ {/list} }
+{{#list nav}}
+  <a href="{{url}}">{{title}}</a>
+{{/list}}
 ```     
 
 注册helper：           
@@ -266,28 +266,28 @@ hbs.registerPartials(__dirname + '/views/partials');
 
 #### <div id='class4.1'>4.1、基础引用</div>      
 用“>”来引用模板，这种情况一般用来处理页头页尾这种简单的分页。后面可以传入参数。           
-`{ {> myPartial param} }`         
+`{{> myPartial param}}`         
 当使用块级表达式时，我们通常添加“#”，而分页是“>”，所以块级分页使用“#>”，这里表示如果layout分页不存在则显示块内的内容My Content。       
 ```html
-{ {#> layout } }
+{{#> layout }}
   My Content
-{ {/layout} }
+{{/layout}}
 ```
 
 #### <div id='class4.2'>4.2、动态分页</div>      
 当然也可以用表达式来代替分页名称        
-{ {> (whichPartial) } }         
+{{> (whichPartial) }}         
 当分页中一部分代码是固定的，另一部分是变化的时候，可以在分页中添加“@partial-block”，这时当引用这个分页时，在内部编写代码将会填充到这个位置。          
 partial.hbs：        
 ```html
-{ {> [@partial-block](/user/partial-block) } }
+{{> [@partial-block](/user/partial-block) }}
 ```
 
 模板：     
 ```html
-{ {#>partial} }
+{{#>partial}}
 https:yalishizhude.github.io
-{ {/partial} }
+{{/partial}}
 ```
 
 html页面：
@@ -299,22 +299,22 @@ https:yalishizhude.github.io
 当有多段代码需要填充到分页时,可以用如下方法。分页中内嵌分页变量，模板中通过内联分页的方式传入。        
 模板：     
 ```html
-{ {#> partial} }
-  { {#*inline "nav"} }
-  { {/inline} }
-  { {#*inline "content"} }
+{{#> partial}}
+  {{#*inline "nav"}}
+  {{/inline}}
+  {{#*inline "content"}}
     https://yalishizhude.github.io
-  { {/inline} }
-{ {/partial} }
+  {{/inline}}
+{{/partial}}
 ```
 
 partial.hbs：            
 ```html
 <div class="nav">
-  { {> nav} }
+  {{> nav}}
 </div>
 <div class="content">
-  { {> content} }
+  {{> content}}
 </div>
 ```
 

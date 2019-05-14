@@ -28,3 +28,6 @@
     - [微信小程序开发资源汇总](https://github.com/justjavac/awesome-wechat-weapp)
     - [小程序官网api说明](https://developers.weixin.qq.com/miniprogram/dev/)
     - [api-typings](https://github.com/wechat-miniprogram/api-typings)
+    - [强烈推荐：绝对是最好的一个小程序开源框架](https://blog.csdn.net/OQjya206rsQ71/article/details/81213237)
+    - [tina](https://tina.js.org/#/)
+    
