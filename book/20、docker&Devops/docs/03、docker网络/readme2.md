@@ -33,3 +33,4 @@ PING test1 (172.17.0.2): 56 data bytes
 round-trip min/avg/max = 0.112/0.140/0.171 ms
 ```
 
+但是反之， 是ping不通的， 因为link 是单向的。 
