@@ -62,6 +62,19 @@ br-c17581e7b9cf		8000.02425a563121	no		veth6467873
 docker0		8000.02422e50fe40	no		veth6360140
 ```
 发现新建的就有端口了
+可以通过 `docker network inspect [bridge id]` 查看 链接情况
+
+
+#### 已经创建好的容器链接到新的bridge上
+`sudo docker network connect [bridge] [continer]`
+例如我们希望把 `test2` 链接到 `my-bridge` : `docker network connect my-bridge test2`
+
+如果是两个容器都link 到自己新建的bridge 上面, 那么就是可以直接默认 --link 在一起。
+意思就是， 比如， 我们把test2 和 test3 都链接到了`my-bridge`上面， 那么test2和test3 是可以通过ip ping 通。
+但是直接ping name 也是可以ping通的。 
+
+一个container是可以链接多个 bridge 的。 
+
 
 
 
