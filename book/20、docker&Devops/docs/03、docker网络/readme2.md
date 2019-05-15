@@ -34,3 +34,38 @@ round-trip min/avg/max = 0.112/0.140/0.171 ms
 ```
 
 但是反之， 是ping不通的， 因为link 是单向的。 
+
+#### 自己创建一个bridge
+命令行： `docker network create [OPTIONS] NETWORK [flags]`
+创建命令： `docker network create -d bridge my-bridge`
+```bash
+[vagrant@docker-node1 ~]$ docker network create -d bridge my-bridge
+c17581e7b9cf62b6a39ab4220313cd9246f9c598f2a1e8a1bf4896cdb8145fc4
+[vagrant@docker-node1 ~]$ docker network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+4159a7a8ff49        bridge              bridge              local
+ad589c9fa968        host                host                local
+c17581e7b9cf        my-bridge           bridge              local
+0dfc9dbf0808        none                null                local
+[vagrant@docker-node1 ~]$ brctl show
+bridge name	bridge id		STP enabled	interfaces
+br-c17581e7b9cf		8000.02425a563121	no		
+docker0		8000.02422e50fe40	no		veth6360140
+```
+
+新建一个container 链接到 新建的 bridge                        
+`docker run -d --name=test3 --network my-bridge busybox /bin/sh -c "while true; do sleep 3600; done"`
+```bash
+[vagrant@docker-node1 ~]$ brctl show
+bridge name	bridge id		STP enabled	interfaces
+br-c17581e7b9cf		8000.02425a563121	no		veth6467873
+docker0		8000.02422e50fe40	no		veth6360140
+```
+发现新建的就有端口了
+
+
+
+
+
+
+
