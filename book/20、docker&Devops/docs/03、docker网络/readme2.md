@@ -88,11 +88,30 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 这个时候外面就可以访问了。
 
 
+### <div id="class03-06">06、host和none</div>
+补充一个 docker network option
+```
+  connect     Connect a container to a network
+  create      Create a network
+  disconnect  Disconnect a container from a network
+  inspect     Display detailed information on one or more networks
+  ls          List networks
+  prune       Remove all unused networks
+  rm          Remove one or more networks
+```
 
+```bash
+[vagrant@docker-node1 ~]$ docker network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+4159a7a8ff49        bridge              bridge              local
+ad589c9fa968        host                host                local
+c17581e7b9cf        my-bridge           bridge              local
+0dfc9dbf0808        none                null                local
+```
 
-
-
-
+最后还有两种网络连接一种是 none 还有一种是 host                           
+none 是一种孤立的网络连接方式 这种方式创建的容器， 只能通过 `docker exec -it [name/id] /bin/sh` 方式连接。没有其他的链接方式了。                          
+host 这种方式创建的容器， 会成为跟住宿机共享所有网络配置， 非常不常用， 会出现网络冲突。
 
 
 
