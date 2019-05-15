@@ -76,7 +76,22 @@ docker0		8000.02422e50fe40	no		veth6360140
 一个container是可以链接多个 bridge 的。 
 
 
-### 
+### <div id="class03-05">05、容器的端口映射</div>
+如果我们启动一个服务 `docker run -d --name web nginx`, 服务已经启动，在docker node 宿主机是可以访问的。 但是外界依然无法访问。                        
+
+映射本地： `docker run -d --name=web -p 80:80 nginx`
+```bash
+[vagrant@docker-node1 ~]$ docker container ls
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
+29ac8c1c1d14        nginx               "nginx -g 'daemon of…"   2 minutes ago       Up 2 minutes        0.0.0.0:80->80/tcp   web
+```
+这个时候外面就可以访问了。
+
+
+
+
+
+
 
 
 
