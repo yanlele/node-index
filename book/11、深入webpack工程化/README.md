@@ -42,6 +42,9 @@
     - [04、webpack多页面应用](./04、webpack实战场景/README.md#class4-item04)
 
 
+- webpack优化问题
+    - [图片处理](./05、webpack优化问题/01、图片处理.md)
+
 
 - 其他补充知识点或者实战案例
     - [01、从零搭建React全家桶框架教程](https://github.com/brickspert/blog/issues/1)
@@ -50,8 +53,9 @@
     - [04、webpack4系列中文教程和配套代码](https://github.com/dongyuanxin/webpack-demos)
     - [学习webpack4.0的最新配置语法和新特性](https://github.com/wlx200510/webpack4.x-learn)
     - [Demos && Courses for Webpack 4](https://github.com/dongyuanxin/webpack-demos)
+    - [tsx+webpack4](https://github.com/cli-template-build/tsx-app)
     
-
+    
 
 
 ## 遗留问题待解决              
