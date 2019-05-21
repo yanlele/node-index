@@ -410,6 +410,7 @@
     - [57、node爬虫](./19年/04月/01、node爬虫)
     - [58、Cross platform setting of environment scripts:cross-env](https://github.com/kentcdodds/cross-env)
     - [59、Download and extract a git repository (GitHub, GitLab, Bitbucket) from node.](https://github.com/flipxfx/download-git-repo)
+    - [60、基于node的代码生成器](https://github.com/yanlele/node-index-core/tree/master/packages/19%E5%B9%B4/05%E6%9C%88/01%E3%80%81%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8)
     
     
 - 其他优秀技术文章与前沿技术收集
