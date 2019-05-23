@@ -27,7 +27,7 @@ ease-in-out	       | 规定以慢速开始和结束的过渡效果（等于 cubi
 ## <div class='class02'>2、关键帧动画</div>   
 相当于多个补间动画，与元素状的变化无关，更加灵活        
 关键字： `animation`、`@keyframes`       
-基础语法： `animation: name duration timing-function delay iteration-count direction fill-mode play-state;`
+基础语法： `animation: name duration timing-function [delay] iteration-count direction fill-mode play-state;`
 
 属性 | 描述     
 :- |:-
@@ -38,11 +38,39 @@ animation-timing-function	    |设置动画将如何完成一个周期
 animation-delay	                |设置动画在启动前的延迟间隔。      
 [animation-iteration-count](http://www.runoob.com/cssref/css3-pr-animation-iteration-count.html) |      定义动画的播放次数。      
 [animation-direction](http://www.runoob.com/cssref/css3-pr-animation-direction.html)	         |   指定是否应该轮流反向播放动画。     
-[animation-fill-mode](http://www.runoob.com/cssref/css3-pr-animation-fill-mode.html)	            规定当动画不播放时（当动画完成时，或当动画有一个延迟未开始播放时），要应用到元素的样式。            
+[animation-fill-mode](http://www.runoob.com/cssref/css3-pr-animation-fill-mode.html)	      |     规定当动画不播放时（当动画完成时，或当动画有一个延迟未开始播放时），要应用到元素的样式。            
 [animation-play-state](http://www.runoob.com/cssref/css3-pr-animation-play-state.html)	      |  指定动画是否正在运行或已暂停。             
 
 [代码示例3](./demo/03-keyframe.html)
 
+```css
+.container{
+    width: 100px;
+    height: 100px;
+    background: #3323ff;
+    /*animation: run 1s linear;*/
+    /* animation-direction: reverse; */
+    /* animation-fill-mode: forwards; */
+    /*animation-iteration-count: infinite;*/
+    /* animation-play-state: paused; */
+
+    -webkit-animation: run 2s ease infinite;
+    -o-animation: run 2s ease infinite;
+    animation: run 2s ease infinite;
+}
+@keyframes run{
+    0%{
+        width: 100px;
+    }
+    50%{
+        width: 800px;
+        background: #00B7FF;
+    }
+    100%{
+        width: 100px;
+    }
+}
+```
 
 
 ## <div class='class03'>3、逐帧动画</div>
