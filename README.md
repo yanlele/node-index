@@ -23,6 +23,8 @@
 ### <div id="class01">已经发布npm的开源模块</div>      
 - [koa2日志监控中间件:koa-logs-middleware](https://github.com/yanlele/koa-logs-middleware)
 - [前端工程化](https://github.com/yanlele/le-cli)
+- [前端工程化](https://github.com/cli-template-build)
+- [小程序接入redux](https://github.com/yanlele/redux2miniapp)
 
 
 ### <div id="class02">对别人项目的研究（详细阅读源码之后写下的一些笔记和项目注释-已完成）</div>                  
