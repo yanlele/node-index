@@ -130,6 +130,10 @@ Overlay 通信方式 ， 需要分布式存储
 整个方式 请看这里： [multi-host-network](./multi-host-network.md)
 
 
+#### 多级实例
+一个虚拟机部署一个node应用， 另外一个虚拟机部署一个mysql， node链接mysql
+
+
 
 
 
