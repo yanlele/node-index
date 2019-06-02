@@ -117,6 +117,9 @@ host 这种方式创建的容器， 会成为跟住宿机共享所有网络配�
 ### <div id="class03-07">07、复杂docker链接示例</div>
 启动一个docker 1 放置node 服务应用， 链接mysql ， mysql 启动在docker2 
 
+#### docker安装mysql
+[https://www.cnblogs.com/pwc1996/p/5425234.html](https://www.cnblogs.com/pwc1996/p/5425234.html)
+
 
 ### <div id="class03-08">08、多机通信</div>
 `VXLAN`: 多机通信的技术                                            
