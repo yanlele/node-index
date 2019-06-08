@@ -52,7 +52,11 @@
 `sudo docker run -d -v mysql:/var/lib/mysql --name=mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql` 给volume起别名                                          
 如果创建别的数据库的时候， 需要使用到我们的这个volume 的情况， 只需要创建的时候，用一样的别名就OK了                 
 
+### <div id="class04-03">03、数据持久化:Bind Mouting</div>
+运行容器的时候， 指定本地目录和容器目录数据存放的一个映射关系。 两个地方地方的容器是同步更新的。                   
 
+`sudo docker run -d -v $(pwd):/var/lib/mysql --name=mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql`
+使用这种方式的前提条件是， mac 要能够映射到 虚拟机。
 
 
 
