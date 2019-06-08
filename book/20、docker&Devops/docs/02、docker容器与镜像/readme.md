@@ -185,6 +185,8 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 `docker container rm [container id]` | 删除容器
 `docker ps -a` | `docker container ls -a` 的简写版本
 `docker rm [container id]` | `docker container rm [container id]` 的简写版本
+`docker rm -f [container id]` | 强制删除（停止容器并且删除
+）
 `docker images` | `docker image ls` 的简写版本
 `docker image rm [image id]` | 删除镜像
 `docker rmi [image id]` | 删除镜像

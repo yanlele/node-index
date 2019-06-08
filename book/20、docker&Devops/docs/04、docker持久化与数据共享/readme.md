@@ -24,4 +24,36 @@
 插件使用： `vagrant scp [local path] [virtualbox-name]:/home/vagtant/labs` 就可以把本地目录推送到虚拟机里面去了
 
 ### <div id="class04-02">02、数据持久化:Data Volume</div>
-`sudo docker run -d --name=mysql -e MYSQL_ALLOW_EMPTY_PASSWORD mysql`
+实际上在创建数据的容器的时候， 就会缠上一个 volume , 用来存放数据库产生的数据
+
+`sudo docker run -d --name=mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql` 直接启动mysql 容器                      
+`sudo docker logs mysql` 可以查看日志                         
+`sudo docker volume ls` 就可以看到刚才创建docker的时候， 就也创建了 volume                 
+`sodu docker volume rm [volume ID]` 删除创建的volume                         
+`sudo docker volume inspect [volume id]` 可以看看具体的volume 信息
+
+```bash
+[vagrant@docker-host ~]$ docker volume inspect c224d6da05a13fe09dd87a75afdf887c203acf72ec3eab545392af0b4f24a39a
+[
+    {
+        "CreatedAt": "2019-06-08T14:20:16Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/c224d6da05a13fe09dd87a75afdf887c203acf72ec3eab545392af0b4f24a39a/_data",
+        "Name": "c224d6da05a13fe09dd87a75afdf887c203acf72ec3eab545392af0b4f24a39a",
+        "Options": {},
+        "Scope": "local"
+    }
+]
+```
+有这样一个信息 `"Mountpoint": "/var/lib/docker/volumes/c224d6da05a13fe09dd87a75afdf887c203acf72ec3eab545392af0b4f24a39a/_data",` 这个是产生的数据， 就放置的位置。 这个地方是方式在本地位置的。                              
+如果创建两个 mysql 容器， 如果我们删除 创建的mysql 容器， 就会发现一个情况，我们的volume 实际上还是在的。 但是有一个问题，就是volume 的名字很不友好， 是随机生成的。
+
+`sudo docker run -d -v mysql:/var/lib/mysql --name=mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql` 给volume起别名                                          
+如果创建别的数据库的时候， 需要使用到我们的这个volume 的情况， 只需要创建的时候，用一样的别名就OK了                 
+
+
+
+
+
+
