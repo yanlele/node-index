@@ -12,3 +12,12 @@
 主要是为第一种方案为主。
 
 
+#### Vagrant 插件
+如果要把文件弄到虚拟机里面， 最简单的办法就是直接 `git clone xxxx` 就可以了。                            
+
+还有一个办法就是使用vagrant 的插件                       
+`vagrant plugin list` 这个就可以拿到本地 vagrant 的插件有哪些。                   
+通过 `vagrant plugin install XXXX` 就可以安装查价了。              
+
+`vagrant plugin install vagrant-scp` 去安装插件， 安装这个插件之后， 就可以本地目录拷贝到 vagrant 虚拟机上面了。                        
+

@@ -5,3 +5,9 @@
 
 查看自己发布的包： `npm view 包名`                     
 查看包的所有历史版本版本： `npm view jquery versions`
+
+
+
+
+
+
