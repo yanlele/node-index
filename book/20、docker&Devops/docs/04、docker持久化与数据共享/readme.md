@@ -21,3 +21,7 @@
 
 `vagrant plugin install vagrant-scp` 去安装插件， 安装这个插件之后， 就可以本地目录拷贝到 vagrant 虚拟机上面了。                        
 
+插件使用： `vagrant scp [local path] [virtualbox-name]:/home/vagtant/labs` 就可以把本地目录推送到虚拟机里面去了
+
+### <div id="class04-02">02、数据持久化:Data Volume</div>
+`sudo docker run -d --name=mysql -e MYSQL_ALLOW_EMPTY_PASSWORD mysql`
