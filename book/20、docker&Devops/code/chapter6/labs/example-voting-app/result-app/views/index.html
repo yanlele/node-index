@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="catsvsdogs">
+  <head>
+    <meta charset="utf-8">
+    <title>CAT vs DOG -- Result</title>
+    <base href="/index.html">
+    <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+    <meta name="keywords" content="docker-compose, docker, stack">
+    <meta name="author" content="Tutum dev team">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//widget.daovoice.io/widget/23f3431a.js","daovoice");</script>
+  </head>
+  <body ng-controller="statsCtrl" >
+     <div id="background-stats">
+       <div id="background-stats-1">
+       </div><!--
+      --><div id="background-stats-2">
+      </div>
+    </div>
+    <div id="content-container">
+      <div id="content-container-center">
+        <div id="choice">
+          <div class="choice cats">
+            <div class="label">CAT</div>
+            <div class="stat">{{aPercent | number:1}}%</div>
+          </div>
+          <div class="divider"></div>
+          <div class="choice dogs">
+            <div class="label">DOG</div>
+            <div class="stat">{{bPercent | number:1}}%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="result" ng-if="total > 100">
+      {{total}} votes
+    </div>
+    <script src="socket.io.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src='faker.js'></script>
+
+    <script type="text/javascript">
+      daovoice('init', {
+        app_id: "23f3431a",
+        user_id: faker.random.uuid(), // 必填: 该用户在您系统上的唯一ID
+        email: faker.internet.email(), // 选填:  该用户在您系统上的主邮箱
+        name: faker.name.findName(), // 选填: 用户名
+      });
+
+      daovoice('update');
+
+
+    </script>
+  </body>
+</html>

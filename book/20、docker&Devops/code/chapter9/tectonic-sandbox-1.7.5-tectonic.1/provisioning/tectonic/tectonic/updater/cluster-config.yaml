@@ -1,0 +1,13 @@
+apiVersion: "etcd.database.coreos.com/v1beta2"
+kind: "EtcdCluster"
+metadata:
+  name: "kube-etcd"
+  namespace: kube-system
+spec:
+  size: 1
+  version: "3.1.8"
+  pod:
+    resources:
+      requests:
+        cpu: 500m
+        memory: 300Mi

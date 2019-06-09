@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bootstrap-kube-apiserver
+  namespace: kube-system
+spec:
+  containers:
+  - name: kube-apiserver
+    image: quay.io/coreos/hyperkube:v1.7.5_coreos.1
+    command:
+    - /usr/bin/flock
+    - /var/lock/api-server.lock
+    - /hyperkube
+    - apiserver
+    - --admission-control=NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,ResourceQuota
+    - --allow-privileged=true
+    - --authorization-mode=RBAC
+    - --bind-address=0.0.0.0
+    - --client-ca-file=/etc/kubernetes/secrets/ca.crt
+    - --cloud-provider=
+    # no cloud provider config given
+    - --etcd-servers=https://172.17.4.101:2379
+    - --etcd-quorum-read=true
+    - --etcd-cafile=/etc/kubernetes/secrets/etcd-client-ca.crt
+    - --etcd-certfile=/etc/kubernetes/secrets/etcd-client.crt
+    - --etcd-keyfile=/etc/kubernetes/secrets/etcd-client.key
+    - --insecure-port=0
+    - --advertise-address=172.17.4.101
+    - --kubelet-client-certificate=/etc/kubernetes/secrets/apiserver.crt
+    - --kubelet-client-key=/etc/kubernetes/secrets/apiserver.key
+    - --secure-port=443
+    - --service-account-key-file=/etc/kubernetes/secrets/service-account.pub
+    - --service-cluster-ip-range=10.3.0.0/16
+    - --storage-backend=etcd3
+    - --tls-ca-file=/etc/kubernetes/secrets/ca.crt
+    - --tls-cert-file=/etc/kubernetes/secrets/apiserver.crt
+    - --tls-private-key-file=/etc/kubernetes/secrets/apiserver.key
+    volumeMounts:
+    - mountPath: /etc/ssl/certs
+      name: ssl-certs-host
+      readOnly: true
+    - mountPath: /etc/kubernetes/secrets
+      name: secrets
+      readOnly: true
+    - mountPath: /etc/kubernetes/cloud
+      name: etc-kubernetes-cloud
+      readOnly: true
+    - mountPath: /var/lock
+      name: var-lock
+      readOnly: false
+  hostNetwork: true
+  volumes:
+  - name: secrets
+    hostPath:
+      path: /etc/kubernetes/bootstrap-secrets
+  - name: etc-kubernetes-cloud
+    hostPath:
+      path: /etc/kubernetes/cloud
+  - name: ssl-certs-host
+    hostPath:
+      path: /usr/share/ca-certificates
+  - name: var-lock
+    hostPath:
+      path: /var/lock
+  updateStrategy:
+    rollingUpdate:
+    maxUnavailable: 1
+    type: RollingUpdate

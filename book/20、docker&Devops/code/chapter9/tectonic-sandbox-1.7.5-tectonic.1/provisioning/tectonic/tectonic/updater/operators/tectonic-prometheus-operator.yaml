@@ -1,0 +1,39 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: tectonic-prometheus-operator
+  namespace: tectonic-system
+  labels:
+    k8s-app: tectonic-prometheus-operator
+    managed-by-channel-operator: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: tectonic-prometheus-operator
+  template:
+    metadata:
+      labels:
+        k8s-app: tectonic-prometheus-operator
+        tectonic-app-version-name: tectonic-monitoring
+    spec:
+      containers:
+      - image: quay.io/coreos/tectonic-prometheus-operator:v1.6.0
+        name: tectonic-prometheus-operator
+        args:
+        - "-logtostderr=true"
+        - "-v=4"
+        resources:
+          limits:
+            cpu: 20m
+            memory: 50Mi
+          requests:
+            cpu: 20m
+            memory: 50Mi
+      restartPolicy: Always
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 65534
+      terminationGracePeriodSeconds: 30
+      imagePullSecrets:
+      - name: coreos-pull-secret

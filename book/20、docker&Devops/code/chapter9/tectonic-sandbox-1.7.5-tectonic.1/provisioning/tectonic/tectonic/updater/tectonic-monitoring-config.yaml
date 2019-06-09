@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tectonic-monitoring
+  namespace: tectonic-system
+data:
+  config.yaml: |+
+    prometheusOperator:
+      baseImage: quay.io/coreos/prometheus-operator
+      prometheusConfigReloaderBaseImage: quay.io/coreos/prometheus-config-reloader
+      configReloaderBaseImage: quay.io/coreos/configmap-reload
+    prometheusK8s:
+      baseImage: quay.io/prometheus/prometheus
+    alertmanagerMain:
+      baseImage: quay.io/prometheus/alertmanager
+    ingress:
+      baseAddress: console.tectonicsandbox.com
+    auth:
+      baseImage: quay.io/coreos/tectonic-monitoring-auth
+    nodeExporter:
+      baseImage: quay.io/prometheus/node-exporter
+    kubeStateMetrics:
+      baseImage: quay.io/coreos/kube-state-metrics
+      addonResizerBaseImage: quay.io/coreos/addon-resizer

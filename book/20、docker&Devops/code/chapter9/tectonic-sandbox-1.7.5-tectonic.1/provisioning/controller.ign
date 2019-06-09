@@ -1,0 +1,82 @@
+{
+  "ignition": {
+    "config": {},
+    "timeouts": {},
+    "version": "2.1.0"
+  },
+  "networkd": {},
+  "passwd": {},
+  "storage": {
+    "files": [
+      {
+        "filesystem": "root",
+        "group": {},
+        "path": "/etc/kubernetes/kubelet.env",
+        "user": {},
+        "contents": {
+          "source": "data:,KUBELET_IMAGE_URL%3D%22quay.io%2Fcoreos%2Fhyperkube%22%0AKUBELET_IMAGE_TAG%3D%22v1.7.5_coreos.1%22%0A",
+          "verification": {}
+        },
+        "mode": 420
+      },
+      {
+        "filesystem": "root",
+        "group": {},
+        "path": "/etc/sysctl.d/max-user-watches.conf",
+        "user": {},
+        "contents": {
+          "source": "data:,fs.inotify.max_user_watches%3D16184%0A",
+          "verification": {}
+        }
+      }
+    ]
+  },
+  "systemd": {
+    "units": [
+      {
+        "dropins": [
+          {
+            "contents": "[Service]\nEnvironment=\"ETCD_IMAGE_TAG=v3.1.8\"\nEnvironment=\"ETCD_NAME=etcd\"\nEnvironment=\"ETCD_ADVERTISE_CLIENT_URLS=https://172.17.4.101:2379\"\nEnvironment=\"ETCD_INITIAL_ADVERTISE_PEER_URLS=https://172.17.4.101:2380\"\nEnvironment=\"ETCD_LISTEN_CLIENT_URLS=https://0.0.0.0:2379\"\nEnvironment=\"ETCD_LISTEN_PEER_URLS=https://0.0.0.0:2380\"\nEnvironment=\"ETCD_STRICT_RECONFIG_CHECK=true\"\nEnvironment=\"ETCD_SSL_DIR=/etc/ssl/etcd\"\nEnvironment=\"ETCD_CERT_FILE=/etc/ssl/certs/server.crt\"\nEnvironment=\"ETCD_KEY_FILE=/etc/ssl/certs/server.key\"\nEnvironment=\"ETCD_PEER_CERT_FILE=/etc/ssl/certs/peer.crt\"\nEnvironment=\"ETCD_PEER_KEY_FILE=/etc/ssl/certs/peer.pem\"\nEnvironment=\"ETCD_PEER_TRUSTED_CA_FILE=/etc/ssl/certs/ca.crt\"\nEnvironment=\"ETCD_PEER_CLIENT_CERT_AUTH=true\"\n",
+            "name": "40-etcd-cluster.conf"
+          }
+        ],
+        "enable": true,
+        "name": "etcd-member.service"
+      },
+      {
+        "enable": true,
+        "name": "docker.service"
+      },
+      {
+        "mask": true,
+        "name": "locksmithd.service"
+      },
+      {
+        "mask": true,
+        "name": "update-engine.service"
+      },
+      {
+        "contents": "[Unit]\nDescription=Watch for kubeconfig\n[Path]\nPathExists=/etc/kubernetes/kubeconfig\n[Install]\nWantedBy=multi-user.target\n",
+        "enable": true,
+        "name": "kubelet.path"
+      },
+      {
+        "contents": "[Unit]\nDescription=Wait for DNS entries\nWants=systemd-resolved.service\nBefore=kubelet.service\n[Service]\nType=oneshot\nRemainAfterExit=true\nExecStart=/bin/sh -c 'while ! /usr/bin/grep '^[^#[:space:]]' /etc/resolv.conf \u003e /dev/null; do sleep 1; done'\n[Install]\nRequiredBy=kubelet.service\n",
+        "enable": true,
+        "name": "wait-for-dns.service"
+      },
+      {
+        "contents": "[Unit]\nDescription=Kubelet via Hyperkube ACI\n[Service]\nEnvironment=\"RKT_RUN_ARGS=--uuid-file-save=/var/run/kubelet-pod.uuid \\\n  --volume=resolv,kind=host,source=/etc/resolv.conf \\\n  --mount volume=resolv,target=/etc/resolv.conf \\\n  --volume var-lib-cni,kind=host,source=/var/lib/cni \\\n  --mount volume=var-lib-cni,target=/var/lib/cni \\\n  --volume var-log,kind=host,source=/var/log \\\n  --mount volume=var-log,target=/var/log\"\nEnvironmentFile=/etc/kubernetes/kubelet.env\nExecStartPre=/bin/mkdir -p /etc/kubernetes/manifests\nExecStartPre=/bin/mkdir -p /etc/kubernetes/cni/net.d\nExecStartPre=/bin/mkdir -p /etc/kubernetes/checkpoint-secrets\nExecStartPre=/bin/mkdir -p /etc/kubernetes/inactive-manifests\nExecStartPre=/bin/mkdir -p /var/lib/cni\nExecStartPre=/usr/bin/bash -c \"grep 'certificate-authority-data' /etc/kubernetes/kubeconfig | awk '{print $2}' | base64 -d \u003e /etc/kubernetes/ca.crt\"\nExecStartPre=-/usr/bin/rkt rm --uuid-file=/var/run/kubelet-pod.uuid\nExecStart=/usr/lib/coreos/kubelet-wrapper \\\n  --kubeconfig=/etc/kubernetes/kubeconfig \\\n  --require-kubeconfig \\\n  --client-ca-file=/etc/kubernetes/ca.crt \\\n  --anonymous-auth=false \\\n  --cni-conf-dir=/etc/kubernetes/cni/net.d \\\n  --network-plugin=cni \\\n  --lock-file=/var/run/lock/kubelet.lock \\\n  --exit-on-lock-contention \\\n  --pod-manifest-path=/etc/kubernetes/manifests \\\n  --allow-privileged \\\n  --hostname-override=c1.tectonicsandbox.com \\\n  --node-labels=node-role.kubernetes.io/master \\\n  --register-with-taints=node-role.kubernetes.io/master=:NoSchedule \\\n  --cluster_dns=10.3.0.10 \\\n  --cluster_domain=cluster.local\nExecStop=-/usr/bin/rkt stop --uuid-file=/var/run/kubelet-pod.uuid\nRestart=always\nRestartSec=10\n[Install]\nWantedBy=multi-user.target\n",
+        "name": "kubelet.service"
+      },
+      {
+        "contents": "[Unit]\nDescription=Bootstrap a Kubernetes cluster\nConditionPathExists=!/opt/tectonic/init_bootkube.done\n[Service]\nType=oneshot\nRemainAfterExit=true\nWorkingDirectory=/opt/tectonic\nUser=root\nGroup=root\nExecStart=/usr/bin/bash /opt/tectonic/bootkube.sh\nExecStartPost=/bin/touch /opt/tectonic/init_bootkube.done\n[Install]\nWantedBy=multi-user.target\n",
+        "name": "bootkube.service"
+      },
+      {
+        "contents": "[Unit]\nDescription=Bootstrap a Tectonic cluster\nConditionPathExists=!/opt/tectonic/init_tectonic.done\nRequires=bootkube.service\nAfter=bootkube.service\n[Service]\nType=oneshot\nRemainAfterExit=true\nWorkingDirectory=/opt/tectonic\nUser=root\nGroup=root\nExecStart=/usr/bin/bash /opt/tectonic/tectonic-rkt.sh\nExecStartPost=/bin/touch /opt/tectonic/init_tectonic.done\n[Install]\nWantedBy=multi-user.target\n",
+        "name": "tectonic.service"
+      }
+    ]
+  }
+}

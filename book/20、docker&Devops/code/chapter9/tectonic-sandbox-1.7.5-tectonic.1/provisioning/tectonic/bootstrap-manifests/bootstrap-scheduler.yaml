@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bootstrap-kube-scheduler
+  namespace: kube-system
+spec:
+  hostNetwork: true
+  containers:
+  - name: kube-scheduler
+    image: quay.io/coreos/hyperkube:v1.7.5_coreos.1
+    command:
+    - ./hyperkube
+    - scheduler
+    - --kubeconfig=/etc/kubernetes/kubeconfig
+    - --leader-elect=true
+    volumeMounts:
+    - name: etc-kubernetes
+      mountPath: /etc/kubernetes
+      readOnly: true
+  volumes:
+  - name: etc-kubernetes
+    hostPath:
+      path: /etc/kubernetes

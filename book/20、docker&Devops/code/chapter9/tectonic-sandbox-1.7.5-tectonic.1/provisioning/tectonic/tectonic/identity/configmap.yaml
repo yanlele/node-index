@@ -1,0 +1,50 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: tectonic-identity
+  namespace: tectonic-system
+data:
+  issuer: https://console.tectonicsandbox.com/identity
+  consoleClientID: tectonic-console
+  consoleSecret: bkRTBES7gp-z9V_ZO8zXog
+  kubectlClientID: tectonic-kubectl
+  kubectlSecret: AUn1FQ9Yhxw60eRtUVjhbw
+  config.yaml: |
+    issuer: https://console.tectonicsandbox.com/identity
+    storage:
+      type: kubernetes
+      config:
+        inCluster: true
+    web:
+      http: 0.0.0.0:5556
+    grpc:
+      addr: 0.0.0.0:5557
+      tlsCert: /etc/tectonic-identity-grpc-server-secret/tls-cert
+      tlsKey: /etc/tectonic-identity-grpc-server-secret/tls-key
+      tlsClientCA: /etc/tectonic-identity-grpc-server-secret/ca-cert
+    frontend:
+      theme: 'tectonic'
+      issuer: 'Tectonic Identity'
+    oauth2:
+      skipApprovalScreen: true
+    staticClients:
+    - id: tectonic-console
+      redirectURIs:
+      - 'https://console.tectonicsandbox.com/auth/callback'
+      - 'https://console.tectonicsandbox.com/prometheus/auth/callback'
+      - 'https://console.tectonicsandbox.com/alertmanager/auth/callback'
+      - 'https://console.tectonicsandbox.com/grafana/auth/callback'
+      name: 'Tectonic Console'
+      secret: bkRTBES7gp-z9V_ZO8zXog
+    - id: tectonic-kubectl
+      public: true
+      trustedPeers:
+      - tectonic-console
+      name: 'Kubectl'
+      secret: AUn1FQ9Yhxw60eRtUVjhbw
+    enablePasswordDB: true
+    staticPasswords:
+    - email: "admin@example.com"
+      hash: "$2a$10$rQ13TGgO3wP3QPFVzFt8ReIjb5Tb7WxVMIuc54Lwu2v446vrDjy06"
+      username: "admin"
+      userID: "0ob1NuDSgVt48zHoNN8x4g"

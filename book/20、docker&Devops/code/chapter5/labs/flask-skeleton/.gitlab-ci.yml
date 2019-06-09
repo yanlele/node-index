@@ -1,0 +1,62 @@
+variables:
+  GIT_SSL_NO_VERIFY: "1"
+
+stages:
+  - test
+  - build
+  - deploy
+
+pep8:
+  stage: test
+  image: python:2.7
+  script:
+    - pip install tox
+    - tox -e pep8
+  tags:
+    - python27
+
+unittest-py27:
+  stage: test
+  image: python:2.7
+  script:
+    - pip install tox
+    - tox -e py27
+  tags:
+    - python27
+
+unittest-py34:
+  stage: test
+  image: python:3.4
+  script:
+    - pip install tox
+    - tox -e py34
+  tags:
+    - python34
+
+sphnix:
+  stage: test
+  image: python:2.7
+  script:
+    - pip install tox
+    - tox -e docs
+  tags:
+    - python27
+
+build:
+  stage: build
+  tags:
+    - shell
+  script:
+    - docker build -t skeleton .
+  only:
+    - master
+
+deploy:
+  stage: deploy
+  tags:
+    - shell
+  script:
+    - scripts/deploy.sh
+    - export
+  only:
+    - master

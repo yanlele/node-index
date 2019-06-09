@@ -1,0 +1,106 @@
+apiVersion: "extensions/v1beta1"
+kind: DaemonSet
+metadata:
+  name: kube-apiserver
+  namespace: kube-system
+  labels:
+    tier: control-plane
+    k8s-app: kube-apiserver
+    tectonic-operators.coreos.com/managed-by: kube-version-operator
+spec:
+  updateStrategy:
+    rollingUpdate:
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        tier: control-plane
+        k8s-app: kube-apiserver
+        tectonic-operators.coreos.com/managed-by: kube-version-operator
+      annotations:
+        checkpointer.alpha.coreos.com/checkpoint: "true"
+        scheduler.alpha.kubernetes.io/critical-pod: ""
+    spec:
+      containers:
+      - name: kube-apiserver
+        image: quay.io/coreos/hyperkube:v1.7.5_coreos.1
+        command:
+        - /usr/bin/flock
+        - /var/lock/api-server.lock
+        - /hyperkube
+        - apiserver
+        - --bind-address=0.0.0.0
+        - --secure-port=443
+        - --insecure-port=0
+        - --advertise-address=172.17.4.101
+        - --etcd-servers=https://172.17.4.101:2379
+        - --etcd-cafile=/etc/kubernetes/secrets/etcd-client-ca.crt
+        - --etcd-certfile=/etc/kubernetes/secrets/etcd-client.crt
+        - --etcd-keyfile=/etc/kubernetes/secrets/etcd-client.key
+        - --etcd-quorum-read=true
+        - --storage-backend=etcd3
+        - --allow-privileged=true
+        - --service-cluster-ip-range=10.3.0.0/16
+        - --admission-control=NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,ResourceQuota
+        - --tls-ca-file=/etc/kubernetes/secrets/ca.crt
+        - --tls-cert-file=/etc/kubernetes/secrets/apiserver.crt
+        - --tls-private-key-file=/etc/kubernetes/secrets/apiserver.key
+        - --kubelet-client-certificate=/etc/kubernetes/secrets/apiserver.crt
+        - --kubelet-client-key=/etc/kubernetes/secrets/apiserver.key
+        - --service-account-key-file=/etc/kubernetes/secrets/service-account.pub
+        - --client-ca-file=/etc/kubernetes/secrets/ca.crt
+        - --authorization-mode=RBAC
+        - --anonymous-auth=false
+        - --oidc-issuer-url=https://console.tectonicsandbox.com/identity
+        - --oidc-client-id=tectonic-kubectl
+        - --oidc-username-claim=email
+        - --oidc-groups-claim=groups
+        - --oidc-ca-file=/etc/kubernetes/secrets/ca.crt
+        - --cloud-provider=
+        # no cloud provider config given
+        - --audit-log-path=/var/log/kubernetes/kube-apiserver-audit.log
+        - --audit-log-maxage=30
+        - --audit-log-maxbackup=3
+        - --audit-log-maxsize=100
+        volumeMounts:
+        - mountPath: /etc/ssl/certs
+          name: ssl-certs-host
+          readOnly: true
+        - mountPath: /etc/kubernetes/secrets
+          name: secrets
+          readOnly: true
+        - mountPath: /etc/kubernetes/cloud
+          name: cloud-config
+          readOnly: true
+        - mountPath: /var/lock
+          name: var-lock
+          readOnly: false
+        - mountPath: /var/log/kubernetes
+          name: var-log-kubernetes
+          readOnly: false
+      hostNetwork: true
+      tolerations:
+      - key: "CriticalAddonsOnly"
+        operator: "Exists"
+      - key: "node-role.kubernetes.io/master"
+        operator: "Exists"
+        effect: "NoSchedule"
+      nodeSelector:
+        node-role.kubernetes.io/master: ""
+      volumes:
+      - name: ssl-certs-host
+        hostPath:
+          path: /usr/share/ca-certificates
+      - name: secrets
+        secret:
+          secretName: kube-apiserver
+      - name: cloud-config
+        secret:
+          secretName: kube-cloud-cfg
+      - name: var-lock
+        hostPath:
+          path: /var/lock
+      - name: var-log-kubernetes
+        hostPath:
+          path: /var/log/kubernetes

@@ -1,0 +1,12 @@
+apiVersion: tco.coreos.com/v1
+kind: ChannelOperatorConfig
+metadata:
+  name: default
+  namespace: tectonic-system
+server: https://tectonic.update.core-os.net
+channel: tectonic-1.7-production
+appID: 6bc7b986-4654-4a0f-94b3-84ce6feb1db4
+automaticUpdate: false
+triggerUpdate: false
+triggerUpdateCheck: false
+updateCheckInterval: 2700
