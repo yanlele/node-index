@@ -80,6 +80,27 @@ networks:
 ```
 
 
+### <div id="class05-03">03、docker-compose的安装和基本使用</div>
+安装详情可以参考这里: [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
+
+具体步骤：                       
+1、 `sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`                          
+2、 `sudo chmod +x /usr/local/bin/docker-compose`                        
+
+重要命令：                       
+
+命令行 | 作用
+:-|:-
+`docker-compose up` | 默认启动docker-compose.yml 文件， 可以看到日志
+`docker-compose -f docker-compose.yml up` | 启动指定的yml 配置文件
+`docker-compose ps` | 查看启动的容器
+`docker-compose stop` | 停止容器
+`docker-compose start` | 启动容器
+`docker-compose down` | stop and remove                     
+`docker-compose up -d` | 后台执行， 不会看到日志                           
+`docker-compose images` | 可以列出创建容器所需要的image                         
+`dcoker-compose exec [service name] bash` | 进入指定容器的bash                         
+
 
 
 
