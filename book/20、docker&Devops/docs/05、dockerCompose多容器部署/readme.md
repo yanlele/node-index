@@ -102,7 +102,18 @@ networks:
 `dcoker-compose exec [service name] bash` | 进入指定容器的bash                         
 
 
+### <div id="class05-04">04、水平扩展和均衡负载</div>
+- [中级篇』Docker 水平扩展和负载均衡（40）](https://cloud.tencent.com/developer/article/1169149)
 
+`docker-compose up --scale web=3 -d`
+
+
+
+### 参考文章
+- [中级篇』Docker 水平扩展和负载均衡（40）](https://cloud.tencent.com/developer/article/1169149)
+- [docker-compose 部署一个复杂应用](https://blog.csdn.net/u011781521/article/details/80464826)
+- [Docker学习实践](https://www.cnblogs.com/wj5633/p/6680771.html)
+- [使用Docker-compose编排容器](https://www.cnblogs.com/wj5633/p/6707012.html)
 
 
 
