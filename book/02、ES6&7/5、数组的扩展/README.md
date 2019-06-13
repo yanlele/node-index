@@ -109,27 +109,27 @@ fill方法还可以接受第二个和第三个参数，用于指定填充的起�
 ES6 提供三个新的方法 —— entries()，keys()和values() —— 用于遍历数组。它们都返回一个遍历器对象（详见《 Iterator 》一章），可以用for...of循环进行遍历，唯一的区别是keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历。             
 实例：             
 ```javascript
-    for (let index of ['a', 'b'].keys()) {
-        console.log(index);
-    }
-    // 0
-    // 1
-    for (let elem of ['a', 'b'].values()) {
-        console.log(elem);
-    }
-    // 'a'
-    // 'b'
-    for (let [index, elem] of ['a', 'b'].entries()) {
-        console.log(index, elem);
-    }
-    // 0 "a"
-    // 1 "b"
+for (let index of ['a', 'b'].keys()) {
+    console.log(index);
+}
+// 0
+// 1
+for (let elem of ['a', 'b'].values()) {
+    console.log(elem);
+}
+// 'a'
+// 'b'
+for (let [index, elem] of ['a', 'b'].entries()) {
+    console.log(index, elem);
+}
+// 0 "a"
+// 1 "b"
 ```
 
 #### 7、数组实例的 includes()                
 Array.prototype.includes方法返回一个布尔值，表示某个数组是否包含给定的值，与字符串的includes方法类似。该方法属于 ES7 ，但 Babel 转码器已经支持。          
 实例：         
 ```javascript
-    [1, 2, 3].includes(3, 3); // false
-    [1, 2, 3].includes(3, -1); // true
+[1, 2, 3].includes(3, 3); // false
+[1, 2, 3].includes(3, -1); // true
 ```
