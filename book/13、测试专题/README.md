@@ -39,6 +39,7 @@
     - [4.测试异步代码](./06篇、Jest测试框架/01、基础篇.md#4-测试异步代码)
     - [5.Setup and Teardown](./06篇、Jest测试框架/01、基础篇.md#5-Setup-and-Teardown)
     - [6.mock function](./06篇、Jest测试框架/01、基础篇.md#6-Mock-Function)
+    - [7.TS接入测试](https://segmentfault.com/q/1010000014108219)
 - [其他细碎知识点](./06篇、Jest测试框架/其他细碎知识点.md)
 - [代码示例](https://github.com/yanlele/TypeScript-build-index/tree/master/Test)
 
