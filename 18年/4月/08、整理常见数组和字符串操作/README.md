@@ -22,6 +22,7 @@
 | :- | :- |     
 |concat()|连接两个或更多的数组，并返回结果。|        
 |entries()|	返回数组的可迭代对象。|        
+|array.some(function(currentValue,index,arr),thisValue)|方法用于检测数组中的元素是否满足指定条件（函数提供）。|
 |array.every(function(currentValue,index,arr), thisValue)|用于检测数组所有元素是否都符合指定条件|      
 |array.fill(value, start, end)|方法用于将一个固定值替换数组的元素。|      
 |array.filter(function(currentValue,index,arr), thisValue)|创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素|     
@@ -37,7 +38,6 @@
 |shift()	|删除并返回数组的第一个元素。|        
 |unshift()|向数组的开头添加一个或更多元素，并返回新的长度。|        
 |array.slice(startIndex, endIndex)|方法可从已有的数组中返回选定的元素。 slice() 方法不会改变原始数组。**会返回新的数组**|          
-|array.some(function(currentValue,index,arr),thisValue)|方法用于检测数组中的元素是否满足指定条件（函数提供）。|
 |[array.splice(index,howmany,item1,.....,itemX)](http://www.runoob.com/jsref/jsref-splice.html)|方法用于插入、删除或替换数组的元素。**会改变原来的数组**|
 
 [数组的一个实例](./index.js)
