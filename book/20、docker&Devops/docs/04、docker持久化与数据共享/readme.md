@@ -21,7 +21,7 @@
 
 `vagrant plugin install vagrant-scp` 去安装插件， 安装这个插件之后， 就可以本地目录拷贝到 vagrant 虚拟机上面了。                        
 
-插件使用： `vagrant scp [local path] [virtualbox-name]:/home/vagtant/labs` 就可以把本地目录推送到虚拟机里面去了
+插件使用： `vagrant scp [local path] [virtualbox-name]:/home/vagrant/labs` 就可以把本地目录推送到虚拟机里面去了
 
 ### <div id="class04-02">02、数据持久化:Data Volume</div>
 实际上在创建数据的容器的时候， 就会缠上一个 volume , 用来存放数据库产生的数据

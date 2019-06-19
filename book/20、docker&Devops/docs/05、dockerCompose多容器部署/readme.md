@@ -138,6 +138,18 @@ web 服务都是链接到 redis 上面的，如果想启动多个web 服务器�
 这个时候， 所有的web 服务都是均衡的链接到 redis 上面的。 
 
 
+### <div id="class05-05">部署一个复杂应用</div>
+![03](../../imgs/03.png)                                    
+
+直接把 code/chapter6/labs/example-voting-app/ 目录下面的内容拷贝到虚拟机上 `/home/vagrant/labs/`；                            
+进入虚拟机之后 运行 `docker-compose up` 这个过程非常慢， 因为需要拉取基础镜像、生成源码 image；
+
+如果有一些 docker-compose 里面定义的service 有些是需要dockerFile build 生成的， 就可以直接通过 `docker-compose build ` 直接生成就可以了。 
+然后在执行`docker-compose up` 就可以了。 如果直接执行 `docker-compose build` 会直接先build 在 up.
+
+
+说明 docker-compose 一般来说是用于本地开发的一个工具， 并不适合用于 生产环境
+ 
 
 
 
