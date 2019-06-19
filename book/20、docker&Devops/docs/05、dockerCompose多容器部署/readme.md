@@ -108,6 +108,38 @@ networks:
 `docker-compose up --scale web=3 -d`
 
 
+比如有一个这样的 docker-compose.yml 文件: 
+```bash
+version: "3"
+
+services:
+
+  redis:
+    image: redis
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      REDIS_HOST: redis
+
+  lb:
+    image: dockercloud/haproxy
+    links:
+      - web
+    ports:
+      - 8080:80
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock 
+```
+web 服务都是链接到 redis 上面的，如果想启动多个web 服务器： `docker-compose up --scale web=3 -d`                                  
+
+这个时候， 所有的web 服务都是均衡的链接到 redis 上面的。 
+
+
+
+
 
 ### 参考文章
 - [中级篇』Docker 水平扩展和负载均衡（40）](https://cloud.tencent.com/developer/article/1169149)
