@@ -118,6 +118,7 @@ host 这种方式创建的容器， 会成为跟住宿机共享所有网络配�
 启动一个docker 1 放置node 服务应用， 链接mysql ， mysql 启动在docker2 
 
 #### docker安装mysql
+<<<<<<< Updated upstream
 [https://www.cnblogs.com/pwc1996/p/5425234.html](https://www.cnblogs.com/pwc1996/p/5425234.html)                        
 `sudo docker run --name pwc-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql`
 
@@ -128,6 +129,15 @@ host 这种方式创建的容器， 会成为跟住宿机共享所有网络配�
 
 
 
+=======
+[https://www.cnblogs.com/pwc1996/p/5425234.html](https://www.cnblogs.com/pwc1996/p/5425234.html)
+```bash
+sudo docker pull mysql:5.7
+
+# 启动容器
+sudo docker run --name pwc-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql
+```
+>>>>>>> Stashed changes
 
 
 

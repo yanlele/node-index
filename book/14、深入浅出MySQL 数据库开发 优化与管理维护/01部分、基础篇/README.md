@@ -57,7 +57,7 @@ create table if not exists emp(
   hiredate date,
   sal decimal(10,2),
   deptno int(2)
-);
+);          
 ```
 `desc emp;`  可以查看表的定义                   
 `show create table emp;`  可以查看更加全面的具体sql语句信息    
