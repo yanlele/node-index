@@ -22,3 +22,4 @@
 - 其他知识点儿
     - [01、apt-get查看版本以及安装指定版本软件](./其他/01、apt-get查看版本以及安装指定版本软件)
     - [02、apt-get如何靠谱的安装nvm](./其他/02、apt-get如何靠谱的安装nvm)
+    - [03、Mac下终端配置（item2 + oh-my-zsh + solarized配色方案）](https://www.cnblogs.com/weixuqin/p/7029177.html)
