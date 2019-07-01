@@ -24,3 +24,4 @@
     - [02、apt-get如何靠谱的安装nvm](./其他/02、apt-get如何靠谱的安装nvm)
     - [03、Mac下终端配置（item2 + oh-my-zsh + solarized配色方案）](https://www.cnblogs.com/weixuqin/p/7029177.html)
     - [04、iTerm2 + Oh My Zsh 打造舒适终端体验](https://www.jianshu.com/p/9c3439cc3bdb)
+    - [05、一键化打造 Vim IDE 环境(安装只需数秒) 【环境:Linux 64 位】 Vim7.X 可以安装版本1.0](https://github.com/meetbill/Vim)
