@@ -1,7 +1,7 @@
 ## 基础篇
 
 
-### 第一节
+### 第一节-入门
 授权可执行shell 文件： `chmod +x test.sh`
 
 #### 打印输出
@@ -59,4 +59,61 @@ echo "Hello, $NAME"
 ```
 
 
+#### 定义变量
+**定义变量**： `variableName="value"`  **变量名和等号之间不能有空格**
 
+**使用一个定义过的变量**，只要在变量名前面加美元符号（$）即可，如：
+```bash
+your_name="lalal"
+echo $your_name
+echo ${your_name}
+
+for skill in C PHP Python Java 
+do
+    echo "I am good at ${skill}Script"
+done
+```
+建议最好加上花括号
+
+**readonly**                        
+在变量前面加readonly 命令可以将变量定义为只读变量，只读变量的值不能被改变。                  
+```bash
+url="http://www.baidu.com"
+readonly url
+url="http://www.baidu.com"
+```
+
+
+#### 特殊变量
+
+变量 |	含义
+:-|:-
+$0|	当前脚本的文件名
+$n|	传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。
+$#|	传递给脚本或函数的参数个数。
+$*|	传递给脚本或函数的所有参数。
+$@|	传递给脚本或函数的所有参数。被双引号(" ")包含时，与 $* 稍有不同
+$?|	上个命令的退出状态，或函数的返回值。
+$$|	当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。
+
+示例
+```bash
+#!/bin/bash
+echo "File Name: $0"
+echo "First Parameter : $1"
+echo "First Parameter : $2"
+echo "Quoted Values: $@"
+echo "Quoted Values: $*"
+echo "Total Number of Parameters : $#"
+```
+
+结果
+```bash
+$./test.sh Zara Ali
+File Name : ./test.sh
+First Parameter : Zara
+Second Parameter : Ali
+Quoted Values: Zara Ali
+Quoted Values: Zara Ali
+Total Number of Parameters : 2
+```
