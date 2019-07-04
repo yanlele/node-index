@@ -159,4 +159,13 @@ echo -e "a is $a \n"
 这里 -e 表示对转义字符进行替换。如果不使用 -e 选项，将会原样输出：`Value of a is 11\n`
 
 
+#### 命令替换
+命令替换是指Shell可以先执行命令，将输出结果暂时保存，在适当的地方输出。语法： ` `command` `
+举例：             
+```bash
+#!/bin/bash
+DATE=`date`
+echo "Date is $DATE"
+```
+
 
