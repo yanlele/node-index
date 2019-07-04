@@ -179,4 +179,38 @@ ${var:=word}|	如果变量 var 为空或已被删除(unset)，那么返回 word�
 ${var:?message}|	如果变量 var 为空或已被删除(unset)，那么将消息 message 送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值。若此替换出现在Shell脚本中，那么脚本将停止运行。
 ${var:+word}|	如果变量 var 被定义，那么返回 word，但不改变 var 的值。
 
+#### 完整的shell示例
+```bash
+#!/bin/bash
+#zip install
 
+if [ -d php-5.4.25/ext/zip ];then
+	cd php-5.4.25/ext/zip
+else
+	tar zxvf php-5.4.25.tar.gz
+	cd php-5.4.25/ext/zip
+fi
+/usr/local/php/bin/phpize
+./configure --with-php-config=/usr/local/php/bin/php-config
+make
+[ $? != 0 ] && exit
+make install
+echo 
+grep 'no-debug-zts-20100525' /usr/local/php/etc/php.ini
+if [ $? != 0 ];then
+        echo '' >> /usr/local/php/etc/php.ini
+        echo 'extension_dir=/usr/local/php/lib/php/extensions/no-debug-zts-20100525' >> /usr/local/php/etc/php.ini
+fi
+grep 'zip.so' /usr/local/php/etc/php.ini
+if [ $? != 0 ];then
+	echo 'extension=zip.so' >> /usr/local/php/etc/php.ini
+fi
+echo "zip install is OK"
+
+
+/usr/local/apache2/bin/apachectl restart
+cd -
+rm -rf php-5.4.25
+echo "all ok!"
+ls /usr/local/php/lib/php/extensions/no-debug-zts-20100525/
+```
