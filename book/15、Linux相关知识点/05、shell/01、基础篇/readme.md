@@ -47,4 +47,16 @@ and 0
 ```
 
 
+**read**： 命令行从输入设备读入内容
+```bash
+#!/bin/bash
+
+# Author : lalal
+
+echo "What is your name?"
+read NAME #输入
+echo "Hello, $NAME"
+```
+
+
 
