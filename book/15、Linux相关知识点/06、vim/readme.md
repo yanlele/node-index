@@ -88,6 +88,18 @@ word指的是非空白分隔符的单词， WORD 以空白分隔符的单词
 `* 或者 # ` | 单词的前向或者后巷匹配
 
 
+### 搜索替换
+命令：`:[range]s[ubstitute]/{pattern}/{string}/[flags]`
+- range 表示范围， 比如: 10, 20 表示10-20行， % 表示全部
+- pattern 表示要替换的欧式
+- string 表示替换后的文本
+- flags 
+    - g(global)表示全局范围内执行
+    - c(confirm)表示缺人，可以缺人或者拒绝修改
+    - n(number)报告匹配到的次数而不替换， 可以用来查询匹配次数
+
+例如需要把文本中的`self`替换为`this`: `:% s/self/this/g`
+例如我们需要精准替换： `:% s/\<quack\>/main/g`
 
 
 ### 撤销与反撤销
@@ -104,7 +116,8 @@ word指的是非空白分隔符的单词， WORD 以空白分隔符的单词
 :- |:-
 `:syntax on` | 打开高亮
 `:set nu` | 打开行数统计
-
+`:set hls` | 搜索结果高亮
+`:set incsearch` | 可以一边搜索一边高亮
 
 
 
