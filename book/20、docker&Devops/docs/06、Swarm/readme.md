@@ -50,8 +50,7 @@ service 的创建： `docker service create --name demo busybox sh -c "while tru
 
 
 ### <div id="class06-04">04、集群服务之间的通信RoutingMesh</div>
-问题：                     
-1、
+.........
 
 
 
