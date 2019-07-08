@@ -115,10 +115,22 @@ word指的是非空白分隔符的单词， WORD 以空白分隔符的单词
 作为了解作用 ...... 如果以后需要使用再了解就OK
 
 
+### text-Object
+语法命令： `[number]<command>[text object]`                          
+number 表示次数、command 是命令， d(delete)、c(change)、y(yank)                            
+text object 是要操作的文本对象， 比如单词w, 句子s, 段落p
 
+示例：                     
+`viw` - 选中单词
+`vaw` - 选中单词也会选中空格
+`vi"` - 就可以快速选中双引号内的内容
+`ci"` - 快速删除双引号中的内容， 并且进入插入模式
 
-
-
+**记住四个常用命令**
+d - 删除
+c - 修改并且插入
+v - 选中
+y - 复制
 
 
 ### 其他命令
