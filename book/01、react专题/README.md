@@ -41,3 +41,4 @@
 - [理解react16.3的fiber架构](https://blog.csdn.net/songshuzhong/article/details/80642651)
 - [fantasticsoul/react-control-center: 状态管理类库](https://github.com/fantasticsoul/react-control-center)
 - [React-如何进行组件的单元测试](https://blog.csdn.net/qiqingjin/article/details/82389088)
+- [React Fiber](https://juejin.im/post/5ab7b3a2f265da2378403e57)
