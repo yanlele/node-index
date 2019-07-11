@@ -463,6 +463,10 @@
         - [走进Vue-cli源码，自己动手搭建前端脚手架工具](https://www.jianshu.com/p/749b22170b7b)
         - [vue-cli的简单实现](https://www.jianshu.com/p/fe174b7eeee3)
         - [使用 NPM 发布与维护 TypeScript 模块](https://my.oschina.net/fenying/blog/1607571)
+        - [腾讯云开发者手册](https://cloud.tencent.com/developer/devdocs)
+        - [腾讯云开发者手册 - nest](https://cloud.tencent.com/developer/doc/1281)
+        
+        
         
     - 工具部分
         - [Spectacle allows you to organize your windows without using a mouse.](https://github.com/eczarny/spectacle)
