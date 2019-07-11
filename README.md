@@ -465,10 +465,11 @@
         - [使用 NPM 发布与维护 TypeScript 模块](https://my.oschina.net/fenying/blog/1607571)
         - [腾讯云开发者手册](https://cloud.tencent.com/developer/devdocs)
         - [腾讯云开发者手册 - nest](https://cloud.tencent.com/developer/doc/1281)
+        - [React + Electron 搭建一个桌面应用](https://juejin.im/post/5a6a91276fb9a01cbd58ce32)
+        - [从浏览器渲染原理，说一说如何实现高效的动画](https://juejin.im/post/5d2491ba6fb9a07ecf724b69)
         
-         
     - 工具部分
-       - [Spectacle allows you to organize your windows without using a mouse.](https://github.com/eczarny/spectacle)
+        - [Spectacle allows you to organize your windows without using a mouse.](https://github.com/eczarny/spectacle)
         
 
 
