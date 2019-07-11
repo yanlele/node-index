@@ -466,10 +466,9 @@
         - [腾讯云开发者手册](https://cloud.tencent.com/developer/devdocs)
         - [腾讯云开发者手册 - nest](https://cloud.tencent.com/developer/doc/1281)
         
-        
-        
+         
     - 工具部分
-        - [Spectacle allows you to organize your windows without using a mouse.](https://github.com/eczarny/spectacle)
+       - [Spectacle allows you to organize your windows without using a mouse.](https://github.com/eczarny/spectacle)
         
 
 
