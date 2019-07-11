@@ -415,6 +415,7 @@
     - [60、基于node的代码生成器](https://github.com/yanlele/node-index-core/tree/master/packages/19%E5%B9%B4/05%E6%9C%88/01%E3%80%81%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8)
     - [61、【译】Node.js 子进程：你需要知道的一切](https://mp.weixin.qq.com/s/6reZnrYaD-1BZ50nwWYS3g)
     - [62、yargs the modern, pirate-themed successor to optimist.](https://github.com/yargs/yargs)
+    - [localForage: 本地存储解决方案](https://github.com/localForage/localForage)
     
     
 - 其他优秀技术文章与前沿技术收集
@@ -491,6 +492,7 @@
     - [rap2-docker](https://github.com/Rynxiao/rap2-docker)
     - [一起学习造轮子系列文章及源码](https://github.com/JOE-XIE/MyWheel)
     - [基于Node.js+MySQL开发的开源微信小程序商城](https://github.com/tumobi/nideshop-mini-program)
+    - [nestjs-realworld-example-app:nest+typeorm](https://github.com/lujakob/nestjs-realworld-example-app)
 
 
 ### <div id="class09">年度计划和日志目录</div>
