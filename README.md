@@ -250,6 +250,7 @@
     - [53、点击链接下载图片研究](./19年/03月/06、点击链接下载的研究)
     - [54、thumbStyle](./19年/04月/03、thumbStyle/styleToCssString.js)
     - [55、纯 CSS 实现多行文字截断](./19年/04月/04、纯%20CSS%20实现多行文字截断)
+    - [56、微信小程序 - 扩展插件（发送请求、Promise API、表单验证、Restful API）](https://github.com/skyvow/wx-extend)
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
@@ -497,6 +498,9 @@
     - [一起学习造轮子系列文章及源码](https://github.com/JOE-XIE/MyWheel)
     - [基于Node.js+MySQL开发的开源微信小程序商城](https://github.com/tumobi/nideshop-mini-program)
     - [nestjs-realworld-example-app:nest+typeorm](https://github.com/lujakob/nestjs-realworld-example-app)
+    - [一个完整electron桌面记账程序](https://github.com/hilanmiao/LanMiaoDesktop)
+    - [基于 React Hooks 与 flex 布局，实现了大部分功能的思维导图](https://github.com/Mongkii/RMind)
+    
 
 
 ### <div id="class09">年度计划和日志目录</div>
