@@ -336,6 +336,9 @@ type代表某次提交的类型，比如是修复一个bug还是增加一个新�
 #### 文件暂存
 - [Git 工具 - 储藏（Stashing）](https://git-scm.com/book/zh/v1/Git-工具-储藏（Stashing）)
 
+#### 更改remote
+`git remote set-url origin XXXXXXX`
+
 
 ### git 命令终极文档
 - [Git Community Book 中文版](http://gitbook.liuhui998.com/index.html)
