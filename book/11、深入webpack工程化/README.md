@@ -55,8 +55,12 @@
     - [学习webpack4.0的最新配置语法和新特性](https://github.com/wlx200510/webpack4.x-learn)
     - [Demos && Courses for Webpack 4](https://github.com/dongyuanxin/webpack-demos)
     - [tsx+webpack4](https://github.com/cli-template-build/tsx-app)
+
     
-    
+- webpack插件和loader开发
+    - [npm link的使用](https://www.jianshu.com/p/aaa7db89a5b2)
+    - [巧用 webpack loader 实现项目的定制化](https://www.jqhtml.com/44792.html)
+    - [深入Webpack-编写Loader](https://segmentfault.com/a/1190000012718374)
 
 
 ## 遗留问题待解决              
