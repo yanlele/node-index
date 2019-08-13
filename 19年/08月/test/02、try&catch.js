@@ -4,7 +4,9 @@ const myFunc = new Promise((resolve, reject) => {
     const b = 2;
 
     if (a + b === 4) {
-      resolve(a + b)
+      return resolve(a + b)
+    } else {
+      return reject('false')
     }
     throw new Error('错误了');
 
@@ -20,3 +22,14 @@ result.then((res)=> {
 }).catch(()=> {
   console.log('promise cache error');
 });
+
+
+const resultFunction = async() => myFunc;
+const run = async () => {
+  const result = await resultFunction();
+  console.log(`<${'='.repeat(50)}${'='.repeat(50)}>`);
+  console.log(result);
+  console.log(`<${'='.repeat(50)}${'='.repeat(50)}>`);
+};
+
+run();
