@@ -78,6 +78,10 @@
 - 其他
     - [01、FE-interview](https://github.com/qiu-deqing/FE-interview)
     - [02、Weekly-FE-Interview](https://github.com/airuikun/Weekly-FE-Interview)
+    - [03、夯实JS主要知识点](https://juejin.im/post/5d54e78be51d4561b072dce6#6)
+    - [04、高频 JavaScript](https://juejin.im/post/5d51e16d6fb9a06ae17d6bbc#heading-14)
+    - [05、Promise 中的三兄弟 .all(), .race(), .allSettled()](https://juejin.im/post/5d534ff16fb9a06b1027209c)
+    - [06、5个 JS 解构有趣的用途](https://juejin.im/post/5d5f29dde51d456216553519)
     
     
     

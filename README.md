@@ -251,6 +251,13 @@
     - [54、thumbStyle](./19年/04月/03、thumbStyle/styleToCssString.js)
     - [55、纯 CSS 实现多行文字截断](./19年/04月/04、纯%20CSS%20实现多行文字截断)
     - [56、微信小程序 - 扩展插件（发送请求、Promise API、表单验证、Restful API）](https://github.com/skyvow/wx-extend)
+    - [57、实现js熔断机制](https://juejin.im/post/5d5c941e6fb9a06b28635429)
+    - [58、一个合格(优秀)的前端都应该阅读这些文章](https://juejin.im/post/5d387f696fb9a07eeb13ea60)
+    - [59、前端进阶必备，github 优质资源整理分享！](https://juejin.im/post/5d3edad9f265da03a652f133)
+    - [60、实现一个掘金Style的文章编辑器](https://juejin.im/post/5d5cd37ff265da0391351965#heading-7)
+    - [61、讲道理，仅3行核心css代码的rate评分组件](https://juejin.im/post/5d57adf5f265da03e3697e1b)
+    - [你未必知道的49个CSS知识点](https://juejin.im/post/5d3eca78e51d4561cb5dde12#heading-37)
+
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
@@ -422,6 +429,12 @@
     - [61、【译】Node.js 子进程：你需要知道的一切](https://mp.weixin.qq.com/s/6reZnrYaD-1BZ50nwWYS3g)
     - [62、yargs the modern, pirate-themed successor to optimist.](https://github.com/yargs/yargs)
     - [63、localForage: 本地存储解决方案](https://github.com/localForage/localForage)
+    - [64、写一个 JS 调用栈可视化工具 hound-trace](https://juejin.im/post/5d555ca851882554a13f7cad)
+    - [65、一步步带你实现web全景看房——three.js](https://juejin.im/post/5d57967a6fb9a06b017e4b62)
+    - [66、前端该如何准备数据结构和算法？](https://juejin.im/post/5d5b307b5188253da24d3cd1)
+    - [67、GraphQL + Apollo + Vue 牛刀小试](https://juejin.im/post/5cecc597e51d454fbe24a61a)
+    - [68、apollo-graphql 自己使用的一点姿势](https://juejin.im/post/5ca2bd5c51882543e4506fbf)
+
     
     
 - 其他优秀技术文章与前沿技术收集
@@ -440,6 +453,8 @@
         - [forthealllight博客：关于react、js、node、Three.js](https://github.com/forthealllight/blog)
         - [hoperyy/blog:各种文章累心过得收集](https://github.com/hoperyy/blog)
         - [言川的博客](https://github.com/lihongxun945/myblog)
+        - [xiaozhi的博客](https://github.com/qq449245884/xiaozhi)
+        - [alienzhou/blog](https://github.com/alienzhou/blog)
     
     - 文章部分
         - [node-interview](https://github.com/ElemeFE/node-interview/tree/master/sections/zh-cn)
@@ -509,6 +524,7 @@
     - [一个完整electron桌面记账程序](https://github.com/hilanmiao/LanMiaoDesktop)
     - [基于 React Hooks 与 flex 布局，实现了大部分功能的思维导图](https://github.com/Mongkii/RMind)
     - [基于storage开发缓存库 - 源码研究](https://github.com/myronliu347/store.js)
+    - [使用nodejs和react做的简易聊天室](https://juejin.im/post/5d5661b3f265da039e12b7d2)
     
 
 
