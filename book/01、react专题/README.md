@@ -48,4 +48,5 @@
 - [2019年了，整理了N个实用案例帮你快速迁移到React Hooks(收藏慢慢看系列) *****](https://juejin.im/post/5d594ea5518825041301bbcb)
 - [Ajax,jQuery ajax,axios和fetch介绍、区别以及优缺点](https://juejin.im/post/5d5e673ff265da03d2114646)
 - [require时，exports和module.exports的区别你真的懂吗？](https://juejin.im/post/5d5639c7e51d453b5c1218b4)
+- [2019年17道高频React面试题及详解](https://juejin.im/post/5d5f44dae51d4561df7805b4)
 
