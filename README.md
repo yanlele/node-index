@@ -259,7 +259,8 @@
     - [62、你未必知道的49个CSS知识点](https://juejin.im/post/5d3eca78e51d4561cb5dde12#heading-37)
     - [63、你为什么这么强，什么都敢盘（reduce）](https://juejin.im/post/5d60353f5188253f64390b7d)
     - [64、基于 HTML5 Canvas 的拓扑组件开发](https://juejin.im/post/5d631a246fb9a06b2e3cff04)
-    - [灵活运用CSS开发技巧(66个实用技巧，值得收藏)](https://juejin.im/post/5d4d0ec651882549594e7293)
+    - [65、灵活运用CSS开发技巧(66个实用技巧，值得收藏)](https://juejin.im/post/5d4d0ec651882549594e7293)
+    - [66、如何避开JavaScript浮点数计算精度问题（如0.1+0.2!==0.3）](https://blog.csdn.net/u013347241/article/details/79210840)
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
@@ -346,6 +347,7 @@
     - [60、Git中tag标签的使用](https://blog.csdn.net/wei78008023/article/details/81866590)
     - [61、这些Web API真的有用吗?](https://juejin.im/post/5d5df391e51d453b1e478ad0)
     - [62、typescript 类型映射 （ReadOnly、Partial）](https://blog.csdn.net/qq_30101131/article/details/83214295)
+    - [63、Ant Design中使用CodeMirror2代码编辑器](https://www.jianshu.com/p/4d5ef6808da7)
 
     
 
