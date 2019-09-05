@@ -5,7 +5,7 @@
     npm install react-router-dom --save     
     或者： yarn add react-router-dom
 
-> 1. 基本使用 
+### 1. 基本使用 
 
 ```jsx harmony
 import React from 'react'
@@ -52,7 +52,7 @@ ReactDom.render(
 );
 ```
 
-> 2. 整合reducers
+### 2. 整合reducers
     
 建立reducer.js文件，代码如下：
 ```jsx harmony
@@ -67,7 +67,7 @@ export default combineReducers({counter,auth})
 
 - [react-router4与合并reducers示例](../../../17年/12月/12、react-router4与合并reducers示例)
 
-> 3. 关于this.props.match.params的使用        
+### 3. 关于this.props.match.params的使用        
 
 这个是获取router/:id 的参数的
 例如如下：
@@ -125,4 +125,92 @@ class Page extends React.Component{
 }
 
 export default Page
+```
+
+
+### 4.路由跳转   
+```jsx harmony
+import React, {FunctionComponent, useState} from 'react';
+import {connect} from 'react-redux';
+import {Layout, List, Card} from 'antd';
+import {History, Location} from 'history';
+import {parse} from 'querystring';
+import {Link} from 'react-router-dom';
+
+const {Header, Content} = Layout;
+const {Item: ListItem} = List;
+
+interface HomeContainerProps {
+  history: History;
+  location: Location;
+}
+
+interface ListRouter {
+  title: string,
+  pathname: string,
+  routerItems: { name: string, search: string }[],
+}
+
+const HomeContainer: FunctionComponent<HomeContainerProps> = (props) => {
+  const {history, location} = props;
+
+  console.log(location);  
+  console.log(parse(location.search.slice(1))); // 用于解析query 参数
+
+  const [listRouter] = useState<ListRouter[]>([
+    {
+      title: '数据与选择集',
+      pathname: '/select-data/',
+      routerItems: [
+        {
+          name: 'demo1',
+          search: 'name=demo1',
+        },
+        {
+          name: 'demo2',
+          search: 'name=demo2',
+        },
+      ],
+    },
+  ]);
+
+  return (
+    <Layout style={{backgroundColor: '#fff'}}>
+      <Header style={{background: '#fff'}}>
+        <h1>D3 </h1>
+      </Header>
+
+      <Content style={{margin: '20px'}}>
+        <List
+          grid={{gutter: 16, column: 4}}
+          dataSource={listRouter}
+          renderItem={item => (
+            <ListItem
+              // onClick={() => history.push({
+              //   pathname: '/select-data/',
+              //   search: 'name=yanle',
+              // })}
+            >
+              <Card title={item.title}>
+                <List
+                  dataSource={item.routerItems}
+                  renderItem={listItem => (
+                    <ListItem>
+                      <Link to={{
+                        pathname: item.pathname,
+                        search: listItem.search,
+                      }}>{listItem.name}</Link>
+                    </ListItem>
+                  )}
+                />
+              </Card>
+            </ListItem>
+          )}
+        />
+      </Content>
+    </Layout>
+  );
+};
+
+export default connect()(HomeContainer);
 ```
