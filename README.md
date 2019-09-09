@@ -348,6 +348,7 @@
     - [61、这些Web API真的有用吗?](https://juejin.im/post/5d5df391e51d453b1e478ad0)
     - [62、typescript 类型映射 （ReadOnly、Partial）](https://blog.csdn.net/qq_30101131/article/details/83214295)
     - [63、Ant Design中使用CodeMirror2代码编辑器](https://www.jianshu.com/p/4d5ef6808da7)
+    - [64、Ajax,jQuery ajax,axios和fetch介绍、区别以及优缺点](https://juejin.im/post/5d5e673ff265da03d2114646)
 
     
 
@@ -440,6 +441,7 @@
     - [66、前端该如何准备数据结构和算法？](https://juejin.im/post/5d5b307b5188253da24d3cd1)
     - [67、GraphQL + Apollo + Vue 牛刀小试](https://juejin.im/post/5cecc597e51d454fbe24a61a)
     - [68、apollo-graphql 自己使用的一点姿势](https://juejin.im/post/5ca2bd5c51882543e4506fbf)
+    - [69、require时，exports和module.exports的区别你真的懂吗？](https://juejin.im/post/5d5639c7e51d453b5c1218b4)
 
     
     
