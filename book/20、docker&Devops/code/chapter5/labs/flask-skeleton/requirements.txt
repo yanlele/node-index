@@ -4,7 +4,7 @@ blinker==1.4
 cffi==1.7.0
 click==6.6
 dominate==2.2.1
-Flask==0.10.1
+Flask==1.0
 Flask-Bcrypt==0.7.1
 Flask-Bootstrap==3.3.6.0
 Flask-DebugToolbar==0.10.0
