@@ -47,15 +47,18 @@
     - [webpack 中那些最易混淆的 5 个知识点](https://juejin.im/post/5cede821f265da1bbd4b5630)
 
 
-- 其他补充知识点或者实战案例
-    - [01、从零搭建React全家桶框架教程](https://github.com/brickspert/blog/issues/1)
-    - [02、配置一套属于自己的React项目的webpack配置](https://github.com/heyushuo/Webpack-React)
-    - [03、从零开始配置TypeScript + React + React-Router + Redux + Webpack开发环境](https://www.cnblogs.com/baqiphp/p/7647912.html)
-    - [04、webpack4系列中文教程和配套代码](https://github.com/dongyuanxin/webpack-demos)
-    - [学习webpack4.0的最新配置语法和新特性](https://github.com/wlx200510/webpack4.x-learn)
+- 实战案例
+    - [从零搭建React全家桶框架教程](https://github.com/brickspert/blog/issues/1)
+    - [配置一套属于自己的React项目的webpack配置](https://github.com/heyushuo/Webpack-React)
+    - [从零开始配置TypeScript + React + React-Router + Redux + Webpack开发环境](https://www.cnblogs.com/baqiphp/p/7647912.html)
     - [Demos && Courses for Webpack 4](https://github.com/dongyuanxin/webpack-demos)
     - [tsx+webpack4](https://github.com/cli-template-build/tsx-app)
+
+- 其他补充知识点
+    - [webpack4系列中文教程和配套代码](https://github.com/dongyuanxin/webpack-demos)
+    - [学习webpack4.0的最新配置语法和新特性](https://github.com/wlx200510/webpack4.x-learn)
     - [Webpack-dev-server的proxy用法](https://www.jianshu.com/p/f489e7764cb8)
+    - [babel-polyfill的几种使用方法](https://blog.csdn.net/weixin_41224029/article/details/90213067)
 
     
 - webpack插件和loader开发
