@@ -261,6 +261,7 @@
     - [64、基于 HTML5 Canvas 的拓扑组件开发](https://juejin.im/post/5d631a246fb9a06b2e3cff04)
     - [65、灵活运用CSS开发技巧(66个实用技巧，值得收藏)](https://juejin.im/post/5d4d0ec651882549594e7293)
     - [66、如何避开JavaScript浮点数计算精度问题（如0.1+0.2!==0.3）](https://blog.csdn.net/u013347241/article/details/79210840)
+    - [67、手写算法并记住它：快速排序（5行代码简单版）](https://juejin.im/post/5d75b4d45188250c992d5919)
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
@@ -349,6 +350,7 @@
     - [62、typescript 类型映射 （ReadOnly、Partial）](https://blog.csdn.net/qq_30101131/article/details/83214295)
     - [63、Ant Design中使用CodeMirror2代码编辑器](https://www.jianshu.com/p/4d5ef6808da7)
     - [64、Ajax,jQuery ajax,axios和fetch介绍、区别以及优缺点](https://juejin.im/post/5d5e673ff265da03d2114646)
+    - [65、高性能渲染十万条数据](https://juejin.im/post/5d76f469f265da039a28aff7)
 
     
 
@@ -442,6 +444,7 @@
     - [67、GraphQL + Apollo + Vue 牛刀小试](https://juejin.im/post/5cecc597e51d454fbe24a61a)
     - [68、apollo-graphql 自己使用的一点姿势](https://juejin.im/post/5ca2bd5c51882543e4506fbf)
     - [69、require时，exports和module.exports的区别你真的懂吗？](https://juejin.im/post/5d5639c7e51d453b5c1218b4)
+    - [70、5分钟教你用nodeJS手写一个mock数据服务器](https://juejin.im/post/5d7345bce51d453b76258503)
 
     
     

@@ -55,6 +55,7 @@
     - [学习webpack4.0的最新配置语法和新特性](https://github.com/wlx200510/webpack4.x-learn)
     - [Demos && Courses for Webpack 4](https://github.com/dongyuanxin/webpack-demos)
     - [tsx+webpack4](https://github.com/cli-template-build/tsx-app)
+    - [Webpack-dev-server的proxy用法](https://www.jianshu.com/p/f489e7764cb8)
 
     
 - webpack插件和loader开发
