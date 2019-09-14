@@ -45,6 +45,7 @@
 - webpack优化问题
     - [图片处理](./05、webpack优化问题/01、图片处理.md)
     - [webpack 中那些最易混淆的 5 个知识点](https://juejin.im/post/5cede821f265da1bbd4b5630)
+    - [pre-commit限制提交检测](./05、webpack优化问题/02、pre-commit限制提交检测.md)
 
 
 - 实战案例
