@@ -47,7 +47,11 @@ package
 ```
 
 
-
+### 参考文章
+- [husky+ prettier + commitlint 提交前代码检查和提交信息规范](https://www.cnblogs.com/detanx/p/codeFormat.html)
+- [使用Prettier和Eslint格式化(修复)代码](https://www.petershi.net/archives/2594)
+- [使用Prettier来自动格式化项目的提交代码](http://ju.outofmemory.cn/entry/335890)
+- [vscode从听说到使用，vetur，prettier，htmljscssPrettify踩坑指南](https://blog.csdn.net/sisierda/article/details/79405240)
 
 
 
