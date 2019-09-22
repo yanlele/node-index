@@ -256,8 +256,12 @@
     - [59、前端进阶必备，github 优质资源整理分享！](https://juejin.im/post/5d3edad9f265da03a652f133)
     - [60、实现一个掘金Style的文章编辑器](https://juejin.im/post/5d5cd37ff265da0391351965#heading-7)
     - [61、讲道理，仅3行核心css代码的rate评分组件](https://juejin.im/post/5d57adf5f265da03e3697e1b)
-    - [你未必知道的49个CSS知识点](https://juejin.im/post/5d3eca78e51d4561cb5dde12#heading-37)
-
+    - [62、你未必知道的49个CSS知识点](https://juejin.im/post/5d3eca78e51d4561cb5dde12#heading-37)
+    - [63、你为什么这么强，什么都敢盘（reduce）](https://juejin.im/post/5d60353f5188253f64390b7d)
+    - [64、基于 HTML5 Canvas 的拓扑组件开发](https://juejin.im/post/5d631a246fb9a06b2e3cff04)
+    - [65、灵活运用CSS开发技巧(66个实用技巧，值得收藏)](https://juejin.im/post/5d4d0ec651882549594e7293)
+    - [66、如何避开JavaScript浮点数计算精度问题（如0.1+0.2!==0.3）](https://blog.csdn.net/u013347241/article/details/79210840)
+    - [67、手写算法并记住它：快速排序（5行代码简单版）](https://juejin.im/post/5d75b4d45188250c992d5919)
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
@@ -342,6 +346,11 @@
     - [58、react源码分析(3)：react的事件委托机制](https://www.jianshu.com/p/b249793fd2a7)
     - [59、基于storage开发缓存库 - 源码研究](https://github.com/myronliu347/store.js)
     - [60、Git中tag标签的使用](https://blog.csdn.net/wei78008023/article/details/81866590)
+    - [61、这些Web API真的有用吗?](https://juejin.im/post/5d5df391e51d453b1e478ad0)
+    - [62、typescript 类型映射 （ReadOnly、Partial）](https://blog.csdn.net/qq_30101131/article/details/83214295)
+    - [63、Ant Design中使用CodeMirror2代码编辑器](https://www.jianshu.com/p/4d5ef6808da7)
+    - [64、Ajax,jQuery ajax,axios和fetch介绍、区别以及优缺点](https://juejin.im/post/5d5e673ff265da03d2114646)
+    - [65、高性能渲染十万条数据](https://juejin.im/post/5d76f469f265da039a28aff7)
 
     
 
@@ -434,6 +443,8 @@
     - [66、前端该如何准备数据结构和算法？](https://juejin.im/post/5d5b307b5188253da24d3cd1)
     - [67、GraphQL + Apollo + Vue 牛刀小试](https://juejin.im/post/5cecc597e51d454fbe24a61a)
     - [68、apollo-graphql 自己使用的一点姿势](https://juejin.im/post/5ca2bd5c51882543e4506fbf)
+    - [69、require时，exports和module.exports的区别你真的懂吗？](https://juejin.im/post/5d5639c7e51d453b5c1218b4)
+    - [70、5分钟教你用nodeJS手写一个mock数据服务器](https://juejin.im/post/5d7345bce51d453b76258503)
 
     
     
@@ -491,6 +502,7 @@
         - [从浏览器渲染原理，说一说如何实现高效的动画](https://juejin.im/post/5d2491ba6fb9a07ecf724b69)
         - [react源码分析(3)：react的事件委托机制](https://www.jianshu.com/p/b249793fd2a7)
         - [Git中tag标签的使用](https://blog.csdn.net/wei78008023/article/details/81866590)
+        - [前端该如何准备数据结构和算法？](https://juejin.im/post/5d5b307b5188253da24d3cd1#heading-17)
         
     - 工具部分
         - [Spectacle allows you to organize your windows without using a mouse.](https://github.com/eczarny/spectacle)
