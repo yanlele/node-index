@@ -154,7 +154,7 @@ git whatchanged [file]
 
 显示两次提交之间的差异： `git diff [first-branch]...[second-branch]`
 
-显示今天提交了多少行代码： `git diff --shortstat "@{0 day ago}"`
+显示今天提交了多少行代码 - 代码统计： `git diff --shortstat "@{0 day ago}"`
 
 显示某次提交的元素数据和内容变化： `git show [commit]`
 
