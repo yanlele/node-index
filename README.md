@@ -118,7 +118,7 @@
 
 - [18、flutter 基础入门](./book/18、flutter%20基础入门)
 
-- [19、node爬虫](https://github.com/yanlele/node-spider)
+- [19、node爬虫](https://github.com/yanlele/node-index-core/tree/master/packages/spider)
 
 - [20、docker&DevOps](./book/20、docker&Devops)
 
