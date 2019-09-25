@@ -174,6 +174,10 @@ module.exports = {
 }
 ```
 
+这个地方也可以吧 `commit: 'git-cz'` 改为 `"commit": "commit"` 可以动态配置提交 `type-enum`
+
+
+
 ### 运行
 每次提交代码的时候， 直接 `yarn commit 就可以了`
 
