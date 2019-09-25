@@ -352,7 +352,8 @@
     - [64、Ajax,jQuery ajax,axios和fetch介绍、区别以及优缺点](https://juejin.im/post/5d5e673ff265da03d2114646)
     - [65、高性能渲染十万条数据](https://juejin.im/post/5d76f469f265da039a28aff7)
     - [67、使用husky、prettier、lint、commitlint构建规范化项目实践](./19年/09月/01、使用husky、prettier、lint、commitlint构建规范化项目实践/01、使用husky、prettier、lint、commitlint构建规范化项目实践.md)
-    - [68、在Typescript项目中，如何优雅的使用ESLint和Prettier](https://segmentfault.com/a/1190000019661168)
+    - [68、eslint检测TS项目](./19年/09月/02、eslint检测TS项目/02、eslint检测TS项目.md)
+    
 
     
 
