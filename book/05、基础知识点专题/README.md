@@ -82,6 +82,7 @@
     - [04、高频 JavaScript](https://juejin.im/post/5d51e16d6fb9a06ae17d6bbc#heading-14)
     - [05、Promise 中的三兄弟 .all(), .race(), .allSettled()](https://juejin.im/post/5d534ff16fb9a06b1027209c)
     - [06、5个 JS 解构有趣的用途](https://juejin.im/post/5d5f29dde51d456216553519)
+    - [一名【合格】前端工程师的自检清单](https://juejin.im/post/5cc1da82f265da036023b628)
     
     
     
