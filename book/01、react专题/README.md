@@ -52,3 +52,5 @@
 - [dva的dispatch回调，effects返回请求参数](https://blog.csdn.net/qq_36242361/article/details/82668024)
 - [dva中effect内调用另一个effect的,实现put阻塞式调用的方法](https://blog.csdn.net/deng1456694385/article/details/87867876)
 - [react在组件中触发子组件方法 以及触发兄弟组件](https://www.cnblogs.com/xiaoliwang/p/11237747.html)
+- [React16.3中的Refs和Forwarding Refs](https://blog.csdn.net/liwusen/article/details/80009968)
+- [React中获取DOM节点的两种方法](https://www.jianshu.com/p/f533a9d7645c)

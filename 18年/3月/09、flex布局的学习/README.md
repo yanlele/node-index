@@ -163,6 +163,10 @@ align-self属性允许单个项目有与其他项目不一样的对齐方式，�
 该属性可能取6个值，除了auto，其他都与align-items属性完全一致。
 
 
+### 参考文章
+- [lex 布局中固定宽度不起作用，被压缩了](https://www.jianshu.com/p/4a8825a17181)
+- [Flex弹性布局（附超Q小demo）](https://juejin.im/post/5cba07005188251b960f56eb)
+
 
 
 
