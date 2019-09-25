@@ -351,6 +351,7 @@
     - [63、Ant Design中使用CodeMirror2代码编辑器](https://www.jianshu.com/p/4d5ef6808da7)
     - [64、Ajax,jQuery ajax,axios和fetch介绍、区别以及优缺点](https://juejin.im/post/5d5e673ff265da03d2114646)
     - [65、高性能渲染十万条数据](https://juejin.im/post/5d76f469f265da039a28aff7)
+    - [67、使用husky、prettier、lint、commitlint构建规范化项目实践](./19年/09月/01、使用husky、prettier、lint、commitlint构建规范化项目实践/01、使用husky、prettier、lint、commitlint构建规范化项目实践.md)
 
     
 
