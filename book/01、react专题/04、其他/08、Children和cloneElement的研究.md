@@ -35,7 +35,7 @@ export default PropsChild;
 在父组件里面， 希望用 `{props.children}` 这样的渲染方式嵌套的子组件， 会存在一个问题， 如果我希望在父组件封装一些特化的逻辑， 
 然后再把传输传递给不同的子组件。 这个时候该如何处理呢？
 
-### 处理给children传递参数的方法
+### 处理给child传递参数的方法
 祭出大法 `React.cloneElement`                       
 直接上代码 `Parent.tsx`：                                       
 ```
@@ -76,6 +76,35 @@ export default Child;
 
 使用再上面那个例子里面。
 我们在子组件 `Child` 就能接受到 `Parent` 组件过来的参数了， 我们就可以在 `Parent` 组件做一些针对子主键特化的逻辑了。
+
+
+### 多个child组件传递参数场景
+问题： 如果 `Parent` 组件下面， 如果有多个子节点 `Child` 组件。 如果在我们子组件调用的时候要给子组件传递参数。                  
+而且也要在 `Parent` 处理特化逻辑之后， 在传递给 子组件 `Child`, 该如何处理？                       
+
+祭出大法： `React.Children`                      
+上代码`ParentChildren.tsx`                     
+```
+import React, { FC, Children as RChildren, cloneElement, ReactElement } from 'react';
+import { get } from 'lodash';
+
+const ParentChildren: FC = props => {
+  return (
+    <>
+      {RChildren.map(props.children, (child, index) => {
+        console.log('child.props inject', get(child, 'props'));
+        return cloneElement(child as ReactElement, {
+          index,
+        });
+      })}
+    </>
+  );
+};
+
+export default ParentChildren;
+```
+
+子组件代码和使用代码 如上                                   
 
 
 
