@@ -35,7 +35,7 @@ export default PropsChild;
 在父组件里面， 希望用 `{props.children}` 这样的渲染方式嵌套的子组件， 会存在一个问题， 如果我希望在父组件封装一些特化的逻辑， 
 然后再把传输传递给不同的子组件。 这个时候该如何处理呢？
 
-### 处理给child传递参数的方法
+### 处理给props.children传递参数的方法
 祭出大法 `React.cloneElement`                       
 直接上代码 `Parent.tsx`：                                       
 ```
@@ -77,6 +77,29 @@ export default Child;
 使用再上面那个例子里面。
 我们在子组件 `Child` 就能接受到 `Parent` 组件过来的参数了， 我们就可以在 `Parent` 组件做一些针对子主键特化的逻辑了。
 
+#### 大法`React.cloneElement`
+```
+React.cloneElement(
+  element,
+  [props],
+  [...children]
+)
+```
+
+**第一个参数：element**                       
+通常用的最多的是搭配React.Children.map和this.props.children使用，如下：                 
+```
+React.Children.map(props.children, child => {
+    return React.cloneElement(child, {...props}, children)
+})
+```
+
+注意点：               
+在使用 `React.cloneElement` 的时候， 第一个参数， 只能是一个节点元素， 不能大于1个， 一旦子元素数量大于1，type为undefined的React对象。
+所以使用的时候， 一定要判定 props.children 是否只有一个节点。 
+
+
+
 
 ### 多个child组件传递参数场景
 问题： 如果 `Parent` 组件下面， 如果有多个子节点 `Child` 组件。 如果在我们子组件调用的时候要给子组件传递参数。                  
@@ -106,6 +129,22 @@ export default ParentChildren;
 
 子组件代码和使用代码 如上                                   
 
+这样的写法， 就可以在父子主键嵌套调用的时候， 给子组件传递参数。 同事也能在父组件给子组件特化的逻辑。                        
+
+
+### ReactChildren
+`React.Children` 大法如何使用？                        
+
+先看看定义：                      
+```
+interface ReactChildren {
+    map<T, C>(children: C | C[], fn: (child: C, index: number) => T): T[];
+    forEach<C>(children: C | C[], fn: (child: C, index: number) => void): void;
+    count(children: any): number;
+    only<C>(children: C): C extends any[] ? never : C;
+    toArray<C>(children: C | C[]): C[];
+}
+```
 
 
 
