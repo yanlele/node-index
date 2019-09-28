@@ -23,10 +23,7 @@
 - [05、react portals](./04、其他/05、react%20portals.md)
 - [06、react16高级语法总结以及其他高级模块](./04、其他/06、react16高级语法总结以及其他高级模块.md)
 - [07、react16 hooks](./04、其他/07、react16%20hooks.md)
-- [this.props.children传值到子组件](https://www.jianshu.com/p/0127d5f662c0)
 - [TypeScript 中使用React Hook](https://www.jianshu.com/p/fa21a7d4a193)
-- [this.props.children和React.cloneElement](https://www.jianshu.com/p/a267c674ec7e)
-- [React.cloneElement](https://www.jianshu.com/p/2ccf0cd14388)
      
 
 ### 源码分析
