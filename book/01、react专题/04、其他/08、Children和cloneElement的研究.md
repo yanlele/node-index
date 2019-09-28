@@ -132,10 +132,10 @@ export default ParentChildren;
 这样的写法， 就可以在父子主键嵌套调用的时候， 给子组件传递参数。 同事也能在父组件给子组件特化的逻辑。                        
 
 
-### ReactChildren
+#### ReactChildren
 `React.Children` 大法如何使用？                        
 
-先看看定义：                      
+定义如下：                      
 ```
 interface ReactChildren {
     map<T, C>(children: C | C[], fn: (child: C, index: number) => T): T[];
@@ -151,9 +151,9 @@ interface ReactChildren {
 
 
 
-
 ### 参考文章
 
 - [this.props.children和React.cloneElement](https://www.jianshu.com/p/a267c674ec7e)
 - [React.cloneElement](https://www.jianshu.com/p/2ccf0cd14388)
 - [this.props.children传值到子组件](https://www.jianshu.com/p/0127d5f662c0)
+- [React.Children的用法](https://blog.csdn.net/uuihoo/article/details/79710318)
