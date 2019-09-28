@@ -25,6 +25,8 @@
 - [07、react16 hooks](./04、其他/07、react16%20hooks.md)
 - [this.props.children传值到子组件](https://www.jianshu.com/p/0127d5f662c0)
 - [TypeScript 中使用React Hook](https://www.jianshu.com/p/fa21a7d4a193)
+- [this.props.children和React.cloneElement](https://www.jianshu.com/p/a267c674ec7e)
+- [React.cloneElement](https://www.jianshu.com/p/2ccf0cd14388)
      
 
 ### 源码分析
@@ -49,7 +51,7 @@
 - [ReactRouter-V5](https://juejin.im/post/5d50dd4ff265da039a2879cd)
 - [使用 React Hooks + Context 打造简版 Redux](https://juejin.im/post/5d5501cd6fb9a06aee362a9d)
 - [2019年了，整理了N个实用案例帮你快速迁移到React Hooks(收藏慢慢看系列) *****](https://juejin.im/post/5d594ea5518825041301bbcb)
-- [看完这篇，你也能把 React Hooks 玩出花](https://juejin.im/post/5d754dbde51d4561cd2466bf#heading-18)
+- [看完这篇，你也能把 React Hooks 玩出花 **](https://juejin.im/post/5d754dbde51d4561cd2466bf#heading-18)
 - [2019年17道高频React面试题及详解](https://juejin.im/post/5d5f44dae51d4561df7805b4)
 - [React-classnames库](https://www.cnblogs.com/suihang/p/10417755.html)
 - [dva的dispatch回调，effects返回请求参数](https://blog.csdn.net/qq_36242361/article/details/82668024)
