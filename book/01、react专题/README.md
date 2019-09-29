@@ -25,6 +25,9 @@
 - [07、react16 hooks](./04、其他/07、react16%20hooks.md)
 - [Children和cloneElement的研究](./04、其他/08、Children和cloneElement的研究.md)
 - [TypeScript 中使用React Hook](https://www.jianshu.com/p/fa21a7d4a193)
+- [** 总结一下react16新特性](./04、其他/08、react新特性/08、react新特性.md)
+    - [01、Children和cloneElement的研究](./04、其他/08、react新特性/01、Children和cloneElement的研究/01、Children和cloneElement的研究.md)
+    
      
 
 ### 源码分析
