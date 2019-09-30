@@ -340,15 +340,15 @@ type代表某次提交的类型，比如是修复一个bug还是增加一个新�
 `git remote set-url origin XXXXXXX`
 
 
-### git 命令终极文档
+#### git 命令终极文档
 - [Git Community Book 中文版](http://gitbook.liuhui998.com/index.html)
 
 
-### 给已经存在的项目添加git
+#### 给已经存在的项目添加git
 - [给已经存在的项目添加git](https://www.jianshu.com/p/609756f76771)
 
 
-### 强行同步远端
+#### 强行同步远端
 git本地即使有修改如何强制更新：
 
 本地有修改和提交，如何强制用远程的库更新本地。我尝试过用git pull -f，总是提示 You have not concluded your merge. (MERGE_HEAD exists)。
