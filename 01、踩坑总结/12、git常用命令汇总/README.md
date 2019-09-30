@@ -346,3 +346,24 @@ type代表某次提交的类型，比如是修复一个bug还是增加一个新�
 
 ### 给已经存在的项目添加git
 - [给已经存在的项目添加git](https://www.jianshu.com/p/609756f76771)
+
+
+### 强行同步远端
+git本地即使有修改如何强制更新：
+
+本地有修改和提交，如何强制用远程的库更新本地。我尝试过用git pull -f，总是提示 You have not concluded your merge. (MERGE_HEAD exists)。
+
+我需要放弃本地的修改，用远程的库的内容就可以，应该如何做？傻傻地办法就是用心的目录重新clone一个，正确的做法是什么？
+
+正确的做法应该是：
+
+`git fetch --all`
+
+`git reset --hard origin/master // 远程分支名称`
+
+`git fetch`
+
+只是下载远程的库的内容，不做任何的合并git reset 把HEAD指向刚刚下载的最新的版本
+
+**其他办法**                        
+`git fetch -p`

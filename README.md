@@ -470,6 +470,7 @@
         - [xiaozhi的博客](https://github.com/qq449245884/xiaozhi)
         - [alienzhou/blog](https://github.com/alienzhou/blog)
         - [AnnVoV/blog](https://github.com/AnnVoV/blog/issues)
+        - [前端面试 | 设计模式手册 | Webpack4教程 | NodeJs实战 | Js版·剑指offer刷题笔记 ](https://github.com/dongyuanxin/blog)
     
     - 文章部分
         - [node-interview](https://github.com/ElemeFE/node-interview/tree/master/sections/zh-cn)

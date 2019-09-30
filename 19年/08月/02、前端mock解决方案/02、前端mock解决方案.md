@@ -11,10 +11,13 @@
 
 
 #### 配置和启动
+package.json
 ```json
 {
-    "mock": "json-server mock/mock.js --watch --port 8090",
-    "mockdev": "npm run mock & npm run dev"
+    "script": {
+        "mock": "json-server mock/mock.js --watch --port 8090",
+        "mockdev": "npm run mock & npm run dev"
+    }
 }
 ```
 
@@ -49,6 +52,49 @@ module.exports = function () {
 
 
 ### 2、利用dyson启动服务
+
+#### 安装依赖
+`npm install dyson --save-dev / yarn add dyson --dev`
+
+#### 配置项和启动
+
+Watch/auto-restart                          
+package.json
+```json
+{
+    "script": {
+        "mock": "npx nodemon --watch mocks --exec dyson mocks/ --config ./mocks/nodemon.config.json"
+    }
+}
+```
+
+mocks/nodemon.config.json                 
+这个配置是为了以外关闭导致端口占用之后无法启动 mock 服务
+```json
+{
+  "events": {
+    "restart": "kill -9 $(lsof -t :8000)"
+  }
+}
+```
+
+mocks/dyson.json
+```json
+{
+  "multiRequest": ",",
+  "proxy": true,
+  "proxyHost": "http://dyson.jit.su",
+  "proxyPort": 8080,
+  "proxyDelay": [200, 800]
+}
+```
+#### 具体使用可以看
+[https://github.com/webpro/dyson](https://github.com/webpro/dyson)
+
+
+**优点**：非常的强大， 扩展性高， 灵活性强                                
+非常推荐
+
 
 
 ### 3、利用webpack 插件启动mock 服务
