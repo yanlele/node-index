@@ -13,3 +13,4 @@
 - [https://docs.docker.com/](https://docs.docker.com/)
 - [https://hub.docker.com/](https://hub.docker.com/)
 - [使用docker-compose搭建gitlab](https://cnodejs.org/topic/5bb4caa69545eaf107b9c7e6)
+- [docker pull很慢解决办法](https://blog.csdn.net/julien71/article/details/79760919)
