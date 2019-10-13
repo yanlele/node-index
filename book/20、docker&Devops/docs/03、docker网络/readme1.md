@@ -51,7 +51,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 3688c4bbc164        busybox             "/bin/sh -c 'while t…"   17 seconds ago      Up 16 seconds                           test1
 ```
 
-通过交互式命令 进入到容器里面： `docker exec -it 3688c4bbc164 /bin/sh`                         
+通过交互式命令 进入到容器里面(进入容器内部、进入容器里面)： `docker exec -it 3688c4bbc164 /bin/sh`                         
 在容器里面就可以运行命令了。                      
 首先运行 `ip a / ip address`                    
 ```bash
