@@ -455,7 +455,9 @@
 
 
 - 杂项
-    
+    - [Hbase中多版本(version)数据获取办法](https://blog.csdn.net/liuchuanhong1/article/details/53895234/)
+    - [Docker上安装运行Hbase](https://blog.csdn.net/liuchuanhong1/article/details/53895234/)
+    - [HBase基本概念与基本使用](https://www.cnblogs.com/swordfall/p/8737328.html#auto_id_9)
     
     
 - 其他优秀技术文章与前沿技术收集
