@@ -262,6 +262,9 @@
     - [65、灵活运用CSS开发技巧(66个实用技巧，值得收藏)](https://juejin.im/post/5d4d0ec651882549594e7293)
     - [66、如何避开JavaScript浮点数计算精度问题（如0.1+0.2!==0.3）](https://blog.csdn.net/u013347241/article/details/79210840)
     - [67、手写算法并记住它：快速排序（5行代码简单版）](https://juejin.im/post/5d75b4d45188250c992d5919)
+    - [68、不受控制的 position:fixed](https://www.imooc.com/article/67784)
+    - [69、骚年，你确定没有人在折腾你的站点吗？](https://juejin.im/post/5da1329ce51d45783a772a11)
+    
 
 - vue
     - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
@@ -450,6 +453,9 @@
     - [69、require时，exports和module.exports的区别你真的懂吗？](https://juejin.im/post/5d5639c7e51d453b5c1218b4)
     - [70、5分钟教你用nodeJS手写一个mock数据服务器](https://juejin.im/post/5d7345bce51d453b76258503)
 
+
+- 杂项
+    
     
     
 - 其他优秀技术文章与前沿技术收集
