@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    @keyframes go {
+      0% {
+        background: green;
+      }
+      100% {
+        background: pink;
+      }
+    }
+
+    @-webkit-keyframes go {
+      0% {
+        background: green;
+      }
+      100% {
+        background: pink;
+      }
+    }
+
+    .box {
+      animation: go 3s forwards;
+      -webkit-animation: go 3s forwards;
+
+    }
+
+    .box:hover {
+      background: orange !important;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">Hover states don't work after animation</div>
+
+</body>
+</html>

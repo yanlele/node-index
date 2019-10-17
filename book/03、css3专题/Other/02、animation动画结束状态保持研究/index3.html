@@ -1,0 +1,64 @@
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+  <meta charset="utf-8">
+   
+  <meta name="author" content="@my_programmer">
+   
+  <title>webkitAnimationEnd</title> 
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+   
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+   
+  <meta name="format-detection" content="telephone=no"/>
+   
+  <style type="text/css">
+    #div {
+      width: 200px;
+      height: 200px;
+      background: #f60;
+      margin: 100px auto;
+      -webkit-transition: all ease 1s;
+    }
+
+    .change {
+      -webkit-animation: transform 1s ease;
+    }
+
+    @-webkit-keyframes transform {
+      10% {
+        -webkit-transform: scale(1)
+      }
+      20% {
+        -webkit-transform: scale(2)
+      }
+      60% {
+        -webkit-transform: scale(0.5)
+      }
+      100% {
+        -webkit-transform: scale(1)
+      }
+    }
+
+     
+  </style>
+   
+</head>
+ 
+<body> 
+<div id="div">12</div>
+ 
+<script type="text/javascript">
+  var tt = document.querySelector('#div');
+  tt.addEventListener("click", function () {
+    this.className = 'change';
+  }, false);
+  tt.addEventListener("webkitAnimationEnd", function () { //动画结束时事件 
+    this.className = this.className.replace('change', ' ');
+    console.log(2);
+  }, false);
+</script>
+ 
+</body>
+ 
+</html> 
