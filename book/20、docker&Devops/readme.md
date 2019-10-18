@@ -14,3 +14,7 @@
 - [https://hub.docker.com/](https://hub.docker.com/)
 - [使用docker-compose搭建gitlab](https://cnodejs.org/topic/5bb4caa69545eaf107b9c7e6)
 - [docker pull很慢解决办法](https://blog.csdn.net/julien71/article/details/79760919)
+- [vagrant系列(1)：使用vagrant在线／离线安装centos7](https://blog.csdn.net/yjk13703623757/article/details/70040797)
+- [vagrant系列(2)：使用Vagrantfile实现集成预安装](https://blog.csdn.net/yjk13703623757/article/details/70768981)
+- [vagrant系列(3)：搭建跨平台的项目开发环境](https://blog.csdn.net/yjk13703623757/article/details/70142324)
+- [Vagrant 入门指南](https://blog.csdn.net/qianghaohao/article/details/80038096)
