@@ -48,7 +48,6 @@
 
 
 ### <div id="class04">正在进行的个人项目 - 包含待研究的项目(进行中)</div>
-- [01、基于webpack3的前端工程自动化构建（实现可配置的jQuery、vue、react和全栈项目脚手架）](https://github.com/yanlele/le-cli)
 - [02、DoraCMS是基于Nodejs+express+mongodb编写的一套内容管理系统:DoraCMS](https://github.com/doramart/DoraCMS)
 - [03、基于react 高仿csdn博客后端](https://github.com/yanlele/react-blog-server)
 - [04、koa+TypeScript构建商城类项目服务端*****](https://github.com/yanlele/koa-typescript)
