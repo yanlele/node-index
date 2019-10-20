@@ -28,37 +28,35 @@
 
 
 ### <div id="class02">对别人项目的研究（详细阅读源码之后写下的一些笔记和项目注释-已完成）</div>                  
-- [01、express基本使用,包括注册,登陆,上传,下载,登录权限控制,session持久化,邮件发送,网络爬虫等](https://github.com/yanlele/express)
-- [02、基于webpack3多页面打包](https://github.com/yanlele/webpack-dev)
-- [03、基于node的博客（极其经典，技术UP）](https://github.com/yanlele/N-blog)
-- [04、一个完整的react+redux项目示例和人总结](https://github.com/bailicangdu/react-pxq)
-- [05、某博客知识点儿，写的很好，找个时间可以多学习一下](https://github.com/muwoo/blogs)
-- [06、cvms构建工具项目架构思路](./03、项目架构思路学习/01、CVMS构建工具项目架构思路.xmind)
+- [express基本使用,包括注册,登陆,上传,下载,登录权限控制,session持久化,邮件发送,网络爬虫等](https://github.com/yanlele/express)
+- [基于webpack3多页面打包](https://github.com/yanlele/webpack-dev)
+- [基于node的博客（极其经典，技术UP）](https://github.com/yanlele/N-blog)
+- [cvms构建工具项目架构思路](./03、项目架构思路学习/01、CVMS构建工具项目架构思路.xmind)
 
 
 ### <div id="class03">个人项目列表（已完成）</div>
-- [01、基于vue和express的一个小型电商全栈项目](https://github.com/yanlele/nodeMall)
-- [02、react新闻站项目pc+移动双端](https://github.com/yanlele/React-News)
-- [03、基于socket.IO 的一个较为复杂的项目案例，参考自《node.js实战》](https://github.com/yanlele/chatApplication)
-- [04、react实战项目实战一：基于socket.io和express的一个全栈项目](https://github.com/yanlele/ReactAppChatWork)
-- [05、基于vue的一些列vue全家桶的技术实现实例](https://github.com/yanlele/vueModel)
-- [06、webpack3的学习与代码示例](https://github.com/yanlele/webpack3Study)
-- [07、基于vue的移动端在线音乐播放器](https://github.com/yanlele/yanle-music)
-- [08、koa2的学习笔记项目demo](https://github.com/yanlele/koa-study)
+- [基于vue和express的一个小型电商全栈项目](https://github.com/yanlele/nodeMall)
+- [react新闻站项目pc+移动双端](https://github.com/yanlele/React-News)
+- [基于socket.IO 的一个较为复杂的项目案例，参考自《node.js实战》](https://github.com/yanlele/chatApplication)
+- [react实战项目实战一：基于socket.io和express的一个全栈项目](https://github.com/yanlele/ReactAppChatWork)
+- [基于vue的一些列vue全家桶的技术实现实例](https://github.com/yanlele/vueModel)
+- [webpack3的学习与代码示例](https://github.com/yanlele/webpack3Study)
+- [基于vue的移动端在线音乐播放器](https://github.com/yanlele/yanle-music)
+- [koa2的学习笔记项目demo](https://github.com/yanlele/koa-study)
 
 
 ### <div id="class04">正在进行的个人项目 - 包含待研究的项目(进行中)</div>
-- [02、DoraCMS是基于Nodejs+express+mongodb编写的一套内容管理系统:DoraCMS](https://github.com/doramart/DoraCMS)
-- [03、基于react 高仿csdn博客后端](https://github.com/yanlele/react-blog-server)
-- [04、koa+TypeScript构建商城类项目服务端*****](https://github.com/yanlele/koa-typescript)
-- [05、《Node.js从入门到上线》—— Koa2 + MongoDB 搭建博客系统](https://github.com/liuxing/node-blog)
-- [06、koa2构建工具koa2-starter-cli](https://github.com/liuxing/koa2-starter-cli)
-- [07、《Node.js入门教程》](https://github.com/liuxing/node-abc)
-- [08、canvas-test](https://github.com/whxaxes/canvas-test)
-- [09、超多经典 canvas 实例，动态离子背景、移动炫彩小球、贪吃蛇、坦克大战、是男人就下100层、心形文字等等等](https://github.com/bxm0927/canvas-special)
-- [10、一个基于Phaser的小游戏集合](https://github.com/channingbreeze/games)
-- [11、vue+koa2 实现一个简单电商网站](https://github.com/liutaochange/Vue-and-Koa2)
-- [12、基于vue2 + vue-router + vuex 构建的一个新闻类单页面应用 —— 今日头条（移动端）](https://github.com/uncleLian/vue2-news)
+- [DoraCMS是基于Nodejs+express+mongodb编写的一套内容管理系统:DoraCMS](https://github.com/doramart/DoraCMS)
+- [基于react 高仿csdn博客后端](https://github.com/yanlele/react-blog-server)
+- [koa+TypeScript构建商城类项目服务端*****](https://github.com/yanlele/koa-typescript)
+- [《Node.js从入门到上线》—— Koa2 + MongoDB 搭建博客系统](https://github.com/liuxing/node-blog)
+- [koa2构建工具koa2-starter-cli](https://github.com/liuxing/koa2-starter-cli)
+- [《Node.js入门教程》](https://github.com/liuxing/node-abc)
+- [canvas-test](https://github.com/whxaxes/canvas-test)
+- [超多经典 canvas 实例，动态离子背景、移动炫彩小球、贪吃蛇、坦克大战、是男人就下100层、心形文字等等等](https://github.com/bxm0927/canvas-special)
+- [一个基于Phaser的小游戏集合](https://github.com/channingbreeze/games)
+- [vue+koa2 实现一个简单电商网站](https://github.com/liutaochange/Vue-and-Koa2)
+- [基于vue2 + vue-router + vuex 构建的一个新闻类单页面应用 —— 今日头条（移动端）](https://github.com/uncleLian/vue2-news)
 
 
 ### <div id="class05">源码研究</div>
@@ -525,6 +523,8 @@
 
 
 - 值得好好学习的开源项目
+    - [一个完整的react+redux项目示例和人总结](https://github.com/bailicangdu/react-pxq)
+    - [某博客知识点儿，写的很好，找个时间可以多学习一下](https://github.com/muwoo/blogs)
     - [基于 node.js + Mongodb 构建的后台系统](https://github.com/bailicangdu/node-elm)
     - [react-redux-typescript-boilerplate](https://github.com/rokoroku/react-redux-typescript-boilerplate)
     - [react-webpack-typescript-starter](https://github.com/vikpe/react-webpack-typescript-starter)
