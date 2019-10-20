@@ -263,7 +263,7 @@
     - [67、手写算法并记住它：快速排序（5行代码简单版）](https://juejin.im/post/5d75b4d45188250c992d5919)
     - [68、不受控制的 position:fixed](https://www.imooc.com/article/67784)
     - [69、骚年，你确定没有人在折腾你的站点吗？](https://juejin.im/post/5da1329ce51d45783a772a11)
-    - [70、填坑-输入中文时，拼音阶段会触发input事件](https://lonhon.top/2017/10/09/problem-when-Chinese-input/)
+    - [70、填坑-输入中文时，拼音阶段会触发input事件](./19年/10月/03、填坑-输入中文时，拼音阶段会触发input事件/03、填坑-输入中文时，拼音阶段会触发input事件.md)
     
 
 - vue
