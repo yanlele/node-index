@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    #content1,
+    #content2 {
+      display: none;
+    }
+
+    #content1:target,
+    #content2:target {
+      display: block;
+    }
+
+    #content1:target .nav li:first-child {
+      background: #ff7300;
+      color: #fff;
+    }
+
+    #content2:target .nav li:last-child {
+      background: #ff7300;
+      color: #fff;
+    }
+  </style>
+  <title>CSS实现Tabs</title>
+</head>
+
+<body>
+  <div class="container">
+    <div id="content1" class="active">列表1内容:123456</div>
+    <div id="content2">列表2内容:abcdefgkijkl</div>
+
+    <ul class='nav'>
+      <li class="active"><a href="#content1">列表1</a></li>
+      <li><a href="#content2">列表2</a></li>
+    </ul>
+
+    <div class="wrap"></div>
+  </div>
+</body>
+
+</html>
