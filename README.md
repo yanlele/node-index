@@ -262,6 +262,7 @@
     - [68、不受控制的 position:fixed](https://www.imooc.com/article/67784)
     - [69、骚年，你确定没有人在折腾你的站点吗？](https://juejin.im/post/5da1329ce51d45783a772a11)
     - [70、填坑-输入中文时，拼音阶段会触发input事件](./19年/10月/03、填坑-输入中文时，拼音阶段会触发input事件/03、填坑-输入中文时，拼音阶段会触发input事件.md)
+    - [71、web-component](./19年/10月/04、webComponent/04、webComponent.md)
     
 
 - vue
