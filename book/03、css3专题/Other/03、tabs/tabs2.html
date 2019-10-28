@@ -1,12 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    .show {
+      display: block !important;
+    }
+
+    #container1,
+    #container2 {
+      display: none;
+    }
+
+    .content {
+      margin: 10px;
+      border: 1px solid springgreen;
+    }
+  </style>
+
   <title>Document</title>
 </head>
+
 <body>
-  
+  <li>
+    <a id='tabs1'>第1个tab</a>
+  </li>
+
+  <li>
+    <a id='tabs2'>第2个tab</a>
+  </li>
+
+  <div class="content">
+    <div id="container1">
+      我是tabs1 的内容
+    </div>
+
+    <div id="container2">
+      我是tabs2 的内容
+    </div>
+  </div>
+
 </body>
+
+
+<script>
+  let index = 1;
+
+  const tabs1 = document.querySelector("#tabs1");
+  const tabs2 = document.querySelector("#tabs2");
+
+  const container1 = document.querySelector("#container1");
+  const container2 = document.querySelector("#container2");
+
+  const content = document.querySelector(".content");
+  container1.setAttribute('class', 'show');
+
+  const handleClick = (index) => event => {
+    let container;
+
+    switch (index) {
+      case 2:
+        container = container2;
+        break;
+      case 1:
+      default:
+        container = container1;
+    }
+  
+    Array.from(content.children).map(item => item.setAttribute('class', null));
+    container.setAttribute('class', 'show');
+  }
+
+  tabs1.addEventListener('click', handleClick(1), false);
+  tabs2.addEventListener('click', handleClick(2), false);
+
+
+</script>
+
 </html>
