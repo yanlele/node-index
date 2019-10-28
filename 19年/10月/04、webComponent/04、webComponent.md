@@ -225,7 +225,37 @@ window.customElements.define('user-card', UserCard);
 ```
 
 
+### 七、Shadow DOM
+我们不希望用户能够看到`<user-card>`的内部代码，Web Component 允许内部代码隐藏起来，
+这叫做 Shadow DOM，即这部分 DOM 默认与外部 DOM 隔离，内部任何代码都无法影响外部。                     
+自定义元素的`this.attachShadow()`方法开启 Shadow DOM，详见下面的代码。                                 
+```js
+class UserCard extends HTMLElement {
+  constructor() {
+    super();
+    var shadow = this.attachShadow( { mode: 'closed' } );
 
+    var templateElem = document.getElementById('userCardTemplate');
+    var content = templateElem.content.cloneNode(true);
+    content.querySelector('img').setAttribute('src', this.getAttribute('image'));
+    content.querySelector('.container>.name').innerText = this.getAttribute('name');
+    content.querySelector('.container>.email').innerText = this.getAttribute('email');
+
+    shadow.appendChild(content);
+  }
+}
+window.customElements.define('user-card', UserCard);
+```
+
+### 八、组件的扩展
+#### （1）与用户互动                    
+用户卡片是一个静态组件，如果要与用户互动，也很简单，就是在类里面监听各种事件。
+```js
+this.$button = shadow.querySelector('button');
+this.$button.addEventListener('click', () => {
+  // do something
+})
+```
 
 
 
@@ -235,3 +265,4 @@ window.customElements.define('user-card', UserCard);
 
 ### 参考资料
 - [Web Components 入门实例教程](http://www.ruanyifeng.com/blog/2019/08/web_components.html)
+- [Web Components - MDN](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components)
