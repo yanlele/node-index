@@ -126,5 +126,7 @@ window.customElements.define('popup-info', PopUpInfo);
 否则this.getAttribute('属性名称')无法获取到值。
 
 
+### 参考文章
+- [https://developer.mozilla.org/zh-CN/docs/Web/Web_Components](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components)
 
 
