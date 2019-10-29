@@ -8,6 +8,8 @@ Web Components旨在解决这些问题 — 它由三项主要技术组成，它�
 
 
 ### 使用 custom elements
+
+#### 概述
 CustomElementRegistry.define() 方法用来注册一个 custom element，该方法接受以下参数：                       
 - 表示所创建的元素名称的符合 DOMString 标准的字符串。注意，custom element 的名称不能是单个单词，且其中必须要有短横线。
 - 用于定义元素行为的 类 。
@@ -28,5 +30,17 @@ class WordCount extends HTMLParagraphElement {
   }
 }
 ```
+
+共有两种 custom elements：                                               
+`Autonomous custom elements` 是独立的元素，它不继承其他内建的HTML元素。
+你可以直接把它们写成HTML标签的形式，来在页面上使用。
+例如 `<popup-info>`，或者是`document.createElement("popup-info")`这样。
+
+`Customized built-in elements` 继承自基本的HTML元素。
+在创建时，你必须指定所需扩展的元素（正如上面例子所示），使用时，需要先写出基本的元素标签，
+并通过 is 属性指定custom element的名称。
+例如`<p is="word-count">`, 或者 `document.createElement("p", { is: "word-count" })`。
+
+
 
 
