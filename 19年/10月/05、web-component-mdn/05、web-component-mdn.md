@@ -42,5 +42,89 @@ class WordCount extends HTMLParagraphElement {
 例如`<p is="word-count">`, 或者 `document.createElement("p", { is: "word-count" })`。
 
 
+#### 示例
+让我们来看几个简单示例，来了解如何创建 custom elements。                                        
+
+**Autonomous custom elements**                              
+一个关于 autonomous custom element的例子。
+它包含有一个图标和一段文字，并且图标显示在页面上。在这个图标获取焦点时，它会显示一个包含该段文字的信息框，用于展示更多的信息。
+```js
+class PopUpInfo extends HTMLElement {
+  constructor() {
+    // 必须首先调用 super方法 
+    super(); 
+
+    // 元素的功能代码写在这里
+
+    ...
+  }
+}
+```
+
+在构造函数中，我们会定义元素实例所拥有的全部功能。                   
+```js
+class PopUpInfo extends HTMLElement {
+  constructor() {
+    super();
+
+    // 创建一个 shadow root
+    const shadow = this.attachShadow({mode: 'open'});
+
+    // 创建一个span
+    const wrapper = document.createElement('span');
+    wrapper.setAttribute('class', 'wrapper');
+
+    const icon = document.createElement('span');
+    icon.setAttribute('class', 'icon');
+    icon.setAttribute('tabindex', '0');
+
+    const info = document.createElement('span');
+    info.setAttribute('class', info);
+
+    // 获取 text 属性上面的内容， 添加到一个 span 标签内
+    info.textContent = this.getAttribute('text');
+
+    // 插入icon
+    let imageUrl;
+    if (this.hasAttribute('img')) {
+      imageUrl = this.getAttribute('img')
+    } else {
+      imageUrl = 'img/default.png'
+    }
+
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    icon.appendChild(img);
+
+    // 创建css
+    const style = document.createElement('style');
+
+    style.textContent = ''; // 省略了
+
+    shadow.appendChild(style);
+    shadow.appendChild(wrapper);
+    shadow.appendChild(icon);
+    shadow.appendChild(info);
+  }
+}
+
+window.customElements.define('popup-info', PopUpInfo);
+```
+
+
+现在我们可以在页面上使用我们定义的custom element了，就像下面这样                     
+```html
+<popup-info 
+    img="img/alt.png" 
+    text="Your card validation code (CVC)
+      is an extra security feature — it is the last 3 or 4 numbers on the
+      back of your card."
+    >
+```
+
+`customElements.define()`必须在js文件中调用，且引用此js文件时必须在script标签上添加defer属性，
+否则this.getAttribute('属性名称')无法获取到值。
+
+
 
 
