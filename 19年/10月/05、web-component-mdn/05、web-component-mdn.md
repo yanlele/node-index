@@ -126,6 +126,45 @@ window.customElements.define('popup-info', PopUpInfo);
 否则this.getAttribute('属性名称')无法获取到值。
 
 
+**Customized built-in elements**
+
+现在让我们来看一下另一个有关customized built in element（自定义内置元素）                          
+该示例将所有的无序列表转化为一个可收起/展开的菜单。
+
+首先，我们定义一个元素的类，这和之前一样：
+```js
+class ExpandingList extends HTMLUListElement {
+  constructor() {
+    // 必须首先调用 super方法 
+    super();
+
+    // 元素的功能代码写在这里
+
+    ...
+  }
+}
+```
+
+元素继承的是HTMLUListElement 接口，而不是HTMLElement。
+所以它拥有<ul> 元素所有的特性，以及在此基础上我们定义的功能，这是与独立元素（standalone element）不同之处。
+这也是为什么我们称它为 customized built-in元素，而不是一个autonomous元素。
+
+`customElements.define('expanding-list', ExpandingList, { extends: "ul" });`                
+
+在页面上使用 built-in element看起来也会有所不同：                   
+```html
+<ul is="expanding-list">
+  ...
+</ul>
+```
+
+你可以正常使用<ul>标签，也可以通过is属性来指定一个custom element的名称。
+
+
+
+
+
+
 ### 参考文章
 - [https://developer.mozilla.org/zh-CN/docs/Web/Web_Components](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components)
 
