@@ -125,6 +125,8 @@ window.customElements.define('popup-info', PopUpInfo);
 `customElements.define()`必须在js文件中调用，且引用此js文件时必须在script标签上添加defer属性，
 否则this.getAttribute('属性名称')无法获取到值。
 
+- [demo1](./demo1/index.js)
+
 
 **Customized built-in elements**
 
@@ -160,6 +162,84 @@ class ExpandingList extends HTMLUListElement {
 
 你可以正常使用<ul>标签，也可以通过is属性来指定一个custom element的名称。
 
+
+#### 使用生命周期回调函数
+- `connectedCallback`：当 custom element首次被插入文档DOM时，被调用。
+- `disconnectedCallback`：当 custom element从文档DOM中删除时，被调用。
+- `adoptedCallback`：当 custom element被移动到新的文档时，被调用。
+- `attributeChangedCallback`: 当 custom element增加、删除、修改自身属性时，被调用。
+
+
+我们来看一下它们的一下用法示例。
+这个简单示例只是生成特定大小、颜色的方块。custom element看起来像下面这样：
+```html
+<custom-square l="100" c="red"></custom-square>
+```
+
+这里，类的构造函数很简单 — 我们将 shadow DOM附加到元素上，然后将一个<div>元素和<style>元素附加到 shadow root上：
+```js
+var shadow = this.attachShadow({mode: 'open'});
+
+var div = document.createElement('div');
+var style = document.createElement('style');
+shadow.appendChild(style);
+shadow.appendChild(div);
+```
+
+示例中的关键函数是 updateStyle()—它接受一个元素作为参数，然后获取该元素的shadow root，
+找到<style>元素，并添加width，height以及background-color样式。
+```js
+function updateStyle(elem) {
+  var shadow = elem.shadowRoot;
+  var childNodes = shadow.childNodes;
+  for(var i = 0; i < childNodes.length; i++) {
+    if(childNodes[i].nodeName === 'STYLE') {
+      childNodes[i].textContent = 'div {' +
+                          ' width: ' + elem.getAttribute('l') + 'px;' +
+                          ' height: ' + elem.getAttribute('l') + 'px;' +
+                          ' background-color: ' + elem.getAttribute('c');
+    }
+  }
+}
+```
+
+实际的更新操作是在生命周期的回调函数中处理的，我们在构造函数中设定类这些回调函数。
+当元素插入到DOM中时，`connectedCallback()`函数将会执行 — 在该函数中，我们执行`updateStyle()` 函数来确保方块按照定义来显示；
+```js
+connectedCallback() {
+  console.log('Custom square element added to page.');
+  updateStyle(this);
+}
+```
+
+`disconnectedCallback()和adoptedCallback()`回调函数只是简单地将消息发送到控制台，
+提示我们元素什么时候从DOM中移除、或者什么时候移动到不同的页面：
+```js
+disconnectedCallback() {
+  console.log('Custom square element removed from page.');
+}
+
+adoptedCallback() {
+  console.log('Custom square element moved to new page.');
+}
+```
+
+每当元素的属性变化时，`attributeChangedCallback()`回调函数会执行。
+正如它的属性所示，我们可以查看属性的名称、旧值与新值，以此来对元素属性做单独的操作。
+在当前的示例中，我们只是再次执行了updateStyle()函数，以确保方块的样式在元素属性值变化后得以更新：
+```js
+attributeChangedCallback(name, oldValue, newValue) {
+  console.log('Custom square element attributes changed.');
+  updateStyle(this);
+}
+```
+
+`要注意的是，如果需要在元素属性变化后，触发 attributeChangedCallback()回调函数，你必须监听这个属性。`
+这可以通过定义`observedAttributes()` get函数来实现，`observedAttributes()`函数体内包含一个 return语句，
+返回一个数组，包含了需要监听的属性名称：
+```js
+static get observedAttributes() {return ['w', 'l']; }
+```
 
 
 
