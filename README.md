@@ -263,6 +263,10 @@
     - [69、骚年，你确定没有人在折腾你的站点吗？](https://juejin.im/post/5da1329ce51d45783a772a11)
     - [70、填坑-输入中文时，拼音阶段会触发input事件](./19年/10月/03、填坑-输入中文时，拼音阶段会触发input事件/03、填坑-输入中文时，拼音阶段会触发input事件.md)
     - [71、web-component](./19年/10月/04、webComponent/04、webComponent.md)
+    - [层叠轮播图的简易制作](https://www.cnblogs.com/Tohold/p/9429890.html)
+    - [js焦点图片层叠轮播切换滚动](http://www.51qianduan.com/article/110.html)
+    - [原生js实现图片层叠轮播切换效果](https://teakki.com/p/57dfb317d3a7507f975e8270)
+    - [babel配置-各阶段的stage的区别](https://blog.csdn.net/wang252949/article/details/79064046)
     
 
 - vue
