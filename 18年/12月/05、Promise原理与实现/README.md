@@ -10,6 +10,11 @@
         - [异步实现](#异步实现)
         - [then 返回值](#then-返回值)
         - [具体代码](#具体代码)
+        
+- []
+
+
+
 - [参考文章](#参考文章)
     
 
@@ -180,3 +185,5 @@ then(onfulfilled, onrejected) {
 
 ## 参考文章
 - [解析 Promise 原理，实现一个Promise](https://blog.csdn.net/u014775861/article/details/78030508)
+- [深度揭秘 Promise 微任务注册和执行过程](https://juejin.im/post/5dc028dcf265da4d4b5fe94f)
+- [Promise 执行过程的正确理解姿势](https://juejin.im/post/5dad3405f265da5bb252ff32)
