@@ -11,7 +11,8 @@
         - [then 返回值](#then-返回值)
         - [具体代码](#具体代码)
         
-- []
+- [六段经典的Promise](#六段经典的Promise)
+    
 
 
 
@@ -176,7 +177,7 @@ then(onfulfilled, onrejected) {
     }
 ```
 
-
+## 六段经典的Promise
 
 
 
