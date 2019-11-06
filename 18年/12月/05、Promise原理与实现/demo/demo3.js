@@ -5,7 +5,7 @@
 // 外部的第二个 then 的注册，需要等待 外部的第一个 then 的同步代码执行完成。
 // 当执行内部的 new Promise 的时候，然后碰到 resolve，resolve 执行完成，
 // 代表此时的该 Promise 状态已经扭转，之后开始内部的第一个 .then 的微任务的注册，此时同步执行完成。
-new Promise((resolve, reject) => {
+new Promise((resolve) => {
   console.log(1);
   return resolve()
 }).then(() => {
