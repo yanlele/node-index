@@ -12,7 +12,6 @@
         - [具体代码](#具体代码)
         
 - [六段经典的Promise](#六段经典的Promise)
-    
 
 
 
@@ -392,7 +391,34 @@ new Promise(resolve => {
 ```
 
 
-
+## <h2 id="class05">Promise/A+ 和 webkit 的 Promise 的实现差异</h2> 
+### demo7
+```js
+new Promise((resolve, reject) => {
+  console.log('外部promise');
+  resolve();
+})
+  .then(() => {
+    console.log('外部第一个then');
+    new Promise((resolve, reject) => {
+      console.log('内部promise');
+      resolve();
+    })
+      .then(() => {
+        console.log('内部第一个then');
+        return Promise.resolve();
+      })
+      .then(() => {
+        console.log('内部第二个then');
+      })
+  })
+  .then(() => {
+    console.log('外部第二个then');
+  })
+  .then(() => {
+    console.log('外部第三个then');
+  })
+```
 
 
 
