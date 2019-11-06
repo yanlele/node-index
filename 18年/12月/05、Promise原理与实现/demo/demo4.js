@@ -3,8 +3,6 @@
  *
  * 变量定义的方式，注册都是同步的 比如这里的 p.then 和 var p = new Promise 都是同步执行的。
  */
-
-
 new Promise(resolve=> {
   console.log('1');
   resolve();
