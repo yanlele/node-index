@@ -11,7 +11,7 @@
         - [then 返回值](#then-返回值)
         - [具体代码](#具体代码)
         
-- [六段经典的Promise](#六段经典的Promise)
+- [七段经典的Promise](#六段经典的Promise)
 
 
 
@@ -389,9 +389,7 @@ new Promise(resolve => {
     console.log(10);
   });
 ```
-
-
-## <h2 id="class05">Promise/A+ 和 webkit 的 Promise 的实现差异</h2> 
+ 
 ### demo7
 ```js
 new Promise((resolve, reject) => {
