@@ -11,7 +11,7 @@
         - [then 返回值](#then-返回值)
         - [具体代码](#具体代码)
         
-- []
+- [七段经典的Promise](#六段经典的Promise)
 
 
 
@@ -176,9 +176,247 @@ then(onfulfilled, onrejected) {
     }
 ```
 
+## 六段经典的Promise
+Promise 的 then 的 注册微任务队列 和 执行 是分离的。                         
+注册 : 是完全遵循 JS 和 Promise 的代码的执行过程。                       
+执行 : 先 同步，再 微任务 ，再 宏观任务。                            
+
+### demo1
+```js
+/**
+ * promise 是可连续执行的？
+ * 是可以的！
+ */
+
+new Promise((resolve, reject) => {
+  console.log(1);
+  // return reject();
+  return resolve();
+})
+    .then(() => {
+      console.log(2);
+    })
+    .then(()=> {
+      console.log(3);
+    })
+    .then(()=> {
+      console.log(4);
+    })
+    .catch(()=> {
+      console.log('catch');
+    })
+    .finally(()=> {
+      console.log('finally');
+    });
+```
+
+### demo2
+```js
+new Promise((resolve, reject) => {
+  console.log(1);
+  return resolve()
+}).then(() => {
+  console.log(2);
+  // 外部第一个 then 方法里面 return 一个 Promise，这个 return ，代表 外部的第二个 then 的执行需要等待 return 之后的结果。
+  return new Promise((resolve) => {
+    console.log(3);
+
+    return resolve()
+  })
+      .then(() => {
+        console.log(4);
+      })
+      .then(() => {
+        console.log(5);
+      })
+}).then(() => {
+  console.log(6);
+}).then(() => {
+  console.log(7);
+});
+```
 
 
+### demo3
+```js
+// 我们核心要看 then 的回调函数是啥时候注册的，我们知道，事件机制是 “先注册先执行”，
+// 即数据结构中的 “栈” 的模式，first in first out。那么重点我们来看下他们谁先注册的。
 
+// 外部的第二个 then 的注册，需要等待 外部的第一个 then 的同步代码执行完成。
+// 当执行内部的 new Promise 的时候，然后碰到 resolve，resolve 执行完成，
+// 代表此时的该 Promise 状态已经扭转，之后开始内部的第一个 .then 的微任务的注册，此时同步执行完成。
+new Promise((resolve) => {
+  console.log(1);
+  return resolve()
+}).then(() => {
+  console.log(2);
+  // 内部的 resolve 之后，当然是先执行内部的 new Promise 的第一个 then 的注册，这个 new Promise 执行完成，立即同步执行了后面的 .then 的注册。
+  new Promise((resolve) => {
+    console.log(3);
+    return resolve()
+  })
+      .then(() => {
+        console.log(4);
+      })
+      // 然而这个内部的第二个 then 是需要第一个 then 的的执行完成来决定的，而第一个 then 的回调是没有执行，仅仅只是执行了同步的 .then 方法的注册，所以会进入等待状态。
+      .then(() => {
+        console.log(5);
+      })
+      .then(()=> {
+        console.log(6);
+      })
+}).then(() => {
+  // 外部的第一个 then 的同步操作已经完成了，
+  // 然后开始注册外部的第二个 then，此时外部的同步任务也都完成了。
+  // 外部第二个 then 完成之后， 进入等待， 内部的第二个 then 注册之后在执行
+  console.log(7);
+}).then(() => {
+  console.log(8);
+}).then(()=> {
+  console.log(9);
+});
+```
+
+
+### demo4
+```js
+/**
+ * 链式调用的注册是前后依赖的 比如上面的外部的第二个 then 的注册，是需要外部的第一个的 then 的执行完成。
+ *
+ * 变量定义的方式，注册都是同步的 比如这里的 p.then 和 var p = new Promise 都是同步执行的。
+ */
+new Promise(resolve=> {
+  console.log('1');
+  resolve();
+})
+  .then(()=> {
+    console.log(2);
+    const p = new Promise(resove=> {
+      console.log(3);
+      resove();
+    });
+
+    p.then(()=> {
+      console.log(4);
+    });
+
+    p.then(()=> {
+      console.log(5);
+    });
+  })
+  .then(()=> {
+    console.log(6)
+  })
+  .then(()=> {
+    console.log(7)
+  });
+```
+
+### demo5
+```js
+/**
+ * 这段代码中，外部的注册采用了非链式调用的写法，根据上面的讲解，
+ * 我们知道了外部代码的 p.then 是并列同步注册的。
+ * 所以代码在内部的 new Promise 执行完，p.then 就都同步注册完了。
+ *
+ * 内部的第一个 then 注册之后，
+ * 就开始执行外部的第二个 then 了（外部的第二个 then 和 外部的第一个 then 都是同步注册完了）。
+ * 然后再依次执行内部的第一个 then ,内部的第二个 then。
+ * @type {Promise}
+ */
+const p = new Promise(resolve => {
+  console.log(1);
+  resolve()
+});
+
+p.then(() => {
+  console.log(2);
+  new Promise(resolve => {
+    console.log(3);
+    resolve();
+  })
+    .then(() => {
+      console.log(4);
+    })
+    .then(() => {
+      console.log(5);
+    })
+});
+
+p.then(() => {
+  console.log(6);
+});
+
+p.then(() => {
+  console.log(7)
+});
+```
+
+### demo6
+```js
+new Promise(resolve => {
+  console.log(1);
+  resolve();
+})
+  .then(() => {
+    console.log(2);
+    new Promise(resolve => {
+      console.log(3);
+      resolve();
+    })
+      .then(() => {
+        console.log(4);
+      })
+      .then(() => {
+        console.log(5);
+      });
+
+    return new Promise(resolve => {
+      console.log(6);
+      resolve();
+    })
+      .then(() => {
+        console.log(7);
+      })
+      .then(() => {
+        console.log(8);
+      })
+  })
+  .then(() => {
+    console.log(9);
+  })
+  .then(() => {
+    console.log(10);
+  });
+```
+ 
+### demo7
+```js
+new Promise((resolve, reject) => {
+  console.log('外部promise');
+  resolve();
+})
+  .then(() => {
+    console.log('外部第一个then');
+    new Promise((resolve, reject) => {
+      console.log('内部promise');
+      resolve();
+    })
+      .then(() => {
+        console.log('内部第一个then');
+        return Promise.resolve();
+      })
+      .then(() => {
+        console.log('内部第二个then');
+      })
+  })
+  .then(() => {
+    console.log('外部第二个then');
+  })
+  .then(() => {
+    console.log('外部第三个then');
+  })
+```
 
 
 
