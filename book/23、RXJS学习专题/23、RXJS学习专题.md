@@ -1,6 +1,7 @@
 # RXJS 
 
-本次总结来自于 《深入浅出RXJS》 -  程墨 编著                                 
+本次总结来自于：
+《深入浅出RXJS》 -  程墨 编著                                 
 [learn-rxjs-operators](https://github.com/RxJS-CN/learn-rxjs-operators) - Learn RxJS 中文版 (通过清晰的示例来学习 RxJS 5 操作符) 
 
 ## 目录
@@ -9,6 +10,7 @@
 
 ## 整理的其他资料
 - [rxjs整理学习](./docs/01、基础整理.md)
+- [专题源码](https://github.com/yanlele/node-index-core/tree/master/packages/book/23%E3%80%81RXJS)
 
 
 ### <h3 id="class01">RXJS入门</h3>
