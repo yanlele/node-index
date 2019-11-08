@@ -69,7 +69,7 @@ source$.subscribe(theObserver);
 #### Observable的结束
 调动`observer.next` 仅仅是吧数据推送给观察者执行， 但是并没有 事件结束的意思。                    
 实际场景中 可以使用 `observer.complete()` 来表示事件的结束
-```
+```typescript
 // 如果Observable 是不间断的推送出一串正整数
 // 需要在最后结束的时候调用终结程序的方法
 
@@ -106,7 +106,7 @@ source$.subscribe(theObserver);
 
 
 #### 关于错误机制
-```
+```typescript
 import { Observable } from 'rxjs';
 import { OnSubscribe } from './utils';
 
@@ -127,6 +127,38 @@ source$.subscribe({
   complete: () => console.log('complete'),
 });
 ```
+
+
+### 关于简写方式
+```typescript
+import { Observable } from 'rxjs';
+import { OnSubscribe } from './utils';
+
+const { create } = Observable;
+
+const onSubscribe: OnSubscribe<number> = observer => {
+  let time = 0;
+  const handleInterval = setInterval(() => {
+    time += 1;
+    observer.next(time);
+    if (time > 5) {
+      clearInterval(handleInterval);
+      observer.complete();
+    }
+  }, 500);
+};
+
+const source$: Observable<number> = create(onSubscribe);
+
+source$.subscribe(
+  value=>console.log('next: ', value),
+  err => console.log(err), // 如果不想要 err 的话， 可以直接置位 null 就可以了
+  ()=> console.log('complete'),
+);
+```
+
+
+
 
 
 
