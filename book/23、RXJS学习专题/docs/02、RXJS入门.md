@@ -18,6 +18,7 @@ const { create } = Observable;
 
 // 订阅事件
 const onSubscribe = observer => {
+  // 这个地方next 表示吧数据推送
   observer.next(1);
   observer.next(2);
   observer.next(3);
@@ -64,6 +65,45 @@ const theObserver = {
 
 source$.subscribe(theObserver);
 ```
+
+#### Observable的结束
+调动`observer.next` 仅仅是吧数据推送给观察者执行， 但是并没有 事件结束的意思。                    
+实际场景中 可以使用 `observer.complete()` 来表示事件的结束
+```
+// 如果Observable 是不间断的推送出一串正整数
+// 需要在最后结束的时候调用终结程序的方法
+
+// RxJS v6+
+import { Observable } from 'rxjs';
+import { Subscriber } from 'rxjs/src/internal/Subscriber';
+import { PartialObserver, TeardownLogic } from 'rxjs/src/internal/types';
+
+const { create } = Observable;
+
+type OnSubscribe<T> = (subscriber: Subscriber<T>) => TeardownLogic
+
+const onSubscribe: OnSubscribe<number> = observer => {
+  let time = 0;
+  const handleInterval = setInterval(() => {
+    time += 1;
+    observer.next(time);
+    if (time > 5) {
+      clearInterval(handleInterval);
+      observer.complete();
+    }
+  }, 500);
+};
+
+const source$: Observable<number> = create(onSubscribe);
+
+const theObserver: PartialObserver<number> = {
+  next: item => console.log(item),
+  complete: () => console.log('没有更多数据'),
+};
+
+source$.subscribe(theObserver);
+```
+
 
 
 
