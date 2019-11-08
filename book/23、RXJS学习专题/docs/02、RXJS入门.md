@@ -129,7 +129,7 @@ source$.subscribe({
 ```
 
 
-### 关于简写方式
+#### 关于简写方式
 ```typescript
 import { Observable } from 'rxjs';
 import { OnSubscribe } from './utils';
@@ -157,6 +157,38 @@ source$.subscribe(
 );
 ```
 
+#### 退订 Observable
+```typescript
+import { Observable } from 'rxjs';
+import { OnSubscribe } from './utils';
+
+const { create } = Observable;
+
+const onSubscribe: OnSubscribe<number> = observer => {
+  let time = 0;
+  const handleInterval = setInterval(() => {
+    observer.next(time++);
+  }, 500);
+
+  return {
+    unsubscribe: () => clearInterval(handleInterval),
+  };
+};
+
+const source$: Observable<number> = create(onSubscribe);
+
+const subscription = source$.subscribe(
+  value => console.log('next: ', value),
+  err => console.log(err), // 如果不想要 err 的话， 可以直接置位 null 就可以了
+  () => console.log('complete'),
+);
+
+setTimeout(()=> {
+  subscription.unsubscribe();
+});
+```
+有一个非常值得注意的地方， 这个虽然在 `unsubscribe` 函数调用之后，Observer 不在接受到推送的数据了， 但是并不表示 Observable 已经结束了。
+结束的唯一标志是complete 或者 error
 
 
 
