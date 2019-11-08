@@ -11,7 +11,7 @@
         - [then 返回值](#then-返回值)
         - [具体代码](#具体代码)
         
-- [七段经典的Promise](#六段经典的Promise)
+- [七段经典的Promise](#七段经典的Promise)
 
 
 
@@ -176,7 +176,7 @@ then(onfulfilled, onrejected) {
     }
 ```
 
-## 六段经典的Promise
+## 七段经典的Promise
 Promise 的 then 的 注册微任务队列 和 执行 是分离的。                         
 注册 : 是完全遵循 JS 和 Promise 的代码的执行过程。                       
 执行 : 先 同步，再 微任务 ，再 宏观任务。                            
