@@ -123,6 +123,8 @@
 
 - [22、必须要学好英语](./book/22、必须要学好英语)
 
+- [23、RXJS学习专题](./book/23、RXJS学习专题/23、RXJS学习专题.md)
+
 
 
 ### <div id="class07">通用功能js模块组件</div>
@@ -237,9 +239,7 @@
     - [常用工具库收集:licia](https://github.com/liriliri/licia)
     - [lodash中文文档](http://lodash.net)
     - [CSS3的calc()使用](https://www.w3cplus.com/css3/how-to-use-css3-calc-function.html)
-    - [lodash的一些高级用法](./19年/01月/03、lodash的一些高级用法/)
-    - [RxJS v6 学习指南](https://www.imooc.com/article/70323)
-    - [rxjs学习整理](./19年/01月/04、rxjs学习整理/)
+    - [lodash的一些高级用法](./19年/01月/03、lodash的一些高级用法)
     - [JavaScript 异步、栈、事件循环、任务队列](https://segmentfault.com/a/1190000011198232)
     - [FormData使用方法详解](https://www.jianshu.com/p/e438fb2238cf)
     - [基于JavaScript判断浏览器到底是关闭还是刷新](http://udn.yyuap.com/forum.php?mod=viewthread&tid=96309)
@@ -491,7 +491,6 @@
         - [微前端的那些事儿](https://blog.csdn.net/qappleh/article/details/80928434)
         - [《Node.js从入门到上线》A blog build with Koa2](https://github.com/liuxing/node-blog)
         - [《Koa.js 设计模式-学习笔记》](https://github.com/chenshenhai/koajs-design-note)
-        - [learn-rxjs](https://github.com/btroncone/learn-rxjs)
         - [vue源码解析](https://github.com/muwoo/blogs)
         - [每日时报，会以前端技术体系为主要分享课题](https://github.com/wubaiqing/zaobao)
         - [《快乐的 Linux 命令行》](https://github.com/billie66/TLCL)
