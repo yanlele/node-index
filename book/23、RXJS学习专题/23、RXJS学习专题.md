@@ -20,6 +20,7 @@
     - fromEventPattern
     - ajax
     - defer
+- [合并数据流操作](./docs/05、合并数据流.md)
 
 
 ## 整理的其他资料
