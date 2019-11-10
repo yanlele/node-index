@@ -8,6 +8,18 @@
 - [RXJS入门](./docs/02、RXJS入门.md)
 - [操作符基础](./docs/03、操作符.md)
 - [创建数据流](./docs/04、创建数据流.md)
+    - create
+    - of
+    - range
+    - empty
+    - throwError
+    - interval和timer
+    - from
+    - fromPromise
+    - fromEvent
+    - fromEventPattern
+    - ajax
+    - defer
 
 
 ## 整理的其他资料
