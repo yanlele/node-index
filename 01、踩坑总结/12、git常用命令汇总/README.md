@@ -367,3 +367,11 @@ git本地即使有修改如何强制更新：
 
 **其他办法**                        
 `git fetch -p`
+
+
+#### 强行对齐
+`git push origin dev:master -f // 强行对齐开发分支到master`
+
+`git checkout master  -->  git reset --hard origin/master // 拉去最新的master代码`  
+
+- [GIT强行覆盖master分支详细讲解](https://blog.csdn.net/Yang_Hui_Liang/article/details/87883860)
