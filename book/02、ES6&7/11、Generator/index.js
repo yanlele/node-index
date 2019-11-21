@@ -1,11 +1,12 @@
-function* helloWorldGenerator() {
-    yield 'hello';
-    yield 'world';
-    return 'ending';
-}
-var hw = helloWorldGenerator();
+function* helloWorldGenerator(parentName) {
 
-console.log(hw.next());
+    yield function (name) {
+        return parentName;
+    };
+}
+var hw = helloWorldGenerator('yanle');
+
+console.log(hw.next().value());
 // { value: 'hello', done: false }
 console.log(hw.next());
 // { value: 'world', done: false }
