@@ -37,4 +37,5 @@
 - [使用 RxJS 处理多个 Http 请求: mergeMap](https://segmentfault.com/a/1190000010088631)
 - [learn-rxjs](https://github.com/btroncone/learn-rxjs)
 - [learn-rxjs-operators](https://github.com/RxJS-CN/learn-rxjs-operators)
+- [RxJS 6有哪些新变化？](https://segmentfault.com/a/1190000014956260)
 
