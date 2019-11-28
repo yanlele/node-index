@@ -28,8 +28,6 @@
 - [专题源码](https://github.com/yanlele/node-index-core/tree/master/packages/book/23%E3%80%81RXJS)
 
 
-
-
 ### 参考文章
 - [RxJS v6 学习指南](https://www.imooc.com/article/70323)
 - [rxjs6学习笔记----结合react，redux使用](https://blog.csdn.net/github_36487770/article/details/81168346)
@@ -37,4 +35,5 @@
 - [使用 RxJS 处理多个 Http 请求: mergeMap](https://segmentfault.com/a/1190000010088631)
 - [learn-rxjs](https://github.com/btroncone/learn-rxjs)
 - [learn-rxjs-operators](https://github.com/RxJS-CN/learn-rxjs-operators)
+- [RxJS 6有哪些新变化？](https://segmentfault.com/a/1190000014956260)
 
