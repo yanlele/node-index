@@ -369,9 +369,28 @@ git本地即使有修改如何强制更新：
 `git fetch -p`
 
 
-#### 强行对齐
+#### 强行对齐 - 本地推送到远端
 `git push origin dev:master -f // 强行对齐开发分支到master`
 
 `git checkout master  -->  git reset --hard origin/master // 拉去最新的master代码`  
 
 - [GIT强行覆盖master分支详细讲解](https://blog.csdn.net/Yang_Hui_Liang/article/details/87883860)
+
+#### 强行对齐 - 远端对齐到本地
+`git pull <远程主机名> <远程分支名>:<本地分支名>`                          
+
+举一个例子： `git pull --force origin master:master`
+
+
+#### 删除某一次提交
+`git  rebase -i  commit_id`  //commit_id为想要删除的某次提交的前一个提交记录 id
+
+然后删除想要删除的记录信息，或者把记录信息前面的`pick` 修改成`drop`，根据提示进行信息保存。
+
+然后进行git 强制提交（确保已经取出分支保护）
+
+`git push --force`
+
+
+#### github----向开源框架提交pr的过程
+- [https://blog.csdn.net/vim_wj/article/details/78300239](https://blog.csdn.net/vim_wj/article/details/78300239)
