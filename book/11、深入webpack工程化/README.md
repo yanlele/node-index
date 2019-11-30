@@ -62,6 +62,7 @@
     - [学习webpack4.0的最新配置语法和新特性](https://github.com/wlx200510/webpack4.x-learn)
     - [Webpack-dev-server的proxy用法](https://www.jianshu.com/p/f489e7764cb8)
     - [babel-polyfill的几种使用方法](https://blog.csdn.net/weixin_41224029/article/details/90213067)
+    - [Webpack 4 Tree Shaking 终极优化指南](https://juejin.im/post/5dcec27d5188254b0147e619#heading-0)
 
     
 - webpack插件和loader开发
