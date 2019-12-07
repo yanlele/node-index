@@ -21,7 +21,19 @@
     - ajax
     - defer
 - [合并数据流操作](./docs/05-01、合并数据流.md)
+    - concat
+    - merge
+    - zip
+    - combineLatest
+    - withLatestFrom
+    - race
+    - startWith
+    - forkJoin
 - [合并数据流 - 高阶操作](./docs/05-02、合并数据流%20-%20高阶操作.md)
+    - concatAll
+    - mergeAll
+    - zipAll
+    - combineAll
 
 
 
