@@ -394,3 +394,7 @@ git本地即使有修改如何强制更新：
 
 #### github----向开源框架提交pr的过程
 - [https://blog.csdn.net/vim_wj/article/details/78300239](https://blog.csdn.net/vim_wj/article/details/78300239)
+
+
+#### GIT上fork的项目获取最新源代码
+- [https://my.oschina.net/zimingforever/blog/352715](https://my.oschina.net/zimingforever/blog/352715)
