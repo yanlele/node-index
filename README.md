@@ -455,6 +455,7 @@
     - [apollo-graphql 自己使用的一点姿势](https://juejin.im/post/5ca2bd5c51882543e4506fbf)
     - [require时，exports和module.exports的区别你真的懂吗？](https://juejin.im/post/5d5639c7e51d453b5c1218b4)
     - [5分钟教你用nodeJS手写一个mock数据服务器](https://juejin.im/post/5d7345bce51d453b76258503)
+    - [从0构建一个TS-Node项目](./19年/12月/01、从0构建一个TS-Node项目/01、从0构建一个TS-Node项目.md)
 
 
 - 杂项
