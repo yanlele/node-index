@@ -202,3 +202,19 @@ package.json
 }
 ```
 
+
+## 测试部分
+
+装包：`yarn add @types/jest jest ts-jest --dev`
+
+jest.config.js:                         
+```js
+module.exports = {
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
+  },
+  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+};
+```
+
