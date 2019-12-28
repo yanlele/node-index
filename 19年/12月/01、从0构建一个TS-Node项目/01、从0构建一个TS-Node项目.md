@@ -14,6 +14,7 @@
     - eslint
     - prettier
     - commititlint
+    - 每次提交自动检测eslint\commitLint
 - 测试
     - jest、ts-jest
 - 代码构建
@@ -112,6 +113,7 @@ package-lock.json
 
 
 ## 代码规范
+集成eslint、prettier
 `.eslintrc.js`:                     
 ```js
 module.exports = {
@@ -149,3 +151,54 @@ module.exports = {
   "printWidth": 120
 }
 ```
+
+集成`commitlint` - `commitlint.config.js`: 
+```js
+module.exports = {
+  extends: ['@commitlint/config-conventional'],
+  rules: {
+    'type-enum': [2, 'always', ['feat', 'fix', 'docs', 'style', 'refactor', 'test', 'chore', 'revert']],
+    'subject-full-stop': [0, 'never'],
+    'subject-case': [0, 'never'],
+  },
+};
+```
+
+
+**每次提交自动检测eslint\commitLint：**                      
+可以看这篇文章：[使用husky、prettier、lint、commitlint构建规范化项目实践](../../../19年/09月/01、使用husky、prettier、lint、commitlint构建规范化项目实践/01、使用husky、prettier、lint、commitlint构建规范化项目实践.md)
+
+需要安装的依赖包：`yarn add @commitlint/cli @commitlint/config-conventional @commitlint/prompt-cli commitizen lint-staged husky --dev`
+
+package.json
+```json
+{
+   "scripts": {
+      "type-check": "tsc",
+      "prettier": "prettier --write",
+      "commit": "commit"
+    },
+    "config": {
+      "commitizen": {
+        "path": "cz-conventional-changelog"
+      }
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged",
+        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      }
+    },
+    "lint-staged": {
+      "**/*.{js,ts,tsx}": [
+        "yarn prettier",
+        "git add"
+      ],
+      "**/*.{ts,spec.js,tsx}": [
+        "eslint --fix",
+        "git add"
+      ]
+    }
+}
+```
+
