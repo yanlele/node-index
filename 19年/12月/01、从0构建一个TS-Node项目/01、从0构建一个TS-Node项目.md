@@ -19,7 +19,7 @@
     - jest、ts-jest
 - 代码构建
     - tsconfig
-    - typeing
+    - typeings
     
     
 ## 依赖问题
@@ -207,6 +207,8 @@ package.json
 
 装包：`yarn add @types/jest jest ts-jest --dev`
 
+具体可以看看看这个文章： [jest测试基础](../../../book/13、测试专题/06篇、Jest测试框架/01、基础篇.md)
+
 jest.config.js:                         
 ```js
 module.exports = {
@@ -218,3 +220,120 @@ module.exports = {
 };
 ```
 
+## 代码构建
+tsconfig.json
+```json
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "noImplicitAny": false,
+    //在表达式和声明上有隐含的any类型时报错
+    "moduleResolution": "node",
+    "typeRoots": [
+      "node_modules/@type",
+      "typings/modules",
+      "node_modules"
+    ],
+    "allowJs": true,
+    "emitDecoratorMetadata": true,
+    //给源码里的装饰器声明加上设计类型元数据
+    "experimentalDecorators": true,
+    //启用实验性的ES装饰器
+    "importHelpers": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    //    "outDir": "build",
+    "baseUrl": ".",
+    "lib": [
+      "es6",
+      "dom",
+      "es7"
+    ],
+    "types": [
+      "node",
+      "@types/jest"
+    ]
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules/",
+    "src/**/*.spec.ts",
+    "src/**/*.js"
+  ]
+}
+```
+
+## 总结
+package.json
+```json
+{
+  "name": "markdown-index",
+  "version": "1.0.0",
+  "description": "自动生成markDown 文档的索引导航",
+  "main": "./src/main.js",
+  "scripts": {
+    "prepare": "npm run tsc",
+    "lint": "eslint --ext .ts ./",
+    "lint:fix": "yarn lint --fix",
+    "type-check": "tsc",
+    "prettier": "prettier --write",
+    "commit": "commit",
+    "test": "jest"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx}": [
+      "yarn prettier",
+      "git add"
+    ],
+    "**/*.{ts,spec.js,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/module-creator/markdown-index.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/module-creator/markdown-index/issues"
+  },
+  "homepage": "https://github.com/module-creator/markdown-index#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@commitlint/prompt-cli": "^8.2.0",
+    "@types/jest": "^24.0.25",
+    "@types/node": "^13.1.1",
+    "@typescript-eslint/eslint-plugin": "^2.13.0",
+    "@typescript-eslint/parser": "^2.13.0",
+    "commitizen": "^4.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.4"
+  }
+}
+```
