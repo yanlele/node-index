@@ -20,43 +20,6 @@
 - 代码构建
     - tsconfig
     - typeings
-    
-    
-## 依赖问题
-```json
-{
-  "name": "",
-  "version": "1.0.0",
-  "description": "",
-  "main": "./src/main.js",
-  "scripts": {
-    "type-check": "tsc"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/module-creator/markdown-index.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/module-creator/markdown-index/issues"
-  },
-  "homepage": "https://github.com/module-creator/markdown-index#readme",
-  "devDependencies": {
-    "@types/jest": "^24.0.25",
-    "@types/node": "^13.1.1",
-    "@typescript-eslint/eslint-plugin": "^2.13.0",
-    "@typescript-eslint/parser": "^2.13.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.9.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "jest": "^24.9.0",
-    "prettier": "^1.19.1",
-    "ts-jest": "^24.2.0",
-    "typescript": "^3.7.4"
-  }
-}
-```
 
 
 ## 装包问题
@@ -337,3 +300,7 @@ package.json
   }
 }
 ```
+
+
+## 参考文章
+- [在Typescript项目中，如何优雅的使用ESLint和Prettier](https://segmentfault.com/a/1190000019661168)
