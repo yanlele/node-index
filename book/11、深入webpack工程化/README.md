@@ -56,6 +56,7 @@
     - [Demos && Courses for Webpack 4](https://github.com/dongyuanxin/webpack-demos)
     - [tsx+webpack4](https://github.com/cli-template-build/tsx-app)
     - [一步步从零开始用 webpack 搭建一个大型项目 - *** ](https://juejin.im/post/5de06aa851882572d672c1ad)
+    - [webpack 最佳配置指北](https://juejin.im/post/5e0e1153e51d45414b74de65?utm_source=gold_browser_extension)
 
 - 其他补充知识点
     - [webpack4系列中文教程和配套代码](https://github.com/dongyuanxin/webpack-demos)
