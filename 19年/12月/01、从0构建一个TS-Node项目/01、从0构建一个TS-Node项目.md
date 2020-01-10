@@ -87,7 +87,7 @@ package-lock.json
 
 
 ## 代码规范
-集成eslint、prettier
+集成eslint、prettier、recommended
 `.eslintrc.js`:                     
 ```js
 module.exports = {
@@ -96,15 +96,15 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
+    project: './tsconfig.json',
   },
-  plugins: [
-    '@typescript-eslint',
-  ],
+  plugins: ['@typescript-eslint'],
   extends: [
-    'eslint:recommended',
     'prettier',
     'prettier/@typescript-eslint',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:prettier/recommended',
   ],
   env: {
@@ -113,6 +113,10 @@ module.exports = {
   },
   rules: {
     '@typescript-eslint/no-var-requires': 1,
+    '@typescript-eslint/explicit-function-return-type': 2,
+    '@typescript-eslint/explicit-member-accessibility': 2,
+    'no-unused-vars': 2,
+    semi: [2, 'always', { omitLastInOneLineBlock: true }],
   },
 };
 ```
