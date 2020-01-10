@@ -126,7 +126,15 @@ module.exports = {
 {
   "singleQuote": true,
   "trailingComma": "all",
-  "printWidth": 120
+  "printWidth": 140,
+  "semi": true,
+  "bracketSpacing": true,
+  "jsxBracketSameLine": true,
+  "arrowParens": "avoid",
+  "requirePragma": false,
+  "proseWrap": "preserve",
+  "htmlWhitespaceSensitivity": "ignore",
+  "tabWidth": 2
 }
 ```
 
