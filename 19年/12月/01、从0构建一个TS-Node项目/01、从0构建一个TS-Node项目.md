@@ -258,9 +258,9 @@ tsconfig.json
 package.json
 ```json
 {
-  "name": "markdown-index",
-  "version": "1.0.0",
-  "description": "自动生成markDown 文档的索引导航",
+  "name": "***",
+  "version": "0.0.1",
+  "description": "***",
   "main": "./src/main.js",
   "scripts": {
     "prepare": "npm run tsc",
@@ -325,5 +325,11 @@ package.json
 ```
 
 
-## 参考文章
+
+### 参考文章
 - [在Typescript项目中，如何优雅的使用ESLint和Prettier](https://segmentfault.com/a/1190000019661168)
+- [jest测试基础](../../../book/13、测试专题/06篇、Jest测试框架/01、基础篇.md)
+- [使用husky、prettier、lint、commitlint构建规范化项目实践](../../../19年/09月/01、使用husky、prettier、lint、commitlint构建规范化项目实践/01、使用husky、prettier、lint、commitlint构建规范化项目实践.md)
+- [unlight/node-package-starter/.eslintrc.js](https://github.com/unlight/node-package-starter/blob/master/.eslintrc.js)
+- [ESLint Plugin TypeScript](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin)
+
