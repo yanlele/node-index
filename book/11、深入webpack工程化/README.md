@@ -64,6 +64,7 @@
     - [Webpack-dev-server的proxy用法](https://www.jianshu.com/p/f489e7764cb8)
     - [babel-polyfill的几种使用方法](https://blog.csdn.net/weixin_41224029/article/details/90213067)
     - [Webpack 4 Tree Shaking 终极优化指南](https://juejin.im/post/5dcec27d5188254b0147e619#heading-0)
+    - [Webpack 再深入再总结](https://juejin.im/post/5e17c1dd6fb9a02fd67e9990?utm_source=gold_browser_extension)
 
     
 - webpack插件和loader开发
