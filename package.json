@@ -43,7 +43,7 @@
     "mobile-detect": "^1.4.1",
     "mockjs": "^1.0.1-beta3",
     "moment": "^2.22.1",
-    "mongoose": "^4.13.7",
+    "mongoose": "^5.8.7",
     "morgan": "~1.9.0",
     "multer": "^1.3.0",
     "mysql": "^2.16.0",
