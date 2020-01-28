@@ -72,6 +72,35 @@ Webpack 认为这样的文件有“副作用”。具有副作用的文件不应
 我们可以配置我们的项目，告诉 Webpack 它是没有副作用的，可以进行 tree-shaking。
 
 
+## 如何告诉 Webpack 你的代码无副作用
+`package.json` 有一个特殊的属性 `sideEffects`，就是为此而存在的。它有三个可能的值：
+
+- true 是默认值，如果不指定其他值的话。这意味着所有的文件都有副作用，也就是没有一个文件可以 tree-shaking。
+- false 告诉 Webpack 没有文件有副作用，所有文件都可以 tree-shaking。
+- 第三个值 […] 是文件路径数组。它告诉 webpack，除了数组中包含的文件外，你的任何文件都没有副作用。
+
+```
+// 所有文件都有副作用，全都不可 tree-shaking
+{
+ "sideEffects": true
+}
+
+// 没有文件有副作用，全都可以 tree-shaking
+{
+ "sideEffects": false
+}
+
+// 只有这些文件有副作用，所有其他文件都可以 tree-shaking，但会保留这些文件
+{
+ "sideEffects": [
+  "./src/file1.js",
+  "./src/file2.js"
+ ]
+}
+```
+
+
+
 
 
 ### 参考文章
