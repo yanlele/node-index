@@ -100,6 +100,32 @@ Webpack 认为这样的文件有“副作用”。具有副作用的文件不应
 ```
 
 
+## 全局css副作用
+这是因为这样的导入被 `webpack` 视为死代码，并被删除。
+```
+// 导入全局 CSS
+import './MyStylesheet.css';
+```
+
+每种文件类型的每个规则都有自己的 `sideEffects` 标志。这会覆盖之前为匹配规则的文件设置的所有 `sideEffects` 标志。
+
+为了保留全局 CSS 文件，我们只需要设置这个特殊的 `sideEffects` 标志为 `true`，就像这样:
+```js
+// 全局 CSS 副作用规则相关的 Webpack 配置
+const config = {
+ module: {
+  rules: [
+   {
+    test: /regex/,
+    use: [loaders],
+    sideEffects: true
+   }
+  ]
+ } 
+};
+```
+
+
 
 
 
