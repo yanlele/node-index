@@ -45,6 +45,25 @@ import debounce from 'lodash/lib/debounce';
 ```
 
 
+## 基于webpack tree-shaking
+
+- 必须处于生产模式                  
+- 必须将优化选项 “usedExports” 设置为true。这意味着 Webpack 将识别出它认为没有被使用的代码，并在最初的打包步骤中给它做标记。               
+- TerserPlugin
+
+```js
+// Base Webpack Config for Tree Shaking
+const config = {
+ mode: 'production',
+ optimization: {
+  usedExports: true,
+  minimizer: [
+   new TerserPlugin({...})
+  ]
+ }
+};
+```
+
 
 
 
