@@ -232,6 +232,66 @@ const config = {
 `transform`配置设置它用于在重新编译所有代码时加载我们的 Babel 配置。
 
 
+## 针对特定库的优化
+
+### MomentJS
+除了 momentjs 所有的多语言包
+```js
+// 用 IgnorePlugin 移除多语言包
+const { IgnorePlugin } from 'webpack';
+const config = {
+ plugins: [
+  new IgnorePlugin(/^\.\/locale$/, /moment/)
+ ]
+};
+```
+
+**Moment-Timezone**                         
+保留本世纪的年份数据，就可以将体积缩小90%。这种情况需要用到一个特殊的 Webpack 插件。
+```js
+// MomentTimezone Webpack Plugin
+const MomentTimezoneDataPlugin = require('moment-timezone-data-webpack-plugin');
+const config = {
+ plugins: [
+  new MomentTimezoneDataPlugin({
+   startYear: 2018,
+   endYear: 2100
+  })
+ ]
+};
+```
+
+### lodash
+```js
+// Babel Transform Imports
+// Babel config
+const config = {
+ plugins: [
+  [
+   'transform-imports',
+   {
+    'lodash-es': {
+     transform: 'lodash/${member}',
+     preventFullImport: true
+    },
+    'react-bootstrap': {
+     transform: 'react-bootstrap/es/${member}', // The es folder contains es2015 module versions of the files
+     preventFullImport: true
+    }
+   }
+  ]
+ ]
+};
+
+// 这些库不再支持全量导入，否则会报错
+import _ from 'lodash-es';
+
+// 具名导入依然支持
+import { debounce } from 'loash-es';
+
+// 不过这些具名导入会被babel编译成这样子
+// import debounce from 'lodash-es/debounce';
+```
 
 
 
