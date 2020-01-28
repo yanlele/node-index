@@ -44,12 +44,12 @@
 
 - webpack优化问题
     - [图片处理](./05、webpack优化问题/01、图片处理.md)
-    - [webpack 中那些最易混淆的 5 个知识点](https://juejin.im/post/5cede821f265da1bbd4b5630)
     - [pre-commit限制提交检测](./05、webpack优化问题/02、pre-commit限制提交检测.md)
     - [prettier和lint检测](./05、webpack优化问题/03、prettier和lint检测.md)
     
 - 其他补充知识点
     - [Tree-Shaking攻略](./06、其他/01、Tree-Shaking攻略/01、Tree-Shaking攻略.md)
+    - [webpack 中那些最易混淆的 5 个知识点](https://juejin.im/post/5cede821f265da1bbd4b5630)
     - [webpack4系列中文教程和配套代码](https://github.com/dongyuanxin/webpack-demos)
     - [学习webpack4.0的最新配置语法和新特性](https://github.com/wlx200510/webpack4.x-learn)
     - [Webpack-dev-server的proxy用法](https://www.jianshu.com/p/f489e7764cb8)
@@ -58,7 +58,7 @@
 
 
 - 实战案例
-    - [从零搭建React全家桶框架教程](https://github.com/brickspert/blog/issues/1)
+    - [从零搭建React全家桶框架教程 - 已经很过时了](https://github.com/brickspert/blog/issues/1)
     - [配置一套属于自己的React项目的webpack配置](https://github.com/heyushuo/Webpack-React)
     - [从零开始配置TypeScript + React + React-Router + Redux + Webpack开发环境](https://www.cnblogs.com/baqiphp/p/7647912.html)
     - [Demos && Courses for Webpack 4](https://github.com/dongyuanxin/webpack-demos)
