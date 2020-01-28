@@ -31,6 +31,22 @@ doSomething();
 ```
 
 
+## tree-shaking 支持的方式 import
+
+以 `lodash` 举例子                      
+```
+// 全部导入 (不支持 tree-shaking)
+import _ from 'lodash';
+
+// 具名导入(支持 tree-shaking)
+import { debounce } from 'lodash';
+// 直接导入具体的模块 (支持 tree-shaking)
+import debounce from 'lodash/lib/debounce';
+```
+
+
+
+
 
 ### 参考文章
 - [Webpack 4 Tree Shaking 终极优化指南](https://juejin.im/post/5dcec27d5188254b0147e619#heading-0)
