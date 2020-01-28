@@ -140,10 +140,24 @@ Babel 假定我们使用 es2015 模块编写代码，并转换 JavaScript 代码
 
 **为了进行 tree-shaking，我们需要将代码编译到 es2015 模块。**
 
+为了让我们编译的代码使用 es2015 模块，我们需要做的就是告诉 babel 不要管它们。
+```js
+// es2015 模块的基本 Babel 配置
+const config = {
+ presets: [
+  [
+   '[@babel/preset-env](http://twitter.com/babel/preset-env)',
+   {
+    modules: false
+   }
+  ]
+ ]
+};
+```
 
+把 `modules` 设置为 `false`，就是告诉 babel 不要编译模块代码。这会让 Babel 保留我们现有的 `es2015 import/export` 语句。
 
-
-
+**如果你有要导入的库，则必须将这些库编译为 es2015 模块以便进行 tree-shaking 。**
 
 
 
