@@ -146,7 +146,7 @@ Babel 假定我们使用 es2015 模块编写代码，并转换 JavaScript 代码
 const config = {
  presets: [
   [
-   '[@babel/preset-env](http://twitter.com/babel/preset-env)',
+   '[@babel/preset-env]',
    {
     modules: false
    }
@@ -158,6 +158,80 @@ const config = {
 把 `modules` 设置为 `false`，就是告诉 babel 不要编译模块代码。这会让 Babel 保留我们现有的 `es2015 import/export` 语句。
 
 **如果你有要导入的库，则必须将这些库编译为 es2015 模块以便进行 tree-shaking 。**
+
+## jest场景
+Jest 是基于 NodeJS 开发的，而 NodeJS 不支持 es2015 模块。
+
+### 本地jest
+开发和生产环境我们需要 es2015 模块，而测试环境需要 commonjs 模块。还好，Babel 配置起来非常容易：
+```js
+// 分环境配置Babel 
+const config = {
+ env: {
+  development: {
+   presets: [
+    [
+     '[@babel/preset-env](http://twitter.com/babel/preset-env)',
+     {
+      modules: false
+     }
+    ]
+   ]
+  },
+  production: {
+   presets: [
+    [
+     '[@babel/preset-env](http://twitter.com/babel/preset-env)',
+     {
+      modules: false
+     }
+    ]
+   ]
+  },
+  test: {
+   presets: [
+    [
+     '[@babel/preset-env](http://twitter.com/babel/preset-env)',
+     {
+      modules: 'commonjs'
+     }
+    ]
+   ],
+   plugins: [
+    'transform-es2015-modules-commonjs' // Not sure this is required, but I had added it anyway
+   ]
+  }
+ }
+};
+```
+
+所有的项目本地代码能够正常编译，Jest 测试能运行了。**但是，使用 es2015 模块的第三方库代码依然不能运行。**                       
+这是因为，Jest (尤其是 babel-jest) 在跑测试之前编译代码的时候，默认忽略任何来自node_modules 的代码。
+
+
+### 配置 Jest 重新编译库代码
+```
+// 重新编译库代码的 Jest 配置 
+const path = require('path');
+const librariesToRecompile = [
+ 'Library1',
+ 'Library2'
+].join('|');
+const config = {
+ transformIgnorePatterns: [
+  `[\\\/]node_modules[\\\/](?!(${librariesToRecompile})).*$`
+ ],
+ transform: {
+  '^.+\.jsx?$': path.resolve(__dirname, 'transformer.js')
+ }
+};
+```
+`transformIgnorePatterns` 是 `Jest` 配置的一个功能，它是一个正则字符串数组。
+任何匹配这些正则表达式的代码，都不会被 babel-jest 重新编译。默认是一个字符串“node_modules”。这就是为什么Jest 不会重新编译任何库代码。
+
+`transform`配置设置它用于在重新编译所有代码时加载我们的 Babel 配置。
+
+
 
 
 
