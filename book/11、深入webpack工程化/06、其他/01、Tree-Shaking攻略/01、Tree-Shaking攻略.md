@@ -125,6 +125,24 @@ const config = {
 };
 ```
 
+## 模块概念
+```js
+// Commonjs
+const stuff = require('./stuff');
+module.exports = stuff;
+
+// es2015 
+import stuff from './stuff';
+export default stuff;
+```
+Babel 假定我们使用 es2015 模块编写代码，并转换 JavaScript 代码以使用 commonjs 模块。                        
+但是，**Webpack 不支持使用 commonjs 模块来完成 tree-shaking**。
+
+**为了进行 tree-shaking，我们需要将代码编译到 es2015 模块。**
+
+
+
+
 
 
 
