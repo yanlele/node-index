@@ -1,5 +1,24 @@
 # Tree-Shaking攻略
 
+<!-- toc -->
+
+- [死代码和活代码](#%E6%AD%BB%E4%BB%A3%E7%A0%81%E5%92%8C%E6%B4%BB%E4%BB%A3%E7%A0%81)
+- [tree-shaking 支持的方式 import](#tree-shaking-%E6%94%AF%E6%8C%81%E7%9A%84%E6%96%B9%E5%BC%8F-import)
+- [基于webpack tree-shaking](#%E5%9F%BA%E4%BA%8Ewebpack-tree-shaking)
+- [副作用](#%E5%89%AF%E4%BD%9C%E7%94%A8)
+- [如何告诉 Webpack 你的代码无副作用](#%E5%A6%82%E4%BD%95%E5%91%8A%E8%AF%89-webpack-%E4%BD%A0%E7%9A%84%E4%BB%A3%E7%A0%81%E6%97%A0%E5%89%AF%E4%BD%9C%E7%94%A8)
+- [全局css副作用](#%E5%85%A8%E5%B1%80css%E5%89%AF%E4%BD%9C%E7%94%A8)
+- [模块概念](#%E6%A8%A1%E5%9D%97%E6%A6%82%E5%BF%B5)
+- [jest场景](#jest%E5%9C%BA%E6%99%AF)
+  * [本地jest](#%E6%9C%AC%E5%9C%B0jest)
+  * [配置 Jest 重新编译库代码](#%E9%85%8D%E7%BD%AE-jest-%E9%87%8D%E6%96%B0%E7%BC%96%E8%AF%91%E5%BA%93%E4%BB%A3%E7%A0%81)
+- [针对特定库的优化](#%E9%92%88%E5%AF%B9%E7%89%B9%E5%AE%9A%E5%BA%93%E7%9A%84%E4%BC%98%E5%8C%96)
+  * [MomentJS](#momentjs)
+  * [lodash](#lodash)
+- [参考文章](#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0)
+
+<!-- tocstop -->
+
 ## 死代码和活代码
 
 死代码： Webpack 跟踪整个应用程序的 import/export 语句，因此，如果它看到导入的东西**最终没有被使用**，它会认为那是“死代码”，并会对其进行 tree-shaking 。
@@ -295,5 +314,5 @@ import { debounce } from 'loash-es';
 
 
 
-### 参考文章
+## 参考文章
 - [Webpack 4 Tree Shaking 终极优化指南](https://juejin.im/post/5dcec27d5188254b0147e619#heading-0)
