@@ -50,6 +50,7 @@
 - 六、其他补充知识点
     - [Tree-Shaking攻略](./06、其他/01、Tree-Shaking攻略/01、Tree-Shaking攻略.md)
     - [webpack 中那些最易混淆的 5 个知识点](./06、其他/02、五个易混淆的概念/02、五个易混淆的概念.md)
+    - [重学webpack4重要知识点](./06、其他/03、重学webpack4重要知识点/03、重学webpack4重要知识点.md)
     - [webpack4系列中文教程和配套代码](https://github.com/dongyuanxin/webpack-demos)
     - [学习webpack4.0的最新配置语法和新特性](https://github.com/wlx200510/webpack4.x-learn)
     - [Webpack-dev-server的proxy用法](https://www.jianshu.com/p/f489e7764cb8)
