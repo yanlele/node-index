@@ -54,7 +54,7 @@ module.exports = {
 [代码示例](./02、打包js/)
 
 
-### <p id='class1-item03'>03、编译ES6/7</p>          
+### <p id='class1-item03'>03、编译ES6/7</p>                    
 首先我们要安装babel 编译文件 `npm install --save-dev babel-loader babel-core`          
 同时还需要安装 `npm install babel-preset-env --save-dev`           
 这个时候，给webpack.config.js一个基础配置：          
