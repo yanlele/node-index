@@ -42,12 +42,12 @@
     - [04、webpack多页面应用](./04、webpack实战场景/README.md#class4-item04)
 
 
-- webpack优化问题
+- 五、webpack优化问题
     - [图片处理](./05、webpack优化问题/01、图片处理.md)
     - [pre-commit限制提交检测](./05、webpack优化问题/02、pre-commit限制提交检测.md)
     - [prettier和lint检测](./05、webpack优化问题/03、prettier和lint检测.md)
     
-- 其他补充知识点
+- 六、其他补充知识点
     - [Tree-Shaking攻略](./06、其他/01、Tree-Shaking攻略/01、Tree-Shaking攻略.md)
     - [webpack 中那些最易混淆的 5 个知识点](./06、其他/02、五个易混淆的概念/02、五个易混淆的概念.md)
     - [webpack4系列中文教程和配套代码](https://github.com/dongyuanxin/webpack-demos)
