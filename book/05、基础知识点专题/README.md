@@ -110,7 +110,7 @@ prototype继承的实现
 借用构造继承，几种组合继承方式                                          
 看编程代码说出运行结果：                                             
 Process.nextTick，setImmediate 和promise.then 的优先级                                             
-Process.nextTick，pronise, setImmediate的优先级                                           
+Process.nextTick，promise, setImmediate的优先级                                           
 
 
 浏览器性能优化 （延后整理）                        
