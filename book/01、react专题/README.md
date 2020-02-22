@@ -28,6 +28,7 @@
 - [** 总结一下react16新特性](./04、其他/08、react新特性/08、react新特性.md)
     - [01、Children和cloneElement的研究](./04、其他/08、react新特性/01、Children和cloneElement的研究/01、Children和cloneElement的研究.md)
 - [React Profiler 介绍](https://juejin.im/post/5ba0f8e4f265da0ab915bcf2)
+- [** 重学react](./04、其他/09、重学react/09、重学react.md)
     
      
 
