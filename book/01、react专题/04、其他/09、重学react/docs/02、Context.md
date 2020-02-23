@@ -2,6 +2,23 @@
 
 Context 提供了一个无需为每层组件手动添加 props，就能在组件树间进行数据传递的方法。
 
+<!-- toc -->
+
+- [基础使用](#%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8)
+- [使用场景问题](#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E9%97%AE%E9%A2%98)
+- [重要API](#%E9%87%8D%E8%A6%81api)
+  * [React.createContext](#reactcreatecontext)
+  * [Context.Provider](#contextprovider)
+  * [Class.contextType](#classcontexttype)
+  * [Context.Consumer](#contextconsumer)
+  * [Context.displayName](#contextdisplayname)
+- [使用场景](#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF)
+  * [动态更新Context](#%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0context)
+  * [在嵌套组件中更新 Context](#%E5%9C%A8%E5%B5%8C%E5%A5%97%E7%BB%84%E4%BB%B6%E4%B8%AD%E6%9B%B4%E6%96%B0-context)
+  * [消费多个 Context](#%E6%B6%88%E8%B4%B9%E5%A4%9A%E4%B8%AA-context)
+- [注意](#%E6%B3%A8%E6%84%8F)
+
+<!-- tocstop -->
 
 ### 基础使用
 
