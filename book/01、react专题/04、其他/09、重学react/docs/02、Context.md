@@ -149,3 +149,258 @@ MyContext.displayName = 'MyDisplayName';
 - context 对象接受一个名为 displayName 的 property，类型为字符串。React DevTools 使用该字符串来确定 context 要显示的内容。
 
 
+
+### 使用场景
+
+#### 动态更新Context
+```typescript jsx
+import React, { Component, createContext, FC } from 'react';
+import CodeViewContainer from '../../../components/BaseCodeView/CodeViewContainer';
+
+/*
+ * 动态更新 Context
+ * */
+
+/* ==============================  const - Start ============================== */
+const themes = {
+  light: {
+    foreground: '#000000',
+    background: '#eeeeee',
+  },
+  dark: {
+    foreground: '#ffffff',
+    background: '#222222',
+  },
+};
+
+const ThemeContext = createContext(themes.dark);
+/* ==============================  const - End   ============================== */
+
+/* ==============================  ThemedButton - Start ============================== */
+class ThemedButton extends Component<{ onClick: () => void }> {
+  render() {
+    const { context } = this;
+    return (
+      <button {...this.props} style={{ backgroundColor: context.background }}>
+        {this.props.children}
+      </button>
+    );
+  }
+}
+
+ThemedButton.contextType = ThemeContext;
+/* ==============================  ThemedButton - End   ============================== */
+
+/* ==============================  ToolBar：ThemedButton 的一个中间件 - Start ============================== */
+const ToolBar: FC<{ changeTheme: () => void }> = props => {
+  return <ThemedButton onClick={props.changeTheme}>Change Theme</ThemedButton>;
+};
+
+/* ==============================  ToolBar：ThemedButton 的一个中间件 - End   ============================== */
+
+/* ==============================  ContextDemo2 - Start ============================== */
+interface ContextDemo2State {
+  theme: {
+    foreground: string;
+    background: string;
+  };
+}
+
+class ContextDemo2 extends Component<any, ContextDemo2State> {
+  state = {
+    theme: themes.light,
+  };
+
+  toggleTheme = () => {
+    this.setState(state => ({
+      theme: state.theme === themes.dark ? themes.light : themes.dark,
+    }));
+  };
+
+  render() {
+    return (
+      <CodeViewContainer codePath="Context/ContextDemo2">
+        <ThemeContext.Provider value={this.state.theme}>
+          <ToolBar changeTheme={this.toggleTheme} />
+        </ThemeContext.Provider>
+      </CodeViewContainer>
+    );
+  }
+}
+/* ==============================  ContextDemo2 - End   ============================== */
+
+export default ContextDemo2;
+```
+
+
+#### 在嵌套组件中更新 Context
+```typescript jsx
+import React, { Component, createContext } from 'react';
+
+/*
+ * 在嵌套组件中更新 Context
+ *
+ * 从一个在组件树中嵌套很深的组件中更新 context 是很有必要的。
+ * 在这种场景下，你可以通过 context 传递一个函数，使得 consumers 组件更新 context：
+ * */
+
+/* ==============================  const - Start ============================== */
+const themes = {
+  light: {
+    foreground: '#000000',
+    background: '#eeeeee',
+  },
+  dark: {
+    foreground: '#ffffff',
+    background: '#222222',
+  },
+};
+
+const ThemeContext = createContext({
+  theme: themes.dark,
+  toggleTheme: () => {},
+});
+
+const { Provider, Consumer } = ThemeContext;
+/* ==============================  const - End   ============================== */
+
+/* ==============================  ThemeToggleButton - Start ============================== */
+const ThemeToggleButton = () => {
+  return (
+    <Consumer>
+      {({ theme, toggleTheme }) => (
+        <button onClick={toggleTheme} style={{ backgroundColor: theme.background }}>
+          Toggle Theme
+        </button>
+      )}
+    </Consumer>
+  );
+};
+/* ==============================  ThemeToggleButton - End   ============================== */
+
+/* ==============================  ContentComponent - Start ============================== */
+const Content = () => (
+  <div>
+    <ThemeToggleButton />
+  </div>
+);
+/* ==============================  ContentComponent - End   ============================== */
+
+/* ==============================  ContextDemo3 - Start ============================== */
+interface ContextDemo3State {
+  theme: {
+    foreground: string;
+    background: string;
+  };
+}
+
+class ContextDemo3 extends Component<any, ContextDemo3State> {
+  state = {
+    theme: themes.light,
+  };
+
+  toggleTheme = () => {
+    this.setState(state => ({
+      theme: state.theme === themes.dark ? themes.light : themes.dark,
+    }));
+  };
+
+  render() {
+    return (
+      <Provider value={Object.assign({}, this.state, { toggleTheme: this.toggleTheme })}>
+        <Content />
+      </Provider>
+    );
+  }
+}
+export default ContextDemo3;
+/* ==============================  ContextDemo3 - End   ============================== */
+```
+
+#### 消费多个 Context
+为了确保 context 快速进行重渲染，React 需要使每一个 consumers 组件的 context 在组件树中成为一个单独的节点。
+
+```jsx harmony
+// Theme context，默认的 theme 是 “light” 值
+const ThemeContext = React.createContext('light');
+
+// 用户登录 context
+const UserContext = React.createContext({
+  name: 'Guest',
+});
+
+class App extends React.Component {
+  render() {
+    const {signedInUser, theme} = this.props;
+
+    // 提供初始 context 值的 App 组件
+    return (
+      <ThemeContext.Provider value={theme}>
+        <UserContext.Provider value={signedInUser}>
+          <Layout />
+        </UserContext.Provider>
+      </ThemeContext.Provider>
+    );
+  }
+}
+
+function Layout() {
+  return (
+    <div>
+      <Sidebar />
+      <Content />
+    </div>
+  );
+}
+
+// 一个组件可能会消费多个 context
+function Content() {
+  return (
+    <ThemeContext.Consumer>
+      {theme => (
+        <UserContext.Consumer>
+          {user => (
+            <ProfilePage user={user} theme={theme} />
+          )}
+        </UserContext.Consumer>
+      )}
+    </ThemeContext.Consumer>
+  );
+}
+```
+
+### 注意
+当 provider 的父组件进行重渲染时，可能会在 consumers 组件中触发意外的渲染。
+举个例子，当每一次 Provider 重渲染时，
+以下的代码会重渲染所有下面的 consumers 组件，因为 value 属性总是被赋值为新的对象：
+```jsx harmony
+class App extends React.Component {
+  render() {
+    return (
+      <Provider value={{something: 'something'}}>
+        <Toolbar />
+      </Provider>
+    );
+  }
+}
+```
+
+为了防止这种情况，将 value 状态提升到父节点的 state 里：
+```jsx harmony
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: {something: 'something'},
+    };
+  }
+
+  render() {
+    return (
+      <Provider value={this.state.value}>
+        <Toolbar />
+      </Provider>
+    );
+  }
+}
+```
