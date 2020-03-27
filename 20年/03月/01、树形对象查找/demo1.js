@@ -26,4 +26,4 @@ const deepQuery = (tree, id) => {
 };
 
 const getNode = deepQuery(tree, '10102');
-console.log(getNode)
+console.log(getNode);
