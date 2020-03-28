@@ -267,6 +267,7 @@
     - [js焦点图片层叠轮播切换滚动](http://www.51qianduan.com/article/110.html)
     - [原生js实现图片层叠轮播切换效果](https://teakki.com/p/57dfb317d3a7507f975e8270)
     - [babel配置-各阶段的stage的区别](https://blog.csdn.net/wang252949/article/details/79064046)
+    - [树形对象查找](./20年/03月/01、树形对象查找/readme.md)
     
 
 - vue
