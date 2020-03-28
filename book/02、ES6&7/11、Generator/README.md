@@ -1,4 +1,26 @@
 # Generator  函数   （重要）
+
+<!-- toc -->
+
+- [1、简介](#1%E7%AE%80%E4%BB%8B)
+  * [1.1、基本概念](#11%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5)
+  * [1.2、yield 语句](#12yield-%E8%AF%AD%E5%8F%A5)
+- [2、next 方法的参数](#2next-%E6%96%B9%E6%B3%95%E7%9A%84%E5%8F%82%E6%95%B0)
+- [3、for...of 循环](#3forof-%E5%BE%AA%E7%8E%AF)
+- [4、Generator.prototype.throw()](#4generatorprototypethrow)
+- [5、Generator.prototype.return()](#5generatorprototypereturn)
+- [6、yield* 语句](#6yield-%E8%AF%AD%E5%8F%A5)
+- [7、作为对象属性的 Generator 函数](#7%E4%BD%9C%E4%B8%BA%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E7%9A%84-generator-%E5%87%BD%E6%95%B0)
+- [8、Generator 函数的 this](#8generator-%E5%87%BD%E6%95%B0%E7%9A%84-this)
+- [9、含义](#9%E5%90%AB%E4%B9%89)
+  * [9.1 Generator 与状态机](#91-generator-%E4%B8%8E%E7%8A%B6%E6%80%81%E6%9C%BA)
+- [10 应用](#10--%E5%BA%94%E7%94%A8)
+  * [10.1、异步操作的同步化表达](#101%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C%E7%9A%84%E5%90%8C%E6%AD%A5%E5%8C%96%E8%A1%A8%E8%BE%BE)
+  * [10.2、控制流管理](#102%E6%8E%A7%E5%88%B6%E6%B5%81%E7%AE%A1%E7%90%86)
+  * [10.3、部署 Iterator 接口](#103%E9%83%A8%E7%BD%B2-iterator-%E6%8E%A5%E5%8F%A3)
+
+<!-- tocstop -->
+
 ### 1、简介
 #### 1.1、基本概念
 执行 Generator 函数会返回一个遍历器对象，也就是说， Generator 函数除了状态机，还是一个遍历器对象生成函数。

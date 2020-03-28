@@ -1,5 +1,34 @@
 # Iterator 和 for...of 循环
 
+<!-- toc -->
+
+- [1、Iterator 的概念](#1iterator-%E7%9A%84%E6%A6%82%E5%BF%B5)
+- [2、数据结构的默认 Iterator 接口](#2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E9%BB%98%E8%AE%A4-iterator-%E6%8E%A5%E5%8F%A3)
+- [3、调用 Iterator 接口的场合](#3%E8%B0%83%E7%94%A8-iterator-%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%9C%BA%E5%90%88)
+  * [3.1、解构赋值](#31%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC)
+  * [3.2、扩展运算符](#32%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6)
+  * [3.3、yield*](#33yield)
+  * [3.4、其他场合](#34%E5%85%B6%E4%BB%96%E5%9C%BA%E5%90%88)
+- [4、Iterator 接口与 Generator 函数](#4iterator-%E6%8E%A5%E5%8F%A3%E4%B8%8E-generator-%E5%87%BD%E6%95%B0)
+- [5、for...of 循环 - 重点！！！](#5forof-%E5%BE%AA%E7%8E%AF-------%E9%87%8D%E7%82%B9)
+  * [5.1、数组](#51%E6%95%B0%E7%BB%84)
+  * [5.2、Set 和 Map 结构](#52set-%E5%92%8C-map-%E7%BB%93%E6%9E%84)
+  * [5.3、计算生成的数据结构](#53%E8%AE%A1%E7%AE%97%E7%94%9F%E6%88%90%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84)
+  * [5.4、对象](#54%E5%AF%B9%E8%B1%A1)
+- [6、对比JS中的几种遍历：for forEach for...in for...of](#6%E5%AF%B9%E6%AF%94js%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E9%81%8D%E5%8E%86for-----foreach---forin---forof)
+  * [理解 JavaScript 中的 for…of 循环](#%E7%90%86%E8%A7%A3-javascript-%E4%B8%AD%E7%9A%84-forof-%E5%BE%AA%E7%8E%AF)
+  * [Arrays(数组)](#arrays%E6%95%B0%E7%BB%84)
+  * [Maps(映射)](#maps%E6%98%A0%E5%B0%84)
+  * [Set(集合)](#set%E9%9B%86%E5%90%88)
+  * [String(字符串)](#string%E5%AD%97%E7%AC%A6%E4%B8%B2)
+  * [Arguments Object(参数对象)](#arguments-object%E5%8F%82%E6%95%B0%E5%AF%B9%E8%B1%A1)
+  * [Generators(生成器)](#generators%E7%94%9F%E6%88%90%E5%99%A8)
+  * [退出迭代](#%E9%80%80%E5%87%BA%E8%BF%AD%E4%BB%A3)
+  * [普通对象不可迭代](#%E6%99%AE%E9%80%9A%E5%AF%B9%E8%B1%A1%E4%B8%8D%E5%8F%AF%E8%BF%AD%E4%BB%A3)
+  * [For…of vs For…in](#forof-vs-forin)
+
+<!-- tocstop -->
+
 ### 1、Iterator 的概念
 
 JavaScript 原有的表示 “ 集合 ” 的数据结构，主要是数组（ Array ）和对象（ Object ）， ES6 又添加了 Map 和 Set 。

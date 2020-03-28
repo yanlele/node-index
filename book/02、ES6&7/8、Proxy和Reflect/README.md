@@ -1,5 +1,28 @@
 # Proxy 和 Reflect
 
+<!-- toc -->
+
+- [1、概述](#1%E6%A6%82%E8%BF%B0)
+- [2、Proxy 实例的方法](#2proxy-%E5%AE%9E%E4%BE%8B%E7%9A%84%E6%96%B9%E6%B3%95)
+  * [2.1、get()](#21get)
+  * [2.2、set()](#22set)
+  * [2.3、apply();](#23apply)
+  * [2.4、has()](#24has)
+  * [2.5、construct()](#25construct)
+  * [2.6、deleteProperty()](#26deleteproperty)
+  * [2.7、defineProperty()](#27defineproperty)
+  * [2.8、getOwnPropertyDescriptor()](#28getownpropertydescriptor)
+  * [2.9、getPrototypeOf()](#29getprototypeof)
+  * [2.10、isExtensible()](#210isextensible)
+  * [2.11、ownKeys()](#211ownkeys)
+  * [2.12、preventExtensions()](#212preventextensions)
+  * [2.13、setPrototypeOf()](#213setprototypeof)
+- [3、Proxy.revocable()](#3proxyrevocable)
+- [4、Reflect概述 （有点儿深）](#4reflect%E6%A6%82%E8%BF%B0----%E6%9C%89%E7%82%B9%E5%84%BF%E6%B7%B1)
+- [5 Reflect 对象的方法](#5-reflect-%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95)
+
+<!-- tocstop -->
+
 ### 1、概述            
 Proxy 用于修改某些操作的默认行为，等同于在语言层面做出修改，所以属于一种 “ 元编程 ” （ meta programming ），即对编程语言进行编程。                
 Proxy 可以理解成，在目标对象之前架设一层 “ 拦截 ” ，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。 Proxy 这个词的原意是代理，用在这里表示由它来 “ 代理 ” 某些操作，可以译为“ 代理器 ”。              

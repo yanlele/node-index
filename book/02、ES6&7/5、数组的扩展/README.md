@@ -1,5 +1,17 @@
 # 数组的扩展
 
+<!-- toc -->
+
+- [1、Array.from()](#1arrayfrom)
+- [2、Array.of()](#2arrayof)
+- [3、数组实例的 copyWithin()](#3%E6%95%B0%E7%BB%84%E5%AE%9E%E4%BE%8B%E7%9A%84-copywithin)
+- [4、数组实例的 find() 和 findIndex() - 非常重要](#4%E6%95%B0%E7%BB%84%E5%AE%9E%E4%BE%8B%E7%9A%84-find-%E5%92%8C-findindex------%E9%9D%9E%E5%B8%B8%E9%87%8D%E8%A6%81)
+- [5、数组实例的 fill()](#5%E6%95%B0%E7%BB%84%E5%AE%9E%E4%BE%8B%E7%9A%84-fill)
+- [6、 数组实例的 entries() ， keys() 和 values()](#6-%E6%95%B0%E7%BB%84%E5%AE%9E%E4%BE%8B%E7%9A%84-entries--keys-%E5%92%8C-values)
+- [7、数组实例的 includes()](#7%E6%95%B0%E7%BB%84%E5%AE%9E%E4%BE%8B%E7%9A%84-includes)
+
+<!-- tocstop -->
+
 #### 1、Array.from()            
 Array.from方法用于将两类对象转为真正的数组：类似数组的对象（ array-like object ）和可遍历（ iterable ）的对象（包括 ES6 新增的数据结构 Set 和Map ）。
 

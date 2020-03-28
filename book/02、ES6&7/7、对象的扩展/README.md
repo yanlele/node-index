@@ -1,4 +1,29 @@
-# 对象的扩展             
+# 对象的扩展
+
+<!-- toc -->
+
+- [1、属性的简洁表达方式：](#1%E5%B1%9E%E6%80%A7%E7%9A%84%E7%AE%80%E6%B4%81%E8%A1%A8%E8%BE%BE%E6%96%B9%E5%BC%8F)
+- [2、属性名表达式](#2%E5%B1%9E%E6%80%A7%E5%90%8D%E8%A1%A8%E8%BE%BE%E5%BC%8F)
+- [3、方法的 name 属性](#3%E6%96%B9%E6%B3%95%E7%9A%84-name-%E5%B1%9E%E6%80%A7)
+- [4、Object.is()](#4objectis)
+- [5、Object.assign()](#5objectassign)
+  * [5.1、基本用法](#51%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95)
+  * [5.2、注意点](#52%E6%B3%A8%E6%84%8F%E7%82%B9)
+  * [5.3、常见用途](#53%E5%B8%B8%E8%A7%81%E7%94%A8%E9%80%94)
+  * [5.4、属性的可枚举性](#54%E5%B1%9E%E6%80%A7%E7%9A%84%E5%8F%AF%E6%9E%9A%E4%B8%BE%E6%80%A7)
+  * [5.5、属性的遍历](#55%E5%B1%9E%E6%80%A7%E7%9A%84%E9%81%8D%E5%8E%86)
+- [6、__proto__ 属性，Object.setPrototypeOf()，Object.getPrototypeOf()](#6__proto__-%E5%B1%9E%E6%80%A7objectsetprototypeofobjectgetprototypeof)
+  * [6.1、__proto__ 属性](#61__proto__-%E5%B1%9E%E6%80%A7)
+  * [6.2、 Object.setPrototypeOf()](#62-objectsetprototypeof)
+  * [6.3、 Object.getPrototypeOf()](#63-objectgetprototypeof)
+  * [6.4、Object.values()，Object.entries()](#64objectvaluesobjectentries)
+- [7、对象扩展符](#7%E5%AF%B9%E8%B1%A1%E6%89%A9%E5%B1%95%E7%AC%A6)
+  * [7.1、Rest 解构赋值](#71rest-%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC)
+  * [7.2、扩展运算符](#72%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6)
+- [8、Object.getOwnPropertyDescriptors()](#8objectgetownpropertydescriptors)
+
+<!-- tocstop -->
+
 ### 1、属性的简洁表达方式：            
 ES6 允许直接写入变量和函数，作为对象的属性和方法。这样的书写更加简洁。           
 实例1：            

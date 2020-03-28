@@ -1,5 +1,18 @@
 #  数值的扩展
 
+<!-- toc -->
+
+- [1、Number.isFinite(), Number.isNaN()](#1numberisfinite-numberisnan)
+- [2、Number.parseInt(), Number.parseFloat()](#2numberparseint-numberparsefloat)
+- [3、Number.isInteger()](#3numberisinteger)
+- [4、安全整数和 Number.isSafeInteger() - 非常冷门，不重要](#4%E5%AE%89%E5%85%A8%E6%95%B4%E6%95%B0%E5%92%8C-numberissafeinteger------%E9%9D%9E%E5%B8%B8%E5%86%B7%E9%97%A8%E4%B8%8D%E9%87%8D%E8%A6%81)
+- [5、Math 对象的扩展](#5math-%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95)
+  * [5.1、Math.trunc()：方法用于去除一个数的小数部分，返回整数部分。](#51mathtrunc%E6%96%B9%E6%B3%95%E7%94%A8%E4%BA%8E%E5%8E%BB%E9%99%A4%E4%B8%80%E4%B8%AA%E6%95%B0%E7%9A%84%E5%B0%8F%E6%95%B0%E9%83%A8%E5%88%86%E8%BF%94%E5%9B%9E%E6%95%B4%E6%95%B0%E9%83%A8%E5%88%86)
+  * [5.2、Math.sign()](#52mathsign)
+  * [5.3、Math.imul()](#53mathimul)
+
+<!-- tocstop -->
+
 ### 1、Number.isFinite(), Number.isNaN()
 
 Number.isFinite()用来检查一个数值是否为有限的（ finite ）。      

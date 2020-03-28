@@ -1,4 +1,22 @@
 # Promise 对象
+
+<!-- toc -->
+
+- [1、Promise 的含义](#1promise-%E7%9A%84%E5%90%AB%E4%B9%89)
+- [2、基本用法](#2%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95)
+- [3、Promise.prototype.then()](#3promiseprototypethen)
+- [4、Promise.prototype.catch()](#4promiseprototypecatch)
+- [5、Promise.all()](#5promiseall)
+- [6、Promise.race()](#6promiserace)
+- [7、Promise.resolve()](#7promiseresolve)
+- [8、Promise.reject()](#8promisereject)
+- [9、两个有用的附加方法](#9%E4%B8%A4%E4%B8%AA%E6%9C%89%E7%94%A8%E7%9A%84%E9%99%84%E5%8A%A0%E6%96%B9%E6%B3%95)
+  * [9.1、done()](#91done)
+  * [9.2、finally()](#92finally)
+- [10、Promise的使用](#10promise%E7%9A%84%E4%BD%BF%E7%94%A8)
+
+<!-- tocstop -->
+
 ### 1、Promise 的含义
 Promise 是异步编程的一种解决方案，比传统的解决方案 —— 回调函数和事件 —— 更合理和更强大。它由社区最早提出和实现， ES6 将其写进了语言标准，统一了用法，原生提供了Promise对象。
 
