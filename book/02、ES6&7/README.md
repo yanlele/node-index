@@ -16,3 +16,8 @@
     - [02、Iterator](./13、其他知识点儿的总结/02、Iterator.md)
     - [03、Symbol](./13、其他知识点儿的总结/03、Symbol.md)
     - [06、Generator总结](./13、其他知识点儿的总结/04、Generator总结.md)
+    
+- [es10的新特性]()
+
+### 参考文章
+- [ES6、ES7、ES8、ES9、ES10新特性一览](https://juejin.im/post/5ca2e1935188254416288eb2)
