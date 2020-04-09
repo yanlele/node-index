@@ -363,6 +363,7 @@
     - [指定文件、指定行、指定代码块不使用ESLint语法检查](https://blog.csdn.net/u013362969/article/details/81215336)
     - [前端mock解决方案](./19年/08月/02、前端mock解决方案/02、前端mock解决方案.md)
     - [在 JS 循环中正确使用 async 与 await](https://blog.csdn.net/sanstu/article/details/90904852)
+    - [简单好用的动画库：anime](https://github.com/juliangarnier/anime)
     
 
 - koa2
