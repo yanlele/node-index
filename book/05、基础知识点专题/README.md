@@ -88,6 +88,7 @@
     - [五年面试，三年模拟](https://juejin.im/post/5ca0425e51882567ce181037)
     - [ES6、ES7、ES8、ES9、ES10新特性一览](https://juejin.im/post/5ca2e1935188254416288eb2)
     - [一份搜集的前端面试题目清单+面试相关的资料](https://github.com/pwstrick/daily)
+    - [26 个 CSS 高频考点](https://juejin.im/post/5e8fb5b16fb9a03c464934a8)
     
     
     
