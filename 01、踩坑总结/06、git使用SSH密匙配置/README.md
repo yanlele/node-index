@@ -81,8 +81,14 @@ origin https://github.com/someaccount/someproject.git (push)
 
 
 ### 四、其他
-如果之前设置了密码， 后来不想要密码了， 可以这样：
+如果之前设置了密码， 后来不想要密码了， 可以这样：              
+1、`ssh-keygen -p` 然后直接回车就行了
 
+2、`Enter old passphrase:` 输入旧密码
+
+3、`Enter new passphrase (empty for no passphrase):` 输入新密码或者不输入密码
+
+之后， 在git提交的时候， 就可以直接不用输入密码了
 
 
 ### 参考文章
