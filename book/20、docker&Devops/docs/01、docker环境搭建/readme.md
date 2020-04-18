@@ -136,3 +136,6 @@ See 'docker --help'
 - [CentOS7上安装Docker并使用镜像加速解决docker拉取慢问题](https://www.jianshu.com/p/d611047c4387)
 - [安装Docker](https://help.aliyun.com/document_detail/60742.html)
 - [使用Vagrant管理虚拟机](https://blog.csdn.net/hongweiit/article/details/81148357#8)
+- [Vagrant开发环境搭建](https://www.jianshu.com/p/2207f730e64e)
+- [征服诱人的Vagrant！](https://www.cnblogs.com/hafiz/p/9175484.html)
+- [Vagrant](https://www.jianshu.com/p/0cabd5072b86)
