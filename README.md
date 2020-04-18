@@ -65,6 +65,7 @@
 
 ### <div id="class06">专题笔记归类(简书总结)</div>
 - [01、react简书笔记](./book/01、react专题)
+    - [重学react](./book/01、react专题/04、其他/09、重学react/09、重学react.md)
 
 - [02、ES6/7简书笔记](./book/02、ES6&7)
     - [1、let和const](./book/02、ES6&7/1、let和const/let和const.md)
