@@ -67,9 +67,7 @@ Attempts to ssh to github
 
 
 ### 三、修改git的remote url
-使用命令 git remote -v 查看你当前的 remote url      
-
-  
+使用命令 git remote -v 查看你当前的 remote url        
 ```
 $ git remote -v
 origin https://github.com/someaccount/someproject.git (fetch)
@@ -79,6 +77,15 @@ origin https://github.com/someaccount/someproject.git (push)
 你可以登陆你的github，就像本文开头的图例，你在上面可以看到你的ssh协议相应的url，类似：       
 复制此ssh链接，然后使用命令 `git remote set-url origin git://new.url.here` 来调整你的url。        
 然后你可以再用命令 git remote -v 查看一下，url是否已经变成了ssh地址。       
-然后你就可以愉快的使用git fetch, git pull , git push，再也不用输入烦人的密码了     
+然后你就可以愉快的使用git fetch, git pull , git push，再也不用输入烦人的密码了      
 
-- [参看文章链接](https://www.cnblogs.com/superGG1990/p/6844952.html) 
+
+### 四、其他
+如果之前设置了密码， 后来不想要密码了， 可以这样：
+
+
+
+### 参考文章
+- [参看文章链接](https://www.cnblogs.com/superGG1990/p/6844952.html)
+- [mac 清除/修改SSH的私钥密码](https://blog.csdn.net/qq_36545656/article/details/89478254)
+
