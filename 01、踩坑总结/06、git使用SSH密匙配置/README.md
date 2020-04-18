@@ -67,7 +67,9 @@ Attempts to ssh to github
 
 
 ### 三、修改git的remote url
-使用命令 git remote -v 查看你当前的 remote url        
+使用命令 git remote -v 查看你当前的 remote url      
+
+  
 ```
 $ git remote -v
 origin https://github.com/someaccount/someproject.git (fetch)
