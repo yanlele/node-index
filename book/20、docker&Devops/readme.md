@@ -22,3 +22,4 @@
 - [Vagrant 入门指南](https://blog.csdn.net/qianghaohao/article/details/80038096)
 - [处理vagrant下载镜像包过慢的情况处理](./docs/00、其他/01、处理vagrant下载镜像包过慢的情况处理/readme.md)
 - [处理docker 启动mysql 后远程无法访问](./docs/00、其他/02、处理docker%20启动mysql%20后远程无法访问/readme.md)
+- [Docker容器部署 Nginx服务](https://www.cnblogs.com/saneri/p/11799865.html)
