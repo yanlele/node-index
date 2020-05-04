@@ -403,6 +403,10 @@
     - [前端mock解决方案](./19年/08月/02、前端mock解决方案/02、前端mock解决方案.md)
     - [在 JS 循环中正确使用 async 与 await](https://blog.csdn.net/sanstu/article/details/90904852)
     - [简单好用的动画库：anime](https://github.com/juliangarnier/anime)
+    - [请你实现一个大文件上传和断点续传](https://juejin.im/post/5dff8a26e51d4558105420ed)
+    - [编写一个axios这样的库](https://juejin.im/post/5e16e5d76fb9a02fd742a92b)
+    - [pm2 实践指南](https://juejin.im/post/5e1fa941e51d451c774dcc18)
+    - [前端轻量化部署脚手架实践](https://juejin.im/post/5e1bfbadf265da3e3077005e)
     
 
 - koa2
