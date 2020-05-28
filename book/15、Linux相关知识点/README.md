@@ -37,4 +37,5 @@
     - [一键化打造 Vim IDE 环境(安装只需数秒) 【环境:Linux 64 位】 Vim7.X 可以安装版本1.0](https://github.com/meetbill/Vim)
     - [centos7安装zsh](./其他/03、centos7安装zsh)
     - [centos7安装nvm](./其他/04、centos7安装nvm)
+    - [timedatectl](./其他/05、timedatectl工具)
     
