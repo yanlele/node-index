@@ -56,6 +56,7 @@ vagrant基本命令:
 - `vagrant halt` 关闭虚拟机
 - `vagrant status` 查找虚拟机的运行状态
 - `vagrant destroy` 销毁当前虚拟机
+- `vagrant global-status` 查看到全局的虚拟机状态
 
 这个过程中最重要的是 `Vagrantfile`， 这个文件的配置， 可以直接去官方网站看就可以了
 
