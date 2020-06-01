@@ -46,6 +46,7 @@
     - [图片处理](./05、webpack优化问题/01、图片处理.md)
     - [pre-commit限制提交检测](./05、webpack优化问题/02、pre-commit限制提交检测.md)
     - [prettier和lint检测](./05、webpack优化问题/03、prettier和lint检测.md)
+    - [优化插件](./05、webpack优化问题/)
     
 - 六、其他补充知识点
     - [Tree-Shaking攻略](./06、其他/01、Tree-Shaking攻略/01、Tree-Shaking攻略.md)
