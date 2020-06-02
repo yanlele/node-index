@@ -48,6 +48,12 @@
     - [prettier和lint检测](./05、webpack优化问题/03、prettier和lint检测.md)
     - [优化插件](./05、webpack优化问题/04、优化插件.md)
     - [优化打包速度](./05、webpack优化问题/05、优化打包速度.md)
+    - [webpack 系列一：最佳配置指北](https://github.com/sisterAn/blog/issues/68)
+    - [webpack 系列二：优化90%打包速度](https://github.com/sisterAn/blog/issues/63)
+    - [webpack 系列三：优化开发体验](https://github.com/sisterAn/blog/issues/64)
+    - [webpack 系列四：优化包体积](https://github.com/sisterAn/blog/issues/65)
+    - [webpack 系列五：优化首屏加载时间及流畅度](https://github.com/sisterAn/blog/issues/66)
+    - [五种可视化方案分析 webpack 打包性能瓶颈](https://github.com/sisterAn/blog/issues/67)
     
     
 - 六、其他补充知识点
