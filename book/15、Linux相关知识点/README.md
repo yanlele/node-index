@@ -40,3 +40,4 @@
     - [timedatectl](./其他/05、timedatectl工具)
     - [本地文件上传到Linux服务器的几种方法](https://blog.csdn.net/weixin_34270865/article/details/92937089)
     - [oh-my-zsh,让你的终端从未这么爽过](https://cloud.tencent.com/developer/article/1152727)
+    - [Permission denied (publickey,gssapi-keyex,gssapi-with-mic) 解决方法](https://blog.csdn.net/albertjone/article/details/84946557)
