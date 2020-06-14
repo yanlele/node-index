@@ -444,7 +444,7 @@ module.exports = {
 ```
 做如下配置之后，就只会生成html, 但是不会自动插入js和css文件                 
 如果我们做修改的时候，把CSS和JS都改为有版本号的文件名字, 然后祛除inject:false            
-打包之后，会发现样式和JS都被自动注入成功了                      
+打包之后，会发现样式和JS都被自动注入成功了                     
 
 #### 多entry注入                   
 如果我们不指定chunks的情况下，那么会自动把所有的entry， 都注入到html中去，但是如果指定了chunks，那么只会把指定的chunks注入到页面中去；               
@@ -471,6 +471,43 @@ module.exports = {
 原因是出在了publicPath身上，在entry配置中，删除publicPath， 或者设置为空就可以了；                          
 
 可以尝试结合图片打包，都是没有任何问题的
+
+#### html-webpack-plugin还支持以下字段
+```js
+new HtmlWebpackPlugin({
+    template: './index.html',
+    filename: 'all.html',
+    //页面注入title
+    title: 'html webpack plugin title',
+    //默认引入所有的chunks链接
+    chunks: 'all',
+    //注入页面位置
+    inject: true,
+    //启用hash
+    hash: true,
+    favicon: '',
+    //插入meta标签
+    meta: {
+        'viewport': 'width=device-width, initial-scale=1.0'
+    },
+    minify: {
+        //清除script标签引号
+        removeAttributeQuotes: true,
+        //清除html中的注释
+        removeComments: true,
+        //清除html中的空格、换行符
+        //将html压缩成一行
+        collapseWhitespace: false,
+        //压缩html的行内样式成一行
+        minifyCSS: true,
+        //清除内容为空的元素（慎用）
+        removeEmptyElements: false,
+        //清除style和link标签的type属性
+        removeStyleLinkTypeAttributes: false
+    }
+}),
+、
+```
 
 
 ### <div id="class2-item05">05、html中引入图片</div>
