@@ -308,7 +308,43 @@ module.exports = {
 而且还有一个待解决和待研究的地方： 压缩后的雪碧图，文件体积非常的大。                     
 
 在通常情况下，设计师会根据屏幕大小，谁知不同大小的设计稿，这儿时候就要用到postcss-sprites的其他参数，retina:true,
-这个时候，图片或者图标需要该名称为 XXX@2x.png 类似于这样的结尾标识符                
+这个时候，图片或者图标需要该名称为 XXX@2x.png 类似于这样的结尾标识符          
+
+
+### html-withimg-loader **
+如果我们在页面上引用一个图片，会发现打包后的html还是引用了src目录下的图片，这样明显是错误的，因此我们还需要一个插件对html引用的图片进行处理：                    
+`npm i -D html-withimg-loader`                      
+
+老样子还是在config中对html进行配置：
+```js
+{
+    //省略其他配置
+    rules: [{
+        test: /\.(htm|html)$/,
+        use: {
+            loader: 'html-withimg-loader'
+        }
+    }]
+}
+```      
+
+这是因为在url-loader中把每个图片作为一个模块来处理了，我们还需要去url-loader中修改：
+```js
+use: {
+    loader: 'url-loader',
+    options: {
+        //10k
+        limit: 10240,
+        esModule: false
+    }
+}
+```
+
+**注意：**
+html-withimg-loader会导致html-webpack-plugin插件注入title的模板字符串`<%= htmlWebpackPlugin.options.title %>`失效，原封不动的展示在页面上；
+因此，如果我们想保留两者的功能需要在配置config中把html-withimg-loader删除并且通过下面的方式来引用图片：                    
+`<img src="<%=require('./src/bg1.png') %>" alt="" srcset="">`
+
 
 
 ### <div id="class2-item02">02、文件处理-字体处理</div>                  
@@ -505,8 +541,7 @@ new HtmlWebpackPlugin({
         //清除style和link标签的type属性
         removeStyleLinkTypeAttributes: false
     }
-}),
-、
+})
 ```
 
 
