@@ -50,6 +50,7 @@
     - [47、浏览器相关灵魂拷问](./01_47、浏览器相关灵魂拷问.md)
     - [48、九种跨域方式实现原理（完整版）](https://juejin.im/post/5c23993de51d457b8c1f4ee1)
     - [49、options 请求的理解](https://juejin.im/post/5edef7b2e51d45784213ca24)
+    - [50、手写Promise](https://juejin.im/post/5ea39ea251882573b86fadbe)
     
     
 - 进阶知识部分
