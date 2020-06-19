@@ -510,6 +510,7 @@
     - [HBase基本概念与基本使用](https://www.cnblogs.com/swordfall/p/8737328.html#auto_id_9)
     - [科学上网](./19年/11月/02、科学上网/02、科学上网.md)
     - [jetbrains:同步服务器代码](https://www.jianshu.com/p/49442ec9bc9f)
+    - [mac Homebrew 装包加速](./20年/06月/01、mac%20Homebrew%20装包加速/readme.md)
    
     
 - 其他优秀技术文章与前沿技术收集
