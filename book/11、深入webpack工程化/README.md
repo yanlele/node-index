@@ -65,6 +65,7 @@
     - [Webpack-dev-server的proxy用法](https://www.jianshu.com/p/f489e7764cb8)
     - [babel-polyfill的几种使用方法](https://blog.csdn.net/weixin_41224029/article/details/90213067)
     - [Webpack 再深入再总结](https://juejin.im/post/5e17c1dd6fb9a02fd67e9990?utm_source=gold_browser_extension)
+    - [webpack devtool篇](https://www.jianshu.com/p/62dc120d96d0)
 
 
 - 实战案例
