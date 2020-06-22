@@ -502,7 +502,10 @@
     - [require时，exports和module.exports的区别你真的懂吗？](https://juejin.im/post/5d5639c7e51d453b5c1218b4)
     - [5分钟教你用nodeJS手写一个mock数据服务器](https://juejin.im/post/5d7345bce51d453b76258503)
     - [从0构建一个TS-Node项目](./19年/12月/01、从0构建一个TS-Node项目/01、从0构建一个TS-Node项目.md)
-
+    - [关于node.js中流的理解](https://juejin.im/post/5cbaba8ce51d456e747c5343)
+    - [linux安装mongoDB与NodeJs远程连接](https://juejin.im/post/5cb6cc72518825327854752e)
+    - [前端工程师须知的CORS知识](https://juejin.im/post/5cbaa6ef5188253feb5855be)
+    - [你不能不知道的Koa实现原理](https://juejin.im/post/5d1964bfe51d454fd8057bcb)
 
 - 杂项
     - [Hbase中多版本(version)数据获取办法](https://blog.csdn.net/liuchuanhong1/article/details/53895234/)
