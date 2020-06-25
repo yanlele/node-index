@@ -80,6 +80,7 @@
     - [24、浏览器渲染过程与性能优化 **](https://juejin.im/collection/5bab019fe51d452fa9ee45e2)
     - [25、大文件上传和断点续传 **](https://juejin.im/post/5dff8a26e51d4558105420ed)
     - [26、彻底掌握js内存泄漏以及如何避免](https://juejin.im/post/5d5664ebf265da03f3334f13)
+    - [27、从浏览器渲染原理，说一说如何实现高效的动画](https://juejin.im/post/5d2491ba6fb9a07ecf724b69)
     
     
 - 其他
