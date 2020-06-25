@@ -78,7 +78,8 @@
     - [22、从浏览器地址栏输入url到显示页面的步骤(以HTTP为例)](./02_03、进阶知识部分21-30.md#class02-22)
     - [23、如何进行网站性能优化](./02_03、进阶知识部分21-30.md#class02-23)
     - [24、浏览器渲染过程与性能优化 **](https://juejin.im/collection/5bab019fe51d452fa9ee45e2)
-    - [25、大文件上传和断点续传](https://juejin.im/post/5dff8a26e51d4558105420ed)
+    - [25、大文件上传和断点续传 **](https://juejin.im/post/5dff8a26e51d4558105420ed)
+    - [26、彻底掌握js内存泄漏以及如何避免](https://juejin.im/post/5d5664ebf265da03f3334f13)
     
     
 - 其他
