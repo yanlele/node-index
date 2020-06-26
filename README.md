@@ -523,6 +523,7 @@
         - [梁少峰博客](https://github.com/youngwind/blog)
         - [@chenshenhai的博客](https://github.com/chenshenhai/blog)
         - [木易杨博客](https://github.com/yygmind/blog)
+        - [木易杨说 - 掘金](https://juejin.im/user/56dea4aa7664bf00559f002d/posts)
         - [浪里行舟博客:vue、页面优化、js](https://github.com/ljianshu/Blog)
         - [颜海镜的个人博客:react以及杂类](https://github.com/yanhaijing/yanhaijing.github.io)
         - [ljianshu博客](https://github.com/ljianshu/Blog)
