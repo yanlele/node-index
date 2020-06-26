@@ -77,10 +77,11 @@
     - [21、深度对比算法研究](./02_03、进阶知识部分21-30.md#class02-21)
     - [22、从浏览器地址栏输入url到显示页面的步骤(以HTTP为例)](./02_03、进阶知识部分21-30.md#class02-22)
     - [23、如何进行网站性能优化](./02_03、进阶知识部分21-30.md#class02-23)
-    - [24、浏览器渲染过程与性能优化 **](https://juejin.im/collection/5bab019fe51d452fa9ee45e2)
-    - [25、大文件上传和断点续传 **](https://juejin.im/post/5dff8a26e51d4558105420ed)
-    - [26、彻底掌握js内存泄漏以及如何避免](https://juejin.im/post/5d5664ebf265da03f3334f13)
-    - [27、从浏览器渲染原理，说一说如何实现高效的动画](https://juejin.im/post/5d2491ba6fb9a07ecf724b69)
+    - [24、9种常见的前端跨域解决方案（详解）](./02_03、进阶知识部分21-30.md#class02-24)
+    - [25、浏览器渲染过程与性能优化 **](https://juejin.im/collection/5bab019fe51d452fa9ee45e2)
+    - [26、大文件上传和断点续传 **](https://juejin.im/post/5dff8a26e51d4558105420ed)
+    - [27、彻底掌握js内存泄漏以及如何避免](https://juejin.im/post/5d5664ebf265da03f3334f13)
+    - [28、从浏览器渲染原理，说一说如何实现高效的动画](https://juejin.im/post/5d2491ba6fb9a07ecf724b69)
     
     
 - 其他
