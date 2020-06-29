@@ -594,6 +594,7 @@
 
 
 - 值得好好学习的开源项目
+    - [Node - 从0基础到实战企业官](https://juejin.im/post/5c1f8e52f265da6170071e43)
     - [一个完整的react+redux项目示例和人总结](https://github.com/bailicangdu/react-pxq)
     - [某博客知识点儿，写的很好，找个时间可以多学习一下](https://github.com/muwoo/blogs)
     - [基于 node.js + Mongodb 构建的后台系统](https://github.com/bailicangdu/node-elm)
