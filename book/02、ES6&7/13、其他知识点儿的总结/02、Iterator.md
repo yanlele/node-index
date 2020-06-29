@@ -9,7 +9,44 @@
     - 如果迭代器可以产生序列中的下一个值，则为false。这等效于连同done属性也不指定。
 - value: 迭代器返回的任何 JavaScript值。done为true时可省略。
 
+### 什么是可迭代对象(Iterable)？
+满足可迭代协议的对象是可迭代对象。                       
+可迭代协议: 对象的[Symbol.iterator]值是一个无参函数，该函数返回一个迭代器。
 
+在ES6中，所有的集合对象（Array、 Set 与 Map）以及String、arguments都是可迭代对象，它们都有默认的迭代器。                        
+
+可迭代对象可以在以下语句中使用：
+
+- for...of循环
+```js
+for (let value of ['a', 'b', 'c']) {
+  console.log(value);
+}
+// "a"
+// "b"
+// "c"
+```
+
+- 扩展运算符
+```js
+[...'abc'];   // ["a", "b", "c"]
+console.log(...['a', 'b', 'c']);   // ["a", "b", "c"]
+```
+
+- yield*
+```js
+function* gen() {
+  yield* ['a', 'b', 'c'];
+}
+
+gen().next(); // { value: "a", done: false }
+```
+
+- 解构赋值
+```js
+let [a, b, c] = new Set(['a', 'b', 'c']);
+a;   // 'a'
+```
 
 
 ### 参考资料
