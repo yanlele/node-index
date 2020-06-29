@@ -9,6 +9,33 @@
     - 如果迭代器可以产生序列中的下一个值，则为false。这等效于连同done属性也不指定。
 - value: 迭代器返回的任何 JavaScript值。done为true时可省略。
 
+ES5实现一个简单迭代器：
+```ts
+const createIterator = (items: any[]) => {
+  let i = 0;
+  return {
+    next: () => {
+      const done = i >= items.length;
+      const value = !done ? items[i++] : undefined;
+      return {
+        done,
+        value,
+      };
+    },
+  };
+};
+
+const iterator = createIterator([1, 3, 5]);
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+
+console.log(iterator.next());
+
+export default {};
+```
+
 ### 什么是可迭代对象(Iterable)？
 满足可迭代协议的对象是可迭代对象。                       
 可迭代协议: 对象的[Symbol.iterator]值是一个无参函数，该函数返回一个迭代器。
@@ -75,6 +102,34 @@ for (var val, ret, it = a[Symbol.iterator]();
 }
 // "a" "b" "c" "d" "e"
 ```
+
+### 使迭代器可迭代
+在什么是迭代器部分，我们自定义了一个简单的生成迭代器的函数createIterator，但并该函数生成的迭代器并没有实现可迭代协议，
+所以不能在for...of等语法中使用。可以为该对象实现可迭代协议，在`[Symbol.iterator]`函数中返回该迭代器自身。
+```ts
+const createIteratorDemo = (items: any[]) => {
+  let i = 0;
+  return {
+    next: function() {
+      const done = i >= items.length;
+      const value = !done ? items[i++] : undefined;
+      return {
+        done,
+        value,
+      };
+    },
+    [Symbol.iterator]: function() {
+      return this;
+    },
+  };
+};
+
+const iteratorDemo: any = createIteratorDemo([1, 2, 3]);
+console.log(...iteratorDemo);
+
+export default {};
+```
+
 
 
 ### 参考资料
