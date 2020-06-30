@@ -1,5 +1,21 @@
 ## Iterator
 
+<!-- toc -->
+
+- [什么是迭代器(Iterator)？](#%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%AD%E4%BB%A3%E5%99%A8iterator)
+- [什么是可迭代对象(Iterable)？](#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1iterable)
+- [理解 for...of 循环](#%E7%90%86%E8%A7%A3-forof-%E5%BE%AA%E7%8E%AF)
+- [使迭代器可迭代](#%E4%BD%BF%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%8F%AF%E8%BF%AD%E4%BB%A3)
+- [生成器](#%E7%94%9F%E6%88%90%E5%99%A8)
+  * [生成器函数](#%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0)
+  * [在生成器中return](#%E5%9C%A8%E7%94%9F%E6%88%90%E5%99%A8%E4%B8%ADreturn)
+- [添加`[Symbol.iterator]`使Object可迭代](#%E6%B7%BB%E5%8A%A0symboliterator%E4%BD%BFobject%E5%8F%AF%E8%BF%AD%E4%BB%A3)
+- [生成器委托 yield*](#%E7%94%9F%E6%88%90%E5%99%A8%E5%A7%94%E6%89%98-yield)
+- [最后一个例子](#%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90)
+- [参考资料](#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99)
+
+<!-- tocstop -->
+
 ### 什么是迭代器(Iterator)？
 满足迭代器协议的对象。                                 
 迭代器协议: 对象的next方法是一个无参函数，它返回一个对象，该对象拥有done和value两个属性：
