@@ -132,7 +132,7 @@ export default {};
 
 
 ### 生成器
-### 生成器函数
+#### 生成器函数
 
 `生成器函数（GeneratorFunction）`是能返回一个生成器（generator）的函数。生成器函数由放在 function 关键字之后的一个星号（ * ）来表示，并能使用新的 yield 关键字。
 ```ts
@@ -171,7 +171,26 @@ var aGeneratorObject1 = aGeneratorfunction()
 [...aGeneratorObject1]   // [1, 2, 3]
 ```
 
+#### 在生成器中return
+遍历返回对象的done值为true时迭代即结束，不对该value处理。
+```javascript
+function *createIterator() {
+  yield 1;
+  return 42;
+  yield 2;
+}
 
+let iterator = createIterator();
+iterator.next();   // {value: 1, done: false}
+iterator.next();   // {value: 42, done: true}
+iterator.next();   // {value: undefined, done: true}
+```
+
+`done值为true时迭代即结束，迭代不对该value处理。`所以对这个迭代器遍历，不会对值42处理。
+```javascript
+let iterator1 = createIterator();
+console.log(...iterator);   // 1
+```
 
 
 
