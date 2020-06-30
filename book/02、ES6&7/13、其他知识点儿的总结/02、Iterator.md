@@ -131,6 +131,50 @@ export default {};
 ```
 
 
+### 生成器
+### 生成器函数
+
+`生成器函数（GeneratorFunction）`是能返回一个生成器（generator）的函数。生成器函数由放在 function 关键字之后的一个星号（ * ）来表示，并能使用新的 yield 关键字。
+```ts
+function *aGeneratorfunction(){
+  yield 1
+  yield 2
+  yield 3
+};
+
+var aGeneratorObject = aGeneratorfunction()
+// 生成器对象
+aGeneratorObject.toString()   // "[object Generator]"
+```
+
+生成器对象既是迭代器，又是可迭代对象
+```js
+function *aGeneratorfunction(){
+  yield 1
+  yield 2
+  yield 3
+};
+
+var aGeneratorObject = aGeneratorfunction()
+
+// 满足迭代器协议，是迭代器
+aGeneratorObject.next()   // {value: 1, done: false}
+aGeneratorObject.next()   // {value: 2, done: false}
+aGeneratorObject.next()   // {value: 3, done: false}
+aGeneratorObject.next()   // {value: undefined, done: true}
+
+// [Symbol.iterator]是一个无参函数，该函数执行后返回生成器对象本身（是迭代器），所以是可迭代对象
+aGeneratorObject[Symbol.iterator]() === aGeneratorObject   // true
+
+// 可以被迭代
+var aGeneratorObject1 = aGeneratorfunction()
+[...aGeneratorObject1]   // [1, 2, 3]
+```
+
+
+
+
+
 
 ### 参考资料
 - [ES6 迭代器(Iterator)和 for...of循环使用方法](https://www.jianshu.com/p/3bb77516fa7e)
