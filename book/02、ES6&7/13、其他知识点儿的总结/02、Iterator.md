@@ -192,7 +192,120 @@ let iterator1 = createIterator();
 console.log(...iterator);   // 1
 ```
 
+### 添加`[Symbol.iterator]`使Object可迭代
+根据可迭代协议，给Object的原型添加`[Symbol.iterator]`，值为返回一个对象的无参函数，被返回对象符合迭代器协议。
+```javascript
+Object.prototype[Symbol.iterator] = function() {
+  let i = 0;
+  const items = Object.entries(this);
+  return {
+    next: () => {
+      const done = i >= items.length;
+      const value = !done ? items[i++] : undefined;
+      return {
+        done,
+        value,
+      };
+    },
+  };
+};
 
+const a = {
+  name: 'Jimmy',
+  age: 18,
+  job: 'actor',
+};
+
+console.log(...a); // [ 'name', 'Jimmy' ] [ 'age', 18 ] [ 'job', 'actor' ]
+```
+
+使用生成器简化代码：
+```javascript
+// 生成器简化代码
+Object.prototype[Symbol.iterator] = function *() {
+  for (const key in this) {
+    yield [key, this[key]]
+  }
+}
+
+const a = {
+  name: 'Jimmy',
+  age: 18,
+  job: 'actor'
+}
+
+console.log(...a)   // [ 'name', 'Jimmy' ] [ 'age', 18 ] [ 'job', 'actor' ]
+```
+
+### 生成器委托 yield*
+```javascript
+function* g1() {
+  yield 1;
+  yield 2;
+}
+
+function* g2() {
+  yield* g1();
+  yield* [3, 4];
+  yield* "56";
+  yield* arguments;
+}
+
+var generator = g2(7, 8);
+console.log(...generator);   // 1 2 3 4 "5" "6" 7 8
+```
+
+### 最后一个例子
+分析下面这段代码：
+```javascript
+function* fibs() {
+  var a = 0;
+  var b = 1;
+  while (true) {
+    yield a;
+    [a, b] = [b, a + b];
+  }
+}
+
+var [first, second, third, fourth, fifth, sixth] = fibs();
+console.log(first, second, third, fourth, fifth, sixth);
+```
+
+在这段代码里，fibs是一个生成无限长的斐波那契数列的生成器，
+`[a, b] = [b, a + b]` 是利用解构赋值的交换赋值写法（=赋值是从右到左计算，所以先计算右侧a+b，然后才结构，所有有交换赋值的效果），
+写成生成有限长的数组的ES5写法如下：
+```javascript
+function fibs1(n) {
+  var a = 0;
+  var b = 1;
+  var c = 0;
+  var result = []
+  for (var i = 0; i < n; i++) {
+    result.push(a);
+    c = a;
+    a = b;
+    b = c + b;
+  }
+
+  return result;
+}
+
+console.log(fibs1(6))   // [0, 1, 1, 2, 3, 5]
+```
+
+而第一段代码里，就是从fibs()迭代器（生成器是迭代器的子集）中解构出前六个值，代码示例如下：
+```javascript
+function* fibs2(n) {
+  var a = 0;
+  var b = 1;
+  for (var i = 0; i < n; i++) {
+    yield a;
+    [a, b] = [b, a + b];
+  }
+}
+
+console.log(...fibs2(6))
+```
 
 
 ### 参考资料
