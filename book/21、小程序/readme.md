@@ -6,12 +6,13 @@
 
 目录
 
-- 基础部分总结
+- 基础与坑总结
     - [1、小程序生命周期](./01、基础部分总结)
     - [2、webstorm解决rpx报错问题](./01、基础部分总结/02、webstorm解决rpx报错问题.md)
     
     
-    
+- 进阶上手
+    - [十分钟上手小程序开发，史上最全的《入门级》小程序开发](https://juejin.im/post/5efd4c765188252e362e0d2d)
     
 - 推荐几个好用的小程序组件库
     - [vant-weapp](https://github.com/youzan/vant-weapp)
