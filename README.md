@@ -313,6 +313,7 @@
     - [通过实现25个数组方法来理解及高效使用数组方法(长文,建议收藏)](https://juejin.im/post/5d82c12ff265da03a31d6f92)
     - [引用、浅拷贝及深拷贝 到 Map、Set（含对象assign、freeze方法、WeakMap、WeakSet及数组map、reduce等等方法） **](https://juejin.im/post/5d843abe6fb9a06af510050c)
     - [灵活运用CSS开发技巧](https://juejin.im/post/5d4d0ec651882549594e7293)
+    - [超详细的 Promise 理解与实现](https://juejin.im/post/6857934319886893064)
     
 
 - vue
