@@ -314,6 +314,8 @@
     - [引用、浅拷贝及深拷贝 到 Map、Set（含对象assign、freeze方法、WeakMap、WeakSet及数组map、reduce等等方法） **](https://juejin.im/post/5d843abe6fb9a06af510050c)
     - [灵活运用CSS开发技巧](https://juejin.im/post/5d4d0ec651882549594e7293)
     - [超详细的 Promise 理解与实现](https://juejin.im/post/6857934319886893064)
+    - [前端 Promise 常见的应用场景](https://juejin.im/post/6844904131702833159)
+    - [Promise 执行过程的正确理解姿势](https://juejin.im/post/6844903974563233799)
     
 
 - vue
