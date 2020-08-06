@@ -523,6 +523,7 @@
     - [科学上网](./19年/11月/02、科学上网/02、科学上网.md)
     - [jetbrains:同步服务器代码](https://www.jianshu.com/p/49442ec9bc9f)
     - [mac Homebrew 装包加速](./20年/06月/01、mac%20Homebrew%20装包加速/readme.md)
+    - [前端职业规划 - 写给那些想去和刚去大厂的年轻人(鸡汤有毒)](https://juejin.im/post/6854828407890477064)
    
     
 - 其他优秀技术文章与前沿技术收集
