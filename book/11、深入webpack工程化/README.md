@@ -55,6 +55,7 @@
     - [webpack 系列五：优化首屏加载时间及流畅度](https://github.com/sisterAn/blog/issues/66)
     - [五种可视化方案分析 webpack 打包性能瓶颈](https://github.com/sisterAn/blog/issues/67)
     - [Webpack优化总会让你不得不爱](https://juejin.im/post/6844904079320154126)
+    - [Webpack4+Babel7优化70%速度](https://juejin.im/post/6844903784305393677)
     
     
     

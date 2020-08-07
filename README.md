@@ -85,6 +85,7 @@
 - [03、css3专题](./book/03、css3专题)
     - [最强大的 CSS 布局 —— Grid 布局](https://juejin.im/post/6854573220306255880)
     - [【1.2W】精心整理33个css知识干货助你升级](https://juejin.im/post/6854573221291753480)
+    - [剖析一些经典的CSS布局问题，为前端开发+面试保驾护航](https://juejin.im/post/6844903962529759239)
     
 - [04、javascript设计模式](./book/04、js设计模式)
     - [第二篇、创建型设计模式](./book/04、js设计模式/02篇、创建型设计模式/README.md#class02)               
@@ -324,6 +325,7 @@
     - [新手前端不要慌! 给你10根救命稻草](https://juejin.im/post/6844903955441401870)
     - [15个元素实现无限滚动 **](https://juejin.im/post/5d7f80796fb9a06b24434d4e)
     - [手写axios核心原理，再也不怕面试官问我axios原理](https://juejin.im/post/6856706569263677447)
+    - [使用WebGL去实现一个拖拽式UI代码生成App](https://juejin.im/post/6846687604096630792)
     
 
 - vue
@@ -430,6 +432,10 @@
     - [手写webpack核心原理，再也不怕面试官问我webpack原理 **](https://juejin.im/post/6854573217336541192)
     - [【万字长文警告】从头到尾彻底理解服务端渲染SSR原理 **](https://juejin.im/post/6856321751115431944)
     - [AST原理，让你蜕变为高级前端工程师的原理](https://juejin.im/post/6854573222071894029)
+    - [H5 直播的疯狂点赞动画是如何实现的？(附完整源码)](https://juejin.im/post/6844904126476730375)
+    - [近万字新手 chrome 扩展开发简单入门](https://juejin.im/post/6844904127932137485)
+    - [原生JS封装拖动验证滑块你会吗？](https://juejin.im/post/6844904175910780941)
+    
 
 - koa2
     - [koa2-sql项目搭建的示例（通过sql链接数据库）](./18年/1月/12、koa2项目框架搭建)
