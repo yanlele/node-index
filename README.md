@@ -537,6 +537,9 @@
     - [linux安装mongoDB与NodeJs远程连接](https://juejin.im/post/5cb6cc72518825327854752e)
     - [前端工程师须知的CORS知识](https://juejin.im/post/5cbaa6ef5188253feb5855be)
     - [你不能不知道的Koa实现原理](https://juejin.im/post/5d1964bfe51d454fd8057bcb)
+    - [深入理解Node.js 中的进程与线程](https://juejin.im/post/6844903908385488903)
+    - [JavaScript-V8引擎](https://juejin.im/post/6844903950089453575)
+    
 
 - 杂项
     - [Hbase中多版本(version)数据获取办法](https://blog.csdn.net/liuchuanhong1/article/details/53895234/)
