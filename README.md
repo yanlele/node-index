@@ -84,6 +84,7 @@
     
 - [03、css3专题](./book/03、css3专题)
     - [最强大的 CSS 布局 —— Grid 布局](https://juejin.im/post/6854573220306255880)
+    - [【1.2W】精心整理33个css知识干货助你升级](https://juejin.im/post/6854573221291753480)
     
 - [04、javascript设计模式](./book/04、js设计模式)
     - [第二篇、创建型设计模式](./book/04、js设计模式/02篇、创建型设计模式/README.md#class02)               
@@ -317,6 +318,10 @@
     - [超详细的 Promise 理解与实现](https://juejin.im/post/6857934319886893064)
     - [前端 Promise 常见的应用场景](https://juejin.im/post/6844904131702833159)
     - [Promise 执行过程的正确理解姿势](https://juejin.im/post/6844903974563233799)
+    - [从零开始配置 TypeScript 项目](https://juejin.im/post/6856410900577026061)
+    - [新手前端不要慌! 给你10根救命稻草](https://juejin.im/post/6844903955441401870)
+    - [15个元素实现无限滚动 **](https://juejin.im/post/5d7f80796fb9a06b24434d4e)
+    - [手写axios核心原理，再也不怕面试官问我axios原理](https://juejin.im/post/6856706569263677447)
     
 
 - vue
@@ -419,8 +424,6 @@
     - [前端轻量化部署脚手架实践](https://juejin.im/post/5e1bfbadf265da3e3077005e)
     - [React SSR 服务端渲染和同构原理 **](https://juejin.im/post/5d7deef6e51d453bb13b66cd)
     - [揭秘vue/react组件库中5个"作者不造的轮子"](https://juejin.im/post/5d89cd156fb9a06acb3ee19e)
-    - [15个元素实现无限滚动 **](https://juejin.im/post/5d7f80796fb9a06b24434d4e)
-    - [手写axios核心原理，再也不怕面试官问我axios原理](https://juejin.im/post/6856706569263677447)
     - [手动实现高仿github的内容diff效果](https://juejin.im/post/6857316059851325453)
     - [手写webpack核心原理，再也不怕面试官问我webpack原理 **](https://juejin.im/post/6854573217336541192)
     - [【万字长文警告】从头到尾彻底理解服务端渲染SSR原理 **](https://juejin.im/post/6856321751115431944)
@@ -446,6 +449,7 @@
 - MySql
     - [mysql下载与安装问题整理](./18年/09月/02、mysql下载与安装问题整理/)
     - [node_mysql模块的使用](./18年/09月/03、node_mysql模块的使用/index.js)
+    - [MySQL 三万字精华总结 + 面试100 问，和面试官扯皮绰绰有余（收藏系列）](https://juejin.im/post/6850037271233331208)
    
 
 - node其他知识点
