@@ -319,6 +319,7 @@
     - [超详细的 Promise 理解与实现](https://juejin.im/post/6857934319886893064)
     - [前端 Promise 常见的应用场景](https://juejin.im/post/6844904131702833159)
     - [Promise 执行过程的正确理解姿势](https://juejin.im/post/6844903974563233799)
+    - [【JavaScript】必须要会的手写Promise](https://juejin.im/post/6844904142087913486)
     - [从零开始配置 TypeScript 项目](https://juejin.im/post/6856410900577026061)
     - [新手前端不要慌! 给你10根救命稻草](https://juejin.im/post/6844903955441401870)
     - [15个元素实现无限滚动 **](https://juejin.im/post/5d7f80796fb9a06b24434d4e)
