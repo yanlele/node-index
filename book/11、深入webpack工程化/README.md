@@ -57,6 +57,7 @@
     - [Webpack优化总会让你不得不爱](https://juejin.im/post/6844904079320154126)
     - [Webpack4+Babel7优化70%速度](https://juejin.im/post/6844903784305393677)
     - [webpack优化](https://juejin.im/post/6844903927687675912)
+    - [浅谈 webpack 性能优化（内附巨详细 webpack 学习笔记）](https://juejin.im/post/6844904142675279886)
     
     
     

@@ -64,8 +64,9 @@
 
 
 ### <div id="class06">专题笔记归类(简书总结)</div>
-- [01、react简书笔记](./book/01、react专题)
+- [01、react简书笔记](./book/01、react专题/README.md)
     - [重学react](./book/01、react专题/04、其他/09、重学react/09、重学react.md)
+    - 
 
 - [02、ES6/7简书笔记](./book/02、ES6&7)
     - [1、let和const](./book/02、ES6&7/1、let和const/let和const.md)
@@ -86,6 +87,7 @@
     - [最强大的 CSS 布局 —— Grid 布局](https://juejin.im/post/6854573220306255880)
     - [【1.2W】精心整理33个css知识干货助你升级](https://juejin.im/post/6854573221291753480)
     - [剖析一些经典的CSS布局问题，为前端开发+面试保驾护航](https://juejin.im/post/6844903962529759239)
+    - [你可能还不知的 7 个 CSS 好用的属性](https://juejin.im/post/6844904143757246471)
     
 - [04、javascript设计模式](./book/04、js设计模式)
     - [第二篇、创建型设计模式](./book/04、js设计模式/02篇、创建型设计模式/README.md#class02)               
