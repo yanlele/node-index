@@ -54,6 +54,8 @@
     - [webpack 系列四：优化包体积](https://github.com/sisterAn/blog/issues/65)
     - [webpack 系列五：优化首屏加载时间及流畅度](https://github.com/sisterAn/blog/issues/66)
     - [五种可视化方案分析 webpack 打包性能瓶颈](https://github.com/sisterAn/blog/issues/67)
+    - [Webpack优化总会让你不得不爱](https://juejin.im/post/6844904079320154126)
+    
     
     
 - 六、其他补充知识点
@@ -66,6 +68,7 @@
     - [babel-polyfill的几种使用方法](https://blog.csdn.net/weixin_41224029/article/details/90213067)
     - [Webpack 再深入再总结](https://juejin.im/post/5e17c1dd6fb9a02fd67e9990?utm_source=gold_browser_extension)
     - [webpack devtool篇](https://www.jianshu.com/p/62dc120d96d0)
+    - [Webpack 之 basic chunk graph](https://juejin.im/post/6844903952870440968)
 
 
 - 实战案例
