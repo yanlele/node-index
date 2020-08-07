@@ -141,7 +141,7 @@
         
 - [10、DOM和BOM](./book/10、DOM和BOM)
 
-- [11、深入webpack工程化](./book/11、深入webpack工程化/)
+- [11、深入webpack工程化](./book/11、深入webpack工程化/README.md)
 
 - [12、学习TypeScript](https://github.com/yanlele/TyepScript-learning)
     - [一文读懂 TypeScript 泛型及应用（ 7.8K字）](https://juejin.im/post/6844904184894980104)
