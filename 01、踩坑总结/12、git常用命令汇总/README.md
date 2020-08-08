@@ -398,3 +398,17 @@ git本地即使有修改如何强制更新：
 
 #### GIT上fork的项目获取最新源代码
 - [https://my.oschina.net/zimingforever/blog/352715](https://my.oschina.net/zimingforever/blog/352715)
+
+#### git clean的用法
+- [https://www.jianshu.com/p/0b05ef199749](https://www.jianshu.com/p/0b05ef199749)
+
+`git clean -n`: 是一次clean的演习, 告诉你哪些文件会被删除. 记住他不会真正的删除文件, 只是一个提醒
+
+`git clean -f`: 删除当前目录下所有没有track过的文件. 他不会删除.gitignore文件里面指定的文件夹和文件, 不管这些文件有没有被track过
+                
+`git clean -f <path>`: 删除指定路径下的没有被track过的文件
+                       
+`git clean -df`: 删除当前目录下没有被track过的文件和文件夹
+
+`git clean -xf`: 删除当前目录下所有没有track过的文件. 不管他是否是.gitignore文件里面指定的文件夹和文件
+
