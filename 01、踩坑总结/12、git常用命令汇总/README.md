@@ -411,4 +411,3 @@ git本地即使有修改如何强制更新：
 `git clean -df`: 删除当前目录下没有被track过的文件和文件夹
 
 `git clean -xf`: 删除当前目录下所有没有track过的文件. 不管他是否是.gitignore文件里面指定的文件夹和文件
-
