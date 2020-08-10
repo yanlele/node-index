@@ -152,7 +152,15 @@
 
 - [14、深入浅出MySQL 数据库开发 优化与管理维护](./book/14、深入浅出MySQL%20数据库开发%20优化与管理维护/)
 
-- [15、Linux相关学习](./book/15、Linux相关知识点)
+- [15、Linux相关学习](./book/15、Linux相关知识点/README.md)
+    - [基础部分](./book/15、Linux相关知识点/01、基础部分/README.md)
+    - [应用服务器](./book/15、Linux相关知识点/02、应用服务部分/README.md)
+    - [数据库服务](./book/15、Linux相关知识点/03、数据库服务/README.md)
+    - [其他服务](./book/15、Linux相关知识点/04、其他服务/README.md)
+    - [shell](./book/15、Linux相关知识点/05、shell)
+    - [vim](./book/15、Linux相关知识点/06、vim)
+    - [nginx](./book/15、Linux相关知识点/07、nginx)
+    - [CI&CD](./book/15、Linux相关知识点/08、CI&CD)
 
 - [16、前端数据可视化D3.js学习](https://github.com/yanlele/D3.js-learning)
 
