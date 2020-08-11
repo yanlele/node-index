@@ -157,8 +157,15 @@
     - [一文读懂 TypeScript 泛型及应用（ 7.8K字）](https://juejin.im/post/6844904184894980104)
 
 - [13、测试专题](./book/13、测试专题)
+    - javascript单元测试框架mochajs详解
+    - 断言库chai
+    - 代码覆盖率工具 Istanbul 入门教程
+    - node层服务端api接口测试
+    - TypeScript测试
+    - Jest测试框架
+    - react测试：jest+enzyme
 
-- [14、深入浅出MySQL 数据库开发 优化与管理维护](./book/14、深入浅出MySQL%20数据库开发%20优化与管理维护/)
+- [14、深入浅出MySQL 数据库开发 优化与管理维护](./book/14、深入浅出MySQL%20数据库开发%20优化与管理维护)
 
 - [15、Linux相关学习](./book/15、Linux相关知识点/README.md)
     - [基础部分](./book/15、Linux相关知识点/01、基础部分/README.md)
