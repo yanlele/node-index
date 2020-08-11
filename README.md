@@ -68,6 +68,7 @@
     - [react16基础语法使用](./book/01、react专题/01、react)
     - [redux](./book/01、react专题/02、redux)
     - [react-router](./book/01、react专题/03、react-router)
+    - [其他知识点和实战相关知识点](./book/01、react专题/04、其他)
     - [重学react](./book/01、react专题/04、其他/09、重学react/09、重学react.md)
 
 - [02、ES6/7简书笔记](./book/02、ES6&7)
