@@ -198,6 +198,9 @@
     - react测试：jest+enzyme
 
 - [14、深入浅出MySQL 数据库开发 优化与管理维护](./book/14、深入浅出MySQL%20数据库开发%20优化与管理维护)
+    - [mysql下载与安装问题整理](./18年/09月/02、mysql下载与安装问题整理/)
+    - [node_mysql模块的使用](./18年/09月/03、node_mysql模块的使用/index.js)
+    - [MySQL 三万字精华总结 + 面试100 问，和面试官扯皮绰绰有余（收藏系列）](https://juejin.im/post/6850037271233331208)
 
 - [15、Linux相关学习](./book/15、Linux相关知识点/README.md)
     - [基础部分](./book/15、Linux相关知识点/01、基础部分/README.md)
@@ -496,29 +499,30 @@
     
 
 - koa2
-    - [koa2-sql项目搭建的示例（通过sql链接数据库）](./18年/1月/12、koa2项目框架搭建)
+    
 
 - express
+
+
+
+- mongoose
+
+
+- MySql
+
+   
+
+- node其他知识点
+    - [mongoose的链表查询](./17年/12月/7、mongoose的链表查询)
+    - [mongodb 缓存session](./17年/12月/8、mongodb缓存session)
+    - [mongoose的扩展用法](./18年/1月/7、mongoose的扩展用法)
+    - [mongoose创建数据结构和实现基本的增删改查](./18年/1月/13、mongoose创建数据结构和实现基本的增删改查)
     - [通过express来读取mock数据（这是一个失败的实例，不要学习，仅供参考）](./17年/12月/5、通过express来读取mock数据（这是一个失败的实例，不要学习，仅供参考）)
     - [express中间件原理](./18年/1月/express中间件的原理/express中间件原理.js)
     - [express装载路由方式](./18年/1月/8、express装载路由的方法)
     - [express登录拦截与校验](./18年/1月/9、登录拦截与校验)
     - [express日志](./18年/1月/10、express日志打印)
-
-
-- mongoose
-    - [mongoose的链表查询](./17年/12月/7、mongoose的链表查询)
-    - [mongodb 缓存session](./17年/12月/8、mongodb缓存session)
-    - [mongoose的扩展用法](./18年/1月/7、mongoose的扩展用法)
-    - [mongoose创建数据结构和实现基本的增删改查](./18年/1月/13、mongoose创建数据结构和实现基本的增删改查)
-
-- MySql
-    - [mysql下载与安装问题整理](./18年/09月/02、mysql下载与安装问题整理/)
-    - [node_mysql模块的使用](./18年/09月/03、node_mysql模块的使用/index.js)
-    - [MySQL 三万字精华总结 + 面试100 问，和面试官扯皮绰绰有余（收藏系列）](https://juejin.im/post/6850037271233331208)
-   
-
-- node其他知识点
+    - [koa2-sql项目搭建的示例（通过sql链接数据库）](./18年/1月/12、koa2项目框架搭建)
     - [上传文件的测试](/17年/12月/1、上传文件的测试)
     - [async/await专题](./17年/12月/2、async&&await)
     - [fs模块对文件夹的操作](./17年/12月/3、fs模块学习)
