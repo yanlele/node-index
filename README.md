@@ -501,6 +501,7 @@
     - [** 近万字新手 chrome 扩展开发简单入门](https://juejin.im/post/6844904127932137485)
     - [原生JS封装拖动验证滑块你会吗？](https://juejin.im/post/6844904175910780941)
     - [微前端入门](https://juejin.im/post/6844903953734336525)
+    - [** 如何实现高性能的在线 PDF 预览](https://juejin.im/post/6844904176296656903)
    
 
 - node其他知识点
@@ -605,6 +606,7 @@
     - [从GraphQL到前端数据管理的革命 - GraphQL干货笔记](https://juejin.im/post/6844904196848762888)
     - [好玩的Jenkins](https://juejin.im/post/6844904176078553096)
     - [分分钟教会你搭建企业级的 npm 私有仓库](https://juejin.im/post/6844904196651630599)
+    - [每日优鲜供应链前端团队微前端改造](https://juejin.im/post/6844903943873675271)
    
     
 - 其他优秀技术文章与前沿技术收集
