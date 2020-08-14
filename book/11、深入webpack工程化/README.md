@@ -74,12 +74,13 @@
 - [浅谈 webpack 性能优化（内附巨详细 webpack 学习笔记）](https://juejin.im/post/6844904142675279886)
 - [带你深度解锁Webpack系列(基础篇)](https://juejin.im/post/6844904079219490830)
 - [带你深度解锁Webpack系列(优化篇)](https://juejin.im/post/6844904093463347208)
+- [Webpack优化——将你的构建效率提速翻倍](https://juejin.im/post/6844903924806189070)
     
     
     
 ### 其他补充知识点
 - [Tree-Shaking攻略](./06、其他/01、Tree-Shaking攻略/01、Tree-Shaking攻略.md)
-- [webpack 中那些最易混淆的 5 个知识点](./06、其他/02、五个易混淆的概念/02、五个易混淆的概念.md)
+- [** webpack 中那些最易混淆的 5 个知识点](./06、其他/02、五个易混淆的概念/02、五个易混淆的概念.md)
 - [重学webpack4重要知识点](./06、其他/03、重学webpack4重要知识点/03、重学webpack4重要知识点.md)
 - [webpack4系列中文教程和配套代码](https://github.com/dongyuanxin/webpack-demos)
 - [学习webpack4.0的最新配置语法和新特性](https://github.com/wlx200510/webpack4.x-learn)
@@ -111,6 +112,8 @@
     
 ### 其他
 - [Webpack 原理浅析](https://juejin.im/post/6854818576470933512)
+- [搜罗一切webpack的好文章](https://github.com/webpack-china/awesome-webpack-cn)
+- [手写webpack核心原理，再也不怕面试官问我webpack原理 **](https://juejin.im/post/6854573217336541192)
 
 
 ### 遗留问题待解决              
