@@ -189,6 +189,7 @@
 
 - [12、学习TypeScript](https://github.com/yanlele/TyepScript-learning)
     - [一文读懂 TypeScript 泛型及应用（ 7.8K字）](https://juejin.im/post/6844904184894980104)
+    - [你不知道的 TypeScript 泛型（万字长文，建议收藏）](https://juejin.im/post/6844904196827774990)
 
 - [13、测试专题](./book/13、测试专题)
     - javascript单元测试框架mochajs详解
@@ -390,6 +391,7 @@
     - [使用WebGL去实现一个拖拽式UI代码生成App](https://juejin.im/post/6846687604096630792)
     - [vue移动端h5适配解决方案（rem or vw）](https://juejin.im/post/6844903917126434829)
     - [H5 直播的疯狂点赞动画是如何实现的？(附完整源码)](https://juejin.im/post/6844904126476730375)
+    - [** 25个你不得不知道的数组reduce高级用法](https://juejin.im/post/6844904063729926152)
     
 
 - vue
@@ -602,6 +604,7 @@
     - [【深度思考】如何优雅告知用户，网站正在升级维护？](https://juejin.im/post/6857673247819989000)
     - [从GraphQL到前端数据管理的革命 - GraphQL干货笔记](https://juejin.im/post/6844904196848762888)
     - [好玩的Jenkins](https://juejin.im/post/6844904176078553096)
+    - [分分钟教会你搭建企业级的 npm 私有仓库](https://juejin.im/post/6844904196651630599)
    
     
 - 其他优秀技术文章与前沿技术收集

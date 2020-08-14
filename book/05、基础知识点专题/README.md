@@ -52,6 +52,9 @@
     - [49、options 请求的理解](https://juejin.im/post/5edef7b2e51d45784213ca24)
     - [50、手写Promise](https://juejin.im/post/5ea39ea251882573b86fadbe)
     - [51、由浅入深，66条JavaScript面试知识点](https://juejin.im/post/6844904200917221389)
+    - [52、2万5千字大厂面经 | 掘金技术征文](https://juejin.im/post/6844903682455109640)
+    - [53、JS数组奇巧淫技](https://juejin.im/post/6844904194919366669)
+    
     
     
 - 进阶知识部分
@@ -88,6 +91,7 @@
     - [31、跨域总结:从CORS到Ngnix](https://juejin.im/post/6844904094973296654)
     - [32、前端需要了解的计算机网络知识](https://juejin.im/post/6844904079974465544)
     - [33、抽象语法树（AST）](https://segmentfault.com/a/1190000016231512)
+    - [34、在 cors 中如何配置多个域名](https://juejin.im/post/6847902224274849800)
     
     
     
@@ -106,6 +110,7 @@
     - [一年半经验前端社招7家大厂&独角兽全过经历 | 掘金技术征文](https://juejin.im/post/6844904137495150599)
     - [【思维导图】前端开发-巩固你的JavaScript知识体系](https://juejin.im/post/6844904106243391495)
     - [最惨前端面经](https://juejin.im/post/6844904170538041351)
+    - [2020年前端面试复习必读文章【超三百篇文章/赠复习导图】](https://juejin.im/post/6844904116339261447)
     
     
     
