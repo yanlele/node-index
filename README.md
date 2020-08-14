@@ -502,6 +502,7 @@
     - [原生JS封装拖动验证滑块你会吗？](https://juejin.im/post/6844904175910780941)
     - [微前端入门](https://juejin.im/post/6844903953734336525)
     - [** 如何实现高性能的在线 PDF 预览](https://juejin.im/post/6844904176296656903)
+    - [从零开始写一个采集图片的chrome插件](https://juejin.im/post/6844904097829617678)
    
 
 - node其他知识点
