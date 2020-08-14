@@ -114,6 +114,9 @@
 - [Webpack 原理浅析](https://juejin.im/post/6854818576470933512)
 - [搜罗一切webpack的好文章](https://github.com/webpack-china/awesome-webpack-cn)
 - [手写webpack核心原理，再也不怕面试官问我webpack原理 **](https://juejin.im/post/6854573217336541192)
+- [了不起的 Webpack 构建流程学习指南](https://juejin.im/post/6844904196634837000)
+- [十大webpack优化插件](https://juejin.im/post/6844903951649734663)
+- [了不起的 Webpack HMR 学习指南（含源码分析）](https://juejin.im/post/6844904193136787470)
 
 
 ### 遗留问题待解决              

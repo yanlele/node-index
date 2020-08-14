@@ -518,6 +518,8 @@
     - [基于 qiankun 的微前端最佳实践（万字长文） - 从 0 到 1 篇](https://juejin.im/post/6844904158085021704)
     - [艰难用echarts模拟甘特图, 直到我发现了dhtmlxGantt](https://juejin.im/post/6844904106042064910)
     - [你了解过移动端适配吗](https://juejin.im/post/6844903631993454600)
+    - [深入浅出 Babel 上篇：架构和原理 + 实战](https://juejin.im/post/6844903956905197576)
+    - [深入浅出 Babel 下篇：既生 Plugin 何生 Macros](https://juejin.im/post/6844903961820921869)
    
 
 - node其他知识点
@@ -655,7 +657,8 @@
         - [sisterAn/blog](https://github.com/sisterAn/blog/issues)
         - [leetcode-javascript - LeetCode 力扣的 JavaScript 题解和思路](https://github.com/sl1673495/leetcode-javascript/issues)
         - [frontend-hard-mode-interview](https://github.com/coffe1891/frontend-hard-mode-interview)
-        - [江南一点雨](https://me.csdn.net/u012702547)
+        - [** 江南一点雨](https://me.csdn.net/u012702547)
+        - [** 神三元](https://juejin.im/user/430664257382462/posts)
     
     - 文章部分
         - [node-interview](https://github.com/ElemeFE/node-interview/tree/master/sections/zh-cn)

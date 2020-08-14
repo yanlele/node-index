@@ -35,6 +35,8 @@
 - [react-router4基本使用](./03、react-router/01、react-router4基本使用.md)
 - [React-router4迁移与旧版本的对比](./03、react-router/02、React-router4迁移与旧版本的对比/README.md)
 - [精读《React Router v6》](https://juejin.im/post/6844904106616684557)
+- [React-Router v6 新特性解读及迁移指南](https://juejin.im/post/6844904096059621389)
+
 
 ### 其他知识点和实战相关知识点
 - [常用react技术栈模块介绍](./04、其他/01、常用react技术栈模块介绍.md)
@@ -53,6 +55,7 @@
 - [10分钟教你手写8个常用的自定义hooks](https://juejin.im/post/6844904074433789959)
 - [** React Hooks 详解 【近 1W 字】+ 项目实战](https://juejin.im/post/6844903985338400782)
 - [彻底理解 React hook useCallback和useMemo的区别](https://juejin.im/post/6844904032113278990)
+- [React Hook 概览与最佳实践](https://juejin.im/post/6844904193602371592)
 
 ### 源码分析
 - [90行代码构建属于你的React](https://juejin.im/post/6844903996788834318)
