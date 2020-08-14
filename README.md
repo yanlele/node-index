@@ -192,13 +192,14 @@
     - [你不知道的 TypeScript 泛型（万字长文，建议收藏）](https://juejin.im/post/6844904196827774990)
 
 - [13、测试专题](./book/13、测试专题)
-    - javascript单元测试框架mochajs详解
-    - 断言库chai
-    - 代码覆盖率工具 Istanbul 入门教程
-    - node层服务端api接口测试
-    - TypeScript测试
-    - Jest测试框架
-    - react测试：jest+enzyme
+    - [01篇、javascript单元测试框架mochajs详解](./book/13、测试专题/README.md#01%E7%AF%87javascript%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6mochajs%E8%AF%A6%E8%A7%A3)
+    - [02篇、断言库chai](./book/13、测试专题/README.md#02%E7%AF%87%E6%96%AD%E8%A8%80%E5%BA%93chai)
+    - [03篇、代码覆盖率工具 Istanbul 入门教程](./book/13、测试专题/README.md#03%E7%AF%87%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87%E5%B7%A5%E5%85%B7-istanbul-%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B)
+    - [04篇、node层服务端api接口测试](./book/13、测试专题/README.md#04%E7%AF%87node%E5%B1%82%E6%9C%8D%E5%8A%A1%E7%AB%AFapi%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95)
+    - [05篇、TypeScript测试](./book/13、测试专题/README.md#05%E7%AF%87typescript%E6%B5%8B%E8%AF%95)
+    - [06篇、Jest测试框架](./book/13、测试专题/README.md#06%E7%AF%87jest%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6)
+    - [07篇、react测试：jest+enzyme](./book/13、测试专题/README.md#07%E7%AF%87react%E6%B5%8B%E8%AF%95jestenzyme)
+    - [其他](./book/13、测试专题/README.md#%E5%85%B6%E4%BB%96)
 
 - [14、深入浅出MySQL 数据库开发 优化与管理维护](./book/14、深入浅出MySQL%20数据库开发%20优化与管理维护)
     - [mysql下载与安装问题整理](./18年/09月/02、mysql下载与安装问题整理/)
@@ -404,7 +405,7 @@
     - [MVVM双向绑定原理研究与简单的双向绑定实现(包含简单的事件绑定)](./18年/3月/06、双向绑定核心代码)
     - [github上VUE 开源项目汇总](./18年/3月/07、VUE开源项目汇总/README.md)
     - [深度解析！Vue3 & React Hooks 新UI组件原理：Modal 弹窗](https://juejin.im/post/6844904100992155661)
-    - [史上最强vue总结---面试开发全靠它了](https://juejin.im/post/6850037277675454478)
+    - [** 史上最强vue总结---面试开发全靠它了](https://juejin.im/post/6850037277675454478)
 
 
 - react
@@ -514,6 +515,7 @@
     - [今天教你烤一份香喷喷的Electron](https://juejin.im/post/6854573221467914248)
     - [基于 qiankun 的微前端最佳实践（万字长文） - 从 0 到 1 篇](https://juejin.im/post/6844904158085021704)
     - [艰难用echarts模拟甘特图, 直到我发现了dhtmlxGantt](https://juejin.im/post/6844904106042064910)
+    - [你了解过移动端适配吗](https://juejin.im/post/6844903631993454600)
    
 
 - node其他知识点
