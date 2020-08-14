@@ -313,6 +313,7 @@ Date:   Mon Aug 8 14:41:54 2016 +0800
 
 参看文档                    
 - [git cherry-pick合并某个commit](https://www.cnblogs.com/0201zcr/p/5752771.html)
+- [三年 Git 使用心得 & 常见问题整理](https://juejin.im/post/6844904191203213326)
 
 
 #### commit优化
@@ -330,8 +331,7 @@ type代表某次提交的类型，比如是修复一个bug还是增加一个新�
 
 #### 放弃已经commit但是没有push的代码
 - 如果已经用add 命令把文件加入stage了，就先需要从stage中撤销： `git reset HEAD <file>...`
-- 放弃工作区和index的改动,HEAD指针仍然指向当前的commit： `git reset --hard HEADID`
-- 
+- 放弃工作区和index的改动,HEAD指针仍然指向当前的commit： `git reset --hard HEADID` 
 
 #### 文件暂存
 - [Git 工具 - 储藏（Stashing）](https://git-scm.com/book/zh/v1/Git-工具-储藏（Stashing）)

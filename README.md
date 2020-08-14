@@ -587,6 +587,7 @@
     - [深入理解Node.js 中的进程与线程](https://juejin.im/post/6844903908385488903)
     - [JavaScript-V8引擎](https://juejin.im/post/6844903950089453575)
     - [Deno 正式发布，彻底弄明白和 node 的区别](https://juejin.im/post/6844904158617665544)
+    - [使用 Proxy 构建响应式系统](https://juejin.im/post/6844903950093664264)
     
 
 - 杂项
