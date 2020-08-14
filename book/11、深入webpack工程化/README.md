@@ -86,6 +86,7 @@
     - [一步步从零开始用 webpack 搭建一个大型项目 - *** ](https://juejin.im/post/5de06aa851882572d672c1ad)
     - [webpack 最佳配置指北](https://juejin.im/post/5e0e1153e51d45414b74de65)
     - [再不会webpack敲得代码就不香了(近万字实战)](https://juejin.im/post/5de87444518825124c50cd36)
+    - [微信小程序工程化探索之webpack实战](https://juejin.im/post/6844904131405037576)
 
     
 - webpack插件和loader开发

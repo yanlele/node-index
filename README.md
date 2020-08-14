@@ -399,11 +399,12 @@
     
 
 - vue
-    - [01、vuex官方经典实例和使用](./18年/1月/shopping-cart)
-    - [02、vue项目实际开发总结](./18年/3月/03、vue项目实际开发总结)
-    - [03、MVVM双向绑定原理研究与简单的双向绑定实现(包含简单的事件绑定)](./18年/3月/06、双向绑定核心代码)
-    - [04、github上VUE 开源项目汇总](./18年/3月/07、VUE开源项目汇总/README.md)
-    - [05、深度解析！Vue3 & React Hooks 新UI组件原理：Modal 弹窗](https://juejin.im/post/6844904100992155661)
+    - [vuex官方经典实例和使用](./18年/1月/shopping-cart)
+    - [vue项目实际开发总结](./18年/3月/03、vue项目实际开发总结)
+    - [MVVM双向绑定原理研究与简单的双向绑定实现(包含简单的事件绑定)](./18年/3月/06、双向绑定核心代码)
+    - [github上VUE 开源项目汇总](./18年/3月/07、VUE开源项目汇总/README.md)
+    - [深度解析！Vue3 & React Hooks 新UI组件原理：Modal 弹窗](https://juejin.im/post/6844904100992155661)
+    - [史上最强vue总结---面试开发全靠它了](https://juejin.im/post/6850037277675454478)
 
 
 - react
@@ -512,6 +513,7 @@
     - [一文了解文件上传全过程（1.8w字深度解析，进阶必备）](https://juejin.im/post/6844904106658643982)
     - [今天教你烤一份香喷喷的Electron](https://juejin.im/post/6854573221467914248)
     - [基于 qiankun 的微前端最佳实践（万字长文） - 从 0 到 1 篇](https://juejin.im/post/6844904158085021704)
+    - [艰难用echarts模拟甘特图, 直到我发现了dhtmlxGantt](https://juejin.im/post/6844904106042064910)
    
 
 - node其他知识点
@@ -603,6 +605,8 @@
     - [Deno 正式发布，彻底弄明白和 node 的区别](https://juejin.im/post/6844904158617665544)
     - [使用 Proxy 构建响应式系统](https://juejin.im/post/6844903950093664264)
     - [使用四十行代码实现一个核心 koa](https://juejin.im/post/6844904096516816904)
+    - [[译] Node.js 新特性将颠覆 AI、物联网等更多惊人领域](https://juejin.im/post/6844903985053188109) 
+    
     
 
 - 杂项
@@ -683,6 +687,7 @@
         - [react源码分析(3)：react的事件委托机制](https://www.jianshu.com/p/b249793fd2a7)
         - [Git中tag标签的使用](https://blog.csdn.net/wei78008023/article/details/81866590)
         - [前端该如何准备数据结构和算法？](https://juejin.im/post/5d5b307b5188253da24d3cd1#heading-17)
+        - [** 一个合格(优秀)的前端都应该阅读这些文章](https://juejin.im/post/6844903896637259784)
         
     - 工具部分
         - [Spectacle allows you to organize your windows without using a mouse.](https://github.com/eczarny/spectacle)

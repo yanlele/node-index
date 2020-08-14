@@ -7,7 +7,7 @@
 
 - [react16基础语法使用](#react16%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%BD%BF%E7%94%A8)
 - [redux](#redux)
-- [react-router4](#react-router4)
+- [react-router](#react-router)
 - [其他知识点和实战相关知识点](#%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86%E7%82%B9%E5%92%8C%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9)
 - [react hooks](#react-hooks)
 - [源码分析](#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90)
@@ -31,9 +31,10 @@
 - [** 完全理解 redux（从零实现一个 redux）](https://github.com/brickspert/blog/issues/22)
 - [** 完全理解 redux（从零实现一个 redux） - code](https://github.com/yanlele/node-index-core/tree/master/packages/book/01%E3%80%81react%E4%B8%93%E9%A2%98/01%E3%80%81redux/01%E3%80%81%E4%BB%8E0%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAredux)
 
-### react-router4
+### react-router
 - [react-router4基本使用](./03、react-router/01、react-router4基本使用.md)
 - [React-router4迁移与旧版本的对比](./03、react-router/02、React-router4迁移与旧版本的对比/README.md)
+- [精读《React Router v6》](https://juejin.im/post/6844904106616684557)
 
 ### 其他知识点和实战相关知识点
 - [常用react技术栈模块介绍](./04、其他/01、常用react技术栈模块介绍.md)
