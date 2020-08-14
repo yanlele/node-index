@@ -391,6 +391,7 @@
     - [使用WebGL去实现一个拖拽式UI代码生成App](https://juejin.im/post/6846687604096630792)
     - [vue移动端h5适配解决方案（rem or vw）](https://juejin.im/post/6844903917126434829)
     - [H5 直播的疯狂点赞动画是如何实现的？(附完整源码)](https://juejin.im/post/6844904126476730375)
+    - [模仿实现一个直播的点赞动画](https://juejin.im/post/6844904151952916487)
     - [** 25个你不得不知道的数组reduce高级用法](https://juejin.im/post/6844904063729926152)
     - [为了性能选择for循环遍历？](https://juejin.im/post/6844904191425511432)
     - [[译] 2018 来谈谈 Web Component](https://juejin.im/post/6844903661403897870)
