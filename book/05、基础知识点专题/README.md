@@ -51,6 +51,7 @@
     - [48、九种跨域方式实现原理（完整版）](https://juejin.im/post/5c23993de51d457b8c1f4ee1)
     - [49、options 请求的理解](https://juejin.im/post/5edef7b2e51d45784213ca24)
     - [50、手写Promise](https://juejin.im/post/5ea39ea251882573b86fadbe)
+    - [51、由浅入深，66条JavaScript面试知识点](https://juejin.im/post/6844904200917221389)
     
     
 - 进阶知识部分
@@ -84,6 +85,9 @@
     - [28、从浏览器渲染原理，说一说如何实现高效的动画](https://juejin.im/post/5d2491ba6fb9a07ecf724b69)
     - [29、编写一个函数来查找字符串数组中的最长公共前缀](https://juejin.im/post/6846687592532934669)
     - [30、Promise 中的三兄弟 .all(), .race(), .allSettled()](https://juejin.im/post/5d534ff16fb9a06b1027209c)
+    - [31、跨域总结:从CORS到Ngnix](https://juejin.im/post/6844904094973296654)
+    - [32、前端需要了解的计算机网络知识](https://juejin.im/post/6844904079974465544)
+    - [33、抽象语法树（AST）](https://segmentfault.com/a/1190000016231512)
     
     
     
