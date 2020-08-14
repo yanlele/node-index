@@ -74,6 +74,7 @@
     - [Webpack 再深入再总结](https://juejin.im/post/5e17c1dd6fb9a02fd67e9990?utm_source=gold_browser_extension)
     - [webpack devtool篇](https://www.jianshu.com/p/62dc120d96d0)
     - [Webpack 之 basic chunk graph](https://juejin.im/post/6844903952870440968)
+    - [Webpack之externals用法详解](https://juejin.im/post/6844904190083350542)
 
 
 - 实战案例
