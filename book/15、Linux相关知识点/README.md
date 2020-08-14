@@ -42,3 +42,4 @@
     - [oh-my-zsh,让你的终端从未这么爽过](https://cloud.tencent.com/developer/article/1152727)
     - [Permission denied (publickey,gssapi-keyex,gssapi-with-mic) 解决方法](https://blog.csdn.net/albertjone/article/details/84946557)
     - [五分钟看懂 Nginx 负载均衡](https://juejin.im/post/6844904106541203464)
+    - [你学BFF和Serverless了吗](https://juejin.im/post/6844904185427673095)

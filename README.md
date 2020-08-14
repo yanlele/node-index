@@ -216,7 +216,7 @@
 
 - [16、前端数据可视化D3.js学习](https://github.com/yanlele/D3.js-learning)
 
-- [17、数据结构与算法专题](./book/17、数据结构与算法专题)
+- [17、数据结构与算法专题](./book/17、数据结构与算法专题05)
 
 - [18、flutter 基础入门](./book/18、flutter%20基础入门)
 
@@ -586,6 +586,7 @@
     - [你不能不知道的Koa实现原理](https://juejin.im/post/5d1964bfe51d454fd8057bcb)
     - [深入理解Node.js 中的进程与线程](https://juejin.im/post/6844903908385488903)
     - [JavaScript-V8引擎](https://juejin.im/post/6844903950089453575)
+    - [Deno 正式发布，彻底弄明白和 node 的区别](https://juejin.im/post/6844904158617665544)
     
 
 - 杂项

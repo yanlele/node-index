@@ -97,7 +97,7 @@
     - [一份搜集的前端面试题目清单+面试相关的资料](https://github.com/pwstrick/daily)
     - [26 个 CSS 高频考点](https://juejin.im/post/5e8fb5b16fb9a03c464934a8)
     - [7 个沙雕又带有陷阱的 JS 面试题](https://juejin.im/post/6844903974374473736)
-    
+    - [一年半经验前端社招7家大厂&独角兽全过经历 | 掘金技术征文](https://juejin.im/post/6844904137495150599)
     
     
     

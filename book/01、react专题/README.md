@@ -27,7 +27,8 @@
 - [原始redux的单独使用](./02、redux/04、redux)
 - [翻译|Redux的中间件-Reselect](https://www.jianshu.com/p/6e38c66366cd)
 - [Redux-saga 中文文档](https://github.com/superRaytin/redux-saga-in-chinese)
-- [完全理解 redux（从零实现一个 redux）](https://github.com/brickspert/blog/issues/22)
+- [【React系列】从零开始实现Redux](https://juejin.im/post/6844903950584381448)
+- [** 完全理解 redux（从零实现一个 redux）](https://github.com/brickspert/blog/issues/22)
 - [** 完全理解 redux（从零实现一个 redux） - code](https://github.com/yanlele/node-index-core/tree/master/packages/book/01%E3%80%81react%E4%B8%93%E9%A2%98/01%E3%80%81redux/01%E3%80%81%E4%BB%8E0%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAredux)
 
 ### react-router4
