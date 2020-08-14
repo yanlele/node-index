@@ -392,6 +392,9 @@
     - [vue移动端h5适配解决方案（rem or vw）](https://juejin.im/post/6844903917126434829)
     - [H5 直播的疯狂点赞动画是如何实现的？(附完整源码)](https://juejin.im/post/6844904126476730375)
     - [** 25个你不得不知道的数组reduce高级用法](https://juejin.im/post/6844904063729926152)
+    - [为了性能选择for循环遍历？](https://juejin.im/post/6844904191425511432)
+    - [[译] 2018 来谈谈 Web Component](https://juejin.im/post/6844903661403897870)
+    - [前端存储除了 localStorage 还有啥](https://juejin.im/post/6844904192549584903)
     
 
 - vue
@@ -503,6 +506,8 @@
     - [微前端入门](https://juejin.im/post/6844903953734336525)
     - [** 如何实现高性能的在线 PDF 预览](https://juejin.im/post/6844904176296656903)
     - [从零开始写一个采集图片的chrome插件](https://juejin.im/post/6844904097829617678)
+    - [你可能不知道的15个有用的Github功能](https://juejin.im/post/6844904193396834318)
+   
    
 
 - node其他知识点
