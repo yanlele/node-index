@@ -509,6 +509,7 @@
     - [从零开始写一个采集图片的chrome插件](https://juejin.im/post/6844904097829617678)
     - [你可能不知道的15个有用的Github功能](https://juejin.im/post/6844904193396834318)
     - [一文了解文件上传全过程（1.8w字深度解析，进阶必备）](https://juejin.im/post/6844904106658643982)
+    - [今天教你烤一份香喷喷的Electron](https://juejin.im/post/6854573221467914248)
    
 
 - node其他知识点
