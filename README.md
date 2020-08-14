@@ -389,6 +389,7 @@
     - [手写axios核心原理，再也不怕面试官问我axios原理](https://juejin.im/post/6856706569263677447)
     - [使用WebGL去实现一个拖拽式UI代码生成App](https://juejin.im/post/6846687604096630792)
     - [vue移动端h5适配解决方案（rem or vw）](https://juejin.im/post/6844903917126434829)
+    - [H5 直播的疯狂点赞动画是如何实现的？(附完整源码)](https://juejin.im/post/6844904126476730375)
     
 
 - vue
@@ -495,8 +496,7 @@
     - [手写webpack核心原理，再也不怕面试官问我webpack原理 **](https://juejin.im/post/6854573217336541192)
     - [【万字长文警告】从头到尾彻底理解服务端渲染SSR原理 **](https://juejin.im/post/6856321751115431944)
     - [AST原理，让你蜕变为高级前端工程师的原理](https://juejin.im/post/6854573222071894029)
-    - [H5 直播的疯狂点赞动画是如何实现的？(附完整源码)](https://juejin.im/post/6844904126476730375)
-    - [近万字新手 chrome 扩展开发简单入门](https://juejin.im/post/6844904127932137485)
+    - [** 近万字新手 chrome 扩展开发简单入门](https://juejin.im/post/6844904127932137485)
     - [原生JS封装拖动验证滑块你会吗？](https://juejin.im/post/6844904175910780941)
    
 

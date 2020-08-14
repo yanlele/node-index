@@ -83,6 +83,7 @@
     - [27、彻底掌握js内存泄漏以及如何避免](https://juejin.im/post/5d5664ebf265da03f3334f13)
     - [28、从浏览器渲染原理，说一说如何实现高效的动画](https://juejin.im/post/5d2491ba6fb9a07ecf724b69)
     - [29、编写一个函数来查找字符串数组中的最长公共前缀](https://juejin.im/post/6846687592532934669)
+    - [30、Promise 中的三兄弟 .all(), .race(), .allSettled()](https://juejin.im/post/5d534ff16fb9a06b1027209c)
     
     
     
@@ -91,7 +92,6 @@
     - [Weekly-FE-Interview](https://github.com/airuikun/Weekly-FE-Interview)
     - [夯实JS主要知识点](https://juejin.im/post/5d54e78be51d4561b072dce6#6)
     - [高频 JavaScript](https://juejin.im/post/5d51e16d6fb9a06ae17d6bbc#heading-14)
-    - [Promise 中的三兄弟 .all(), .race(), .allSettled()](https://juejin.im/post/5d534ff16fb9a06b1027209c)
     - [5个 JS 解构有趣的用途](https://juejin.im/post/5d5f29dde51d456216553519)
     - [一名【合格】前端工程师的自检清单](https://juejin.im/post/5cc1da82f265da036023b628)
     - [五年面试，三年模拟](https://juejin.im/post/5ca0425e51882567ce181037)
@@ -101,6 +101,7 @@
     - [7 个沙雕又带有陷阱的 JS 面试题](https://juejin.im/post/6844903974374473736)
     - [一年半经验前端社招7家大厂&独角兽全过经历 | 掘金技术征文](https://juejin.im/post/6844904137495150599)
     - [【思维导图】前端开发-巩固你的JavaScript知识体系](https://juejin.im/post/6844904106243391495)
+    - [最惨前端面经](https://juejin.im/post/6844904170538041351)
     
     
     
