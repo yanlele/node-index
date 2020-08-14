@@ -496,20 +496,6 @@
     - [H5 直播的疯狂点赞动画是如何实现的？(附完整源码)](https://juejin.im/post/6844904126476730375)
     - [近万字新手 chrome 扩展开发简单入门](https://juejin.im/post/6844904127932137485)
     - [原生JS封装拖动验证滑块你会吗？](https://juejin.im/post/6844904175910780941)
-    
-
-- koa2
-    
-
-- express
-
-
-
-- mongoose
-
-
-- MySql
-
    
 
 - node其他知识点
