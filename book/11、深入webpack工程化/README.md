@@ -109,6 +109,7 @@
 - [微信小程序工程化探索之webpack实战](https://juejin.im/post/6844904131405037576)
 - [[2.7w字]我是这样搭建 React+Typescript项目环境的(上)](https://juejin.im/post/6860129883398668296)
 - [[2.7w字]我是这样搭建 React+Typescript项目环境的(下)](https://juejin.im/post/6860134655568871437)
+- [「一劳永逸」由浅入深配置webpack4](https://juejin.im/post/6859888538004783118)
 
     
 ### webpack插件和loader开发
