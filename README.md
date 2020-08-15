@@ -250,12 +250,12 @@
 - [07篇、react测试：jest+enzyme](./book/13、测试专题/README.md#07%E7%AF%87react%E6%B5%8B%E8%AF%95jestenzyme)
 - [其他](./book/13、测试专题/README.md#%E5%85%B6%E4%BB%96)
 
-####[14、深入浅出MySQL 数据库开发 优化与管理维护](./book/14、深入浅出MySQL%20数据库开发%20优化与管理维护)
+#### [14、深入浅出MySQL 数据库开发 优化与管理维护](./book/14、深入浅出MySQL%20数据库开发%20优化与管理维护)
 - [mysql下载与安装问题整理](./18年/09月/02、mysql下载与安装问题整理/)
 - [node_mysql模块的使用](./18年/09月/03、node_mysql模块的使用/index.js)
 - [MySQL 三万字精华总结 + 面试100 问，和面试官扯皮绰绰有余（收藏系列）](https://juejin.im/post/6850037271233331208)
 
-####[15、Linux相关学习](./book/15、Linux相关知识点/README.md)
+#### [15、Linux相关学习](./book/15、Linux相关知识点/README.md)
 - [基础部分](./book/15、Linux相关知识点/01、基础部分/README.md)
 - [应用服务器](./book/15、Linux相关知识点/02、应用服务部分/README.md)
 - [数据库服务](./book/15、Linux相关知识点/03、数据库服务/README.md)
