@@ -21,3 +21,4 @@
 
 ### 参考文章
 - [ES6、ES7、ES8、ES9、ES10新特性一览](https://juejin.im/post/5ca2e1935188254416288eb2)
+- [记好这 24 个 ES6 方法，用来解决实际开发的 JS 问题](https://juejin.im/post/6844904080868016142)
