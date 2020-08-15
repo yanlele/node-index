@@ -192,6 +192,7 @@
 - [12、学习TypeScript](https://github.com/yanlele/TyepScript-learning)
     - [一文读懂 TypeScript 泛型及应用（ 7.8K字）](https://juejin.im/post/6844904184894980104)
     - [你不知道的 TypeScript 泛型（万字长文，建议收藏）](https://juejin.im/post/6844904196827774990)
+    - [1.2W字 | 了不起的 TypeScript 入门教程](https://juejin.im/post/6844904182843965453)
 
 - [13、测试专题](./book/13、测试专题)
     - [01篇、javascript单元测试框架mochajs详解](./book/13、测试专题/README.md#01%E7%AF%87javascript%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6mochajs%E8%AF%A6%E8%A7%A3)
@@ -520,6 +521,7 @@
     - [你了解过移动端适配吗](https://juejin.im/post/6844903631993454600)
     - [深入浅出 Babel 上篇：架构和原理 + 实战](https://juejin.im/post/6844903956905197576)
     - [深入浅出 Babel 下篇：既生 Plugin 何生 Macros](https://juejin.im/post/6844903961820921869)
+    - [微前端架构设计](https://juejin.im/post/6854573214430380039)
    
 
 - node其他知识点
@@ -612,6 +614,7 @@
     - [使用 Proxy 构建响应式系统](https://juejin.im/post/6844903950093664264)
     - [使用四十行代码实现一个核心 koa](https://juejin.im/post/6844904096516816904)
     - [[译] Node.js 新特性将颠覆 AI、物联网等更多惊人领域](https://juejin.im/post/6844903985053188109) 
+    - [【图文详解】200行JS代码，带你实现代码编译器（人人都能学会）](https://juejin.im/post/6844904105937207304)
     
     
 
