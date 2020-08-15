@@ -20,21 +20,21 @@
 - [九、年度计划和日志目录](#class09)
 
 
-### <div id="class01">已经发布npm的开源模块</div>      
+### 已经发布npm的开源模块
 - [koa2日志监控中间件:koa-logs-middleware](https://github.com/yanlele/koa-logs-middleware)
 - [前端工程化](https://github.com/yanlele/le-cli)
 - [前端工程化](https://github.com/cli-template-build)
 - [小程序接入redux](https://github.com/yanlele/redux2miniapp)
 
 
-### <div id="class02">对别人项目的研究（详细阅读源码之后写下的一些笔记和项目注释-已完成）</div>                  
+### 对别人项目的研究（详细阅读源码之后写下的一些笔记和项目注释-已完成）              
 - [express基本使用,包括注册,登陆,上传,下载,登录权限控制,session持久化,邮件发送,网络爬虫等](https://github.com/yanlele/express)
 - [基于webpack3多页面打包](https://github.com/yanlele/webpack-dev)
 - [基于node的博客（极其经典，技术UP）](https://github.com/yanlele/N-blog)
 - [cvms构建工具项目架构思路](./03、项目架构思路学习/01、CVMS构建工具项目架构思路.xmind)
 
 
-### <div id="class03">个人项目列表（已完成）</div>
+### 人项目列表（已完成）
 - [基于vue和express的一个小型电商全栈项目](https://github.com/yanlele/nodeMall)
 - [react新闻站项目pc+移动双端](https://github.com/yanlele/React-News)
 - [基于socket.IO 的一个较为复杂的项目案例，参考自《node.js实战》](https://github.com/yanlele/chatApplication)
@@ -45,7 +45,7 @@
 - [koa2的学习笔记项目demo](https://github.com/yanlele/koa-study)
 
 
-### <div id="class04">正在进行的个人项目 - 包含待研究的项目(进行中)</div>
+### 正在进行的个人项目 - 包含待研究的项目(进行中)
 - [DoraCMS是基于Nodejs+express+mongodb编写的一套内容管理系统:DoraCMS](https://github.com/doramart/DoraCMS)
 - [基于react 高仿csdn博客后端](https://github.com/yanlele/react-blog-server)
 - [koa+TypeScript构建商城类项目服务端*****](https://github.com/yanlele/koa-typescript)
@@ -59,19 +59,19 @@
 - [基于vue2 + vue-router + vuex 构建的一个新闻类单页面应用 —— 今日头条（移动端）](https://github.com/uncleLian/vue2-news)
 
 
-### <div id="class05">源码研究</div>
+### 源码研究
 - [time-formater:在javascript中显示日期](https://github.com/pengng/time-formater)
 
 
-### <div id="class06">专题笔记归类(简书总结)</div>
-- [01、react简书笔记](./book/01、react专题/README.md)
-    - [react16基础语法使用](./book/01、react专题/README.md#react16%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%BD%BF%E7%94%A8)
-    - [redux](./book/01、react专题/README.md#redux)
-    - [react-router4](./book/01、react专题/README.md#react-router4)
-    - [其他知识点和实战相关知识点](./book/01、react专题/README.md#%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86%E7%82%B9%E5%92%8C%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9)
-    - [react hooks](./book/01、react专题/README.md#react-hooks)
-    - [源码分析](./book/01、react专题/README.md#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90)
-    - [其他经典文章](./book/01、react专题/README.md#%E5%85%B6%E4%BB%96%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0)
+### 专题笔记归类(简书总结)
+#### [01、react简书笔记](./book/01、react专题/README.md)
+- [react16基础语法使用](./book/01、react专题/README.md#react16%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%BD%BF%E7%94%A8)
+- [redux](./book/01、react专题/README.md#redux)
+- [react-router4](./book/01、react专题/README.md#react-router4)
+- [其他知识点和实战相关知识点](./book/01、react专题/README.md#%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86%E7%82%B9%E5%92%8C%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9)
+- [react hooks](./book/01、react专题/README.md#react-hooks)
+- [源码分析](./book/01、react专题/README.md#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90)
+- [其他经典文章](./book/01、react专题/README.md#%E5%85%B6%E4%BB%96%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0)
 
 - [02、ES6/7简书笔记](./book/02、ES6&7)
     - [1、let和const](./book/02、ES6&7/1、let和const/let和const.md)
