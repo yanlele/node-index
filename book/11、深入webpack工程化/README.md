@@ -90,6 +90,8 @@
 - [webpack devtool篇](https://www.jianshu.com/p/62dc120d96d0)
 - [Webpack 之 basic chunk graph](https://juejin.im/post/6844903952870440968)
 - [Webpack之externals用法详解](https://juejin.im/post/6844904190083350542)
+- [带你深度解锁Webpack系列(进阶篇)](https://juejin.im/post/6844904084927938567)
+- [通过这6个很棒的Webpack插件提高您的生产力](https://juejin.im/post/6844904149406973960)
 
 
 ### 实战案例
