@@ -93,3 +93,6 @@
 - [React中获取DOM节点的两种方法](https://www.jianshu.com/p/f533a9d7645c)
 - [** 一文吃透 React SSR 服务端渲染和同构原理](https://juejin.im/post/6844903943902855176)
 - [35 道咱们必须要清楚的 React 面试题](https://juejin.im/post/6844903988073070606)
+- [react-swipeable: React swipe component - Swipe bindings for react](https://github.com/dogfessional/react-swipeable)
+- [基于react的前端文件上传](./18年/6月/08、基于react的前端文件上传)
+- [一键分享到各大社交网站的react组件](https://github.com/DawnyWu/react-share-buttons)
