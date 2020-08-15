@@ -87,12 +87,19 @@
     - [11、Generator](./book/02、ES6&7/11、Generator/README.md)
     - [12、Promise](./book/02、ES6&7/12、Promise对象/README.md)
     - [13、其他知识点儿的总结](./book/02、ES6&7/13、其他知识点儿的总结)
+        - [Promise/async/Generator实现原理解析](https://juejin.im/post/6844904096525189128)
     
 - [03、css3专题](./book/03、css3专题)
     - [最强大的 CSS 布局 —— Grid 布局](https://juejin.im/post/6854573220306255880)
     - [【1.2W】精心整理33个css知识干货助你升级](https://juejin.im/post/6854573221291753480)
     - [剖析一些经典的CSS布局问题，为前端开发+面试保驾护航](https://juejin.im/post/6844903962529759239)
     - [你可能还不知的 7 个 CSS 好用的属性](https://juejin.im/post/6844904143757246471)
+    - [css篇--100道近两万字帮你巩固css知识点](https://juejin.im/post/6844904185847087111)
+    - [26 个 CSS 面试的高频考点助力金三银四](https://juejin.im/post/6844904119853924365)
+    - [灵活运用CSS开发技巧](https://juejin.im/post/6844903926110617613)
+    - [你未必知道的49个CSS知识点](https://juejin.im/post/6844903902123393032)
+    - [你未必知道的CSS知识点（第二季）](https://juejin.im/post/6844903960386469895)
+    
     
 - [04、javascript设计模式](./book/04、js设计模式)
     - [第二篇、创建型设计模式](./book/04、js设计模式/02篇、创建型设计模式/README.md#class02)               
@@ -403,7 +410,12 @@
     - [[译] 2018 来谈谈 Web Component](https://juejin.im/post/6844903661403897870)
     - [前端存储除了 localStorage 还有啥](https://juejin.im/post/6844904192549584903)
     - [忍法，scroll 翻滚之术！](https://juejin.im/post/6844904081559912462)
-    
+    - [JavaScript 装饰器](https://juejin.im/post/6844904100144889864)
+    - [骚年，你确定没有人在折腾你的站点吗？](https://juejin.im/post/6844903966505975822)
+    - [为什么Vue3.0使用Proxy实现数据监听？defineProperty表示不背这个锅](https://juejin.im/post/6844903965180575751)
+    - [如何写出一个惊艳面试官的深拷贝?](https://juejin.im/post/6844903929705136141)
+    - [引用、浅拷贝及深拷贝 到 Map、Set（含对象assign、freeze方法、WeakMap、WeakSet及数组map、reduce等等方法）](https://juejin.im/post/6844903951247081485)
+        
 
 - vue
     - [vuex官方经典实例和使用](./18年/1月/shopping-cart)
@@ -429,7 +441,7 @@
     - [关于jquery的deferred对象](./18年/07月/10、关于jquery的deferred对象)
 
 
-- 前端框架周边生态圈技术栈
+- 前端周边生态圈技术栈
     - [axios 的一些基本用法](./17年/12月/10、axios%20的一些基本用法)
     - [常用的正则验证例子](./17年/12月/13、正则验证/README.md)
     - [获取设备信息(推荐使用模块mobile-detect)](./17年/12月/14、获取设备信息专题/index.js)
@@ -524,7 +536,14 @@
     - [你了解过移动端适配吗](https://juejin.im/post/6844903631993454600)
     - [深入浅出 Babel 上篇：架构和原理 + 实战](https://juejin.im/post/6844903956905197576)
     - [深入浅出 Babel 下篇：既生 Plugin 何生 Macros](https://juejin.im/post/6844903961820921869)
-    - [微前端架构设计](https://juejin.im/post/6854573214430380039)
+    - [1小时搞定cropper.js制作头像/图片上传、裁剪、并发送至后端](https://juejin.im/post/6844903955915341831)
+    - [优秀前端必知的话题：我们应该做些力所能及的优化](https://juejin.im/post/6844903688222277640)
+    - [当浏览器全面禁用三方 Cookie](https://juejin.im/post/6844904128557105166)
+    - [浏览器里的本地数据库：IndexedDB](https://juejin.im/post/6844903965792927752)
+    - [一张刮刮卡竟包含这么多前端知识点](https://juejin.im/post/6844903952157245447)
+    - [揭秘vue/react组件库中5个"作者不造的轮子"](https://juejin.im/post/6844903951729426439)
+    - [《前端那些事》从0到1开发工具库](https://juejin.im/post/6844904127923765256)
+
    
 
 - node其他知识点
@@ -618,6 +637,7 @@
     - [使用四十行代码实现一个核心 koa](https://juejin.im/post/6844904096516816904)
     - [[译] Node.js 新特性将颠覆 AI、物联网等更多惊人领域](https://juejin.im/post/6844903985053188109) 
     - [【图文详解】200行JS代码，带你实现代码编译器（人人都能学会）](https://juejin.im/post/6844904105937207304)
+    - [《大前端进阶 Node.js》系列 双十一秒杀系统（进阶必看）](https://juejin.im/post/6844904095514378254)
     
     
 
@@ -635,6 +655,10 @@
     - [分分钟教会你搭建企业级的 npm 私有仓库](https://juejin.im/post/6844904196651630599)
     - [每日优鲜供应链前端团队微前端改造](https://juejin.im/post/6844903943873675271)
     - [在 WebStorm 中，配置能够识别 Vue CLI 3 创建的项目的别名 alias @](https://juejin.im/post/6844903802185891848)
+    - [技术探索：60 天急速自研-前端埋点监控跟踪系统大浪子](https://juejin.im/post/6844903954199887880)
+    - [微前端架构设计](https://juejin.im/post/6854573214430380039)
+    - [微前端在美团外卖的实践](https://juejin.im/post/6844904073972432903)
+    - [** 前端代码质量-圈复杂度原理和实践](https://juejin.im/post/6844903965792927751)
    
     
 - 其他优秀技术文章与前沿技术收集
