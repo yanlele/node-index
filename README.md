@@ -141,6 +141,7 @@
 - [06、canvas总结](./book/06、canvas总结)
     - [01、canvas初级使用](./book/06、canvas总结/01、canvas初级.md)
     - [02、基于canvas的小游戏和其他demo](https://github.com/yanlele/canvas-game)
+    - [Canvas实现图片上标注、缩放、移动和保存历史状态，纯干货（附css3变化公式）](https://juejin.im/post/6844904095904432135)
         
 - [07、leetCode-cn](./book/07、leetCode)
 
@@ -633,6 +634,7 @@
     - [好玩的Jenkins](https://juejin.im/post/6844904176078553096)
     - [分分钟教会你搭建企业级的 npm 私有仓库](https://juejin.im/post/6844904196651630599)
     - [每日优鲜供应链前端团队微前端改造](https://juejin.im/post/6844903943873675271)
+    - [在 WebStorm 中，配置能够识别 Vue CLI 3 创建的项目的别名 alias @](https://juejin.im/post/6844903802185891848)
    
     
 - 其他优秀技术文章与前沿技术收集
