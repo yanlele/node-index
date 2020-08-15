@@ -104,6 +104,8 @@
 - [webpack 最佳配置指北](https://juejin.im/post/5e0e1153e51d45414b74de65)
 - [再不会webpack敲得代码就不香了(近万字实战)](https://juejin.im/post/5de87444518825124c50cd36)
 - [微信小程序工程化探索之webpack实战](https://juejin.im/post/6844904131405037576)
+- [[2.7w字]我是这样搭建 React+Typescript项目环境的(上)](https://juejin.im/post/6860129883398668296)
+- [[2.7w字]我是这样搭建 React+Typescript项目环境的(下)](https://juejin.im/post/6860134655568871437)
 
     
 ### webpack插件和loader开发
@@ -119,6 +121,7 @@
 - [了不起的 Webpack 构建流程学习指南](https://juejin.im/post/6844904196634837000)
 - [十大webpack优化插件](https://juejin.im/post/6844903951649734663)
 - [了不起的 Webpack HMR 学习指南（含源码分析）](https://juejin.im/post/6844904193136787470)
+- [「一劳永逸」由浅入深配置webpack4](https://juejin.im/post/6859888538004783118)
 
 
 ### 遗留问题待解决              
