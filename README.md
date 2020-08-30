@@ -127,7 +127,7 @@
 - [13、其他知识点儿的总结](./book/02、ES6&7/13、其他知识点儿的总结)
     - [Promise/async/Generator实现原理解析](https://juejin.im/post/6844904096525189128)
     
-#### [03、css3专题](./book/03、css3专题)
+#### [03、css专题](./book/03、css3专题)
 - [最强大的 CSS 布局 —— Grid 布局](https://juejin.im/post/6854573220306255880)
 - [【1.2W】精心整理33个css知识干货助你升级](https://juejin.im/post/6854573221291753480)
 - [剖析一些经典的CSS布局问题，为前端开发+面试保驾护航](https://juejin.im/post/6844903962529759239)
@@ -137,6 +137,7 @@
 - [灵活运用CSS开发技巧](https://juejin.im/post/6844903926110617613)
 - [你未必知道的49个CSS知识点](https://juejin.im/post/6844903902123393032)
 - [你未必知道的CSS知识点（第二季）](https://juejin.im/post/6844903960386469895)
+- [CSS八种让人眼前一亮的HOVER效果](https://juejin.im/post/6861501624993447950)
     
     
 #### [04、javascript设计模式](./book/04、js设计模式)
@@ -239,6 +240,7 @@
 - [一文读懂 TypeScript 泛型及应用（ 7.8K字）](https://juejin.im/post/6844904184894980104)
 - [你不知道的 TypeScript 泛型（万字长文，建议收藏）](https://juejin.im/post/6844904196827774990)
 - [1.2W字 | 了不起的 TypeScript 入门教程](https://juejin.im/post/6844904182843965453)
+- [TypeScript 中的声明文件](https://juejin.im/post/6844903869328146440)
 
 #### [13、测试专题](./book/13、测试专题)
 - [01篇、javascript单元测试框架mochajs详解](./book/13、测试专题/README.md#01%E7%AF%87javascript%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6mochajs%E8%AF%A6%E8%A7%A3)
