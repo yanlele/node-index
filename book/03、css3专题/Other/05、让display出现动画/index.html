@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            display: none;
+            transition: all 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+    <button id="test">测试</button>
+</body>
+<script>
+  test.onclick = function () {
+    const app = document.querySelector('#app');
+    console.log(app, 'app');
+    app.style.display = "block";
+    app.offsetHeight;
+    app.style.transform = "translateX(200px)";
+  }
+</script>
+
+</html>
+

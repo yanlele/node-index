@@ -138,6 +138,7 @@
 - [你未必知道的49个CSS知识点](https://juejin.im/post/6844903902123393032)
 - [你未必知道的CSS知识点（第二季）](https://juejin.im/post/6844903960386469895)
 - [CSS八种让人眼前一亮的HOVER效果](https://juejin.im/post/6861501624993447950)
+- [一些css的杂项研究](./book/03、css3专题/Other/05、让display出现动画)
     
     
 #### [04、javascript设计模式](./book/04、js设计模式)
