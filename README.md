@@ -459,6 +459,7 @@
 - [** 史上最强vue总结---面试开发全靠它了](https://juejin.im/post/6850037277675454478)
 - [swiper](./通用功能js模块/vue/1、swiper/swiper.vue)
 - [vue使用的转场特效插件 - vueg](https://github.com/jaweii/vueg)
+- [全面解析 vue3.0 diff算法](https://juejin.im/post/6861960532048642061)
 
 
 #### react

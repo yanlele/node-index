@@ -36,6 +36,7 @@
 - [React-router4迁移与旧版本的对比](./03、react-router/02、React-router4迁移与旧版本的对比/README.md)
 - [精读《React Router v6》](https://juejin.im/post/6844904106616684557)
 - [React-Router v6 新特性解读及迁移指南](https://juejin.im/post/6844904096059621389)
+- [React Router v6 使用指南](https://juejin.im/post/6862305213148381198)
 
 
 ### 其他知识点和实战相关知识点
