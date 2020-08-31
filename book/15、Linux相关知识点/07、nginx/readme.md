@@ -12,3 +12,4 @@
 - [centOS7安装nginx及nginx配置](https://blog.csdn.net/qq_37345604/article/details/90034424)
 - [后端必备 Nginx 配置](https://juejin.im/post/6844903942187384840)
 - [Nginx 从入门到实践，万字详解！](https://juejin.im/post/6844904144235413512)
+- [前端工程师不可不知的Nginx知识](https://juejin.im/post/6864085814571335694)
