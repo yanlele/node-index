@@ -103,9 +103,9 @@
 
 ### 专题笔记归类(简书总结)
 #### [01、react简书笔记](./book/01、react专题/README.md)
-- [react16基础语法使用](./book/01、react专题/README.md#react16%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%BD%BF%E7%94%A8)
+- [react基础语法使用](./book/01、react专题/README.md#react16%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%BD%BF%E7%94%A8)
 - [redux](./book/01、react专题/README.md#redux)
-- [react-router4](./book/01、react专题/README.md#react-router4)
+- [react-router](./book/01、react专题/README.md#react-router4)
 - [其他知识点和实战相关知识点](./book/01、react专题/README.md#%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86%E7%82%B9%E5%92%8C%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9)
 - [react hooks](./book/01、react专题/README.md#react-hooks)
 - [源码分析](./book/01、react专题/README.md#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90)
