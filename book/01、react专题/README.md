@@ -99,3 +99,4 @@
 - [一键分享到各大社交网站的react组件](https://github.com/DawnyWu/react-share-buttons)
 - [React之Immutable学习记录](https://www.cnblogs.com/chris-oil/p/8494337.html)
 - [Immutable 操作在 React 中的实践](https://juejin.im/post/6844903602851414024)
+- [react hooks+redux+immutable.js打造网易云音乐精美webApp](https://juejin.im/post/6844903911367639054)
