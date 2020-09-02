@@ -97,3 +97,5 @@
 - [react-swipeable: React swipe component - Swipe bindings for react](https://github.com/dogfessional/react-swipeable)
 - [基于react的前端文件上传](./18年/6月/08、基于react的前端文件上传)
 - [一键分享到各大社交网站的react组件](https://github.com/DawnyWu/react-share-buttons)
+- [React之Immutable学习记录](https://www.cnblogs.com/chris-oil/p/8494337.html)
+- [Immutable 操作在 React 中的实践](https://juejin.im/post/6844903602851414024)
