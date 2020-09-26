@@ -4,7 +4,7 @@
 - [将数组项移动到不同的位置: array-move](https://github.com/sindresorhus/array-move)
 
 ### 工具函数
-- [工具函数: ramda](https://github.com/ramda/ramda)
+- [工具函数: ramda **](https://github.com/ramda/ramda)
 - [格式化和处理数字: Numeral-js](https://github.com/adamwdraper/Numeral-js)
 - [浅对比: shallowequal](https://github.com/dashed/shallowequal)
 - [遍历工具： js-traverse](https://github.com/substack/js-traverse)
@@ -18,6 +18,11 @@
 - [锚点滚动：smooth-scroll](https://github.com/cferdinandi/smooth-scroll)
 - [js动画库: anime](https://github.com/juliangarnier/anime)
 - [dom节点滚动: dom-scroll-into-view](https://github.com/yiminghe/dom-scroll-into-view)
+- [EventEmitter](https://github.com/Olical/EventEmitter)
+- [元素大小变化监听：element-resize-detector](https://github.com/wnr/element-resize-detector)
+- [文件下载和提取: download](https://github.com/kevva/download)
+- [异步表单校验(antd 就是用的这个): async-validator](https://github.com/yiminghe/async-validator)
+- [懒加载图片、背景、视频、iframe和脚本 **](https://github.com/verlok/vanilla-lazyload)
 
 
 ### 加密相关
@@ -36,6 +41,18 @@
 - [响应组件，有效地呈现大型列表和表格数据](https://github.com/bvaughn/react-window)
 - [url绑定的锚点滚动：react-scrollable-anchor](https://github.com/gabergg/react-scrollable-anchor)
 - [渐进渐出动画: react-transition-group](https://github.com/reactjs/react-transition-group)
+- [css in js 的一个大杀伤力器: styled-components](https://github.com/styled-components/styled-components)
+- [3D轮播：react-carousel-3d](https://github.com/suhailsulu/react-carousel-3d)
+- [虚拟渲染 - 用于解决大型列表和表格数据: react-virtualized](https://github.com/bvaughn/react-virtualized)
+- [自定义 scrollBar 的React版本实现: react-perfect-scrollbar](https://github.com/goldenyz/react-perfect-scrollbar)
+
+### node
+- [打包node程序为可执行文件: pkg](https://github.com/vercel/pkg)
 
 ### 项目体系
 - [Create a Vite-powered app in seconds: create-vite-app](https://github.com/vitejs/create-vite-app)
+- [自动提取markdown目录的工具](https://github.com/jonschlinkert/markdown-toc)
+
+
+### 其他
+- [flex小游戏](https://github.com/thomaspark/flexboxfroggy)
