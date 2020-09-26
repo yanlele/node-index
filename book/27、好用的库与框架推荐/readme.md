@@ -16,6 +16,9 @@
 - [辅助UI控件开发的工具: storybook](https://github.com/storybookjs/storybook)
     - [手把手教你快速搭建专属的storybook](https://juejin.im/post/6844903752982331405)
 - [锚点滚动：smooth-scroll](https://github.com/cferdinandi/smooth-scroll)
+- [js动画库: anime](https://github.com/juliangarnier/anime)
+- [dom节点滚动: dom-scroll-into-view](https://github.com/yiminghe/dom-scroll-into-view)
+
 
 ### 加密相关
 - [Generate hashes from javascript objects in node and the browser: object-hash](https://github.com/puleos/object-hash)
@@ -32,6 +35,7 @@
 - [基于 React 的左右拖动分栏Split: react-split-pane](https://github.com/tomkp/react-split-pane)
 - [响应组件，有效地呈现大型列表和表格数据](https://github.com/bvaughn/react-window)
 - [url绑定的锚点滚动：react-scrollable-anchor](https://github.com/gabergg/react-scrollable-anchor)
+- [渐进渐出动画: react-transition-group](https://github.com/reactjs/react-transition-group)
 
 ### 项目体系
 - [Create a Vite-powered app in seconds: create-vite-app](https://github.com/vitejs/create-vite-app)
