@@ -1,5 +1,16 @@
 ## 好用的库总结
 
+<!-- toc -->
+
+- [工具函数](#%E5%B7%A5%E5%85%B7%E5%87%BD%E6%95%B0)
+- [web工具](#web%E5%B7%A5%E5%85%B7)
+- [React](#react)
+- [node](#node)
+- [项目体系](#%E9%A1%B9%E7%9B%AE%E4%BD%93%E7%B3%BB)
+- [其他](#%E5%85%B6%E4%BB%96)
+
+<!-- tocstop -->
+
 ### 工具函数
 - [工具函数: ramda **](https://github.com/ramda/ramda)
 - [格式化和处理数字: Numeral-js](https://github.com/adamwdraper/Numeral-js)
