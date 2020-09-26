@@ -13,6 +13,9 @@
 ### web工具
 - [字体操作库，使用它你可以随心所欲的操作字体: font-carrier](https://github.com/purplebamboo/font-carrier)
 - [基于 web 的左右拖动分栏Split: split](https://github.com/nathancahill/split)
+- [辅助UI控件开发的工具: storybook](https://github.com/storybookjs/storybook)
+    - [手把手教你快速搭建专属的storybook](https://juejin.im/post/6844903752982331405)
+- [锚点滚动：smooth-scroll](https://github.com/cferdinandi/smooth-scroll)
 
 ### 加密相关
 - [Generate hashes from javascript objects in node and the browser: object-hash](https://github.com/puleos/object-hash)
@@ -27,6 +30,8 @@
 - [拖动排序：react-sortable-hoc](https://github.com/clauderic/react-sortable-hoc)
 - [在React中用于抓取、缓存和更新异步数据的hooks: react-query](https://github.com/tannerlinsley/react-query)
 - [基于 React 的左右拖动分栏Split: react-split-pane](https://github.com/tomkp/react-split-pane)
+- [响应组件，有效地呈现大型列表和表格数据](https://github.com/bvaughn/react-window)
+- [url绑定的锚点滚动：react-scrollable-anchor](https://github.com/gabergg/react-scrollable-anchor)
 
 ### 项目体系
 - [Create a Vite-powered app in seconds: create-vite-app](https://github.com/vitejs/create-vite-app)
