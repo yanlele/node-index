@@ -1,14 +1,12 @@
 ## 好用的库总结
 
-### 数组处理
-- [将数组项移动到不同的位置: array-move](https://github.com/sindresorhus/array-move)
-
 ### 工具函数
 - [工具函数: ramda **](https://github.com/ramda/ramda)
 - [格式化和处理数字: Numeral-js](https://github.com/adamwdraper/Numeral-js)
 - [浅对比: shallowequal](https://github.com/dashed/shallowequal)
 - [遍历工具： js-traverse](https://github.com/substack/js-traverse)
 - [数字转中文（大写，小写）数字，金额: nzh](https://github.com/cnwhy/nzh)
+- [将数组项移动到不同的位置: array-move](https://github.com/sindresorhus/array-move)
 
 ### web工具
 - [字体操作库，使用它你可以随心所欲的操作字体: font-carrier](https://github.com/purplebamboo/font-carrier)
@@ -34,11 +32,9 @@
 - [汉字拼音: pinyin **](https://github.com/hotoo/pinyin)
 - [url 处理工具: query-string **](https://github.com/sindresorhus/query-string)
 - [H5唤起客户端：callapp-lib](https://github.com/suanmei/callapp-lib)
-
-
-### 加密相关
-- [Generate hashes from javascript objects in node and the browser: object-hash](https://github.com/puleos/object-hash)
-- [加密库： jsrsasign](https://github.com/kjur/jsrsasign）)
+- [虚拟dom和diff算法实现: virtual-dom](https://github.com/Matt-Esch/virtual-dom)
+- [diff 实现: diff **](https://github.com/flitbit/diff)
+- [前端本地客户端压缩图片，兼容IOS，Android，PC、自动按需加载文件: localResizeIMG](https://github.com/think2011/localResizeIMG)
 
 
 ### React 
@@ -66,6 +62,7 @@
 - [做表单的： formik](https://github.com/formium/formik)
 - [html header 管理工具: react-helmet](https://github.com/nfl/react-helmet)
 - [基于spring物理的React动画库: react-spring](https://github.com/pmndrs/react-spring)
+- [react 拖动组件: react-draggable](https://github.com/STRML/react-draggable)
 
 
 ### node
@@ -73,6 +70,11 @@
 - [运行跨平台设置和使用环境变量: cross-env](https://github.com/kentcdodds/cross-env)
 - [一个简单的本地服务: http-server](https://github.com/http-party/http-server)
 - [用于mock数据用的， 配合 dev-server.proxy, 简直无往不利: dyson **](https://github.com/webpro/dyson)
+- [爬虫必备神器: cheerio](https://github.com/cheeriojs/cheerio)
+- [优雅的terminal spinner: ora](https://github.com/sindresorhus/ora)
+- [terminal 交互式命令行工具: Inquirer.js **](https://github.com/SBoudrias/Inquirer.js)
+- [node 模板引擎整合库: consolidate.js **](https://github.com/tj/consolidate.js)
+- [terminal 开始有色彩了: chalk **](https://github.com/chalk/chalk)
 
 
 ### 项目体系
@@ -81,9 +83,14 @@
 - [E2E 的伟大集成者: cypress](https://github.com/cypress-io/cypress)
 - [按需导入 - antd 的伟大衍生物: babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 - [代码格式化工具: prettier](https://github.com/prettier/prettier)
+- [帅气的 Webpack仪表盘: jarvis](https://github.com/zouhir/jarvis)
 
 
 ### 其他
+- [Generate hashes from javascript objects in node and the browser: object-hash](https://github.com/puleos/object-hash)
+- [加密库： jsrsasign](https://github.com/kjur/jsrsasign）)
+- [加密库: crypto-js](https://github.com/brix/crypto-js)
 - [flex小游戏](https://github.com/thomaspark/flexboxfroggy)
 - [markdown 文档 --> ppt: nodeppt](https://github.com/ksky521/nodeppt)
 - [动态文件生成器: docsify](https://github.com/docsifyjs/docsify)
+- [演示框架: impress.js](https://github.com/impress/impress.js)
