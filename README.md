@@ -140,6 +140,7 @@
 - [CSS八种让人眼前一亮的HOVER效果](https://juejin.im/post/6861501624993447950)
 - [一些css的杂项研究](./book/03、css3专题/Other/05、让display出现动画)
 - [各种页面常见布局+知名网站实例分析+相关阅读推荐](https://github.com/Sweet-KK/css-layout)
+- [Some CSS tricks,一些 CSS 常用样式](https://github.com/QiShaoXuan/css_tricks)
     
     
 #### [04、javascript设计模式](./book/04、js设计模式)
@@ -502,7 +503,6 @@
 - [Sequelize 文档的中文版本](https://github.com/demopark/sequelize-docs-Zh-CN)
 - [常用eslint配置](./19年/01月/01、常用eslint配置)
 - [常用tslint配置](./19年/01月/02、常用tslint配置)
-- [Some CSS tricks,一些 CSS 常用样式](https://github.com/QiShaoXuan/css_tricks)
 - [React的一个动画库：react-spring](https://github.com/react-spring/react-spring)
 - [解决mac安装homebrew后报错-bash: brew: command not found](https://blog.csdn.net/li396864285/article/details/52572163)
 - [mac 上安装 nvm 遇到的坑](https://www.jianshu.com/p/f6c3ecfdbd97)
@@ -574,6 +574,7 @@
 - [一张刮刮卡竟包含这么多前端知识点](https://juejin.im/post/6844903952157245447)
 - [揭秘vue/react组件库中5个"作者不造的轮子"](https://juejin.im/post/6844903951729426439)
 - [《前端那些事》从0到1开发工具库](https://juejin.im/post/6844904127923765256)
+- [Chrome插件开发全攻略 **](https://github.com/sxei/chrome-plugin-demo)
 
    
 
