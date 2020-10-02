@@ -24,6 +24,7 @@
 - [基于 web 的左右拖动分栏Split: split](https://github.com/nathancahill/split)
 - [辅助UI控件开发的工具: storybook](https://github.com/storybookjs/storybook)
     - [手把手教你快速搭建专属的storybook](https://juejin.im/post/6844903752982331405)
+    - [Storybook 中文手册 React 版](https://www.bookstack.cn/books/learnstorybook-react-zh)
 - [锚点滚动：smooth-scroll](https://github.com/cferdinandi/smooth-scroll)
 - [js动画库: anime](https://github.com/juliangarnier/anime)
 - [dom节点滚动: dom-scroll-into-view](https://github.com/yiminghe/dom-scroll-into-view)
