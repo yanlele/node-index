@@ -12,7 +12,7 @@
 
 ### <div id='class1'>1、使用方式：</div>
 ```html
-<script src="../../../jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="handlebars-v4.0.5.js"></script>
 
 <!--HTML：-->
