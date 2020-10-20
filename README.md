@@ -465,15 +465,6 @@
 - [swiper](./通用功能js模块/vue/1、swiper/swiper.vue)
 - [vue使用的转场特效插件 - vueg](https://github.com/jaweii/vueg)
 - [全面解析 vue3.0 diff算法](https://juejin.im/post/6861960532048642061)
-
-
-#### react
-- [react-redux示例](./17年/12月/11、react-redux示例)
-- [react-router4与合并reducers示例](./17年/12月/12、react-router4与合并reducers示例)
-- [react 高阶函数示例](./18年/1月/14、react%20高阶函数)
-- [react子组件向父组件通信](./18年/4月/07、react%20子组件向父组件通信/READEME.md)
-- [深入理解 React 高阶组件](https://zhuanlan.zhihu.com/p/24776678?group_id=802649040843051008)
-- [工作中的日常踩坑 - 方法传递给子组件执行，但是需要绑定父级this的情况分析](./18年/6月/07、方法传递给子组件执行，但是需要绑定父级this的情况分析/README.md)
     
 
 #### 前端周边生态圈技术栈
