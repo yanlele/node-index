@@ -244,6 +244,8 @@
 - [你不知道的 TypeScript 泛型（万字长文，建议收藏）](https://juejin.im/post/6844904196827774990)
 - [1.2W字 | 了不起的 TypeScript 入门教程](https://juejin.im/post/6844904182843965453)
 - [TypeScript 中的声明文件](https://juejin.im/post/6844903869328146440)
+- [结合实例学习 Typescript](https://juejin.im/post/6876981358346895368)
+- [一份不可多得的 TS 学习指南（1.8W字）](https://juejin.im/post/6872111128135073806)
 
 #### [13、测试专题](./book/13、测试专题)
 - [01篇、javascript单元测试框架mochajs详解](./book/13、测试专题/README.md#01%E7%AF%87javascript%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6mochajs%E8%AF%A6%E8%A7%A3)
