@@ -258,12 +258,10 @@
 
 #### [16、前端数据可视化D3.js学习](https://github.com/yanlele/D3.js-learning)
 
-#### [17、数据结构与算法专题](./book/17、数据结构与算法专题05)
+#### [17、数据结构与算法专题 - todo](./book/17、数据结构与算法专题)
 
 #### [18、flutter 基础入门](./book/18、flutter%20基础入门)
 - [「 Dart Js Ts 」给前端工程师的一张Dart语言入场券](https://juejin.im/post/6844904153064407054)
-
-#### [19、node爬虫](https://github.com/yanlele/node-index-core/tree/master/packages/spider)
 
 #### [20、docker&DevOps](./book/20、docker&Devops)
 
@@ -291,7 +289,6 @@
 - [audio标签兼容性自动播放解决方案](./18年/07月/07、audio标签兼容性自动播放解决方案)
 - [简易的实现一个打字机效果](./18年/07月/08、简易的实现一个打字机效果)
 - [数字滚动展示组件countUp.js](./18年/07月/11、数字滚动展示组件countUp.js)
-- [A javascript library for multi-touch gestures](https://github.com/hammerjs/hammer.js)
 - [人民币大小写互换](./18年/08月/03、人民币大小写互换/rmbHelper.js)
 
 
