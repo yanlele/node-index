@@ -30,6 +30,7 @@
 - [锚点滚动：smooth-scroll](https://github.com/cferdinandi/smooth-scroll)
 - [js动画库: anime](https://github.com/juliangarnier/anime)
 - [dom节点滚动: dom-scroll-into-view](https://github.com/yiminghe/dom-scroll-into-view)
+- [平滑滚动: scroll-into-view-if-needed](https://github.com/stipsan/scroll-into-view-if-needed)
 - [EventEmitter](https://github.com/Olical/EventEmitter)
 - [元素大小变化监听：element-resize-detector](https://github.com/wnr/element-resize-detector)
 - [element 大小变化监听：ResizeObserver](https://github.com/juggle/resize-observer)
@@ -50,6 +51,9 @@
 - [虚拟dom和diff算法实现: virtual-dom](https://github.com/Matt-Esch/virtual-dom)
 - [diff 实现: diff **](https://github.com/flitbit/diff)
 - [前端本地客户端压缩图片，兼容IOS，Android，PC、自动按需加载文件: localResizeIMG](https://github.com/think2011/localResizeIMG)
+- [轻量级动画库: popmotion **](https://github.com/Popmotion/popmotion)
+    - [Popmotion —— 流动你的页面](https://zhuanlan.zhihu.com/p/33951814)
+    - [popmotion 中文文档](https://jellykaiser.github.io/popmotion.doc/)
 
 
 ### React 
@@ -78,6 +82,7 @@
 - [html header 管理工具: react-helmet](https://github.com/nfl/react-helmet)
 - [基于spring物理的React动画库: react-spring](https://github.com/pmndrs/react-spring)
 - [react 拖动组件: react-draggable](https://github.com/STRML/react-draggable)
+- [React hooks for axios: axios-hooks](https://github.com/simoneb/axios-hooks)
 
 
 ### node
