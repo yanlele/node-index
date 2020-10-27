@@ -42,11 +42,12 @@
 - [图片分析和比较: Resemble.js](https://github.com/rsmbl/Resemble.js)
 - [复制粘贴实现模块: copy-to-clipboard](https://github.com/sudodoki/copy-to-clipboard)
 - [canvas库: fabric.js](https://github.com/fabricjs/fabric.js)
+- [渐进式Canvas库: easycanvas(作者貌似已经停止维护了，谨慎使用，可以作为学习使用)](https://github.com/c-zhuo/easycanvas)
 - [本地存储工具: localForage **](https://github.com/localForage/localForage)
 - [伟大的项目国际化解决方案: i18next **](https://github.com/i18next/i18next)
 - [输入时格式化工具: cleave.js **](https://github.com/nosir/cleave.js)
 - [文件保存到本地: FileSaver.js](https://github.com/eligrey/FileSaver.js)
-- [汉字拼音: pinyin **](https://github.com/hotoo/pinyin)
+- [汉字拼音 ➜ hàn zì pīn yīn: pinyin **](https://github.com/hotoo/pinyin)
 - [url 处理工具: query-string **](https://github.com/sindresorhus/query-string)
 - [H5唤起客户端：callapp-lib](https://github.com/suanmei/callapp-lib)
 - [虚拟dom和diff算法实现: virtual-dom](https://github.com/Matt-Esch/virtual-dom)
@@ -85,6 +86,7 @@
 - [基于spring物理的React动画库: react-spring](https://github.com/pmndrs/react-spring)
 - [react 拖动组件: react-draggable](https://github.com/STRML/react-draggable)
 - [React hooks for axios: axios-hooks](https://github.com/simoneb/axios-hooks)
+- [一个基于spring物理的React动画库: react-spring](https://github.com/react-spring/react-spring)
 
 
 ### node
