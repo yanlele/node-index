@@ -57,7 +57,7 @@
     - [Popmotion —— 流动你的页面](https://zhuanlan.zhihu.com/p/33951814)
     - [popmotion 中文文档](https://jellykaiser.github.io/popmotion.doc/)
 - [文档生成器: vuepress](https://github.com/vuejs/vuepress)
-
+- [网页加载进度条: nprogress](https://github.com/rstacruz/nprogress)
 
 ### React 
 - [ahooks **](https://github.com/alibaba/hooks)
