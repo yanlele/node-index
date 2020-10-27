@@ -61,7 +61,7 @@
 ### 已经发布npm的开源模块
 - [koa2日志监控中间件:koa-logs-middleware](https://github.com/yanlele/koa-logs-middleware)
 - [前端工程化](https://github.com/yanlele/le-cli)
-- [前端工程化](https://github.com/cli-template-build)
+- [前端工程化 - 模板项目](https://github.com/cli-template-build)
 - [小程序接入redux](https://github.com/yanlele/redux2miniapp)
 
 
