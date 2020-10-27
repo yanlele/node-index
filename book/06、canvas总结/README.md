@@ -1,5 +1,7 @@
 # canvas 专题
 
+### canvas 基础
+
 - [01、canvas初级使用](./01、canvas初级.md)
     - [1.1、基础使用](./01、canvas初级.md#class01)
     - [1.2、绘制形状](./01、canvas初级.md#class02)
@@ -13,4 +15,9 @@
     - [1.10、剪裁路径](./01、canvas初级.md#class10)
     - [1.11、动画](./01、canvas初级.md#class11)
 
+### canvas 进阶
 - [02、canvas小游戏-birds]()
+
+
+### 其他
+- [Canvas实现图片上标注、缩放、移动和保存历史状态，纯干货（附css3变化公式）](https://juejin.im/post/6844904095904432135)

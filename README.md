@@ -175,9 +175,6 @@
 #### [05、基础知识点总结 ** 非常重要](./book/05、基础知识点专题)
 
 #### [06、canvas总结](./book/06、canvas总结)
-- [01、canvas初级使用](./book/06、canvas总结/01、canvas初级.md)
-- [02、基于canvas的小游戏和其他demo](https://github.com/yanlele/canvas-game)
-- [Canvas实现图片上标注、缩放、移动和保存历史状态，纯干货（附css3变化公式）](https://juejin.im/post/6844904095904432135)
         
 #### [07、leetCode-cn](./book/07、leetCode)
 
