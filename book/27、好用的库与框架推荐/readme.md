@@ -32,6 +32,7 @@
 - [dom节点滚动: dom-scroll-into-view](https://github.com/yiminghe/dom-scroll-into-view)
 - [EventEmitter](https://github.com/Olical/EventEmitter)
 - [元素大小变化监听：element-resize-detector](https://github.com/wnr/element-resize-detector)
+- [element 大小变化监听：ResizeObserver](https://github.com/juggle/resize-observer)
 - [文件下载和提取: download](https://github.com/kevva/download)
 - [异步表单校验(antd 就是用的这个): async-validator](https://github.com/yiminghe/async-validator)
 - [懒加载图片、背景、视频、iframe和脚本 **](https://github.com/verlok/vanilla-lazyload)
@@ -108,3 +109,4 @@
 - [markdown 文档 --> ppt: nodeppt](https://github.com/ksky521/nodeppt)
 - [动态文件生成器: docsify](https://github.com/docsifyjs/docsify)
 - [演示框架: impress.js](https://github.com/impress/impress.js)
+- [electron-react-tpl](https://github.com/qld-cf/electron-react-tpl)
