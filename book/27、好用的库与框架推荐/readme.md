@@ -13,6 +13,7 @@
 
 ### 工具函数
 - [工具函数: ramda **](https://github.com/ramda/ramda)
+- [函数式编程函数: fp-ts](https://github.com/gcanti/fp-ts)
 - [格式化和处理数字: Numeral-js](https://github.com/adamwdraper/Numeral-js)
 - [浅对比: shallowequal](https://github.com/dashed/shallowequal)
 - [遍历工具： js-traverse](https://github.com/substack/js-traverse)
@@ -54,6 +55,7 @@
 - [轻量级动画库: popmotion **](https://github.com/Popmotion/popmotion)
     - [Popmotion —— 流动你的页面](https://zhuanlan.zhihu.com/p/33951814)
     - [popmotion 中文文档](https://jellykaiser.github.io/popmotion.doc/)
+- [文档生成器: vuepress](https://github.com/vuejs/vuepress)
 
 
 ### React 
