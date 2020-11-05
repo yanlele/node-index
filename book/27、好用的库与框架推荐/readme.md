@@ -89,6 +89,7 @@
 - [react 拖动组件: react-draggable](https://github.com/STRML/react-draggable)
 - [React hooks for axios: axios-hooks](https://github.com/simoneb/axios-hooks)
 - [一个基于spring物理的React动画库: react-spring](https://github.com/react-spring/react-spring)
+- [类似于 react hook 组件级别的封装： react-powerplug (已经没有人维护了)](https://github.com/renatorib/react-powerplug)
 
 
 ### node
