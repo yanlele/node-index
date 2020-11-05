@@ -60,6 +60,18 @@
 - [网页加载进度条: nprogress](https://github.com/rstacruz/nprogress)
 - [手势操作：hammer](https://github.com/hammerjs/hammer.js)
 - [用于匹配url的正则表达式: url-regex](https://github.com/kevva/url-regex)
+- [非常棒的 Tooltip, popover 工具: tippyjs](https://github.com/atomiks/tippyjs)
+- [二维码生成工具: qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator)
+- [时间处理库: luxon](https://github.com/moment/luxon)
+- [将路径字符串(如' /user/:name ')转换为正则表达式: path-to-regexp](https://github.com/pillarjs/path-to-regexp)
+- [json编辑器： jsoneditor](https://github.com/josdejong/jsoneditor)
+- [身份证验证: IDValidator](https://github.com/mc-zone/IDValidator)
+- [js截屏工具: html2canvas](https://github.com/niklasvh/html2canvas)
+- [颜色转换和操作库: color](https://github.com/Qix-/color)
+- [为web轻量级复制到剪贴板: clipboard-copy](https://github.com/feross/clipboard-copy)
+- [现代复制到剪贴板: clipboard.js](https://github.com/zenorocha/clipboard.js)
+
+
 
 ### React 
 - [ahooks **](https://github.com/alibaba/hooks)
@@ -90,6 +102,8 @@
 - [React hooks for axios: axios-hooks](https://github.com/simoneb/axios-hooks)
 - [一个基于spring物理的React动画库: react-spring](https://github.com/react-spring/react-spring)
 - [类似于 react hook 组件级别的封装： react-powerplug (已经没有人维护了)](https://github.com/renatorib/react-powerplug)
+- [文本编辑器：draft-js **](https://github.com/facebook/draft-js)
+- [美观易用的React富文本编辑器，基于draft-js开发: braft-editor](https://github.com/margox/braft-editor)
 
 
 ### node
@@ -102,6 +116,7 @@
 - [terminal 交互式命令行工具: Inquirer.js **](https://github.com/SBoudrias/Inquirer.js)
 - [node 模板引擎整合库: consolidate.js **](https://github.com/tj/consolidate.js)
 - [terminal 开始有色彩了: chalk **](https://github.com/chalk/chalk)
+- [prompt](https://github.com/flatiron/prompt)
 
 
 ### 项目体系
@@ -111,6 +126,8 @@
 - [按需导入 - antd 的伟大衍生物: babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 - [代码格式化工具: prettier](https://github.com/prettier/prettier)
 - [帅气的 Webpack仪表盘: jarvis](https://github.com/zouhir/jarvis)
+- [A loader for webpack that allows importing files as a String： raw-loader](https://github.com/webpack-contrib/raw-loader)
+- [Transforms styleName to className using compile time CSS module resolution: babel-plugin-react-css-modules](https://github.com/gajus/babel-plugin-react-css-modules)
 
 
 ### 其他
@@ -122,3 +139,4 @@
 - [动态文件生成器: docsify](https://github.com/docsifyjs/docsify)
 - [演示框架: impress.js](https://github.com/impress/impress.js)
 - [electron-react-tpl](https://github.com/qld-cf/electron-react-tpl)
+
