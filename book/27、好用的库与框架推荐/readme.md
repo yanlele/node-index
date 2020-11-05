@@ -59,6 +59,7 @@
 - [文档生成器: vuepress](https://github.com/vuejs/vuepress)
 - [网页加载进度条: nprogress](https://github.com/rstacruz/nprogress)
 - [手势操作：hammer](https://github.com/hammerjs/hammer.js)
+- [用于匹配url的正则表达式: url-regex](https://github.com/kevva/url-regex)
 
 ### React 
 - [ahooks **](https://github.com/alibaba/hooks)
