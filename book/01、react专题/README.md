@@ -66,6 +66,7 @@
 - [React-从源码分析React Fiber工作原理](https://blog.csdn.net/qiqingjin/article/details/80118669)
 - [** 手写React的Fiber架构，深入理解其原理](https://juejin.im/post/6844904197008130062)
 - [fre](https://github.com/132yse/fre)
+- [「React技术揭秘」 一本自顶向下，从理念到代码的源码分析书 **](https://github.com/BetaSu/just-react)
 
 
 ### 其他经典文章
