@@ -16,7 +16,7 @@
 - [函数式编程函数: fp-ts](https://github.com/gcanti/fp-ts)
 - [格式化和处理数字: Numeral-js](https://github.com/adamwdraper/Numeral-js)
 - [浅对比: shallowequal](https://github.com/dashed/shallowequal)
-- [遍历工具： js-traverse](https://github.com/substack/js-traverse)
+- [遍历工具： js-traverse **](https://github.com/substack/js-traverse)
 - [数字转中文（大写，小写）数字，金额: nzh](https://github.com/cnwhy/nzh)
 - [将数组项移动到不同的位置: array-move](https://github.com/sindresorhus/array-move)
 
@@ -105,6 +105,7 @@
 - [类似于 react hook 组件级别的封装： react-powerplug (已经没有人维护了)](https://github.com/renatorib/react-powerplug)
 - [文本编辑器：draft-js **](https://github.com/facebook/draft-js)
 - [美观易用的React富文本编辑器，基于draft-js开发: braft-editor](https://github.com/margox/braft-editor)
+- [react-sticky](https://github.com/captivationsoftware/react-sticky)
 
 
 ### node
