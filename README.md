@@ -338,7 +338,6 @@
 - [一个简单的echarts示例](./18年/5月/02、一个简单的echarts示例/README.md)
 - [关于时间模块moment的使用](./18年/6月/01、关于模块moment的使用/)
 - [深入javascript中Math算数对象与精确到小数位的向上舍入和向下舍入解决办法](./18年/6月/02、深入javascript中Math算数对象与精确到小数位的向上舍入和向下舍入解决办法)
-- [关于对象的遍历]()
 - [reduce()处理对象](./18年/6月/03、reduce()处理对象/index.js)
 - [Object.assign() 与 深拷贝](./18年/6月/04、Object.assign()%20与%20深拷贝)
 - [深入理解 JavaScript 异步](https://github.com/wangfupeng1988/js-async-tutorial)
@@ -547,6 +546,7 @@
 - [《前端那些事》从0到1开发工具库](https://juejin.im/post/6844904127923765256)
 - [Chrome插件开发全攻略 **](https://github.com/sxei/chrome-plugin-demo)
 - [AST入门](https://juejin.im/post/6885146952877031432)
+- [微前端架构模板与学习: micro-front-template](https://github.com/a1029563229/micro-front-template)
 
    
 
