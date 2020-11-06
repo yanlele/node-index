@@ -17,7 +17,7 @@
 - [格式化和处理数字: Numeral-js](https://github.com/adamwdraper/Numeral-js)
 - [浅对比: shallowequal](https://github.com/dashed/shallowequal)
 - [遍历工具： js-traverse **](https://github.com/substack/js-traverse)
-- [数字转中文（大写，小写）数字，金额: nzh](https://github.com/cnwhy/nzh)
+- [数字转中文（大写，小写）数字，金额: nzh **](https://github.com/cnwhy/nzh)
 - [将数组项移动到不同的位置: array-move](https://github.com/sindresorhus/array-move)
 
 ### web工具
@@ -29,11 +29,11 @@
     - [Code for Learn Storybook **](https://github.com/chromaui/learnstorybook-code)
     - [learnstorybook.com](https://github.com/chromaui/learnstorybook.com)
 - [锚点滚动：smooth-scroll](https://github.com/cferdinandi/smooth-scroll)
-- [js动画库: anime](https://github.com/juliangarnier/anime)
+- [js动画库: anime **](https://github.com/juliangarnier/anime)
 - [dom节点滚动: dom-scroll-into-view](https://github.com/yiminghe/dom-scroll-into-view)
 - [平滑滚动: scroll-into-view-if-needed](https://github.com/stipsan/scroll-into-view-if-needed)
 - [EventEmitter](https://github.com/Olical/EventEmitter)
-- [元素大小变化监听：element-resize-detector](https://github.com/wnr/element-resize-detector)
+- [元素大小变化监听：element-resize-detector **](https://github.com/wnr/element-resize-detector)
 - [element 大小变化监听：ResizeObserver](https://github.com/juggle/resize-observer)
 - [文件下载和提取: download](https://github.com/kevva/download)
 - [异步表单校验(antd 就是用的这个): async-validator](https://github.com/yiminghe/async-validator)
