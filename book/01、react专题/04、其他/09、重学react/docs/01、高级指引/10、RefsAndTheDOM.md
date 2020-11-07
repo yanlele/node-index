@@ -10,6 +10,17 @@
 
 **注意的是：** 勿过度使用 Refs。 一般场景下面， 让更高的组件层级拥有这个 state，是更恰当的。
 
+<!-- toc -->
+
+- [创建 Refs](#%E5%88%9B%E5%BB%BA-refs)
+- [访问 Refs](#%E8%AE%BF%E9%97%AE-refs)
+  * [为 DOM 元素添加 ref](#%E4%B8%BA-dom-%E5%85%83%E7%B4%A0%E6%B7%BB%E5%8A%A0-ref)
+  * [为 class 组件添加 Ref](#%E4%B8%BA-class-%E7%BB%84%E4%BB%B6%E6%B7%BB%E5%8A%A0-ref)
+  * [Refs 与函数组件](#refs-%E4%B8%8E%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6)
+- [回调 Refs](#%E5%9B%9E%E8%B0%83-refs)
+
+<!-- tocstop -->
+
 ### 创建 Refs
 Refs 是使用 `React.createRef()` 创建的，并通过 ref 属性附加到 React 元素。
 在构造组件时，通常将 Refs 分配给实例属性，以便可以在整个组件中引用它们。                             
