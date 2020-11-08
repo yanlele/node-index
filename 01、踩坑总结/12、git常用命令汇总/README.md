@@ -345,6 +345,18 @@ type代表某次提交的类型，比如是修复一个bug还是增加一个新�
 
 
 #### 给已经存在的项目添加git
+第一步： `​git init`                        
+第二步： `git add .`                        
+第三步： `git commit -m "Initial commit"​`                          
+第四步：
+
+    输入：git remote add origin + 你的仓库地址
+    例如：git remote add origin https://git.oschina.net/hhh/GitDemo​.git
+    
+第五步： `git push -u origin master​`
+
+
+
 - [给已经存在的项目添加git](https://www.jianshu.com/p/609756f76771)
 
 
