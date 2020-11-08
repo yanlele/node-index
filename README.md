@@ -481,6 +481,7 @@
 - [解决mac安装homebrew后报错-bash: brew: command not found](https://blog.csdn.net/li396864285/article/details/52572163)
 - [mac 上安装 nvm 遇到的坑](https://www.jianshu.com/p/f6c3ecfdbd97)
 - [使用lerna管理大型前端项目](https://www.jianshu.com/p/2f9c05b119c9)
+- [lerna的基础使用](https://www.jianshu.com/p/8b7e6025354b)
 - [Git Submodule项目子模块管理](https://blog.csdn.net/xiangzhihong8/article/details/80535495)
 - [commitlint+husky规范commit 日志](https://blog.csdn.net/wei371522/article/details/84070803)
 - [Git commit message和工作流规范](https://www.imooc.com/article/16780)
