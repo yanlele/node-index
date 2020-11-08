@@ -448,6 +448,7 @@
     
 
 #### 前端周边生态圈技术栈
+- [Yarn Workspace 使用指南](https://www.jianshu.com/p/990afa30b6fe)
 - [axios 的一些基本用法](./17年/12月/10、axios%20的一些基本用法)
 - [常用的正则验证例子](./17年/12月/13、正则验证/README.md)
 - [获取设备信息(推荐使用模块mobile-detect)](./17年/12月/14、获取设备信息专题/index.js)
