@@ -19,6 +19,7 @@
 - [遍历工具： js-traverse **](https://github.com/substack/js-traverse)
 - [数字转中文（大写，小写）数字，金额: nzh **](https://github.com/cnwhy/nzh)
 - [将数组项移动到不同的位置: array-move](https://github.com/sindresorhus/array-move)
+- [处理小数计算精度问题: decimal.js](https://github.com/MikeMcl/decimal.js)
 
 ### web工具
 - [字体操作库，使用它你可以随心所欲的操作字体: font-carrier](https://github.com/purplebamboo/font-carrier)
