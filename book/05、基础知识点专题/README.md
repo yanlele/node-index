@@ -76,6 +76,8 @@
     - [73、32个手写JS，巩固你的JS基础（面试高频）**](https://juejin.im/post/6875152247714480136)
     - [74、结了JavaScript与ES的25个重要知识点](https://juejin.im/post/6872521948015329293)
     - [75、30道高频JS手撕面试题](https://juejin.im/post/6870319532955828231)
+    - [76、面试不再怕：史上最全的cookie知识点详解](https://juejin.cn/post/6914109129267740686)
+    - [77、node中的CommonJS](https://juejin.cn/post/6844903778194292744)
     
     
 - 进阶知识部分
