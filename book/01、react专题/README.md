@@ -51,6 +51,8 @@
     - [01、Children和cloneElement的研究](./04、其他/08、react新特性/01、Children和cloneElement的研究/01、Children和cloneElement的研究.md)
 - [React Profiler 介绍](https://juejin.im/post/5ba0f8e4f265da0ab915bcf2)
 - [** 重学react](./04、其他/09、重学react/09、重学react.md)
+- [Recoil 用法及原理浅析](https://juejin.cn/post/6889763592947564551)
+- [Recoil - React 状态管理库](https://juejin.cn/post/6890147688910700557)
     
 ### react hooks
 - [10分钟教你手写8个常用的自定义hooks](https://juejin.im/post/6844904074433789959)
