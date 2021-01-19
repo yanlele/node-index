@@ -550,6 +550,7 @@
 - [Chrome插件开发全攻略 **](https://github.com/sxei/chrome-plugin-demo)
 - [AST入门](https://juejin.im/post/6885146952877031432)
 - [微前端架构模板与学习: micro-front-template](https://github.com/a1029563229/micro-front-template)
+- [前端搞工程化：从零打造性能检测库](https://juejin.cn/post/6919295789630455815)
 
    
 
