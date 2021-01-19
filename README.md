@@ -552,6 +552,8 @@
 - [微前端架构模板与学习: micro-front-template](https://github.com/a1029563229/micro-front-template)
 - [前端搞工程化：从零打造性能检测库 ** ](https://juejin.cn/post/6919295789630455815)
 - [最新性能指标 **](https://juejin.cn/post/6850037270729359367)
+- [可视化拖拽组件库一些技术要点原理分析 ** ](https://juejin.cn/post/6908502083075325959)
+- [可视化拖拽组件库一些技术要点原理分析（二）**](https://juejin.cn/post/6918881497264947207)
 
    
 
