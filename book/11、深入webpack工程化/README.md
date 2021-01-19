@@ -110,6 +110,7 @@
 - [[2.7w字]我是这样搭建 React+Typescript项目环境的(上)](https://juejin.im/post/6860129883398668296)
 - [[2.7w字]我是这样搭建 React+Typescript项目环境的(下)](https://juejin.im/post/6860134655568871437)
 - [「一劳永逸」由浅入深配置webpack4](https://juejin.im/post/6859888538004783118)
+- [「前端工程化」从0-1搭建react，ts脚手架（1.2w字超详细教程）](https://juejin.cn/post/6919308174151385096)
 
     
 ### webpack插件和loader开发
