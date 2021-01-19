@@ -31,3 +31,4 @@
 - [一些css的杂项研究](./book/03、css3专题/Other/05、让display出现动画)
 - [各种页面常见布局+知名网站实例分析+相关阅读推荐](https://github.com/Sweet-KK/css-layout)
 - [Some CSS tricks,一些 CSS 常用样式](https://github.com/QiShaoXuan/css_tricks)
+- [CSS 奇思妙想边框动画](https://juejin.cn/post/6918921604160290830)
