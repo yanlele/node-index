@@ -716,6 +716,7 @@
     - [frontend-hard-mode-interview](https://github.com/coffe1891/frontend-hard-mode-interview)
     - [** 江南一点雨](https://me.csdn.net/u012702547)
     - [** 神三元](https://juejin.im/user/430664257382462/posts)
+    - [前端进阶之路](https://github.com/KieSun/FE-advance-road)
 
 - 文章部分
     - [node-interview](https://github.com/ElemeFE/node-interview/tree/master/sections/zh-cn)
