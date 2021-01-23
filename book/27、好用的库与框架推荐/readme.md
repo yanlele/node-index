@@ -74,6 +74,7 @@
 - [通过markdown构建文档：bisheng（antd就是用的这个）](https://github.com/benjycui/bisheng)
 - [selecto: 好用的滑动拖拽选择库](https://github.com/daybrush/selecto)
 - [tailwindcss: 原子化 css](https://github.com/tailwindlabs/tailwindcss)
+- [fast-diff: A fast Javascript string diff](https://github.com/jhchen/fast-diff)
 
 
 ### React 
