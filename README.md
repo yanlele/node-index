@@ -565,7 +565,6 @@
 - [手把手教你快速搭建专属的storybook](https://juejin.cn/post/6844903752982331405)
 - [使用ESLint+Prettier来统一前端代码风格](https://juejin.cn/post/6844903621805473800)
 - [微前端探索](https://juejin.cn/post/6869531594818846733)
-- [如何优雅的实现消息通信？](https://juejin.cn/post/6865444445479927821)
    
 
 #### node其他知识点
