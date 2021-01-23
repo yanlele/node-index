@@ -558,6 +558,7 @@
 - [还在看那些老掉牙的性能优化文章么？这些最新性能指标了解下](https://juejin.cn/post/6850037270729359367)
 - [前端搞工程化：从零打造性能检测库「源码 + 视频」**](https://juejin.cn/post/6919295789630455815)
 - [项目创建从editorconfig和prettier开始](https://juejin.cn/post/6860440041039069191)
+- [一文搞懂peerDependencies](https://juejin.cn/post/6844904134248759309)
    
 
 #### node其他知识点
