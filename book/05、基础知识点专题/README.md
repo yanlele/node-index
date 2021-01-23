@@ -118,6 +118,7 @@
     - [35、（建议精读）HTTP灵魂之问，巩固你的 HTTP 知识体系](https://juejin.im/post/6844904100035821575)
     - [36、《javascript高级程序设计》核心知识总结](https://juejin.im/post/6844903953671389191)
     - [37、优秀前端必知的话题：我们应该做些力所能及的优化](https://juejin.im/post/6844903688222277640)
+    - [38、深入学习CommonJS和ES6模块化规范](https://juejin.cn/post/6920773247948554248)
     
     
     
