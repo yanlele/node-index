@@ -559,6 +559,7 @@
 - [前端搞工程化：从零打造性能检测库「源码 + 视频」**](https://juejin.cn/post/6919295789630455815)
 - [项目创建从editorconfig和prettier开始](https://juejin.cn/post/6860440041039069191)
 - [一文搞懂peerDependencies](https://juejin.cn/post/6844904134248759309)
+- [React 实现简易的图片拖动排序](https://juejin.cn/post/6896712416928169991)
    
 
 #### node其他知识点
