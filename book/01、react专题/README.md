@@ -20,7 +20,8 @@
 - [react 高阶函数的一个使用示例](./01、react/02、react%20高阶函数的一个使用示例/REAMDME.md)
 - [React 性能优化](./01、react/03、React%20性能优化/README.md)
 
-### redux
+
+### 状态管理
 - [redux基础知识点](./02、redux/01、redux基础知识点.md)
 - [深入Redux架构](./02、redux/02、深入Redux架构.md)
 - [理解redux和redux的中间件redux-thunk](./02、redux/03、理解redux和redux的中间件redux-thunk/README.md)
@@ -30,6 +31,17 @@
 - [【React系列】从零开始实现Redux](https://juejin.im/post/6844903950584381448)
 - [** 完全理解 redux（从零实现一个 redux）](https://github.com/brickspert/blog/issues/22)
 - [** 完全理解 redux（从零实现一个 redux） - code](https://github.com/yanlele/node-index-core/tree/master/packages/book/01%E3%80%81react%E4%B8%93%E9%A2%98/01%E3%80%81redux/01%E3%80%81%E4%BB%8E0%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAredux)
+- [Recoil 用法及原理浅析](https://juejin.cn/post/6889763592947564551)
+- [Recoil - React 状态管理库](https://juejin.cn/post/6890147688910700557)
+- [React 中的不可变数据 — Immer](https://juejin.cn/post/6846687604130185230)
+- [Immer 全解析](https://juejin.cn/post/6844903782145327118)
+- [React之Immutable学习记录](https://www.cnblogs.com/chris-oil/p/8494337.html)
+- [Immutable 操作在 React 中的实践](https://juejin.im/post/6844903602851414024)
+- [dva的dispatch回调，effects返回请求参数](https://blog.csdn.net/qq_36242361/article/details/82668024)
+- [dva中effect内调用另一个effect的,实现put阻塞式调用的方法](https://blog.csdn.net/deng1456694385/article/details/87867876)
+- [使用 React Hooks + Context 打造简版 Redux](https://juejin.im/post/5d5501cd6fb9a06aee362a9d)
+- [react-redux之connect 方法详解](http://taobaofed.org/blog/2016/08/18/react-redux-connect/)
+
 
 ### react-router
 - [react-router4基本使用](./03、react-router/01、react-router4基本使用.md)
@@ -51,9 +63,6 @@
     - [01、Children和cloneElement的研究](./04、其他/08、react新特性/01、Children和cloneElement的研究/01、Children和cloneElement的研究.md)
 - [React Profiler 介绍](https://juejin.im/post/5ba0f8e4f265da0ab915bcf2)
 - [** 重学react](./04、其他/09、重学react/09、重学react.md)
-- [Recoil 用法及原理浅析](https://juejin.cn/post/6889763592947564551)
-- [Recoil - React 状态管理库](https://juejin.cn/post/6890147688910700557)
-
 
 ### react hooks
 - [10分钟教你手写8个常用的自定义hooks](https://juejin.im/post/6844904074433789959)
@@ -77,7 +86,6 @@
 - [React-Router4.x中文文档](https://github.com/git-zhangsan/react-router4)
 - [React项目构建三部曲](https://github.com/ZengTianShengZ/react-lesson)
 - [超级经典和全面的redux的文章](http://cn.redux.js.org/)
-- [react-redux之connect 方法详解](http://taobaofed.org/blog/2016/08/18/react-redux-connect/)
 - [React 16 新特性](https://blog.csdn.net/xcg132566/article/details/78836306)
 - [React Automaticaly - 保持最新技术 pwa react16 redux4 router4 webpack4 babel7](https://github.com/javaLuo/react-luo)
 - [理解react16.3的fiber架构](https://blog.csdn.net/songshuzhong/article/details/80642651)
@@ -86,13 +94,10 @@
 - [React Fiber](https://juejin.im/post/5ab7b3a2f265da2378403e57)
 - [React SSR 要不要了解下-实用篇](https://juejin.im/post/5d5670d46fb9a06ad229c9b7)
 - [ReactRouter-V5](https://juejin.im/post/5d50dd4ff265da039a2879cd)
-- [使用 React Hooks + Context 打造简版 Redux](https://juejin.im/post/5d5501cd6fb9a06aee362a9d)
 - [2019年了，整理了N个实用案例帮你快速迁移到React Hooks(收藏慢慢看系列) *****](https://juejin.im/post/5d594ea5518825041301bbcb)
 - [看完这篇，你也能把 React Hooks 玩出花 **](https://juejin.im/post/5d754dbde51d4561cd2466bf#heading-18)
 - [2019年17道高频React面试题及详解](https://juejin.im/post/5d5f44dae51d4561df7805b4)
 - [React-classnames库](https://www.cnblogs.com/suihang/p/10417755.html)
-- [dva的dispatch回调，effects返回请求参数](https://blog.csdn.net/qq_36242361/article/details/82668024)
-- [dva中effect内调用另一个effect的,实现put阻塞式调用的方法](https://blog.csdn.net/deng1456694385/article/details/87867876)
 - [react在组件中触发子组件方法 以及触发兄弟组件](https://www.cnblogs.com/xiaoliwang/p/11237747.html)
 - [React16.3中的Refs和Forwarding Refs](https://blog.csdn.net/liwusen/article/details/80009968)
 - [React中获取DOM节点的两种方法](https://www.jianshu.com/p/f533a9d7645c)
@@ -101,8 +106,4 @@
 - [react-swipeable: React swipe component - Swipe bindings for react](https://github.com/dogfessional/react-swipeable)
 - [基于react的前端文件上传](./18年/6月/08、基于react的前端文件上传)
 - [一键分享到各大社交网站的react组件](https://github.com/DawnyWu/react-share-buttons)
-- [React之Immutable学习记录](https://www.cnblogs.com/chris-oil/p/8494337.html)
-- [Immutable 操作在 React 中的实践](https://juejin.im/post/6844903602851414024)
 - [react hooks+redux+immutable.js打造网易云音乐精美webApp](https://juejin.im/post/6844903911367639054)
-- [React 中的不可变数据 — Immer](https://juejin.cn/post/6846687604130185230)
-- [Immer 全解析](https://juejin.cn/post/6844903782145327118)
