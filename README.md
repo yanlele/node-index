@@ -674,6 +674,7 @@
 - [git clone 太慢了的解决办法](./docs/2020年/08月/01、git%20clone%20太慢了的解决办法/readme.md)
 - [简析解决问题的通用方法论](https://juejin.cn/post/6891167960589664264)
 - [技术人员升级打怪的方法论](https://juejin.cn/post/6900939109670322189)
+- [测试金字塔实战](https://insights.thoughtworks.cn/practical-test-pyramid/)
    
     
 #### 其他优秀技术文章与前沿技术收集
