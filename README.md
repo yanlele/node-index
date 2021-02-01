@@ -685,6 +685,10 @@
 - [简析解决问题的通用方法论](https://juejin.cn/post/6891167960589664264)
 - [技术人员升级打怪的方法论](https://juejin.cn/post/6900939109670322189)
 - [测试金字塔实战](https://insights.thoughtworks.cn/practical-test-pyramid/)
+- [键盘控制工具: Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)
+- [控制应用缩放: Spectacle allows you to organize your windows without using a mouse.](https://github.com/eczarny/spectacle)
+- [syncd是一款开源的代码部署工具](https://github.com/dreamans/syncd)
+- [磁力链接聚合搜索](https://github.com/xiandanin/magnetW)
    
     
 #### 其他优秀技术文章与前沿技术收集
@@ -753,12 +757,6 @@
     - [Git中tag标签的使用](https://blog.csdn.net/wei78008023/article/details/81866590)
     - [前端该如何准备数据结构和算法？](https://juejin.im/post/5d5b307b5188253da24d3cd1#heading-17)
     - [** 一个合格(优秀)的前端都应该阅读这些文章](https://juejin.im/post/6844903896637259784)
-    
-- 工具部分
-    - [Spectacle allows you to organize your windows without using a mouse.](https://github.com/eczarny/spectacle)
-    - [syncd是一款开源的代码部署工具](https://github.com/dreamans/syncd)
-    - [磁力链接聚合搜索](https://github.com/xiandanin/magnetW)
-        
 
 
 #### 值得好好学习的开源项目
