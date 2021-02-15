@@ -108,6 +108,18 @@ ssh key 使用非堆成加密方式生成公钥和私钥
 这个地方有一个字段port 就可以更改SSH连接的端口号了。 可以允许多个端口。
 
 
+#### 免密登录服务器
+进入本地电脑的 bash 终端`ssh-keygen -t rsa -P '' -C "your.address@gmail.com"`                        
+
+本地公钥上传到服务器： `scp ~/.ssh/id_rsa.pub root@192.168.1.68:~/.ssh/id_rsa_yanle_mac_3.pub`
+
+在服务器上面，最后将上传好的公钥追加到 authorized_keys 文件中，同样的如果没有就新建一个。
+` cat ~/.ssh/id_rsa_yanle_mac_3.pub >> ~/.ssh/authorized_keys`
+
+退出之后就可以 在本地就可以直接免密登录到服务器了
+
+
+
 ### <div id="class01-03">03、软件命令</div>
 
 说明 | 命令
