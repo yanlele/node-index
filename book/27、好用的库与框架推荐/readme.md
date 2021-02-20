@@ -147,4 +147,5 @@
 - [演示框架: impress.js](https://github.com/impress/impress.js)
 - [electron-react-tpl](https://github.com/qld-cf/electron-react-tpl)
 - [这些开源项目，让你轻松应对十大工作场景](https://juejin.cn/post/6898098763772985352)
+- [redis客户端工具: AnotherRedisDesktopManager](https://github.com/qishibo/AnotherRedisDesktopManager)
 
