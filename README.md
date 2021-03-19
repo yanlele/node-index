@@ -686,7 +686,7 @@
 - [技术人员升级打怪的方法论](https://juejin.cn/post/6900939109670322189)
 - [测试金字塔实战](https://insights.thoughtworks.cn/practical-test-pyramid/)
 - [键盘控制工具: Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)
-- [控制应用缩放: Spectacle allows you to organize your windows without using a mouse.](https://github.com/eczarny/spectacle)
+- [控制应用缩放-眼镜: Spectacle allows you to organize your windows without using a mouse.](https://github.com/eczarny/spectacle)
 - [syncd是一款开源的代码部署工具](https://github.com/dreamans/syncd)
 - [磁力链接聚合搜索](https://github.com/xiandanin/magnetW)
 - [使用jetbrains](https://www.macwk.com/article/jetbrains-crack)
