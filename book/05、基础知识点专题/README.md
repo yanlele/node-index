@@ -79,6 +79,7 @@
     - [76、面试不再怕：史上最全的cookie知识点详解 **](https://juejin.cn/post/6914109129267740686)
     - [77、node中的CommonJS](https://juejin.cn/post/6844903778194292744)
     - [78、JS 项目中究竟应该使用 Object 还是 Map？| 项目复盘](https://juejin.cn/post/6941232930945499173)
+    - [79、10种跨域解决方案](https://juejin.cn/post/6844904126246027278)
     
     
 - 进阶知识部分
