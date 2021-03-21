@@ -271,6 +271,8 @@
 
 #### [23、RXJS学习专题 - 放弃中（因为看不到收益）](./book/23、RXJS学习专题/23、RXJS学习专题.md)
 
+#### [26、微前端专题](./book/26、微前端专题/readme.md)
+
 #### [27、好用的库与框架 **](./book/27、好用的库与框架推荐/readme.md)
 
 
@@ -529,13 +531,11 @@
 - [AST原理，让你蜕变为高级前端工程师的原理](https://juejin.im/post/6854573222071894029)
 - [** 近万字新手 chrome 扩展开发简单入门](https://juejin.im/post/6844904127932137485)
 - [原生JS封装拖动验证滑块你会吗？](https://juejin.im/post/6844904175910780941)
-- [微前端入门](https://juejin.im/post/6844903953734336525)
 - [** 如何实现高性能的在线 PDF 预览](https://juejin.im/post/6844904176296656903)
 - [从零开始写一个采集图片的chrome插件](https://juejin.im/post/6844904097829617678)
 - [你可能不知道的15个有用的Github功能](https://juejin.im/post/6844904193396834318)
 - [一文了解文件上传全过程（1.8w字深度解析，进阶必备）](https://juejin.im/post/6844904106658643982)
 - [今天教你烤一份香喷喷的Electron](https://juejin.im/post/6854573221467914248)
-- [基于 qiankun 的微前端最佳实践（万字长文） - 从 0 到 1 篇](https://juejin.im/post/6844904158085021704)
 - [艰难用echarts模拟甘特图, 直到我发现了dhtmlxGantt](https://juejin.im/post/6844904106042064910)
 - [你了解过移动端适配吗](https://juejin.im/post/6844903631993454600)
 - [深入浅出 Babel 上篇：架构和原理 + 实战](https://juejin.im/post/6844903956905197576)
@@ -549,7 +549,6 @@
 - [《前端那些事》从0到1开发工具库](https://juejin.im/post/6844904127923765256)
 - [Chrome插件开发全攻略 **](https://github.com/sxei/chrome-plugin-demo)
 - [AST入门](https://juejin.im/post/6885146952877031432)
-- [微前端架构模板与学习: micro-front-template](https://github.com/a1029563229/micro-front-template)
 - [前端搞工程化：从零打造性能检测库 ** ](https://juejin.cn/post/6919295789630455815)
 - [最新性能指标 **](https://juejin.cn/post/6850037270729359367)
 - [可视化拖拽组件库一些技术要点原理分析 ** ](https://juejin.cn/post/6908502083075325959)
@@ -564,7 +563,6 @@
 - [AST详解与运用](https://juejin.cn/post/6885146952877031432)
 - [手把手教你快速搭建专属的storybook](https://juejin.cn/post/6844903752982331405)
 - [使用ESLint+Prettier来统一前端代码风格](https://juejin.cn/post/6844903621805473800)
-- [微前端探索](https://juejin.cn/post/6869531594818846733)
    
 
 #### node其他知识点
@@ -675,11 +673,8 @@
 - [从GraphQL到前端数据管理的革命 - GraphQL干货笔记](https://juejin.im/post/6844904196848762888)
 - [好玩的Jenkins](https://juejin.im/post/6844904176078553096)
 - [分分钟教会你搭建企业级的 npm 私有仓库](https://juejin.im/post/6844904196651630599)
-- [每日优鲜供应链前端团队微前端改造](https://juejin.im/post/6844903943873675271)
 - [在 WebStorm 中，配置能够识别 Vue CLI 3 创建的项目的别名 alias @](https://juejin.im/post/6844903802185891848)
 - [技术探索：60 天急速自研-前端埋点监控跟踪系统大浪子](https://juejin.im/post/6844903954199887880)
-- [微前端架构设计](https://juejin.im/post/6854573214430380039)
-- [微前端在美团外卖的实践](https://juejin.im/post/6844904073972432903)
 - [** 前端代码质量-圈复杂度原理和实践](https://juejin.im/post/6844903965792927751)
 - [git clone 太慢了的解决办法](./docs/2020年/08月/01、git%20clone%20太慢了的解决办法/readme.md)
 - [简析解决问题的通用方法论](https://juejin.cn/post/6891167960589664264)
@@ -728,7 +723,6 @@
 
 - 文章部分
     - [node-interview](https://github.com/ElemeFE/node-interview/tree/master/sections/zh-cn)
-    - [微前端的那些事儿](https://blog.csdn.net/qappleh/article/details/80928434)
     - [《Node.js从入门到上线》A blog build with Koa2](https://github.com/liuxing/node-blog)
     - [《Koa.js 设计模式-学习笔记》](https://github.com/chenshenhai/koajs-design-note)
     - [vue源码解析](https://github.com/muwoo/blogs)
