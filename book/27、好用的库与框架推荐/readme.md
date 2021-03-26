@@ -75,6 +75,8 @@
 - [selecto: 好用的滑动拖拽选择库](https://github.com/daybrush/selecto)
 - [tailwindcss: 原子化 css](https://github.com/tailwindlabs/tailwindcss)
 - [fast-diff: A fast Javascript string diff](https://github.com/jhchen/fast-diff)
+- [xss库: js-xss](https://github.com/leizongmin/js-xss)
+- [xss库: sanitize-html](https://github.com/apostrophecms/sanitize-html)
 
 
 ### React 
