@@ -77,6 +77,8 @@
 - [fast-diff: A fast Javascript string diff](https://github.com/jhchen/fast-diff)
 - [xss库: js-xss](https://github.com/leizongmin/js-xss)
 - [xss库: sanitize-html](https://github.com/apostrophecms/sanitize-html)
+- [Async await wrapper for easy error handling without try-catch: await-to-js](https://github.com/scopsy/await-to-js)
+- [Map object keys and values into a new object: map-obj](https://github.com/sindresorhus/map-obj)
 
 
 ### React 
