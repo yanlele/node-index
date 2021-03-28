@@ -130,6 +130,7 @@
 - [了不起的 Webpack HMR 学习指南（含源码分析）](https://juejin.im/post/6844904193136787470)
 - [「一劳永逸」由浅入深配置webpack4](https://juejin.im/post/6859888538004783118)
 - [再来一打Webpack面试题](https://juejin.im/post/6844904094281236487)
+- [当面试官问Webpack的时候他想知道什么](https://juejin.cn/post/6943468761575849992)
 
 
 ### 遗留问题待解决              
