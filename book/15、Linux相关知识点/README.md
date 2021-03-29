@@ -45,4 +45,4 @@
     - [五分钟看懂 Nginx 负载均衡](https://juejin.im/post/6844904106541203464)
     - [你学BFF和Serverless了吗](https://juejin.im/post/6844904185427673095)
     - [快乐的 Linux 命令行 **](http://billie66.github.io/TLCL/index.html)
-    - [科学上网](../../19年/11月/02、科学上网/02、科学上网.md)
+    - [快速上网](../../19年/11月/02、快速上网/readme.md)
