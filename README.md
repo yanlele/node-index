@@ -685,6 +685,7 @@
 - [syncd是一款开源的代码部署工具](https://github.com/dreamans/syncd)
 - [磁力链接聚合搜索](https://github.com/xiandanin/magnetW)
 - [使用jetbrains](https://www.macwk.com/article/jetbrains-crack)
+- [访问github的九种办法](https://mp.weixin.qq.com/s/3LfveCU2Hm7N6OnV3Gtx3Q)
 
 
 
