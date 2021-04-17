@@ -82,7 +82,7 @@
   - [79、10种跨域解决方案](https://juejin.cn/post/6844904126246027278)
   - [80、前端优秀实践不完全指南](https://juejin.cn/post/6932647134944886797)
   - [81、JavaScript常用八种继承方案](https://juejin.cn/post/6844903696111763470)
-  - [82、正则实现金钱格式化](https://blog.csdn.net/qq_36279445/article/details/78889305)
+  - [82、正则实现金钱格式化](./test/01-82、金额问题.ts)
   
     
 - 进阶知识部分
