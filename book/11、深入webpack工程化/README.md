@@ -131,14 +131,10 @@
 - [「一劳永逸」由浅入深配置webpack4](https://juejin.im/post/6859888538004783118)
 - [再来一打Webpack面试题](https://juejin.im/post/6844904094281236487)
 - [当面试官问Webpack的时候他想知道什么](https://juejin.cn/post/6943468761575849992)
+- [带你入门前端工程](https://github.com/woai3c/introduction-to-front-end-engineering)
 
 
-### 遗留问题待解决              
-
-1、postcss 的独立配置文件怎么写                            
-2、打包后的js和css 如何自动插入到页面中去                    
-3、多页应用程序打包方式                
-4、在任意位置的图片地址访问问题处理办法
+### 遗留问题待解决
 
 
 
