@@ -565,6 +565,7 @@
 - [使用ESLint+Prettier来统一前端代码风格](https://juejin.cn/post/6844903621805473800)
 - [从破解某设计网站谈前端水印](https://juejin.cn/post/6900713052270755847)
 - [实现Web端自定义截屏](https://juejin.cn/post/6924368956950052877)
+- [Chrome DevTools之NetWork面板](https://juejin.im/post/6844904036085301261)
    
 
 #### node其他知识点
