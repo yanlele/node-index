@@ -41,6 +41,7 @@
 - [dva中effect内调用另一个effect的,实现put阻塞式调用的方法](https://blog.csdn.net/deng1456694385/article/details/87867876)
 - [使用 React Hooks + Context 打造简版 Redux](https://juejin.im/post/5d5501cd6fb9a06aee362a9d)
 - [react-redux之connect 方法详解](http://taobaofed.org/blog/2016/08/18/react-redux-connect/)
+- [精读《recoil》](https://juejin.cn/post/6844904167728021512)
 
 
 ### react-router
