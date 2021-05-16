@@ -12,6 +12,7 @@
 - [05篇、TypeScript测试](#05%E7%AF%87typescript%E6%B5%8B%E8%AF%95)
 - [06篇、Jest测试框架](#06%E7%AF%87jest%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6)
 - [07篇、react测试：jest+enzyme](#07%E7%AF%87react%E6%B5%8B%E8%AF%95jestenzyme)
+- [08篇、E2E](#08%E7%AF%87e2e)
 - [其他](#%E5%85%B6%E4%BB%96)
 
 <!-- tocstop -->
@@ -65,6 +66,10 @@
     - [jsx接入测试](./07、react测试:jest+enzyme/01、jsx接入测试.md)
     - [tsx接入测试](./07、react测试:jest+enzyme/02、tsx接入测试.md)
     - [其他](./07、react测试:jest+enzyme/03、其他.md)
+  
+
+## 08篇、E2E
+- [Cypress前端E2E自动化测试记录](https://www.jianshu.com/p/783f6c620bbe)
 
     
 ## 其他
