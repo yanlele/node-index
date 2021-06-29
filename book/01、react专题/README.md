@@ -110,3 +110,7 @@
 - [一键分享到各大社交网站的react组件](https://github.com/DawnyWu/react-share-buttons)
 - [react hooks+redux+immutable.js打造网易云音乐精美webApp](https://juejin.im/post/6844903911367639054)
 - [React 中渐进式加载图片](https://juejin.cn/post/6844904147746029581)
+
+
+### 其他的一些研究话题
+- [一个方法里面，使用多个setState, 是否会引起多次重复渲染?](../../docs/2021年/06月/02、一个重复渲染的问题研究/readme.md)
