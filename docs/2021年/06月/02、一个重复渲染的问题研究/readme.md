@@ -47,7 +47,49 @@ export default App;
 具体原因要看看源码了， 源码里面有一个 memoizedState 的东西。
 
 
+在看另外一个有趣的问题:
+```typescript jsx
+function App() {
+  const [count, setCount] = useState(0);
+  const [time, setTime] = useState(0);
+
+  // 这个的执行结果是每次都会加 6
+  const handleClick = useCallback(() => {
+    setCount(count => count + 1);
+    setCount(count => count + 2);
+    setCount(count => count + 3);
+  }, []);
+
+  // 这个的执行结果是每次只会加3
+  const handleClick2 = useCallback(() => {
+    setCount(count + 1);
+    setCount(count + 2);
+    setCount(count + 3);
+  }, [count]);
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>Hello Vite + React!</p>
+        <p>
+          <button type="button" onClick={handleClick}>
+            count is: {count}
+          </button>
+        </p>
+        <p>
+          <button type="button" onClick={handleClick2}>
+            time is: {time}
+          </button>
+        </p>
+      </header>
+    </div>
+  );
+}
+```
+
 
 ### 参考文档
 - [说一下React Hooks在平时开发中需要注意的问题和原因？](https://github.com/lgwebdream/FE-Interview/issues/906)
 - [memoizedState](https://react.iamkasong.com/hooks/structure.html#memoizedstate)
+- [从源码剖析useState的执行过程](https://blog.csdn.net/weixin_33854644/article/details/91440230)
