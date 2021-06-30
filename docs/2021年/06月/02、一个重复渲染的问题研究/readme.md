@@ -53,6 +53,7 @@ export default App;
 具体可以参考这个：
 [react 16 Hooks渲染流程](https://www.cnblogs.com/dh-dh/p/11278022.html)
 [Modal.success 中 hook 无法实时更新问题](https://blog.csdn.net/qq_33988065/article/details/110493675)
+[React(v16.8) Hooks 简析](https://www.cnblogs.com/vicky24k/p/11151862.html)
 
 
 
