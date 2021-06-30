@@ -103,4 +103,4 @@ function App() {
 ### 参考文档
 - [说一下React Hooks在平时开发中需要注意的问题和原因？](https://github.com/lgwebdream/FE-Interview/issues/906)
 - [memoizedState](https://react.iamkasong.com/hooks/structure.html#memoizedstate)
-- [从源码剖析useState的执行过程](https://blog.csdn.net/weixin_33854644/article/details/91440230)
+- [从源码剖析useState的执行过程](https://www.codercto.com/a/73544.html)
