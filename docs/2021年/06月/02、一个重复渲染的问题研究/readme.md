@@ -1,6 +1,6 @@
 ## 一个react重复渲染的问题研究
 
-问题：一个方法里面，使用多个setState, 是否会引起多次重复渲染?
+### 问题1：一个方法里面，使用多个setState, 是否会引起多次重复渲染?
 
 总所周知的事情， useState 设置值是异步的：
 ```typescript jsx
@@ -46,7 +46,17 @@ export default App;
 这个问题是如何优化的？
 具体原因要看看源码了， 源码里面有一个 memoizedState 的东西。
 
+涉及到 state 的状态合并，react 认为当你在事件绑定中操作 state 是非常频繁的，
+所以为了节约性能 react 会把多次 setState 进行合并为一次，最后在一次性的更新 state，
+而定时器里面操作 state 是不会把多次合并为一次更新的。
 
+具体可以参考这个：
+[react 16 Hooks渲染流程](https://www.cnblogs.com/dh-dh/p/11278022.html)
+[Modal.success 中 hook 无法实时更新问题](https://blog.csdn.net/qq_33988065/article/details/110493675)
+
+
+
+### 问题2
 在看另外一个有趣的问题:
 ```typescript jsx
 function App() {
