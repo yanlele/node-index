@@ -47,4 +47,4 @@
   - [快乐的 Linux 命令行 **](http://billie66.github.io/TLCL/index.html)
   - [快速上网](../../19年/11月/02、快速上网/readme.md)
   - [一个按键搞定日常git操作](https://www.cnblogs.com/iovec/p/12212729.html)
-  - [通过命令行合并多个分支]
+  - [通过命令行合并多个分支](./其他/06、通过命令行合并多个分支/merge.sh)
