@@ -65,6 +65,7 @@
 - [React Profiler 介绍](https://juejin.im/post/5ba0f8e4f265da0ab915bcf2)
 - [「react进阶」一文吃透React高阶组件(HOC)](https://juejin.cn/post/6940422320427106335)
 - [** 重学react](./04、其他/09、重学react/09、重学react.md)
+- [如何科学使用createContext、useReducer、useContext](./04、其他/10、如何科学使用createContext、useReducer、useContext/readme.md)
 
 ### react hooks
 - [10分钟教你手写8个常用的自定义hooks](https://juejin.im/post/6844904074433789959)
