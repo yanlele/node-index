@@ -25,7 +25,7 @@
 - 研究一下gitlab-ci
 - [总结一下 chrome 调试技巧](../../docs/2021年/07月/01、总结一些常用的%20chrome%20调试技巧/readme.md)
 - [如何科学使用createContext、useReducer、useContext](../../book/01、react专题/04、其他/10、如何科学使用createContext、useReducer、useContext/readme.md)
-
+- function 与 箭头函数的区别
 
 ### 需要长期研究的问题
 - 划词技术栈有哪些
