@@ -10,3 +10,4 @@
 
 ### 参考文档
 - [算法学习思路](https://juejin.cn/post/6844903815116750856)
+- [什么是大O表示法](https://zhuanlan.zhihu.com/p/40964397)
