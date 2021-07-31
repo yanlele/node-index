@@ -24,7 +24,7 @@
   * [04、javascript设计模式](#04javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)
   * [05、基础知识点总结 ** 非常重要](#05%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93--%E9%9D%9E%E5%B8%B8%E9%87%8D%E8%A6%81)
   * [06、canvas总结](#06canvas%E6%80%BB%E7%BB%93)
-  * [07、leetCode-cn](#07leetcode-cn)
+  * [07、算法学习](#07%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0)
   * [09、学习javascript数据结构与算法](#09%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95)
   * [10、DOM和BOM](#10dom%E5%92%8Cbom)
   * [11、深入webpack工程化](#11%E6%B7%B1%E5%85%A5webpack%E5%B7%A5%E7%A8%8B%E5%8C%96)
@@ -179,7 +179,7 @@
 
 #### [06、canvas总结](./book/06、canvas总结)
         
-#### [07、leetCode-cn](./book/07、leetCode)
+#### [07、算法学习](./book/07、算法学习)
 
 #### [09、学习javascript数据结构与算法](./book/09、学习javascript数据结构与算法)
 - [01章、javascript基础](./book/09、学习javascript数据结构与算法/README.md#class01)
