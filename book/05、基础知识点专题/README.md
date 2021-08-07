@@ -156,6 +156,7 @@
   - [10 个 GitHub 上超火的前端面试项目，打造自己的加薪宝库](https://juejin.cn/post/6895752757534261256)
   - [「灵魂之作」2020斩获30道高频JS手撕面试题](https://juejin.cn/post/6870319532955828231)
   - [fe-interview 项目](https://github.com/lgwebdream/FE-Interview/issues)
+  - [awesome-coding-js](https://github.com/ConardLi/awesome-coding-js)
     
     
     
