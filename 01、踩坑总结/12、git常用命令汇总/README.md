@@ -423,3 +423,69 @@ git本地即使有修改如何强制更新：
 `git clean -df`: 删除当前目录下没有被track过的文件和文件夹
 
 `git clean -xf`: 删除当前目录下所有没有track过的文件. 不管他是否是.gitignore文件里面指定的文件夹和文件
+
+
+
+#### git 如何更新 fork 的项目到原项目的最新版本
+- [https://blog.csdn.net/m0_37859032/article/details/108843437](https://blog.csdn.net/m0_37859032/article/details/108843437)
+
+1.查看远程的版本库地址
+```shell
+git remote -v 
+origin  https://github.com/xx/spring-boot-demo.git (fetch)
+origin  https://github.com/xx/spring-boot-demo.git (push)
+```
+
+2.添加原项目 git 地址到本地版本库
+```shell
+git remote add upstream https://github.com/xkcoding/spring-boot-demo.git
+```
+
+3.检查版本库是否添加成功
+```shell
+git remote -v
+origin  https://github.com/xx/spring-boot-demo.git (fetch)
+origin  https://github.com/xx/spring-boot-demo.git (push)
+upstream        https://github.com/xx/spring-boot-demo.git (fetch)
+upstream        https://github.com/xx/spring-boot-demo.git (push)
+```
+
+4.原项目更新内容同步到本地
+```shell
+git fetch upstream                             
+remote: Enumerating objects: 83, done.
+remote: Counting objects: 100% (83/83), done.
+remote: Total 311 (delta 83), reused 83 (delta 83), pack-reused 228
+Receiving objects: 100% (311/311), 331.79 KiB | 429.00 KiB/s, done.
+Resolving deltas: 100% (102/102), completed with 39 local objects.
+From https://github.com/xkcoding/spring-boot-demo
+ * [new branch]      dev        -> upstream/dev
+ * [new branch]      master     -> upstream/master
+ * [new branch]      v-1.5.x    -> upstream/v-1.5.x
+```
+
+
+5.查看本地分支
+```shell
+git branch -a 
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/dev
+  remotes/origin/master
+  remotes/origin/v-1.5.x
+  remotes/upstream/dev
+  remotes/upstream/master
+  remotes/upstream/v-1.5.x
+```
+
+6.同步更新内容到本地对应分支
+```shell
+git merge upstream/master
+```
+
+
+7.提交更新内容到 fork 地址
+```shell
+git push
+```
+
