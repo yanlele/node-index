@@ -130,6 +130,7 @@
 - [node 模板引擎整合库: consolidate.js **](https://github.com/tj/consolidate.js)
 - [terminal 开始有色彩了: chalk **](https://github.com/chalk/chalk)
 - [prompt](https://github.com/flatiron/prompt)
+- [glob functionality for node.js](https://github.com/isaacs/node-glob)
 
 
 ### 项目体系
