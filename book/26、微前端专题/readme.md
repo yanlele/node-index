@@ -2,6 +2,7 @@
 
 ### 相关文章
 - [微前端入门](https://juejin.im/post/6844903953734336525)
+- [微前端系列--微前端简介](https://juejin.cn/post/6976252679840497677)
 - [基于 qiankun 的微前端最佳实践（万字长文） - 从 0 到 1 篇](https://juejin.im/post/6844904158085021704)
 - [微前端探索](https://juejin.cn/post/6869531594818846733)
 - [基于 qiankun 的微前端应用实践](https://juejin.cn/post/6938207400457404430)
