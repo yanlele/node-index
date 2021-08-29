@@ -704,6 +704,7 @@
 - [使用jetbrains](https://www.macwk.com/article/jetbrains-crack)
 - [访问github的九种办法](https://mp.weixin.qq.com/s/3LfveCU2Hm7N6OnV3Gtx3Q)
 - [谷歌出品的Web打包方案：Web Bundles 技术揭秘](https://mp.weixin.qq.com/s/_7_KrY_ozbUZxzUlCU_B4w)
+- [github开发人员在七夕搞事情：remote: Support for password authentication was removed on August 13, 2021.](https://blog.csdn.net/weixin_41010198/article/details/119698015)
 
 
 
