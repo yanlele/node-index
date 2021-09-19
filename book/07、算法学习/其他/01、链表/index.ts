@@ -1,16 +1,21 @@
 /**
  * 节点
  */
-class ListNode {
+export class Node {
+  private next: any;
+  private key: any;
+
   constructor(key) {
     this.next = null;
     this.key = key;
   }
 }
 
-// 初始化单项列表
-class List {
+class NodeList {
   // 初始化节点
+  private head: null | Node;
+  private length: number;
+
   constructor() {
     this.head = null;
     this.length = 0;
@@ -18,6 +23,6 @@ class List {
 
   // 创建节点
   static createNode(key) {
-    return new ListNode();
+    return new Node(key);
   }
 }
