@@ -28,6 +28,7 @@ export class Node {
   }
 }
 
+
 class NodeList {
   // 初始化节点
   private head: null | Node;
