@@ -30,7 +30,7 @@ export class Node {
 
 class NodeList {
   // 初始化节点
-  private readonly head: null | Node;
+  private head: null | Node;
   private length: number;
 
   constructor() {
@@ -55,5 +55,32 @@ class NodeList {
       node = node._next;
     }
     return node;
+  }
+
+  delete(node: Node) {
+    if (this.length === 0) {
+      throw 'node is undefined';
+    }
+
+    if (node === this.head) {
+      this.head = node._next;
+      this.length--;
+      return;
+    }
+
+    let prevNode = this.head;
+
+    // 向前移动一位
+    while (prevNode._next !==  node) {
+      prevNode = prevNode._next;
+    }
+
+    if (node._next === null) {
+      prevNode._next = null;
+    }
+    if (node._next) {
+      prevNode._next = node._next;
+    }
+    this.length--;
   }
 }
