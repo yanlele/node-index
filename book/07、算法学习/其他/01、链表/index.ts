@@ -3,9 +3,9 @@
  */
 export class Node {
   private next: any;
-  private key: any;
+  private key: Node | null;
 
-  constructor(key) {
+  constructor(key: Node) {
     this.next = null;
     this.key = key;
   }
@@ -40,7 +40,7 @@ class NodeList {
   }
 
   // 创建节点
-  static createNode(key) {
+  static createNode(key: Node) {
     return new Node(key);
   }
 
@@ -72,7 +72,7 @@ class NodeList {
     let prevNode = this.head;
 
     // 向前移动一位
-    while (prevNode._next !==  node) {
+    while (prevNode._next !== node) {
       prevNode = prevNode._next;
     }
 

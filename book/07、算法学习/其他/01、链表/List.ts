@@ -37,3 +37,44 @@ export class Node {
 /*
 * 双向链表
 *  */
+class List {
+  private head: null | Node;
+
+  constructor() {
+    this.head = null;
+  }
+
+  static createNode(key) {
+    return new Node(key);
+  }
+
+  insert(node: Node) {
+    // 设置当前 node 节点
+    node._prev = null;
+    node._next = this.head;
+
+    // 当前 head 节点
+    if (this.head) {
+      this.head._prev = node;
+    }
+
+    this.head = node;
+  }
+
+  search(key: Node) {
+    let node = this.head;
+    while (node !== null && node._key !== key) {
+      node = node._next;
+    }
+    return node;
+  }
+
+  delete(node: Node) {
+    const {_prev, _next} = node;
+    delete node._prev;
+    delete node._next;
+    if (node === this.head) this.head = _next;
+    if (_prev) _prev._next = _next;
+    if (_next) _next._prev = _prev;
+  }
+}
