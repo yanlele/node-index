@@ -98,6 +98,23 @@ export class NodeList {
     if (node._next) prevNode._next = node._next;
     this.length--;
   }
+
+
+  get _head(): Node | null {
+    return this.head;
+  }
+
+  set _head(value: Node | null) {
+    this.head = value;
+  }
+
+  get _length(): number {
+    return this.length;
+  }
+
+  set _length(value: number) {
+    this.length = value;
+  }
 }
 
 const node1 = NodeList.createNode(5);
@@ -111,7 +128,4 @@ nodeList.insert(node1);
 
 // 列表结果： [5, 10, 20]
 // console.log(nodeList.find(20));
-
-nodeList.delete(node3);
-
-console.log(nodeList.find(20))
+console.log(nodeList._head)

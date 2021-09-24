@@ -23,15 +23,141 @@
 示例 3：
 输入：l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 输出：[8,9,9,9,0,0,0,1]
+*
+*
+* class ListNode {
+*     val: number
+*     next: ListNode | null
+*     constructor(val?: number, next?: ListNode | null) {
+*         this.val = (val===undefined ? 0 : val)
+*         this.next = (next===undefined ? null : next)
+*     }
+* }
 * */
 
+/* ==============================  定义链表 - Start ============================== */
+class ListNode {
+  constructor(val, next = undefined) {
+    this.val = val === undefined ? 0 : val;
+    this.next = next === undefined ? null : next;
+  }
+}
+
+/* ==============================  定义链表 - End   ============================== */
+
+
+/* ==============================  辅助方法 - End   = ============================= */
+const getValues = listNode => {
+  let list = [];
+  while (listNode) {
+    list.push(listNode.val);
+    listNode = listNode.next;
+  }
+  return list;
+}
+
+class NodeList {
+  constructor() {
+    this.head = null;
+    this.length = 0;
+  }
+
+  insert(node) {
+    if (this.head) {
+      node.next = this.head;
+    } else {
+      node.next = null;
+    }
+
+    this.head = node;
+    this.length++;
+  }
+}
+
+/**
+ * 闭包的形式
+ * @returns {function(*): *}
+ */
+const handleNodeList = () => {
+  let head;
+  return (node) => {
+    if (head) {
+      node.next = head;
+    } else {
+      node.next = null;
+    }
+    head = node;
+    return head;
+  }
+}
+
+/**
+ * 使用类的方式实现
+ */
+class NodeList2 {
+  constructor() {
+    this.head = null;
+  }
+
+  insert(node) {
+    if (this.head) {
+      node.next = this.head;
+    } else {
+      node.next = null;
+    }
+    this.head = node;
+  }
+}
+
+/* ==============================  辅助方法 - End   ============================== */
+
+
+/* ==============================  具体实现 - Start ============================== */
 /**
  * 这种是基于数组的处理办法， 不是链表
  * @param l1
  * @param l2
  */
 const addTwoNumbers = function (l1, l2) {
+  const list1 = getValues(l1);
+  const list2 = getValues(l2);
 
+
+  const num1 = parseInt(list1.reverse().join(''), 10);
+  const num2 = parseInt(list2.reverse().join(''), 10);
+  const numResult = num1 + num2;
+  const arr = [];
+  for (const item of numResult.toString()) {
+    arr.push(item);
+  }
+
+  const insert = handleNodeList();
+
+  let head;
+  arr.forEach(item => {
+     head = insert(new ListNode(item));
+  })
+
+  return head;
 };
 
-console.log(addTwoNumbers([2,4,3], [5,6,4]))
+/* ==============================  具体实现 - End   ============================== */
+
+
+/* ==============================  执行 - Start ============================== */
+
+const l1 = new ListNode(2);
+l1.next = new ListNode(4);
+l1.next.next = new ListNode(3);
+
+const l2 = new ListNode(5);
+l2.next = new ListNode(6);
+l2.next.next = new ListNode(4);
+
+// console.log(addTwoNumbers([2, 4, 3], [5, 6, 4]))
+
+console.log(addTwoNumbers(l1, l2));
+
+// console.log(addTwoNumbers(l1, l2));
+
+/* ==============================  执行 - End   ============================== */
