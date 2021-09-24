@@ -31,14 +31,7 @@
  * @param l2
  */
 const addTwoNumbers = function (l1, l2) {
-  const num1 = parseInt(l1.reverse().join(''), 10);
-  const num2 = parseInt(l2.reverse().join(''), 10);
-  const numResult = num1 + num2;
-  const arr = [];
-  for (const item of numResult.toString()) {
-    arr.push(item);
-  }
-  return arr.reverse();
+
 };
 
 console.log(addTwoNumbers([2,4,3], [5,6,4]))
