@@ -19,7 +19,8 @@
 - [其他服务](./04、其他服务)
 
 - [shell](./05、shell)
-    - [基础篇](./05、shell/01、基础篇)
+  - [基础篇](./05、shell/01、基础篇)
+  - [Shell重定向 ＆>file、2>&1、1>&2 、/dev/null的区别](https://blog.csdn.net/u011630575/article/details/52151995)
     
 - [vim](./06、vim/readme.md)
 

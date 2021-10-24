@@ -97,6 +97,7 @@
 - [带你深度解锁Webpack系列(进阶篇)](https://juejin.im/post/6844904084927938567)
 - [通过这6个很棒的Webpack插件提高您的生产力](https://juejin.im/post/6844904149406973960)
 - [看完这篇，面试再也不怕被问 Webpack 热更新](https://juejin.im/post/6844903953092591630)
+- [Webpack HMR 原理解析](https://zhuanlan.zhihu.com/p/30669007)
 
 
 ### 实战案例

@@ -7,3 +7,5 @@
 - [Github美化-Travis与Codecov入门](https://blog.csdn.net/accepthjp/article/details/80405930)
 - [vue项目使用travis-ci自动部署到github](https://blog.csdn.net/qq_31126175/article/details/89353665)
 - [使用 Travis CI 自动更新 GitHub Pages](https://blog.csdn.net/csdn_yudong/article/details/88675544)
+- [gitlab-ci配置详解(一)](https://segmentfault.com/a/1190000011881435)
+- [gitlab-ci配置详解(二)](https://segmentfault.com/a/1190000011890710)
