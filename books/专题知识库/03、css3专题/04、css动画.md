@@ -20,7 +20,7 @@ ease-in	           | 规定以慢速开始的过渡效果（等于 cubic-bezier(
 ease-out	       | 规定以慢速结束的过渡效果（等于 cubic-bezier(0,0,0.58,1)）。          
 ease-in-out	       | 规定以慢速开始和结束的过渡效果（等于 cubic-bezier(0.42,0,0.58,1)）。            
 
-[代码示例2](./demo/02-transition.html);         
+[代码示例2](demo/02-transition.html);         
 [关于贝塞尔曲线设定的一个网址](http://web.chacuo.net/css3beziertool)
 
 
@@ -41,7 +41,7 @@ animation-delay	                |设置动画在启动前的延迟间隔。
 [animation-fill-mode](http://www.runoob.com/cssref/css3-pr-animation-fill-mode.html)	      |     规定当动画不播放时（当动画完成时，或当动画有一个延迟未开始播放时），要应用到元素的样式。            
 [animation-play-state](http://www.runoob.com/cssref/css3-pr-animation-play-state.html)	      |  指定动画是否正在运行或已暂停。             
 
-[代码示例3](./demo/03-keyframe.html)
+[代码示例3](demo/03-keyframe.html)
 
 ```css
 .container{
@@ -82,4 +82,4 @@ animation-timing-function: steps(1);
 
 
 
-[代码示例4](./demo/04-animal.html)
+[代码示例4](demo/04-animal.html)

@@ -53,7 +53,7 @@ transform 是形变处理
 
 3D变换的关键点在于translate属性           
 如果希望看到3D需要在父级元素节点上设置 `perspective: 500px;` 属性，子元素节点上设置 `transform-style: preserve-3d;` 属性；   
-[代码示例1](./demo/01、3Dtransform.html)
+[代码示例1](demo/01、3Dtransform.html)
 
 ### CSS3中的变形功能transform
 这css3中，可以利用transform功能来实现文字或图像的旋转、缩放、倾斜、移动这四种类型的变形处理。

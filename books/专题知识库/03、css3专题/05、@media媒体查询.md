@@ -33,7 +33,7 @@ function resize_window() {
 </body>
 </html>
 ```       
-[示例: 05-01](./demo/05-01.html)
+[示例: 05-01](demo/05-01.html)
 
 ## CSS 语法           
 ```
