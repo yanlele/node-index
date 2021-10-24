@@ -17,14 +17,14 @@
 - 领域模型和数据模型是啥
 - 一直在 window 上面挂东西是否有什么风险？
 - 什么情况下 tree-shaking 会失效
-- [一个方法里面，使用多个setState, 是否会引起多次重复渲染?](../../docs/2021年/06月/02、一个重复渲染的问题研究/readme.md)
+- [一个方法里面，使用多个setState, 是否会引起多次重复渲染?](/books/个人发展与OKR/04、研究的问题/01、一个重复渲染的问题研究/readme.md)
 - 关于函数返回的问题研究
     - 在高阶函数返回值是一个新的函数对象， 这种新的函数对象是否会引起组件重复渲染
     - 是否有更好的解决办法呢？
 - [通过命令行合并多个分支](../../book/15、Linux相关知识点/其他/06、通过命令行合并多个分支/merge.sh)
 - 研究一下gitlab-ci
 - [总结一下 chrome 调试技巧](../../docs/2021年/07月/01、总结一些常用的%20chrome%20调试技巧/readme.md)
-- [如何科学使用createContext、useReducer、useContext](../../book/01、react专题/04、其他/10、如何科学使用createContext、useReducer、useContext/readme.md)
+- [如何科学使用createContext、useReducer、useContext](/books/专题知识库/01、react专题/04、其他/10、如何科学使用createContext、useReducer、useContext/readme.md)
 - function 与 箭头函数的区别
 - 性能监控
 - 错误日志上报

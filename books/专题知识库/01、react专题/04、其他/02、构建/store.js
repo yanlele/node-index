@@ -3,7 +3,7 @@ import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import thunk from 'redux-thunk';
 
-import reducer from './reducers/';
+import reducer from './reducers';
 
 //载入redux debug插件
 function configureStore(initialState) {

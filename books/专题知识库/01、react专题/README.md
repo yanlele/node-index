@@ -5,27 +5,28 @@
 
 <!-- toc -->
 
-- [react16基础语法使用](#react16%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%BD%BF%E7%94%A8)
-- [redux](#redux)
+- [基础语法使用](#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%BD%BF%E7%94%A8)
+- [状态管理](#%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86)
 - [react-router](#react-router)
 - [其他知识点和实战相关知识点](#%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86%E7%82%B9%E5%92%8C%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9)
 - [react hooks](#react-hooks)
 - [源码分析](#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90)
 - [其他经典文章](#%E5%85%B6%E4%BB%96%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0)
+- [其他的一些研究话题](#%E5%85%B6%E4%BB%96%E7%9A%84%E4%B8%80%E4%BA%9B%E7%A0%94%E7%A9%B6%E8%AF%9D%E9%A2%98)
 
 <!-- tocstop -->
 
-### react16基础语法使用
-- [基础语法知识点](./01、react/01、基础知识.md)
-- [react 高阶函数的一个使用示例](./01、react/02、react%20高阶函数的一个使用示例/REAMDME.md)
-- [React 性能优化](./01、react/03、React%20性能优化/README.md)
+### 基础语法使用
+- [基础语法知识点](https://react.docschina.org/docs/getting-started.html)
+- [React 性能优化](/books/专题知识库/01、react专题/01、react/03、React 性能优化/README.md)
+
 
 
 ### 状态管理
-- [redux基础知识点](./02、redux/01、redux基础知识点.md)
-- [深入Redux架构](./02、redux/02、深入Redux架构.md)
-- [理解redux和redux的中间件redux-thunk](./02、redux/03、理解redux和redux的中间件redux-thunk/README.md)
-- [原始redux的单独使用](./02、redux/04、redux)
+- [redux基础知识点](/books/专题知识库/01、react专题/02、redux/01、redux基础知识点.md)
+- [深入Redux架构](/books/专题知识库/01、react专题/02、redux/02、深入Redux架构.md)
+- [理解redux和redux的中间件redux-thunk](/books/专题知识库/01、react专题/02、redux/03、理解redux和redux的中间件redux-thunk/README.md)
+- [原始redux的单独使用](/books/专题知识库/01、react专题/02、redux/04、redux)
 - [翻译|Redux的中间件-Reselect](https://www.jianshu.com/p/6e38c66366cd)
 - [Redux-saga 中文文档](https://github.com/superRaytin/redux-saga-in-chinese)
 - [【React系列】从零开始实现Redux](https://juejin.im/post/6844903950584381448)
@@ -45,27 +46,27 @@
 
 
 ### react-router
-- [react-router4基本使用](./03、react-router/01、react-router4基本使用.md)
-- [React-router4迁移与旧版本的对比](./03、react-router/02、React-router4迁移与旧版本的对比/README.md)
+- [react-router4基本使用](/books/专题知识库/01、react专题/03、react-router/01、react-router4基本使用.md)
+- [React-router4迁移与旧版本的对比](/books/专题知识库/01、react专题/03、react-router/02、React-router4迁移与旧版本的对比/README.md)
 - [精读《React Router v6》](https://juejin.im/post/6844904106616684557)
 - [React-Router v6 新特性解读及迁移指南](https://juejin.im/post/6844904096059621389)
 - [React Router v6 使用指南](https://juejin.im/post/6862305213148381198)
 
 
 ### 其他知识点和实战相关知识点
-- [常用react技术栈模块介绍](./04、其他/01、常用react技术栈模块介绍.md)
-- [构建](./04、其他/02、构建)
-- [formik相关系列文章](./04、其他/03、formik相关系列文章.md)
-- [React.createRef()](./04、其他/04、React.createRef())
-- [react portals](./04、其他/05、react%20portals.md)
-- [react16高级语法总结以及其他高级模块](./04、其他/06、react16高级语法总结以及其他高级模块.md)
-- [react16 hooks](./04、其他/07、react16%20hooks.md)
-- [** 总结一下react16新特性](./04、其他/08、react新特性/08、react新特性.md)
-    - [01、Children和cloneElement的研究](./04、其他/08、react新特性/01、Children和cloneElement的研究/01、Children和cloneElement的研究.md)
+- [常用react技术栈模块介绍](/books/专题知识库/01、react专题/04、其他/01、常用react技术栈模块介绍.md)
+- [构建](/books/专题知识库/01、react专题/04、其他/02、构建)
+- [formik相关系列文章](/books/专题知识库/01、react专题/04、其他/03、formik相关系列文章.md)
+- [React.createRef()](/books/专题知识库/01、react专题/04、其他/04、React.createRef())
+- [react portals](/books/专题知识库/01、react专题/04、其他/05、react%20portals.md)
+- [react16高级语法总结以及其他高级模块](/books/专题知识库/01、react专题/04、其他/06、react16高级语法总结以及其他高级模块.md)
+- [react16 hooks](/books/专题知识库/01、react专题/04、其他/07、react16%20hooks.md)
+- [** 总结一下react16新特性](/books/专题知识库/01、react专题/04、其他/08、react新特性/08、react新特性.md)
+  - [01、Children和cloneElement的研究](/books/专题知识库/01、react专题/04、其他/08、react新特性/01、Children和cloneElement的研究/01、Children和cloneElement的研究.md)
 - [React Profiler 介绍](https://juejin.im/post/5ba0f8e4f265da0ab915bcf2)
 - [「react进阶」一文吃透React高阶组件(HOC)](https://juejin.cn/post/6940422320427106335)
-- [** 重学react](./04、其他/09、重学react/09、重学react.md)
-- [如何科学使用createContext、useReducer、useContext](./04、其他/10、如何科学使用createContext、useReducer、useContext/readme.md)
+- [** 重学react](/books/专题知识库/01、react专题/04、其他/09、重学react/09、重学react.md)
+- [如何科学使用createContext、useReducer、useContext](/books/专题知识库/01、react专题/04、其他/10、如何科学使用createContext、useReducer、useContext/readme.md)
 
 ### react hooks
 - [10分钟教你手写8个常用的自定义hooks](https://juejin.im/post/6844904074433789959)
@@ -115,4 +116,4 @@
 
 
 ### 其他的一些研究话题
-- [一个方法里面，使用多个setState, 是否会引起多次重复渲染?](../../docs/2021年/06月/02、一个重复渲染的问题研究/readme.md)
+- [一个方法里面，使用多个setState, 是否会引起多次重复渲染?](/books/个人发展与OKR/04、研究的问题/01、一个重复渲染的问题研究/readme.md)
