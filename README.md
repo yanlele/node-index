@@ -84,27 +84,41 @@
 ### 优秀的开源项目
 
 
+
+- [DoraCMS是基于Nodejs+express+mongodb编写的一套内容管理系统:DoraCMS](https://github.com/doramart/DoraCMS)
+- [koa+TypeScript构建商城类项目服务端*****](https://github.com/yanlele/koa-typescript)
+- [《Node.js从入门到上线》—— Koa2 + MongoDB 搭建博客系统](https://github.com/liuxing/node-blog)
+- [koa2构建工具koa2-starter-cli](https://github.com/liuxing/koa2-starter-cli)
+- [《Node.js入门教程》](https://github.com/liuxing/node-abc)
+- [canvas-test](https://github.com/whxaxes/canvas-test)
+- [超多经典 canvas 实例，动态离子背景、移动炫彩小球、贪吃蛇、坦克大战、是男人就下100层、心形文字等等等](https://github.com/bxm0927/canvas-special)
+- [一个基于Phaser的小游戏集合](https://github.com/channingbreeze/games)
+- [vue+koa2 实现一个简单电商网站](https://github.com/liutaochange/Vue-and-Koa2)
+- [基于vue2 + vue-router + vuex 构建的一个新闻类单页面应用 —— 今日头条（移动端）](https://github.com/uncleLian/vue2-news)
+- [time-formater:在javascript中显示日期](https://github.com/pengng/time-formater)
+
+
 ### 基础功能探索
 - [人民币大小写互换](/books/知识库/07、基础功能探索/01、人民币大小写互换/README.MD)
 - [audio标签兼容性自动播放解决方案](/books/知识库/04、日常采坑与记录/02、audio标签兼容性自动播放解决方案/README.md)
 
 
+## 专题知识库
 
-### 已经发布npm的开源模块
+
+
+
+## 个人发展与OKR
+
+
+
+### 发布的npm开源模块
 - [koa2日志监控中间件:koa-logs-middleware](https://github.com/yanlele/koa-logs-middleware)
 - [前端工程化](https://github.com/yanlele/le-cli)
 - [前端工程化 - 模板项目](https://github.com/cli-template-build)
 - [小程序接入redux](https://github.com/yanlele/redux2miniapp)
 
-
-### 对别人项目的研究（详细阅读源码之后写下的一些笔记和项目注释-已完成）              
-- [express基本使用,包括注册,登陆,上传,下载,登录权限控制,session持久化,邮件发送,网络爬虫等](https://github.com/yanlele/express)
-- [基于webpack3多页面打包](https://github.com/yanlele/webpack-dev)
-- [基于node的博客（极其经典，技术UP）](https://github.com/yanlele/N-blog)
-- [cvms构建工具项目架构思路](./03、项目架构思路学习/01、CVMS构建工具项目架构思路.xmind)
-
-
-### 人项目列表（已完成）
+### 在折腾的个人项目
 - [基于vue和express的一个小型电商全栈项目](https://github.com/yanlele/nodeMall)
 - [react新闻站项目pc+移动双端](https://github.com/yanlele/React-News)
 - [基于socket.IO 的一个较为复杂的项目案例，参考自《node.js实战》](https://github.com/yanlele/chatApplication)
@@ -115,22 +129,14 @@
 - [koa2的学习笔记项目demo](https://github.com/yanlele/koa-study)
 
 
-### 正在进行的个人项目 - 包含待研究的项目(进行中)
-- [DoraCMS是基于Nodejs+express+mongodb编写的一套内容管理系统:DoraCMS](https://github.com/doramart/DoraCMS)
-- [基于react 高仿csdn博客后端](https://github.com/yanlele/react-blog-server)
-- [koa+TypeScript构建商城类项目服务端*****](https://github.com/yanlele/koa-typescript)
-- [《Node.js从入门到上线》—— Koa2 + MongoDB 搭建博客系统](https://github.com/liuxing/node-blog)
-- [koa2构建工具koa2-starter-cli](https://github.com/liuxing/koa2-starter-cli)
-- [《Node.js入门教程》](https://github.com/liuxing/node-abc)
-- [canvas-test](https://github.com/whxaxes/canvas-test)
-- [超多经典 canvas 实例，动态离子背景、移动炫彩小球、贪吃蛇、坦克大战、是男人就下100层、心形文字等等等](https://github.com/bxm0927/canvas-special)
-- [一个基于Phaser的小游戏集合](https://github.com/channingbreeze/games)
-- [vue+koa2 实现一个简单电商网站](https://github.com/liutaochange/Vue-and-Koa2)
-- [基于vue2 + vue-router + vuex 构建的一个新闻类单页面应用 —— 今日头条（移动端）](https://github.com/uncleLian/vue2-news)
-
 
 ### 源码研究
-- [time-formater:在javascript中显示日期](https://github.com/pengng/time-formater)
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 
 ### 专题笔记归类(简书总结)
