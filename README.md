@@ -8,7 +8,7 @@
 这个项目只放置代码， 本项目只放置学习文章。相互配合，同时更新，前端系列的学习和维护 一直会坚持到我整个职业生涯。
 
 
-## 目录
+### 目录
 
 <!-- toc -->
 
@@ -116,6 +116,7 @@
 - [源码分析](./book/01、react专题/README.md#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90)
 - [其他经典文章](./book/01、react专题/README.md#%E5%85%B6%E4%BB%96%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0)
 
+
 #### [02、ES6/7简书笔记](./book/02、ES6&7)
 - [1、let和const](./book/02、ES6&7/1、let和const/let和const.md)
 - [2、变量的解构赋值](./book/02、ES6&7/2、变量的解构赋值/变量的解构赋值.md)
@@ -130,58 +131,63 @@
 - [11、Generator](./book/02、ES6&7/11、Generator/README.md)
 - [12、Promise](./book/02、ES6&7/12、Promise对象/README.md)
 - [13、其他知识点儿的总结](./book/02、ES6&7/13、其他知识点儿的总结)
-    - [Promise/async/Generator实现原理解析](https://juejin.im/post/6844904096525189128)
+- [Promise/async/Generator实现原理解析](https://juejin.im/post/6844904096525189128)
     
+
 #### [03、css专题](./book/03、css3专题)
 
     
 #### [04、javascript设计模式](./book/04、js设计模式)
 - [第二篇、创建型设计模式](./book/04、js设计模式/02篇、创建型设计模式/README.md#class02)               
-    - [03章、简单工程模式](./book/04、js设计模式/02篇、创建型设计模式/README.md#class02-03)
-    - [04章、工厂方法模式](./book/04、js设计模式/02篇、创建型设计模式/README.md#class02-04)
-    - [05章、抽象工厂模式](./book/04、js设计模式/02篇、创建型设计模式/README.md#class02-05)
-    - [06章、建造者模式](./book/04、js设计模式/02篇、创建型设计模式/README.md#class02-06)
-    - [07章、原型链模式](./book/04、js设计模式/02篇、创建型设计模式/README.md#class02-07)
-    - [08章、单例模式](./book/04、js设计模式/02篇、创建型设计模式/README.md#class02-08)
+  - [03章、简单工程模式](./book/04、js设计模式/02篇、创建型设计模式/README.md#class02-03)
+  - [04章、工厂方法模式](./book/04、js设计模式/02篇、创建型设计模式/README.md#class02-04)
+  - [05章、抽象工厂模式](./book/04、js设计模式/02篇、创建型设计模式/README.md#class02-05)
+  - [06章、建造者模式](./book/04、js设计模式/02篇、创建型设计模式/README.md#class02-06)
+  - [07章、原型链模式](./book/04、js设计模式/02篇、创建型设计模式/README.md#class02-07)
+  - [08章、单例模式](./book/04、js设计模式/02篇、创建型设计模式/README.md#class02-08)
 - [第三篇、结构型设计模式](./book/04、js设计模式/03篇、结构型设计模式/README.md#class03)
-    - [09章、外观模式](./book/04、js设计模式/03篇、结构型设计模式/README.md#class03-09)
-    - [10章、适配器模式](./book/04、js设计模式/03篇、结构型设计模式/README.md#class03-10)
-    - [11章、代理模式](./book/04、js设计模式/03篇、结构型设计模式/README.md#class03-11)
-    - [12章、装饰者模式](./book/04、js设计模式/03篇、结构型设计模式/README.md#class03-12)
-    - [13章、桥接模式](./book/04、js设计模式/03篇、结构型设计模式/README.md#class03-13)
-    - [14章、组合模式](./book/04、js设计模式/03篇、结构型设计模式/README.md#class03-14)
-    - [15章、享元模式](./book/04、js设计模式/03篇、结构型设计模式/README.md#class03-15)
+  - [09章、外观模式](./book/04、js设计模式/03篇、结构型设计模式/README.md#class03-09)
+  - [10章、适配器模式](./book/04、js设计模式/03篇、结构型设计模式/README.md#class03-10)
+  - [11章、代理模式](./book/04、js设计模式/03篇、结构型设计模式/README.md#class03-11)
+  - [12章、装饰者模式](./book/04、js设计模式/03篇、结构型设计模式/README.md#class03-12)
+  - [13章、桥接模式](./book/04、js设计模式/03篇、结构型设计模式/README.md#class03-13)
+  - [14章、组合模式](./book/04、js设计模式/03篇、结构型设计模式/README.md#class03-14)
+  - [15章、享元模式](./book/04、js设计模式/03篇、结构型设计模式/README.md#class03-15)
 - [第四篇、行为型设计模式](./book/04、js设计模式/04篇、行为型设计模式/README.md#class04)
-    - [16章、模板方法模式](./book/04、js设计模式/04篇、行为型设计模式/README.md#class04-16)
-    - [17章、观察者模式](./book/04、js设计模式/04篇、行为型设计模式/README.md#class04-16)
-    - [18章、状态模式](./book/04、js设计模式/04篇、行为型设计模式/README.md#class04-16)
-    - [19章、策略模式](./book/04、js设计模式/04篇、行为型设计模式/README.md#class04-16)
-    - [20章、责任链模式](./book/04、js设计模式/04篇、行为型设计模式/README.md#class04-16)
-    - [21章、命令模式](./book/04、js设计模式/04篇、行为型设计模式/README.md#class04-16)
-    - [22章、访问者模式](./book/04、js设计模式/04篇、行为型设计模式/22-26章节.md#class04-22)
-    - [23章、中介者模式](./book/04、js设计模式/04篇、行为型设计模式/22-26章节.md#class04-22)
-    - [24章、备忘录模式](./book/04、js设计模式/04篇、行为型设计模式/22-26章节.md#class04-22)
-    - [25章、迭代器模式](./book/04、js设计模式/04篇、行为型设计模式/22-26章节.md#class04-22)
-    - [26章、解释器](./book/04、js设计模式/04篇、行为型设计模式/22-26章节.md#class04-22)
+  - [16章、模板方法模式](./book/04、js设计模式/04篇、行为型设计模式/README.md#class04-16)
+  - [17章、观察者模式](./book/04、js设计模式/04篇、行为型设计模式/README.md#class04-16)
+  - [18章、状态模式](./book/04、js设计模式/04篇、行为型设计模式/README.md#class04-16)
+  - [19章、策略模式](./book/04、js设计模式/04篇、行为型设计模式/README.md#class04-16)
+  - [20章、责任链模式](./book/04、js设计模式/04篇、行为型设计模式/README.md#class04-16)
+  - [21章、命令模式](./book/04、js设计模式/04篇、行为型设计模式/README.md#class04-16)
+  - [22章、访问者模式](./book/04、js设计模式/04篇、行为型设计模式/22-26章节.md#class04-22)
+  - [23章、中介者模式](./book/04、js设计模式/04篇、行为型设计模式/22-26章节.md#class04-22)
+  - [24章、备忘录模式](./book/04、js设计模式/04篇、行为型设计模式/22-26章节.md#class04-22)
+  - [25章、迭代器模式](./book/04、js设计模式/04篇、行为型设计模式/22-26章节.md#class04-22)
+  - [26章、解释器](./book/04、js设计模式/04篇、行为型设计模式/22-26章节.md#class04-22)
 - [第五篇、技巧型设计模式](./book/04、js设计模式/05篇、技巧型设计模式/27-30章节.md)
-    - [27章、链式模式](./book/04、js设计模式/05篇、技巧型设计模式/27-30章节.md#class05-27)
-    - [28章、委托模式](./book/04、js设计模式/05篇、技巧型设计模式/27-30章节.md#class05-28)
-    - [29章、数据访问对象模式](./book/04、js设计模式/05篇、技巧型设计模式/27-30章节.md#class05-29)
-    - [30、节流模式](./book/04、js设计模式/05篇、技巧型设计模式/27-30章节.md#class05-30)
-    - [31、简单模板模式](./book/04、js设计模式/05篇、技巧型设计模式/31-34章节.md#class05-31)
-    - [32、惰性模式](./book/04、js设计模式/05篇、技巧型设计模式/31-34章节.md#class05-32)
-    - [33、参与者模式](./book/04、js设计模式/05篇、技巧型设计模式/31-34章节.md#class05-33)
-    - [34、等待着模式](./book/04、js设计模式/05篇、技巧型设计模式/31-34章节.md#class05-34)
+  - [27章、链式模式](./book/04、js设计模式/05篇、技巧型设计模式/27-30章节.md#class05-27)
+  - [28章、委托模式](./book/04、js设计模式/05篇、技巧型设计模式/27-30章节.md#class05-28)
+  - [29章、数据访问对象模式](./book/04、js设计模式/05篇、技巧型设计模式/27-30章节.md#class05-29)
+  - [30、节流模式](./book/04、js设计模式/05篇、技巧型设计模式/27-30章节.md#class05-30)
+  - [31、简单模板模式](./book/04、js设计模式/05篇、技巧型设计模式/31-34章节.md#class05-31)
+  - [32、惰性模式](./book/04、js设计模式/05篇、技巧型设计模式/31-34章节.md#class05-32)
+  - [33、参与者模式](./book/04、js设计模式/05篇、技巧型设计模式/31-34章节.md#class05-33)
+  - [34、等待着模式](./book/04、js设计模式/05篇、技巧型设计模式/31-34章节.md#class05-34)
 - [第六篇、架构型设计模式](./book/04、js设计模式/06篇、架构型设计模式/README.md)
-    - [35、同步模块模式](./book/04、js设计模式/06篇、架构型设计模式/README.md#class06-35)
-    - [36、异步模块模式](./book/04、js设计模式/06篇、架构型设计模式/README.md#class06-36)
-    - [37、Widget模式](./book/04、js设计模式/06篇、架构型设计模式/README.md#class06-37)
+  - [35、同步模块模式](./book/04、js设计模式/06篇、架构型设计模式/README.md#class06-35)
+  - [36、异步模块模式](./book/04、js设计模式/06篇、架构型设计模式/README.md#class06-36)
+  - [37、Widget模式](./book/04、js设计模式/06篇、架构型设计模式/README.md#class06-37)
+
 
 #### [05、基础知识点总结 ** 非常重要](./book/05、基础知识点专题)
 
+
 #### [06、canvas总结](./book/06、canvas总结)
         
+
 #### [07、算法学习](./book/07、算法学习)
+
 
 #### [09、学习javascript数据结构与算法](./book/09、学习javascript数据结构与算法)
 - [01章、javascript基础](./book/09、学习javascript数据结构与算法/README.md#class01)
@@ -216,8 +222,9 @@
     - [10.1 排序算法](./book/09、学习javascript数据结构与算法/README.md#class10-01)
     - [10.2 搜索算法](./book/09、学习javascript数据结构与算法/README.md#class10-02)
 
-        
+
 #### [10、DOM和BOM](./book/10、DOM和BOM)
+
 
 #### [11、深入webpack工程化](./book/11、深入webpack工程化/README.md)
 - [基础](./book/11、深入webpack工程化/README.md#%E5%9F%BA%E7%A1%80)
@@ -228,6 +235,7 @@
 - [其他](./book/11、深入webpack工程化/README.md#%E5%85%B6%E4%BB%96)
 - [遗留问题待解决](./book/11、深入webpack工程化/README.md#%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98%E5%BE%85%E8%A7%A3%E5%86%B3)
 
+
 #### [12、学习TypeScript](https://github.com/yanlele/TyepScript-learning)
 - [一文读懂 TypeScript 泛型及应用（ 7.8K字）](https://juejin.im/post/6844904184894980104)
 - [你不知道的 TypeScript 泛型（万字长文，建议收藏）](https://juejin.im/post/6844904196827774990)
@@ -235,6 +243,7 @@
 - [TypeScript 中的声明文件](https://juejin.im/post/6844903869328146440)
 - [结合实例学习 Typescript](https://juejin.im/post/6876981358346895368)
 - [一份不可多得的 TS 学习指南（1.8W字）](https://juejin.im/post/6872111128135073806)
+
 
 #### [13、测试专题](./book/13、测试专题)
 - [01篇、javascript单元测试框架mochajs详解](./book/13、测试专题/README.md#01%E7%AF%87javascript%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6mochajs%E8%AF%A6%E8%A7%A3)
@@ -246,10 +255,12 @@
 - [07篇、react测试：jest+enzyme](./book/13、测试专题/README.md#07%E7%AF%87react%E6%B5%8B%E8%AF%95jestenzyme)
 - [其他](./book/13、测试专题/README.md#%E5%85%B6%E4%BB%96)
 
+
 #### [14、深入浅出MySQL 数据库开发 优化与管理维护](./book/14、深入浅出MySQL%20数据库开发%20优化与管理维护)
 - [mysql下载与安装问题整理](./18年/09月/02、mysql下载与安装问题整理/)
 - [node_mysql模块的使用](./18年/09月/03、node_mysql模块的使用/index.js)
 - [MySQL 三万字精华总结 + 面试100 问，和面试官扯皮绰绰有余（收藏系列）](https://juejin.im/post/6850037271233331208)
+
 
 #### [15、Linux相关学习](./book/15、Linux相关知识点/README.md)
 - [基础部分](./book/15、Linux相关知识点/01、基础部分/README.md)
@@ -261,30 +272,43 @@
 - [nginx](./book/15、Linux相关知识点/07、nginx)
 - [CI&CD](./book/15、Linux相关知识点/08、CI&CD)
 
+
 #### [16、前端数据可视化D3.js学习](https://github.com/yanlele/D3.js-learning)
 
+
 #### [17、数据结构与算法专题 - todo](./book/17、数据结构与算法专题)
+
 
 #### [18、flutter 基础入门](./book/18、flutter%20基础入门)
 - [「 Dart Js Ts 」给前端工程师的一张Dart语言入场券](https://juejin.im/post/6844904153064407054)
 
+
 #### [20、docker&DevOps](./book/20、docker&Devops)
+
 
 #### [21、小程序](./book/21、小程序)
 
+
 #### [22、必须要学好英语](./book/22、必须要学好英语)
+
 
 #### [23、RXJS学习专题 - 放弃中（因为看不到收益）](./book/23、RXJS学习专题/23、RXJS学习专题.md)
 
+
 #### [25、自我管理](./book/25、自我管理/readme.md)
+
 
 #### [26、微前端专题](./book/26、微前端专题/readme.md)
 
+
 #### [27、好用的库与框架 **](./book/27、好用的库与框架推荐/readme.md)
+
 
 #### [28、性能分析](./book/28、性能分析/readme.md)
 
+
 #### [29、源码研究]((https://github.com/Source-Research/main))
+
 
 
 ### 通用功能js模块组件
