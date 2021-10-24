@@ -1,7 +1,7 @@
-## <div id="class04">第四篇、行为型设计模式</div>
+## 第四篇、行为型设计模式
 
 
-### <div id="class04-16">16章、模板方法模式</div>
+### 第十六章、模板方法模式
 **模板方法模式（Template Method）**: 父类中定义一组操作算法骨架，将一些实现步骤延迟到子类中，是的子类可以不改变弗雷算法结构的同事，可以重新定义算法中实现步骤。              
 
 #### 提示框归一化             
@@ -226,7 +226,7 @@ let LinkNav = function (data) {
 ```
 
 
-### <div id="class04-17">17章、观察者模式</div>
+### 第十七章、观察者模式
 **观察者模式（Observer）**: 又被成
 为发布者-订阅者或者消息定制，定义一种依赖关系，解决主体对象与观察者之间的功能耦合；                  
 
@@ -428,7 +428,7 @@ teacher.ask('简述观察者模式');
 ```
 
 
-### <div id="class04-18">18章、状态模式</div>
+### 第十八章、状态模式
 **状态模式（State）**: 当一个对象内部状态发生变化时，会导致其行为发生改变，状态改变了对下对象。                   
 
 #### 用最美图片写一个例子
@@ -576,7 +576,7 @@ marry.changeState('jump', 'shoot').gose().gose().changeState('shoot').gose();
 ```
 
 
-### <div id="class04-19">19章、策略模式</div>
+### 第十九章、策略模式
 **策略模式（Strategy）**: 将定义的一组算法封装起来，使其相互之间可以替换。封装的算法具有一定的独立性，不会碎客户端变化而变化。                  
 
 #### 商品促销的例子                        
@@ -682,7 +682,7 @@ $tag('input')[1].onclick = function () {
 };
 ```
 
-### <div id="class04-20">20章、责任链模式</div>
+### 第二十章、责任链模式
 **责任链模式（Chain of Responsibility）**: 解决请求的发送者与请求的接受者之间的耦合。通过责任链上的多个对象分解请求流程。实现请求在多个对象之间传递，知道最后一个对象完成请求处理。                    
 
 #### 半成品的需求                     
@@ -779,7 +779,7 @@ let createValidateResult = function (data, dom) {
 责任链模式，其实就是把一个较大的或者不确定的需求，拆分成一个一个细小的模块。各自做好各自模块的功能，把做好的事儿，交给下一步做。                                          
 
 
-### <div id="class04-21">21章、命令模式</div>                         
+### 第二十一章、命令模式                         
 **命令模式（Command）**: 将请求和实现解耦并封装成为独立的对象，从而使不同的请求对客户端的实现参数化。                   
 
 #### 自由化创建视图的例子
@@ -967,5 +967,470 @@ CanvasCommand.excute([
 ```
 
 
+### 第二十二章、访问者模式
+定义个绑定事件， 但是在低版本浏览器中会报错。
+```js
+let bindEvent = function (dom, type, fn) {
+    if(dom.addEventListener) {
+        dom.addEventListener(type, fn, false);
+    } else if(dom.attachEvent) {
+        dom.attachEvent('on'+ type, fn);
+    } else {
+        dom['on'+ type] = fn;
+    }
+};
+
+
+/**
+ * 下面的在IE低版本浏览器运行会有问题
+ * 这个地方运行就有问题了，因为this.style 中的this 在低版本IE中，指向的是window对象
+ * @type {HTMLElement | null}
+ */
+let demo = document.getElementById('dome');
+bindEvent(demo, 'click', function () {
+    this.style.background = 'red';
+});
+```
+
+[对象访问器的一个示例](/books/专题知识库/04、js设计模式/04篇、行为型设计模式/22章、访问者模式/02、对象访问器.js)
+```js
+/**
+ * create by yanle
+ * connect me 331393627@qq.com
+ * create time 2018-12-31 18:10
+ */
+
+let Visitor = {
+    // 截取方法
+    splice: function () {
+        // splice 方法参数， 从原来的参数的第二个参数开始计算
+        let args = Array.prototype.splice.call(arguments, 1);
+        // 对第一个参数对象执行splice 方法
+        return Array.prototype.splice.apply(arguments[0], args);
+    },
+
+    push: function () {
+        let len = arguments[0].length || 0;
+        let args = this.splice(arguments, 1);
+        arguments[0].length = len + arguments.length - 1;
+        return Array.prototype.push.apply(arguments[0], args);
+    },
+
+    pop: function () {
+        return Array.prototype.pop.apply(arguments[0]);
+    }
+};
+
+
+// 这样就可以操作类数组的方式操作对象了
+let a = {};
+console.log(a.length);          // undefined
+Visitor.push(a, 1,2,3,4);
+console.log(a.length);          // 4
+Visitor.push(a, 4,5,6);
+console.log(a);                 // { '0': 1, '1': 2, '2': 3, '3': 4, '4': 4, '5': 5, '6': 6, length: 7 }
+console.log(a.length);          // 7
+Visitor.pop(a);
+console.log(a);                 // { '0': 1, '1': 2, '2': 3, '3': 4, '4': 4, '5': 5, length: 6 }
+console.log(a.length);          // 6
+Visitor.splice(a, 2);
+console.log(a);                 // { '0': 1, '1': 2, length: 2 }
+```
+
+
+
+
+### 第二十三、中介者模式
+通过中介者对象封装一些列对象之间的交互，是对象之间不再相互引用，降低耦合度。有的时候也可以改变对象之间的交互。
+
+跟观察者模式的区别：                       
+首先他们都是通过消息收发机制实现的，不过在观察者模式中，一个对象既可以是消费者的发送者，也可以是消息的接受者，他们之间的信息交流依托于消息系统之间的解耦。                       
+中介者模式中消息的发送方只有一个，就是中介者对象，而且中介者对象不能订阅消息， 只能那些活跃对象(订阅者)才能订阅中介者的消息。
+
+代码示例如下： [01、创建中介者对象](/books/专题知识库/04、js设计模式/04篇、行为型设计模式/23、中介者模式/01、创建中介者对象.js)
+```js
+/**
+ * create by yanle
+ * create time 2019/1/2 下午4:46
+ */
+
+class Mediator {
+    constructor() {
+        // 消息对象
+        this._msg = {};
+    }
+
+    /**
+     * 订阅消息方法
+     * @param type  消息名称
+     * @param action    消息回到函数
+     */
+    register(type, action) {
+        // 如果消息存在
+        if(this._msg[type]) {
+            // 存入
+            this._msg[type].push(action)
+        } else {
+            // 消息不存在, 创建容器
+            this._msg[type] = [];
+            this._msg[type].push(action)
+        }
+    }
+
+    /**
+     * 发布消息的方法
+     * @param type  发布消息的名称
+     */
+    send(type) {
+        if(this._msg[type]) {
+            for (let actionKey in this._msg[type]) {
+                // 执行回调函数
+                this._msg[type] && this._msg[type][actionKey]();
+            }
+        }
+    }
+}
+
+module.exports = Mediator;
+
+let mediator = new Mediator();
+mediator.register('demo', function () {
+    console.log('first');
+});
+mediator.register('demo', function () {
+    console.log('second')
+});
+
+mediator.send('demo');  // 分别输出first, second
+```
+
+
+一个实际场景的使用：[02、一个完整的使用场景](/books/专题知识库/04、js设计模式/04篇、行为型设计模式/23、中介者模式/02、一个完整的使用场景.js)
+```js
+/**
+ * create by yanle
+ * create time 2019/1/2 下午5:11
+ */
+
+const Mediator = require('./01、创建中介者对象');
+
+/**
+ * 隐藏导航方法
+ * @param mod   模块
+ * @param tag   标签
+ * @param showOrHide    是否隐藏（show/hide）
+ */
+let showHideNavWidget = function (mod, tag, showOrHide) {
+    // 获取导航
+    let dom = document.getElementById(mod);
+    // 过去tag
+    let tags = dom.getElementsByTagName(tag);
+    let isShowOrHide = (!showOrHide || showOrHide === 'hide') ? 'hidden' : 'visible';
+    tags.forEach(function (item) {
+        item.style.visibility = isShowOrHide;
+    })
+};
+
+
+const mediator = new Mediator();
+
+// 订阅隐藏用户收藏导航消息提示信息
+mediator.register('hideAllNavNum', function () {
+    showHideNavWidget('collection_nav', 'b', false);
+});
+// 订阅现实用户收藏导航消息提示信息
+mediator.register('showAllNavNum', function () {
+    showHideNavWidget('collection_nav', 'b', true);
+});
+// 订阅隐藏用户收藏导航网址信息
+mediator.register('hideAllNavUrl', function () {
+    showHideNavWidget('collection_nav', 'span', false);
+});
+// 订阅现实用户收藏导航网址信息
+mediator.register('showAllNavUrl', function () {
+    showHideNavWidget('collection_nav', 'span', true);
+});
+
+// 发布消息
+let hideNum = document.getElementById('hide_num'),
+    hideUrl = document.getElementById('hide_url');
+// 消息提示选框事件
+hideNum.onchange = function () {
+    if(hideNum.checked) {
+        mediator.send('hideAllNavNum');
+    } else {
+        mediator.send('showAllNavNum');
+    }
+};
+
+// 网址选框事件
+hideUrl.onchange = function () {
+    if(hideUrl.checked) {
+        mediator.send('hideAllNavUrl');
+    } else {
+        mediator.send('showAllNavUrl');
+    }
+};
+```
+
+
+### 第二十四章、备忘录模式
+描述：                         
+在不破坏对象的封装性的前提下， 在对象之外捕获并保存该对象内部的状态以便日后对象使用或者对象回复到以前的某个状态。
+
+实际场景：                   
+有这么一个场景， 就是在分页中， 用户点击下一页的时候， 就去去请求数据， 但是又点回上一页的时候， 大多数的操作还是请求上一页数据。
+这样的操作就会导致多余的请求。为了避免这种多余的请求， 我们就可以做缓存数据。
+
+```js
+/**
+ * create by yanle
+ * create time 2019/1/2 下午5:56
+ */
+
+class Page {
+    constructor() {
+        this.cache = {};
+    }
+
+    init(page, fn) {
+        // 判定是否有缓存
+        if(this.cache[page]) {
+            // 恢复到该页面的状态 ， 现实该页面的内容
+            this.showPage(page, this.cache[page]);
+            // 执行成功的回调
+            fn && fn();
+        } else {
+            // 没有cache数据
+            $.post('/data/getNewsData.php', {
+                page: page
+            },  (res) => {
+                // 请求成功
+                if(res.errno === 0) {
+                    // 显示页面数据
+                    this.showPage(page, res.data);
+                    this.cache[page] = res.data;
+                    fn && fn();
+                } else {
+                    console.log('异常处理');
+                }
+            })
+        }
+    }
+
+    showPage(page, data) {
+        // 处理页面逻辑
+        console.log('处理页面逻辑', page, data)
+    }
+}
+```
+
+示例： [01、新闻缓存器](/books/专题知识库/04、js设计模式/04篇、行为型设计模式/24、备忘录模式/01、新闻缓存器.js)
+
+
+### 第二十五章、迭代器模式
+描述：                     
+在不暴露对象内部结构的同时， 可以顺序的访问聚合对象的元素。
+
+```js
+/**
+ * create by yanle
+ * create time 2019/1/2 下午6:26
+ */
+
+class Iterator {
+    constructor(items, container) {
+        // 父容器， 若 container 参数存在， 并且可以获取该元素则获取， 否则获取document
+        this.container = container && document.getElementById(container) || document;
+        // 获取元素
+        this.items = this.container.getElementsByTagName(items);
+        // 元素长度
+        this.length = this.items.length;
+
+        // 当前索引值， 默认： 0
+        this.index = 0;
+        // 缓存源数组splice方法
+        this.splice = [].splice();
+    }
+
+    first() {
+        this.index = 0;
+        return this.items[this.index];
+    }
+
+    last() {
+        this.index = this.length - 1;
+        return this.items[this.index];
+    }
+
+    pre() {
+        if (--this.index > 0) {
+            return this.items[this.index];
+        } else {
+            this.index = 0;
+            return null;
+        }
+    }
+
+    next() {
+        if (++this.index < this.length) {
+            return this.items[this.index]
+        } else {
+            this.index = length - 1;
+            return null;
+        }
+    }
+
+    get(num) {
+        this.index = num >= 0 ? num % this.length : num % this.length + this.length;
+        return this.items[this.index];
+    }
+
+    // 对于每一个元素执行某一个方法
+    dealEach(fn) {
+        // 第二个参数作为回调函数参数
+        let args = this.splice.call(arguments, 1);
+        for (let item of this.items) {
+            fn.apply(item, args);
+        }
+    }
+
+    // 对某一个元素执行某一个方法
+    dealItem(num, fn) {
+        fn.apply(this.get(num), this.splice.call(arguments, 2))
+    }
+
+    // 排他方式处理某一个元素
+    exclusive(nums, allfn, numfn) {
+        // 对所有元素执行回调函数
+        this.dealEach(allfn);
+        // 如果是num类型的数组
+        if(Object.prototype.toString.call(nums) === "[object Array]") {
+            nums.forEach((num) => {
+                this.dealItem(num, numfn)
+            })
+        } else {
+            this.dealItem(nums, numfn)
+        }
+    }
+}
+
+
+/*
+* 比如获取页面中id 为 container 的ul元素中的4个li元素
+* */
+let demo  = new Iterator('li', 'container');
+console.log(demo.first());          // <li>1</li>
+console.log(demo.pre());            // null
+console.log(demo.next());           // <li>2</li>
+console.log(demo.get(2000));        // <li>1</li>
+
+// 处理所有元素
+demo.dealEach(function (text, color) {
+    this.innerHTML = text;
+    this.style.background = color;
+}, 'test', 'pink');
+
+// 排他思想处理3，4元素
+demo.exclusive([2,3], function () {
+    this.innerHTML = '被排除了';
+    this.style.background = 'green';
+}, function () {
+    this.innerHTML = '选中的';
+    this.style.background = 'red';
+});
+```
+
+代码示例：               
+[01、迭代器的实现](/books/专题知识库/04、js设计模式/04篇、行为型设计模式/25、迭代器模式/01、迭代器的实现.js)
+
+
+### 第二十六章、解释器
+描述：                 
+用一些描述性的语句， 几次功能的提取抽象， 形成一套语法规则， 这就是解释器要处理的事情。
+
+```js
+/**
+ * create by yanle
+ * create time 2019/1/3 下午7:14
+ */
+
+//  解释器
+class Interpreter {
+    // 获取兄弟元素名称
+    static getSiblingName(node) {
+        // 存在兄弟节点
+        if(node.previousSibling) {
+            let name = '',
+                count = 1,
+                nodeName = node.nodeName,
+                sibling = node.previousSibling;
+
+            // 如果存在前一个兄弟元素
+            while(sibling) {
+                // 如果节点为元素， 并且节点类型与前一个兄弟元素类型相同， 并且前一个兄弟元素名称存在
+                if(sibling.nodeType === 1 && sibling.nodeType === node.nodeType && sibling.nodeName) {
+                    // 如果节点名称和前一个兄弟元素名称相同
+                    if(nodeName === sibling.nodeName) {
+                        // 节点名称后面添加计数
+                        name += ++count;
+                    } else {
+                        count = 1;
+                        name += '|' + sibling.nodeName.toUpperCase();
+                    }
+                }
+                sibling = sibling.previousSibling;
+            }
+            return name;
+        } else {
+            return ''
+        }
+    }
+
+    // XPath 解释器
+    static main(node, wrap = document) {
+        let path = [];      // 路径数组
+        if(node === wrap) {
+            // 容器节点为元素
+            if(wrap.nodeType === 1) {
+                path.push(wrap.nodeName.toUpperCase());
+            }
+            return path;
+        }
+
+        // 当前节点的父节点不等于容器节点
+        if(node.parentNode !== wrap) {
+            // 对当前节点的父节点执行遍历操作
+            path = arguments.callee(node.parentNode, wrap);
+        } else {
+            // 容器节点为元素
+            if(wrap.nodeType === 1) {
+                path.push(wrap.nodeName.toUpperCase());
+            }
+        }
+
+        // 获取元素的兄弟元素名称统计
+        let siblingsNames = this.getSiblingName(node);
+        // 如果节点为元素
+        if(node.nodeType === 1) {
+            path.push(node.nodeName.toUpperCase() + siblingsNames);
+        }
+        return path;
+    }
+}
+
+// 使用方式
+let path = Interpreter.main(document.getElementById('span7'));
+console.log(path);          // HTML>BODY|HEAD>DEV2>DEV2>DEV>UL>LI2>SPAN
+```
+
+代码示例：                       
+[01、Interpreter](/books/专题知识库/04、js设计模式/04篇、行为型设计模式/26、解释器模式/01、Interpreter.js)
+
+
+
+
+
+ 
 
 
