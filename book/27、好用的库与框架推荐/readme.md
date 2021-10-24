@@ -83,6 +83,9 @@
 - [typing.js: 一款非常好用的js打印机效果插件，能够直接复制文本原样打印输出](https://github.com/coffeedeveloper/typing.js)
 - [TheaterJS: 一款十分优秀的打字机效果插件](https://github.com/Zhouzi/TheaterJS)
 - [swiper](https://github.com/nolimits4web/swiper)
+- [countUp.js: 计算数字的前端动画组件](https://github.com/inorganik/countUp.js)
+
+
 
 ### React 
 - [ahooks **](https://github.com/alibaba/hooks)
