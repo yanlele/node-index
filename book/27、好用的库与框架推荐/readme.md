@@ -80,7 +80,9 @@
 - [xss库: sanitize-html](https://github.com/apostrophecms/sanitize-html)
 - [Async await wrapper for easy error handling without try-catch: await-to-js](https://github.com/scopsy/await-to-js)
 - [Map object keys and values into a new object: map-obj](https://github.com/sindresorhus/map-obj)
-
+- [typing.js: 一款非常好用的js打印机效果插件，能够直接复制文本原样打印输出](https://github.com/coffeedeveloper/typing.js)
+- [TheaterJS: 一款十分优秀的打字机效果插件](https://github.com/Zhouzi/TheaterJS)
+- [swiper](https://github.com/nolimits4web/swiper)
 
 ### React 
 - [ahooks **](https://github.com/alibaba/hooks)
