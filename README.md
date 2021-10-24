@@ -143,12 +143,16 @@
 
 ### [javascript设计模式](/books/专题知识库/04、js设计模式/README.md)
 - [第二篇、创建型设计模式](/books/专题知识库/04、js设计模式/02篇、创建型设计模式/README.md)
-  - [第三章、简单工程模式](/books/专题知识库/04、js设计模式/02篇、创建型设计模式/README.md/README.md#%E7%AC%AC%E4%B8%89%E7%AB%A0%E7%AE%80%E5%8D%95%E5%B7%A5%E7%A8%8B%E6%A8%A1%E5%BC%8F)
-  - [第四章、工厂方法模式](/books/专题知识库/04、js设计模式/02篇、创建型设计模式/README.md/README.md#%E7%AC%AC%E5%9B%9B%E7%AB%A0%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F)
-  - [第五章、抽象工厂模式](/books/专题知识库/04、js设计模式/02篇、创建型设计模式/README.md/README.md#%E7%AC%AC%E4%BA%94%E7%AB%A0%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F)
-  - [第六章、建造者模式](/books/专题知识库/04、js设计模式/02篇、创建型设计模式/README.md/README.md#%E7%AC%AC%E5%85%AD%E7%AB%A0%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F)
-  - [第七章、原型链模式](/books/专题知识库/04、js设计模式/02篇、创建型设计模式/README.md/README.md#%E7%AC%AC%E4%B8%83%E7%AB%A0%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%A8%A1%E5%BC%8F)
-  - [第八章、单例模式](/books/专题知识库/04、js设计模式/02篇、创建型设计模式/README.md/README.md#%E7%AC%AC%E5%85%AB%E7%AB%A0%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F)
+  - [第三章-简单工程模式](/books/专题知识库/04、js设计模式/02篇、创建型设计模式/README.md#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%AE%80%E5%8D%95%E5%B7%A5%E7%A8%8B%E6%A8%A1%E5%BC%8F)
+  - [第四章-工厂方法模式](/books/专题知识库/04、js设计模式/02篇、创建型设计模式/README.md#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F)
+  - [第五章-抽象工厂模式](/books/专题知识库/04、js设计模式/02篇、创建型设计模式/README.md#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F)
+  - [第六章-建造者模式](/books/专题知识库/04、js设计模式/02篇、创建型设计模式/README.md#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F)
+  - [第七章-原型链模式](/books/专题知识库/04、js设计模式/02篇、创建型设计模式/README.md#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%A8%A1%E5%BC%8F)
+  - [第八章-单例模式](/books/专题知识库/04、js设计模式/02篇、创建型设计模式/README.md#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F)
+
+
+
+
 
 
 
