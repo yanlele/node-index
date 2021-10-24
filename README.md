@@ -117,6 +117,25 @@
 
 
 
+#### [ECMAScript最新语法](/books/专题知识库/02、ECMAScript最新语法/README.md)
+- [let和const](/books/专题知识库/02、ECMAScript最新语法/1、let和const/let和const.md)
+- [变量的解构赋值](/books/专题知识库/02、ECMAScript最新语法/2、变量的解构赋值/变量的解构赋值.md)
+- [字符串的扩展](/books/专题知识库/02、ECMAScript最新语法/3、字符串的扩展/3、字符串的扩展.md)
+- [数值的扩展和Math对象的扩展](/books/专题知识库/02、ECMAScript最新语法/4、数值的扩展和Math对象的扩展/4、数值的扩展和Math对象的扩展.md)
+- [数组的扩展](/books/专题知识库/02、ECMAScript最新语法/5、数组的扩展/README.md)
+- [函数的扩展](/books/专题知识库/02、ECMAScript最新语法/6、函数的扩展/README.md)
+- [对象的扩展](/books/专题知识库/02、ECMAScript最新语法/7、对象的扩展/README.md)
+- [Proxy和Reflect](/books/专题知识库/02、ECMAScript最新语法/8、Proxy和Reflect/README.md)
+- [Set和Map数据结构](/books/专题知识库/02、ECMAScript最新语法/9、Set和Map数据结构/README.md)
+- [Iterator 和 for...of 循环](/books/专题知识库/02、ECMAScript最新语法/10、Iterator%20和%20for...of%20循环/README.md)
+- [Generator](/books/专题知识库/02、ECMAScript最新语法/11、Generator/README.md)
+- [Promise](/books/专题知识库/02、ECMAScript最新语法/12、Promise对象/README.md)
+- [其他知识点儿的总结](/books/专题知识库/02、ECMAScript最新语法/13、其他知识点儿的总结)
+- [es10的新特性](/books/专题知识库/02、ECMAScript最新语法/14、es10的新特性/readme.md)
+
+
+
+
 ## 个人发展与OKR
 
 
@@ -149,32 +168,10 @@
 
 
 ### 专题笔记归类(简书总结)
-#### [react简书笔记](/book/01、react专题/README.md)
-- [react基础语法使用](/book/01、react专题/README.md#react16%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%BD%BF%E7%94%A8)
-- [redux](/book/01、react专题/README.md#redux)
-- [react-router](/book/01、react专题/README.md#react-router4)
-- [其他知识点和实战相关知识点](/book/01、react专题/README.md#%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86%E7%82%B9%E5%92%8C%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9)
-- [react hooks](/book/01、react专题/README.md#react-hooks)
-- [源码分析](/book/01、react专题/README.md#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90)
-- [其他经典文章](/book/01、react专题/README.md#%E5%85%B6%E4%BB%96%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0)
 
 
-#### [ES6/7简书笔记](/book/02、ES6&7)
-- [let和const](/book/02、ES6&7/1、let和const/let和const.md)
-- [变量的解构赋值](/book/02、ES6&7/2、变量的解构赋值/变量的解构赋值.md)
-- [字符串的扩展](/book/02、ES6&7/3、字符串的扩展/3、字符串的扩展.md)
-- [数值的扩展和Math对象的扩展](/book/02、ES6&7/4、数值的扩展和Math对象的扩展/4、数值的扩展和Math对象的扩展.md)
-- [数组的扩展](/book/02、ES6&7/5、数组的扩展/README.md)
-- [函数的扩展](/book/02、ES6&7/6、函数的扩展/README.md)
-- [对象的扩展](/book/02、ES6&7/7、对象的扩展/README.md)
-- [Proxy和Reflect](/book/02、ES6&7/8、Proxy和Reflect/README.md)
-- [Set和Map数据结构](/book/02、ES6&7/9、Set和Map数据结构/README.md)
-- [Iterator 和 for...of 循环](/book/02、ES6&7/10、Iterator%20和%20for...of%20循环/README.md)
-- [Generator](/book/02、ES6&7/11、Generator/README.md)
-- [Promise](/book/02、ES6&7/12、Promise对象/README.md)
-- [其他知识点儿的总结](/book/02、ES6&7/13、其他知识点儿的总结)
-- [Promise/async/Generator实现原理解析](https://juejin.im/post/6844904096525189128)
-    
+
+
 
 #### [03、css专题](/book/03、css3专题)
 
