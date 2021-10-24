@@ -37,7 +37,7 @@ getJson('./test.json').then((res)=>{
 
 
 
-/* 封装一个高级的ajax工具*/
+/* 封装一个高级的ajax工具 */
 extend = function (dst, obj) {
     for (var i in obj) {
         if (obj.hasOwnProperty(i)) {
