@@ -228,7 +228,7 @@ function doSomething() {
 当我们在页面中定义了函数doSomething()的时候，它的owner是页面，或者是JavaScript中的window对象（或 global对象）。
 对于一个onclick属性，它为它所属的HTML元素所拥有，this应该指向该HTML元素。                          
 这种“所有权”就是JavaScript中面向对象的一种方式。在Objects as associative arrays中可以查看一些更多的信息。 
-![img](./img/11_02.gif)                 
+![img](img/11_02.gif)                 
 
 
 ## 总结 

@@ -1,15 +1,19 @@
 # 关于深拷贝和浅拷贝的实现       
 
 目录
-- [1、浅拷贝存在的问题](#class01)
-- [2、普通的深拷贝](#class02)
-- [3、数据对象深拷贝的简单实现](#class03)
-- [4、利用对象实现深拷贝](#class04)
-- [5、利用class实现深拷贝](#class05)
-- [6、解决深拷贝终极奥义](#class06)
-       
 
-## <p id='class01'>1、浅拷贝存在的问题</P>                  
+<!-- toc -->
+
+- [No.1 浅拷贝存在的问题](#no1-%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98)
+- [No.2 普通的深拷贝](#no2-%E6%99%AE%E9%80%9A%E7%9A%84%E6%B7%B1%E6%8B%B7%E8%B4%9D)
+- [No.3 数组对象深拷贝的简单实现](#no3-%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E6%B7%B1%E6%8B%B7%E8%B4%9D%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0)
+- [No.4 利用对象实现深拷贝](#no4-%E5%88%A9%E7%94%A8%E5%AF%B9%E8%B1%A1%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D)
+- [No.5 利用class实现深拷贝](#no5-%E5%88%A9%E7%94%A8class%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D)
+- [No.6 解决深拷贝终极奥义](#no6-%E8%A7%A3%E5%86%B3%E6%B7%B1%E6%8B%B7%E8%B4%9D%E7%BB%88%E6%9E%81%E5%A5%A5%E4%B9%89)
+
+<!-- tocstop -->
+
+## No.1 浅拷贝存在的问题
 ```javascript
 var person={
     name:'yanle',
@@ -38,7 +42,7 @@ person.schools[0]       //输出结果也是lelele，
 请参考： [浅拷贝存在的问题](./01、浅拷贝存在的问题.js)
 
 
-## <p id='class02'>2、普通的深拷贝</P>
+## No.2 普通的深拷贝
 ```javascript
 let person = {
     name: 'yanle',
@@ -76,12 +80,12 @@ console.log(person);
 请参考：[普通的深拷贝](./02、普通的深拷贝.js)
 
 
-## <p id='class03'>3、数组对象深拷贝的简单实现</P>                   
+## No.3 数组对象深拷贝的简单实现
 如果对象是一个数组对象，那么可以用字符串方法来实现深拷贝（就是断开引用连接，赋予新的对象实例）             
 `arr.slice(0)` 这样得到的数组对象就会指向自己心的引用了;
 
 
-## <p id='class04'>4、利用对象实现深拷贝</P>                  
+## No.4 利用对象实现深拷贝
 ```javascript
 function Parent(){
     this.name='abc';
@@ -108,7 +112,7 @@ console.log(child);
 请参考：[利用对象实现深拷贝](./03、利用对象实现深拷贝.js)
 
 
-## <p id='class05'>5、利用class实现深拷贝</P> 
+## No.5 利用class实现深拷贝
 ```javascript
 class Person{
     constructor(name, age) {
@@ -140,7 +144,7 @@ console.log(child);
 原理跟第四种情况是一模一样的；
 请参考： [利用class实现深拷贝](./04、利用class实现深拷贝.js)
 
-## <p id='class06'>6、解决深拷贝终极奥义</P>              
+## No.6 解决深拷贝终极奥义     
 github有开源模块专门解决这个问题的： [https://github.com/unclechu/node-deep-extend](https://github.com/unclechu/node-deep-extend)                  
 其源码实例如下： [deep-extend.js](https://github.com/unclechu/node-deep-extend/blob/master/lib/deep-extend.js)              
 也可以参考本地目录： [deep-extend.js](./deep-extend.js)               
