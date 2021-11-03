@@ -169,6 +169,20 @@
   - [第二十四章-备忘录模式](/books/专题知识库/04、js设计模式/04篇、行为型设计模式/README.md#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%9B%9B%E7%AB%A0-%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F)
   - [第二十五章-迭代器模式](/books/专题知识库/04、js设计模式/04篇、行为型设计模式/README.md#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%94%E7%AB%A0-%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F)
   - [第二十六章-解释器](/books/专题知识库/04、js设计模式/04篇、行为型设计模式/README.md#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AD%E7%AB%A0-%E8%A7%A3%E9%87%8A%E5%99%A8)
+- [第五篇、技巧型设计模式](/books/专题知识库/04、js设计模式/05篇、技巧型设计模式/README.md)
+  - [第二十七章-链式模式](/books/专题知识库/04、js设计模式/05篇、技巧型设计模式/README.md#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E7%AB%A0-%E9%93%BE%E5%BC%8F%E6%A8%A1%E5%BC%8F)
+  - [第二十八章-委托模式](/books/专题知识库/04、js设计模式/05篇、技巧型设计模式/README.md#%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%AB%A0-%E5%A7%94%E6%89%98%E6%A8%A1%E5%BC%8F)
+  - [第二十九章-数据访问对象模式](/books/专题知识库/04、js设计模式/05篇、技巧型设计模式/README.md#%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B9%9D%E7%AB%A0-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F)
+  - [第三十章-节流模式](/books/专题知识库/04、js设计模式/05篇、技巧型设计模式/README.md#%E7%AC%AC%E4%B8%89%E5%8D%81%E7%AB%A0-%E8%8A%82%E6%B5%81%E6%A8%A1%E5%BC%8F)
+  - [第三十一章-简单模板模式](/books/专题知识库/04、js设计模式/05篇、技巧型设计模式/README.md#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%80%E7%AB%A0-%E7%AE%80%E5%8D%95%E6%A8%A1%E6%9D%BF%E6%A8%A1%E5%BC%8F)
+  - [第三十二章-惰性模式](/books/专题知识库/04、js设计模式/05篇、技巧型设计模式/README.md#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%BA%8C%E7%AB%A0-%E6%83%B0%E6%80%A7%E6%A8%A1%E5%BC%8F)
+  - [第三十三章-参与者模式](/books/专题知识库/04、js设计模式/05篇、技巧型设计模式/README.md#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%89%E7%AB%A0-%E5%8F%82%E4%B8%8E%E8%80%85%E6%A8%A1%E5%BC%8F)
+  - [第三十四章-等待着模式](/books/专题知识库/04、js设计模式/05篇、技巧型设计模式/README.md#%E7%AC%AC%E4%B8%89%E5%8D%81%E5%9B%9B%E7%AB%A0-%E7%AD%89%E5%BE%85%E7%9D%80%E6%A8%A1%E5%BC%8F)
+- [第六篇、架构型设计模式](/books/专题知识库/04、js设计模式/06篇、架构型设计模式/README.md)
+  - [第三十五章-同步模块模式](/books/专题知识库/04、js设计模式/06篇、架构型设计模式/README.md#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%BA%94%E7%AB%A0-%E5%90%8C%E6%AD%A5%E6%A8%A1%E5%9D%97%E6%A8%A1%E5%BC%8F)
+  - [第三十六章-异步模块模式](/books/专题知识库/04、js设计模式/06篇、架构型设计模式/README.md#%E7%AC%AC%E4%B8%89%E5%8D%81%E5%85%AD%E7%AB%A0-%E5%BC%82%E6%AD%A5%E6%A8%A1%E5%9D%97%E6%A8%A1%E5%BC%8F)
+  - [第三十七章-Widget模式](/books/专题知识库/04、js设计模式/06篇、架构型设计模式/README.md#%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%83%E7%AB%A0-widget%E6%A8%A1%E5%BC%8F)
+
 
 
 
