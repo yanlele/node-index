@@ -83,7 +83,7 @@
   - [79、10种跨域解决方案](https://juejin.cn/post/6844904126246027278)
   - [80、前端优秀实践不完全指南](https://juejin.cn/post/6932647134944886797)
   - [81、JavaScript常用八种继承方案](https://juejin.cn/post/6844903696111763470)
-  - [82、正则实现金钱格式化](/books/专题知识库/05、基础知识点专题/test/01-82、金额问题.ts)
+  - [82、正则实现金钱格式化](books/专题知识库/05、基础知识点专题/other/10、金额问题研究/README.md)
   - [83、浅谈 React 中的 XSS 攻击](https://www.zoo.team/article/xss-in-react)
   - [84、学一下xss](https://wizardforcel.gitbooks.io/xss-naxienian/content/0.html)
   
