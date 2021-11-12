@@ -1,25 +1,29 @@
 # Primise原理与实现
 
 目录
-- [Promise 核心](#Promise-核心)
-- [ES6 Promise细节](#ES6-Promise细节)
-- [动手实现](#动手实现)
-    - [内部属性](#内部属性)
-    - [执行器](#执行器)
-    - [then方法](#then方法)
-        - [异步实现](#异步实现)
-        - [then 返回值](#then-返回值)
-        - [具体代码](#具体代码)
-        
-- [七段经典的Promise](#七段经典的Promise)
 
+<!-- toc -->
 
+- [Promise 核心](#promise-%E6%A0%B8%E5%BF%83)
+- [ES6 Promise细节](#es6-promise%E7%BB%86%E8%8A%82)
+- [动手实现](#%E5%8A%A8%E6%89%8B%E5%AE%9E%E7%8E%B0)
+  * [内部属性](#%E5%86%85%E9%83%A8%E5%B1%9E%E6%80%A7)
+  * [执行器](#%E6%89%A7%E8%A1%8C%E5%99%A8)
+  * [then方法](#then%E6%96%B9%E6%B3%95)
+    + [异步实现](#%E5%BC%82%E6%AD%A5%E5%AE%9E%E7%8E%B0)
+    + [then 返回值](#then-%E8%BF%94%E5%9B%9E%E5%80%BC)
+    + [具体代码](#%E5%85%B7%E4%BD%93%E4%BB%A3%E7%A0%81)
+- [七段经典的Promise](#%E4%B8%83%E6%AE%B5%E7%BB%8F%E5%85%B8%E7%9A%84promise)
+  * [demo1](#demo1)
+  * [demo2](#demo2)
+  * [demo3](#demo3)
+  * [demo4](#demo4)
+  * [demo5](#demo5)
+  * [demo6](#demo6)
+  * [demo7](#demo7)
+- [参考文章](#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0)
 
-- [参考文章](#参考文章)
-    
-
-
-
+<!-- tocstop -->
 
 ## Promise 核心
 - Promise 概括来说是对异步的执行结果的描述对象。（这句话的理解很重要）
