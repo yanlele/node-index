@@ -84,6 +84,9 @@
 - [TheaterJS: 一款十分优秀的打字机效果插件](https://github.com/Zhouzi/TheaterJS)
 - [swiper](https://github.com/nolimits4web/swiper)
 - [countUp.js: 计算数字的前端动画组件](https://github.com/inorganik/countUp.js)
+- [mobile-detect: 同构UA设备识别](https://github.com/hgoebl/mobile-detect.js)
+- [isMobile: 判定是否是移动端](https://github.com/kaimallea/isMobile)
+- [minimist: 处理 node 命令行调用参数](https://github.com/substack/minimist)
 
 
 
