@@ -81,7 +81,6 @@ module.exports = function touch(element, top, bottom) {
     })
 }
 ```
-[代码可以参见：touch](../../../通用功能js模块/jquery/2、touch/touch.js)
 
 
 

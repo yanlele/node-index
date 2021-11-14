@@ -1,3 +1,7 @@
+## 去重的研究
+
+
+```js
 //1、遍历法：
 
 // 最简单数组去重法
@@ -76,3 +80,4 @@ if (!Array.prototype.indexOf) {
         return result;
     }
 }
+```

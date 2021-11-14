@@ -58,7 +58,7 @@ const saveFile = function (data, filename) {
 
 
 ### 一个比较成熟的示例
-- [下载图片](./下载图片.html)
+- [下载图片](下载图片.html)
 
 
 
