@@ -67,6 +67,7 @@
 - [「react进阶」一文吃透React高阶组件(HOC)](https://juejin.cn/post/6940422320427106335)
 - [** 重学react](/books/专题知识库/01、react专题/04、其他/09、重学react/09、重学react.md)
 - [如何科学使用createContext、useReducer、useContext](/books/专题知识库/01、react专题/04、其他/10、如何科学使用createContext、useReducer、useContext/readme.md)
+- [一个重复渲染的问题研究](books/专题知识库/01、react专题/04、其他/11、一个重复渲染的问题研究/readme.md)
 
 ### react hooks
 - [10分钟教你手写8个常用的自定义hooks](https://juejin.im/post/6844904074433789959)

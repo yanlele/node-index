@@ -234,6 +234,16 @@
 ### [前端数据可视化D3.js学习](https://github.com/yanlele/D3.js-learning)
 
 
+### [docker&DevOps](books/专题知识库/14、docker&Devops/readme.md)
+
+
+### [小程序](books/专题知识库/15、小程序/readme.md)
+
+
+### [RXJS学习专题 - 已经放弃（因为看不到收益）](books/专题知识库/16、RXJS学习专题/README.md)
+
+
+
 
 ## 发展与OKR
 
@@ -271,16 +281,6 @@
 ### 专题笔记归类(简书总结)
 
 
-#### [20、docker&DevOps](/book/20、docker&Devops)
-
-
-#### [21、小程序](/book/21、小程序)
-
-
-#### [22、必须要学好英语](/book/22、必须要学好英语)
-
-
-#### [23、RXJS学习专题 - 放弃中（因为看不到收益）](/book/23、RXJS学习专题/23、RXJS学习专题.md)
 
 
 #### [25、自我管理](/book/25、自我管理/readme.md)
