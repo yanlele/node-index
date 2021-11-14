@@ -100,20 +100,21 @@
   - [No.08 内存泄漏](books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#no08-%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F)
   - [No.09 JavaScript中的对象-对象的结构](books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#no09-javascript%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1-%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BB%93%E6%9E%84)
   - [No.10 深入异步](books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#no10-%E6%B7%B1%E5%85%A5%E5%BC%82%E6%AD%A5)
-  - [11、虚拟dom-virtual DOM](/books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#class02-11)
-  - [12、深入mvvm](/books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#class02-12)
-  - [13、深入react理解](/books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#class02-13)
-  - [14、深入Redux架构](/books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#class02-14)
-  - [15、react和vue的区别](/books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#class02-15)
-  - [16、深入call、apply、bind实现原理](/books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#class02-16)
-  - [17、深入理解JavaScript中的尾调用](/books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#class02-17)
-  - [18、V8引擎初步介绍](/books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#class02-18)
-  - [19、node内存优化](/books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#class02-19)
-  - [20、React 性能优化](/books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#class02-20)
-  - [21、深度对比算法研究](/books/专题知识库/05、基础知识点专题/02_03、进阶知识部分21-30.md#class02-21)
-  - [22、从浏览器地址栏输入url到显示页面的步骤(以HTTP为例)](/books/专题知识库/05、基础知识点专题/02_03、进阶知识部分21-30.md#class02-22)
-  - [23、如何进行网站性能优化](/books/专题知识库/05、基础知识点专题/02_03、进阶知识部分21-30.md#class02-23)
-  - [24、9种常见的前端跨域解决方案（详解）](/books/专题知识库/05、基础知识点专题/02_03、进阶知识部分21-30.md#class02-24)
+  - [No.11 虚拟dom-virtual DOM](books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#no11-%E8%99%9A%E6%8B%9Fdom-virtual-dom)
+  - [No.12 深入mvvm](books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#no12-%E6%B7%B1%E5%85%A5mvvm)
+  - [No.13 深入react理解](books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#no13-%E6%B7%B1%E5%85%A5react%E7%90%86%E8%A7%A3)
+  - [No.14 深入Redux架构](books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#no14-%E6%B7%B1%E5%85%A5redux%E6%9E%B6%E6%9E%84)
+  - [No.15 react和vue的区别](books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#no15-react%E5%92%8Cvue%E7%9A%84%E5%8C%BA%E5%88%AB)
+  - [No.16 深入call, apply, bind实现原理](books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#no16-%E6%B7%B1%E5%85%A5call-apply-bind%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86)
+  - [No.17 深入理解JavaScript中的尾调用](books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#no17-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E4%B8%AD%E7%9A%84%E5%B0%BE%E8%B0%83%E7%94%A8)
+  - [No.18 V8引擎初步介绍](books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#no18-v8%E5%BC%95%E6%93%8E%E5%88%9D%E6%AD%A5%E4%BB%8B%E7%BB%8D)
+  - [No.19 node内存优化](books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#no19-node%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96)
+  - [No.20 React 性能优化](books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#no20-react-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
+
+  - [No.21 深度对比算法研究](books/专题知识库/05、基础知识点专题/02_03、进阶知识部分21-30.md#no21-%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6)
+  - [No.22 从浏览器地址栏输入url到显示页面的步骤(以HTTP为例)](books/专题知识库/05、基础知识点专题/02_03、进阶知识部分21-30.md#no22-%E4%BB%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9C%B0%E5%9D%80%E6%A0%8F%E8%BE%93%E5%85%A5url%E5%88%B0%E6%98%BE%E7%A4%BA%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%AD%A5%E9%AA%A4%E4%BB%A5http%E4%B8%BA%E4%BE%8B)
+  - [No.23 如何进行网站性能优化](books/专题知识库/05、基础知识点专题/02_03、进阶知识部分21-30.md#no23-%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%AB%99%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
+  - [24、9种常见的前端跨域解决方案（详解）](https://juejin.im/post/5d1ecb96f265da1b6d404433)
   - [25、浏览器渲染过程与性能优化 **](https://juejin.im/collection/5bab019fe51d452fa9ee45e2)
   - [26、大文件上传和断点续传 **](https://juejin.im/post/5dff8a26e51d4558105420ed)
   - [27、彻底掌握js内存泄漏以及如何避免](https://juejin.im/post/5d5664ebf265da03f3334f13)
@@ -161,31 +162,30 @@
   - [「灵魂之作」2020斩获30道高频JS手撕面试题](https://juejin.cn/post/6870319532955828231)
   - [fe-interview 项目](https://github.com/lgwebdream/FE-Interview/issues)
   - [awesome-coding-js](https://github.com/ConardLi/awesome-coding-js)
+  
     
-    
+             
 
-
-
-    
+### 待研究的问题
 - **待总结的知识点**
-dom react原理                                              
-css布局                                            
-js原型链继承                                          
-fetch取消                                          
-eventloop                                            
-instanceof                                           
-promise封装setstate                                            
-redux基本组成和设计单向数据流                                            
-https协议的过程                                           
-https获取加密密钥的过程                                           
-http的方法有哪几种                                          
-类式继承的方案                                          
-prototype继承的实现                                           
-数字千分位处理，正则和非正则都要实现                                           
-借用构造继承，几种组合继承方式                                          
-看编程代码说出运行结果：                                             
-Process.nextTick，setImmediate 和promise.then 的优先级                                             
-Process.nextTick，promise, setImmediate的优先级                                           
+  dom react原理                                              
+  css布局                                            
+  js原型链继承                                          
+  fetch取消                                          
+  eventloop                                            
+  instanceof                                           
+  promise封装setstate                                            
+  redux基本组成和设计单向数据流                                            
+  https协议的过程                                           
+  https获取加密密钥的过程                                           
+  http的方法有哪几种                                          
+  类式继承的方案                                          
+  prototype继承的实现                                           
+  数字千分位处理，正则和非正则都要实现                                           
+  借用构造继承，几种组合继承方式                                          
+  看编程代码说出运行结果：                                             
+  Process.nextTick，setImmediate 和promise.then 的优先级                                             
+  Process.nextTick，promise, setImmediate的优先级
 
 
 浏览器性能优化 （延后整理）                        
@@ -194,9 +194,9 @@ react-router深入理解（完成）
 整理一下ICSS （延后整理）                   
 [React.CreateContext](https://blog.csdn.net/weixin_33768153/article/details/82668110) （延后整理）                    
 整理 call、apply、bind 实现原理(完成)                                         
-整理和总结 promise、gentator、async/await 的区别                          
+整理和总结 promise、gentator、async/await 的区别
 
-### 待研究的问题
+
 - ES6 class 是怎么样实现的；
 - vue/react 数据是怎么渲染到页面的                           
 - 缓存函数的实现
