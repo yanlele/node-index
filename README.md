@@ -165,8 +165,16 @@
 
 #### [算法学习](books/专题知识库/07、算法学习/readme.md)
 
-
-
+#### [学习javascript数据结构与算法](books/专题知识库/08、学习javascript数据结构与算法/README.md)
+  - [01章、javascript基础](books/专题知识库/08、学习javascript数据结构与算法/README.md#01%E7%AB%A0javascript%E5%9F%BA%E7%A1%80)
+  - [03章、栈](books/专题知识库/08、学习javascript数据结构与算法/README.md#03%E7%AB%A0%E6%A0%88)
+  - [04章、队列](books/专题知识库/08、学习javascript数据结构与算法/README.md#04%E7%AB%A0%E9%98%9F%E5%88%97)
+  - [05章、链表](books/专题知识库/08、学习javascript数据结构与算法/README.md#05%E7%AB%A0%E9%93%BE%E8%A1%A8)
+  - [06章、集合](books/专题知识库/08、学习javascript数据结构与算法/README.md#06%E7%AB%A0%E9%9B%86%E5%90%88)
+  - [07章、字典和散列表](books/专题知识库/08、学习javascript数据结构与算法/README.md#07%E7%AB%A0%E5%AD%97%E5%85%B8%E5%92%8C%E6%95%A3%E5%88%97%E8%A1%A8)
+  - [08章、树](books/专题知识库/08、学习javascript数据结构与算法/README.md#08%E7%AB%A0%E6%A0%91)
+  - [09章、图](books/专题知识库/08、学习javascript数据结构与算法/README.md#09%E7%AB%A0%E5%9B%BE)
+  - [10章、排序和搜索算法](books/专题知识库/08、学习javascript数据结构与算法/README.md#10%E7%AB%A0%E6%8E%92%E5%BA%8F%E5%92%8C%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95)
 
 
 
@@ -208,38 +216,7 @@
 
 
 
-#### [09、学习javascript数据结构与算法](/book/09、学习javascript数据结构与算法)
-- [01章、javascript基础](/book/09、学习javascript数据结构与算法/README.md#class01)
-    - [1.5、面向对象编程](/book/09、学习javascript数据结构与算法/README.md#class01-05)
-- [03章、栈](/book/09、学习javascript数据结构与算法/README.md#class03)
-    - [3.1、栈的创建](/book/09、学习javascript数据结构与算法/README.md#class03-01)
-    - [3.2、从十进制到二进制](/book/09、学习javascript数据结构与算法/README.md#class03-02)
-- [04章、队列](/book/09、学习javascript数据结构与算法/README.md#class04)
-    - [4.1、创建队列](/book/09、学习javascript数据结构与算法/README.md#class04-01)
-    - [4.2、优先队列](/book/09、学习javascript数据结构与算法/README.md#class04-02)
-    - [4.3、循环队列](/book/09、学习javascript数据结构与算法/README.md#class04-03)
-- [05章、链表](/book/09、学习javascript数据结构与算法/README.md#class05)
-    - [5.1、创建一个链表](/book/09、学习javascript数据结构与算法/README.md#class05-01)
-    - [5.2、双向链表](/book/09、学习javascript数据结构与算法/README.md#class05-02)
-- [06章、集合](/book/09、学习javascript数据结构与算法/README.md#class06)
-    - [6.1、创建一个集合](/book/09、学习javascript数据结构与算法/README.md#class06-01)
-    - [6.2、集合操作](/book/09、学习javascript数据结构与算法/README.md#class06-02)
-- [07章、字典和散列表](/book/09、学习javascript数据结构与算法/README.md#class07)
-    - [7.1、字典](/book/09、学习javascript数据结构与算法/README.md#class07-01)
-    - [7.2、散列表](/book/09、学习javascript数据结构与算法/README.md#class07-02)
-- [08章、树](/book/09、学习javascript数据结构与算法/README.md#class08)
-    - [8.1、树的相关术语](/book/09、学习javascript数据结构与算法/README.md#class08-01)
-    - [8.2、二叉树和二叉搜索树](/book/09、学习javascript数据结构与算法/README.md#class08-02)              
-    - [8.3、树的遍历](/book/09、学习javascript数据结构与算法/README.md#class08-03)
-    - [8.4、搜索树中的值](/book/09、学习javascript数据结构与算法/README.md#class08-04)
-- [09章、图](/book/09、学习javascript数据结构与算法/README.md#class09)
-    - [9.1 图的相关术语](/book/09、学习javascript数据结构与算法/README.md#class09-01)
-    - [9.2 图的表示](/book/09、学习javascript数据结构与算法/README.md#class09-02)
-    - [9.3 创建图类](/book/09、学习javascript数据结构与算法/README.md#class09-03)
-    - [9.4 图的遍历](/book/09、学习javascript数据结构与算法/README.md#class09-04)
-- [10章、排序和搜索算法](/book/09、学习javascript数据结构与算法/README.md#class10)
-    - [10.1 排序算法](/book/09、学习javascript数据结构与算法/README.md#class10-01)
-    - [10.2 搜索算法](/book/09、学习javascript数据结构与算法/README.md#class10-02)
+
 
 
 #### [10、DOM和BOM](/book/10、DOM和BOM)
