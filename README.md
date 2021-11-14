@@ -111,6 +111,7 @@
 
 
 
+
 ## 专题知识库
 
 ### [react 专题](books/专题知识库/01、react专题/README.md)
@@ -253,9 +254,6 @@
 ### [性能分析](books/专题知识库/19、性能分析/readme.md)
 
 
-### [源码研究]((https://github.com/Source-Research/main))
-
-
 
 ## 发展与OKR
 
@@ -266,6 +264,8 @@
 - [前端工程化](https://github.com/yanlele/le-cli)
 - [前端工程化 - 模板项目](https://github.com/cli-template-build)
 - [小程序接入redux](https://github.com/yanlele/redux2miniapp)
+
+
 
 ### 在折腾的个人项目
 - [基于vue和express的一个小型电商全栈项目](https://github.com/yanlele/nodeMall)
@@ -279,7 +279,27 @@
 
 
 
+### 研究的项目
+
+
+
+
+### 研究的问题
+
+
+
 ### 源码研究
+- [源码研究]((https://github.com/Source-Research/main))
+
+
+
+
+### 自我管理
+- [待研究知识](books/发展与OKR/06、自我管理/01、待研究知识/README.md)
+- 规划
+- 思考
+
+
 
 
 分割线
