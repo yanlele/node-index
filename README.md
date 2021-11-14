@@ -176,6 +176,7 @@
   - [09章、图](books/专题知识库/08、学习javascript数据结构与算法/README.md#09%E7%AB%A0%E5%9B%BE)
   - [10章、排序和搜索算法](books/专题知识库/08、学习javascript数据结构与算法/README.md#10%E7%AB%A0%E6%8E%92%E5%BA%8F%E5%92%8C%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95)
 
+#### [DOM和BOM](books/专题知识库/09、DOM和BOM/README.md)
 
 
 ## 发展与OKR
@@ -219,7 +220,7 @@
 
 
 
-#### [10、DOM和BOM](/book/10、DOM和BOM)
+
 
 
 #### [11、深入webpack工程化](/book/11、深入webpack工程化/README.md)
