@@ -181,7 +181,7 @@
 ### [DOM和BOM](books/专题知识库/09、DOM和BOM/README.md)
 
 
-### [11、深入webpack工程化](books/专题知识库/10、深入webpack工程化/README.md)
+### [深入webpack工程化](books/专题知识库/10、深入webpack工程化/README.md)
   - [基础](books/专题知识库/10、深入webpack工程化/README.md#%E5%9F%BA%E7%A1%80)
   - [webpack优化问题](books/专题知识库/10、深入webpack工程化/README.md#webpack%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98)
   - [其他补充知识点](books/专题知识库/10、深入webpack工程化/README.md#%E5%85%B6%E4%BB%96%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86%E7%82%B9)
@@ -189,6 +189,34 @@
   - [webpack插件和loader开发](books/专题知识库/10、深入webpack工程化/README.md#webpack%E6%8F%92%E4%BB%B6%E5%92%8Cloader%E5%BC%80%E5%8F%91)
   - [其他](books/专题知识库/10、深入webpack工程化/README.md#%E5%85%B6%E4%BB%96)
   - [遗留问题待解决](books/专题知识库/10、深入webpack工程化/README.md#%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98%E5%BE%85%E8%A7%A3%E5%86%B3)
+
+
+### [学习TypeScript](https://github.com/yanlele/TyepScript-learning)
+- [一文读懂 TypeScript 泛型及应用（ 7.8K字）](https://juejin.im/post/6844904184894980104)
+- [你不知道的 TypeScript 泛型（万字长文，建议收藏）](https://juejin.im/post/6844904196827774990)
+- [1.2W字 | 了不起的 TypeScript 入门教程](https://juejin.im/post/6844904182843965453)
+- [TypeScript 中的声明文件](https://juejin.im/post/6844903869328146440)
+- [结合实例学习 Typescript](https://juejin.im/post/6876981358346895368)
+- [一份不可多得的 TS 学习指南（1.8W字）](https://juejin.im/post/6872111128135073806)
+
+
+
+#### [测试专题](books/专题知识库/11、测试专题/README.md)
+  - [01篇 javascript单元测试框架mochajs详解](#01%E7%AF%87-javascript%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6mochajs%E8%AF%A6%E8%A7%A3)
+  - [02篇 断言库chai](#02%E7%AF%87-%E6%96%AD%E8%A8%80%E5%BA%93chai)
+  - [03篇 代码覆盖率工具 Istanbul 入门教程](#03%E7%AF%87-%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87%E5%B7%A5%E5%85%B7-istanbul-%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B)
+  - [04篇 node层服务端api接口测试](#04%E7%AF%87-node%E5%B1%82%E6%9C%8D%E5%8A%A1%E7%AB%AFapi%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95)
+  - [05篇 TypeScript测试](#05%E7%AF%87-typescript%E6%B5%8B%E8%AF%95)
+  - [06篇 Jest测试框架](#06%E7%AF%87-jest%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6)
+  - [07篇 react测试: jest+enzyme](#07%E7%AF%87-react%E6%B5%8B%E8%AF%95-jestenzyme)
+  - [08篇 E2E](#08%E7%AF%87-e2e)
+  - [其他](#%E5%85%B6%E4%BB%96)
+
+
+
+
+
+
 
 
 
@@ -227,44 +255,6 @@
 
 
 ### 专题笔记归类(简书总结)
-
-
-
-
-
-
-
-
-
-
-#### [11、深入webpack工程化](/book/11、深入webpack工程化/README.md)
-- [基础](/book/11、深入webpack工程化/README.md#%E5%9F%BA%E7%A1%80)
-- [webpack优化问题](/book/11、深入webpack工程化/README.md#webpack%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98)
-- [其他补充知识点](/book/11、深入webpack工程化/README.md#%E5%85%B6%E4%BB%96%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86%E7%82%B9)
-- [实战案例](/book/11、深入webpack工程化/README.md#%E5%AE%9E%E6%88%98%E6%A1%88%E4%BE%8B)
-- [webpack插件和loader开发](/book/11、深入webpack工程化/README.md#webpack%E6%8F%92%E4%BB%B6%E5%92%8Cloader%E5%BC%80%E5%8F%91)
-- [其他](/book/11、深入webpack工程化/README.md#%E5%85%B6%E4%BB%96)
-- [遗留问题待解决](/book/11、深入webpack工程化/README.md#%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98%E5%BE%85%E8%A7%A3%E5%86%B3)
-
-
-#### [12、学习TypeScript](https://github.com/yanlele/TyepScript-learning)
-- [一文读懂 TypeScript 泛型及应用（ 7.8K字）](https://juejin.im/post/6844904184894980104)
-- [你不知道的 TypeScript 泛型（万字长文，建议收藏）](https://juejin.im/post/6844904196827774990)
-- [1.2W字 | 了不起的 TypeScript 入门教程](https://juejin.im/post/6844904182843965453)
-- [TypeScript 中的声明文件](https://juejin.im/post/6844903869328146440)
-- [结合实例学习 Typescript](https://juejin.im/post/6876981358346895368)
-- [一份不可多得的 TS 学习指南（1.8W字）](https://juejin.im/post/6872111128135073806)
-
-
-#### [13、测试专题](/book/13、测试专题)
-- [01篇、javascript单元测试框架mochajs详解](/book/13、测试专题/README.md#01%E7%AF%87javascript%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6mochajs%E8%AF%A6%E8%A7%A3)
-- [02篇、断言库chai](/book/13、测试专题/README.md#02%E7%AF%87%E6%96%AD%E8%A8%80%E5%BA%93chai)
-- [03篇、代码覆盖率工具 Istanbul 入门教程](/book/13、测试专题/README.md#03%E7%AF%87%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87%E5%B7%A5%E5%85%B7-istanbul-%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B)
-- [04篇、node层服务端api接口测试](/book/13、测试专题/README.md#04%E7%AF%87node%E5%B1%82%E6%9C%8D%E5%8A%A1%E7%AB%AFapi%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95)
-- [05篇、TypeScript测试](/book/13、测试专题/README.md#05%E7%AF%87typescript%E6%B5%8B%E8%AF%95)
-- [06篇、Jest测试框架](/book/13、测试专题/README.md#06%E7%AF%87jest%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6)
-- [07篇、react测试：jest+enzyme](/book/13、测试专题/README.md#07%E7%AF%87react%E6%B5%8B%E8%AF%95jestenzyme)
-- [其他](/book/13、测试专题/README.md#%E5%85%B6%E4%BB%96)
 
 
 #### [14、深入浅出MySQL 数据库开发 优化与管理维护](/book/14、深入浅出MySQL%20数据库开发%20优化与管理维护)
