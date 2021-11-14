@@ -201,21 +201,37 @@
 
 
 
-#### [测试专题](books/专题知识库/11、测试专题/README.md)
-  - [01篇 javascript单元测试框架mochajs详解](#01%E7%AF%87-javascript%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6mochajs%E8%AF%A6%E8%A7%A3)
-  - [02篇 断言库chai](#02%E7%AF%87-%E6%96%AD%E8%A8%80%E5%BA%93chai)
-  - [03篇 代码覆盖率工具 Istanbul 入门教程](#03%E7%AF%87-%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87%E5%B7%A5%E5%85%B7-istanbul-%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B)
-  - [04篇 node层服务端api接口测试](#04%E7%AF%87-node%E5%B1%82%E6%9C%8D%E5%8A%A1%E7%AB%AFapi%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95)
-  - [05篇 TypeScript测试](#05%E7%AF%87-typescript%E6%B5%8B%E8%AF%95)
-  - [06篇 Jest测试框架](#06%E7%AF%87-jest%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6)
-  - [07篇 react测试: jest+enzyme](#07%E7%AF%87-react%E6%B5%8B%E8%AF%95-jestenzyme)
-  - [08篇 E2E](#08%E7%AF%87-e2e)
-  - [其他](#%E5%85%B6%E4%BB%96)
+### [测试专题](books/专题知识库/11、测试专题/README.md)
+  - [01篇 javascript单元测试框架mochajs详解](books/专题知识库/11、测试专题/README.md#01%E7%AF%87-javascript%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6mochajs%E8%AF%A6%E8%A7%A3)
+  - [02篇 断言库chai](books/专题知识库/11、测试专题/README.md#02%E7%AF%87-%E6%96%AD%E8%A8%80%E5%BA%93chai)
+  - [03篇 代码覆盖率工具 Istanbul 入门教程](books/专题知识库/11、测试专题/README.md#03%E7%AF%87-%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87%E5%B7%A5%E5%85%B7-istanbul-%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B)
+  - [04篇 node层服务端api接口测试](books/专题知识库/11、测试专题/README.md#04%E7%AF%87-node%E5%B1%82%E6%9C%8D%E5%8A%A1%E7%AB%AFapi%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95)
+  - [05篇 TypeScript测试](books/专题知识库/11、测试专题/README.md#05%E7%AF%87-typescript%E6%B5%8B%E8%AF%95)
+  - [06篇 Jest测试框架](books/专题知识库/11、测试专题/README.md#06%E7%AF%87-jest%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6)
+  - [07篇 react测试: jest+enzyme](books/专题知识库/11、测试专题/README.md#07%E7%AF%87-react%E6%B5%8B%E8%AF%95-jestenzyme)
+  - [08篇 E2E](books/专题知识库/11、测试专题/README.md#08%E7%AF%87-e2e)
+  - [其他](books/专题知识库/11、测试专题/README.md#%E5%85%B6%E4%BB%96)
 
 
 
-#### [深入浅出MySQL 数据库开发 优化与管理维护](books/专题知识库/12、深入浅出MySQL%20数据库开发%20优化与管理维护/README.md)
+### [深入浅出MySQL 数据库开发 优化与管理维护](books/专题知识库/12、深入浅出MySQL%20数据库开发%20优化与管理维护/README.md)
 
+
+
+### [Linux相关学习](books/专题知识库/13、Linux相关知识点/README.md)
+  - [基础部分](books/专题知识库/13、Linux相关知识点/01、基础部分/README.md)
+  - [应用服务器](books/专题知识库/13、Linux相关知识点/02、应用服务部分/README.md)
+  - [数据库服务](books/专题知识库/13、Linux相关知识点/03、数据库服务/README.md)
+  - [其他服务](books/专题知识库/13、Linux相关知识点/04、其他服务/README.md)
+  - [shell](books/专题知识库/13、Linux相关知识点/05、shell/readme.md)
+    - [Shell重定向 ＆>file、2>&1、1>&2 、/dev/null的区别](https://blog.csdn.net/u011630575/article/details/52151995)
+  - [vim](books/专题知识库/13、Linux相关知识点/06、vim/readme.md)
+  - [nginx](books/专题知识库/13、Linux相关知识点/07、nginx/readme.md)
+  - [CI&CD](books/专题知识库/13、Linux相关知识点/08、CI&CD/readme.md)
+
+
+
+### [前端数据可视化D3.js学习](https://github.com/yanlele/D3.js-learning)
 
 
 
@@ -253,30 +269,6 @@
 
 
 ### 专题笔记归类(简书总结)
-
-
-
-
-
-#### [15、Linux相关学习](/book/15、Linux相关知识点/README.md)
-- [基础部分](/book/15、Linux相关知识点/01、基础部分/README.md)
-- [应用服务器](/book/15、Linux相关知识点/02、应用服务部分/README.md)
-- [数据库服务](/book/15、Linux相关知识点/03、数据库服务/README.md)
-- [其他服务](/book/15、Linux相关知识点/04、其他服务/README.md)
-- [shell](/book/15、Linux相关知识点/05、shell)
-- [vim](/book/15、Linux相关知识点/06、vim)
-- [nginx](/book/15、Linux相关知识点/07、nginx)
-- [CI&CD](/book/15、Linux相关知识点/08、CI&CD)
-
-
-#### [16、前端数据可视化D3.js学习](https://github.com/yanlele/D3.js-learning)
-
-
-#### [17、数据结构与算法专题 - todo](/book/17、数据结构与算法专题)
-
-
-#### [18、flutter 基础入门](/book/18、flutter%20基础入门)
-- [「 Dart Js Ts 」给前端工程师的一张Dart语言入场券](https://juejin.im/post/6844904153064407054)
 
 
 #### [20、docker&DevOps](/book/20、docker&Devops)
