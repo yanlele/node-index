@@ -278,8 +278,4 @@ router.afterEach((to, from, next) => {
 export default router;
 ```
 
-## 10、关于vuex的用法
-- [好好意会一下这个官方示例](../../1月/shopping-cart)
-
-
 
