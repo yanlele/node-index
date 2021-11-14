@@ -1,21 +1,25 @@
 ## <p id='class1'>一、由浅入深Webpack</p>
 
+<!-- toc -->
 
-- [01、最基本的使用webpack](#class1-item01)
-- [02、打包js](#class1-item02)
-- [03、编译ES6/7](#class1-item03)
-- [04、编译打包TS](#class1-item04)
-- [05、提取公用代码](#class1-item05)
-- [06、代码分割和懒加载](#class1-item06)
-- [07、处理css: style-loader](#class1-item07)
-- [08、处理css: css-loader](#class1-item08)
-- [09、配置less/sass](#class1-item09)
-- [10、提取css](#class1-item10)
-- [11、postCss-in-webpack](#class1-item11)
-- [12、Tree-shaking](#class1-item12)
+- [No.01 最基本的使用webpack](#no01-%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E4%BD%BF%E7%94%A8webpack)
+- [No.02 打包js](#no02-%E6%89%93%E5%8C%85js)
+  * [2.1、命令行打包js](#21%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%89%93%E5%8C%85js)
+  * [2.2、通过配置文件打包js](#22%E9%80%9A%E8%BF%87%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85js)
+- [No.03 编译ES6/7](#no03-%E7%BC%96%E8%AF%91es67)
+- [No.04 编译打包TS](#no04-%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85ts)
+- [No.05 提取公用代码](#no05-%E6%8F%90%E5%8F%96%E5%85%AC%E7%94%A8%E4%BB%A3%E7%A0%81)
+- [No.06 代码分割和懒加载](#no06-%E4%BB%A3%E7%A0%81%E5%88%86%E5%89%B2%E5%92%8C%E6%87%92%E5%8A%A0%E8%BD%BD)
+- [No.07 处理css: style-loader](#no07-%E5%A4%84%E7%90%86css-style-loader)
+- [No.08 处理css: css-loader](#no08-%E5%A4%84%E7%90%86css-css-loader)
+- [No.09 配置less/sass](#no09-%E9%85%8D%E7%BD%AElesssass)
+- [No.10 提取css](#no10-%E6%8F%90%E5%8F%96css)
+- [No.11 postCss-in-webpack](#no11-postcss-in-webpack)
+- [No.12 Tree-shaking](#no12-tree-shaking)
 
+<!-- tocstop -->
 
-### <p id='class1-item01'>01、最基本的使用webpack</p>
+### No.01 最基本的使用webpack
 全局安装webpack之后，可以通过这几个命令来使用最简单的webpack                          
 `webpack -h` 查看基本信息             
 `webpack -v` 查看版本信息             
@@ -23,7 +27,7 @@
 `webpack --config <webpack.config.js>` 最基本的命令行打包
 
 
-### <p id='class1-item02'>02、打包js</p>
+### No.02 打包js
 
 webpack支持es6, CommonJS, AMD。
 
@@ -54,7 +58,7 @@ module.exports = {
 [代码示例](./02、打包js/)
 
 
-### <p id='class1-item03'>03、编译ES6/7</p>
+### No.03 编译ES6/7
 首先我们要安装babel 编译文件 `npm install --save-dev babel-loader babel-core`          
 同时还需要安装 `npm install babel-preset-env --save-dev`           
 这个时候，给webpack.config.js一个基础配置：
@@ -158,7 +162,7 @@ babel配置文件的写法： .babelrc
 请看示例文件： [03、编译ES6](./03、编译ES6/)
 
 
-### <p id='class1-item04'>04、编译打包TS</p>
+### No.04 编译打包TS
 是JS的超集      
 需要安装 `typescript-loader`:               
 npm install typescript ts-loader --save-dev                     
@@ -255,7 +259,7 @@ typings install lodash
 typeRoots：这个配置项，是告诉ts打包编译的时候，要到什么地方去找申明文件，而且这个时候我们的文件也会有报错提示了
 
 
-### <p id='class1-item05'>05、提取公用代码</p>
+### No.05 提取公用代码
 目的：减少代码冗余、提高加载速度                    
 这个时候我们就需要使用到 CommonsChunkPlugin 插件                      
 这个插件已经内置到webpack里面去了： `webpack.optimize.CommonsChunkPlugin`
@@ -381,7 +385,7 @@ module.exports = {
 };
 ```
 
-### <div id='class1-item06'>06、代码分割和懒加载<div>
+### No.06 代码分割和懒加载
 
 > 实现代码分割的办法：
 
@@ -586,7 +590,7 @@ module.exports = {
 };
 ```
 
-### <div id="class1-item07">07、处理css: style-loader</div>
+### No.07 处理css: style-loader
 css的引入：                     
 css modules             
 配置 less / sass               
@@ -726,7 +730,7 @@ module.exports =function(css) {
 这个知识点儿很冷门，可以不做重点掌握。
 
 
-### <div id="class1-item08">08、处理css: css-loader</div>
+### No.08 处理css: css-loader
 options:                
 alias: 解析别名                 
 importLoader: 支持@import                 
@@ -787,7 +791,7 @@ app.innerHTML = `<div class="${base.box}"></div>`
 localIdentName: '[path][name]_[local]_[hash:base64:5]'类似于这样的格式来定义我们的的className
 
 
-### <div id="class1-item09">09、配置less/sass</div>
+### No.09 配置less/sass
 首先要分别安装下面模块：                            
 npm install less-loader less --save-dev                         
 npm install sass-loader node-sass --save-dev
@@ -825,7 +829,7 @@ module: {
 [本节实例请见: 09、配置less/sass](./09、处理css%20配置less和sass/)
 
 
-### <div id="class1-item10">10、提取css</div>
+### No.10 提取css
 之前的样式实际上是在js中的， 现在我们要把css提取出来形成独立的文件
 extract-loader                  
 ExtractTextWebpackPlugin 这种是主流最常用的方式                           
@@ -900,7 +904,7 @@ import(
 [本节实例请见: 10、处理css 提取css](./10、处理css%20提取css/)
 
 
-### <div id="class1-item11">11、postCss-in-webpack</div>
+### No.11 postCss-in-webpack
 postCss 是一个强大的处理css的一个工具                    
 **安装和使用**                 
 npm install postcss postcss-loader autoprefixer cssnano postcss-cssnext --save-dev                                                      
@@ -967,7 +971,7 @@ postcss-url
 postcss-assets
 
 
-### <div id="class1-item12">12、Tree-shaking</div>
+### No.12 Tree-shaking
 Tree-shaking 如果有一些代码没有用到的，或者不需要的资源。在上线的时候，不需要，这个时候就要祛除这样的的代码，tree-shaking就是做这个用处的。                  
 JS Tree Shaking             
 CSS Tree Shaking
@@ -1079,4 +1083,4 @@ module.exports = {
 但是感觉PurifyCSS是打包失败的，把我所有的样式文件都祛除掉了；                                         
 失败的原因是这个插件是不可以和css-loader里面的modules同用的；去掉css-loader中的modules,这样就可以正常使用了。
 
-与这部分相关的知识点可以直接查看：[purifycss-webpack](https://github.com/webpack-contrib/purifycss-webpack)   
+与这部分相关的知识点可以直接查看：[purifycss-webpack](https://github.com/webpack-contrib/purifycss-webpack)

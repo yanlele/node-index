@@ -160,12 +160,12 @@
 ### [基础知识点总结 ** 非常重要](/books/专题知识库/05、基础知识点专题/README.md)
 
 
-#### [canvas总结](books/专题知识库/06、canvas总结/README.md)
+### [canvas总结](books/专题知识库/06、canvas总结/README.md)
 
 
-#### [算法学习](books/专题知识库/07、算法学习/readme.md)
+### [算法学习](books/专题知识库/07、算法学习/readme.md)
 
-#### [学习javascript数据结构与算法](books/专题知识库/08、学习javascript数据结构与算法/README.md)
+### [学习javascript数据结构与算法](books/专题知识库/08、学习javascript数据结构与算法/README.md)
   - [01章、javascript基础](books/专题知识库/08、学习javascript数据结构与算法/README.md#01%E7%AB%A0javascript%E5%9F%BA%E7%A1%80)
   - [03章、栈](books/专题知识库/08、学习javascript数据结构与算法/README.md#03%E7%AB%A0%E6%A0%88)
   - [04章、队列](books/专题知识库/08、学习javascript数据结构与算法/README.md#04%E7%AB%A0%E9%98%9F%E5%88%97)
@@ -176,7 +176,18 @@
   - [09章、图](books/专题知识库/08、学习javascript数据结构与算法/README.md#09%E7%AB%A0%E5%9B%BE)
   - [10章、排序和搜索算法](books/专题知识库/08、学习javascript数据结构与算法/README.md#10%E7%AB%A0%E6%8E%92%E5%BA%8F%E5%92%8C%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95)
 
-#### [DOM和BOM](books/专题知识库/09、DOM和BOM/README.md)
+### [DOM和BOM](books/专题知识库/09、DOM和BOM/README.md)
+
+
+### [11、深入webpack工程化](/book/11、深入webpack工程化/README.md)
+- [基础](/book/11、深入webpack工程化/README.md#%E5%9F%BA%E7%A1%80)
+- [webpack优化问题](/book/11、深入webpack工程化/README.md#webpack%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98)
+- [其他补充知识点](/book/11、深入webpack工程化/README.md#%E5%85%B6%E4%BB%96%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86%E7%82%B9)
+- [实战案例](/book/11、深入webpack工程化/README.md#%E5%AE%9E%E6%88%98%E6%A1%88%E4%BE%8B)
+- [webpack插件和loader开发](/book/11、深入webpack工程化/README.md#webpack%E6%8F%92%E4%BB%B6%E5%92%8Cloader%E5%BC%80%E5%8F%91)
+- [其他](/book/11、深入webpack工程化/README.md#%E5%85%B6%E4%BB%96)
+- [遗留问题待解决](/book/11、深入webpack工程化/README.md#%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98%E5%BE%85%E8%A7%A3%E5%86%B3)
+
 
 
 ## 发展与OKR
