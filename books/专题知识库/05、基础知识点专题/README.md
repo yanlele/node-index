@@ -1,6 +1,6 @@
 # 基础知识点儿总结
 
-- 基础知识部分
+- **基础知识部分**
   - [No.1 高度已知: 左右各300px, 中间自适应](books/专题知识库/05、基础知识点专题/01_01、基础知识部分1-10.md#no1-%E9%AB%98%E5%BA%A6%E5%B7%B2%E7%9F%A5-%E5%B7%A6%E5%8F%B3%E5%90%84300px-%E4%B8%AD%E9%97%B4%E8%87%AA%E9%80%82%E5%BA%94)
   - [No.02 上下居中方案](books/专题知识库/05、基础知识点专题/01_01、基础知识部分1-10.md#no02-%E4%B8%8A%E4%B8%8B%E5%B1%85%E4%B8%AD%E6%96%B9%E6%A1%88)
   - [No.03 css盒模型与BFC](books/专题知识库/05、基础知识点专题/01_01、基础知识部分1-10.md#no03-css%E7%9B%92%E6%A8%A1%E5%9E%8B%E4%B8%8Ebfc)
@@ -47,7 +47,6 @@
   - [No.44 offsetWidth/offsetHeight,clientWidth/clientHeight与scrollWidth/scrollHeight的区别](books/专题知识库/05、基础知识点专题/01_05、基础知识部分41-50.md#no44-offsetwidthoffsetheightclientwidthclientheight%E4%B8%8Escrollwidthscrollheight%E7%9A%84%E5%8C%BA%E5%88%AB)
   - [No.45 请实现一个Event类,继承自此类的对象都会拥有两个方法on,off,once和trigger](books/专题知识库/05、基础知识点专题/01_05、基础知识部分41-50.md#no45-%E8%AF%B7%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAevent%E7%B1%BB%E7%BB%A7%E6%89%BF%E8%87%AA%E6%AD%A4%E7%B1%BB%E7%9A%84%E5%AF%B9%E8%B1%A1%E9%83%BD%E4%BC%9A%E6%8B%A5%E6%9C%89%E4%B8%A4%E4%B8%AA%E6%96%B9%E6%B3%95onoffonce%E5%92%8Ctrigger)
   - [No.46 海量数据的处理-10亿个数中找出最大的10000个数](books/专题知识库/05、基础知识点专题/01_05、基础知识部分41-50.md#no46-%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A4%84%E7%90%86-10%E4%BA%BF%E4%B8%AA%E6%95%B0%E4%B8%AD%E6%89%BE%E5%87%BA%E6%9C%80%E5%A4%A7%E7%9A%8410000%E4%B8%AA%E6%95%B0)
-    
   - [47、浏览器相关灵魂拷问](/books/专题知识库/05、基础知识点专题/01_47、浏览器相关灵魂拷问.md)
   - [48、九种跨域方式实现原理（完整版）](https://juejin.im/post/5c23993de51d457b8c1f4ee1)
   - [49、options 请求的理解](https://juejin.im/post/5edef7b2e51d45784213ca24)
@@ -88,17 +87,19 @@
   - [84、学一下xss](https://wizardforcel.gitbooks.io/xss-naxienian/content/0.html)
   
     
-- 进阶知识部分
-  - [01、渲染机制](/books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#class02-01)
-  - [02、JS运行机制](/books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#class02-02)
-  - [03、提升页面性能的方法](/books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#class02-03)
-  - [04、错误监控](/books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#class02-04)
-  - [05、TCP和UDP的区别](/books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#class02-05)
-  - [06、express middleware](/books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#class02-06)
-  - [07、vue双向绑定原理](/books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#class02-07)
-  - [08、内存泄漏](/books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#class02-08)
-  - [09、JavaScript中的对象-对象的结构](/books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#class02-09)
-  - [10、深入异步](/books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#class02-10)
+
+
+- **进阶知识部分**
+  - [No.01 渲染机制](books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#no01-%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6)
+  - [No.02 JS运行机制](books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#no02-js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6)
+  - [No.03 提升页面性能的方法](books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#no03-%E6%8F%90%E5%8D%87%E9%A1%B5%E9%9D%A2%E6%80%A7%E8%83%BD%E7%9A%84%E6%96%B9%E6%B3%95)
+  - [No.04 错误监控](books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#no04-%E9%94%99%E8%AF%AF%E7%9B%91%E6%8E%A7)
+  - [No.05 TCP和UDP的区别](books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#no05-tcp%E5%92%8Cudp%E7%9A%84%E5%8C%BA%E5%88%AB)
+  - [No.06 express middleware](books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#no06-express-middleware)
+  - [No.07 vue双向绑定原理](books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#no07-vue%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E5%8E%9F%E7%90%86)
+  - [No.08 内存泄漏](books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#no08-%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F)
+  - [No.09 JavaScript中的对象-对象的结构](books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#no09-javascript%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1-%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BB%93%E6%9E%84)
+  - [No.10 深入异步](books/专题知识库/05、基础知识点专题/02_01、进阶知识部分1-10.md#no10-%E6%B7%B1%E5%85%A5%E5%BC%82%E6%AD%A5)
   - [11、虚拟dom-virtual DOM](/books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#class02-11)
   - [12、深入mvvm](/books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#class02-12)
   - [13、深入react理解](/books/专题知识库/05、基础知识点专题/02_02、进阶知识部分11-20.md#class02-13)
@@ -133,7 +134,9 @@
   - [45、node中的CommonJS](https://juejin.cn/post/6844903778194292744)
     
     
-- 其他
+
+
+- **其他**
   - [FE-interview](https://github.com/qiu-deqing/FE-interview)
   - [Weekly-FE-Interview](https://github.com/airuikun/Weekly-FE-Interview)
   - [夯实JS主要知识点](https://juejin.im/post/5d54e78be51d4561b072dce6#6)
@@ -160,8 +163,11 @@
   - [awesome-coding-js](https://github.com/ConardLi/awesome-coding-js)
     
     
+
+
+
     
-- 待总结的知识点
+- **待总结的知识点**
 dom react原理                                              
 css布局                                            
 js原型链继承                                          
