@@ -1,20 +1,24 @@
 # canvas 初级
 
-目录：     
-- [1、基础使用](#class01)
-- [2、绘制形状](#class02)
-- [3、绘制路径](#class03)
-- [4、添加样式和颜色](#class04)
-- [5、绘制文本](#class05)
-- [6、绘制图片](#class06)
-- [7、状态的保存和恢复](#class07)
-- [8、变形](#class08)
-- [9、合成](#class09)
-- [10、剪裁路径](#class10)
-- [11、动画](#class11)
+目录：
 
+<!-- toc -->
 
-## <div id='class01'>1、基础使用</div>
+- [No.1 基础使用](#no1-%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8)
+- [No.02 绘制形状](#no02-%E7%BB%98%E5%88%B6%E5%BD%A2%E7%8A%B6)
+- [No.03 绘制路径](#no03-%E7%BB%98%E5%88%B6%E8%B7%AF%E5%BE%84)
+- [No.04 添加样式和颜色](#no04-%E6%B7%BB%E5%8A%A0%E6%A0%B7%E5%BC%8F%E5%92%8C%E9%A2%9C%E8%89%B2)
+- [No.05 绘制文本](#no05-%E7%BB%98%E5%88%B6%E6%96%87%E6%9C%AC)
+- [No.06 绘制图片](#no06-%E7%BB%98%E5%88%B6%E5%9B%BE%E7%89%87)
+- [No.07 状态的保存和恢复](#no07-%E7%8A%B6%E6%80%81%E7%9A%84%E4%BF%9D%E5%AD%98%E5%92%8C%E6%81%A2%E5%A4%8D)
+- [No.08 变形](#no08-%E5%8F%98%E5%BD%A2)
+- [No.09 合成](#no09-%E5%90%88%E6%88%90)
+- [No.10 剪裁路径](#no10-%E5%89%AA%E8%A3%81%E8%B7%AF%E5%BE%84)
+- [No.11 动画](#no11-%E5%8A%A8%E7%94%BB)
+
+<!-- tocstop -->
+
+## No.1 基础使用
 ### 1.1 <canvas>元素
 ```html
 <canvas id="tutorial" width="300" height="300"></canvas>
@@ -119,7 +123,7 @@ if (canvas.getContext){
 [详情请见示例02](./demo/02、一个简单的例子.html)
 
 
-## <div id='class02'>2、绘制形状</div>
+## No.02 绘制形状
 <canvas> 只支持一种原生的 图形绘制：矩形。所有其他图形都至少需要生成一种路径(path)。不过，我们拥有众多路径生成的方法让复杂图形的绘制成为了可能。            
 canvast 提供了三种方法绘制矩形：            
 `fillRect(x, y, width, height)` 绘制一个填充的矩形       
@@ -146,7 +150,7 @@ draw();
 [详情请见示例3](./demo/03、绘制矩形的三种方式.html)
 
 
-## <div id='class03'>3、绘制路径</div>
+## No.03 绘制路径
 路径是通过不同颜色和宽度的线段或曲线相连形成的不同形状的点的集合。一个路径，甚至一个子路径，都是闭合的。        
 > 使用路径绘制图形需要一些额外的步骤：        
 
@@ -372,7 +376,7 @@ arcTo方法的说明：
 ```
 [示例11](./demo/11、绘制三次贝塞尔曲线.html)
 
-## <div id='class04'>4、添加样式和颜色</div>
+## No.04 添加样式和颜色
 在前面的绘制矩形章节中，只用到了默认的线条和颜色。           
 ​如果想要给图形上色，有两个重要的属性可以做到。            
 > 基本使用方式
@@ -548,7 +552,7 @@ miter(默认)：通过延伸相连部分的外边缘，使其相交于一点，�
 [17、虚线](./demo/17、虚线.html)
 
 
-## <div id='class05'>5、绘制文本</div>
+## No.05 绘制文本
 >  canvas 提供了两种方法来渲染文本:            
 
 1、fillText(text, x, y [, maxWidth])     
@@ -583,7 +587,7 @@ draw();
 **direction = value**       
 文本方向。可能的值包括：ltr, rtl, inherit。默认值是 inherit。
 
-## <div id='class06'>6、绘制图片</div>
+## No.06 绘制图片
 - 由零开始创建图片          
 **创建<img>元素**           
 ```javascript
@@ -642,7 +646,7 @@ drawImage(image, x, y, width, height)
 前4个是定义图像源的切片位置和大小，          
 后4个则是定义切片的目标显示位置和大小。                
 
-## <div id='class07'>7、状态的保存和恢复</div>            
+## No.07 状态的保存和恢复            
 Saving and restoring state是绘制复杂图形时必不可少的操作。      
 **save()和restore()**                    
 save 和 restore 方法是用来保存和恢复 canvas 状态的，都没有参数。         
@@ -659,7 +663,7 @@ strokeStyle, fillStyle, globalAlpha, lineWidth, lineCap, lineJoin, miterLimit, s
 每一次调用 restore 方法，上一个保存的状态就从栈中弹出，所有设定都恢复。(类似数组的pop())                
 
 
-## <div id='class08'>8、变形</div>           
+## No.08 变形           
 - **translate(x, y)**             
 用来移动 canvas 的原点到指定的位置           
 translate方法接受两个参数。x 是左右偏移量，y 是上下偏移量，如右图所示。          
@@ -748,7 +752,7 @@ function draw(){
 ```
 
 
-## <div id='class09'>9、合成</div>
+## No.09 合成
 在前面的所有例子中、，我们总是将一个图形画在另一个之上，对于其他更多的情况，仅仅这样是远远不够的。比如，对合成的图形来说，绘制顺序会有限制。不过，我们可以利用 `globalCompositeOperation` 属性来改变这种状况。                  
 `globalCompositeOperation = type`
 ```javascript
@@ -813,7 +817,7 @@ red: #ff0000
 只有新图像会被保留，其余的全部被清除(边透明)             
 
 
-## <div id='class10'>10、剪裁路径</div>          
+## No.10 剪裁路径          
 `clip()`                
 把已经创建的路径转换成裁剪路径。                
 裁剪路径的作用是遮罩。只显示裁剪路径内的区域，裁剪路径外的区域会被隐藏。                
@@ -834,7 +838,7 @@ function draw(){
     draw();
 ```
 
-## <div id='class11'>11、动画</div>          
+## No.11 动画          
 **动画的基本步骤**                 
 1、 `清空canvas`               
 再绘制每一帧动画之前，需要清空所有。清空所有最简单的做法就是 `clearRect()` 方法             
