@@ -197,7 +197,7 @@
 
 ### vue
 - [vue项目实际开发总结](books/发展与OKR/03、研究的项目/01、vue项目实际开发总结/README.md)
-- [MVVM双向绑定原理研究与简单的双向绑定实现(包含简单的事件绑定)](books/专题知识库/05、基础知识点专题/other/11、双向绑定核心代码)
+- [MVVM双向绑定原理研究与简单的双向绑定实现(包含简单的事件绑定)](books/专题知识库/05、基础知识点专题/other/11、双向绑定核心代码/README.md)
 - [深度解析！Vue3 & React Hooks 新UI组件原理：Modal 弹窗](https://juejin.im/post/6844904100992155661)
 - [** 史上最强vue总结---面试开发全靠它了](https://juejin.im/post/6850037277675454478)
 - [vue使用的转场特效插件 - vueg](https://github.com/jaweii/vueg)
