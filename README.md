@@ -12,20 +12,12 @@
 
 <!-- toc -->
 
-- [知识库](#%E7%9F%A5%E8%AF%86%E5%BA%93)
-  * [前端技术知识](#%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E7%9F%A5%E8%AF%86)
-  * [技术生态圈](#%E6%8A%80%E6%9C%AF%E7%94%9F%E6%80%81%E5%9C%88)
-  * [Node技术知识](#node%E6%8A%80%E6%9C%AF%E7%9F%A5%E8%AF%86)
-  * [日常采坑与记录](#%E6%97%A5%E5%B8%B8%E9%87%87%E5%9D%91%E4%B8%8E%E8%AE%B0%E5%BD%95)
-  * [优秀技术文档收集与前沿技术归档](#%E4%BC%98%E7%A7%80%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E6%94%B6%E9%9B%86%E4%B8%8E%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF%E5%BD%92%E6%A1%A3)
-  * [优秀的开源项目](#%E4%BC%98%E7%A7%80%E7%9A%84%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE)
-  * [基础功能探索](#%E5%9F%BA%E7%A1%80%E5%8A%9F%E8%83%BD%E6%8E%A2%E7%B4%A2)
 - [专题知识库](#%E4%B8%93%E9%A2%98%E7%9F%A5%E8%AF%86%E5%BA%93)
   * [react 专题](#react-%E4%B8%93%E9%A2%98)
   * [ECMAScript最新语法](#ecmascript%E6%9C%80%E6%96%B0%E8%AF%AD%E6%B3%95)
   * [css专题](#css%E4%B8%93%E9%A2%98)
   * [javascript设计模式](#javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)
-  * [基础知识点总结 ** 非常重要](#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93--%E9%9D%9E%E5%B8%B8%E9%87%8D%E8%A6%81)
+  * [基础知识点总结_非常重要](#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93_%E9%9D%9E%E5%B8%B8%E9%87%8D%E8%A6%81)
   * [canvas总结](#canvas%E6%80%BB%E7%BB%93)
   * [算法学习](#%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0)
   * [学习javascript数据结构与算法](#%E5%AD%A6%E4%B9%A0javascript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95)
@@ -40,9 +32,17 @@
   * [小程序](#%E5%B0%8F%E7%A8%8B%E5%BA%8F)
   * [RXJS学习专题 - 已经放弃（因为看不到收益）](#rxjs%E5%AD%A6%E4%B9%A0%E4%B8%93%E9%A2%98---%E5%B7%B2%E7%BB%8F%E6%94%BE%E5%BC%83%E5%9B%A0%E4%B8%BA%E7%9C%8B%E4%B8%8D%E5%88%B0%E6%94%B6%E7%9B%8A)
   * [微前端专题](#%E5%BE%AE%E5%89%8D%E7%AB%AF%E4%B8%93%E9%A2%98)
-  * [好用的库与框架 **](#%E5%A5%BD%E7%94%A8%E7%9A%84%E5%BA%93%E4%B8%8E%E6%A1%86%E6%9E%B6-)
+  * [好用的库与框架](#%E5%A5%BD%E7%94%A8%E7%9A%84%E5%BA%93%E4%B8%8E%E6%A1%86%E6%9E%B6)
   * [性能分析](#%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90)
   * [vue](#vue)
+- [知识库](#%E7%9F%A5%E8%AF%86%E5%BA%93)
+  * [前端技术知识](#%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E7%9F%A5%E8%AF%86)
+  * [技术生态圈](#%E6%8A%80%E6%9C%AF%E7%94%9F%E6%80%81%E5%9C%88)
+  * [Node技术知识](#node%E6%8A%80%E6%9C%AF%E7%9F%A5%E8%AF%86)
+  * [日常采坑与记录](#%E6%97%A5%E5%B8%B8%E9%87%87%E5%9D%91%E4%B8%8E%E8%AE%B0%E5%BD%95)
+  * [优秀技术文档收集与前沿技术归档](#%E4%BC%98%E7%A7%80%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%E6%94%B6%E9%9B%86%E4%B8%8E%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF%E5%BD%92%E6%A1%A3)
+  * [优秀的开源项目](#%E4%BC%98%E7%A7%80%E7%9A%84%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE)
+  * [基础功能探索](#%E5%9F%BA%E7%A1%80%E5%8A%9F%E8%83%BD%E6%8E%A2%E7%B4%A2)
 - [发展与OKR](#%E5%8F%91%E5%B1%95%E4%B8%8Eokr)
   * [发布的npm开源模块](#%E5%8F%91%E5%B8%83%E7%9A%84npm%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9D%97)
   * [在折腾的个人项目](#%E5%9C%A8%E6%8A%98%E8%85%BE%E7%9A%84%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE)
@@ -52,6 +52,162 @@
   * [自我管理](#%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86)
 
 <!-- tocstop -->
+
+## 专题知识库
+
+### [react 专题](books/专题知识库/01、react专题/README.md)
+- [基础语法使用](books/专题知识库/01、react专题/README.md#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%BD%BF%E7%94%A8)
+- [状态管理](books/专题知识库/01、react专题/README.md#%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86)
+- [react-router](books/专题知识库/01、react专题/README.md#react-router)
+- [其他知识点和实战相关知识点](books/专题知识库/01、react专题/README.md#%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86%E7%82%B9%E5%92%8C%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9)
+- [react hooks](books/专题知识库/01、react专题/README.md#react-hooks)
+- [源码分析](books/专题知识库/01、react专题/README.md#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90)
+- [其他经典文章](books/专题知识库/01、react专题/README.md#%E5%85%B6%E4%BB%96%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0)
+- [其他的一些研究话题](books/专题知识库/01、react专题/README.md#%E5%85%B6%E4%BB%96%E7%9A%84%E4%B8%80%E4%BA%9B%E7%A0%94%E7%A9%B6%E8%AF%9D%E9%A2%98)
+
+
+
+### [ECMAScript最新语法](/books/专题知识库/02、ECMAScript最新语法/README.md)
+- [let和const](/books/专题知识库/02、ECMAScript最新语法/1、let和const/let和const.md)
+- [变量的解构赋值](/books/专题知识库/02、ECMAScript最新语法/2、变量的解构赋值/变量的解构赋值.md)
+- [字符串的扩展](/books/专题知识库/02、ECMAScript最新语法/3、字符串的扩展/3、字符串的扩展.md)
+- [数值的扩展和Math对象的扩展](/books/专题知识库/02、ECMAScript最新语法/4、数值的扩展和Math对象的扩展/4、数值的扩展和Math对象的扩展.md)
+- [数组的扩展](/books/专题知识库/02、ECMAScript最新语法/5、数组的扩展/README.md)
+- [函数的扩展](/books/专题知识库/02、ECMAScript最新语法/6、函数的扩展/README.md)
+- [对象的扩展](/books/专题知识库/02、ECMAScript最新语法/7、对象的扩展/README.md)
+- [Proxy和Reflect](/books/专题知识库/02、ECMAScript最新语法/8、Proxy和Reflect/README.md)
+- [Set和Map数据结构](/books/专题知识库/02、ECMAScript最新语法/9、Set和Map数据结构/README.md)
+- [Iterator 和 for...of 循环](/books/专题知识库/02、ECMAScript最新语法/10、Iterator%20和%20for...of%20循环/README.md)
+- [Generator](/books/专题知识库/02、ECMAScript最新语法/11、Generator/README.md)
+- [Promise](/books/专题知识库/02、ECMAScript最新语法/12、Promise对象/README.md)
+- [其他知识点儿的总结](/books/专题知识库/02、ECMAScript最新语法/13、其他知识点儿的总结)
+- [es10的新特性](/books/专题知识库/02、ECMAScript最新语法/14、es10的新特性/readme.md)
+
+
+
+### [css专题](/books/专题知识库/03、css3专题/README.md)
+- [基础知识](/books/专题知识库/03、css3专题/README.md#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
+- [进阶与案例](/books/专题知识库/03、css3专题/README.md#%E8%BF%9B%E9%98%B6%E4%B8%8E%E6%A1%88%E4%BE%8B)
+- [其他知识总结](/books/专题知识库/03、css3专题/README.md#%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93)
+
+
+### [javascript设计模式](/books/专题知识库/04、js设计模式/README.md)
+- [第二篇、创建型设计模式](/books/专题知识库/04、js设计模式/02篇、创建型设计模式/README.md)
+- [第三篇、结构型设计模式](/books/专题知识库/04、js设计模式/03篇、结构型设计模式/README.md)
+- [第四篇、行为型设计模式](/books/专题知识库/04、js设计模式/04篇、行为型设计模式/README.md)
+- [第五篇、技巧型设计模式](/books/专题知识库/04、js设计模式/05篇、技巧型设计模式/README.md)
+- [第六篇、架构型设计模式](/books/专题知识库/04、js设计模式/06篇、架构型设计模式/README.md)
+
+
+### [基础知识点总结_非常重要](/books/专题知识库/05、基础知识点专题/README.md)
+
+
+### [canvas总结](books/专题知识库/06、canvas总结/README.md)
+
+
+### [算法学习](books/专题知识库/07、算法学习/readme.md)
+
+
+### [学习javascript数据结构与算法](books/专题知识库/08、学习javascript数据结构与算法/README.md)
+- [01章、javascript基础](books/专题知识库/08、学习javascript数据结构与算法/README.md#01%E7%AB%A0javascript%E5%9F%BA%E7%A1%80)
+- [03章、栈](books/专题知识库/08、学习javascript数据结构与算法/README.md#03%E7%AB%A0%E6%A0%88)
+- [04章、队列](books/专题知识库/08、学习javascript数据结构与算法/README.md#04%E7%AB%A0%E9%98%9F%E5%88%97)
+- [05章、链表](books/专题知识库/08、学习javascript数据结构与算法/README.md#05%E7%AB%A0%E9%93%BE%E8%A1%A8)
+- [06章、集合](books/专题知识库/08、学习javascript数据结构与算法/README.md#06%E7%AB%A0%E9%9B%86%E5%90%88)
+- [07章、字典和散列表](books/专题知识库/08、学习javascript数据结构与算法/README.md#07%E7%AB%A0%E5%AD%97%E5%85%B8%E5%92%8C%E6%95%A3%E5%88%97%E8%A1%A8)
+- [08章、树](books/专题知识库/08、学习javascript数据结构与算法/README.md#08%E7%AB%A0%E6%A0%91)
+- [09章、图](books/专题知识库/08、学习javascript数据结构与算法/README.md#09%E7%AB%A0%E5%9B%BE)
+- [10章、排序和搜索算法](books/专题知识库/08、学习javascript数据结构与算法/README.md#10%E7%AB%A0%E6%8E%92%E5%BA%8F%E5%92%8C%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95)
+
+
+### [DOM和BOM](books/专题知识库/09、DOM和BOM/README.md)
+
+
+### [深入webpack工程化](books/专题知识库/10、深入webpack工程化/README.md)
+- [基础](books/专题知识库/10、深入webpack工程化/README.md#%E5%9F%BA%E7%A1%80)
+- [webpack优化问题](books/专题知识库/10、深入webpack工程化/README.md#webpack%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98)
+- [其他补充知识点](books/专题知识库/10、深入webpack工程化/README.md#%E5%85%B6%E4%BB%96%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86%E7%82%B9)
+- [实战案例](books/专题知识库/10、深入webpack工程化/README.md#%E5%AE%9E%E6%88%98%E6%A1%88%E4%BE%8B)
+- [webpack插件和loader开发](books/专题知识库/10、深入webpack工程化/README.md#webpack%E6%8F%92%E4%BB%B6%E5%92%8Cloader%E5%BC%80%E5%8F%91)
+- [其他](books/专题知识库/10、深入webpack工程化/README.md#%E5%85%B6%E4%BB%96)
+- [遗留问题待解决](books/专题知识库/10、深入webpack工程化/README.md#%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98%E5%BE%85%E8%A7%A3%E5%86%B3)
+
+
+### [学习TypeScript](https://github.com/yanlele/TyepScript-learning)
+- [一文读懂 TypeScript 泛型及应用（ 7.8K字）](https://juejin.im/post/6844904184894980104)
+- [你不知道的 TypeScript 泛型（万字长文，建议收藏）](https://juejin.im/post/6844904196827774990)
+- [1.2W字 | 了不起的 TypeScript 入门教程](https://juejin.im/post/6844904182843965453)
+- [TypeScript 中的声明文件](https://juejin.im/post/6844903869328146440)
+- [结合实例学习 Typescript](https://juejin.im/post/6876981358346895368)
+- [一份不可多得的 TS 学习指南（1.8W字）](https://juejin.im/post/6872111128135073806)
+
+
+
+### [测试专题](books/专题知识库/11、测试专题/README.md)
+- [01篇 javascript单元测试框架mochajs详解](books/专题知识库/11、测试专题/README.md#01%E7%AF%87-javascript%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6mochajs%E8%AF%A6%E8%A7%A3)
+- [02篇 断言库chai](books/专题知识库/11、测试专题/README.md#02%E7%AF%87-%E6%96%AD%E8%A8%80%E5%BA%93chai)
+- [03篇 代码覆盖率工具 Istanbul 入门教程](books/专题知识库/11、测试专题/README.md#03%E7%AF%87-%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87%E5%B7%A5%E5%85%B7-istanbul-%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B)
+- [04篇 node层服务端api接口测试](books/专题知识库/11、测试专题/README.md#04%E7%AF%87-node%E5%B1%82%E6%9C%8D%E5%8A%A1%E7%AB%AFapi%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95)
+- [05篇 TypeScript测试](books/专题知识库/11、测试专题/README.md#05%E7%AF%87-typescript%E6%B5%8B%E8%AF%95)
+- [06篇 Jest测试框架](books/专题知识库/11、测试专题/README.md#06%E7%AF%87-jest%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6)
+- [07篇 react测试: jest+enzyme](books/专题知识库/11、测试专题/README.md#07%E7%AF%87-react%E6%B5%8B%E8%AF%95-jestenzyme)
+- [08篇 E2E](books/专题知识库/11、测试专题/README.md#08%E7%AF%87-e2e)
+- [其他](books/专题知识库/11、测试专题/README.md#%E5%85%B6%E4%BB%96)
+
+
+
+### [深入浅出MySQL 数据库开发 优化与管理维护](books/专题知识库/12、深入浅出MySQL%20数据库开发%20优化与管理维护/README.md)
+
+
+
+### [Linux相关学习](books/专题知识库/13、Linux相关知识点/README.md)
+- [基础部分](books/专题知识库/13、Linux相关知识点/01、基础部分/README.md)
+- [应用服务器](books/专题知识库/13、Linux相关知识点/02、应用服务部分/README.md)
+- [数据库服务](books/专题知识库/13、Linux相关知识点/03、数据库服务/README.md)
+- [其他服务](books/专题知识库/13、Linux相关知识点/04、其他服务/README.md)
+- [shell](books/专题知识库/13、Linux相关知识点/05、shell/readme.md)
+  - [Shell重定向 ＆>file、2>&1、1>&2 、/dev/null的区别](https://blog.csdn.net/u011630575/article/details/52151995)
+- [vim](books/专题知识库/13、Linux相关知识点/06、vim/readme.md)
+- [nginx](books/专题知识库/13、Linux相关知识点/07、nginx/readme.md)
+- [CI&CD](books/专题知识库/13、Linux相关知识点/08、CI&CD/readme.md)
+
+
+
+### [前端数据可视化D3.js学习](https://github.com/yanlele/D3.js-learning)
+
+
+### [docker&DevOps](books/专题知识库/14、docker&Devops/readme.md)
+
+
+### [小程序](books/专题知识库/15、小程序/readme.md)
+
+
+### [RXJS学习专题 - 已经放弃（因为看不到收益）](books/专题知识库/16、RXJS学习专题/README.md)
+
+
+
+### [微前端专题](books/专题知识库/17、微前端专题/readme.md)
+
+
+### [好用的库与框架](books/专题知识库/18、好用的库与框架推荐/readme.md)
+
+
+### [性能分析](books/专题知识库/19、性能分析/readme.md)
+
+
+### vue
+- [vue项目实际开发总结](books/发展与OKR/03、研究的项目/01、vue项目实际开发总结/README.md)
+- [MVVM双向绑定原理研究与简单的双向绑定实现(包含简单的事件绑定)](books/专题知识库/05、基础知识点专题/other/11、双向绑定核心代码)
+- [深度解析！Vue3 & React Hooks 新UI组件原理：Modal 弹窗](https://juejin.im/post/6844904100992155661)
+- [** 史上最强vue总结---面试开发全靠它了](https://juejin.im/post/6850037277675454478)
+- [vue使用的转场特效插件 - vueg](https://github.com/jaweii/vueg)
+- [全面解析 vue3.0 diff算法](https://juejin.im/post/6861960532048642061)
+
+
+
+
+
+
 
 ## 知识库
 
@@ -488,157 +644,6 @@
 
 
 
-## 专题知识库
-
-### [react 专题](books/专题知识库/01、react专题/README.md)
-- [基础语法使用](books/专题知识库/01、react专题/README.md#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E4%BD%BF%E7%94%A8)
-- [状态管理](books/专题知识库/01、react专题/README.md#%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86)
-- [react-router](books/专题知识库/01、react专题/README.md#react-router)
-- [其他知识点和实战相关知识点](books/专题知识库/01、react专题/README.md#%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86%E7%82%B9%E5%92%8C%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9)
-- [react hooks](books/专题知识库/01、react专题/README.md#react-hooks)
-- [源码分析](books/专题知识库/01、react专题/README.md#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90)
-- [其他经典文章](books/专题知识库/01、react专题/README.md#%E5%85%B6%E4%BB%96%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0)
-- [其他的一些研究话题](books/专题知识库/01、react专题/README.md#%E5%85%B6%E4%BB%96%E7%9A%84%E4%B8%80%E4%BA%9B%E7%A0%94%E7%A9%B6%E8%AF%9D%E9%A2%98)
-
-
-
-### [ECMAScript最新语法](/books/专题知识库/02、ECMAScript最新语法/README.md)
-- [let和const](/books/专题知识库/02、ECMAScript最新语法/1、let和const/let和const.md)
-- [变量的解构赋值](/books/专题知识库/02、ECMAScript最新语法/2、变量的解构赋值/变量的解构赋值.md)
-- [字符串的扩展](/books/专题知识库/02、ECMAScript最新语法/3、字符串的扩展/3、字符串的扩展.md)
-- [数值的扩展和Math对象的扩展](/books/专题知识库/02、ECMAScript最新语法/4、数值的扩展和Math对象的扩展/4、数值的扩展和Math对象的扩展.md)
-- [数组的扩展](/books/专题知识库/02、ECMAScript最新语法/5、数组的扩展/README.md)
-- [函数的扩展](/books/专题知识库/02、ECMAScript最新语法/6、函数的扩展/README.md)
-- [对象的扩展](/books/专题知识库/02、ECMAScript最新语法/7、对象的扩展/README.md)
-- [Proxy和Reflect](/books/专题知识库/02、ECMAScript最新语法/8、Proxy和Reflect/README.md)
-- [Set和Map数据结构](/books/专题知识库/02、ECMAScript最新语法/9、Set和Map数据结构/README.md)
-- [Iterator 和 for...of 循环](/books/专题知识库/02、ECMAScript最新语法/10、Iterator%20和%20for...of%20循环/README.md)
-- [Generator](/books/专题知识库/02、ECMAScript最新语法/11、Generator/README.md)
-- [Promise](/books/专题知识库/02、ECMAScript最新语法/12、Promise对象/README.md)
-- [其他知识点儿的总结](/books/专题知识库/02、ECMAScript最新语法/13、其他知识点儿的总结)
-- [es10的新特性](/books/专题知识库/02、ECMAScript最新语法/14、es10的新特性/readme.md)
-
-
-
-### [css专题](/books/专题知识库/03、css3专题/README.md)
-- [基础知识](/books/专题知识库/03、css3专题/README.md#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
-- [进阶与案例](/books/专题知识库/03、css3专题/README.md#%E8%BF%9B%E9%98%B6%E4%B8%8E%E6%A1%88%E4%BE%8B)
-- [其他知识总结](/books/专题知识库/03、css3专题/README.md#%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93)
-
-
-### [javascript设计模式](/books/专题知识库/04、js设计模式/README.md)
-- [第二篇、创建型设计模式](/books/专题知识库/04、js设计模式/02篇、创建型设计模式/README.md)
-- [第三篇、结构型设计模式](/books/专题知识库/04、js设计模式/03篇、结构型设计模式/README.md)
-- [第四篇、行为型设计模式](/books/专题知识库/04、js设计模式/04篇、行为型设计模式/README.md)
-- [第五篇、技巧型设计模式](/books/专题知识库/04、js设计模式/05篇、技巧型设计模式/README.md)
-- [第六篇、架构型设计模式](/books/专题知识库/04、js设计模式/06篇、架构型设计模式/README.md)
-
-
-### [基础知识点总结 ** 非常重要](/books/专题知识库/05、基础知识点专题/README.md)
-
-
-### [canvas总结](books/专题知识库/06、canvas总结/README.md)
-
-
-### [算法学习](books/专题知识库/07、算法学习/readme.md)
-
-
-### [学习javascript数据结构与算法](books/专题知识库/08、学习javascript数据结构与算法/README.md)
-  - [01章、javascript基础](books/专题知识库/08、学习javascript数据结构与算法/README.md#01%E7%AB%A0javascript%E5%9F%BA%E7%A1%80)
-  - [03章、栈](books/专题知识库/08、学习javascript数据结构与算法/README.md#03%E7%AB%A0%E6%A0%88)
-  - [04章、队列](books/专题知识库/08、学习javascript数据结构与算法/README.md#04%E7%AB%A0%E9%98%9F%E5%88%97)
-  - [05章、链表](books/专题知识库/08、学习javascript数据结构与算法/README.md#05%E7%AB%A0%E9%93%BE%E8%A1%A8)
-  - [06章、集合](books/专题知识库/08、学习javascript数据结构与算法/README.md#06%E7%AB%A0%E9%9B%86%E5%90%88)
-  - [07章、字典和散列表](books/专题知识库/08、学习javascript数据结构与算法/README.md#07%E7%AB%A0%E5%AD%97%E5%85%B8%E5%92%8C%E6%95%A3%E5%88%97%E8%A1%A8)
-  - [08章、树](books/专题知识库/08、学习javascript数据结构与算法/README.md#08%E7%AB%A0%E6%A0%91)
-  - [09章、图](books/专题知识库/08、学习javascript数据结构与算法/README.md#09%E7%AB%A0%E5%9B%BE)
-  - [10章、排序和搜索算法](books/专题知识库/08、学习javascript数据结构与算法/README.md#10%E7%AB%A0%E6%8E%92%E5%BA%8F%E5%92%8C%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95)
-
-
-### [DOM和BOM](books/专题知识库/09、DOM和BOM/README.md)
-
-
-### [深入webpack工程化](books/专题知识库/10、深入webpack工程化/README.md)
-  - [基础](books/专题知识库/10、深入webpack工程化/README.md#%E5%9F%BA%E7%A1%80)
-  - [webpack优化问题](books/专题知识库/10、深入webpack工程化/README.md#webpack%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98)
-  - [其他补充知识点](books/专题知识库/10、深入webpack工程化/README.md#%E5%85%B6%E4%BB%96%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86%E7%82%B9)
-  - [实战案例](books/专题知识库/10、深入webpack工程化/README.md#%E5%AE%9E%E6%88%98%E6%A1%88%E4%BE%8B)
-  - [webpack插件和loader开发](books/专题知识库/10、深入webpack工程化/README.md#webpack%E6%8F%92%E4%BB%B6%E5%92%8Cloader%E5%BC%80%E5%8F%91)
-  - [其他](books/专题知识库/10、深入webpack工程化/README.md#%E5%85%B6%E4%BB%96)
-  - [遗留问题待解决](books/专题知识库/10、深入webpack工程化/README.md#%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98%E5%BE%85%E8%A7%A3%E5%86%B3)
-
-
-### [学习TypeScript](https://github.com/yanlele/TyepScript-learning)
-- [一文读懂 TypeScript 泛型及应用（ 7.8K字）](https://juejin.im/post/6844904184894980104)
-- [你不知道的 TypeScript 泛型（万字长文，建议收藏）](https://juejin.im/post/6844904196827774990)
-- [1.2W字 | 了不起的 TypeScript 入门教程](https://juejin.im/post/6844904182843965453)
-- [TypeScript 中的声明文件](https://juejin.im/post/6844903869328146440)
-- [结合实例学习 Typescript](https://juejin.im/post/6876981358346895368)
-- [一份不可多得的 TS 学习指南（1.8W字）](https://juejin.im/post/6872111128135073806)
-
-
-
-### [测试专题](books/专题知识库/11、测试专题/README.md)
-  - [01篇 javascript单元测试框架mochajs详解](books/专题知识库/11、测试专题/README.md#01%E7%AF%87-javascript%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6mochajs%E8%AF%A6%E8%A7%A3)
-  - [02篇 断言库chai](books/专题知识库/11、测试专题/README.md#02%E7%AF%87-%E6%96%AD%E8%A8%80%E5%BA%93chai)
-  - [03篇 代码覆盖率工具 Istanbul 入门教程](books/专题知识库/11、测试专题/README.md#03%E7%AF%87-%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87%E5%B7%A5%E5%85%B7-istanbul-%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B)
-  - [04篇 node层服务端api接口测试](books/专题知识库/11、测试专题/README.md#04%E7%AF%87-node%E5%B1%82%E6%9C%8D%E5%8A%A1%E7%AB%AFapi%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95)
-  - [05篇 TypeScript测试](books/专题知识库/11、测试专题/README.md#05%E7%AF%87-typescript%E6%B5%8B%E8%AF%95)
-  - [06篇 Jest测试框架](books/专题知识库/11、测试专题/README.md#06%E7%AF%87-jest%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6)
-  - [07篇 react测试: jest+enzyme](books/专题知识库/11、测试专题/README.md#07%E7%AF%87-react%E6%B5%8B%E8%AF%95-jestenzyme)
-  - [08篇 E2E](books/专题知识库/11、测试专题/README.md#08%E7%AF%87-e2e)
-  - [其他](books/专题知识库/11、测试专题/README.md#%E5%85%B6%E4%BB%96)
-
-
-
-### [深入浅出MySQL 数据库开发 优化与管理维护](books/专题知识库/12、深入浅出MySQL%20数据库开发%20优化与管理维护/README.md)
-
-
-
-### [Linux相关学习](books/专题知识库/13、Linux相关知识点/README.md)
-  - [基础部分](books/专题知识库/13、Linux相关知识点/01、基础部分/README.md)
-  - [应用服务器](books/专题知识库/13、Linux相关知识点/02、应用服务部分/README.md)
-  - [数据库服务](books/专题知识库/13、Linux相关知识点/03、数据库服务/README.md)
-  - [其他服务](books/专题知识库/13、Linux相关知识点/04、其他服务/README.md)
-  - [shell](books/专题知识库/13、Linux相关知识点/05、shell/readme.md)
-    - [Shell重定向 ＆>file、2>&1、1>&2 、/dev/null的区别](https://blog.csdn.net/u011630575/article/details/52151995)
-  - [vim](books/专题知识库/13、Linux相关知识点/06、vim/readme.md)
-  - [nginx](books/专题知识库/13、Linux相关知识点/07、nginx/readme.md)
-  - [CI&CD](books/专题知识库/13、Linux相关知识点/08、CI&CD/readme.md)
-
-
-
-### [前端数据可视化D3.js学习](https://github.com/yanlele/D3.js-learning)
-
-
-### [docker&DevOps](books/专题知识库/14、docker&Devops/readme.md)
-
-
-### [小程序](books/专题知识库/15、小程序/readme.md)
-
-
-### [RXJS学习专题 - 已经放弃（因为看不到收益）](books/专题知识库/16、RXJS学习专题/README.md)
-
-
-
-### [微前端专题](books/专题知识库/17、微前端专题/readme.md)
-
-
-### [好用的库与框架 **](books/专题知识库/18、好用的库与框架推荐/readme.md)
-
-
-### [性能分析](books/专题知识库/19、性能分析/readme.md)
-
-
-### vue
-- [vue项目实际开发总结](books/发展与OKR/03、研究的项目/01、vue项目实际开发总结/README.md)
-- [MVVM双向绑定原理研究与简单的双向绑定实现(包含简单的事件绑定)](books/专题知识库/05、基础知识点专题/other/11、双向绑定核心代码)
-- [深度解析！Vue3 & React Hooks 新UI组件原理：Modal 弹窗](https://juejin.im/post/6844904100992155661)
-- [** 史上最强vue总结---面试开发全靠它了](https://juejin.im/post/6850037277675454478)
-- [vue使用的转场特效插件 - vueg](https://github.com/jaweii/vueg)
-- [全面解析 vue3.0 diff算法](https://juejin.im/post/6861960532048642061)
-
-
 
 ## 发展与OKR
 
@@ -674,7 +679,7 @@
 
 
 ### 源码研究
-- [源码研究]((https://github.com/Source-Research/main))
+- [源码研究](https://github.com/Source-Research/main)
 
 
 
