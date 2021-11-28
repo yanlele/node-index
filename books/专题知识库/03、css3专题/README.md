@@ -35,3 +35,4 @@
 - [Some CSS tricks,一些 CSS 常用样式](https://github.com/QiShaoXuan/css_tricks)
 - [CSS 奇思妙想边框动画](https://juejin.cn/post/6918921604160290830)
 - [超详|2020年你不应该错过的CSS新特性](https://juejin.cn/post/6886258269137043464)
+- [slider轮播研究-纯css实现.html](books/专题知识库/03、css3专题/Other/06、slider轮播研究/01、纯css实现.html)

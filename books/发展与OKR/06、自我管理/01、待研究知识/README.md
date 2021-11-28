@@ -36,7 +36,7 @@
 - RPC 原理是什么
 - 研究一下pnpm
 - 什么是幽灵依赖，如何放置幽灵依赖
-- 如何让 json 转为 style 样式字符串， 适用于小程序
+- [如何让 json 转为 style 样式字符串， 适用于小程序](books/知识库/01、前端技术知识/25、thumbStyle/README.md)
 
 
 

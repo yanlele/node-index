@@ -260,7 +260,10 @@
 - [实现Web端自定义截屏](https://juejin.cn/post/6924368956950052877)
 - [Chrome DevTools之NetWork面板](https://juejin.im/post/6844904036085301261)
 - [重新认识 package.json](https://juejin.cn/post/6844904159226003463)
-
+- [Object.assign()与深拷贝](books/知识库/01、前端技术知识/23、Object.assign()与深拷贝/README.md)
+- [前端展示太长，截取为点点点](books/知识库/01、前端技术知识/24、前端展示太长，截取为点点点/README.md)
+- [如何让 json 转为 style 样式字符串， 适用于小程序](books/知识库/01、前端技术知识/25、thumbStyle/README.md)
+- [Three.js零基础入门教程](http://www.yanhuangxueyuan.com/Three.js/)
 
 
 
