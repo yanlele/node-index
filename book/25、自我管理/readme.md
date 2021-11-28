@@ -30,6 +30,14 @@
 - 错误日志上报
 - 如何删除大对象里面，固定某key, 且对应value为字符串的一个数据
 - react实现点击外部退出折叠面板类似功能
+- 如何帅气封装 request
+- 研究一下 Object.prototype.hasOwnProperty
+- 研究一下 array-move
+- RPC 原理是什么
+- 研究一下pnpm
+- 什么是幽灵依赖，如何放置幽灵依赖
+- 如何让 json 转为 style 样式字符串， 适用于小程序
+
 
 
 
@@ -37,9 +45,15 @@
 - 划词技术栈有哪些
 - 研究一下 babel polyfill 与 babel-preset-env 以及 babel 插件
 - 熟练使用和和构架微前端应用
+  - 主子应用是如何通信？
 - 研究一下水印的原理，如何通过水印噪点来追踪截图人？
 - toolTip 是如何实现的，如何对齐的，如何计算的
 - formily 原理是啥子， 有没有什么值得参考的？
 - 拖拽主键是怎么生成和实现的
+- 生产环境使用 es6 与 boundless
+- 研究babel , 如何 自动给 react FC 添加 memo， 以及自动给 FC 里面的方法添加 `usePersistFn`
+
+
+
 
 ## 目标和计划
