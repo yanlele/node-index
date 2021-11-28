@@ -74,3 +74,4 @@
     
 ## 其他
 - [不想痛失薪资普调和年终奖？试试自动化测试！（基础篇）](https://juejin.im/post/6844904194600599560)
+- [mocha测试post和get请求](books/专题知识库/11、测试专题/其他/01、mocha测试post和get请求/README.md)

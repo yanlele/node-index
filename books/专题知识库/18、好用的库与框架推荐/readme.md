@@ -86,7 +86,9 @@
 - [countUp.js: 计算数字的前端动画组件](https://github.com/inorganik/countUp.js)
 - [mobile-detect: 通过UA设备识别, 获取设备信息](https://github.com/hgoebl/mobile-detect.js)
 - [isMobile: 判定是否是移动端](https://github.com/kaimallea/isMobile)
+- [ua-parser-js: 通过UA设备识别, 获取设备信息](https://github.com/faisalman/ua-parser-js)  
 - [minimist: 处理 node 命令行调用参数](https://github.com/substack/minimist)
+- [jsonschema: JSON Schema 验证](https://github.com/tdegrunt/jsonschema)
 
 
 
@@ -139,6 +141,8 @@
 - [terminal 开始有色彩了: chalk **](https://github.com/chalk/chalk)
 - [prompt](https://github.com/flatiron/prompt)
 - [glob functionality for node.js](https://github.com/isaacs/node-glob)
+- [commander: 命令行工具](https://github.com/tj/commander.js)
+
 
 
 ### 项目体系
