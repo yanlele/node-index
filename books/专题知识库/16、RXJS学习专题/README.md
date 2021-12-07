@@ -5,9 +5,9 @@
 [learn-rxjs-operators](https://github.com/RxJS-CN/learn-rxjs-operators) - Learn RxJS 中文版 (通过清晰的示例来学习 RxJS 5 操作符) 
 
 ## 目录
-- [RXJS入门](books/专题知识库/16、RXJS学习专题/docs/02、RXJS入门.md)
-- [操作符基础](books/专题知识库/16、RXJS学习专题/docs/03、操作符.md)
-- [创建数据流](books/专题知识库/16、RXJS学习专题/docs/04、创建数据流.md)
+- [RXJS入门](/books/专题知识库/16、RXJS学习专题/docs/02、RXJS入门.md)
+- [操作符基础](/books/专题知识库/16、RXJS学习专题/docs/03、操作符.md)
+- [创建数据流](/books/专题知识库/16、RXJS学习专题/docs/04、创建数据流.md)
     - create
     - of
     - range
@@ -20,7 +20,7 @@
     - fromEventPattern
     - ajax
     - defer
-- [合并数据流操作](books/专题知识库/16、RXJS学习专题/docs/05-01、合并数据流.md)
+- [合并数据流操作](/books/专题知识库/16、RXJS学习专题/docs/05-01、合并数据流.md)
     - concat
     - merge
     - zip
@@ -29,7 +29,7 @@
     - race
     - startWith
     - forkJoin
-- [合并数据流 - 高阶操作](books/专题知识库/16、RXJS学习专题/docs/05-02、合并数据流%20-%20高阶操作.md)
+- [合并数据流 - 高阶操作](/books/专题知识库/16、RXJS学习专题/docs/05-02、合并数据流%20-%20高阶操作.md)
     - concatAll
     - mergeAll
     - zipAll
@@ -41,7 +41,7 @@
 
 
 ## 整理的其他资料
-- [rxjs整理学习](books/专题知识库/16、RXJS学习专题/docs/01、基础整理.md)
+- [rxjs整理学习](/books/专题知识库/16、RXJS学习专题/docs/01、基础整理.md)
 - [专题源码](https://github.com/yanlele/node-index-core/tree/master/packages/book/23%E3%80%81RXJS)
 
 

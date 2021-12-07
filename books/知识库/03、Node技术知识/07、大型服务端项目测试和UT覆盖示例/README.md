@@ -137,4 +137,4 @@
     "test-cov": "node ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha"
   }
 ```
-或者也可以参见：[基础单元测试](books/知识库/03、Node技术知识/06、单元测试/README.md)
+或者也可以参见：[基础单元测试](/books/知识库/03、Node技术知识/06、单元测试/README.md)

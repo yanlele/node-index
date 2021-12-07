@@ -1,31 +1,31 @@
 # Linux相关知识点
 
 目录
-- [基础部分](books/专题知识库/13、Linux相关知识点/01、基础部分/README.md)
-  - [01、前置知识](books/专题知识库/13、Linux相关知识点/01、基础部分/README.md#class01-01)
-  - [02、SSH](books/专题知识库/13、Linux相关知识点/01、基础部分/README.md#class01-02)
-  - [03、软件命令](books/专题知识库/13、Linux相关知识点/01、基础部分/README.md#class01-03)
-  - [04、服务器硬件资源相关命令](books/专题知识库/13、Linux相关知识点/01、基础部分/README.md#class01-04)
-  - [05、文件操作命令行](books/专题知识库/13、Linux相关知识点/01、基础部分/README.md#class01-05)
-  - [06、文本编辑器vim](books/专题知识库/13、Linux相关知识点/01、基础部分/README.md#class01-06)
-  - [07、系统级命令操作用户](books/专题知识库/13、Linux相关知识点/01、基础部分/README.md#class01-07)
-  - [08、防火墙相关](books/专题知识库/13、Linux相关知识点/01、基础部分/README.md#class01-08)
-  - [09、提权与文件上传和下载](books/专题知识库/13、Linux相关知识点/01、基础部分/README.md#class01-09)
+- [基础部分](/books/专题知识库/13、Linux相关知识点/01、基础部分/README.md)
+  - [01、前置知识](/books/专题知识库/13、Linux相关知识点/01、基础部分/README.md#class01-01)
+  - [02、SSH](/books/专题知识库/13、Linux相关知识点/01、基础部分/README.md#class01-02)
+  - [03、软件命令](/books/专题知识库/13、Linux相关知识点/01、基础部分/README.md#class01-03)
+  - [04、服务器硬件资源相关命令](/books/专题知识库/13、Linux相关知识点/01、基础部分/README.md#class01-04)
+  - [05、文件操作命令行](/books/专题知识库/13、Linux相关知识点/01、基础部分/README.md#class01-05)
+  - [06、文本编辑器vim](/books/专题知识库/13、Linux相关知识点/01、基础部分/README.md#class01-06)
+  - [07、系统级命令操作用户](/books/专题知识库/13、Linux相关知识点/01、基础部分/README.md#class01-07)
+  - [08、防火墙相关](/books/专题知识库/13、Linux相关知识点/01、基础部分/README.md#class01-08)
+  - [09、提权与文件上传和下载](/books/专题知识库/13、Linux相关知识点/01、基础部分/README.md#class01-09)
     
-- [应用服务器](books/专题知识库/13、Linux相关知识点/02、应用服务部分/README.md)    
+- [应用服务器](/books/专题知识库/13、Linux相关知识点/02、应用服务部分/README.md)    
 
-- [数据库服务](books/专题知识库/13、Linux相关知识点/03、数据库服务/README.md)
+- [数据库服务](/books/专题知识库/13、Linux相关知识点/03、数据库服务/README.md)
 
-- [其他服务](books/专题知识库/13、Linux相关知识点/04、其他服务/README.md)
+- [其他服务](/books/专题知识库/13、Linux相关知识点/04、其他服务/README.md)
 
-- [shell](books/专题知识库/13、Linux相关知识点/05、shell/readme.md)
+- [shell](/books/专题知识库/13、Linux相关知识点/05、shell/readme.md)
   - [Shell重定向 ＆>file、2>&1、1>&2 、/dev/null的区别](https://blog.csdn.net/u011630575/article/details/52151995)
     
-- [vim](books/专题知识库/13、Linux相关知识点/06、vim/readme.md)
+- [vim](/books/专题知识库/13、Linux相关知识点/06、vim/readme.md)
 
-- [nginx](books/专题知识库/13、Linux相关知识点/07、nginx/readme.md)
+- [nginx](/books/专题知识库/13、Linux相关知识点/07、nginx/readme.md)
 
-- [CI&CD](books/专题知识库/13、Linux相关知识点/08、CI&CD/readme.md)
+- [CI&CD](/books/专题知识库/13、Linux相关知识点/08、CI&CD/readme.md)
 
 
     
