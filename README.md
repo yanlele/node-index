@@ -102,35 +102,35 @@
 ### [基础知识点总结_非常重要](/books/专题知识库/05、基础知识点专题/README.md)
 
 
-### [canvas总结](books/专题知识库/06、canvas总结/README.md)
+### [canvas总结](/books/专题知识库/06、canvas总结/README.md)
 
 
-### [算法学习](books/专题知识库/07、算法学习/readme.md)
+### [算法学习](/books/专题知识库/07、算法学习/readme.md)
 
 
-### [学习javascript数据结构与算法](books/专题知识库/08、学习javascript数据结构与算法/README.md)
-- [01章、javascript基础](books/专题知识库/08、学习javascript数据结构与算法/README.md#01%E7%AB%A0javascript%E5%9F%BA%E7%A1%80)
-- [03章、栈](books/专题知识库/08、学习javascript数据结构与算法/README.md#03%E7%AB%A0%E6%A0%88)
-- [04章、队列](books/专题知识库/08、学习javascript数据结构与算法/README.md#04%E7%AB%A0%E9%98%9F%E5%88%97)
-- [05章、链表](books/专题知识库/08、学习javascript数据结构与算法/README.md#05%E7%AB%A0%E9%93%BE%E8%A1%A8)
-- [06章、集合](books/专题知识库/08、学习javascript数据结构与算法/README.md#06%E7%AB%A0%E9%9B%86%E5%90%88)
-- [07章、字典和散列表](books/专题知识库/08、学习javascript数据结构与算法/README.md#07%E7%AB%A0%E5%AD%97%E5%85%B8%E5%92%8C%E6%95%A3%E5%88%97%E8%A1%A8)
-- [08章、树](books/专题知识库/08、学习javascript数据结构与算法/README.md#08%E7%AB%A0%E6%A0%91)
-- [09章、图](books/专题知识库/08、学习javascript数据结构与算法/README.md#09%E7%AB%A0%E5%9B%BE)
-- [10章、排序和搜索算法](books/专题知识库/08、学习javascript数据结构与算法/README.md#10%E7%AB%A0%E6%8E%92%E5%BA%8F%E5%92%8C%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95)
+### [学习javascript数据结构与算法](/books/专题知识库/08、学习javascript数据结构与算法/README.md)
+- [01章、javascript基础](/books/专题知识库/08、学习javascript数据结构与算法/README.md#01%E7%AB%A0javascript%E5%9F%BA%E7%A1%80)
+- [03章、栈](/books/专题知识库/08、学习javascript数据结构与算法/README.md#03%E7%AB%A0%E6%A0%88)
+- [04章、队列](/books/专题知识库/08、学习javascript数据结构与算法/README.md#04%E7%AB%A0%E9%98%9F%E5%88%97)
+- [05章、链表](/books/专题知识库/08、学习javascript数据结构与算法/README.md#05%E7%AB%A0%E9%93%BE%E8%A1%A8)
+- [06章、集合](/books/专题知识库/08、学习javascript数据结构与算法/README.md#06%E7%AB%A0%E9%9B%86%E5%90%88)
+- [07章、字典和散列表](/books/专题知识库/08、学习javascript数据结构与算法/README.md#07%E7%AB%A0%E5%AD%97%E5%85%B8%E5%92%8C%E6%95%A3%E5%88%97%E8%A1%A8)
+- [08章、树](/books/专题知识库/08、学习javascript数据结构与算法/README.md#08%E7%AB%A0%E6%A0%91)
+- [09章、图](/books/专题知识库/08、学习javascript数据结构与算法/README.md#09%E7%AB%A0%E5%9B%BE)
+- [10章、排序和搜索算法](/books/专题知识库/08、学习javascript数据结构与算法/README.md#10%E7%AB%A0%E6%8E%92%E5%BA%8F%E5%92%8C%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95)
 
 
-### [DOM和BOM](books/专题知识库/09、DOM和BOM/README.md)
+### [DOM和BOM](/books/专题知识库/09、DOM和BOM/README.md)
 
 
-### [深入webpack工程化](books/专题知识库/10、深入webpack工程化/README.md)
-- [基础](books/专题知识库/10、深入webpack工程化/README.md#%E5%9F%BA%E7%A1%80)
-- [webpack优化问题](books/专题知识库/10、深入webpack工程化/README.md#webpack%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98)
-- [其他补充知识点](books/专题知识库/10、深入webpack工程化/README.md#%E5%85%B6%E4%BB%96%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86%E7%82%B9)
-- [实战案例](books/专题知识库/10、深入webpack工程化/README.md#%E5%AE%9E%E6%88%98%E6%A1%88%E4%BE%8B)
-- [webpack插件和loader开发](books/专题知识库/10、深入webpack工程化/README.md#webpack%E6%8F%92%E4%BB%B6%E5%92%8Cloader%E5%BC%80%E5%8F%91)
-- [其他](books/专题知识库/10、深入webpack工程化/README.md#%E5%85%B6%E4%BB%96)
-- [遗留问题待解决](books/专题知识库/10、深入webpack工程化/README.md#%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98%E5%BE%85%E8%A7%A3%E5%86%B3)
+### [深入webpack工程化](/books/专题知识库/10、深入webpack工程化/README.md)
+- [基础](/books/专题知识库/10、深入webpack工程化/README.md#%E5%9F%BA%E7%A1%80)
+- [webpack优化问题](/books/专题知识库/10、深入webpack工程化/README.md#webpack%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98)
+- [其他补充知识点](/books/专题知识库/10、深入webpack工程化/README.md#%E5%85%B6%E4%BB%96%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86%E7%82%B9)
+- [实战案例](/books/专题知识库/10、深入webpack工程化/README.md#%E5%AE%9E%E6%88%98%E6%A1%88%E4%BE%8B)
+- [webpack插件和loader开发](/books/专题知识库/10、深入webpack工程化/README.md#webpack%E6%8F%92%E4%BB%B6%E5%92%8Cloader%E5%BC%80%E5%8F%91)
+- [其他](/books/专题知识库/10、深入webpack工程化/README.md#%E5%85%B6%E4%BB%96)
+- [遗留问题待解决](/books/专题知识库/10、深入webpack工程化/README.md#%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98%E5%BE%85%E8%A7%A3%E5%86%B3)
 
 
 ### [学习TypeScript](https://github.com/yanlele/TyepScript-learning)
@@ -143,61 +143,61 @@
 
 
 
-### [测试专题](books/专题知识库/11、测试专题/README.md)
-- [01篇 javascript单元测试框架mochajs详解](books/专题知识库/11、测试专题/README.md#01%E7%AF%87-javascript%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6mochajs%E8%AF%A6%E8%A7%A3)
-- [02篇 断言库chai](books/专题知识库/11、测试专题/README.md#02%E7%AF%87-%E6%96%AD%E8%A8%80%E5%BA%93chai)
-- [03篇 代码覆盖率工具 Istanbul 入门教程](books/专题知识库/11、测试专题/README.md#03%E7%AF%87-%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87%E5%B7%A5%E5%85%B7-istanbul-%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B)
-- [04篇 node层服务端api接口测试](books/专题知识库/11、测试专题/README.md#04%E7%AF%87-node%E5%B1%82%E6%9C%8D%E5%8A%A1%E7%AB%AFapi%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95)
-- [05篇 TypeScript测试](books/专题知识库/11、测试专题/README.md#05%E7%AF%87-typescript%E6%B5%8B%E8%AF%95)
-- [06篇 Jest测试框架](books/专题知识库/11、测试专题/README.md#06%E7%AF%87-jest%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6)
-- [07篇 react测试: jest+enzyme](books/专题知识库/11、测试专题/README.md#07%E7%AF%87-react%E6%B5%8B%E8%AF%95-jestenzyme)
-- [08篇 E2E](books/专题知识库/11、测试专题/README.md#08%E7%AF%87-e2e)
-- [其他](books/专题知识库/11、测试专题/README.md#%E5%85%B6%E4%BB%96)
+### [测试专题](/books/专题知识库/11、测试专题/README.md)
+- [01篇 javascript单元测试框架mochajs详解](/books/专题知识库/11、测试专题/README.md#01%E7%AF%87-javascript%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6mochajs%E8%AF%A6%E8%A7%A3)
+- [02篇 断言库chai](/books/专题知识库/11、测试专题/README.md#02%E7%AF%87-%E6%96%AD%E8%A8%80%E5%BA%93chai)
+- [03篇 代码覆盖率工具 Istanbul 入门教程](/books/专题知识库/11、测试专题/README.md#03%E7%AF%87-%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87%E5%B7%A5%E5%85%B7-istanbul-%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B)
+- [04篇 node层服务端api接口测试](/books/专题知识库/11、测试专题/README.md#04%E7%AF%87-node%E5%B1%82%E6%9C%8D%E5%8A%A1%E7%AB%AFapi%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95)
+- [05篇 TypeScript测试](/books/专题知识库/11、测试专题/README.md#05%E7%AF%87-typescript%E6%B5%8B%E8%AF%95)
+- [06篇 Jest测试框架](/books/专题知识库/11、测试专题/README.md#06%E7%AF%87-jest%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6)
+- [07篇 react测试: jest+enzyme](/books/专题知识库/11、测试专题/README.md#07%E7%AF%87-react%E6%B5%8B%E8%AF%95-jestenzyme)
+- [08篇 E2E](/books/专题知识库/11、测试专题/README.md#08%E7%AF%87-e2e)
+- [其他](/books/专题知识库/11、测试专题/README.md#%E5%85%B6%E4%BB%96)
 
 
 
-### [深入浅出MySQL 数据库开发 优化与管理维护](books/专题知识库/12、深入浅出MySQL%20数据库开发%20优化与管理维护/README.md)
+### [深入浅出MySQL 数据库开发 优化与管理维护](/books/专题知识库/12、深入浅出MySQL%20数据库开发%20优化与管理维护/README.md)
 
 
 
-### [Linux相关学习](books/专题知识库/13、Linux相关知识点/README.md)
-- [基础部分](books/专题知识库/13、Linux相关知识点/01、基础部分/README.md)
-- [应用服务器](books/专题知识库/13、Linux相关知识点/02、应用服务部分/README.md)
-- [数据库服务](books/专题知识库/13、Linux相关知识点/03、数据库服务/README.md)
-- [其他服务](books/专题知识库/13、Linux相关知识点/04、其他服务/README.md)
-- [shell](books/专题知识库/13、Linux相关知识点/05、shell/readme.md)
+### [Linux相关学习](/books/专题知识库/13、Linux相关知识点/README.md)
+- [基础部分](/books/专题知识库/13、Linux相关知识点/01、基础部分/README.md)
+- [应用服务器](/books/专题知识库/13、Linux相关知识点/02、应用服务部分/README.md)
+- [数据库服务](/books/专题知识库/13、Linux相关知识点/03、数据库服务/README.md)
+- [其他服务](/books/专题知识库/13、Linux相关知识点/04、其他服务/README.md)
+- [shell](/books/专题知识库/13、Linux相关知识点/05、shell/readme.md)
   - [Shell重定向 ＆>file、2>&1、1>&2 、/dev/null的区别](https://blog.csdn.net/u011630575/article/details/52151995)
-- [vim](books/专题知识库/13、Linux相关知识点/06、vim/readme.md)
-- [nginx](books/专题知识库/13、Linux相关知识点/07、nginx/readme.md)
-- [CI&CD](books/专题知识库/13、Linux相关知识点/08、CI&CD/readme.md)
+- [vim](/books/专题知识库/13、Linux相关知识点/06、vim/readme.md)
+- [nginx](/books/专题知识库/13、Linux相关知识点/07、nginx/readme.md)
+- [CI&CD](/books/专题知识库/13、Linux相关知识点/08、CI&CD/readme.md)
 
 
 
 ### [前端数据可视化D3.js学习](https://github.com/yanlele/D3.js-learning)
 
 
-### [docker&DevOps](books/专题知识库/14、docker&Devops/readme.md)
+### [docker&DevOps](/books/专题知识库/14、docker&Devops/readme.md)
 
 
-### [小程序](books/专题知识库/15、小程序/readme.md)
+### [小程序](/books/专题知识库/15、小程序/readme.md)
 
 
-### [RXJS学习专题 - 已经放弃（因为看不到收益）](books/专题知识库/16、RXJS学习专题/README.md)
+### [RXJS学习专题 - 已经放弃（因为看不到收益）](/books/专题知识库/16、RXJS学习专题/README.md)
 
 
 
-### [微前端专题](books/专题知识库/17、微前端专题/readme.md)
+### [微前端专题](/books/专题知识库/17、微前端专题/readme.md)
 
 
-### [好用的库与框架](books/专题知识库/18、好用的库与框架推荐/readme.md)
+### [好用的库与框架](/books/专题知识库/18、好用的库与框架推荐/readme.md)
 
 
-### [性能分析](books/专题知识库/19、性能分析/readme.md)
+### [性能分析](/books/专题知识库/19、性能分析/readme.md)
 
 
 ### vue
-- [vue项目实际开发总结](books/发展与OKR/03、研究的项目/01、vue项目实际开发总结/README.md)
-- [MVVM双向绑定原理研究与简单的双向绑定实现(包含简单的事件绑定)](books/专题知识库/05、基础知识点专题/other/11、双向绑定核心代码/README.md)
+- [vue项目实际开发总结](/books/发展与OKR/03、研究的项目/01、vue项目实际开发总结/README.md)
+- [MVVM双向绑定原理研究与简单的双向绑定实现(包含简单的事件绑定)](/books/专题知识库/05、基础知识点专题/other/11、双向绑定核心代码/README.md)
 - [深度解析！Vue3 & React Hooks 新UI组件原理：Modal 弹窗](https://juejin.im/post/6844904100992155661)
 - [** 史上最强vue总结---面试开发全靠它了](https://juejin.im/post/6850037277675454478)
 - [vue使用的转场特效插件 - vueg](https://github.com/jaweii/vueg)
@@ -214,45 +214,58 @@
 
 ### 前端技术知识
 
-#### web相关与web功能实现
-- [web-component](books/知识库/01、前端技术知识/18、webComponent/README.md)
+#### web相关
+- [web-component](/books/知识库/01、前端技术知识/18、webComponent/README.md)
+- [[译] 2018 来谈谈 Web Component](https://juejin.cn/post/6844903661403897870)
+- [前端存储除了 localStorage 还有啥](https://juejin.cn/post/6844904192549584903)
+- [忍法，scroll 翻滚之术！](https://juejin.cn/post/6844904081559912462)
+
+
+#### web功能实现
 - [层叠轮播图的简易制作](https://www.cnblogs.com/Tohold/p/9429890.html)
 - [js焦点图片层叠轮播切换滚动](http://www.51qianduan.com/article/110.html)
 - [原生js实现图片层叠轮播切换效果](https://teakki.com/p/57dfb317d3a7507f975e8270)
 - [瀑布流](https://juejin.im/post/5ed5b9a26fb9a047a07f2c30)
 - [原生JavaScript实现造日历](https://juejin.im/post/5cd1aa3a6fb9a0323b7e5e5c)
+- [15个元素实现无限滚动 **](https://juejin.cn/post/6844903944297136135)
+- [H5 直播的疯狂点赞动画是如何实现的？(附完整源码)](https://juejin.cn/post/6844904126476730375)
+- [模仿实现一个直播的点赞动画](https://juejin.cn/post/6844904151952916487)
+- [基于HTML5技术的幻灯片编辑、播放、控制的全套方案](https://github.com/Jinjiang/h5slides)
 
 
 #### 移动端相关
-- [移动端rem转换的办法和策略](books/知识库/01、前端技术知识/03、移动端rem转换的办法和策略/README.md)
-- [关于JS的触摸方法](books/知识库/01、前端技术知识/13、关于JS的触摸方法研究/README.md)
+- [移动端rem转换的办法和策略](/books/知识库/01、前端技术知识/03、移动端rem转换的办法和策略/README.md)
+- [vue移动端h5适配解决方案（rem or vw）](https://juejin.cn/post/6844903917126434829)
+- [关于JS的触摸方法](/books/知识库/01、前端技术知识/13、关于JS的触摸方法研究/README.md)
 - [微信小程序 - 扩展插件（发送请求、Promise API、表单验证、Restful API）](https://github.com/skyvow/wx-extend)
 
 #### 网络与网络安全相关
-- [深入fetch](books/知识库/01、前端技术知识/01、深入fetch/README.md)
+- [深入fetch](/books/知识库/01、前端技术知识/01、深入fetch/README.md)
+- [手写axios核心原理，再也不怕面试官问我axios原理](https://juejin.cn/post/6856706569263677447)
 - [骚年，你确定没有人在折腾你的站点吗？](https://juejin.cn/post/6844903966505975822)
+- [axios 的一些基本用法](/books/知识库/01、前端技术知识/21、axios的一些基本用法/README.md)
 
 
 #### 浏览器相关
-- [Chrome调试技巧](books/知识库/01、前端技术知识/02、Chrome调试技巧/readme.md)
-- [关于屏幕高度，可见区域高度，目标元素高度，文档高度研究](books/知识库/01、前端技术知识/14、关于屏幕高度，可见区域高度，目标元素高度，文档高度研究/README.md)
+- [Chrome调试技巧](/books/知识库/01、前端技术知识/02、Chrome调试技巧/readme.md)
+- [关于屏幕高度，可见区域高度，目标元素高度，文档高度研究](/books/知识库/01、前端技术知识/14、关于屏幕高度，可见区域高度，目标元素高度，文档高度研究/README.md)
 
 
 #### 前端模板引擎(这个已经落伍了， es6 模板字符串更加强大)
-- [doT模板引擎基础语法知识点](books/知识库/01、前端技术知识/04、doT模板引擎基本语法/README.md)
-- [handlebars使用大全](books/知识库/01、前端技术知识/06、handlebars使用大全/README.md)
-- [handlebars-helpers主要使用说明和源码解析](books/知识库/01、前端技术知识/07、handlebars-helpers主要使用说明和源码解析/README.md)
+- [doT模板引擎基础语法知识点](/books/知识库/01、前端技术知识/04、doT模板引擎基本语法/README.md)
+- [handlebars使用大全](/books/知识库/01、前端技术知识/06、handlebars使用大全/README.md)
+- [handlebars-helpers主要使用说明和源码解析](/books/知识库/01、前端技术知识/07、handlebars-helpers主要使用说明和源码解析/README.md)
 
 
 #### 样式与布局
-- [flex布局的学习](books/知识库/01、前端技术知识/05、flex布局的学习/README.md)
-- [清除浮动的解决方案总结](books/专题知识库/05、基础知识点专题/other/08、清除浮动的解决方案总结/README.md)
-- [移动端弹出层滚动时禁止body滚动，静止滚动](books/知识库/01、前端技术知识/11、移动端弹出层滚动时禁止body滚动，静止滚动/README.md)
-- [css3新单位vw、vh、vmin、vmax的使用详解](books/知识库/01、前端技术知识/12、css3新单位vw、vh、vmin、vmax的使用详解/README.md)
+- [flex布局的学习](/books/知识库/01、前端技术知识/05、flex布局的学习/README.md)
+- [清除浮动的解决方案总结](/books/专题知识库/05、基础知识点专题/other/08、清除浮动的解决方案总结/README.md)
+- [移动端弹出层滚动时禁止body滚动，静止滚动](/books/知识库/01、前端技术知识/11、移动端弹出层滚动时禁止body滚动，静止滚动/README.md)
+- [css3新单位vw、vh、vmin、vmax的使用详解](/books/知识库/01、前端技术知识/12、css3新单位vw、vh、vmin、vmax的使用详解/README.md)
 - [非常厉害的关于css样式](https://github.com/chokcoco/iCSS)
-- [垂直和水平居中方案](books/专题知识库/05、基础知识点专题/other/04、水平和垂直方案/README.md)
+- [垂直和水平居中方案](/books/专题知识库/05、基础知识点专题/other/04、水平和垂直方案/README.md)
 - [CSS3的calc()使用](https://www.w3cplus.com/css3/how-to-use-css3-calc-function.html)
-- [纯 CSS 实现多行文字截断](books/知识库/01、前端技术知识/17、纯CSS实现多行文字截断/readme.md)
+- [纯 CSS 实现多行文字截断](/books/知识库/01、前端技术知识/17、纯CSS实现多行文字截断/readme.md)
 - [你未必知道的49个CSS知识点](https://juejin.im/post/5d3eca78e51d4561cb5dde12#heading-37)
 - [灵活运用CSS开发技巧(66个实用技巧，值得收藏)](https://juejin.cn/post/6844903926110617613)
 - [不受控制的 position:fixed](https://www.imooc.com/article/67784)
@@ -261,120 +274,97 @@
 
 
 #### 常见的工具方法实现
-- [数字金额转繁体中文大写字符串](books/知识库/07、基础功能探索/01、人民币大小写互换/README.md)
-- [js整理常见数组方法和字符串方法操作](books/知识库/01、前端技术知识/08、整理常见数组和字符串操作/README.md)
-- [深入javascript中Math算数对象与精确到小数位的向上舍入和向下舍入解决办法](books/知识库/01、前端技术知识/09、深入javascript中Math算数对象与精确到小数位的向上舍入和向下舍入解决办法/README.md)
+- [数字金额转繁体中文大写字符串](/books/知识库/07、基础功能探索/01、人民币大小写互换/README.md)
+- [js整理常见数组方法和字符串方法操作](/books/知识库/01、前端技术知识/08、整理常见数组和字符串操作/README.md)
+- [深入javascript中Math算数对象与精确到小数位的向上舍入和向下舍入解决办法](/books/知识库/01、前端技术知识/09、深入javascript中Math算数对象与精确到小数位的向上舍入和向下舍入解决办法/README.md)
 
 
 #### JS原理与语法相关
 - [深入理解 JavaScript 异步](https://github.com/wangfupeng1988/js-async-tutorial)
-- [关于深拷贝和浅拷贝的实现](books/专题知识库/05、基础知识点专题/other/03、关于深拷贝和浅拷贝的实现/README.md)
-- [深入研究call和apply(实现继承)](books/专题知识库/05、基础知识点专题/other/18、深入研究call和apply/README.md)
-- [关于闭包的研究](books/专题知识库/05、基础知识点专题/other/01、关于闭包的研究/README.md)
+- [关于深拷贝和浅拷贝的实现](/books/专题知识库/05、基础知识点专题/other/03、关于深拷贝和浅拷贝的实现/README.md)
+- [深入研究call和apply(实现继承)](/books/专题知识库/05、基础知识点专题/other/18、深入研究call和apply/README.md)
+- [关于闭包的研究](/books/专题知识库/05、基础知识点专题/other/01、关于闭包的研究/README.md)
 - [You Don't Need jQuery](https://github.com/nefe/You-Dont-Need-jQuery/blob/master/README.zh-CN.md)
-- [关于this指针的研究](books/专题知识库/05、基础知识点专题/other/02、关于this指针的研究/README.md)
-- [深入call、apply、bind实现原理](books/专题知识库/05、基础知识点专题/other/12、深入call、apply、bind实现原理/README.md)
-- [实现函数防抖](books/专题知识库/05、基础知识点专题/other/06、实现函数防抖/README.md)
-- [实现函数节流](books/专题知识库/05、基础知识点专题/other/07、实现函数节流/README.md)
-- [深入理解JavaScript中的尾调用](books/专题知识库/05、基础知识点专题/other/13、深入理解JavaScript中的尾调用/README.md)
-
+- [关于this指针的研究](/books/专题知识库/05、基础知识点专题/other/02、关于this指针的研究/README.md)
+- [深入call、apply、bind实现原理](/books/专题知识库/05、基础知识点专题/other/12、深入call、apply、bind实现原理/README.md)
+- [实现函数防抖](/books/专题知识库/05、基础知识点专题/other/06、实现函数防抖/README.md)
+- [实现函数节流](/books/专题知识库/05、基础知识点专题/other/07、实现函数节流/README.md)
+- [深入理解JavaScript中的尾调用](/books/专题知识库/05、基础知识点专题/other/13、深入理解JavaScript中的尾调用/README.md)
 - [JavaScript 异步、栈、事件循环、任务队列](https://segmentfault.com/a/1190000011198232)
 - [FormData使用方法详解](https://www.jianshu.com/p/e438fb2238cf)
 - [基于JavaScript判断浏览器到底是关闭还是刷新](http://udn.yyuap.com/forum.php?mod=viewthread&tid=96309)
 - [实现js熔断机制](https://juejin.cn/post/6844903920649650184)
 - [你为什么这么强，什么都敢盘（reduce）](https://juejin.cn/post/6844903923229130766)
+- [** 25个你不得不知道的数组reduce高级用法](https://juejin.cn/post/6844904063729926152)
 - [如何避开JavaScript浮点数计算精度问题（如0.1+0.2!==0.3）](https://blog.csdn.net/u013347241/article/details/79210840)
 - [通过实现25个数组方法来理解及高效使用数组方法(长文,建议收藏)](https://juejin.im/post/5d82c12ff265da03a31d6f92)
 - [引用、浅拷贝及深拷贝 到 Map、Set（含对象assign、freeze方法、WeakMap、WeakSet及数组map、reduce等等方法） **](https://juejin.im/post/5d843abe6fb9a06af510050c)
-
-
-
-
+- [为了性能选择for循环遍历？](https://juejin.cn/post/6844904191425511432)
+- [JavaScript 装饰器](https://juejin.cn/post/6844904100144889864)
+- [如何写出一个惊艳面试官的深拷贝?](https://juejin.cn/post/6844903929705136141)
+- [js中的pipe](/books/知识库/01、前端技术知识/20、js中的pipe/readme.md)
+- [每个 JavaScript 工程师都应懂的33个概念](https://github.com/stephentian/33-js-concepts)
+- [常用的正则验证例子](/books/专题知识库/05、基础知识点专题/other/05、正则验证/README.md)
+- [css加载会造成阻塞吗？](/books/知识库/01、前端技术知识/22、css加载会造成阻塞吗/index.md)
   
 
 #### 静态资源相关研究
-- [关于图片预加载的研究](books/知识库/01、前端技术知识/10、关于图片预加载的研究/README.md)
+- [关于图片预加载的研究](/books/知识库/01、前端技术知识/10、关于图片预加载的研究/README.md)
 - [《SVG精髓》 阅读笔记](https://github.com/xswei/SVG_Essentials)
 - [canvas导出图片方法总结](https://www.cnblogs.com/dupd/p/5893754.html)
-- [点击链接下载图片研究](books/知识库/01、前端技术知识/16、点击链接下载的研究/readme.md)
+- [点击链接下载图片研究](/books/知识库/01、前端技术知识/16、点击链接下载的研究/readme.md)
 
 
 
 #### 项目与工程相关
-- [ts配置文件详解](books/知识库/01、前端技术知识/15、ts配置文件详解/readme.md)
+- [ts配置文件详解](/books/知识库/01、前端技术知识/15、ts配置文件详解/readme.md)
+- [Yarn Workspace 使用指南](https://www.jianshu.com/p/990afa30b6fe)
+- [项目规范（包含git管理项目的使用）](https://github.com/elsewhencode/project-guidelines/blob/master/README-zh.md)
+- lerna
+  - [使用lerna管理大型前端项目](https://www.jianshu.com/p/2f9c05b119c9)
+  - [lerna的基础使用](https://www.jianshu.com/p/8b7e6025354b)
+  - [Lerna 中文教程详解](https://segmentfault.com/a/1190000019350611?utm_source=tag-newest)
+- commitLint  
+  - [commitlint+husky规范commit 日志](https://blog.csdn.net/wei371522/article/details/84070803)
+  - [Git commit message和工作流规范](https://www.imooc.com/article/16780)
+  - [Git提交消息: git-cz](https://www.jianshu.com/p/28617fd95c67)
+
+
 
 
 #### 项目实践相关
 - [讲道理，仅3行核心css代码的rate评分组件](https://juejin.cn/post/6844903919106129934)
 - [基于 HTML5 Canvas 的拓扑组件开发](https://juejin.cn/post/6844903924260929550)
+- [使用WebGL去实现一个拖拽式UI代码生成App](https://juejin.cn/post/6846687604096630792)
+- [为什么Vue3.0使用Proxy实现数据监听？defineProperty表示不背这个锅](https://juejin.cn/post/6844903965180575751)
 
 
 #### 零碎基础算法问题
 - [手写算法并记住它：快速排序（5行代码简单版）](https://juejin.cn/post/6844903938290876430)
-- [树形对象查找](books/知识库/01、前端技术知识/19、树形对象查找/readme.md)
+- [树形对象查找](/books/知识库/01、前端技术知识/19、树形对象查找/readme.md)
 
 
 #### 编译与转译
 - [babel配置-各阶段的stage的区别](https://blog.csdn.net/wang252949/article/details/79064046)
 
 
-----------------
+#### TypeScript相关
 - [从零开始配置 TypeScript 项目](https://juejin.im/post/6856410900577026061)
-- [新手前端不要慌! 给你10根救命稻草](https://juejin.im/post/6844903955441401870)
-- [15个元素实现无限滚动 **](https://juejin.im/post/5d7f80796fb9a06b24434d4e)
-- [手写axios核心原理，再也不怕面试官问我axios原理](https://juejin.im/post/6856706569263677447)
-- [使用WebGL去实现一个拖拽式UI代码生成App](https://juejin.im/post/6846687604096630792)
-- [vue移动端h5适配解决方案（rem or vw）](https://juejin.im/post/6844903917126434829)
-- [H5 直播的疯狂点赞动画是如何实现的？(附完整源码)](https://juejin.im/post/6844904126476730375)
-- [模仿实现一个直播的点赞动画](https://juejin.im/post/6844904151952916487)
-- [** 25个你不得不知道的数组reduce高级用法](https://juejin.im/post/6844904063729926152)
-- [为了性能选择for循环遍历？](https://juejin.im/post/6844904191425511432)
-- [[译] 2018 来谈谈 Web Component](https://juejin.im/post/6844903661403897870)
-- [前端存储除了 localStorage 还有啥](https://juejin.im/post/6844904192549584903)
-- [忍法，scroll 翻滚之术！](https://juejin.im/post/6844904081559912462)
-- [JavaScript 装饰器](https://juejin.im/post/6844904100144889864)
-- [骚年，你确定没有人在折腾你的站点吗？](https://juejin.im/post/6844903966505975822)
-- [为什么Vue3.0使用Proxy实现数据监听？defineProperty表示不背这个锅](https://juejin.im/post/6844903965180575751)
-- [如何写出一个惊艳面试官的深拷贝?](https://juejin.im/post/6844903929705136141)
-- [引用、浅拷贝及深拷贝 到 Map、Set（含对象assign、freeze方法、WeakMap、WeakSet及数组map、reduce等等方法）](https://juejin.im/post/6844903951247081485)
-- [js中的pipe](books/知识库/01、前端技术知识/20、js中的pipe/readme.md)
-- [Yarn Workspace 使用指南](https://www.jianshu.com/p/990afa30b6fe)
-- [axios 的一些基本用法](books/知识库/01、前端技术知识/21、axios的一些基本用法/README.md)
-- [常用的正则验证例子](books/专题知识库/05、基础知识点专题/other/05、正则验证/README.md)
-- [Mac机上安装nvm遇到的坑--nvm command not found](https://www.cnblogs.com/giggle/p/7075548.html)
+
+
+#### git相关
 - [README文件语法解读，即Github Flavored Markdown语法介绍](https://github.com/guodongxiaren/README)
-- [egret-core(html5游戏引擎)](https://github.com/egret-labs/egret-core)
-- [项目规范（包含git管理项目的使用）](https://github.com/elsewhencode/project-guidelines/blob/master/README-zh.md)
 - [MarkDown添加图片的三种方式 - 找时间自己总结一边](https://blog.csdn.net/slaughterdevil/article/details/79255933)
-- [html转换为img、html转换为pdf:render-html-to-pdf](https://github.com/linwalker/render-html-to-pdf)
 - [GithubPages教程 在GithubPages上搭建个人主页](https://blog.csdn.net/yanzhenjie1003/article/details/51703370)
 - [一篇文章，教你学会Git](https://mp.weixin.qq.com/s/-TC07TQoiTNRUJIdBv46SQ)
-- [发布、安装自己的npm模块](https://www.cnblogs.com/yanhua2017/p/7748491.html)
-- [2018前端常见题汇总，不定时更新](https://github.com/qianbin01/frontend_train)
-- [基于HTML5技术的幻灯片编辑、播放、控制的全套方案](https://github.com/Jinjiang/h5slides)
-- [每个 JavaScript 工程师都应懂的33个概念](https://github.com/stephentian/33-js-concepts)
-- [JavaScript音频播放库](https://github.com/goldfire/howler.js)
-- [内容一键复制到剪切板模块](https://github.com/zenorocha/clipboard.js)
-- [参数校验模块:parameter](https://github.com/node-modules/parameter)
-- [WebStrom Live Template 建代码块](https://blog.csdn.net/liangrongliu1991/article/details/79626960)
 - [Git的奇技淫巧](https://github.com/521xueweihan/git-tips)
-- [Sequelize 文档的中文版本](https://github.com/demopark/sequelize-docs-Zh-CN)
-- [解决mac安装homebrew后报错-bash: brew: command not found](https://blog.csdn.net/li396864285/article/details/52572163)
-- [mac 上安装 nvm 遇到的坑](https://www.jianshu.com/p/f6c3ecfdbd97)
-- [使用lerna管理大型前端项目](https://www.jianshu.com/p/2f9c05b119c9)
-- [lerna的基础使用](https://www.jianshu.com/p/8b7e6025354b)
-- [Lerna 中文教程详解](https://segmentfault.com/a/1190000019350611?utm_source=tag-newest)
 - [Git Submodule项目子模块管理](https://blog.csdn.net/xiangzhihong8/article/details/80535495)
-- [commitlint+husky规范commit 日志](https://blog.csdn.net/wei371522/article/details/84070803)
-- [Git commit message和工作流规范](https://www.imooc.com/article/16780)
 - [git合并多个提交](https://www.cnblogs.com/tocy/p/git-rebase-merge-commit.html)
-- [Git提交消息: git-cz](https://www.jianshu.com/p/28617fd95c67)
-- [数据驱动、渐进式Canvas库，配备Chrome调试插件，支持微信小游戏、物理引擎、2D&3D混合渲染等](https://github.com/c-zhuo/easycanvas)
 - [git commit message emoji 使用指南](https://github.com/liuchengxu/git-commit-emoji-cn)
-- [impress.js制作漂亮前端页面级别PPT](https://github.com/impress/impress.js)
 - [Github上开源项目readme里好看的高大上的有趣的徽章从何而来](https://blog.csdn.net/xialonghua/article/details/87373052)
-- [nodeppt: 把md文档做成PPT](https://github.com/ksky521/nodeppt)
-- [css加载会造成阻塞吗？](books/知识库/01、前端技术知识/22、css加载会造成阻塞吗/index.md)
+
+
+----------------
 - [Dexie.js:A Minimalistic Wrapper for IndexedDB](https://github.com/dfahlander/Dexie.js)
 - [从输入url到页面展示到底发生了什么？](https://mp.weixin.qq.com/s?__biz=MzU2MTI4MjI0MQ==&mid=2247486007&idx=1&sn=176d131e0d35bf9ede04c31effd51e48&chksm=fc7a6799cb0dee8f472b2f44eaa1adc312f99cf3f053bd00f24c2dc1265d83c9823b128a4eaf&mpshare=1&scene=23&srcid=0408UkbC9si520rEHA2w5oCc)
 - [gitbook-use](https://github.com/zhangjikai/gitbook-use)
@@ -441,31 +431,33 @@
 - [实现Web端自定义截屏](https://juejin.cn/post/6924368956950052877)
 - [Chrome DevTools之NetWork面板](https://juejin.im/post/6844904036085301261)
 - [重新认识 package.json](https://juejin.cn/post/6844904159226003463)
-- [Object.assign()与深拷贝](books/知识库/01、前端技术知识/23、Object.assign()与深拷贝/README.md)
-- [前端展示太长，截取为点点点](books/知识库/01、前端技术知识/24、前端展示太长，截取为点点点/README.md)
-- [如何让 json 转为 style 样式字符串， 适用于小程序](books/知识库/01、前端技术知识/25、thumbStyle/README.md)
+- [Object.assign()与深拷贝](/books/知识库/01、前端技术知识/23、Object.assign()与深拷贝/README.md)
+- [前端展示太长，截取为点点点](/books/知识库/01、前端技术知识/24、前端展示太长，截取为点点点/README.md)
+- [如何让 json 转为 style 样式字符串， 适用于小程序](/books/知识库/01、前端技术知识/25、thumbStyle/README.md)
 - [Three.js零基础入门教程](http://www.yanhuangxueyuan.com/Three.js/)
 
 
 
 
 ### 技术生态圈
-- [eslint配置文件eslintrc参数详解](books/知识库/02、技术生态圈/04、eslint配置文件eslintrc参数详解/README.md)
-- [npm镜像源的切换问题](books/知识库/02、技术生态圈/05、npm镜像源切换问题/README.md)
-- [常用eslint配置](books/知识库/02、技术生态圈/06、常用eslint配置/README.md)
-- [常用tslint配置](books/知识库/02、技术生态圈/07、常用tslint配置/README.md)
-- [前端mock解决方案](books/知识库/02、技术生态圈/10、前端mock解决方案/README.md)
-- [eslint检测TS项目](books/知识库/02、技术生态圈/09、eslint检测TS项目/README.md)
-- [Commitizen(git-cz)配置](books/知识库/02、技术生态圈/02、Commitizen(git-cz)配置/readme.md)
-- [使用husky、prettier、lint、commitlint构建规范化项目实践](books/知识库/02、技术生态圈/08、使用husky、prettier、lint、commitlint构建规范化项目实践/README.md)
-- [brew常用命令行](books/知识库/02、技术生态圈/03、brew常用命令行/README.md)
+- [WebStrom Live Template 建代码块](https://blog.csdn.net/liangrongliu1991/article/details/79626960)
+- [Mac机上安装nvm遇到的坑--nvm command not found](https://www.cnblogs.com/giggle/p/7075548.html)
+- [eslint配置文件eslintrc参数详解](/books/知识库/02、技术生态圈/04、eslint配置文件eslintrc参数详解/README.md)
+- [npm镜像源的切换问题](/books/知识库/02、技术生态圈/05、npm镜像源切换问题/README.md)
+- [常用eslint配置](/books/知识库/02、技术生态圈/06、常用eslint配置/README.md)
+- [常用tslint配置](/books/知识库/02、技术生态圈/07、常用tslint配置/README.md)
+- [前端mock解决方案](/books/知识库/02、技术生态圈/10、前端mock解决方案/README.md)
+- [eslint检测TS项目](/books/知识库/02、技术生态圈/09、eslint检测TS项目/README.md)
+- [Commitizen(git-cz)配置](/books/知识库/02、技术生态圈/02、Commitizen(git-cz)配置/readme.md)
+- [使用husky、prettier、lint、commitlint构建规范化项目实践](/books/知识库/02、技术生态圈/08、使用husky、prettier、lint、commitlint构建规范化项目实践/README.md)
+- [brew常用命令行](/books/知识库/02、技术生态圈/03、brew常用命令行/README.md)
 - [git 常用命令汇总](/books/知识库/02、技术生态圈/01、git常用命令汇总/README.md)
 - [Mac系统占用空间大、空间不够、查看系统文件大小分布](https://blog.csdn.net/u011423056/article/details/79450845)
 - [Hbase中多版本(version)数据获取办法](https://blog.csdn.net/liuchuanhong1/article/details/53895234/)
 - [Docker上安装运行Hbase](https://blog.csdn.net/liuchuanhong1/article/details/53895234/)
 - [HBase基本概念与基本使用](https://www.cnblogs.com/swordfall/p/8737328.html#auto_id_9)
 - [jetbrains:同步服务器代码](https://www.jianshu.com/p/49442ec9bc9f)
-- [mac Homebrew 装包加速](books/知识库/02、技术生态圈/11、mac_Homebrew装包加速/readme.md)
+- [mac Homebrew 装包加速](/books/知识库/02、技术生态圈/11、mac_Homebrew装包加速/readme.md)
 - [前端职业规划 - 写给那些想去和刚去大厂的年轻人(鸡汤有毒)](https://juejin.im/post/6854828407890477064)
 - [【深度思考】如何优雅告知用户，网站正在升级维护？](https://juejin.im/post/6857673247819989000)
 - [从GraphQL到前端数据管理的革命 - GraphQL干货笔记](https://juejin.im/post/6844904196848762888)
@@ -474,7 +466,7 @@
 - [在 WebStorm 中，配置能够识别 Vue CLI 3 创建的项目的别名 alias @](https://juejin.im/post/6844903802185891848)
 - [技术探索：60 天急速自研-前端埋点监控跟踪系统大浪子](https://juejin.im/post/6844903954199887880)
 - [** 前端代码质量-圈复杂度原理和实践](https://juejin.im/post/6844903965792927751)
-- [git clone 太慢了的解决办法](books/知识库/02、技术生态圈/12、git%20clone%20太慢了的解决办法/readme.md)
+- [git clone 太慢了的解决办法](/books/知识库/02、技术生态圈/12、git%20clone%20太慢了的解决办法/readme.md)
 - [简析解决问题的通用方法论](https://juejin.cn/post/6891167960589664264)
 - [技术人员升级打怪的方法论](https://juejin.cn/post/6900939109670322189)
 - [测试金字塔实战](https://insights.thoughtworks.cn/practical-test-pyramid/)
@@ -486,21 +478,24 @@
 - [访问github的九种办法](https://mp.weixin.qq.com/s/3LfveCU2Hm7N6OnV3Gtx3Q)
 - [谷歌出品的Web打包方案：Web Bundles 技术揭秘](https://mp.weixin.qq.com/s/_7_KrY_ozbUZxzUlCU_B4w)
 - [github开发人员在七夕搞事情：remote: Support for password authentication was removed on August 13, 2021.](https://blog.csdn.net/weixin_41010198/article/details/119698015)
+- [解决mac安装homebrew后报错-bash: brew: command not found](https://blog.csdn.net/li396864285/article/details/52572163)
+- [mac 上安装 nvm 遇到的坑](https://www.jianshu.com/p/f6c3ecfdbd97)
+
 
 
 ### Node技术知识
-- [CommonJs模块规范](books/知识库/03、Node技术知识/1、commonjs/README.md)
-- [node基础api_path](books/知识库/03、Node技术知识/02、node基础api_path/README.md)
-- [node基础api_Buffer](books/知识库/03、Node技术知识/03、node基础api_Buffer/README.md)
-- [node基础api_event](books/知识库/03、Node技术知识/04、node基础api_event/README.md)
-- [node基础api_fs](books/知识库/03、Node技术知识/05、node基础api_fs/README.md)
-- [单元测试(mocha)](books/知识库/03、Node技术知识/06、单元测试/README.md)
-- [大型服务端项目测试(mocha)和UT覆盖示例](books/知识库/03、Node技术知识/07、大型服务端项目测试和UT覆盖示例/README.md)
+- [CommonJs模块规范](/books/知识库/03、Node技术知识/1、commonjs/README.md)
+- [node基础api_path](/books/知识库/03、Node技术知识/02、node基础api_path/README.md)
+- [node基础api_Buffer](/books/知识库/03、Node技术知识/03、node基础api_Buffer/README.md)
+- [node基础api_event](/books/知识库/03、Node技术知识/04、node基础api_event/README.md)
+- [node基础api_fs](/books/知识库/03、Node技术知识/05、node基础api_fs/README.md)
+- [单元测试(mocha)](/books/知识库/03、Node技术知识/06、单元测试/README.md)
+- [大型服务端项目测试(mocha)和UT覆盖示例](/books/知识库/03、Node技术知识/07、大型服务端项目测试和UT覆盖示例/README.md)
 - [把文档文本文件(*.docx)转换文html](https://github.com/mwilliamson/mammoth.js)
 - [Create PDF files using React](https://github.com/diegomura/react-pdf)
 - [Create, read and edit .zip files with Javascript](https://github.com/Stuk/jszip)
-- [前后端对称加解密解决方案](books/知识库/03、Node技术知识/08、前后端对称加解密解决方案/README.md)
-- [封装日志模块 - 基于chalk](books/知识库/03、Node技术知识/09、封装日志输出模块/README.md)
+- [前后端对称加解密解决方案](/books/知识库/03、Node技术知识/08、前后端对称加解密解决方案/README.md)
+- [封装日志模块 - 基于chalk](/books/知识库/03、Node技术知识/09、封装日志输出模块/README.md)
 - [读取递归目录的路径模块: recursive-readdir](https://github.com/jergason/recursive-readdir)
 - [将glob表达式转换为JavaScript RegExp对象:minimatch](https://github.com/isaacs/minimatch)
 - [用于node.js的HTTP请求日志程序中间件:morgan](https://github.com/expressjs/morgan)
@@ -517,9 +512,9 @@
 - [深度递归合并JS对象](https://github.com/KyleAMathews/deepmerge)
 - [深度递归对比JS对象](https://github.com/flitbit/diff)
 - [《HTTP权威指南》每章的知识点总结](https://github.com/woai30231/http)
-- [V8引擎初步介绍](books/专题知识库/05、基础知识点专题/other/14、V8引擎初步介绍/README.md)
-- [node内存优化](books/专题知识库/05、基础知识点专题/other/15、node内存优化/README.md)
-- [node爬虫](books/知识库/03、Node技术知识/10、node爬虫/readme.md)
+- [V8引擎初步介绍](/books/专题知识库/05、基础知识点专题/other/14、V8引擎初步介绍/README.md)
+- [node内存优化](/books/专题知识库/05、基础知识点专题/other/15、node内存优化/README.md)
+- [node爬虫](/books/知识库/03、Node技术知识/10、node爬虫/readme.md)
 - [Cross platform setting of environment scripts:cross-env](https://github.com/kentcdodds/cross-env)
 - [Download and extract a git repository (GitHub, GitLab, Bitbucket) from node.](https://github.com/flipxfx/download-git-repo)
 - [基于node的代码生成器](https://github.com/yanlele/node-index-core/tree/master/packages/19%E5%B9%B4/05%E6%9C%88/01%E3%80%81%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8)
@@ -533,7 +528,7 @@
 - [apollo-graphql 自己使用的一点姿势](https://juejin.im/post/5ca2bd5c51882543e4506fbf)
 - [require时，exports和module.exports的区别你真的懂吗？](https://juejin.im/post/5d5639c7e51d453b5c1218b4)
 - [5分钟教你用nodeJS手写一个mock数据服务器](https://juejin.im/post/5d7345bce51d453b76258503)
-- [从0构建一个TS-Node项目](books/知识库/03、Node技术知识/11、从0构建一个TS-Node项目/README.md)
+- [从0构建一个TS-Node项目](/books/知识库/03、Node技术知识/11、从0构建一个TS-Node项目/README.md)
 - [关于node.js中流的理解](https://juejin.im/post/5cbaba8ce51d456e747c5343)
 - [linux安装mongoDB与NodeJs远程连接](https://juejin.im/post/5cb6cc72518825327854752e)
 - [前端工程师须知的CORS知识](https://juejin.im/post/5cbaa6ef5188253feb5855be)
@@ -547,11 +542,13 @@
 - [【图文详解】200行JS代码，带你实现代码编译器（人人都能学会）](https://juejin.im/post/6844904105937207304)
 - [《大前端进阶 Node.js》系列 双十一秒杀系统（进阶必看）](https://juejin.im/post/6844904095514378254)
 - [如何优雅的实现消息通信？](https://juejin.im/post/6865444445479927821)
+- [发布、安装自己的npm模块](https://www.cnblogs.com/yanhua2017/p/7748491.html)
+- [Sequelize 文档的中文版本](https://github.com/demopark/sequelize-docs-Zh-CN)
 
 
 ### 日常采坑与记录
 - [audio标签兼容性自动播放解决方案](/books/知识库/04、日常采坑与记录/02、audio标签兼容性自动播放解决方案/README.md)
-- [填坑-输入中文时，拼音阶段会触发input事件](books/知识库/04、日常采坑与记录/03、填坑-输入中文时，拼音阶段会触发input事件/03、填坑-输入中文时，拼音阶段会触发input事件.md)
+- [填坑-输入中文时，拼音阶段会触发input事件](/books/知识库/04、日常采坑与记录/03、填坑-输入中文时，拼音阶段会触发input事件/03、填坑-输入中文时，拼音阶段会触发input事件.md)
 
 
 
@@ -723,8 +720,8 @@
 
 
 ### 自我管理
-- [待研究知识 **](books/发展与OKR/06、自我管理/01、待研究知识/README.md)
-- [规划](books/发展与OKR/06、自我管理/02、规划/README.md)
+- [待研究知识 **](/books/发展与OKR/06、自我管理/01、待研究知识/README.md)
+- [规划](/books/发展与OKR/06、自我管理/02、规划/README.md)
   - [前端自检清单](https://juejin.im/post/5cc1da82f265da036023b628)
 - 思考
 

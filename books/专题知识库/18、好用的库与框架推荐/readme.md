@@ -20,6 +20,9 @@
 - [数字转中文（大写，小写）数字，金额: nzh **](https://github.com/cnwhy/nzh)
 - [将数组项移动到不同的位置: array-move](https://github.com/sindresorhus/array-move)
 - [处理小数计算精度问题: decimal.js](https://github.com/MikeMcl/decimal.js)
+- [licia: 常用工具库收集](https://github.com/liriliri/licia)
+
+
 
 ### web工具
 - [字体操作库，使用它你可以随心所欲的操作字体: font-carrier](https://github.com/purplebamboo/font-carrier)
@@ -89,7 +92,9 @@
 - [ua-parser-js: 通过UA设备识别, 获取设备信息](https://github.com/faisalman/ua-parser-js)  
 - [minimist: 处理 node 命令行调用参数](https://github.com/substack/minimist)
 - [jsonschema: JSON Schema 验证](https://github.com/tdegrunt/jsonschema)
-- [licia: 常用工具库收集](https://github.com/liriliri/licia)
+- [render-html-to-pdf: html转成pdf,下载](https://github.com/linwalker/render-html-to-pdf)
+- [howler: JavaScript音频播放库](https://github.com/goldfire/howler.js)
+- [parameter: 参数校验模块](https://github.com/node-modules/parameter)
 
 
 
@@ -142,7 +147,7 @@
 - [terminal 开始有色彩了: chalk **](https://github.com/chalk/chalk)
 - [prompt](https://github.com/flatiron/prompt)
 - [glob functionality for node.js](https://github.com/isaacs/node-glob)
-- [commander: 命令行工具](https://github.com/tj/commander.js)
+- [命令行工具: commander](https://github.com/tj/commander.js)
 
 
 
@@ -163,9 +168,11 @@
 - [加密库: crypto-js](https://github.com/brix/crypto-js)
 - [flex小游戏](https://github.com/thomaspark/flexboxfroggy)
 - [markdown 文档 --> ppt: nodeppt](https://github.com/ksky521/nodeppt)
+- [markdown 文档 --> ppt: vue-mark-display](https://github.com/Jinjiang/vue-mark-display)
 - [动态文件生成器: docsify](https://github.com/docsifyjs/docsify)
 - [演示框架: impress.js](https://github.com/impress/impress.js)
 - [electron-react-tpl](https://github.com/qld-cf/electron-react-tpl)
 - [这些开源项目，让你轻松应对十大工作场景](https://juejin.cn/post/6898098763772985352)
 - [redis客户端工具: AnotherRedisDesktopManager](https://github.com/qishibo/AnotherRedisDesktopManager)
+- [html5游戏引擎: egret-core](https://github.com/egret-labs/egret-core)
 
