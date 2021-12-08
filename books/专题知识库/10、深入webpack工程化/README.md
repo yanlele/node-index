@@ -134,6 +134,8 @@
 - [当面试官问Webpack的时候他想知道什么](https://juejin.cn/post/6943468761575849992)
 - [带你入门前端工程](https://github.com/woai3c/introduction-to-front-end-engineering)
 - [webpack的编译流程是啥](https://juejin.cn/post/6972378623281987621)
+- [搜罗一切webpack的好文章](https://github.com/webpack-china/awesome-webpack-cn)
+- [手写webpack核心原理，再也不怕面试官问我webpack原理 **](https://juejin.im/post/6854573217336541192)
 
 
 ### 遗留问题待解决
