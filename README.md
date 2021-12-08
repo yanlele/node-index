@@ -213,50 +213,76 @@
 
 
 ### 前端技术知识
+
+#### 移动端相关
 - [移动端rem转换的办法和策略](books/知识库/01、前端技术知识/03、移动端rem转换的办法和策略/README.md)
+- [关于JS的触摸方法](books/知识库/01、前端技术知识/13、关于JS的触摸方法研究/README.md)
+- [微信小程序 - 扩展插件（发送请求、Promise API、表单验证、Restful API）](https://github.com/skyvow/wx-extend)
+
+#### 网络与请求
 - [深入fetch](books/知识库/01、前端技术知识/01、深入fetch/README.md)
+
+
+#### 浏览器相关
 - [Chrome调试技巧](books/知识库/01、前端技术知识/02、Chrome调试技巧/readme.md)
+- [关于屏幕高度，可见区域高度，目标元素高度，文档高度研究](books/知识库/01、前端技术知识/14、关于屏幕高度，可见区域高度，目标元素高度，文档高度研究/README.md)
+
+
+#### 前端模板引擎(这个已经落伍了， es6 模板字符串更加强大)
 - [doT模板引擎基础语法知识点](books/知识库/01、前端技术知识/04、doT模板引擎基本语法/README.md)
-- [flex布局的学习](books/知识库/01、前端技术知识/05、flex布局的学习/README.md)
-- [清除浮动的解决方案总结](books/专题知识库/05、基础知识点专题/other/08、清除浮动的解决方案总结/README.md)
-- [数字金额转繁体中文大写字符串](books/知识库/07、基础功能探索/01、人民币大小写互换/README.MD)
 - [handlebars使用大全](books/知识库/01、前端技术知识/06、handlebars使用大全/README.md)
 - [handlebars-helpers主要使用说明和源码解析](books/知识库/01、前端技术知识/07、handlebars-helpers主要使用说明和源码解析/README.md)
+
+
+#### 样式与布局
+- [flex布局的学习](books/知识库/01、前端技术知识/05、flex布局的学习/README.md)
+- [清除浮动的解决方案总结](books/专题知识库/05、基础知识点专题/other/08、清除浮动的解决方案总结/README.md)
+- [移动端弹出层滚动时禁止body滚动，静止滚动](books/知识库/01、前端技术知识/11、移动端弹出层滚动时禁止body滚动，静止滚动/README.md)
+- [css3新单位vw、vh、vmin、vmax的使用详解](books/知识库/01、前端技术知识/12、css3新单位vw、vh、vmin、vmax的使用详解/README.md)
+- [非常厉害的关于css样式](https://github.com/chokcoco/iCSS)
+- [垂直和水平居中方案](books/专题知识库/05、基础知识点专题/other/04、水平和垂直方案/README.md)
+- [CSS3的calc()使用](https://www.w3cplus.com/css3/how-to-use-css3-calc-function.html)
+- [纯 CSS 实现多行文字截断](books/知识库/01、前端技术知识/17、纯CSS实现多行文字截断/readme.md)
+
+
+#### 常见的工具方法实现
+- [数字金额转繁体中文大写字符串](books/知识库/07、基础功能探索/01、人民币大小写互换/README.md)
 - [js整理常见数组方法和字符串方法操作](books/知识库/01、前端技术知识/08、整理常见数组和字符串操作/README.md)
 - [深入javascript中Math算数对象与精确到小数位的向上舍入和向下舍入解决办法](books/知识库/01、前端技术知识/09、深入javascript中Math算数对象与精确到小数位的向上舍入和向下舍入解决办法/README.md)
+
+
+#### JS原理相关
 - [深入理解 JavaScript 异步](https://github.com/wangfupeng1988/js-async-tutorial)
 - [关于深拷贝和浅拷贝的实现](books/专题知识库/05、基础知识点专题/other/03、关于深拷贝和浅拷贝的实现/README.md)
 - [深入研究call和apply(实现继承)](books/专题知识库/05、基础知识点专题/other/18、深入研究call和apply/README.md)
-- [关于图片预加载的研究](books/知识库/01、前端技术知识/10、关于图片预加载的研究/README.md)
-- [移动端弹出层滚动时禁止body滚动，静止滚动](books/知识库/01、前端技术知识/11、移动端弹出层滚动时禁止body滚动，静止滚动/README.md)
-- [《SVG精髓》 阅读笔记](https://github.com/xswei/SVG_Essentials)
-- [css3新单位vw、vh、vmin、vmax的使用详解](books/知识库/01、前端技术知识/12、css3新单位vw、vh、vmin、vmax的使用详解/README.md)
 - [关于闭包的研究](books/专题知识库/05、基础知识点专题/other/01、关于闭包的研究/README.md)
 - [You Don't Need jQuery](https://github.com/nefe/You-Dont-Need-jQuery/blob/master/README.zh-CN.md)
-- [关于JS的触摸方法](books/知识库/01、前端技术知识/13、关于JS的触摸方法研究/README.md)
-- [关于屏幕高度，可见区域高度，目标元素高度，文档高度研究](books/知识库/01、前端技术知识/14、关于屏幕高度，可见区域高度，目标元素高度，文档高度研究/README.md)
-- [非常厉害的关于css样式](https://github.com/chokcoco/iCSS)
-- [ts配置文件详解](books/知识库/01、前端技术知识/15、ts配置文件详解/readme.md)
 - [关于this指针的研究](books/专题知识库/05、基础知识点专题/other/02、关于this指针的研究/README.md)
-- [垂直和水平居中方案](books/专题知识库/05、基础知识点专题/other/04、水平和垂直方案/README.md)
 - [深入call、apply、bind实现原理](books/专题知识库/05、基础知识点专题/other/12、深入call、apply、bind实现原理/README.md)
 - [实现函数防抖](books/专题知识库/05、基础知识点专题/other/06、实现函数防抖/README.md)
 - [实现函数节流](books/专题知识库/05、基础知识点专题/other/07、实现函数节流/README.md)
 - [深入理解JavaScript中的尾调用](books/专题知识库/05、基础知识点专题/other/13、深入理解JavaScript中的尾调用/README.md)
 - [Promise原理与实现](books/专题知识库/05、基础知识点专题/other/09、Promise原理与实现/README.md)
-- [常用工具库收集:licia](https://github.com/liriliri/licia)
-- [lodash中文文档](http://lodash.net)
-- [CSS3的calc()使用](https://www.w3cplus.com/css3/how-to-use-css3-calc-function.html)
 - [JavaScript 异步、栈、事件循环、任务队列](https://segmentfault.com/a/1190000011198232)
 - [FormData使用方法详解](https://www.jianshu.com/p/e438fb2238cf)
 - [基于JavaScript判断浏览器到底是关闭还是刷新](http://udn.yyuap.com/forum.php?mod=viewthread&tid=96309)
+- [实现js熔断机制](https://juejin.im/post/5d5c941e6fb9a06b28635429)
+
+  
+
+#### 静态资源相关研究
+- [关于图片预加载的研究](books/知识库/01、前端技术知识/10、关于图片预加载的研究/README.md)
+- [《SVG精髓》 阅读笔记](https://github.com/xswei/SVG_Essentials)
 - [canvas导出图片方法总结](https://www.cnblogs.com/dupd/p/5893754.html)
 - [点击链接下载图片研究](books/知识库/01、前端技术知识/16、点击链接下载的研究/readme.md)
-- [纯 CSS 实现多行文字截断](books/知识库/01、前端技术知识/17、纯CSS实现多行文字截断/readme.md)
-- [微信小程序 - 扩展插件（发送请求、Promise API、表单验证、Restful API）](https://github.com/skyvow/wx-extend)
-- [实现js熔断机制](https://juejin.im/post/5d5c941e6fb9a06b28635429)
-- [一个合格(优秀)的前端都应该阅读这些文章](https://juejin.im/post/5d387f696fb9a07eeb13ea60)
-- [前端进阶必备，github 优质资源整理分享！](https://juejin.im/post/5d3edad9f265da03a652f133)
+
+
+
+#### 项目与工程相关
+- [ts配置文件详解](books/知识库/01、前端技术知识/15、ts配置文件详解/readme.md)
+
+
+----------------
 - [实现一个掘金Style的文章编辑器](https://juejin.im/post/5d5cd37ff265da0391351965#heading-7)
 - [讲道理，仅3行核心css代码的rate评分组件](https://juejin.im/post/5d57adf5f265da03e3697e1b)
 - [你未必知道的49个CSS知识点](https://juejin.im/post/5d3eca78e51d4561cb5dde12#heading-37)
@@ -586,6 +612,9 @@
   - [Git中tag标签的使用](https://blog.csdn.net/wei78008023/article/details/81866590)
   - [前端该如何准备数据结构和算法？](https://juejin.im/post/5d5b307b5188253da24d3cd1#heading-17)
   - [** 一个合格(优秀)的前端都应该阅读这些文章](https://juejin.im/post/6844903896637259784)
+  - [一个合格(优秀)的前端都应该阅读这些文章](https://juejin.cn/post/6844903896637259784)
+  - [前端进阶必备，github 优质资源整理分享！](https://juejin.cn/post/6844903902299553806)
+
 
 
 

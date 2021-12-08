@@ -89,6 +89,7 @@
 - [ua-parser-js: 通过UA设备识别, 获取设备信息](https://github.com/faisalman/ua-parser-js)  
 - [minimist: 处理 node 命令行调用参数](https://github.com/substack/minimist)
 - [jsonschema: JSON Schema 验证](https://github.com/tdegrunt/jsonschema)
+- [licia: 常用工具库收集](https://github.com/liriliri/licia)
 
 
 
