@@ -67,7 +67,10 @@
 - [「react进阶」一文吃透React高阶组件(HOC)](https://juejin.cn/post/6940422320427106335)
 - [** 重学react](/books/专题知识库/01、react专题/04、其他/09、重学react/09、重学react.md)
 - [如何科学使用createContext、useReducer、useContext](/books/专题知识库/01、react专题/04、其他/10、如何科学使用createContext、useReducer、useContext/readme.md)
-- [一个重复渲染的问题研究](books/专题知识库/01、react专题/04、其他/11、一个重复渲染的问题研究/readme.md)
+- [一个重复渲染的问题研究](/books/专题知识库/01、react专题/04、其他/11、一个重复渲染的问题研究/readme.md)
+- [react源码分析(3)：react的事件委托机制](https://www.jianshu.com/p/b249793fd2a7)
+
+
 
 ### react hooks
 - [10分钟教你手写8个常用的自定义hooks](https://juejin.im/post/6844904074433789959)
@@ -107,14 +110,14 @@
 - [react在组件中触发子组件方法 以及触发兄弟组件](https://www.cnblogs.com/xiaoliwang/p/11237747.html)
 - [React16.3中的Refs和Forwarding Refs](https://blog.csdn.net/liwusen/article/details/80009968)
 - [React中获取DOM节点的两种方法](https://www.jianshu.com/p/f533a9d7645c)
-- [** 一文吃透 React SSR 服务端渲染和同构原理](https://juejin.im/post/6844903943902855176)
+- [** 一文吃透 React SSR 服务端渲染和同构原理](https://juejin.cn/post/6844903943902855176)
 - [35 道咱们必须要清楚的 React 面试题](https://juejin.im/post/6844903988073070606)
 - [react-swipeable: React swipe component - Swipe bindings for react](https://github.com/dogfessional/react-swipeable)
 - [基于react的前端文件上传](./18年/6月/08、基于react的前端文件上传)
 - [一键分享到各大社交网站的react组件](https://github.com/DawnyWu/react-share-buttons)
 - [react hooks+redux+immutable.js打造网易云音乐精美webApp](https://juejin.im/post/6844903911367639054)
 - [React 中渐进式加载图片](https://juejin.cn/post/6844904147746029581)
+- [【万字长文警告】从头到尾彻底理解服务端渲染SSR原理 **](https://juejin.cn/post/6856321751115431944)
 
 
 ### 其他的一些研究话题
-- [一个方法里面，使用多个setState, 是否会引起多次重复渲染?](/books/个人发展与OKR/04、研究的问题/01、一个重复渲染的问题研究/readme.md)

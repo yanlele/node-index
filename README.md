@@ -219,6 +219,7 @@
 - [[译] 2018 来谈谈 Web Component](https://juejin.cn/post/6844903661403897870)
 - [前端存储除了 localStorage 还有啥](https://juejin.cn/post/6844904192549584903)
 - [忍法，scroll 翻滚之术！](https://juejin.cn/post/6844904081559912462)
+- [这些Web API真的有用吗?](https://juejin.cn/post/6844903922922962958)
 
 
 #### web功能实现
@@ -244,11 +245,13 @@
 - [手写axios核心原理，再也不怕面试官问我axios原理](https://juejin.cn/post/6856706569263677447)
 - [骚年，你确定没有人在折腾你的站点吗？](https://juejin.cn/post/6844903966505975822)
 - [axios 的一些基本用法](/books/知识库/01、前端技术知识/21、axios的一些基本用法/README.md)
+- [Ajax,jQuery ajax,axios和fetch介绍、区别以及优缺点](https://juejin.im/post/5d5e673ff265da03d2114646)
 
 
 #### 浏览器相关
 - [Chrome调试技巧](/books/知识库/01、前端技术知识/02、Chrome调试技巧/readme.md)
 - [关于屏幕高度，可见区域高度，目标元素高度，文档高度研究](/books/知识库/01、前端技术知识/14、关于屏幕高度，可见区域高度，目标元素高度，文档高度研究/README.md)
+- [** 近万字新手 chrome 扩展开发简单入门](https://juejin.cn/post/6844904127932137485)
 
 
 #### 前端模板引擎(这个已经落伍了， es6 模板字符串更加强大)
@@ -306,6 +309,7 @@
 - [每个 JavaScript 工程师都应懂的33个概念](https://github.com/stephentian/33-js-concepts)
 - [常用的正则验证例子](/books/专题知识库/05、基础知识点专题/other/05、正则验证/README.md)
 - [css加载会造成阻塞吗？](/books/知识库/01、前端技术知识/22、css加载会造成阻塞吗/index.md)
+- [在 JS 循环中正确使用 async 与 await](https://blog.csdn.net/sanstu/article/details/90904852)
   
 
 #### 静态资源相关研究
@@ -320,6 +324,7 @@
 - [ts配置文件详解](/books/知识库/01、前端技术知识/15、ts配置文件详解/readme.md)
 - [Yarn Workspace 使用指南](https://www.jianshu.com/p/990afa30b6fe)
 - [项目规范（包含git管理项目的使用）](https://github.com/elsewhencode/project-guidelines/blob/master/README-zh.md)
+- [指定文件、指定行、指定代码块不使用ESLint语法检查](https://blog.csdn.net/u013362969/article/details/81215336)
 - lerna
   - [使用lerna管理大型前端项目](https://www.jianshu.com/p/2f9c05b119c9)
   - [lerna的基础使用](https://www.jianshu.com/p/8b7e6025354b)
@@ -337,6 +342,12 @@
 - [基于 HTML5 Canvas 的拓扑组件开发](https://juejin.cn/post/6844903924260929550)
 - [使用WebGL去实现一个拖拽式UI代码生成App](https://juejin.cn/post/6846687604096630792)
 - [为什么Vue3.0使用Proxy实现数据监听？defineProperty表示不背这个锅](https://juejin.cn/post/6844903965180575751)
+- [Ant Design中使用CodeMirror2代码编辑器](https://www.jianshu.com/p/4d5ef6808da7)
+- [请你实现一个大文件上传和断点续传](https://juejin.cn/post/6844904046436843527)
+- [编写一个axios这样的库](https://juejin.cn/post/6844904047699296263)
+- [前端轻量化部署脚手架实践](https://juejin.cn/post/6844904046986280967)
+- [手动实现高仿github的内容diff效果](https://juejin.cn/post/6857316059851325453)
+- [原生JS封装拖动验证滑块你会吗？](https://juejin.cn/post/6844904175910780941)
 
 
 #### 零碎基础算法问题
@@ -346,6 +357,8 @@
 
 #### 编译与转译
 - [babel配置-各阶段的stage的区别](https://blog.csdn.net/wang252949/article/details/79064046)
+- [抽象语法树（AST）](https://segmentfault.com/a/1190000016231512)
+- [AST原理，让你蜕变为高级前端工程师的原理](https://juejin.cn/post/6854573222071894029)
 
 
 #### TypeScript相关
@@ -362,38 +375,18 @@
 - [git合并多个提交](https://www.cnblogs.com/tocy/p/git-rebase-merge-commit.html)
 - [git commit message emoji 使用指南](https://github.com/liuchengxu/git-commit-emoji-cn)
 - [Github上开源项目readme里好看的高大上的有趣的徽章从何而来](https://blog.csdn.net/xialonghua/article/details/87373052)
+- [gitbook-use](https://github.com/zhangjikai/gitbook-use)
+- [git操作之git clean删除一些没有git add的文件](https://www.cnblogs.com/pcx105/p/10036781.html)
+- [Git中tag标签的使用](https://blog.csdn.net/wei78008023/article/details/81866590)
+
+
+#### 渲染与项目性能优化
+- [高性能渲染十万条数据](https://juejin.cn/post/6844903938894872589)
 
 
 ----------------
-- [Dexie.js:A Minimalistic Wrapper for IndexedDB](https://github.com/dfahlander/Dexie.js)
-- [从输入url到页面展示到底发生了什么？](https://mp.weixin.qq.com/s?__biz=MzU2MTI4MjI0MQ==&mid=2247486007&idx=1&sn=176d131e0d35bf9ede04c31effd51e48&chksm=fc7a6799cb0dee8f472b2f44eaa1adc312f99cf3f053bd00f24c2dc1265d83c9823b128a4eaf&mpshare=1&scene=23&srcid=0408UkbC9si520rEHA2w5oCc)
-- [gitbook-use](https://github.com/zhangjikai/gitbook-use)
-- [抽象语法树（AST）](https://segmentfault.com/a/1190000016231512)
-- [WebStorm 关闭自动保存功能添加*星星标记](https://blog.csdn.net/fisherapp1995/article/details/85063199)
-- [LeetCode 算法题刷题心得](https://www.jianshu.com/p/8876704ea9c8)
-- [git操作之git clean删除一些没有git add的文件](https://www.cnblogs.com/pcx105/p/10036781.html)
-- [react源码分析(3)：react的事件委托机制](https://www.jianshu.com/p/b249793fd2a7)
-- [基于storage开发缓存库 - 源码研究](https://github.com/myronliu347/store.js)
-- [Git中tag标签的使用](https://blog.csdn.net/wei78008023/article/details/81866590)
-- [这些Web API真的有用吗?](https://juejin.im/post/5d5df391e51d453b1e478ad0)
-- [typescript 类型映射 （ReadOnly、Partial）](https://blog.csdn.net/qq_30101131/article/details/83214295)
-- [Ant Design中使用CodeMirror2代码编辑器](https://www.jianshu.com/p/4d5ef6808da7)
-- [Ajax,jQuery ajax,axios和fetch介绍、区别以及优缺点](https://juejin.im/post/5d5e673ff265da03d2114646)
-- [高性能渲染十万条数据](https://juejin.im/post/5d76f469f265da039a28aff7)
-- [指定文件、指定行、指定代码块不使用ESLint语法检查](https://blog.csdn.net/u013362969/article/details/81215336)
-- [在 JS 循环中正确使用 async 与 await](https://blog.csdn.net/sanstu/article/details/90904852)
-- [简单好用的动画库：anime](https://github.com/juliangarnier/anime)
-- [请你实现一个大文件上传和断点续传](https://juejin.im/post/5dff8a26e51d4558105420ed)
-- [编写一个axios这样的库](https://juejin.im/post/5e16e5d76fb9a02fd742a92b)
-- [pm2 实践指南](https://juejin.im/post/5e1fa941e51d451c774dcc18)
-- [前端轻量化部署脚手架实践](https://juejin.im/post/5e1bfbadf265da3e3077005e)
-- [React SSR 服务端渲染和同构原理 **](https://juejin.im/post/5d7deef6e51d453bb13b66cd)
-- [揭秘vue/react组件库中5个"作者不造的XX"](https://juejin.im/post/5d89cd156fb9a06acb3ee19e)
-- [手动实现高仿github的内容diff效果](https://juejin.im/post/6857316059851325453)
-- [【万字长文警告】从头到尾彻底理解服务端渲染SSR原理 **](https://juejin.im/post/6856321751115431944)
-- [AST原理，让你蜕变为高级前端工程师的原理](https://juejin.im/post/6854573222071894029)
-- [** 近万字新手 chrome 扩展开发简单入门](https://juejin.im/post/6844904127932137485)
-- [原生JS封装拖动验证滑块你会吗？](https://juejin.im/post/6844904175910780941)
+
+
 - [** 如何实现高性能的在线 PDF 预览](https://juejin.im/post/6844904176296656903)
 - [从零开始写一个采集图片的chrome插件](https://juejin.im/post/6844904097829617678)
 - [你可能不知道的15个有用的Github功能](https://juejin.im/post/6844904193396834318)
@@ -480,6 +473,7 @@
 - [github开发人员在七夕搞事情：remote: Support for password authentication was removed on August 13, 2021.](https://blog.csdn.net/weixin_41010198/article/details/119698015)
 - [解决mac安装homebrew后报错-bash: brew: command not found](https://blog.csdn.net/li396864285/article/details/52572163)
 - [mac 上安装 nvm 遇到的坑](https://www.jianshu.com/p/f6c3ecfdbd97)
+- [WebStorm 关闭自动保存功能添加*星星标记](https://blog.csdn.net/fisherapp1995/article/details/85063199)
 
 
 
@@ -544,6 +538,7 @@
 - [如何优雅的实现消息通信？](https://juejin.im/post/6865444445479927821)
 - [发布、安装自己的npm模块](https://www.cnblogs.com/yanhua2017/p/7748491.html)
 - [Sequelize 文档的中文版本](https://github.com/demopark/sequelize-docs-Zh-CN)
+- [pm2 实践指南](https://juejin.cn/post/6844904048768843784)
 
 
 ### 日常采坑与记录
@@ -670,6 +665,7 @@
 - [antd-form-builder](https://github.com/rekit/antd-form-builder)
 - [“从零到部署”Vue全栈电商应用系列教程---正式完结](https://juejin.im/post/5e7577816fb9a07c83350011)
 - [keep-alive实现原理](https://juejin.im/post/5e1ed2635188254c46131aaf)
+- [基于storage开发缓存库 - 源码研究](https://github.com/myronliu347/store.js)
 
 
 

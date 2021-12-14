@@ -95,6 +95,7 @@
 - [render-html-to-pdf: html转成pdf,下载](https://github.com/linwalker/render-html-to-pdf)
 - [howler: JavaScript音频播放库](https://github.com/goldfire/howler.js)
 - [parameter: 参数校验模块](https://github.com/node-modules/parameter)
+- [Dexie.js:A Minimalistic Wrapper for IndexedDB](https://github.com/dfahlander/Dexie.js)
 
 
 
