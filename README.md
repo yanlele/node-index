@@ -341,6 +341,7 @@
 - [css加载会造成阻塞吗？](/books/知识库/01、前端技术知识/22、css加载会造成阻塞吗/index.md)
 - [在 JS 循环中正确使用 async 与 await](https://blog.csdn.net/sanstu/article/details/90904852)
 - [Object.assign()与深拷贝](/books/知识库/01、前端技术知识/23、Object.assign()与深拷贝/README.md)
+- [Base64原理](https://juejin.cn/post/6844903698045370376)
 
 
   
@@ -359,6 +360,12 @@
 - [Yarn Workspace 使用指南](https://www.jianshu.com/p/990afa30b6fe)
 - [项目规范（包含git管理项目的使用）](https://github.com/elsewhencode/project-guidelines/blob/master/README-zh.md)
 - [指定文件、指定行、指定代码块不使用ESLint语法检查](https://blog.csdn.net/u013362969/article/details/81215336)
+- [eslint配置文件eslintrc参数详解](/books/知识库/02、技术生态圈/04、eslint配置文件eslintrc参数详解/README.md)
+- [常用eslint配置](/books/知识库/02、技术生态圈/06、常用eslint配置/README.md)
+- [常用tslint配置](/books/知识库/02、技术生态圈/07、常用tslint配置/README.md)
+- [eslint检测TS项目](/books/知识库/02、技术生态圈/09、eslint检测TS项目/README.md)
+- [Commitizen(git-cz)配置](/books/知识库/02、技术生态圈/02、Commitizen(git-cz)配置/readme.md)
+- [使用husky、prettier、lint、commitlint构建规范化项目实践](/books/知识库/02、技术生态圈/08、使用husky、prettier、lint、commitlint构建规范化项目实践/README.md)
 - lerna
   - [使用lerna管理大型前端项目](https://www.jianshu.com/p/2f9c05b119c9)
   - [lerna的基础使用](https://www.jianshu.com/p/8b7e6025354b)
@@ -371,6 +378,8 @@
 - [一文搞懂peerDependencies](https://juejin.cn/post/6844904134248759309)
 - [使用ESLint+Prettier来统一前端代码风格](https://juejin.cn/post/6844903621805473800)
 - [重新认识 package.json](https://juejin.cn/post/6844904159226003463)
+- [谷歌出品的Web打包方案：Web Bundles 技术揭秘](https://mp.weixin.qq.com/s/_7_KrY_ozbUZxzUlCU_B4w)
+
 
 
 
@@ -421,6 +430,7 @@
 
 
 #### git相关
+- [git 常用命令汇总/git命令行](/books/知识库/02、技术生态圈/01、git常用命令汇总/README.md)
 - [README文件语法解读，即Github Flavored Markdown语法介绍](https://github.com/guodongxiaren/README)
 - [MarkDown添加图片的三种方式 - 找时间自己总结一边](https://blog.csdn.net/slaughterdevil/article/details/79255933)
 - [GithubPages教程 在GithubPages上搭建个人主页](https://blog.csdn.net/yanzhenjie1003/article/details/51703370)
@@ -434,6 +444,8 @@
 - [git操作之git clean删除一些没有git add的文件](https://www.cnblogs.com/pcx105/p/10036781.html)
 - [Git中tag标签的使用](https://blog.csdn.net/wei78008023/article/details/81866590)
 - [你可能不知道的15个有用的Github功能](https://juejin.cn/post/6844904193396834318)
+- [git clone 太慢了的解决办法](/books/知识库/02、技术生态圈/12、git%20clone%20太慢了的解决办法/readme.md)
+- [github开发人员在七夕搞事情：remote: Support for password authentication was removed on August 13, 2021.](https://blog.csdn.net/weixin_41010198/article/details/119698015)
 
 
 #### 渲染与项目性能优化
@@ -447,49 +459,54 @@
 
 
 ### 技术生态圈
-- [WebStrom Live Template 建代码块](https://blog.csdn.net/liangrongliu1991/article/details/79626960)
-- [Mac机上安装nvm遇到的坑--nvm command not found](https://www.cnblogs.com/giggle/p/7075548.html)
-- [eslint配置文件eslintrc参数详解](/books/知识库/02、技术生态圈/04、eslint配置文件eslintrc参数详解/README.md)
-- [npm镜像源的切换问题](/books/知识库/02、技术生态圈/05、npm镜像源切换问题/README.md)
-- [常用eslint配置](/books/知识库/02、技术生态圈/06、常用eslint配置/README.md)
-- [常用tslint配置](/books/知识库/02、技术生态圈/07、常用tslint配置/README.md)
-- [前端mock解决方案](/books/知识库/02、技术生态圈/10、前端mock解决方案/README.md)
-- [eslint检测TS项目](/books/知识库/02、技术生态圈/09、eslint检测TS项目/README.md)
-- [Commitizen(git-cz)配置](/books/知识库/02、技术生态圈/02、Commitizen(git-cz)配置/readme.md)
-- [使用husky、prettier、lint、commitlint构建规范化项目实践](/books/知识库/02、技术生态圈/08、使用husky、prettier、lint、commitlint构建规范化项目实践/README.md)
-- [brew常用命令行](/books/知识库/02、技术生态圈/03、brew常用命令行/README.md)
-- [git 常用命令汇总](/books/知识库/02、技术生态圈/01、git常用命令汇总/README.md)
-- [Mac系统占用空间大、空间不够、查看系统文件大小分布](https://blog.csdn.net/u011423056/article/details/79450845)
-- [Hbase中多版本(version)数据获取办法](https://blog.csdn.net/liuchuanhong1/article/details/53895234/)
-- [Docker上安装运行Hbase](https://blog.csdn.net/liuchuanhong1/article/details/53895234/)
-- [HBase基本概念与基本使用](https://www.cnblogs.com/swordfall/p/8737328.html#auto_id_9)
+#### jetbrains 体系
+- [WebStrom Live Template 建代码块](https://blog.csdn.net/liangrongliu1991/article/details/79626960)  
 - [jetbrains:同步服务器代码](https://www.jianshu.com/p/49442ec9bc9f)
-- [mac Homebrew 装包加速](/books/知识库/02、技术生态圈/11、mac_Homebrew装包加速/readme.md)
-- [前端职业规划 - 写给那些想去和刚去大厂的年轻人(鸡汤有毒)](https://juejin.im/post/6854828407890477064)
-- [【深度思考】如何优雅告知用户，网站正在升级维护？](https://juejin.im/post/6857673247819989000)
-- [从GraphQL到前端数据管理的革命 - GraphQL干货笔记](https://juejin.im/post/6844904196848762888)
-- [好玩的Jenkins](https://juejin.im/post/6844904176078553096)
-- [分分钟教会你搭建企业级的 npm 私有仓库](https://juejin.im/post/6844904196651630599)
 - [在 WebStorm 中，配置能够识别 Vue CLI 3 创建的项目的别名 alias @](https://juejin.im/post/6844903802185891848)
-- [技术探索：60 天急速自研-前端埋点监控跟踪系统大浪子](https://juejin.im/post/6844903954199887880)
-- [** 前端代码质量-圈复杂度原理和实践](https://juejin.im/post/6844903965792927751)
-- [git clone 太慢了的解决办法](/books/知识库/02、技术生态圈/12、git%20clone%20太慢了的解决办法/readme.md)
+- [WebStorm 关闭自动保存功能添加*星星标记](https://blog.csdn.net/fisherapp1995/article/details/85063199)
+
+
+#### mac 体系
+- [Mac机上安装nvm遇到的坑--nvm command not found](https://www.cnblogs.com/giggle/p/7075548.html)
+- [brew常用命令行](/books/知识库/02、技术生态圈/03、brew常用命令行/README.md)
+- [Mac系统占用空间大、空间不够、查看系统文件大小分布](https://blog.csdn.net/u011423056/article/details/79450845)
+- [mac Homebrew 装包加速](/books/知识库/02、技术生态圈/11、mac_Homebrew装包加速/readme.md)
+- [解决mac安装homebrew后报错-bash: brew: command not found](https://blog.csdn.net/li396864285/article/details/52572163)
+- [mac 上安装 nvm 遇到的坑](https://www.jianshu.com/p/f6c3ecfdbd97)
+
+
+
+
+#### 职业发展与规划
+- [前端职业规划 - 写给那些想去和刚去大厂的年轻人(鸡汤有毒)](https://juejin.im/post/6854828407890477064)
 - [简析解决问题的通用方法论](https://juejin.cn/post/6891167960589664264)
 - [技术人员升级打怪的方法论](https://juejin.cn/post/6900939109670322189)
+
+
+#### 项目思考
+- [【深度思考】如何优雅告知用户，网站正在升级维护？](https://juejin.im/post/6857673247819989000)
 - [测试金字塔实战](https://insights.thoughtworks.cn/practical-test-pyramid/)
+- [** 前端代码质量-圈复杂度原理和实践](https://juejin.im/post/6844903965792927751)
+
+
+
+#### 展望未来技术方向
+- [从GraphQL到前端数据管理的革命 - GraphQL干货笔记](https://juejin.im/post/6844904196848762888)
+
+
+
+#### 好用工具分享
 - [键盘控制工具: Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)
 - [控制应用缩放-眼镜: Spectacle allows you to organize your windows without using a mouse.](https://github.com/eczarny/spectacle)
 - [syncd是一款开源的代码部署工具](https://github.com/dreamans/syncd)
 - [磁力链接聚合搜索](https://github.com/xiandanin/magnetW)
 - [使用jetbrains](https://www.macwk.com/article/jetbrains-crack)
-- [访问github的九种办法](https://mp.weixin.qq.com/s/3LfveCU2Hm7N6OnV3Gtx3Q)
-- [谷歌出品的Web打包方案：Web Bundles 技术揭秘](https://mp.weixin.qq.com/s/_7_KrY_ozbUZxzUlCU_B4w)
-- [github开发人员在七夕搞事情：remote: Support for password authentication was removed on August 13, 2021.](https://blog.csdn.net/weixin_41010198/article/details/119698015)
-- [解决mac安装homebrew后报错-bash: brew: command not found](https://blog.csdn.net/li396864285/article/details/52572163)
-- [mac 上安装 nvm 遇到的坑](https://www.jianshu.com/p/f6c3ecfdbd97)
-- [WebStorm 关闭自动保存功能添加*星星标记](https://blog.csdn.net/fisherapp1995/article/details/85063199)
-- [Base64原理](https://juejin.cn/post/6844903698045370376)
+
+
+#### 其他应用技术方向
 - [手把手教你快速搭建专属的storybook](https://juejin.cn/post/6844903752982331405)
+
+
 
 
 
@@ -555,6 +572,10 @@
 - [发布、安装自己的npm模块](https://www.cnblogs.com/yanhua2017/p/7748491.html)
 - [Sequelize 文档的中文版本](https://github.com/demopark/sequelize-docs-Zh-CN)
 - [pm2 实践指南](https://juejin.cn/post/6844904048768843784)
+- [npm镜像源的切换问题](/books/知识库/02、技术生态圈/05、npm镜像源切换问题/README.md)
+- [前端mock解决方案](/books/知识库/02、技术生态圈/10、前端mock解决方案/README.md)
+- [分分钟教会你搭建企业级的 npm 私有仓库](https://juejin.im/post/6844904196651630599)
+
 
 
 ### 日常采坑与记录
