@@ -22,6 +22,7 @@
 - [本篇示例代码请见](/books/专题知识库/11、测试专题/01篇、javascript单元测试框架mochajs详解/REAMDE.md)
 - [单元测试(mocha)](/books/知识库/03、Node技术知识/06、单元测试/README.md)
 - [大型服务端项目测试(mocha)和UT覆盖示例](/books/知识库/03、Node技术知识/07、大型服务端项目测试和UT覆盖示例/README.md)
+- [测试框架mochajs详解](https://github.com/zhaosaisai/mocha-in-chinese)
 
 
 ## 02篇 断言库chai

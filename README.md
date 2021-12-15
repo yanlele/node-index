@@ -273,6 +273,7 @@
 - [骚年，你确定没有人在折腾你的站点吗？](https://juejin.cn/post/6844903966505975822)
 - [axios 的一些基本用法](/books/知识库/01、前端技术知识/21、axios的一些基本用法/README.md)
 - [Ajax,jQuery ajax,axios和fetch介绍、区别以及优缺点](https://juejin.im/post/5d5e673ff265da03d2114646)
+- [《HTTP权威指南》每章的知识点总结](https://github.com/woai30231/http)
 
 
 #### 浏览器相关
@@ -418,6 +419,7 @@
 #### 零碎基础算法问题
 - [手写算法并记住它：快速排序（5行代码简单版）](https://juejin.cn/post/6844903938290876430)
 - [树形对象查找](/books/知识库/01、前端技术知识/19、树形对象查找/readme.md)
+- [前端该如何准备数据结构和算法？](https://juejin.im/post/5d5b307b5188253da24d3cd1)
 
 
 
@@ -458,10 +460,12 @@
 #### 渲染与项目性能优化
 - [高性能渲染十万条数据](https://juejin.cn/post/6844903938894872589)
 - [** 如何实现高性能的在线 PDF 预览](https://juejin.cn/post/6844904176296656903)
+- [关于内存泄漏的文章](https://github.com/zhansingsong/js-leakage-patterns)
 
 
 #### 图形与图表
 - [Three.js零基础入门教程](http://www.yanhuangxueyuan.com/Three.js/)
+- [一步步带你实现web全景看房——three.js](https://juejin.cn/post/6844903918409875469)
 
 
 
@@ -480,7 +484,6 @@
 - [mac Homebrew 装包加速](/books/知识库/02、技术生态圈/11、mac_Homebrew装包加速/readme.md)
 - [解决mac安装homebrew后报错-bash: brew: command not found](https://blog.csdn.net/li396864285/article/details/52572163)
 - [mac 上安装 nvm 遇到的坑](https://www.jianshu.com/p/f6c3ecfdbd97)
-
 
 
 
@@ -516,10 +519,17 @@
 
 
 
-
 ### Node技术知识
+
+#### Node基础知识
+- [【译】Node.js 子进程：你需要知道的一切](https://mp.weixin.qq.com/s/6reZnrYaD-1BZ50nwWYS3g)
+- [关于node.js中流的理解](https://juejin.im/post/5cbaba8ce51d456e747c5343)
+- [深入理解Node.js 中的进程与线程](https://juejin.im/post/6844903908385488903)
+
+
 #### 模块规范
 - [CommonJs模块规范](/books/知识库/03、Node技术知识/1、commonjs/README.md)
+- [require时，exports和module.exports的区别你真的懂吗？](https://juejin.im/post/5d5639c7e51d453b5c1218b4)
 
 
 #### node api
@@ -530,63 +540,72 @@
 
 
 
+#### node 应用技术
 - [把文档文本文件(*.docx)转换文html](https://github.com/mwilliamson/mammoth.js)
-- [Create PDF files using React](https://github.com/diegomura/react-pdf)
-- [Create, read and edit .zip files with Javascript](https://github.com/Stuk/jszip)
 - [前后端对称加解密解决方案](/books/知识库/03、Node技术知识/08、前后端对称加解密解决方案/README.md)
 - [封装日志模块 - 基于chalk](/books/知识库/03、Node技术知识/09、封装日志输出模块/README.md)
-- [读取递归目录的路径模块: recursive-readdir](https://github.com/jergason/recursive-readdir)
-- [将glob表达式转换为JavaScript RegExp对象:minimatch](https://github.com/isaacs/minimatch)
-- [用于node.js的HTTP请求日志程序中间件:morgan](https://github.com/expressjs/morgan)
-- [js加解密库: crypto-js](https://github.com/brix/crypto-js)
-- [服务端生成二维码:qr-image](https://github.com/alexeyten/qr-image)
-- [客户端生成二维码:jrQrcode](https://github.com/diamont1001/jrQrcode)
-- [测试框架mochajs详解](https://github.com/zhaosaisai/mocha-in-chinese)
-- [启动本地文件服务的一个模块serve](https://github.com/zeit/serve)
-- [快速线上部署的模块now](https://github.com/zeit/now-cli)
-- [Windows上使用redis的文章](https://blog.csdn.net/u010137839/article/details/80210328)
-- [Safely and quickly serialize JavaScript objects](https://github.com/davidmarkclements/fast-safe-stringify)
-- [关于内存泄漏的文章](https://github.com/zhansingsong/js-leakage-patterns)
 - [WebSocket和Socket.io](https://www.jianshu.com/p/4e80b931cdea)
-- [深度递归合并JS对象](https://github.com/KyleAMathews/deepmerge)
-- [深度递归对比JS对象](https://github.com/flitbit/diff)
-- [《HTTP权威指南》每章的知识点总结](https://github.com/woai30231/http)
-- [V8引擎初步介绍](/books/专题知识库/05、基础知识点专题/other/14、V8引擎初步介绍/README.md)
-- [node内存优化](/books/专题知识库/05、基础知识点专题/other/15、node内存优化/README.md)
-- [node爬虫](/books/知识库/03、Node技术知识/10、node爬虫/readme.md)
-- [Cross platform setting of environment scripts:cross-env](https://github.com/kentcdodds/cross-env)
-- [Download and extract a git repository (GitHub, GitLab, Bitbucket) from node.](https://github.com/flipxfx/download-git-repo)
-- [基于node的代码生成器](https://github.com/yanlele/node-index-core/tree/master/packages/19%E5%B9%B4/05%E6%9C%88/01%E3%80%81%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8)
-- [【译】Node.js 子进程：你需要知道的一切](https://mp.weixin.qq.com/s/6reZnrYaD-1BZ50nwWYS3g)
-- [yargs the modern, pirate-themed successor to optimist.](https://github.com/yargs/yargs)
-- [localForage: 本地存储解决方案](https://github.com/localForage/localForage)
-- [写一个 JS 调用栈可视化工具 hound-trace](https://juejin.im/post/5d555ca851882554a13f7cad)
-- [一步步带你实现web全景看房——three.js](https://juejin.im/post/5d57967a6fb9a06b017e4b62)
-- [前端该如何准备数据结构和算法？](https://juejin.im/post/5d5b307b5188253da24d3cd1)
-- [GraphQL + Apollo + Vue 牛刀小试](https://juejin.im/post/5cecc597e51d454fbe24a61a)
-- [apollo-graphql 自己使用的一点姿势](https://juejin.im/post/5ca2bd5c51882543e4506fbf)
-- [require时，exports和module.exports的区别你真的懂吗？](https://juejin.im/post/5d5639c7e51d453b5c1218b4)
-- [5分钟教你用nodeJS手写一个mock数据服务器](https://juejin.im/post/5d7345bce51d453b76258503)
-- [从0构建一个TS-Node项目](/books/知识库/03、Node技术知识/11、从0构建一个TS-Node项目/README.md)
-- [关于node.js中流的理解](https://juejin.im/post/5cbaba8ce51d456e747c5343)
+- [使用 Proxy 构建响应式系统](https://juejin.im/post/6844903950093664264)
+- [【图文详解】200行JS代码，带你实现代码编译器（人人都能学会）](https://juejin.im/post/6844904105937207304)
+- [如何优雅的实现消息通信？](https://juejin.im/post/6865444445479927821)
+
+
+#### node 服务端
+- [用于node.js的HTTP请求日志程序中间件:morgan](https://github.com/expressjs/morgan)
 - [linux安装mongoDB与NodeJs远程连接](https://juejin.im/post/5cb6cc72518825327854752e)
 - [前端工程师须知的CORS知识](https://juejin.im/post/5cbaa6ef5188253feb5855be)
-- [你不能不知道的Koa实现原理](https://juejin.im/post/5d1964bfe51d454fd8057bcb)
-- [深入理解Node.js 中的进程与线程](https://juejin.im/post/6844903908385488903)
-- [JavaScript-V8引擎](https://juejin.im/post/6844903950089453575)
-- [Deno 正式发布，彻底弄明白和 node 的区别](https://juejin.im/post/6844904158617665544)
-- [使用 Proxy 构建响应式系统](https://juejin.im/post/6844903950093664264)
-- [使用四十行代码实现一个核心 koa](https://juejin.im/post/6844904096516816904)
-- [[译] Node.js 新特性将颠覆 AI、物联网等更多惊人领域](https://juejin.im/post/6844903985053188109)
-- [【图文详解】200行JS代码，带你实现代码编译器（人人都能学会）](https://juejin.im/post/6844904105937207304)
 - [《大前端进阶 Node.js》系列 双十一秒杀系统（进阶必看）](https://juejin.im/post/6844904095514378254)
-- [如何优雅的实现消息通信？](https://juejin.im/post/6865444445479927821)
-- [发布、安装自己的npm模块](https://www.cnblogs.com/yanhua2017/p/7748491.html)
-- [Sequelize 文档的中文版本](https://github.com/demopark/sequelize-docs-Zh-CN)
-- [pm2 实践指南](https://juejin.cn/post/6844904048768843784)
-- [npm镜像源的切换问题](/books/知识库/02、技术生态圈/05、npm镜像源切换问题/README.md)
+- 项目部署
+  - [pm2 实践指南](https://juejin.cn/post/6844904048768843784)
+  - [快速线上部署的模块now](https://github.com/zeit/now-cli)
+- orm
+  - [Sequelize 文档的中文版本](https://github.com/demopark/sequelize-docs-Zh-CN)
+
+
+#### 爬虫
+- [node爬虫](/books/知识库/03、Node技术知识/10、node爬虫/readme.md)
+
+
+#### 内存优化
+- [node内存优化](/books/专题知识库/05、基础知识点专题/other/15、node内存优化/README.md)
+
+
+#### V8引擎
+- [V8引擎初步介绍](/books/专题知识库/05、基础知识点专题/other/14、V8引擎初步介绍/README.md)
+- [JavaScript-V8引擎](https://juejin.im/post/6844903950089453575)
+
+
+#### GraphQL
+- [GraphQL + Apollo + Vue 牛刀小试](https://juejin.im/post/5cecc597e51d454fbe24a61a)
+- [apollo-graphql 自己使用的一点姿势](https://juejin.im/post/5ca2bd5c51882543e4506fbf)
+
+
+#### mock数据
+- [5分钟教你用nodeJS手写一个mock数据服务器](https://juejin.im/post/5d7345bce51d453b76258503)
 - [前端mock解决方案](/books/知识库/02、技术生态圈/10、前端mock解决方案/README.md)
+
+
+#### Node项目构建
+- [从0构建一个TS-Node项目](/books/知识库/03、Node技术知识/11、从0构建一个TS-Node项目/README.md)
+
+
+#### 深入原理研究
+- [使用四十行代码实现一个核心 koa](https://juejin.im/post/6844904096516816904)
+- [你不能不知道的Koa实现原理](https://juejin.im/post/5d1964bfe51d454fd8057bcb)
+
+
+#### npm
+- [发布、安装自己的npm模块](https://www.cnblogs.com/yanhua2017/p/7748491.html)
+- [npm镜像源的切换问题](/books/知识库/02、技术生态圈/05、npm镜像源切换问题/README.md)
 - [分分钟教会你搭建企业级的 npm 私有仓库](https://juejin.im/post/6844904196651630599)
+
+
+#### Deno
+- [Deno 正式发布，彻底弄明白和 node 的区别](https://juejin.im/post/6844904158617665544)
+
+
+#### 展望Node未来
+- [[译] Node.js 新特性将颠覆 AI、物联网等更多惊人领域](https://juejin.im/post/6844903985053188109)
 
 
 
@@ -635,7 +654,6 @@
 
 
 ### 研究的项目
-
 
 
 

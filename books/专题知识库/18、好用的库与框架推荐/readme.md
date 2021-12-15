@@ -96,6 +96,10 @@
 - [howler: JavaScript音频播放库](https://github.com/goldfire/howler.js)
 - [parameter: 参数校验模块](https://github.com/node-modules/parameter)
 - [Dexie.js:A Minimalistic Wrapper for IndexedDB](https://github.com/dfahlander/Dexie.js)
+- [客户端生成二维码:jrQrcode](https://github.com/diamont1001/jrQrcode)
+- [Safely and quickly serialize JavaScript objects](https://github.com/davidmarkclements/fast-safe-stringify)
+- [深度递归合并JS对象](https://github.com/KyleAMathews/deepmerge)
+- [深度递归对比JS对象](https://github.com/flitbit/diff)
 
 
 
@@ -134,6 +138,7 @@
 - [react-sticky](https://github.com/captivationsoftware/react-sticky)
 - [react-hooks: Collection of react hooks](https://github.com/ecomfe/react-hooks)
 - [Runtime type system for IO decoding/encoding: io-ts](https://github.com/gcanti/io-ts)
+- [Create PDF files using React](https://github.com/diegomura/react-pdf)
 
 
 ### node
@@ -149,6 +154,13 @@
 - [prompt](https://github.com/flatiron/prompt)
 - [glob functionality for node.js](https://github.com/isaacs/node-glob)
 - [命令行工具: commander](https://github.com/tj/commander.js)
+- [Create, read and edit .zip files with Javascript](https://github.com/Stuk/jszip)
+- [读取递归目录的路径模块: recursive-readdir](https://github.com/jergason/recursive-readdir)
+- [将glob表达式转换为JavaScript RegExp对象:minimatch](https://github.com/isaacs/minimatch)
+- [服务端生成二维码:qr-image](https://github.com/alexeyten/qr-image)
+- [Download and extract a git repository (GitHub, GitLab, Bitbucket) from node.](https://github.com/flipxfx/download-git-repo)
+- [yargs the modern, pirate-themed successor to optimist.](https://github.com/yargs/yargs)
+- [启动本地文件服务的一个模块serve](https://github.com/zeit/serve)
 
 
 
@@ -176,4 +188,6 @@
 - [这些开源项目，让你轻松应对十大工作场景](https://juejin.cn/post/6898098763772985352)
 - [redis客户端工具: AnotherRedisDesktopManager](https://github.com/qishibo/AnotherRedisDesktopManager)
 - [html5游戏引擎: egret-core](https://github.com/egret-labs/egret-core)
+
+
 
