@@ -130,7 +130,7 @@ function throttle(func, wait) {
     };
 }
 ```
-[请看demo1](books/专题知识库/05、基础知识点专题/other/07、实现函数节流/demo1.js)
+[请看demo1](/books/专题知识库/05、基础知识点专题/other/07、实现函数节流/demo1.js)
 
 
 #### 更进一步的优化
@@ -172,7 +172,7 @@ function throttle(func, wait, options) {
     return throttled;
 }
 ```
-[请看demo2](books/专题知识库/05、基础知识点专题/other/07、实现函数节流/demo2.js)
+[请看demo2](/books/专题知识库/05、基础知识点专题/other/07、实现函数节流/demo2.js)
 
 如果想添加一个取消功能：
 ```javascript

@@ -3,7 +3,7 @@
 ## 脑内突然想知道的知识
 
 ### 即时问题
-- [五个易混淆的概念 - bundle](books/专题知识库/10、深入webpack工程化/06、其他/02、五个易混淆的概念/02、五个易混淆的概念.md)
+- [五个易混淆的概念 - bundle](/books/专题知识库/10、深入webpack工程化/06、其他/02、五个易混淆的概念/02、五个易混淆的概念.md)
 - http2/3
 - 如何做运行时监控
 - yarn link 是啥，如何使用
@@ -17,13 +17,13 @@
 - 领域模型和数据模型是啥
 - 一直在 window 上面挂东西是否有什么风险？
 - 什么情况下 tree-shaking 会失效
-- [一个方法里面，使用多个setState, 是否会引起多次重复渲染?](books/专题知识库/01、react专题/04、其他/11、一个重复渲染的问题研究/readme.md)
+- [一个方法里面，使用多个setState, 是否会引起多次重复渲染?](/books/专题知识库/01、react专题/04、其他/11、一个重复渲染的问题研究/readme.md)
 - 关于函数返回的问题研究
   - 在高阶函数返回值是一个新的函数对象， 这种新的函数对象是否会引起组件重复渲染
   - 是否有更好的解决办法呢？
-- [通过命令行合并多个分支](books/专题知识库/13、Linux相关知识点/其他/06、通过命令行合并多个分支/merge.sh)
+- [通过命令行合并多个分支](/books/专题知识库/13、Linux相关知识点/其他/06、通过命令行合并多个分支/merge.sh)
 - 研究一下gitlab-ci
-- [总结一下 chrome 调试技巧](books/知识库/01、前端技术知识/02、Chrome调试技巧/readme.md)
+- [总结一下 chrome 调试技巧](/books/知识库/01、前端技术知识/02、Chrome调试技巧/readme.md)
 - [如何科学使用createContext、useReducer、useContext](/books/专题知识库/01、react专题/04、其他/10、如何科学使用createContext、useReducer、useContext/readme.md)
 - function 与 箭头函数的区别
 - 性能监控
@@ -36,7 +36,7 @@
 - RPC 原理是什么
 - 研究一下pnpm
 - 什么是幽灵依赖，如何放置幽灵依赖
-- [如何让 json 转为 style 样式字符串， 适用于小程序](books/知识库/01、前端技术知识/25、thumbStyle/README.md)
+- [如何让 json 转为 style 样式字符串， 适用于小程序](/books/知识库/01、前端技术知识/25、thumbStyle/README.md)
 - 待整理：[揭秘vue/react组件库中5个"作者不造的XX"](https://juejin.im/post/5d89cd156fb9a06acb3ee19e)
 
 
