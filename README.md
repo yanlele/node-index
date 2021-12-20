@@ -393,6 +393,8 @@
   - [使用lerna管理大型前端项目](https://www.jianshu.com/p/2f9c05b119c9)
   - [lerna的基础使用](https://www.jianshu.com/p/8b7e6025354b)
   - [Lerna 中文教程详解](https://segmentfault.com/a/1190000019350611?utm_source=tag-newest)
+  - [All in one：项目级 monorepo 策略最佳实践](https://fed.taobao.org/blog/taofed/do71ct/uihagy/)
+  - [Monorepo 的这些坑](https://jishuin.proginn.com/p/763bfbd5d610)
 - commitLint  
   - [commitlint+husky规范commit 日志](https://blog.csdn.net/wei371522/article/details/84070803)
   - [Git commit message和工作流规范](https://www.imooc.com/article/16780)
