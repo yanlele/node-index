@@ -1,5 +1,6 @@
 ## JavaScript中的Pipe
 
+[可以参考 lodash 中的 flow](https://lodash.net/docs/4.16.1.html#_flowfuncs)
 
 
 ### 参考文档
