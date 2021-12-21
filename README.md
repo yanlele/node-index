@@ -440,13 +440,18 @@
 
 
 #### 编译与转译
-- [babel配置-各阶段的stage的区别](https://blog.csdn.net/wang252949/article/details/79064046)
-- [AST入门](https://juejin.cn/post/6885146952877031432)
-- [抽象语法树（AST）](https://segmentfault.com/a/1190000016231512)
-- [AST详解与运用](https://juejin.cn/post/6885146952877031432)
-- [AST原理，让你蜕变为高级前端工程师的原理](https://juejin.cn/post/6854573222071894029)
-- [深入浅出 Babel 上篇：架构和原理 + 实战](https://juejin.im/post/6844903956905197576)
-- [深入浅出 Babel 下篇：既生 Plugin 何生 Macros](https://juejin.im/post/6844903961820921869)
+- AST 抽象语法树
+  - [AST入门](https://juejin.cn/post/6885146952877031432)
+  - [抽象语法树（AST）](https://segmentfault.com/a/1190000016231512)
+  - [AST详解与运用](https://juejin.cn/post/6885146952877031432)
+  - [AST原理，让你蜕变为高级前端工程师的原理](https://juejin.cn/post/6854573222071894029)
+  - [平庸前端码农之蜕变 — AST](https://juejin.cn/post/6844903725228621832)
+
+- babel
+  - [深入浅出 Babel 上篇：架构和原理 + 实战](https://juejin.im/post/6844903956905197576)
+  - [深入浅出 Babel 下篇：既生 Plugin 何生 Macros](https://juejin.im/post/6844903961820921869)
+  - [babel配置-各阶段的stage的区别](https://blog.csdn.net/wang252949/article/details/79064046)
+
 
 
 
@@ -606,6 +611,11 @@
 - [发布、安装自己的npm模块](https://www.cnblogs.com/yanhua2017/p/7748491.html)
 - [npm镜像源的切换问题](/books/知识库/02、技术生态圈/05、npm镜像源切换问题/README.md)
 - [分分钟教会你搭建企业级的 npm 私有仓库](https://juejin.im/post/6844904196651630599)
+
+
+#### 包管理
+- [Pnpm: 最先进的包管理工具](https://juejin.cn/post/7001794162970361892)
+
 
 
 #### Deno
