@@ -33,7 +33,7 @@
   * [RXJS学习专题 - 已经放弃（因为看不到收益）](#rxjs%E5%AD%A6%E4%B9%A0%E4%B8%93%E9%A2%98---%E5%B7%B2%E7%BB%8F%E6%94%BE%E5%BC%83%E5%9B%A0%E4%B8%BA%E7%9C%8B%E4%B8%8D%E5%88%B0%E6%94%B6%E7%9B%8A)
   * [微前端专题](#%E5%BE%AE%E5%89%8D%E7%AB%AF%E4%B8%93%E9%A2%98)
   * [好用的库与框架](#%E5%A5%BD%E7%94%A8%E7%9A%84%E5%BA%93%E4%B8%8E%E6%A1%86%E6%9E%B6)
-  * [性能分析](#%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90)
+  * [性能分析与性能优化](#%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
   * [vue](#vue)
 - [知识库](#%E7%9F%A5%E8%AF%86%E5%BA%93)
   * [前端技术知识](#%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E7%9F%A5%E8%AF%86)
@@ -76,6 +76,7 @@
     + [Node项目构建](#node%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA)
     + [深入原理研究](#%E6%B7%B1%E5%85%A5%E5%8E%9F%E7%90%86%E7%A0%94%E7%A9%B6)
     + [npm](#npm)
+    + [包管理](#%E5%8C%85%E7%AE%A1%E7%90%86)
     + [Deno](#deno)
     + [展望Node未来](#%E5%B1%95%E6%9C%9Bnode%E6%9C%AA%E6%9D%A5)
   * [日常采坑与记录](#%E6%97%A5%E5%B8%B8%E9%87%87%E5%9D%91%E4%B8%8E%E8%AE%B0%E5%BD%95)
@@ -231,7 +232,7 @@
 ### [好用的库与框架](/books/专题知识库/18、好用的库与框架推荐/readme.md)
 
 
-### [性能分析](/books/专题知识库/19、性能分析/readme.md)
+### [性能分析与性能优化](/books/专题知识库/19、性能分析与性能优化/readme.md)
 
 
 ### vue
@@ -353,6 +354,7 @@
 - [常用的正则验证例子](/books/专题知识库/05、基础知识点专题/other/05、正则验证/README.md)
 - [css加载会造成阻塞吗？](/books/知识库/01、前端技术知识/22、css加载会造成阻塞吗/index.md)
 - [Base64原理](https://juejin.cn/post/6844903698045370376)
+- [复杂判断的优雅写法](/books/知识库/01、前端技术知识/26、复杂判断的优雅写法/README.md)
 
 - 异步问题
   - [深入理解 JavaScript 异步](https://github.com/wangfupeng1988/js-async-tutorial)
@@ -471,18 +473,14 @@
 - [README文件语法解读，即Github Flavored Markdown语法介绍](https://github.com/guodongxiaren/README)
 - [MarkDown添加图片的三种方式 - 找时间自己总结一边](https://blog.csdn.net/slaughterdevil/article/details/79255933)
 - [GithubPages教程 在GithubPages上搭建个人主页](https://blog.csdn.net/yanzhenjie1003/article/details/51703370)
-- [一篇文章，教你学会Git](https://mp.weixin.qq.com/s/-TC07TQoiTNRUJIdBv46SQ)
-- [Git的奇技淫巧](https://github.com/521xueweihan/git-tips)
 - [Git Submodule项目子模块管理](https://blog.csdn.net/xiangzhihong8/article/details/80535495)
-- [git合并多个提交](https://www.cnblogs.com/tocy/p/git-rebase-merge-commit.html)
 - [git commit message emoji 使用指南](https://github.com/liuchengxu/git-commit-emoji-cn)
 - [Github上开源项目readme里好看的高大上的有趣的徽章从何而来](https://blog.csdn.net/xialonghua/article/details/87373052)
 - [gitbook-use](https://github.com/zhangjikai/gitbook-use)
-- [git操作之git clean删除一些没有git add的文件](https://www.cnblogs.com/pcx105/p/10036781.html)
-- [Git中tag标签的使用](https://blog.csdn.net/wei78008023/article/details/81866590)
 - [你可能不知道的15个有用的Github功能](https://juejin.cn/post/6844904193396834318)
 - [git clone 太慢了的解决办法](/books/知识库/02、技术生态圈/12、git%20clone%20太慢了的解决办法/readme.md)
 - [github开发人员在七夕搞事情：remote: Support for password authentication was removed on August 13, 2021.](https://blog.csdn.net/weixin_41010198/article/details/119698015)
+- [Github自动发版机器人配置](https://juejin.cn/post/6920049554264064008)
 
 
 #### 渲染与项目性能优化

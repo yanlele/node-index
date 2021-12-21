@@ -489,3 +489,10 @@ git merge upstream/master
 git push
 ```
 
+
+
+### 其他参考
+- [一篇文章，教你学会Git](https://mp.weixin.qq.com/s/-TC07TQoiTNRUJIdBv46SQ)
+- [Git的奇技淫巧](https://github.com/521xueweihan/git-tips)
+- [git操作之git clean删除一些没有git add的文件](https://www.cnblogs.com/pcx105/p/10036781.html)
+- [Git中tag标签的使用](https://blog.csdn.net/wei78008023/article/details/81866590)
