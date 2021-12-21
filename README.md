@@ -335,38 +335,45 @@
 
 
 #### JS原理与语法相关
-- [深入理解 JavaScript 异步](https://github.com/wangfupeng1988/js-async-tutorial)
-- [关于深拷贝和浅拷贝的实现](/books/专题知识库/05、基础知识点专题/other/03、关于深拷贝和浅拷贝的实现/README.md)
-- [深入研究call和apply(实现继承)](/books/专题知识库/05、基础知识点专题/other/18、深入研究call和apply/README.md)
 - [关于闭包的研究](/books/专题知识库/05、基础知识点专题/other/01、关于闭包的研究/README.md)
 - [You Don't Need jQuery](https://github.com/nefe/You-Dont-Need-jQuery/blob/master/README.zh-CN.md)
 - [关于this指针的研究](/books/专题知识库/05、基础知识点专题/other/02、关于this指针的研究/README.md)
-- [深入call、apply、bind实现原理](/books/专题知识库/05、基础知识点专题/other/12、深入call、apply、bind实现原理/README.md)
 - [实现函数防抖](/books/专题知识库/05、基础知识点专题/other/06、实现函数防抖/README.md)
 - [实现函数节流](/books/专题知识库/05、基础知识点专题/other/07、实现函数节流/README.md)
 - [深入理解JavaScript中的尾调用](/books/专题知识库/05、基础知识点专题/other/13、深入理解JavaScript中的尾调用/README.md)
-- [JavaScript 异步、栈、事件循环、任务队列](https://segmentfault.com/a/1190000011198232)
 - [FormData使用方法详解](https://www.jianshu.com/p/e438fb2238cf)
 - [基于JavaScript判断浏览器到底是关闭还是刷新](http://udn.yyuap.com/forum.php?mod=viewthread&tid=96309)
 - [实现js熔断机制](https://juejin.cn/post/6844903920649650184)
-- [你为什么这么强，什么都敢盘（reduce）](https://juejin.cn/post/6844903923229130766)
-- [** 25个你不得不知道的数组reduce高级用法](https://juejin.cn/post/6844904063729926152)
 - [如何避开JavaScript浮点数计算精度问题（如0.1+0.2!==0.3）](https://blog.csdn.net/u013347241/article/details/79210840)
 - [通过实现25个数组方法来理解及高效使用数组方法(长文,建议收藏)](https://juejin.im/post/5d82c12ff265da03a31d6f92)
-- [引用、浅拷贝及深拷贝 到 Map、Set（含对象assign、freeze方法、WeakMap、WeakSet及数组map、reduce等等方法） **](https://juejin.im/post/5d843abe6fb9a06af510050c)
 - [为了性能选择for循环遍历？](https://juejin.cn/post/6844904191425511432)
 - [JavaScript 装饰器](https://juejin.cn/post/6844904100144889864)
-- [如何写出一个惊艳面试官的深拷贝?](https://juejin.cn/post/6844903929705136141)
 - [js中的pipe](/books/知识库/01、前端技术知识/20、js中的pipe/readme.md)
 - [每个 JavaScript 工程师都应懂的33个概念](https://github.com/stephentian/33-js-concepts)
 - [常用的正则验证例子](/books/专题知识库/05、基础知识点专题/other/05、正则验证/README.md)
 - [css加载会造成阻塞吗？](/books/知识库/01、前端技术知识/22、css加载会造成阻塞吗/index.md)
-- [在 JS 循环中正确使用 async 与 await](https://blog.csdn.net/sanstu/article/details/90904852)
-- [Object.assign()与深拷贝](/books/知识库/01、前端技术知识/23、Object.assign()与深拷贝/README.md)
 - [Base64原理](https://juejin.cn/post/6844903698045370376)
 
+- 异步问题
+  - [深入理解 JavaScript 异步](https://github.com/wangfupeng1988/js-async-tutorial)
+  - [JavaScript 异步、栈、事件循环、任务队列](https://segmentfault.com/a/1190000011198232)
+  - [在 JS 循环中正确使用 async 与 await](https://blog.csdn.net/sanstu/article/details/90904852)
 
+- 深浅拷贝
+  - [Object.assign()与深拷贝](/books/知识库/01、前端技术知识/23、Object.assign()与深拷贝/README.md)
+  - [如何写出一个惊艳面试官的深拷贝?](https://juejin.cn/post/6844903929705136141)
+  - [引用、浅拷贝及深拷贝 到 Map、Set（含对象assign、freeze方法、WeakMap、WeakSet及数组map、reduce等等方法） **](https://juejin.im/post/5d843abe6fb9a06af510050c)
+  - [关于深拷贝和浅拷贝的实现](/books/专题知识库/05、基础知识点专题/other/03、关于深拷贝和浅拷贝的实现/README.md)
+
+- reduce使用
+  - [你为什么这么强，什么都敢盘（reduce）](https://juejin.cn/post/6844903923229130766)
+  - [** 25个你不得不知道的数组reduce高级用法](https://juejin.cn/post/6844904063729926152)
   
+- call、apply、bind
+  - [深入call、apply、bind实现原理](/books/专题知识库/05、基础知识点专题/other/12、深入call、apply、bind实现原理/README.md)
+  - [深入研究call和apply(实现继承)](/books/专题知识库/05、基础知识点专题/other/18、深入研究call和apply/README.md)
+  
+
 
 #### 静态资源相关研究
 - [关于图片预加载的研究](/books/知识库/01、前端技术知识/10、关于图片预加载的研究/README.md)
