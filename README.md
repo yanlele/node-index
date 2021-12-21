@@ -522,14 +522,6 @@
 
 
 
-#### 好用工具分享
-- [键盘控制工具: Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)
-- [控制应用缩放-眼镜: Spectacle allows you to organize your windows without using a mouse.](https://github.com/eczarny/spectacle)
-- [syncd是一款开源的代码部署工具](https://github.com/dreamans/syncd)
-- [磁力链接聚合搜索](https://github.com/xiandanin/magnetW)
-- [使用jetbrains](https://www.macwk.com/article/jetbrains-crack)
-
-
 #### 其他应用技术方向
 - [手把手教你快速搭建专属的storybook](https://juejin.cn/post/6844903752982331405)
 

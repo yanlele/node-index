@@ -188,8 +188,11 @@
 - [这些开源项目，让你轻松应对十大工作场景](https://juejin.cn/post/6898098763772985352)
 - [redis客户端工具: AnotherRedisDesktopManager](https://github.com/qishibo/AnotherRedisDesktopManager)
 - [html5游戏引擎: egret-core](https://github.com/egret-labs/egret-core)
-- [Spectacle allows you to organize your windows without using a mouse: spectacle](https://github.com/eczarny/spectacle)
-- [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)
+- [键盘控制工具: Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements)
+- [控制应用缩放 - 眼镜: Spectacle allows you to organize your windows without using a mouse.](https://github.com/eczarny/spectacle)
+- [syncd是一款开源的代码部署工具](https://github.com/dreamans/syncd)
+- [磁力链接聚合搜索](https://github.com/xiandanin/magnetW)
+- [使用jetbrains](https://www.macwk.com/article/jetbrains-crack)
 
 
 
