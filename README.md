@@ -687,5 +687,4 @@
 ### 自我管理
 - [待研究知识 **](/books/发展与OKR/06、自我管理/01、待研究知识/README.md)
 - [规划](/books/发展与OKR/06、自我管理/02、规划/README.md)
-  - [前端自检清单](https://juejin.im/post/5cc1da82f265da036023b628)
 - [思考](/books/发展与OKR/06、自我管理/03、思考/README.md)
