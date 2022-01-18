@@ -54,3 +54,4 @@
 - 研究babel , 如何 自动给 react FC 添加 memo， 以及自动给 FC 里面的方法添加 `usePersistFn`
 - 研究某作者开源的掘金自动化脚本， 自己想办法实现一套[https://github.com/shuai93/juejin](https://github.com/shuai93/juejin)
 - 使用 `jsDeliver+github` 实现图床， 达到白嫖的目标
+  - 参考项目： https://github.com/xjh22222228/boomb
