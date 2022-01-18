@@ -470,6 +470,7 @@
 
 #### git相关
 - [git 常用命令汇总/git命令行](/books/知识库/02、技术生态圈/01、git常用命令汇总/README.md)
+- [git使用SSH密匙配置](/books/知识库/02、技术生态圈/02、git使用SSH密匙配置/README.md)
 - [README文件语法解读，即Github Flavored Markdown语法介绍](https://github.com/guodongxiaren/README)
 - [MarkDown添加图片的三种方式 - 找时间自己总结一边](https://blog.csdn.net/slaughterdevil/article/details/79255933)
 - [GithubPages教程 在GithubPages上搭建个人主页](https://blog.csdn.net/yanzhenjie1003/article/details/51703370)
