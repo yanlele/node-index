@@ -666,6 +666,7 @@
 
 
 ### 在折腾的个人项目
+- [在折腾的个人项目 - 总目录](/books/发展与OKR/02、在折腾的个人项目/README.md)
 - [基于vue和express的一个小型电商全栈项目](https://github.com/yanlele/nodeMall)
 - [react新闻站项目pc+移动双端](https://github.com/yanlele/React-News)
 - [基于socket.IO 的一个较为复杂的项目案例，参考自《node.js实战》](https://github.com/yanlele/chatApplication)
