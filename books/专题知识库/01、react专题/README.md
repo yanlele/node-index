@@ -48,9 +48,15 @@
 ### react-router
 - [react-router4基本使用](/books/专题知识库/01、react专题/03、react-router/01、react-router4基本使用.md)
 - [React-router4迁移与旧版本的对比](/books/专题知识库/01、react专题/03、react-router/02、React-router4迁移与旧版本的对比/README.md)
-- [精读《React Router v6》](https://juejin.im/post/6844904106616684557)
-- [React-Router v6 新特性解读及迁移指南](https://juejin.im/post/6844904096059621389)
-- [React Router v6 使用指南](https://juejin.im/post/6862305213148381198)
+- react router 6
+  - [精读《React Router v6》](https://juejin.im/post/6844904106616684557)
+  - [React-Router v6 新特性解读及迁移指南](https://juejin.im/post/6844904096059621389)
+  - [React Router v6 使用指南](https://juejin.im/post/6862305213148381198)
+  - [React-Router v6 新特性解读及迁移指南](https://juejin.cn/post/6844904096059621389)
+  - [React-Router V6 使用详解(干货)](https://juejin.cn/post/7033313711947251743)
+  - [react-router-dom 6.x 版本](https://juejin.cn/post/7030700352622034952)
+  - [2021 react-router v6 快速入门](https://www.jianshu.com/p/03234215a90e)
+  
 
 
 ### 其他知识点和实战相关知识点
