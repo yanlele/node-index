@@ -1,5 +1,13 @@
 <h1 align="center"> Hey 👋🏽, I'm Yanlele </h1>
 
+<h2 align="center">About me<h2>
+
+- Web Development Engineer
+- Currently working with JavaScript and TypeScript
+- Continuous learning: Desktop, mobile, fronted, backend, devOps, games, designer
+
+
+
 [comment]: <> (<img src="https://gpvc.arturio.dev/yanlele">)
 
 [comment]: <> (<img src="https://img.shields.io/github/followers/yanlele?label=Follow" style=" float:left, margin-right:10px" />)
