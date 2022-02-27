@@ -12,7 +12,7 @@
   Languages and Tools...
 </h2>
 
-***********************************
+
 <h3>
 Here are some technologies I use at work
 </h3>
@@ -49,13 +49,11 @@ Other Languages I know
 <img alt="Badge" style="float: left; margin-right: 10px; margin-top: 10px;"  src="https://img.shields.io/badge/C Sharp-239120.svg?&style=for-the-badge&logo=C Sharp&logoColor=white"/>
 </p>
 
-***********************************
-
 
 <h2 align="center">Blogs 🌱</h2>
 
 <p align="center">
-<img src="static/devblogs.svg"> 
+<img src="https://cdn.jsdelivr.net/gh/yanlele/node-index/static/devblogs.svg"> 
 </p>
 
 
