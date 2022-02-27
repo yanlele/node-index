@@ -1,6 +1,6 @@
 <h1 align="center"> Hey 👋🏽, I'm Yanlele </h1>
 
-<h2 align="center">About me<h2>
+<h2 align="center">About me</h2>
 
 - Web Development Engineer
 - Currently working with JavaScript and TypeScript
