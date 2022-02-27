@@ -53,12 +53,15 @@ Other Languages I know
     My contributions to open-source:
 </h2>
 
+
+<h3 align="center">github status</h3>
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=yanlele&show_icons=true&icon_color=79ff97&text_color=fff&bg_color=7373a8&hide_title=false&title_color=fff&disable_animations=false&hide_border=true" alt="">
+    <img src="https://github-readme-stats.vercel.app/api?username=yanlele&show_icons=true&icon_color=79ff97&text_color=fff&bg_color=7373a8&hide_title=false&title_color=fff&disable_animations=false&hide_border=true" alt="">
 </p>
 
+<h3 align="center">top languages</h3>
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yanlele&show_icons=true&theme=radical&layout=compact&hide=html,css&hide_border=true&icon_color=79ff97&text_color=fff&bg_color=7373a8&title_color=fff&langs_count=6" alt="">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yanlele&show_icons=true&theme=radical&layout=compact&hide=html,css&hide_border=true&icon_color=79ff97&text_color=fff&bg_color=7373a8&title_color=fff&langs_count=6" alt="">
 </p>
 
 
