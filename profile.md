@@ -64,7 +64,7 @@ Other Languages I know
 
 <h3 align="center">top languages</h3>
 <p align="center">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yanlele&layout=compact&hide=html,css&hide_border=true&langs_count=6" alt="">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yanlele&layout=compact&hide=html,css&langs_count=6" alt="">
 </p>
 
 
