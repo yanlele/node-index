@@ -193,6 +193,7 @@
 - [syncd是一款开源的代码部署工具](https://github.com/dreamans/syncd)
 - [磁力链接聚合搜索](https://github.com/xiandanin/magnetW)
 - [使用jetbrains](https://www.macwk.com/article/jetbrains-crack)
+- [github profile template](https://github.com/kautukkundan/Awesome-Profile-README-templates)
 
 
 
