@@ -73,8 +73,6 @@ Other Languages I know
     <img src="https://github-readme-stats.vercel.app/api?username=yanlele&show_icons=true&icon_color=blue&hide_title=false&disable_animations=false" alt="">
 </p>
 
-<br/>
-
 <h3 align="center">top languages</h3>
 <p align="center">
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yanlele&layout=compact&hide=html,css&langs_count=6" alt="">
