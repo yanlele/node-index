@@ -13,6 +13,10 @@
 </h2>
 
 ***********************************
+<h3>
+Here are some technologies I use at work
+</h3>
+
 <p align="center">
 
 <img alt="Badge" style="float: left; margin-right: 10px; margin-top: 10px;"  src="https://img.shields.io/badge/TypeScript-ff4d4f.svg?&style=for-the-badge&logo=TypeScript&logoColor=white"/>
