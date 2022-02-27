@@ -48,6 +48,9 @@ Other Languages I know
 <img alt="Badge" style="float: left; margin-right: 10px; margin-top: 10px;"  src="https://img.shields.io/badge/C Sharp-239120.svg?&style=for-the-badge&logo=C Sharp&logoColor=white"/>
 </p>
 
+<br/>
+<br/>
+
 
 <h2 align="center">
     My contributions to open-source:
@@ -65,6 +68,8 @@ Other Languages I know
 </p>
 
 
+<br/>
+<br/>
 
 
 <h2 align="center">Blogs 🌱</h2>
