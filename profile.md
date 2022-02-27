@@ -51,7 +51,7 @@ Other Languages I know
 <h2 align="center">Blogs 🌱</h2>
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/yanlele/node-index/master/static/devblogs.svg"> 
+<img src="static/devblogs.svg"> 
 </p>
 
 
