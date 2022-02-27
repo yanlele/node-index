@@ -18,7 +18,6 @@
 [comment]: <> (<img src="https://img.shields.io/github/followers/yanlele?label=Follow" style=" float:left, margin-right:10px" />)
 
 <br/>  
-<br/>
 
 
 <h2 align="center">
@@ -61,7 +60,7 @@ Other Languages I know
 <img alt="Badge" style="float: left; margin-right: 10px; margin-top: 10px;"  src="https://img.shields.io/badge/C Sharp-239120.svg?&style=for-the-badge&logo=C Sharp&logoColor=white"/>
 </p>
 
-<br/>
+
 <br/>
 
 
@@ -69,13 +68,12 @@ Other Languages I know
     My contributions to open-source:
 </h2>
 
-<br/>
-
-
 <h3 align="center">github status</h3>
 <p align="center">
     <img src="https://github-readme-stats.vercel.app/api?username=yanlele&show_icons=true&icon_color=blue&hide_title=false&disable_animations=false" alt="">
 </p>
+
+<br/>
 
 <h3 align="center">top languages</h3>
 <p align="center">
