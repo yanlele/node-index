@@ -17,7 +17,7 @@
 Here are some technologies I use at work
 </h3>
 
-<p align="lef">
+<p align="left">
 
 <img alt="Badge" style="float: left; margin-right: 10px; margin-top: 10px;"  src="https://img.shields.io/badge/TypeScript-ff4d4f.svg?&style=for-the-badge&logo=TypeScript&logoColor=white"/>
 <img alt="Badge" style="float: left; margin-right: 10px; margin-top: 10px;"  src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>    
@@ -37,7 +37,6 @@ Here are some technologies I use at work
 </p>
 
 <br/>
-<br/>
 
 <h3>
 Other Languages I know
@@ -53,7 +52,9 @@ Other Languages I know
 <h2 align="center">Blogs 🌱</h2>
 
 <p align="center">
-<img src="https://cdn.jsdelivr.net/gh/yanlele/node-index/static/devblogs.svg"> 
+    <a href="https://yanlele.github.io/node-index">
+        <img src="https://cdn.jsdelivr.net/gh/yanlele/node-index/static/devblogs.svg">
+    </a>
 </p>
 
 
