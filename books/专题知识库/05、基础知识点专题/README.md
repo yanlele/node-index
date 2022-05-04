@@ -133,6 +133,7 @@
   - [41、如何优雅的实现消息通信？](https://juejin.cn/post/6865444445479927821)
   - [45、node中的CommonJS](https://juejin.cn/post/6844903778194292744)
   - [46、从输入url到页面展示到底发生了什么？](https://mp.weixin.qq.com/s?__biz=MzU2MTI4MjI0MQ==&mid=2247486007&idx=1&sn=176d131e0d35bf9ede04c31effd51e48&chksm=fc7a6799cb0dee8f472b2f44eaa1adc312f99cf3f053bd00f24c2dc1265d83c9823b128a4eaf&mpshare=1&scene=23&srcid=0408UkbC9si520rEHA2w5oCc)
+  - [现在要你实现一个埋点监控SDK，你会怎么设计？](https://juejin.cn/post/7085679511290773534)
     
     
 
