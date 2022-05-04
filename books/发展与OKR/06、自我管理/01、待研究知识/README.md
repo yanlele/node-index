@@ -57,3 +57,4 @@
 - 研究某作者开源的掘金自动化脚本， 自己想办法实现一套[https://github.com/shuai93/juejin](https://github.com/shuai93/juejin)
 - 使用 `jsDeliver+github` 实现图床， 达到白嫖的目标
   - 参考项目： https://github.com/xjh22222228/boomb
+- 研究一下 umi-request 源码： [https://github.com/umijs/umi-request](https://github.com/umijs/umi-request)
