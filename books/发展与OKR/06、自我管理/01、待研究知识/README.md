@@ -38,6 +38,8 @@
 - 什么是幽灵依赖，如何放置幽灵依赖
 - [如何让 json 转为 style 样式字符串， 适用于小程序](/books/知识库/01、前端技术知识/25、thumbStyle/README.md)
 - 待整理：[揭秘vue/react组件库中5个"作者不造的XX"](https://juejin.im/post/5d89cd156fb9a06acb3ee19e)
+- 待整理：[47、现在要你实现一个埋点监控SDK，你会怎么设计？](https://juejin.cn/post/7085679511290773534)
+- 待整理：[48、前端常见问题和技术解决方案](https://juejin.cn/post/7088144745788080142)
 
 
 
