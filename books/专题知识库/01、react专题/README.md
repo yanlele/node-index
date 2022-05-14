@@ -19,6 +19,7 @@
 ### 基础语法使用
 - [基础语法知识点](https://react.docschina.org/docs/getting-started.html)
 - [React 性能优化](/books/专题知识库/01、react专题/01、react/03、React%20性能优化/README.md)
+- [解析 useEffect 和 useLayoutEffect](https://juejin.cn/post/6862624266723000328)
 
 
 
