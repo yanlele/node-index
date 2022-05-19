@@ -482,6 +482,7 @@
 - [git clone 太慢了的解决办法](/books/知识库/02、技术生态圈/12、git%20clone%20太慢了的解决办法/readme.md)
 - [github开发人员在七夕搞事情：remote: Support for password authentication was removed on August 13, 2021.](https://blog.csdn.net/weixin_41010198/article/details/119698015)
 - [Github自动发版机器人配置](https://juejin.cn/post/6920049554264064008)
+- [Github 使用技巧]()
 
 
 #### 渲染与项目性能优化
