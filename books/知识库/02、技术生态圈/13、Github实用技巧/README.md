@@ -1,4 +1,4 @@
-## github 使用技巧
+## Github实用技巧
 
 github 帮助文档:  https://docs.github.com/cn                     
 github get started:  https://docs.github.com/cn/get-started
