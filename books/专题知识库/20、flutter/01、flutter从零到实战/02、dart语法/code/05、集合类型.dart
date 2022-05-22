@@ -4,6 +4,8 @@ main(List<String> args) {
 
   // 2. Set
   var movies = {"nihao", "nicai", "shibushi"};
+  // 去重
+  Set.from(names).toList();
 
   // 3. map
   var info = {
