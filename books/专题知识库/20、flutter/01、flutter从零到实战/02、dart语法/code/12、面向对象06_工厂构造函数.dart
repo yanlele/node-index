@@ -5,15 +5,8 @@ main(List<String> args) {
   print(identical(p1, p2));
 }
 
-// 如果传递 name/color 相同， 返回同一个对象
-// class Person {
-//   final String name;
-//   final String color = "red";
-//
-//   const Person(this.name);
-// }
-
 // 工厂构造函数最大的特点， 可以手动返回一个对象
+// 需求： 如果传递 name/color 相同， 返回同一个对象
 class Person {
   late String name;
   late String color;
