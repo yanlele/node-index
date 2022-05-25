@@ -19,6 +19,7 @@
   * [Navigator](#navigator)
   * [参数传递](#%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92)
   * [命名路由](#%E5%91%BD%E5%90%8D%E8%B7%AF%E7%94%B1)
+- [包管理](#%E5%8C%85%E7%AE%A1%E7%90%86)
 
 <!-- tocstop -->
 
@@ -711,3 +712,9 @@ MaterialApp(
   }
 );
 ```
+
+
+## 包管理
+这个没啥好说的， 直接看文档： https://book.flutterchina.club/chapter2/flutter_package_mgr.html#_2-5-1-%E7%AE%80%E4%BB%8B
+
+
