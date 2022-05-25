@@ -1,4 +1,4 @@
-## 第一个 flutter 应用
+# 第一个 flutter 应用
 
 <!-- toc -->
 
@@ -11,13 +11,13 @@
 
 <!-- tocstop -->
 
-### 官方 demo 实例
+## 官方 demo 实例
 可以参考这里: [demo](/books/专题知识库/20、flutter/01、flutter从零到实战/03、HelloWorld/readme.md)
 
 
-### widget 简介
+## widget 简介
 
-#### StatelessWidget
+### StatelessWidget
 申明可以使用快捷键 `stless`
 
 StatelessWidget用于不需要维护状态的场景
@@ -43,7 +43,7 @@ class YLContextRoute extends StatelessWidget {
 ```
 
 
-#### StatefulWidget
+### StatefulWidget
 申明可以使用快捷键： `stful`                      
 ```dart
 class CounterWidget extends StatefulWidget {
@@ -142,7 +142,7 @@ class _CounterWidgetState extends State<CounterWidget> {
 可以参考文档： https://book.flutterchina.club/chapter2/flutter_widget_intro.html#_2-2-6-state
 
 
-#### 在 StatefulWidget 树中获取 State 对象
+### 在 StatefulWidget 树中获取 State 对象
 主要办法有两个： context、GlobalKey       
 
 总结一下：
@@ -242,7 +242,7 @@ class _YLGetStateObjectRouteState extends State<YLGetStateObjectRoute> {
 }
 ```
 
-#### 通过 RenderObject 自定义 Widget
+### 通过 RenderObject 自定义 Widget
 StatelessWidget 和 StatefulWidget 都是用于组合其它组件的，它们本身没有对应的 RenderObject。
 
 Flutter 组件库中的很多基础组件都不是通过StatelessWidget 和 StatefulWidget 来实现的，
@@ -278,5 +278,228 @@ class RenderCustomObject extends RenderBox{
   }
 }
 ```
+
+## 状态管理
+
+### 自身状态管理
+这个感觉没啥好说的.... 直接上 demo 吧
+```dart
+/// 状态自管理案例
+class YLTapBoxA extends StatefulWidget {
+  const YLTapBoxA({Key? key}) : super(key: key);
+
+  @override
+  State<YLTapBoxA> createState() => _YLTapBoxAState();
+}
+
+class _YLTapBoxAState extends State<YLTapBoxA> {
+  bool _active = false;
+
+  void _handleTap() {
+    setState(() {
+      _active = !_active;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: _handleTap,
+      child: Container(
+        width: 300,
+        height: 300,
+        decoration: BoxDecoration(
+            color: _active ? Colors.lightGreen[700] : Colors.green[600]),
+        child: Center(
+          child: Text(
+            _active ? "Active" : "Inactive",
+            style: const TextStyle(fontSize: 32, color: Colors.white),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+
+### 父子组件状态管理
+```dart
+import 'package:flutter/material.dart';
+
+/// 父Widget管理子Widget的状态
+class YLParentWidget extends StatefulWidget {
+  const YLParentWidget({Key? key}) : super(key: key);
+
+  @override
+  State<YLParentWidget> createState() => _YLParentWidgetState();
+}
+
+class _YLParentWidgetState extends State<YLParentWidget> {
+  bool _active = false;
+
+  void _handleTapBoxChanged(bool newValue) {
+    setState(() {
+      _active = newValue;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return _TapBoxB(
+      active: _active,
+      onChanged: _handleTapBoxChanged,
+    );
+  }
+}
+
+class _TapBoxB extends StatelessWidget {
+  final bool active;
+  final ValueChanged<bool> onChanged;
+
+  const _TapBoxB({
+    Key? key,
+    this.active = false,
+    required this.onChanged,
+  }) : super(key: key);
+
+  void _handleTap() {
+    onChanged(!active);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: _handleTap,
+      child: Container(
+        width: 300,
+        height: 300,
+        decoration: BoxDecoration(
+          color: active ? Colors.lightGreen[700] : Colors.green[600],
+        ),
+        child: Center(
+          child: Text(
+            active ? "Active" : "Inactive",
+            style: const TextStyle(fontSize: 32, color: Colors.white),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+### 混合状态管理
+```dart
+import 'package:flutter/material.dart';
+
+//------------------------ ParentWidget ------------------------
+/// StatefulWidget 是个 @immutable 类， 所以不可更改
+/// 如果想具备状态， 必须要使用 state 作为状态管理
+class YLParentWidgetC extends StatefulWidget {
+  const YLParentWidgetC({Key? key}) : super(key: key);
+
+  @override
+  State<YLParentWidgetC> createState() => _YLParentWidgetCState();
+}
+
+/// 在 state 定义的状态和方法， 可以直接传递到子 StatefulWidget TapBoxC
+class _YLParentWidgetCState extends State<YLParentWidgetC> {
+  bool _active = false;
+
+  void _handleTapBoxChanged(bool newValue) {
+    setState(() {
+      _active = newValue;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return TapBoxC(
+      onChanged: _handleTapBoxChanged,
+      active: _active,
+    );
+  }
+}
+
+//------------------------ TapBoxC ------------------------
+/// 这个类的作用只是作为一个转接
+/// 把 parent state 的属性和方法， 转接到自己的 state 里面去
+/// 自己的 state 可以通过 widget 方法调用到 StatefulWidget 转接过来的属性和方法
+class TapBoxC extends StatefulWidget {
+  final bool active;
+  final ValueChanged<bool> onChanged;
+
+  const TapBoxC({
+    Key? key,
+    this.active = false,
+    required this.onChanged,
+  }) : super(key: key);
+
+  @override
+  State<TapBoxC> createState() => _TapBoxCState();
+}
+
+class _TapBoxCState extends State<TapBoxC> {
+  bool _highlight = false;
+
+  void _handleTapDown(TapDownDetails details) {
+    setState(() {
+      _highlight = true;
+    });
+  }
+
+  void _handleTapUp(TapUpDetails details) {
+    setState(() {
+      _highlight = false;
+    });
+  }
+
+  void _handleTapCancel() {
+    setState(() {
+      _highlight = false;
+    });
+  }
+
+  void _handleTap() {
+    // 可以通过 widget 获取 StatefulWidget 属性
+    widget.onChanged(!widget.active);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTapDown: _handleTapDown,
+      onTapUp: _handleTapUp,
+      onTap: _handleTap,
+      onTapCancel: _handleTapCancel,
+      child: Container(
+        width: 300,
+        height: 300,
+        decoration: BoxDecoration(
+            color: widget.active ? Colors.lightGreen[700] : Colors.grey[600],
+            border: _highlight
+                ? Border.all(
+                    color: const Color(0xFF4DB6AC),
+                    width: 10,
+                  )
+                : null),
+        child: Center(
+          child: Text(
+            widget.active ? "yanle" : "lele",
+            style: const TextStyle(fontSize: 32, color: Colors.white),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+
+### 全局状态管理
+基本上实现办法有两个：               
+1. 事件订阅
+2. 全局注册状态管理（如 Provider、Redux 可以在 pub 上查看其详细信息）
 
 
