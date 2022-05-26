@@ -718,3 +718,55 @@ MaterialApp(
 这个没啥好说的， 直接看文档： https://book.flutterchina.club/chapter2/flutter_package_mgr.html#_2-5-1-%E7%AE%80%E4%BB%8B
 
 
+## 资源管理
+参考文档： https://book.flutterchina.club/chapter2/flutter_assets_mgr.html#_2-6-1-%E6%8C%87%E5%AE%9A-assets
+
+### 指定资源
+基本指定资源方式              
+```yaml
+flutter:
+  assets:
+    - assets/my_icon.png
+    - assets/background.png
+```
+
+### Asset 变体（variant）                          
+比如有以下文件
+```
+…/pubspec.yaml
+…/graphics/my_icon.png
+…/graphics/background.png
+…/graphics/dark/background.png
+…etc.
+```
+申请资源
+```yaml
+flutter:
+  assets:
+    - graphics/background.png
+```
+那么这两个graphics/background.png和graphics/dark/background.png 都将包含在您的 asset bundle中。
+
+
+### 加载 assets
+
+**加载文本assets**：           
+```dart
+import 'dart:async' show Future;
+import 'package:flutter/services.dart' show rootBundle;
+
+Future<String> loadAsset() async {
+  return await rootBundle.loadString('assets/config.json');
+}
+```
+
+**加载图片**:           
+```
+AssetImage('graphics/background.png');
+AssetImage('icons/heart.png', package: 'my_icons');
+
+Image.asset('graphics/background.png');
+Image.asset('icons/heart.png', package: 'my_icons');
+```
+
+
