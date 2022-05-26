@@ -173,3 +173,91 @@ IconButton(
 
 ## 图片与ICON
 
+### 加载图片
+在 `pubspec.yaml` 中的 `flutter` 部分添加如下内容：                     
+```yaml
+assets:
+  - images/avatar.png
+```
+
+加载图片：                   
+```dart
+Image(
+  image: AssetImage("images/avatar.png"),
+  width: 100.0
+);
+
+Image.asset("images/avatar.png",
+  width: 100.0,
+);
+
+// 加载远程图片 
+Image(
+  image: NetworkImage("https://avatars2.githubusercontent.com/u/20411648?s=460&v=4"),
+  width: 100.0,
+)
+```
+
+参数：                 
+```dart
+const Image({
+  ...
+  this.width, //图片的宽
+  this.height, //图片高度
+  this.color, //图片的混合色值
+  this.colorBlendMode, //混合模式
+  this.fit,//缩放模式
+  this.alignment = Alignment.center, //对齐方式
+  this.repeat = ImageRepeat.noRepeat, //重复方式
+  ...
+})
+```
+
+### ICON
+
+**官方 icon**                             
+使用方式：https://api.flutter.dev/flutter/material/Icons-class.html                                     
+icon 库： https://fonts.google.com/icons?selected=Material+Icons
+
+
+**使用 iconfont**                     
+本地声明应用字体库                               
+```
+fonts:
+  - family: myIcon  #指定一个字体名
+    fonts:
+      - asset: fonts/iconfont.ttf
+```
+
+我们定义一个MyIcons类，功能和Icons类一样：将字体文件中的所有图标都定义成静态变量：                         
+```dart
+class MyIcons{
+  // book 图标
+  static const IconData book = const IconData(
+      0xe614, 
+      fontFamily: 'myIcon', 
+      matchTextDirection: true
+  );
+  // 微信图标
+  static const IconData wechat = const IconData(
+      0xec7d,  
+      fontFamily: 'myIcon', 
+      matchTextDirection: true
+  );
+}
+```
+
+使用
+```dart
+Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: <Widget>[
+    Icon(MyIcons.book,color: Colors.purple),
+    Icon(MyIcons.wechat,color: Colors.green),
+  ],
+)
+```
+
+
+
+
