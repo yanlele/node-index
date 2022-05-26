@@ -9,6 +9,9 @@
   * [DefaultTextStyle](#defaulttextstyle)
   * [字体](#%E5%AD%97%E4%BD%93)
 - [按钮](#%E6%8C%89%E9%92%AE)
+- [图片与ICON](#%E5%9B%BE%E7%89%87%E4%B8%8Eicon)
+  * [加载图片](#%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87)
+  * [ICON](#icon)
 
 <!-- tocstop -->
 
