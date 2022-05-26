@@ -20,6 +20,12 @@
   * [参数传递](#%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92)
   * [命名路由](#%E5%91%BD%E5%90%8D%E8%B7%AF%E7%94%B1)
 - [包管理](#%E5%8C%85%E7%AE%A1%E7%90%86)
+- [资源管理](#%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86)
+  * [指定资源](#%E6%8C%87%E5%AE%9A%E8%B5%84%E6%BA%90)
+  * [Asset 变体（variant）](#asset-%E5%8F%98%E4%BD%93variant)
+  * [加载 assets](#%E5%8A%A0%E8%BD%BD-assets)
+- [调试Flutter应用](#%E8%B0%83%E8%AF%95flutter%E5%BA%94%E7%94%A8)
+- [Flutter异常捕获](#flutter%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7)
 
 <!-- tocstop -->
 
@@ -769,4 +775,9 @@ Image.asset('graphics/background.png');
 Image.asset('icons/heart.png', package: 'my_icons');
 ```
 
+## 调试Flutter应用
+参考文档: https://book.flutterchina.club/chapter2/flutter_app_debug.html#_2-7-1-%E6%97%A5%E5%BF%97%E4%B8%8E%E6%96%AD%E7%82%B9
 
+
+## Flutter异常捕获
+参考文档: https://book.flutterchina.club/chapter2/thread_model_and_error_report.html#_2-8-1-dart%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B
