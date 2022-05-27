@@ -288,5 +288,128 @@ Checkbox(
 ```
 
 
+## 输入框与表单
+### 输入框
+TextField 用于文本输入            
+
+属性较多， 可以参考文档： https://book.flutterchina.club/chapter3/input_and_form.html#_3-5-1-textfield
+
+先来看一个比较简单的输入框案例             
+```dart
+Column(
+  children: <Widget>[
+    TextField(
+      autofocus: true,
+      decoration: InputDecoration(
+        labelText: "用户名",
+        hintText: "用户名或邮箱",
+        prefixIcon: Icon(Icons.person)
+      ),
+    ),
+    TextField(
+      decoration: InputDecoration(
+        labelText: "密码",
+        hintText: "您的登录密码",
+        prefixIcon: Icon(Icons.lock)
+      ),
+      obscureText: true,
+    ),
+  ],
+);
+```
+
+**获取输入内容**                        
+```dart
+// 定义 TextEditingController
+TextEditingController _unameController = TextEditingController();
+
+// 挂载 TextEditingController
+TextField(
+  autofocus: true,
+  controller: _unameController, //设置controller
+  ...
+)
+
+// 通过controller获取输入框内容
+print(_unameController.text)
+```
+
+**监听文本变化**                      
+方式一： onChanged
+```dart
+TextField(
+    autofocus: true,
+    onChanged: (v) {
+      print("onChange: $v");
+    }
+)
+```
+
+方式二： controller           
+```dart
+@override
+void initState() {
+  //监听输入改变  
+  _unameController.addListener((){
+    print(_unameController.text);
+  });
+}
+```
 
 
+**TextEditingController 的其他功能**                 
+```dart
+TextEditingController _selectionController =  TextEditingController();
+
+// 设置默认值，并从第三个字符开始选中后面的字符 
+_selectionController.text="hello world!";
+_selectionController.selection=TextSelection(
+  baseOffset: 2,
+  extentOffset: _selectionController.text.length
+);
+
+TextField(
+controller: _selectionController,
+)
+```
+
+**控制焦点**
+焦点可以通过 `FocusNode` 和 `FocusScopeNode` 来控制
+
+点击第一个按钮可以将焦点从第一个TextField挪到第二个TextField。            
+点击第二个按钮可以关闭键盘。
+```dart
+FocusNode focusNode1 = FocusNode();
+FocusNode focusNode2 = FocusNode();
+FocusScopeNode? focusScopeNode;
+
+// 将焦点从第一个TextField移到第二个TextField
+// 这是一种写法
+FocusScope.of(context).requestFocus(focusNode2);
+
+// 这是第二种写法
+if(null == focusScopeNode){
+focusScopeNode = FocusScope.of(context);
+}
+focusScopeNode.requestFocus(focusNode2);
+
+// 失焦
+// 当所有编辑框都失去焦点时键盘就会收起  
+focusNode1.unfocus();
+focusNode2.unfocus();
+```
+
+**监听焦点状态改变**            
+```dart
+...
+// 创建 focusNode   
+FocusNode focusNode = FocusNode();
+...
+// focusNode绑定输入框   
+TextField(focusNode: focusNode);
+...
+// 监听焦点变化    
+focusNode.addListener((){
+   print(focusNode.hasFocus);
+});
+```
