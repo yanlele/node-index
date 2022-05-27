@@ -413,3 +413,184 @@ focusNode.addListener((){
    print(focusNode.hasFocus);
 });
 ```
+
+**自定义样式**
+```dart
+/// TextField 相关知识
+/// 自定义样式
+class YLTextFieldCustomerStyle extends StatelessWidget {
+  const YLTextFieldCustomerStyle({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Theme(
+      // 这个地方可以复写全局样式
+      // 比如说我有多个 TextField 的场景， 就可以用这个
+      data: Theme.of(context).copyWith(
+        hintColor: Colors.grey[200],
+        inputDecorationTheme: const InputDecorationTheme(
+          labelStyle: TextStyle(color: Colors.grey),
+          hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
+        ),
+      ),
+      child: Column(
+        children: const [
+          TextField(
+            decoration: InputDecoration(
+              label: Text("用户名"),
+              hintText: "请输入用户名",
+              prefixIcon: Icon(Icons.person),
+              // 未获得焦点时候下划线颜色
+              // enabledBorder: UnderlineInputBorder(
+              //   borderSide: BorderSide(color: Colors.grey),
+              // ),
+              // // 获得焦点时候下划线颜色
+              // focusedBorder: UnderlineInputBorder(
+              //   borderSide: BorderSide(color: Colors.blue),
+              // ),
+            ),
+          ),
+          TextField(
+            decoration: InputDecoration(
+              // border: InputBorder.none,
+              prefixIcon: Icon(Icons.lock),
+              labelText: "密码",
+              hintText: "请输入密码",
+              // 这个地方的样式， 会覆盖上面 Theme 的样式
+              hintStyle: TextStyle(color: Color(0xFF90CAF9), fontSize: 13),
+              labelStyle: TextStyle(color: Color(0xFF90CAF9)),
+            ),
+            obscureText: true,
+          )
+        ],
+      ),
+    );
+  }
+}
+```
+
+
+### Form
+
+**定义**              
+```dart
+Form({
+  required Widget child,
+  bool autovalidate = false,
+  WillPopCallback onWillPop,
+  VoidCallback onChanged,
+})
+```
+
+`Form` 的子孙元素必须是 `FormField` 类型                  
+```dart
+const FormField({
+  ...
+  FormFieldSetter<T> onSaved, //保存回调
+  FormFieldValidator<T>  validator, //验证回调
+  T initialValue, //初始值
+  bool autovalidate = false, //是否自动校验。
+})
+```
+
+**FormState**
+FormState为Form的State类，可以通过 `Form.of()` 或 `GlobalKey` 获得。
+我们可以通过它来对Form的子孙FormField进行统一操作。
+
+- FormState.validate()
+- FormState.save()
+- FormState.reset()
+
+**示例**                
+一个完整的例子， 自己体会
+```dart
+import 'package:flutter/material.dart';
+
+class YLFormTestRoute extends StatefulWidget {
+  const YLFormTestRoute({Key? key}) : super(key: key);
+
+  @override
+  State<YLFormTestRoute> createState() => _YLFormTestRouteState();
+}
+
+class _YLFormTestRouteState extends State<YLFormTestRoute> {
+  // name
+  final TextEditingController _unameController = TextEditingController();
+
+  // pwd
+  final TextEditingController _pwdController = TextEditingController();
+
+  final GlobalKey _formKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: _formKey,
+      // 表单验证是否开启
+      // autovalidateMode: AutovalidateMode.always,
+      child: Column(
+        children: [
+          TextFormField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
+            autofocus: true,
+            controller: _unameController,
+            decoration: const InputDecoration(
+              labelText: "labelText",
+              hintText: "请输入用户名",
+              icon: Icon(Icons.person),
+            ),
+            validator: (value) {
+              return value!.trim().isNotEmpty ? null : "用户名不能为空";
+            },
+          ),
+          TextFormField(
+            controller: _pwdController,
+            decoration: const InputDecoration(
+              labelText: "密码",
+              hintText: "请输入密码",
+              icon: Icon(Icons.lock),
+            ),
+            obscureText: true,
+            validator: (value) {
+              return value!.trim().length > 5 ? null : "密码不能少于6位";
+            },
+          ),
+
+          // 登录按钮
+          Padding(
+            padding: const EdgeInsets.all(28),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Builder(builder: (context) {
+                    return ElevatedButton(
+                      child: const Padding(
+                        padding: EdgeInsets.all(16),
+                        child: Text("登录"),
+                      ),
+                      onPressed: () {
+                        // GlobalKey 方式
+                        FormState formState = _formKey.currentState as FormState;
+                        if (formState.validate()) {
+                          // 通过验证
+                          print("通过验证");
+                        }
+
+                        // Form.of 方式
+                        if ((Form.of(context) as FormState).validate()) {
+                          // 通过验证
+                          print("通过验证22");
+                        }
+                      },
+                    );
+                  }),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
