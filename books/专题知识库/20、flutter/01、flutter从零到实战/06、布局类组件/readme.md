@@ -11,6 +11,11 @@
   * [多重限制问题](#%E5%A4%9A%E9%87%8D%E9%99%90%E5%88%B6%E9%97%AE%E9%A2%98)
   * [UnconstrainedBox](#unconstrainedbox)
   * [UnconstrainedBox的正确使用方式](#unconstrainedbox%E7%9A%84%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F)
+- [线性布局（Row和Column）](#%E7%BA%BF%E6%80%A7%E5%B8%83%E5%B1%80row%E5%92%8Ccolumn)
+  * [主轴和纵轴](#%E4%B8%BB%E8%BD%B4%E5%92%8C%E7%BA%B5%E8%BD%B4)
+  * [Row](#row)
+  * [Column](#column)
+  * [一些特殊情况](#%E4%B8%80%E4%BA%9B%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5)
 
 <!-- tocstop -->
 
