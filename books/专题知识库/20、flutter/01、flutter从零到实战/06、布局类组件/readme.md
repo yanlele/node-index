@@ -40,5 +40,86 @@ const BoxConstraints({
 如BoxConstraints.tight(Size size)，它可以生成固定宽高的限制；                  
 BoxConstraints.expand()可以生成一个尽可能大的用以填充另一个容器的BoxConstraints。
 
+### ConstrainedBox
+`ConstrainedBox` 用于对子组件添加额外的约束。                        
+```dart
+import 'package:flutter/material.dart';
 
+/// 使用 ConstrainedBox 对子组件进行额外约束
+/// 使用 DecoratedBox 申明子组件为 box
+/// ConstrainedBox.constraints 用于描述具体额外约束是啥子
+class YLConstrainedBox extends StatelessWidget {
+  const YLConstrainedBox({Key? key}) : super(key: key);
+
+  // 声明 redBox
+  final Widget redBox = const DecoratedBox(
+    decoration: BoxDecoration(
+      color: Colors.red,
+    ),
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return ConstrainedBox(
+      constraints: const BoxConstraints(
+        minWidth: double.infinity,
+        minHeight: 50,
+      ),
+      child: Container(
+        // 这边的优先级要高一些， 但是没有查过 50 像素
+        // 如果 这里像素改为 80 ， 那么最后呈现效果以 80 为准
+        height: 5.0, 
+        child: redBox,
+      ),
+    );
+  }
+}
+```
+
+### SizedBox
+`SizedBox` 用于给子元素指定固定的宽高                        
+```dart
+SizedBox(
+  width: 80.0,
+  height: 80.0,
+  child: redBox
+)
+```
+实际上 `SizedBox` 只是 `ConstrainedBox` 的一个定制，上面代码等价于：                       
+```dart
+ConstrainedBox(
+  constraints: BoxConstraints.tightFor(width: 80.0,height: 80.0),
+  child: redBox, 
+)
+```
+
+而 `BoxConstraints.tightFor(width: 80.0,height: 80.0)` 等价于：                      
+```dart
+BoxConstraints(minHeight: 80.0,maxHeight: 80.0,minWidth: 80.0,maxWidth: 80.0);
+```
+
+示例一下，自己体会：
+```dart
+import 'package:flutter/material.dart';
+
+class YLConstrainedBox extends StatelessWidget {
+  const YLConstrainedBox({Key? key}) : super(key: key);
+
+  // 声明 redBox
+  final Widget redBox = const DecoratedBox(
+    decoration: BoxDecoration(
+      color: Colors.red,
+    ),
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 80,
+      width: 80,
+      child: redBox,
+    );
+  }
+}
+```
 
