@@ -153,5 +153,75 @@ ConstrainedBox(
 3. B 在遵守 A 的约束前提下结合子组件的大小确定自身大小。                                    
 
 而这个 B组件就是 `UnconstrainedBox` 组件，也就是说 `UnconstrainedBox 的子组件将不再受到约束，大小完全取决于自己。`
+```dart
+ConstrainedBox(
+  constraints: BoxConstraints(minWidth: 60.0, minHeight: 100.0),  //父
+  child: UnconstrainedBox( //“去除”父级限制
+    child: ConstrainedBox(
+      constraints: BoxConstraints(minWidth: 90.0, minHeight: 20.0),//子
+      child: redBox,
+    ),
+  )
+)
+```
+
+**注意**：             
+UnconstrainedBox对父组件限制的“去除”并非是真正的去除：
+上面例子中虽然红色区域大小是90×20，但上方仍然有80的空白空间。
+也就是说父限制的minHeight(100.0)仍然是生效的，只不过它不影响最终子元素redBox的大小，
+但仍然还是占有相应的空间，可以认为此时的父ConstrainedBox是作用于子UnconstrainedBox上，
+而redBox只受子ConstrainedBox限制，这一点请读者务必注意。
+
+**那么有什么方法可以彻底去除父ConstrainedBox的限制吗？答案是否定的！请牢记，任何时候子组件都必须遵守其父组件的约束**
+
+
+### UnconstrainedBox的正确使用方式
+当我们发现已经使用 `SizedBox` 或 `ConstrainedBox` 给子元素指定了固定宽高，但是仍然没有效果时，
+几乎可以断定：已经有父组件指定了约束！
+
+举个例子：如 Material 组件库中的AppBar（导航栏）的右侧菜单中，
+我们使用SizedBox指定了 loading 按钮的大小，代码如下：
+```dart
+ AppBar(
+   title: Text(title),
+   actions: <Widget>[
+     SizedBox(
+       width: 20, 
+       height: 20,
+       child: CircularProgressIndicator(
+         strokeWidth: 3,
+         valueColor: AlwaysStoppedAnimation(Colors.white70),
+       ),
+     )
+   ],
+)
+```
+效果：           
+![01](https://guphit.github.io/assets/img/4-6.27479289.png)
+
+这正是因为 `AppBar` 中已经指定了 `actions` 按钮的约束条件，
+所以我们要自定义 `loading` 按钮大小，就必须通过 `UnconstrainedBox` 来 “去除” 父元素的限制，代码如下：
+```dart
+AppBar(
+  title: Text(title),
+  actions: <Widget>[
+    UnconstrainedBox(
+      child: SizedBox(
+        width: 20,
+        height: 20,
+        child: CircularProgressIndicator(
+          strokeWidth: 3,
+          valueColor: AlwaysStoppedAnimation(Colors.white70),
+        ),
+      ),
+    )
+  ],
+)
+```
+效果：             
+![02](https://guphit.github.io/assets/img/4-7.5b913c51.png)
+
+**如果 UnconstrainedBox 的大小超过它父组件约束时，也会导致溢出报错**                       
+
 
 
