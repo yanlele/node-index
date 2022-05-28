@@ -6,6 +6,11 @@
 - [布局原理与约束（constraints）](#%E5%B8%83%E5%B1%80%E5%8E%9F%E7%90%86%E4%B8%8E%E7%BA%A6%E6%9D%9Fconstraints)
   * [Flutter布局模型](#flutter%E5%B8%83%E5%B1%80%E6%A8%A1%E5%9E%8B)
   * [BoxConstraints](#boxconstraints)
+  * [ConstrainedBox](#constrainedbox)
+  * [SizedBox](#sizedbox)
+  * [多重限制问题](#%E5%A4%9A%E9%87%8D%E9%99%90%E5%88%B6%E9%97%AE%E9%A2%98)
+  * [UnconstrainedBox](#unconstrainedbox)
+  * [UnconstrainedBox的正确使用方式](#unconstrainedbox%E7%9A%84%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F)
 
 <!-- tocstop -->
 
@@ -220,7 +225,134 @@ AppBar(
 效果：             
 ![02](https://guphit.github.io/assets/img/4-7.5b913c51.png)
 
-**如果 UnconstrainedBox 的大小超过它父组件约束时，也会导致溢出报错**                       
+**如果 UnconstrainedBox 的大小超过它父组件约束时，也会导致溢出报错**
 
 
 
+## 线性布局（Row和Column）
+所谓线性布局，即指沿水平或垂直方向排列子组件。
+
+### 主轴和纵轴
+对于线性布局，有主轴和纵轴之分，如果布局是沿水平方向，那么主轴就是指水平方向，而纵轴即垂直方向；
+如果布局沿垂直方向，那么主轴就是指垂直方向，而纵轴就是水平方向。
+
+有两个定义对齐方式的枚举类 `MainAxisAlignment` 和 `CrossAxisAlignment`，分别代表主轴对齐和纵轴对齐。
+
+### Row
+定义:                       
+```dart
+Row({
+  ...  
+  TextDirection textDirection,    
+  MainAxisSize mainAxisSize = MainAxisSize.max,    
+  MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
+  VerticalDirection verticalDirection = VerticalDirection.down,  
+  CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
+  List<Widget> children = const <Widget>[],
+})
+```
+具体字段含义：  https://book.flutterchina.club/chapter4/row_and_column.html#_4-3-2-row
+
+直接上一个 demo 自己体会
+```dart
+import 'package:flutter/material.dart';
+
+class YLRowDemo1 extends StatelessWidget {
+  const YLRowDemo1({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const <Widget>[
+            Text(" hello world "),
+            Text(" I am Jack "),
+          ],
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const <Widget>[
+            Text(" hello world "),
+            Text(" I am Jack "),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          textDirection: TextDirection.rtl,
+          children: const <Widget>[
+            Text(" hello world "),
+            Text(" I am Jack "),
+          ],
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          verticalDirection: VerticalDirection.up,
+          children: const <Widget>[
+            Text(" hello world ", style: TextStyle(fontSize: 30.0),),
+            Text(" I am Jack "),
+          ],
+        )
+      ],
+    );
+  }
+}
+```
+效果：             
+![03](https://guphit.github.io/assets/img/4-9.86777353.png)
+
+
+
+### Column
+`Column` 可以在垂直方向排列其子组件。
+参数和Row一样，不同的是布局方向为垂直，主轴纵轴正好相反，读者可类比Row来理解。
+
+例子的话就讲究上面那个看了呗
+
+### 一些特殊情况
+如果Row里面嵌套Row，或者Column里面再嵌套Column，
+那么只有最外面的Row或Column会占用尽可能大的空间，里面Row或Column所占用的空间为实际大小，下面以Column为例说明：
+
+```dart
+Container(
+  color: Colors.green,
+  child: Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.max, //有效，外层Colum高度为整个屏幕
+      children: <Widget>[
+        Container(
+          color: Colors.red,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,//无效，内层Colum高度为实际高度  
+            children: <Widget>[
+              Text("hello world "),
+              Text("I am Jack "),
+            ],
+          ),
+        )
+      ],
+    ),
+  ),
+);
+```
+
+如果要让里面的Column占满外部Column，可以使用 `Expanded` 组件：          
+```dart
+Expanded( 
+  child: Container(
+    color: Colors.red,
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center, //垂直方向居中对齐
+      children: <Widget>[
+        Text("hello world "),
+        Text("I am Jack "),
+      ],
+    ),
+  ),
+)
+```
