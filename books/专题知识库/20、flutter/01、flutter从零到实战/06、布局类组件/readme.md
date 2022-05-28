@@ -2,6 +2,13 @@
 
 <!-- toc -->
 
+- [布局类组件简介](#%E5%B8%83%E5%B1%80%E7%B1%BB%E7%BB%84%E4%BB%B6%E7%AE%80%E4%BB%8B)
+- [布局原理与约束（constraints）](#%E5%B8%83%E5%B1%80%E5%8E%9F%E7%90%86%E4%B8%8E%E7%BA%A6%E6%9D%9Fconstraints)
+  * [Flutter布局模型](#flutter%E5%B8%83%E5%B1%80%E6%A8%A1%E5%9E%8B)
+  * [BoxConstraints](#boxconstraints)
+
+<!-- tocstop -->
+
 ## 布局类组件简介
 
 Widget  |	说明  |	用途
@@ -31,7 +38,7 @@ const BoxConstraints({
 });
 ```
 如BoxConstraints.tight(Size size)，它可以生成固定宽高的限制；                  
-BoxConstraints.expand()可以生成一个尽可能大的用以填充另一个容器的BoxConstraints。                         
+BoxConstraints.expand()可以生成一个尽可能大的用以填充另一个容器的BoxConstraints。
 
 
 
