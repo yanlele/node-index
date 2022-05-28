@@ -123,3 +123,22 @@ class YLConstrainedBox extends StatelessWidget {
 }
 ```
 
+
+### 多重限制问题
+如果某一个组件有多个父级 `ConstrainedBox` 限制，那么最终会是哪个生效？                        
+```dart
+ConstrainedBox(
+  constraints: BoxConstraints(minWidth: 60.0, minHeight: 60.0), //父
+  child: ConstrainedBox(
+    constraints: BoxConstraints(minWidth: 90.0, minHeight: 20.0),//子
+    child: redBox,
+  ),
+)
+```
+
+**结论**： 有多重限制时，对于minWidth和minHeight来说，是取父子中相应数值较大的。
+实际上，只有这样才能保证父限制与子限制不冲突。
+
+
+
+
