@@ -597,3 +597,56 @@ class _YLFormTestRouteState extends State<YLFormTestRoute> {
   }
 }
 ```
+
+
+## 进度指示器
+
+Material 组件库中提供了两种进度指示器：`LinearProgressIndicator` 和 `CircularProgressIndicator`
+
+`LinearProgressIndicator` 定义：                      
+```dart
+// 定义
+LinearProgressIndicator({
+  double value,
+  Color backgroundColor,
+  Animation<Color> valueColor,
+  ...
+});
+
+// 模糊进度条(会执行一个动画)
+LinearProgressIndicator(
+  backgroundColor: Colors.grey[200],
+  valueColor: AlwaysStoppedAnimation(Colors.blue),
+),
+// 进度条显示50%
+LinearProgressIndicator(
+  backgroundColor: Colors.grey[200],
+  valueColor: AlwaysStoppedAnimation(Colors.blue),
+  value: .5,
+)
+```
+
+`CircularProgressIndicator` 定义：                     
+```dart
+// 定义
+ CircularProgressIndicator({
+  double value,
+  Color backgroundColor,
+  Animation<Color> valueColor,
+  this.strokeWidth = 4.0,           
+  ...   
+});
+
+// 模糊进度条(会执行一个旋转动画)
+CircularProgressIndicator(
+  backgroundColor: Colors.grey[200],
+  valueColor: AlwaysStoppedAnimation(Colors.blue),
+),
+//进度条显示50%，会显示一个半圆
+CircularProgressIndicator(
+  backgroundColor: Colors.grey[200],
+  valueColor: AlwaysStoppedAnimation(Colors.blue),
+  value: .5,
+),
+```
+
