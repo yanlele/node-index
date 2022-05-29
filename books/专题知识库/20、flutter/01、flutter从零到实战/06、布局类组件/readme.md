@@ -675,3 +675,90 @@ Stack(
 ),
 ```
 ![02](https://guphit.github.io/assets/img/4-18.9e758696.png)
+
+
+## 对齐与相对定位（Align）
+只想简单的调整一个子元素在父元素中的位置的话，使用 `Align` 组件会更简单一些。
+
+### Align
+```dart
+Align({
+  Key key,
+  this.alignment = Alignment.center,
+  this.widthFactor,
+  this.heightFactor,
+  Widget child,
+})
+```
+`widthFactor和heightFactor`是用于确定Align 组件本身宽高的属性；
+它们是两个缩放因子，会分别乘以子元素的宽、高，最终的结果就是Align 组件的宽高。
+如果值为null，则组件的宽高将会占用尽可能多的空间。
+
+举栗子：              
+```dart
+import 'package:flutter/material.dart';
+
+/*
+显式指定了Container的宽、高都为 120。
+如果我们不显式指定宽高，而通过同时指定widthFactor和heightFactor 为 2 也是可以达到同样的效果：
+因为FlutterLogo的宽高为 60，则Align的最终宽高都为2*60=120。
+
+todo 这个 demo 为何会不生效呢？
+
+Alignment Widget会以矩形的中心点作为坐标原点
+FractionalOffset 的坐标原点为矩形的左侧顶点
+* */
+class YLAlignDemo1 extends StatelessWidget {
+  const YLAlignDemo1({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 120.0,
+      width: 120.0,
+      color: Colors.blue.shade50,
+      child: const Align(
+        widthFactor: null,
+        heightFactor: null,
+        alignment: Alignment(2,0.0),
+        child: FlutterLogo(
+          size: 60.0,
+        ),
+      ),
+    );
+  }
+}
+```
+
+### Center
+`Center`继承自`Align`，它比`Align`只少了一个 `alignment` 参数；        
+当`widthFactor或heightFactor`为`null`时组件的宽高将会占用尽可能多的空间；                
+```dart
+import 'package:flutter/material.dart';
+
+class YLCenterDemo extends StatelessWidget {
+  const YLCenterDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: const [
+        DecoratedBox(
+          decoration: BoxDecoration(color: Colors.red),
+          child: Center(child: Text('xxx')),
+        ),
+        DecoratedBox(
+          decoration: BoxDecoration(color: Colors.blue),
+          child: Center(
+            widthFactor: 1,
+            heightFactor: 1,
+            child: Text('xxx'),
+          ),
+        ),
+      ],
+    );
+  }
+}
+```
+
+
