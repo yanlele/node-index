@@ -453,3 +453,63 @@ class YLFlexLayoutTestRoute extends StatelessWidget {
   }
 }
 ```
+
+## 流式布局               
+在介绍 `Row` 和 `Colum` 时，如果子 `widget` 超出屏幕范围，则会报溢出错误                     
+我们把超出屏幕显示范围会自动折行的布局称为流式布局。Flutter中通过Wrap和Flow来支持流式布局。               
+
+### Wrap
+定义：                       
+```dart
+Wrap({
+  ...
+  this.direction = Axis.horizontal,
+  this.alignment = WrapAlignment.start,
+  this.spacing = 0.0,
+  this.runAlignment = WrapAlignment.start,
+  this.runSpacing = 0.0,
+  this.crossAxisAlignment = WrapCrossAlignment.start,
+  this.textDirection,
+  this.verticalDirection = VerticalDirection.down,
+  List<Widget> children = const <Widget>[],
+})
+```
+- `spacing`：主轴方向子widget的间距
+- `runSpacing`：纵轴方向的间距
+- `runAlignment`：纵轴方向的对齐方式
+
+demo            
+```dart
+import 'package:flutter/material.dart';
+
+class YLWrapDemo extends StatelessWidget {
+  const YLWrapDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      spacing: 8, // 主轴方向间距
+      runSpacing: 4, // 纵轴方向间距
+      alignment: WrapAlignment.center, // 居中
+      children: const [
+        Chip(
+          avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text("A")),
+          label: Text('Hamilton'),
+        ),
+        Chip(
+          avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text("M")),
+          label: Text("Lafayette"),
+        ),
+        Chip(
+          avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text("H")),
+          label: Text("Mulligan"),
+        ),
+        Chip(
+          avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text("J")),
+          label: Text("Laurens"),
+        ),
+      ],
+    );
+  }
+}
+```
