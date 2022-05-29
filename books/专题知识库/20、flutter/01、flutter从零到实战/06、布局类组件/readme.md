@@ -851,3 +851,34 @@ class YLLayoutBuilderRoute extends StatelessWidget {
   }
 }
 ```
+
+
+### AfterLayout??
+只有当布局完成时，每个组件的大小和位置才能确定，所以获取的时机肯定是布局完成后，
+那布局完成的时机如何获取呢？至少事件分发肯定是在布局完成之后的，比如：
+```dart
+Builder(
+  builder: (context) {
+    return GestureDetector(
+      child: Text('flutter@wendux'),
+      onTap: () => print(context.size), //打印 text 的大小
+    );
+  },
+),
+```
+
+虽然事件点击时可以拿到组件大小，但有两个问题，第一是需要用户手动触发，
+第二是时机较晚，更多的时候我们更希望在布局一结束就去获取大小和位置信息，
+为了解决这个问题，笔者封装了一个 AfterLayout 组件，
+它可以在子组件布局完成后执行一个回调，并同时将 RenderObject 对象作为参数传递。
+
+```dart
+AfterLayout(
+  callback: (RenderAfterLayout ral) {
+    print(ral.size); //子组件的大小
+    print(ral.offset);// 子组件在屏幕中坐标
+  },
+  child: Text('flutter@wendux'),
+),
+```
+
