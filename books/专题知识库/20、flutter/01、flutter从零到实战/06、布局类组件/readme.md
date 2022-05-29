@@ -588,3 +588,90 @@ class TestFlowDelegate extends FlowDelegate {
 }
 ```
 
+
+## 层叠布局 Stack、Positioned
+
+层叠布局和 Web 中的绝对定位
+
+`Stack` 允许子组件堆叠，而 `Positioned` 用于根据 `Stack` 的四个角来确定子组件的位置.
+
+### Stack
+定义                
+```dart
+Stack({
+  this.alignment = AlignmentDirectional.topStart,
+  this.textDirection,
+
+  // 此参数用于确定没有定位的子组件如何去适应Stack的大小。 
+  // StackFit.loose表示使用子组件的大小，StackFit.expand表示扩伸到Stack的大小。
+  this.fit = StackFit.loose,  
+
+  // 此属性决定对超出Stack显示空间的部分如何剪裁，Clip枚举类中定义了剪裁的方式，
+  // Clip.hardEdge 表示直接剪裁，不应用抗锯齿，更多信息可以查看源码注释。
+  this.clipBehavior = Clip.hardEdge,
+  List<Widget> children = const <Widget>[],
+})
+```
+
+### Positioned
+```dart
+const Positioned({
+  Key? key,
+  this.left, 
+  this.top,
+  this.right,
+  this.bottom,
+  this.width,
+  this.height,
+  required Widget child,
+})
+```
+
+### 举例
+demo1:  
+```dart
+ConstrainedBox(
+  constraints: BoxConstraints.expand(),
+  child: Stack(
+    alignment:Alignment.center , //指定未定位或部分定位widget的对齐方式
+    children: <Widget>[
+      Container(
+        child: Text("Hello world",style: TextStyle(color: Colors.white)),
+        color: Colors.red,
+      ),
+      Positioned(
+        left: 18.0,
+        child: Text("I am Jack"),
+      ),
+      Positioned(
+        top: 18.0,
+        child: Text("Your friend"),
+      )        
+    ],
+  ),
+);
+```
+![01](https://guphit.github.io/assets/img/4-17.7897e012.png)
+
+
+demo2:            
+```dart
+Stack(
+  alignment:Alignment.center ,
+  fit: StackFit.expand, //未定位widget占满Stack整个空间
+  children: <Widget>[
+    Positioned(
+      left: 18.0,
+      child: Text("I am Jack"),
+    ),
+    Container(child: Text("Hello world",style: TextStyle(color: Colors.white)),
+      color: Colors.red,
+    ),
+    Positioned(
+      top: 18.0,
+      child: Text("Your friend"),
+    )
+  ],
+),
+```
+![02](https://guphit.github.io/assets/img/4-18.9e758696.png)
