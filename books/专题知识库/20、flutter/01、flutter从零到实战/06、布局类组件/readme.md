@@ -361,3 +361,95 @@ Expanded(
   ),
 )
 ```
+
+
+## 弹性布局（Flex）
+
+
+### Flex
+定义：               
+```dart
+Flex({
+  ...
+  required this.direction, //弹性布局的方向, Row默认为水平方向，Column默认为垂直方向
+  List<Widget> children = const <Widget>[],
+})
+```
+
+### Expanded
+`Expanded` 只能作为 Flex 的孩子（否则会报错），它可以按比例“扩伸”Flex子组件所占用的空间。
+因为 `Row和Column` 都继承自 `Flex`，所以 `Expanded` 也可以作为它们的孩子。                       
+```dart
+const Expanded({
+  int flex = 1, 
+  required Widget child,
+})
+```
+
+flex 参数为弹性系数，如果为 0 或null，则child是没有弹性的，即不会被扩伸占用的空间。
+如果大于0，所有的Expanded按照其 flex 的比例来分割主轴的全部空闲空间。
+
+示例：             
+```dart
+import 'package:flutter/material.dart';
+
+class YLFlexLayoutTestRoute extends StatelessWidget {
+  const YLFlexLayoutTestRoute({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Flex(
+          direction: Axis.horizontal, // 水平方向
+          children: [
+            Expanded(
+              flex: 1,
+              child: Container(
+                height: 30,
+                color: Colors.red,
+              ),
+            ),
+            Expanded(
+              flex: 2,
+              child: Container(
+                height: 30,
+                color: Colors.green,
+              ),
+            ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 20),
+          child: SizedBox(
+            height: 100,
+            child: Flex(
+              direction: Axis.vertical, // 垂直方向布局
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    height: 20,
+                    color: Colors.red,
+                  ),
+                ),
+                // Spacer 的功能是占用指定比例的空间
+                const Spacer(
+                  flex: 1,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 30,
+                    color: Colors.green,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+```
