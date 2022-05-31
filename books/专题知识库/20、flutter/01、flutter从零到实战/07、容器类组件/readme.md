@@ -1,5 +1,32 @@
 # 容器类组件
 
+<!-- toc -->
+
+- [填充](#%E5%A1%AB%E5%85%85)
+  * [Padding](#padding)
+  * [EdgeInsets](#edgeinsets)
+  * [看一个demo](#%E7%9C%8B%E4%B8%80%E4%B8%AAdemo)
+- [装饰容器（DecoratedBox）](#%E8%A3%85%E9%A5%B0%E5%AE%B9%E5%99%A8decoratedbox)
+  * [DecoratedBox](#decoratedbox)
+  * [BoxDecoration](#boxdecoration)
+  * [举一个例子](#%E4%B8%BE%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90)
+- [变换（Transform）](#%E5%8F%98%E6%8D%A2transform)
+  * [translate](#translate)
+  * [旋转](#%E6%97%8B%E8%BD%AC)
+  * [缩放](#%E7%BC%A9%E6%94%BE)
+  * [Transform 注意事项](#transform-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9)
+  * [RotatedBox](#rotatedbox)
+- [容器组件（Container）](#%E5%AE%B9%E5%99%A8%E7%BB%84%E4%BB%B6container)
+  * [Container](#container)
+  * [Padding和Margin](#padding%E5%92%8Cmargin)
+- [剪裁（Clip）](#%E5%89%AA%E8%A3%81clip)
+  * [剪裁类组件](#%E5%89%AA%E8%A3%81%E7%B1%BB%E7%BB%84%E4%BB%B6)
+  * [自定义裁剪（CustomClipper）](#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A3%81%E5%89%AAcustomclipper)
+- [空间适配 FittedBox](#%E7%A9%BA%E9%97%B4%E9%80%82%E9%85%8D-fittedbox)
+  * [FittedBox](#fittedbox)
+- [Scaffold](#scaffold)
+
+<!-- tocstop -->
 
 ## 填充
 
