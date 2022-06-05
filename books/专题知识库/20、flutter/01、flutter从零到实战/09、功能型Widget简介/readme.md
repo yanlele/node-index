@@ -237,6 +237,91 @@ FutureBuilder({
 ```
 
 **模拟一个网络请求返回场景**
+```dart
+import 'package:flutter/material.dart';
+
+Future<String> mockNetWorkData() async {
+  return Future.delayed(const Duration(seconds: 2), () => "我是从互联网上获取的数据");
+}
+
+class FutureBuilderDemo extends StatelessWidget {
+  const FutureBuilderDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: FutureBuilder<String>(
+        future: mockNetWorkData(),
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          // 如果请求结束
+          if (snapshot.connectionState == ConnectionState.done) {
+            if (snapshot.hasError) {
+              return Text("Error ${snapshot.error}");
+            } else {
+              return Text("Contents: ${snapshot.data}");
+            }
+          } else {
+            // 请求没有结束， 显示 loading
+            return const CircularProgressIndicator();
+          }
+        },
+      ),
+    );
+  }
+}
+```
+
+### StreamBuilder
+`Stream` 也是用于接收异步事件数据, 它常用于会多次读取数据的异步任务场景，如网络内容下载、文件读写等。
+
+```dart
+StreamBuilder({
+  this.initialData,
+  Stream<T> stream,
+  required this.builder,
+});
+```
+
+**示例**                                  
+我们创建一个计时器的示例：每隔1秒，计数加1。
+```dart
+Stream<int> counter() {
+  return Stream.periodic(Duration(seconds: 1), (i) {
+    return i;
+  });
+}
+
+Widget build(BuildContext context) {
+  return StreamBuilder<int>(
+    stream: counter(), //
+    //initialData: ,// a Stream<int> or null
+    builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
+      if (snapshot.hasError)
+        return Text('Error: ${snapshot.error}');
+      switch (snapshot.connectionState) {
+        case ConnectionState.none:
+          return Text('没有Stream');
+        case ConnectionState.waiting:
+          return Text('等待数据...');
+        case ConnectionState.active:
+          return Text('active: ${snapshot.data}');
+        case ConnectionState.done:
+          return Text('Stream 已关闭');
+      }
+      return null; // unreachable
+    },
+  );
+}
+```
+
+## 对话框                      
+直接看文档即可                                                  
+https://flutter.cn/docs/reference/widgets
+
+
+
+
+
 
 
 
