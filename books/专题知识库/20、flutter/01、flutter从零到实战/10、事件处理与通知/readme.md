@@ -53,3 +53,104 @@ behavior | 决定子组件如何响应命中测试
 可以使用`IgnorePointer`和`AbsorbPointer`
 
 AbsorbPointer本身是可以接收指针事件的(但其子树不行)，而IgnorePointer不可以。                            
+
+
+
+## 手势识别
+### GestureDetector
+
+**点击、双击、长按**                    
+`onTap、onDoubleTap、onLongPress`
+
+
+demo
+```dart
+class _GestureTestState extends State<GestureTest> {
+  String _operation = "No Gesture detected!"; //保存事件名
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: GestureDetector(
+        child: Container(
+          alignment: Alignment.center,
+          color: Colors.blue,
+          width: 200.0,
+          height: 100.0,
+          child: Text(
+            _operation,
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        onTap: () => updateText("Tap"), //点击
+        onDoubleTap: () => updateText("DoubleTap"), //双击
+        onLongPress: () => updateText("LongPress"), //长按
+      ),
+    );
+  }
+
+  void updateText(String text) {
+    //更新显示的事件名
+    setState(() {
+      _operation = text;
+    });
+  }
+}
+```
+
+**拖动、滑动**                                   
+拖动和滑动事件是没有区分的
+
+demo                            
+```dart
+class _Drag extends StatefulWidget {
+  @override
+  _DragState createState() => _DragState();
+}
+
+class _DragState extends State<_Drag> with SingleTickerProviderStateMixin {
+  double _top = 0.0; //距顶部的偏移
+  double _left = 0.0;//距左边的偏移
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        Positioned(
+          top: _top,
+          left: _left,
+          child: GestureDetector(
+            child: CircleAvatar(child: Text("A")),
+            //手指按下时会触发此回调
+            onPanDown: (DragDownDetails e) {
+              //打印手指按下的位置(相对于屏幕)
+              print("用户手指按下：${e.globalPosition}");
+            },
+            //手指滑动时会触发此回调
+            onPanUpdate: (DragUpdateDetails e) {
+              //用户手指滑动时，更新偏移，重新构建
+              setState(() {
+                _left += e.delta.dx;
+                _top += e.delta.dy;
+              });
+            },
+            onPanEnd: (DragEndDetails e){
+              //打印滑动结束时在x、y轴上的速度
+              print(e.velocity);
+            },
+          ),
+        )
+      ],
+    );
+  }
+}
+```
+
+参数 |  说明
+:- | :-
+DragDownDetails.globalPosition | 当用户按下时，此属性为用户按下的位置相对于屏幕（而非父组件）原点(左上角)的偏移。
+DragUpdateDetails.delta | 当用户在屏幕上滑动时，会触发多次Update事件，delta指一次Update事件的滑动的偏移量。
+DragEndDetails.velocity | 该属性代表用户抬起手指时的滑动速度(包含x、y两个轴的），示例中并没有处理手指抬起时的速度，常见的效果是根据用户抬起手指时的速度做一个减速动画。
+
+
+## Flutter 事件处理流程
+
