@@ -224,3 +224,23 @@ class _ValueListenableRouteState extends State<ValueListenableRoute> {
 ```
 
 
+## 异步UI更新（FutureBuilder、StreamBuilder）
+
+
+### FutureBuilder
+```dart
+FutureBuilder({
+  this.future,            // FutureBuilder依赖的Future，通常是一个异步耗时任务。
+  this.initialData,       // 初始数据，用户设置默认数据。
+  required this.builder,  // Widget构建器；该构建器会在Future执行的不同阶段被多次调用
+});
+```
+
+**模拟一个网络请求返回场景**
+
+
+
+
+
+
+
