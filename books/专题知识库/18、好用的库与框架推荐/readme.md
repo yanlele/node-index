@@ -182,6 +182,7 @@
 - [flex小游戏](https://github.com/thomaspark/flexboxfroggy)
 - [markdown 文档 --> ppt: nodeppt](https://github.com/ksky521/nodeppt)
 - [markdown 文档 --> ppt: vue-mark-display](https://github.com/Jinjiang/vue-mark-display)
+- [基于markdown的演示幻灯片: Slidev](https://github.com/slidevjs/slidev)
 - [动态文件生成器: docsify](https://github.com/docsifyjs/docsify)
 - [演示框架: impress.js](https://github.com/impress/impress.js)
 - [electron-react-tpl](https://github.com/qld-cf/electron-react-tpl)
