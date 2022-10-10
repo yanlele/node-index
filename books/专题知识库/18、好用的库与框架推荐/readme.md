@@ -193,7 +193,7 @@
 - [控制应用缩放 - 眼镜: Spectacle allows you to organize your windows without using a mouse.](https://github.com/eczarny/spectacle)
 - [syncd是一款开源的代码部署工具](https://github.com/dreamans/syncd)
 - [磁力链接聚合搜索](https://github.com/xiandanin/magnetW)
-- [使用jetbrains](https://www.macwk.com/article/jetbrains-crack)
+- [使用jetbrains](https://github.com/zhanhb/ide-eval-resetter)
 - [github profile template](https://github.com/kautukkundan/Awesome-Profile-README-templates)
 
 
