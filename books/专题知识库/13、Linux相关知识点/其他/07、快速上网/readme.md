@@ -33,6 +33,7 @@ apt-get install unzip #For Debian和Ubuntu
 
 ### justmysocks
 - [https://github.com/killgcd/justmysocks](https://github.com/killgcd/justmysocks)
+- 访问地址： https://justmysocks2.net/members/index.php
 
 ## 推荐
 `justmysocks` 简单好用很稳定
