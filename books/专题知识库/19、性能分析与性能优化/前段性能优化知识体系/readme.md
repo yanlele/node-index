@@ -29,10 +29,8 @@ TTFB、FP 和 FCP 这些指标标记出浏览器开始绘制内容的时间点�
 指标 | 描述                 
 :- | :-             
 FMP (First Meaningful Paint)    |  首次有效绘制，是指首次绘制对用户有用内容的时间点。                                                                      
-LCP (Largest Contentful Paint)             |  最大内容绘制时间，计算从页面开始加载到用户与页面发生交互（点击，滚动）
-这段时间内，最大元素绘制的时间，
-该时间会随着页面渲染变化而变化，因为页面中的最大元素在渲染过程中可能会发生改变。                              
-FCP (First Contentful Paint) |  首次内容绘制，标记浏览器渲染来自 DOM 第一位内容的时间点，内容可能是文本、图像等元素。
+LCP (Largest Contentful Paint)  |  最大内容绘制时间，计算从页面开始加载到用户与页面发生交互（点击，滚动） 这段时间内，最大元素绘制的时间， 该时间会随着页面渲染变化而变化，因为页面中的最大元素在渲染过程中可能会发生改变。                              
+SI (Speed Index)                |  速度指标，填充页面内容的速度，取开始加载到最后完成渲染，每一时刻页面未完成度的积分。页面的视觉完成度（visually complete）是基于 SSIM(Structural similarity Index) 计算的。
 
 
 
