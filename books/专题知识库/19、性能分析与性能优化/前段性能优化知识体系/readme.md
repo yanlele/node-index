@@ -11,6 +11,20 @@
 ### 第一部分，Performance Metrics
 ![https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9b13e5d0846e4e9799840e66ffb2a616~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9b13e5d0846e4e9799840e66ffb2a616~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp)
 
+**是否发生？**
+
+指标 | 描述                 
+:- | :-             
+TTFB (Time to First Byte)    |  首字节到达的时间点。                                                                      
+FP (First Paint)             |  首次绘制，标记浏览器渲染任何在视觉上不同于导航前屏幕内容的时间点。                              
+FCP (First Contentful Paint) |  首次内容绘制，标记浏览器渲染来自 DOM 第一位内容的时间点，内容可能是文本、图像等元素。             
+
+
+TTFB、FP 和 FCP 这些指标标记出浏览器开始绘制内容的时间点，这些时刻等同于告诉用户：“浏览器已经开始处理服务器的返回了，你的请求已经发生了！”
+
+
+
+
 
 
 ## 参考文档
