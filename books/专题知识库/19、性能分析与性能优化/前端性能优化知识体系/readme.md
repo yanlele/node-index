@@ -40,7 +40,9 @@ SI (Speed Index)                |  速度指标，填充页面内容的速度，
 耗时任务。浏览器是单线程，所有任务会被添加到主线程的队列中逐个执行。
 如果有任务耗时过长，主线程就会被阻塞，其他任务就只能等待，包括那些由用户交互产生的任务，从而无法及时响应用户。
 
-页面应该在 100 ms 内响应用户输入，否则就会被用户认为卡顿。                                                      
+页面应该在 100 ms 内响应用户输入，否则就会被用户认为卡顿。                           
+页面应该在 100 ms 内响应用户输入，否则就会被用户认为卡顿。要实现小于 100 ms 的响应，单个任务必须在 50 ms 内完成。
+这样即使用户的输入行为发生在某个任务刚开始的时候，并且耗时 50 ms，在这个任务结束后，主线程仍有 50 ms 时间来响应用户输入，总响应时间在 100 ms 内。                         
 ![02](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9453dab5e5a04a4b9587fa14904792c2~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
 
 通过 Chrome DevTools 或 Long Task API 能方便地发现这些耗时任务。
@@ -52,6 +54,18 @@ SI (Speed Index)                |  速度指标，填充页面内容的速度，
 
 可交互时间，用于标记页面已进行视觉渲染并能可靠响应用户输入的时间点。
 ![04](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1df10e0d84a74ffca17356b8ba7de7aa~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
+
+
+#### TBT (Total Blocking Time)
+
+总共阻塞时间，计算的是从 FCP 到 TTI 之间，主线程阻塞的总时间。阻塞时间是指单次任务占用主线程超过 50 ms 的部分。
+
+![05](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/42972e57fcb44341aea453bfcd985b0d~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)                                
+![06](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/db9d8942dd66466fbe11cdc8fcaf2f8f~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)                                
+![07](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c7feedbf0e99411d9ee2a275bdff2a8a~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)                            
+
+
+
 
 
 
