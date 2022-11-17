@@ -65,6 +65,13 @@ SI (Speed Index)                |  速度指标，填充页面内容的速度，
 ![07](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c7feedbf0e99411d9ee2a275bdff2a8a~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)                            
 
 
+#### FID (First Input Delay)
+
+首次输入延迟，指用户首次输入到页面响应的时间。我们都知道第一印象的重要性，网站亦是如此。首次输入延迟会成为用户对网站很重要的第一印象，决定用户有可能成为忠实用户或者弃之而去。                         
+FID 仅关注用户离散的操作，如点击，轻击，按键等，其他交互如滚动和缩放，并不是 FID 关注的。
+
+![08](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/890efe2a4d2445dabba108db7c19e141~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
+
 
 
 
