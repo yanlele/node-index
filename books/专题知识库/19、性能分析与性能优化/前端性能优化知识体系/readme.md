@@ -73,8 +73,11 @@ FID 仅关注用户离散的操作，如点击，轻击，按键等，其他交�
 ![08](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/890efe2a4d2445dabba108db7c19e141~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
 
 
+### 是否令人愉快？
+#### CLS (Cumulative Layout Shift)
+累计布局偏移。测量在页面的整个生命周期中发生的每个意外的样式移动所造成的布局偏移分数的总和。
 
-
+某次布局偏移分数 = 影响分数 * 距离分数。前一帧和当前帧的所有不稳定元素的可见区域的并集（占视口总面积的一部分）是当前帧的影响分数。
 
 
 
