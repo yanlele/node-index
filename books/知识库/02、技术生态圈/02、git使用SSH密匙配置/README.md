@@ -125,4 +125,5 @@ PubkeyAcceptedAlgorithms +ssh-rsa
 ### 参考文章
 - [参看文章链接](https://www.cnblogs.com/superGG1990/p/6844952.html)
 - [mac 清除/修改SSH的私钥密码](https://blog.csdn.net/qq_36545656/article/details/89478254)
+- [解决 macOS Ventura 使用 ssh/git 等无法正常使用的问题](https://juejin.cn/post/7158284813315604516)
 
