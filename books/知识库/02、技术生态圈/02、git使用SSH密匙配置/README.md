@@ -1,6 +1,5 @@
 # git使用SSH密匙配置
 
-### 
 第一个要配置的是你个人的用户名称和电子邮件地址。这两条配置很重要，每次 Git 提交时都会引用这两条信息，说明是谁提交了更新，所以会随更新内容一起被永久纳入历史记录：
 
 ```
@@ -90,6 +89,37 @@ origin https://github.com/someaccount/someproject.git (push)
 3、`Enter new passphrase (empty for no passphrase):` 输入新密码或者不输入密码
 
 之后， 在git提交的时候， 就可以直接不用输入密码了
+
+
+## mac13 ssh 不可用场景解决办法
+升级到 macOS Ventura 后，无法使用 SSH 命令登入服务器；
+就默认关闭了 ssh-rsa 算法。那么 macOS Ventura 内置使用的 OpenSSH_9.0p1 也是默认关闭了 ssh-rsa 算法。
+
+### 方案一：重新生成 ed25519 算法的密钥
+```
+ssh-keygen -t ed25519 -C "your_email@youremail.com"
+```
+
+### 方案二：重新启用 RSA/SHA1
+```
+# 启用单个主机或者地址：（如果不懂 Host xxx-host 的含义，建议使用启用全部场景）
+# 在 ~/.ssh/config 文件的对应主机配置里新增2行：
+Host xxx-host
+    HostkeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
+
+
+# 默认全部场景都启用：
+# 配置里有 Host * 配置的，需要写到 Host * 内
+Host *
+    HostkeyAlgorithms +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
+
+# 没有的，在 ~/.ssh/config 文件的顶部插入或者尾部新增2行：
+HostkeyAlgorithms +ssh-rsa
+PubkeyAcceptedAlgorithms +ssh-rsa
+```
+
 
 
 ### 参考文章
