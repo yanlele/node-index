@@ -62,3 +62,8 @@
 
 ### 搜藏的内容， 需要及时整理
 - [useMemo、useCallback、useContext 你真的玩明白了吗](https://juejin.cn/post/7146107198215553055)
+- [从Dva到Redux ToolKit，现代Redux的演进](https://juejin.cn/post/7114120958637506591)
+- [前端 100 问](https://juejin.cn/post/6844903885488783374)
+- [【中级/高级前端】为什么我建议你一定要读一读 Tapable 源码？](https://juejin.cn/post/7164175171358556173)
+- [非大厂的我们，要如何去搞前端基建？](https://juejin.cn/post/7144881028661723167)
+- [详解如何使得代码提交更规范（lint-staged、commitlint、commitizen、conventional-changelog-cli）](https://juejin.cn/post/6976891381914533918)
