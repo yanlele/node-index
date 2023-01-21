@@ -67,3 +67,10 @@
 - [【中级/高级前端】为什么我建议你一定要读一读 Tapable 源码？](https://juejin.cn/post/7164175171358556173)
 - [非大厂的我们，要如何去搞前端基建？](https://juejin.cn/post/7144881028661723167)
 - [详解如何使得代码提交更规范（lint-staged、commitlint、commitizen、conventional-changelog-cli）](https://juejin.cn/post/6976891381914533918)
+- [连八股文都不懂还指望在前端混下去么](https://juejin.cn/post/7016593221815910408)
+- [2022 年移动端适配方案指南 — 全网最新最全](https://juejin.cn/post/7046169975706353701)
+- [Git不要只会pull和push，试试这5条提高效率的命令](https://juejin.cn/post/7071780876501123085)
+- [万字长文-落地微前端 qiankun 理论与实践指北](https://juejin.cn/post/7069566144750813197)
+- [webpack 十连问你能接住几题](https://juejin.cn/post/7002839760792190989)
+- [会写 TypeScript 但你真的会 TS 编译配置吗？](https://juejin.cn/post/7039583726375796749)
+
