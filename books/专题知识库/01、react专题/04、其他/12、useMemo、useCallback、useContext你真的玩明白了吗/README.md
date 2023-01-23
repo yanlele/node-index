@@ -1,5 +1,14 @@
 ## useMemo、useCallback、useContext 你真的玩明白了吗
 
+<!-- toc -->
+
+- [正确使用场景](#%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF)
+  * [缓存 useEffect 的引用类型依赖](#%E7%BC%93%E5%AD%98-useeffect-%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E4%BE%9D%E8%B5%96)
+  * [缓存子组件 props 中的引用类型](#%E7%BC%93%E5%AD%98%E5%AD%90%E7%BB%84%E4%BB%B6-props-%E4%B8%AD%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B)
+- [参考文档](#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3)
+
+<!-- tocstop -->
+
 这两个 hook 在首次 render 时需要做一些额外工作来提供缓存， 同时既然要提供缓存那必然需要额外的内存来进行缓存。
 
 ### 正确使用场景
