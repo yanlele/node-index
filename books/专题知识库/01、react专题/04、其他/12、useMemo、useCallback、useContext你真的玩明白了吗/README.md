@@ -285,6 +285,10 @@ function Parent() {
 }
 ```
 
+#### 对 context 进行原子化
+随着业务代码越来越复杂，在不经意间我们就会把一些不相关的数据放在同一个context 里面。这样就导致了context 中任何数据的变化都会导致使用这个 context 的组件重新 render。
+所以一般来说， 需要对 context 进行组合拆分， 原子化原则。
+
 
 
 
