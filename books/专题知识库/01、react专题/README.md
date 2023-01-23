@@ -76,6 +76,7 @@
 - [如何科学使用createContext、useReducer、useContext](/books/专题知识库/01、react专题/04、其他/10、如何科学使用createContext、useReducer、useContext/readme.md)
 - [一个重复渲染的问题研究](/books/专题知识库/01、react专题/04、其他/11、一个重复渲染的问题研究/readme.md)
 - [react源码分析(3)：react的事件委托机制](https://www.jianshu.com/p/b249793fd2a7)
+- [useMemo、useCallback、useContext 你真的玩明白了吗](/books/专题知识库/01、react专题/04、其他/12、useMemo、useCallback、useContext你真的玩明白了吗/README.md)
 
 
 
