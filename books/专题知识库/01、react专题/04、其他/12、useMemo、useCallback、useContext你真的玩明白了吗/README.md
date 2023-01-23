@@ -243,6 +243,52 @@ const App = () => {
 这个时候 APP 组件就成为了无状态组件，state 变化的时候 props.children 不会改变，不会被重新渲染，这个时候再看 Tip 组件，状态更新的时候就不会跟着重新渲染了。
 
 
+**但是这样依然会有别的问题：**
+当 provider 的父组件进行重渲染时，可能会在 consumers 组件中触发意外的渲染。 [官方文档](https://zh-hans.reactjs.org/docs/context.html#caveats) 对这部分内容也有说明。
+
+最好的办法是对 value 进行缓存：
+```tsx
+// ...
+function Provider(props) {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const value = useMemo(() => ({ state, dispatch }), [state]);
+  return (
+    <ContainerContext.Provider value={value}>
+      {props.children}
+    </ContainerContext.Provider>
+  );
+}
+// ...
+```
+
+#### memo 优化直接被穿透，不再起作用
+很多时候我们又会在使用 memo 的组件中使用 context，用 context 的地方在context发生变化的时候无论如何都会发生重新渲染，所以很多时候会导致 memo 优化失效。           
+具体可以看这里的讨论，react 官方解释说设计如此；
+项目中主要解决方案是把 context 往上提，然后通过属性传递：         
+
+以前的写法：          
+```tsx
+React.memo(()=> {
+ const {count} = useContext(ContainerContext);
+ return <span>{count}</span>
+})
+```
+
+现在的写法：
+```tsx
+const Child = memo((props)=>{
+    // ...
+})
+function Parent() {
+  const {count} = useContext(ContainerContext);
+  return <Child count={count} />;
+}
+```
+
+
+
+
+
 
 ### 参考文档
 
