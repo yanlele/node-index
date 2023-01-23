@@ -217,7 +217,30 @@ export default Container;
 例如在 `ContainerContext.Provider` 组件下面的 Tip 组件， 会因为 context 发生变化而重新渲染；
 
 
+#### 解决办法 - Provider 单独封装
+我们把状态管理单独封装到一个 Provider 组件里面，然后把子组件通过 props.children 的方式传进去；
+```tsx
+// ...
+function Provider(props) {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  return (
+    <ContainerContext.Provider value={{ state, dispatch }}>
+      {props.children}
+    </ContainerContext.Provider>
+  );
+}
 
+const App = () => {
+  return (
+    <Provider>
+      <Counter />
+      <Tip />
+    </Provider>
+  );
+};
+// ...
+```
+这个时候 APP 组件就成为了无状态组件，state 变化的时候 props.children 不会改变，不会被重新渲染，这个时候再看 Tip 组件，状态更新的时候就不会跟着重新渲染了。
 
 
 
