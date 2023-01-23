@@ -164,6 +164,60 @@ export default App;
 仅仅在需要发生变更的场景下， 对其传递的值或者应用进行变更。
 
 
+### useContext 使用
+useContext 这个 api，同时结合 useReducer 是可以代替 redux 来做状态管理的。                      
+看一个例子：            
+[https://codesandbox.io/s/laughing-cookies-s4qjco?file=/src/App.tsx](https://codesandbox.io/s/laughing-cookies-s4qjco?file=/src/App.tsx)          
+```tsx
+import React, { createContext, useContext, useReducer } from "react";
+
+const ContainerContext = createContext({ count: 0 });
+const initialState = { count: 0 };
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "increment":
+      return { count: state.count + 1 };
+    case "decrement":
+      return { count: state.count - 1 };
+    default:
+      throw new Error();
+  }
+}
+
+function Counter() {
+  const { state, dispatch } = useContext(ContainerContext);
+  return (
+    <>
+      Count: {state.count}
+      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+      <button onClick={() => dispatch({ type: "increment" })}>+</button>
+    </>
+  );
+}
+
+function Tip() {
+  return <span>计数器</span>;
+}
+
+function Container() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  return (
+    <ContainerContext.Provider value={{ state, dispatch }}>
+      <Counter />
+      <Tip />
+    </ContainerContext.Provider>
+  );
+}
+
+export default Container;
+```
+
+**useContext 的机制是使用这个 hook 的组件在 context 发生变化时都会重新渲染。**
+例如在 `ContainerContext.Provider` 组件下面的 Tip 组件， 会因为 context 发生变化而重新渲染；
+
+
+
 
 
 
