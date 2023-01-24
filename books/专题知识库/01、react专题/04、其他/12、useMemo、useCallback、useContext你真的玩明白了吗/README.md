@@ -5,6 +5,10 @@
 - [正确使用场景](#%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF)
   * [缓存 useEffect 的引用类型依赖](#%E7%BC%93%E5%AD%98-useeffect-%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E4%BE%9D%E8%B5%96)
   * [缓存子组件 props 中的引用类型](#%E7%BC%93%E5%AD%98%E5%AD%90%E7%BB%84%E4%BB%B6-props-%E4%B8%AD%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B)
+- [useContext 使用](#usecontext-%E4%BD%BF%E7%94%A8)
+  * [解决办法 - Provider 单独封装](#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95---provider-%E5%8D%95%E7%8B%AC%E5%B0%81%E8%A3%85)
+  * [memo 优化直接被穿透，不再起作用](#memo-%E4%BC%98%E5%8C%96%E7%9B%B4%E6%8E%A5%E8%A2%AB%E7%A9%BF%E9%80%8F%E4%B8%8D%E5%86%8D%E8%B5%B7%E4%BD%9C%E7%94%A8)
+  * [对 context 进行原子化](#%E5%AF%B9-context-%E8%BF%9B%E8%A1%8C%E5%8E%9F%E5%AD%90%E5%8C%96)
 - [参考文档](#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3)
 
 <!-- tocstop -->
