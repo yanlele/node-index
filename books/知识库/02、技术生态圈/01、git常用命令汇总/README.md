@@ -1,6 +1,40 @@
 # git 常用命令汇总
 
+<!-- toc -->
 
+- [名词](#%E5%90%8D%E8%AF%8D)
+- [1、新建代码库](#1%E6%96%B0%E5%BB%BA%E4%BB%A3%E7%A0%81%E5%BA%93)
+- [2、配置](#2%E9%85%8D%E7%BD%AE)
+- [3、增加/删除/修改文件](#3%E5%A2%9E%E5%8A%A0%E5%88%A0%E9%99%A4%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6)
+- [4、代码提交](#4%E4%BB%A3%E7%A0%81%E6%8F%90%E4%BA%A4)
+- [5、分支](#5%E5%88%86%E6%94%AF)
+- [6、标签](#6%E6%A0%87%E7%AD%BE)
+- [7、查看信息](#7%E6%9F%A5%E7%9C%8B%E4%BF%A1%E6%81%AF)
+- [8、远程操作](#8%E8%BF%9C%E7%A8%8B%E6%93%8D%E4%BD%9C)
+- [9、撤销](#9%E6%92%A4%E9%94%80)
+- [10、其他](#10%E5%85%B6%E4%BB%96)
+  * [修改git commit message](#%E4%BF%AE%E6%94%B9git-commit-message)
+  * [处理提交commit revert 的情况](#%E5%A4%84%E7%90%86%E6%8F%90%E4%BA%A4commit-revert-%E7%9A%84%E6%83%85%E5%86%B5)
+  * [多个提交合并](#%E5%A4%9A%E4%B8%AA%E6%8F%90%E4%BA%A4%E5%90%88%E5%B9%B6)
+  * [cherry-pick合并多个commit](#cherry-pick%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAcommit)
+  * [commit优化](#commit%E4%BC%98%E5%8C%96)
+  * [放弃已经commit但是没有push的代码](#%E6%94%BE%E5%BC%83%E5%B7%B2%E7%BB%8Fcommit%E4%BD%86%E6%98%AF%E6%B2%A1%E6%9C%89push%E7%9A%84%E4%BB%A3%E7%A0%81)
+  * [文件暂存](#%E6%96%87%E4%BB%B6%E6%9A%82%E5%AD%98)
+  * [更改remote](#%E6%9B%B4%E6%94%B9remote)
+  * [git 命令终极文档](#git-%E5%91%BD%E4%BB%A4%E7%BB%88%E6%9E%81%E6%96%87%E6%A1%A3)
+  * [给已经存在的项目添加git](#%E7%BB%99%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0git)
+  * [强行同步远端](#%E5%BC%BA%E8%A1%8C%E5%90%8C%E6%AD%A5%E8%BF%9C%E7%AB%AF)
+  * [强行对齐 - 本地推送到远端](#%E5%BC%BA%E8%A1%8C%E5%AF%B9%E9%BD%90---%E6%9C%AC%E5%9C%B0%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%AB%AF)
+  * [强行对齐 - 远端对齐到本地](#%E5%BC%BA%E8%A1%8C%E5%AF%B9%E9%BD%90---%E8%BF%9C%E7%AB%AF%E5%AF%B9%E9%BD%90%E5%88%B0%E6%9C%AC%E5%9C%B0)
+  * [删除某一次提交](#%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%80%E6%AC%A1%E6%8F%90%E4%BA%A4)
+  * [github----向开源框架提交pr的过程](#github----%E5%90%91%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E6%8F%90%E4%BA%A4pr%E7%9A%84%E8%BF%87%E7%A8%8B)
+  * [GIT上fork的项目获取最新源代码](#git%E4%B8%8Afork%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%8E%B7%E5%8F%96%E6%9C%80%E6%96%B0%E6%BA%90%E4%BB%A3%E7%A0%81)
+  * [git clean的用法](#git-clean%E7%9A%84%E7%94%A8%E6%B3%95)
+  * [git 如何更新 fork 的项目到原项目的最新版本](#git-%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0-fork-%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%88%B0%E5%8E%9F%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC)
+  * [如何完整迁移git仓库到另一个远程地址](#%E5%A6%82%E4%BD%95%E5%AE%8C%E6%95%B4%E8%BF%81%E7%A7%BBgit%E4%BB%93%E5%BA%93%E5%88%B0%E5%8F%A6%E4%B8%80%E4%B8%AA%E8%BF%9C%E7%A8%8B%E5%9C%B0%E5%9D%80)
+- [其他参考](#%E5%85%B6%E4%BB%96%E5%8F%82%E8%80%83)
+
+<!-- tocstop -->
 
 ### 名词               
 - master: 默认开发分支                
