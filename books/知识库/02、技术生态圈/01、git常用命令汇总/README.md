@@ -1,5 +1,7 @@
 # git 常用命令汇总
 
+
+
 ### 名词               
 - master: 默认开发分支                
 - origin: 默认远程版本库                   
@@ -488,6 +490,23 @@ git merge upstream/master
 ```shell
 git push
 ```
+
+#### 如何完整迁移git仓库到另一个远程地址
+项目中遇到git仓库迁移，很常见。如何把一个项目中所有的分支，tag等迁移到另一个仓库地址，
+需要执行一个特别的克隆命令，然后镜像push到新的仓库地址。具体步骤如下：
+```
+1. 以bare的方式克隆老的仓库
+git clone --bare https://github.com/exampleuser/old-repository.git
+
+2. 镜像push到新的仓库地址
+cd old-repository.git
+git push --mirror https://github.com/exampleuser/new-repository.git
+
+3. 在电脑中删掉老得仓库，把新的仓库重新拉下来
+cd ..
+rm -rf old-repository.git
+```
+
 
 
 
