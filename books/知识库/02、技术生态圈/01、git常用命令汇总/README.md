@@ -265,6 +265,21 @@ git stash pop
 
 
 #### 修改git commit message
+**修改最近的一次提交**
+```
+# 修改最近提交的 commit 信息
+$ git commit --amend --message="modify message by daodaotest" --author="jiangliheng <jiang_liheng@163.com>"
+
+# 仅修改 message 信息
+$ git commit --amend --message="modify message by daodaotest"
+
+# 仅修改 author 信息
+$ git commit --amend --author="jiangliheng <jiang_liheng@163.com>"
+```
+
+
+**修改提交到远端的 commit message**
+
 比如要修改的commit是倒数第三条，使用下述命令                       
 `git rebase -i HEAD~3`
 
