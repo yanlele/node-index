@@ -1,5 +1,6 @@
 # 实现函数防抖
 
+参考文档：
 [https://blog.csdn.net/beijiyang999/article/details/79832604](https://blog.csdn.net/beijiyang999/article/details/79832604)
 
 ## 函数防抖是什么
