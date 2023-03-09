@@ -134,7 +134,7 @@ this.card = newValue.replace(/\D/g,'').replace(/....(?!$)/g,'$& ');
 
 7、  普通字符串，每个四位空一位输出
 ```javascript
-var str = '6222023100014701887';
+var str = '6222023100014763381';
 var str=str.replace(/\s/g,'').replace(/(.{4})/g,"$1 ");
 console.log(str);
 ```
