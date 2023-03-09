@@ -1,4 +1,4 @@
-# 关于this 指针的研究
+# 关于 this 指针的研究
 
 ## 基础实例说明
 
@@ -227,8 +227,8 @@ function doSomething() {
 在 JavaScript中，this通常指向的是我们正在执行的函数本身（译者注：用owner代表this所指向的内容），或者是，指向该函数所属的对 象。
 当我们在页面中定义了函数doSomething()的时候，它的owner是页面，或者是JavaScript中的window对象（或 global对象）。
 对于一个onclick属性，它为它所属的HTML元素所拥有，this应该指向该HTML元素。                          
-这种“所有权”就是JavaScript中面向对象的一种方式。在Objects as associative arrays中可以查看一些更多的信息。 
-![img](img/11_02.gif)                 
+这种“所有权”就是JavaScript中面向对象的一种方式。在Objects as associative arrays中可以查看一些更多的信息。
+![11_02](https://user-images.githubusercontent.com/22188674/224062543-ec8a9e13-6a90-400b-a54d-16dfc33c64fc.gif)                 
 
 
 ## 总结 
