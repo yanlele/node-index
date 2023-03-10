@@ -484,6 +484,7 @@
 - [github开发人员在七夕搞事情：remote: Support for password authentication was removed on August 13, 2021.](https://blog.csdn.net/weixin_41010198/article/details/119698015)
 - [Github自动发版机器人配置](https://juejin.cn/post/6920049554264064008)
 - [Github实用技巧](/books/知识库/02、技术生态圈/13、Github实用技巧/README.md)
+- [GitHub如何选择合适的license](/books/知识库/02、技术生态圈/15、GitHub如何选择合适的license/README.md)
 
 
 #### 渲染与项目性能优化
