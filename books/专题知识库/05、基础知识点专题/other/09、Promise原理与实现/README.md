@@ -1,4 +1,4 @@
-# Primise原理与实现
+## Primise原理与实现
 
 目录
 
@@ -25,7 +25,7 @@
 
 <!-- tocstop -->
 
-## Promise 核心
+### Promise 核心
 - Promise 概括来说是对异步的执行结果的描述对象。（这句话的理解很重要）
 - Promise 规范中规定了，promise 的状态只有3种：
     - pending

@@ -1,8 +1,8 @@
-# 实现函数节流
+## 实现函数节流
 
 [https://blog.csdn.net/beijiyang999/article/details/79836463](https://blog.csdn.net/beijiyang999/article/details/79836463)
 
-## 函数节流是什么
+### 函数节流是什么
 **对于持续触发的事件，规定一个间隔时间（n秒），每隔一段只能执行一次。**                      
 函数防抖（debounce）与本篇说的函数节流（throttle）相似又不同。                     
 函数防抖一般是指对于**在事件被触发n秒后再执行的回调，如果在这n秒内又重新被触发，则重新开始计时。**                        
@@ -12,7 +12,7 @@
 - 函数节流的情况下，函数将每个 n 秒执行一次。
 
 
-## 函数节流的实现
+### 函数节流的实现
 函数节流的实现有不同的思路，可以通过**时间戳实现**，也可以通过**定时器实现**。
 
 ### 时间戳
@@ -130,7 +130,6 @@ function throttle(func, wait) {
     };
 }
 ```
-[请看demo1](/books/专题知识库/05、基础知识点专题/other/07、实现函数节流/demo1.js)
 
 
 #### 更进一步的优化
@@ -172,7 +171,6 @@ function throttle(func, wait, options) {
     return throttled;
 }
 ```
-[请看demo2](/books/专题知识库/05、基础知识点专题/other/07、实现函数节流/demo2.js)
 
 如果想添加一个取消功能：
 ```javascript

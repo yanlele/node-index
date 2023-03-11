@@ -1,5 +1,3 @@
-# V8引擎初步介绍
-
 目录                  
 - [渲染引擎与网页渲染](#渲染引擎与网页渲染)
     - [编程分类](#编程分类)
@@ -33,7 +31,7 @@
 WebKit，一个由苹果发起的一个开源项目，如今它在移动端占据着垄断地位，更有基于WebKit的web操作系统不断涌现(如：Chrome OS、Web OS)。                        
 
 WebKit内部结构大体如下                      
-![01](img/01.png)                                 
+![01](https://user-images.githubusercontent.com/22188674/224484181-6bb95a67-aae8-46bb-a3ce-7565bf891ed0.png)                                 
 
 上图中实线框内模块是所有移植的共有部分，虚线框内不同的厂商可以自己实现。由上图可知，WebKit主要有操作系统、WebCore 、WebKit嵌入式接口和第三方库组成。
 
@@ -73,7 +71,7 @@ RenderObject节点在创建的同时，WebKit会根据网页层次结构构建Re
 
 ## JavaScript引擎
 JavaScript这种解释性语言来讲，如何提高解析速度就是当务之急。JavaScript引擎和渲染引擎的关系如下图所示                                                                  
-![02](img/02.png)                                         
+![02](https://user-images.githubusercontent.com/22188674/224484189-606623ef-308f-4b4e-a931-49cccf2f7b9a.png)                                         
 
 为了提高性能，JavaScript引入了Java虚拟机和C++编译器中的众多技术。
 而一个完整JavaScript引擎的执行过程大致流程如下：**源代码-→抽象语法树-→字节码-→JIT-→本地代码**。一个典型的抽象语法树如下图所示：                                    
@@ -89,7 +87,7 @@ JIT具体的做法是这样的:当载入一个类型时,CLR为该类型创建一
 
 ## V8引擎
 前面，我们介绍了V8引擎的一些历史，下面我们重点来看看V8项目一些知识。首先，V8项目的结构如下：                       
-![03](img/03.png)                         
+![03](https://user-images.githubusercontent.com/22188674/224484198-70bd0c01-6b45-43ba-acb5-69453aa11b80.png)                         
 
 ### 数据解析
 JavaScript作为一种无类型的语言，在编译时并不能准确知道变量的类型，只可以在运行时确定。因而JavaScript运行效率比C++或Java低。                                         
@@ -125,7 +123,7 @@ Compile函数先使用Parser类生成AST，再使用FullCodeGenerator类来生�
 本地代码与具体的硬件平台密切相关，FullCodeGenerator使用多个后端来生成与平台相匹配的本地汇编代码。                                                   
 
 大体的流程图如下所示：                                             
-![04](img/04.png)                                                     
+![04](https://user-images.githubusercontent.com/22188674/224484204-a4d766cc-3179-4d40-bb8a-9bd8e574886e.png)                                                     
 
 在执行编译之前，V8会构建众多全局对象并加载一些内置的库（如math库），来构建一个运行环境。
 但是，在JavaScript源代码中，并非所有的函数都被编译生成本地代码，而是采用在调用时才会编译的逻辑来动态编译。                                                      
@@ -190,7 +188,7 @@ Node中通过JavaScript使用内存时就会发现只能使用部分内存（64�
     **大对象**：为那些需要使用较多内存对象分配内存，当然同样可能包含数据和代码等分配的内存，一个页面只分配一个对象。                                                                                                             
 
 用一张图可以表示如下：                                             
-![05](img/05.png)                                                                             
+![05](https://user-images.githubusercontent.com/22188674/224484225-4b86d1f8-1b8f-4eda-8cbf-9b7dec04556b.png)                                                                             
 
 ### 垃圾回收                                            
 V8 使用了分代和大数据的内存分配，在回收内存时使用精简整理的算法标记未引用的对象，然后消除没有标记的对象，最后整理和压缩那些还未保存的对象，即可完成垃圾回收。                            

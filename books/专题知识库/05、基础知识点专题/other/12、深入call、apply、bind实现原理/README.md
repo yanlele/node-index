@@ -1,4 +1,4 @@
-# 深入call、apply、bind实现原理
+## 深入 call、apply、bind实现原理
 [https://www.jianshu.com/p/6a1bc149b598](https://www.jianshu.com/p/6a1bc149b598)
 
 简单粗暴地来说，call，apply，bind是用于绑定this指向的。
@@ -30,7 +30,6 @@ yanle.sayHello(26);          // hello, i am yanle and 26 years old
 yanle.sayHello.call(lele, 20);          // hello, i am lele and 20 years old
 yanle.sayHello.apply(lele, [21]);       // hello, i am lele and 21 years old
 ```
-[请看demo1](./demo1.js)
 
 结果都相同。从写法上我们就能看出二者之间的异同。
 相同之处在于，第一个参数都是要绑定的上下文，后面的参数是要传递给调用该方法的函数的。
@@ -41,7 +40,7 @@ call()方法在使用一个指定的this值和若干个指定的参数值的前�
 apply()方法在使用一个指定的this值和参数值必须是数组类型的前提下调用某个函数或方法  
 
 
-### 分析call和apply的原理
+## 分析call和apply的原理
 上面代码，我们注意到了两点：                  
 1、call和apply改变了this的指向，指向到lulin                 
 2、sayHello函数执行了                 
@@ -64,9 +63,9 @@ delete lulin.fn
 
 上面的说的是原理，可能你看的还有点抽象，下面我们用代码模拟实现apply一下。
 
-### 实现aplly方法
+## 实现aplly方法
 
-#### 模拟实现第一步
+### 模拟实现第一步
 根据这个思路，我们可以尝试着去写第一版的 applyOne 函数：
 ```javascript
 Function.prototype.applyOne = function (context) {
@@ -86,10 +85,9 @@ let lele = {
 yanle.sayHello.applyOne(lele);              // hello, i am lele and undefined years old
 ```
 正好可以打印lulin而不是之前的jawil了。
-[请看demo2](./demo2.js)
 
 
-#### 模拟实现第二步
+### 模拟实现第二步
 最一开始也讲了，apply函数还能给定参数执行函数。                  
 注意：传入的参数就是一个数组，很简单，我们可以从Arguments对象中取值，
 Arguments不知道是何物，赶紧补习，此文也不太适合初学者，第二个参数就是数组对象，
@@ -161,12 +159,11 @@ var  lulin = {
 
 jawil.sayHello.applyTwo(lulin,[24])//lulin 24
 ```
-[请看demo3](./demo3.js)
 
 好像就行了是不是，其实这只是最粗糙的版本，能用，但是不完善，完成了大约百分之六七十了。
 
 
-#### 模拟实现第三步
+### 模拟实现第三步
 1.this参数可以传null或者不传，当为null的时候，视为指向window             
 
 demo1:
@@ -223,10 +220,9 @@ Function.prototype.applyThree = function(context) {
     return returnValue
 }
 ```
-[demo4](./demo4.js)                                 
 
 
-#### 模拟实现第四步
+### 模拟实现第四步
 其实一开始就埋下了一个隐患，我们看看这段代码：                     
 ```javascript
 Function.prototype.applyThree = function(context) {
@@ -328,9 +324,8 @@ Function.prototype.applyFour = function(context) {
     return returnValue
 }
 ```
-[请看demo5](./demo5.js)
 
-#### 模拟实现第五步
+### 模拟实现第五步
 呃呃呃额额，慢着，ES3就出现的方法，你用ES6来实现，你好意思么？
 你可能会说，不管黑猫白猫，只要能抓住老鼠的猫就是好猫，面试官直说不准用call和apply方法但是没说不准用ES6语法啊。                           
 反正公说公有理婆说婆有理，这里还是不用Symbol方法实现一下，我们知道，ES6其实都是语法糖，ES6能写的，
@@ -378,10 +373,9 @@ function sayHello(age) {
 }
 console.log(sayHello.applyFive(obj,[24]));// 完美输出{name: "jawil", age: 24}
 ```
-[请看demo6](./demo6.js)                   
 
 
-### 实现Call方法
+## 实现Call方法
 这个不需要讲了吧，道理都一样，就是参数一样，这里我给出我实现的一种方式，看不懂，自己写一个去。
 ```javascript
 //原生JavaScript封装call方法
@@ -411,7 +405,7 @@ function sayHello(age) {
 console.log(sayHello.callOne(obj,24));// 完美输出{name: "jawil", age: 24}
 ```
 
-### 实现bind方法
+## 实现bind方法
 什么是bind函数               
 如果掌握了上面实现apply的方法，我想理解起来模拟实现bind方法也是轻而易举，原理都差不多，我们还是来看看bind方法的定义。                       
 我们还是简单的看下ECMAScript规范对bind方法的定义，暂时看不懂不要紧，获取几个关键信息就行。                            
@@ -499,7 +493,7 @@ boundGetX(); // 81
 bind 函数在 ECMA-262 第五版才被加入；它可能无法在所有浏览器上运行。
 你可以部份地在脚本开头加入以下代码，就能使它运作，让不支持的浏览器也能使用 bind() 功能。
 
-#### 初级实现
+### 初级实现
 了解了以上内容，我们来实现一个初级的bind函数Polyfill:                   
 ```javascript
 Function.prototype.bind = function (context) {
@@ -516,7 +510,7 @@ Function.prototype.bind = function (context) {
 同时，将第一个参数（context）以外的其他参数，作为提供给原函数的预设参数，这也是基本的“颗粒化（curring）”基础。                             
 
 
-#### 初级实现的加分项
+### 初级实现的加分项
 进行兼容处理，就是锦上添花了。
 ```javascript
 Function.prototype.bind = Function.prototype.bind || function (context) {
@@ -524,7 +518,7 @@ Function.prototype.bind = Function.prototype.bind || function (context) {
 }
 ```
 
-#### 颗粒化（curring）实现
+### 颗粒化（curring）实现
 对于函数的柯里化不太了解的童鞋，可以先尝试读读这篇文章：[前端基础进阶（八）：深入详解函数的柯里化](https://www.jianshu.com/p/5e1899fe7d6b)。                           
 上述的实现方式中，我们返回的参数列表里包含：atgsArray.slice(1)，他的问题在于存在预置参数功能丢失的现象。                           
 想象我们返回的绑定函数中，如果想实现预设传参（就像bind所实现的那样），就面临尴尬的局面。真正实现颗粒化的“完美方式”是：                          
@@ -540,7 +534,7 @@ Function.prototype.bind = Function.prototype.bind || function (context) {
 }
 ```
 
-#### 构造函数场景下的兼容
+### 构造函数场景下的兼容
 ```javascript
 Function.prototype.bind = Function.prototype.bind || function (context) {
     var me = this;
@@ -558,7 +552,7 @@ Function.prototype.bind = Function.prototype.bind || function (context) {
 ```
 
 
-#### 更严谨的做法
+### 更严谨的做法
 我们需要调用bind方法的一定要是一个函数，所以可以在函数体内做一个判断：
 ```javascript
 if (typeof this !== "function") {
@@ -569,7 +563,7 @@ if (typeof this !== "function") {
 另外，《JavaScript Web Application》一书中对bind()的实现，也是如此。
 
 
-#### 最终答案
+### 最终答案
 ```javascript
 //简单模拟Symbol属性
 function jawilSymbol(obj) {
@@ -632,7 +626,6 @@ function sayHello(age) {
 
 console.log(sayHello.bind(obj,24)());// 完美输出{name: "jawil", age: 24}
 ```
-[请看demo7](./demo7.js)                       
 
 
 
