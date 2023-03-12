@@ -1,4 +1,4 @@
-# 理解redux和redux的中间件redux-thunk
+## 理解redux和redux的中间件redux-thunk
 
 目录
 - [Action的认识](#Action的认识)
