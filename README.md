@@ -467,6 +467,7 @@
 
 #### TypeScript相关
 - [从零开始配置 TypeScript 项目](https://juejin.im/post/6856410900577026061)
+- [会写 TypeScript 但你真的会 TS 编译配置吗？](https://www.51cto.com/article/694463.html)
 
 
 #### git相关
