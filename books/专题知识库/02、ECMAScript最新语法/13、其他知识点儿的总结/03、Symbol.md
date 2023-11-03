@@ -1,7 +1,4 @@
-## Symbol 
-
-目录
-- [Symbol概述](#Symbol概述)
+## Symbol
 
 
 ### Symbol概述

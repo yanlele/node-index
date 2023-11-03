@@ -12,7 +12,7 @@
     - [redux-thunk](https://github.com/gaearon/redux-thunk)      让redux有处理异步的能力
     - [babel-plugin-transform-decorators-legacy](https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy)           babel装饰器模式插件
     - [prop-types](https://github.com/facebook/prop-types)       react 参数传递的校验插件
-    - [axios](https://github.com/axios/axios)           大名鼎鼎的ajax插件
+    - [axios](https://github.com/axios/axios)           
     - [Ant Design](https://github.com/ant-design/ant-design)    蚂蚁金服大名鼎鼎的react-UI组件库
     - [antd-mobile](https://github.com/ant-design/ant-design-mobile)        antd的移动版本
     - [material-ui](https://github.com/mui-org/material-ui)     谷歌出品最酷炫的react-UI组件库
