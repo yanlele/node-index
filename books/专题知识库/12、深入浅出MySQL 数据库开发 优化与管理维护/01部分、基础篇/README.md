@@ -12,8 +12,6 @@
 
 ### <div id="class01-01">01章、mysql的安装与配置</div>
 这个部分的东西太过于基础，直接看网上搜索的文章就可以了：
-[mysql下载与安装问题整理](../../../18年/09月/02、mysql下载与安装问题整理/)
-
 
 
 ### <div id="class01-02">02章、sql基础</div>
@@ -422,7 +420,7 @@ WHERE TO_DAYS(NOW()) - TO_DAYS(date_col) <= 30;
 
 
 #### 字符串类型
-![01](./img/01.png)
+![01](https://github.com/yanlele/node-index/assets/22188674/fd9f3918-08ef-40b9-8bf4-03d3650733fa)
 
 **CHAR 和 VARCHAR类型**                    
 
@@ -487,8 +485,9 @@ drop table if exists test;
 +、-、#、/、%
 
 #### 比较运算符
-![02](./img/02.png)                     
-![03](./img/03.png)
+![02](https://github.com/yanlele/node-index/assets/22188674/1b0e7fea-79b3-4c28-8cad-0232c1adc180)
+![03](https://github.com/yanlele/node-index/assets/22188674/b5c9c588-dae5-49b5-b626-c3f0b07e7802)
+
 
 比较结果为真，返回1， 为假返回0；                  
 'BETWEEN' 的使用格式为 `a BETWEEN min and max`; 比较包含上下界相等的情况；                     
@@ -497,7 +496,7 @@ drop table if exists test;
 **'LIKE''** 使用格式为 `a LIKE %123%`，a中有'123'时，返回1； 例如： `select 123456 like '123%', 123456 like '%123%', 123456 like '%321%';`
 
 #### 逻辑运算符              
-![04](./img/04.png)
+![04](https://github.com/yanlele/node-index/assets/22188674/3b8ca7b9-3fdf-43bb-81f5-a60f82f5312c)
 
 #### 位运算符
 略。。。。。。。
@@ -506,8 +505,8 @@ drop table if exists test;
 
 ### <div id="class01-05">05、常用函数</div>
 #### 常用字符串函数
-![05](./img/05.png)                 
-![06](./img/06.png)
+![05](https://github.com/yanlele/node-index/assets/22188674/04c7b7a2-f0b2-4172-b2a7-7bfcb622bd15)                 
+![06](https://github.com/yanlele/node-index/assets/22188674/bf1aba2d-21d7-45a1-9625-2570fdc4f8ac)
 
 **CONCAT(S1,S2,......)**： 包传入的参数连接成为一个字符串                   
 字符串与null连接的结果都将是null
@@ -532,14 +531,14 @@ drop table if exists test;
 **SUBSTRING(str,x,y)**： 返回字符串str从x位置起，y个字符长度的字符串；
 
 #### 数值函数
-![07](./img/07.png)             
+![07](https://github.com/yanlele/node-index/assets/22188674/af829e31-b847-444d-b049-b4c8e8258fa6)             
 
 #### 日期和时间函数
-![08](./img/08.png)
+![08](https://github.com/yanlele/node-index/assets/22188674/e4e5431a-8f70-4716-8d75-f00f62d2080d)
 
 
 #### 流程函数 重要
-![09](./img/09.png)
+![09](https://github.com/yanlele/node-index/assets/22188674/00c94517-f1b7-4724-9e57-439a90263da6)
 
 例如 一个关于薪水问题的一个测试
 ```sql
@@ -568,7 +567,7 @@ drop table if exists salary;
 ```
 
 #### 其他常用函数
-![10](./img/10.png)
+![10](https://github.com/yanlele/node-index/assets/22188674/13256c8f-9503-4282-8000-fbba03dd3a50)
 
 
 ### <div id="class01-06">06、图形化工具的使用</div>
