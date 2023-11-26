@@ -4,7 +4,7 @@ interface InitWithRetries extends RequestInit {
 }
 
 const DEFAULT_TIMEOUT = 1000 * 1.5;
-const DEFAULT_RETRIES = [1000, 3 * 1000];
+const DEFAULT_RETRIES = [0, 0];
 
 const fetchWithRetries = (url: string, initWithRetries?: InitWithRetries): Promise<any> => {
   // fetchTimeout 请求超时时间
@@ -87,20 +87,14 @@ const fetchWithRetries = (url: string, initWithRetries?: InitWithRetries): Promi
       // 重复请求 delay 时间
       const retryDelay = _retryDelays[requestsAttempted - 1];
 
-      console.log(`<${'='.repeat(50)}start${'='.repeat(50)}>`);
-      console.log('yanle - logger: _retryDelays', _retryDelays);
-      console.log('yanle - logger: requestsAttempted', requestsAttempted);
-      console.log('yanle - logger: retryDelay', retryDelay);
-      
-
       // 重复请求开始时间
       const retryStartTime = requestStartTime + retryDelay;
 
-      console.log('yanle - logger: retryStartTime', retryStartTime);
-      console.log(`<${'='.repeat(50)}end${'='.repeat(50)}>`);
+      // 延迟时间
+      const timeout = retryStartTime - Date.now() > 0 ? retryStartTime - Date.now() : 0;
 
       // 重复请求
-      setTimeout(sendTimedRequest, retryStartTime - Date.now());
+      setTimeout(sendTimedRequest, timeout);
     };
 
     // 是否可以发起重复请求

@@ -10,7 +10,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 var DEFAULT_TIMEOUT = 1000 * 1.5;
-var DEFAULT_RETRIES = [1000, 3 * 1000];
+var DEFAULT_RETRIES = [0, 0];
 var fetchWithRetries = function (url, initWithRetries) {
     // fetchTimeout 请求超时时间
     // 请求
@@ -30,6 +30,7 @@ var fetchWithRetries = function (url, initWithRetries) {
             requestsAttempted++;
             // 发起请求时间
             requestStartTime = Date.now();
+            console.log("yanle - logger: requestStartTime", requestStartTime);
             // 是否需要处理后续请求
             var isRequestAlive = true;
             // 发起请求
@@ -80,16 +81,12 @@ var fetchWithRetries = function (url, initWithRetries) {
         var retryRequest = function () {
             // 重复请求 delay 时间
             var retryDelay = _retryDelays[requestsAttempted - 1];
-            console.log("<".concat('='.repeat(50), "start").concat('='.repeat(50), ">"));
-            console.log('yanle - logger: _retryDelays', _retryDelays);
-            console.log('yanle - logger: requestsAttempted', requestsAttempted);
-            console.log('yanle - logger: retryDelay', retryDelay);
             // 重复请求开始时间
             var retryStartTime = requestStartTime + retryDelay;
-            console.log('yanle - logger: retryStartTime', retryStartTime);
-            console.log("<".concat('='.repeat(50), "end").concat('='.repeat(50), ">"));
+            // 延迟时间
+            var timeout = retryStartTime - Date.now() > 0 ? retryStartTime - Date.now() : 0;
             // 重复请求
-            setTimeout(sendTimedRequest, retryStartTime - Date.now());
+            setTimeout(sendTimedRequest, timeout);
         };
         // 是否可以发起重复请求
         var shouldRetry = function (attempt) { return attempt <= _retryDelays.length; };
