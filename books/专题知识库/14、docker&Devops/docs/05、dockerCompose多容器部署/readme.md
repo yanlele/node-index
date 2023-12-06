@@ -1,5 +1,7 @@
 ## Docker Compose 多容器部署
 
+> 文章链接  https://github.com/yanlele/node-index/issues/71
+
 ### <div id="class05-01">01、部署一个wordPress</div>
 启动一个mysql 数据容器: `docker run -d --name=mysql -v mysql-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=wordpress mysql:5.6`
 
@@ -139,7 +141,7 @@ web 服务都是链接到 redis 上面的，如果想启动多个web 服务器�
 
 
 ### <div id="class05-05">部署一个复杂应用</div>
-![03](../../imgs/03.png)                                    
+![03](https://github.com/yanlele/node-index/assets/22188674/58225679-e1ac-4292-a416-a1c43567b26a)                                    
 
 直接把 code/chapter6/labs/example-voting-app/ 目录下面的内容拷贝到虚拟机上 `/home/vagrant/labs/`；                            
 进入虚拟机之后 运行 `docker-compose up` 这个过程非常慢， 因为需要拉取基础镜像、生成源码 image；

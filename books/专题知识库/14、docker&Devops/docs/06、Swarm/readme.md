@@ -1,5 +1,6 @@
 ## Swarm
 
+> 文章链接 https://github.com/yanlele/node-index/issues/72
 
 ### <div id="class06-01">01、创建三个节点的Swarm集群</div>
 

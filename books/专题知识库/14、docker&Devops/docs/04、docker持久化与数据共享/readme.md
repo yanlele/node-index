@@ -1,5 +1,7 @@
 ## docker的持久化存储与数据共享
 
+> 文章链接  https://github.com/yanlele/node-index/issues/70
+
 
 ### <div id="class04-01">01、基础概念</div>
 如果我们在container 写数据， 那么只限于这个container, 删除就没有了。                   

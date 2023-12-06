@@ -376,10 +376,10 @@ docker0		8000.0242408519da	no		vetha622445
 就有两个链接了。
 
 两个容器之间的通信：                  
-![01](../../imgs/01.png)                            
+![01](https://github.com/yanlele/node-index/assets/22188674/8d87be84-e50f-4ddd-ba1a-555dde558145) 
 
 外网链接：                   
-![02](../../imgs/02.png)                    
+![02](https://github.com/yanlele/node-index/assets/22188674/d869f5bd-7e3b-4bdc-bf3c-9db3776d1094)                    
 
 
 
