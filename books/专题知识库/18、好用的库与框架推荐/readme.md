@@ -1,5 +1,7 @@
 ## 好用的库总结
 
+> 文章链接 https://github.com/yanlele/node-index/issues/73
+
 <!-- toc -->
 
 - [工具函数](#%E5%B7%A5%E5%85%B7%E5%87%BD%E6%95%B0)

@@ -1,5 +1,7 @@
 # 性能分析
 
+> 文章链接 https://github.com/yanlele/node-index/issues/74
+
 
 ### 参考文章
 - [如何分析页面加载慢](https://www.jianshu.com/p/24b93b13e5a9)
