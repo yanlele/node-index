@@ -14,7 +14,7 @@
   }
 ```
 
-现在便可以使用Commitizen来提交git commit，具体用法就是，在git commit的时候改为使用git-cz.这里我把命令写进npm script中
+现在便可以使用`Commitizen`来提交`git commit`，具体用法就是，在 `git commit` 的时候改为使用 `git-cz` .这里我把命令写进 `npm script` 中
 ```
 "scripts": {
     "commit": "git-cz"
