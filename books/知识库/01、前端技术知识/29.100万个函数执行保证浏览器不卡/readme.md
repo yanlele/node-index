@@ -231,4 +231,4 @@ processArrayWithDynamicChunkSize();
 
 最后这个只是一个简单的实现任务调度的一个思路， 真正的任务调度器， 可能复杂度是非常高的。 可以参考 `react scheduler`
 
-最后附上源码：
+最后附上源码：[100万个函数执行保证浏览器不卡 - demo](https://github.com/yanlele/node-index/blob/master/books/%E7%9F%A5%E8%AF%86%E5%BA%93/01%E3%80%81%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E7%9F%A5%E8%AF%86/29.100%E4%B8%87%E4%B8%AA%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%E4%BF%9D%E8%AF%81%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8D%E5%8D%A1/goodCase.html)
