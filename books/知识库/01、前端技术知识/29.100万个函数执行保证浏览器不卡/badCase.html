@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>badCase</title>
+</head>
+<body>
+<p id="result"></p>
+
+<script>
+  const $result = document.getElementById("result");
+
+  /* ==============================  长任务 - Start ============================== */
+  const bigArray = Array.from({ length: 1000000 }, (_, i) => i + 1);
+
+  // 定义一个处理函数，例如对数组中的每个元素进行平方操作
+  function processChunk(chunk) {
+    return `chunk: ${chunk}`;
+  }
+
+  for (const item in bigArray) {
+    $result.innerText = processChunk(item);
+  }
+
+  /* ==============================  长任务 - End   ============================== */
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>webWorker</title>
+</head>
+<body>
+
+<script>
+
+
+  const worker = new Worker("./worker.js"); // 创建一个新的Web Worker
+
+  worker.postMessage({ start: 0, end: 1000000 }); // 向Web Worker发送消息
+
+  worker.onmessage = function(event) {
+    const result = event.data;
+    console.log("任务完成：", result);
+  };
+</script>
+</body>
+</html>
