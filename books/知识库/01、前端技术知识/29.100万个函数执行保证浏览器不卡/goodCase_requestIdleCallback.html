@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<p id="result"></p>
+
+<p id="result2"></p>
+
+<script>
+  const $result = document.getElementById("result");
+  const $result2 = document.getElementById("result2");
+
+  // 假设有一个包含大量元素的数组
+  const bigArray = Array.from({ length: 1000000 }, (_, i) => i + 1);
+
+  // 定义一个处理函数，对数组中的每个元素执行一次
+  function processChunk(chunk) {
+    return `chunk: ${chunk}`;
+  }
+
+  let index = 0;
+  function run() {
+    index = index + 1;
+    const text = `chunk: ${index}`;
+    $result2.innerText = text;
+    requestAnimationFrame(run);
+  }
+
+  if ("requestIdleCallback" in window) {
+    // 在浏览器空闲时执行任务
+    window.requestIdleCallback(function() {
+      for (let i = 0; i < bigArray.length; i++) {
+        $result.innerText = processChunk(i);
+      }
+    });
+  } else {
+    console.log("requestIdleCallback is not supported in this browser");
+  }
+
+
+  run()
+</script>
+
+</body>
+</html>
